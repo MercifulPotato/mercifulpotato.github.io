@@ -1,30 +1,30 @@
 kushal@fedora:~/src/dotnet/myblazor$ cd /home/kushal/src/dotnet/myblazor/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 249M	.
 
-real	0m0.027s
-user	0m0.004s
-sys	0m0.011s
+real	0m0.018s
+user	0m0.008s
+sys	0m0.008s
 
-real	0m9.021s
-user	0m13.299s
-sys	0m1.337s
+real	0m7.862s
+user	0m12.222s
+sys	0m0.993s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.771s
-user	0m0.831s
-sys	0m0.141s
+real	0m0.767s
+user	0m0.806s
+sys	0m0.148s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-04-29 00:32:47 UTC
+Publish before:    2026-04-29 00:47:07 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
   Loaded author: myblazor-team (My Blazor Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
-Found 102 markdown files
+Found 103 markdown files
 Processing: 2026-01-15-welcome-to-observer-magazine.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/welcome-to-observer-magazine.html (~1 min read)
 Processing: 2026-02-20-getting-started-with-blazor-wasm.md
@@ -229,32 +229,45 @@ Processing: 2026-06-22-sunroom-adu.md
   SKIPPED: Future post 'Glass Houses, Sun-Drenched Rooms, and the Law: The Complete American Homeowner's Guide to Sunrooms, Three-Season Rooms, Mudrooms, Conservatories, ADUs, and Everything In Between' (date: 2026-06-19, publish-before: 2026-04-29)
 Processing: 2026-06-23-adu.md
   SKIPPED: Future post 'Building an ADU in Newport News, Virginia: An Exhaustive, Pavement-to-Move-In Field Guide to a Sunroom-Plus-Bedroom-Plus-Bath-Plus-Kitchen Backyard Cottage on the Virginia Peninsula' (date: 2026-06-23, publish-before: 2026-04-29)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (47 posts, 1 drafts skipped, 54 future posts skipped)
-Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
-Content processing complete.
-Restore complete (0.5s)
+Processing: 2026-06-24-used-kia-ev9-complete-guide.md
+Unhandled exception. (Line: 4, Col: 385, Idx: 601) - (Line: 4, Col: 385, Idx: 601): YamlDotNet.Core.SemanticErrorException: While scanning a plain scalar value, found invalid mapping.
+   at YamlDotNet.Core.Parser.ParseNode(Boolean isBlock, Boolean isIndentlessSequence, Boolean isKey)
+   at YamlDotNet.Core.Parser.ParseBlockMappingValue()
+   at YamlDotNet.Core.Parser.StateMachine()
+   at YamlDotNet.Core.Parser.MoveNext()
+   at YamlDotNet.Core.ParserExtensions.Consume[T](IParser parser)
+   at YamlDotNet.Serialization.NodeDeserializers.ObjectNodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object& value, ObjectDeserializer rootDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+   at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+   at YamlDotNet.Serialization.Deserializer.Deserialize[T](IParser parser)
+   at YamlDotNet.Serialization.Deserializer.Deserialize[T](TextReader input)
+   at YamlDotNet.Serialization.Deserializer.Deserialize[T](String input)
+   at ObserverMagazine.ContentProcessor.FrontMatterParser.Parse(String rawContent) in /home/kushal/src/dotnet/myblazor/tools/ObserverMagazine.ContentProcessor/FrontMatterParser.cs:line 33
+   at Program.<Main>$(String[] args) in /home/kushal/src/dotnet/myblazor/tools/ObserverMagazine.ContentProcessor/Program.cs:line 92
+Restore complete (0.6s)
   ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.4)
-[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.29]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.45]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.68]   Finished:    ObserverMagazine.Integration.Tests (ID = 'd4d0d007958fbe0fe38b14d9e6b646a44fb0e18b73a44da34c809b07def2c31b')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.2s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (1.9s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.47]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.72]   Finished:    ObserverMagazine.Integration.Tests (ID = 'd4d0d007958fbe0fe38b14d9e6b646a44fb0e18b73a44da34c809b07def2c31b')
+  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.5s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.4)
-[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.30]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.45]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.89]   Finished:    ObserverMagazine.Web.Tests (ID = '637bea1e316adf1ddb3603d0d821a98009dc019a599147baf24c1e1ec396837f')
-  ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
+[xUnit.net 00:00:00.16]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.35]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.50]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.98]   Finished:    ObserverMagazine.Web.Tests (ID = '637bea1e316adf1ddb3603d0d821a98009dc019a599147baf24c1e1ec396837f')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.5s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 3.3s
-Build succeeded in 4.4s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.0s
+Build succeeded in 6.1s
 
-real	0m4.576s
-user	0m3.384s
-sys	0m0.478s
+real	0m6.237s
+user	0m3.388s
+sys	0m0.455s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -294,9 +307,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.531s
-user	0m1.561s
-sys	0m0.307s
+real	0m1.563s
+user	0m1.559s
+sys	0m0.318s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -309,16 +322,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m1.721s
-user	0m1.715s
-sys	0m0.336s
+real	0m1.726s
+user	0m1.713s
+sys	0m0.340s
 Export complete: docs/llm/dump.txt
-  Total files: 185
-  Blog posts (front matter only): 102
+  Total files: 186
+  Blog posts (front matter only): 103
   Full content files: 81
   Binary files skipped: 2
 
-real	0m0.142s
-user	0m0.062s
-sys	0m0.059s
+real	0m0.159s
+user	0m0.070s
+sys	0m0.058s
 kushal@fedora:~/src/dotnet/myblazor$ 

@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-04-29 00:32:55 UTC
+DATE: 2026-04-29 00:47:17 UTC
 ===============================================================================
 
 ===============================================================================
@@ -114,6 +114,7 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-06-20-sunroom-complete-guide.md
 │       ├── 2026-06-22-sunroom-adu.md
 │       ├── 2026-06-23-adu.md
+│       ├── 2026-06-24-used-kia-ev9-complete-guide.md
 │       ├── 2027-01-01-happy-new-year-2027.md
 │       └── 2099-01-01-draft-template.md
 ├── Directory.Build.props
@@ -228,7 +229,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 191 files
+29 directories, 192 files
 
 
 -------------------------------------------------------------------------------
@@ -2491,6 +2492,29 @@ tags:
   - property-tax
   - first-principles
   - deep-dive
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-24-used-kia-ev9-complete-guide.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Used Kia EV9: An Exhaustive, Leave-No-Stone-Unturned Guide for the First-Time EV Buyer — Features, Charging, Battery, Maintenance, Taxes, and Whether It Is Worth It"
+date: 2026-06-24
+author: myblazor-team
+summary: A comprehensive, ground-level guide to buying a used Kia EV9 in mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs and how to get it done, the ICCU situation explained in plain English, what to inspect before signing, how to maintain an EV (spoiler: much less than a gas car), the full 2025–2026 tax picture after the One Big Beautiful Bill Act, and a frank bottom-line verdict on whether the deal is as good as it looks.
+tags:
+  - ev
+  - kia
+  - ev9
+  - electric-vehicles
+  - automotive
+  - home-charging
+  - maintenance
+  - tax
+  - buying-guide
+  - deep-dive
+featured: true
 ---
 
 
@@ -15359,8 +15383,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 185
-  Blog posts (front matter only): 102
+Total Files Exported: 186
+  Blog posts (front matter only): 103
   Full content files: 81
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
