@@ -50007,6 +50007,16 @@ where `[slug]` is a short, hyphenated, lowercase description of the article (e.g
 
 9. **End with resources.** Close with a short list of official documentation links, GitHub repos, or other authoritative references the reader can follow up on.
 
+10. Do not make links clickable within code blocks. It does not make sense to make links clickable within code blocks. For example, do NOT do this 
+```bash
+curl --proto '=https' --tlsv1.2 -sSf [https://sh.rustup.rs](https://sh.rustup.rs) | sh
+```
+Do this instead 
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+It makes copy paste easier. 
+
 ### What to verify via web search before writing
 - Current stable version numbers of all technologies mentioned
 - Release dates for major versions
@@ -50052,3 +50062,5 @@ Worse still, some owners have complained that even after their ICCU was replaced
 That sounds pretty alarming, but there is an upside. The Kia EV9 has not been recalled for any ICCU-related issue, which is always a good sign. What’s more, Hyundai has already extended the warranty to a whopping 15 years and 180,000 miles for cars that are potentially affected by a faulty ICCU, and Kia is expected to do a similar thing for the EV6. If the EV9 is covered, or ends up less affected, that'd make it an even better deal. But as it is, it's hard to argue with.
 
 https://insideevs.com/news/793979/used-kia-ev9-best-deal-us-prices/
+
+and one more thing, there is a defect in the code 
