@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-04-29 00:47:17 UTC
+DATE: 2026-04-30 00:56:48 UTC
 ===============================================================================
 
 ===============================================================================
@@ -201,6 +201,7 @@ DIRECTORY TREE (all git-tracked files)
 │           │   ├── 2026-04-19-podcast-shorts.txt
 │           │   ├── 2026-04-26-zelensky.txt
 │           │   ├── 2026-04-28-ev9.txt
+│           │   ├── 2026-04-29-scotus.txt
 │           │   ├── phelan.txt
 │           │   └── virginia.txt
 │           └── sample-data
@@ -229,7 +230,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 192 files
+29 directories, 193 files
 
 
 -------------------------------------------------------------------------------
@@ -11767,6 +11768,70 @@ https://insideevs.com/news/793979/used-kia-ev9-best-deal-us-prices/
 
 
 -------------------------------------------------------------------------------
+FILE: src/ObserverMagazine.Web/wwwroot/plaintext/2026-04-29-scotus.txt
+-------------------------------------------------------------------------------
+The Supreme Court’s Conservatives Just Issued the Worst Ruling in a Century
+This evisceration of the Voting Rights Act requires us to take SCOTUS reform more seriously.
+By Richard L. Hasen
+April 29, 20261:16 PM
+Wednesday’s 6–3 party-line decision in Louisiana v. Callais will go down in history as one of the most pernicious and damaging Supreme Court decisions of the last century. All six Republican-appointed justices on the court signed onto Justice Samuel Alito’s opinion gutting what remained of the Voting Rights Act protections for minority voters, while pretending they were merely making technical tweaks to the act.
+
+This decision will bleach the halls of Congress, state legislatures, and local bodies like city councils, by ending the protections of Section 2 of the act, which had provided a pathway to assure that voters of color would have some rudimentary fair representation. It’s the culmination of the life’s work of Chief Justice John Roberts and Samuel Alito, who have shown persistent resistance to the idea of the United States as a multiracial democracy, and a brazen willingness to reject Congress’ judgment that fair representation for minority voters sometimes requires race-conscious legislation. It gives the green light to further partisan gerrymandering. It protects Alito’s core constituency: aggrieved white Republican voters. It’s a disaster for American democracy.
+
+To understand the importance of what America lost in Callais, we have to go back to a bit of history. After the Civil War, Congress passed the Reconstruction Amendments—the 13th, abolishing slavery; the 14th, requiring that states, among other things, not deny persons equal protection of the laws; and the 15th, barring racial discrimination in voting. Despite these amendments, racial discrimination was rampant in the early 20th century, and in the American South, Black citizens were consistently denied the opportunity to vote. In 1965, Congress passed the Voting Rights Act, which provided enough protection to vastly increase the opportunities for minority voters to be able to register and vote.
+
+But the initial VRA did not deal with other problems of minority political representation, including how voters elect members of legislative bodies like city councils, state legislatures, or Congress. When there were more white than minority voters in an area, and the two groups preferred different candidates, white voters were often able to elect all or most of the members of these bodies. At first, the Supreme Court policed these discriminatory plans under the 14th and 15th amendments. But in 1980’s City of Mobile v. Bolden, the court said that in order to win one of these “vote dilution” claims under the Constitution, plaintiffs must prove that the plans for electing representatives were intended to dilute the power of minority voters.
+
+Congress responded boldly to that ruling—it rewrote Section 2 of the VRA to allow minority voters to say that plans that had a racially discriminatory effect were vote dilution. And as it was doing this, John Roberts was a young Department of Justice lawyer in the Reagan White House who spearheaded the effort to scuttle a stronger Section 2 in Congress. He failed. The new Section 2 made clear that Congress wanted to increase minority representation and alleviate the burden on voters to win these cases by eliminating an intent requirement.
+
+The new Section 2 was a tremendous success, leading to the election of scores of minority-preferred candidates in Congress and on the state and local level. In 1986, in Thornburg v. Gingles, the Supreme Court interpreted the revised Section 2 to require courts to apply a multipart test to determine when a jurisdiction had to draw districts to give minority voters a fair chance to elect representatives of their choice. The result of these two efforts is why today about a quarter of Congress is represented by a person of color, but it is especially thanks to Section 2.
+
+In recent years, though, the Roberts court has shown consistent hostility to the Voting Rights Act. In 2013, the court in Shelby County v. Holder killed off Section 5 of the act, which required states with a history of race discrimination in voting to get approval from the federal government when they wanted to change their voting rules. When the court killed Section 5, it assured us that there was always Section 2 to protect minority voters.
+
+Then in 2021, the court took the first shot at Section 2. In Brnovich v. DNC, Alito, who had always voted against expansive minority voting rights on the Supreme Court, considered how Section 2 applied to laws making it harder for people to register and vote. Rather than following the text of Section 2 or Congress’ intent, Alito imposed such a tough test that since Brnovich there has not been a single successful Section 2 case aimed at these voting restrictions.
+
+And now comes Callais. Let’s not sugarcoat things: Alito’s opinion eviscerates Section 2 as applied to redistricting. He throws out the Gingles test—while denying he is doing so—and has restored a requirement that plaintiffs prove discriminatory intent when challenging district lines. Only if a computer algorithm would protect minority voters by chance do they have a chance to win such a case. What’s worse, the state can defend their maps by claiming that they were merely engaging in partisan gerrymandering. This move is thanks to what the Supreme Court wrote in the 2019 Rucho case—that though partisan gerrymandering is unconstitutional, it is out of the court’s realm to fix.
+
+So when, say, Louisiana goes back and eliminates many Black opportunity districts in its state, it can claim it is doing so to help Republicans, not white people. That’s an outrageous proposition given the considerable overlap between those two groups in Louisiana.
+
+What this means for the 2026 elections is uncertain. In many states, primaries are over or nearly so. It is hard to imagine a state ordering a rerunning of primaries under new districts to gut old Section 2 districts. But it’s possible. And it could affect places still redistricting for 2026, including, most importantly, Florida. It could also affect state and local elections, from school boards and city councils to state legislatures.
+
+Wednesday’s 6–3 party-line decision in Louisiana v. Callais will go down in history as one of the most pernicious and damaging Supreme Court decisions of the last century. All six Republican-appointed justices on the court signed onto Justice Samuel Alito’s opinion gutting what remained of the Voting Rights Act protections for minority voters, while pretending they were merely making technical tweaks to the act.
+
+This decision will bleach the halls of Congress, state legislatures, and local bodies like city councils, by ending the protections of Section 2 of the act, which had provided a pathway to assure that voters of color would have some rudimentary fair representation. It’s the culmination of the life’s work of Chief Justice John Roberts and Samuel Alito, who have shown persistent resistance to the idea of the United States as a multiracial democracy, and a brazen willingness to reject Congress’ judgment that fair representation for minority voters sometimes requires race-conscious legislation. It gives the green light to further partisan gerrymandering. It protects Alito’s core constituency: aggrieved white Republican voters. It’s a disaster for American democracy.
+
+To understand the importance of what America lost in Callais, we have to go back to a bit of history. After the Civil War, Congress passed the Reconstruction Amendments—the 13th, abolishing slavery; the 14th, requiring that states, among other things, not deny persons equal protection of the laws; and the 15th, barring racial discrimination in voting. Despite these amendments, racial discrimination was rampant in the early 20th century, and in the American South, Black citizens were consistently denied the opportunity to vote. In 1965, Congress passed the Voting Rights Act, which provided enough protection to vastly increase the opportunities for minority voters to be able to register and vote.
+
+But the initial VRA did not deal with other problems of minority political representation, including how voters elect members of legislative bodies like city councils, state legislatures, or Congress. When there were more white than minority voters in an area, and the two groups preferred different candidates, white voters were often able to elect all or most of the members of these bodies. At first, the Supreme Court policed these discriminatory plans under the 14th and 15th amendments. But in 1980’s City of Mobile v. Bolden, the court said that in order to win one of these “vote dilution” claims under the Constitution, plaintiffs must prove that the plans for electing representatives were intended to dilute the power of minority voters.
+
+Congress responded boldly to that ruling—it rewrote Section 2 of the VRA to allow minority voters to say that plans that had a racially discriminatory effect were vote dilution. And as it was doing this, John Roberts was a young Department of Justice lawyer in the Reagan White House who spearheaded the effort to scuttle a stronger Section 2 in Congress. He failed. The new Section 2 made clear that Congress wanted to increase minority representation and alleviate the burden on voters to win these cases by eliminating an intent requirement.
+
+The new Section 2 was a tremendous success, leading to the election of scores of minority-preferred candidates in Congress and on the state and local level. In 1986, in Thornburg v. Gingles, the Supreme Court interpreted the revised Section 2 to require courts to apply a multipart test to determine when a jurisdiction had to draw districts to give minority voters a fair chance to elect representatives of their choice. The result of these two efforts is why today about a quarter of Congress is represented by a person of color, but it is especially thanks to Section 2.
+
+In recent years, though, the Roberts court has shown consistent hostility to the Voting Rights Act. In 2013, the court in Shelby County v. Holder killed off Section 5 of the act, which required states with a history of race discrimination in voting to get approval from the federal government when they wanted to change their voting rules. When the court killed Section 5, it assured us that there was always Section 2 to protect minority voters.
+
+Then in 2021, the court took the first shot at Section 2. In Brnovich v. DNC, Alito, who had always voted against expansive minority voting rights on the Supreme Court, considered how Section 2 applied to laws making it harder for people to register and vote. Rather than following the text of Section 2 or Congress’ intent, Alito imposed such a tough test that since Brnovich there has not been a single successful Section 2 case aimed at these voting restrictions.
+
+And now comes Callais. Let’s not sugarcoat things: Alito’s opinion eviscerates Section 2 as applied to redistricting. He throws out the Gingles test—while denying he is doing so—and has restored a requirement that plaintiffs prove discriminatory intent when challenging district lines. Only if a computer algorithm would protect minority voters by chance do they have a chance to win such a case. What’s worse, the state can defend their maps by claiming that they were merely engaging in partisan gerrymandering. This move is thanks to what the Supreme Court wrote in the 2019 Rucho case—that though partisan gerrymandering is unconstitutional, it is out of the court’s realm to fix.
+
+So when, say, Louisiana goes back and eliminates many Black opportunity districts in its state, it can claim it is doing so to help Republicans, not white people. That’s an outrageous proposition given the considerable overlap between those two groups in Louisiana.
+
+What this means for the 2026 elections is uncertain. In many states, primaries are over or nearly so. It is hard to imagine a state ordering a rerunning of primaries under new districts to gut old Section 2 districts. But it’s possible. And it could affect places still redistricting for 2026, including, most importantly, Florida. It could also affect state and local elections, from school boards and city councils to state legislatures.
+
+Justice Elena Kagan’s strenuous dissent notes all the history I’ve recounted. She then considers the retrograde turn of the Supreme Court in Shelby County and elsewhere, making the correct point that the current Supreme Court is the most hostile to voting rights in at least a century. And it is all done by Alito with subterfuge. The opinion adopts—though Alito denies it—Alito’s dissent in a 2023 case, Allen v. Milligan, holding Alabama violated the voting Rights Act in drawing its congressional districts. Callais brings back the requirement that minority voters prove discriminatory intent while denying it is doing that either—in contravention of Section 2’s text, congressional intent, and common sense.
+
+Kagan is not fooled: It is not hyperbole when she writes: “Today’s decision renders Section 2 all but a dead letter.”
+
+In other words, Alito knows exactly what he’s doing: making it seem like he’s not gutting the Voting Rights Act through technical language, turning both the statute and the Constitution on its head. It’s the product of his long mission: to favor the white Republicans he seems to think he represents on the Supreme Court, rather than all Americans.
+
+So what’s to be done? The Supreme Court itself has shown itself to be the enemy of democracy. If and when Democrats retake control of the political branches, it will be incumbent on them not only to write new voting legislation protecting minority voters and all voters in the ability to participate fairly in elections that reflect the will of all the people; they will also have to consider reform of the Supreme Court itself, a conclusion I had been resisting until the court made this unavoidable.
+
+As I wrote in Slate last summer, when the court rejiggered the question in Callais late on a Friday afternoon in August, “Court conservatives likely thought teeing up the issue of overruling Section 2 on a hot summer weekend would avoid public notice. But that’s a short-term strategy. … Any decision to strike down what’s left of the Voting Rights Act could kick off the start of a new civil rights movement and more serious talk of Supreme Court reform in the midst of crucially important midterm elections. Justices fundamentally hostile to the rights of voters place the court increasingly at odds with democracy itself.”
+
+https://slate.com/news-and-politics/2026/04/scotus-voting-rights-section-two-ruling-history-worst-century.html
+
+
+-------------------------------------------------------------------------------
 FILE: src/ObserverMagazine.Web/wwwroot/plaintext/phelan.txt
 -------------------------------------------------------------------------------
 Trump’s Dreams for a Battleship Led to His Navy Secretary’s Ouster
@@ -15383,9 +15448,9 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 186
+Total Files Exported: 187
   Blog posts (front matter only): 103
-  Full content files: 81
+  Full content files: 82
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
 ===============================================================================
