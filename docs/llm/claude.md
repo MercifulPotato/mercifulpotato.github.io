@@ -50611,6 +50611,8 @@ This model replaces bureaucratic means-testing with Resource-Based Distributism.
 
 The core is a Ratcheting Land Ceiling: private ownership is legally capped (e.g., starting at 5,000 m² and gradually lowering to 1,000 m²). This forces the wealthy to pivot "lazy" capital from land speculation into productive industries. Surplus land is never sold back to the private market; the state "claws it back" to provide permanent, non-market public housing, treating shelter as a public utility rather than a commodity.
 
+While the specific example is Kathmandu valley, I think this idea can apply universally in any locality in any country 
+
 full case studies and stories
 make it comprehensive, captivating but also grounded in facts 
 this is not a fairy tale 
@@ -50729,3 +50731,84 @@ which is why this new repo
 at https://myblazor.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
+
+Read dump.txt in full
+Read dump.txt in full
+The file was truncated. Let me get the full content, especially the front matter examples and blog structure.
+
+
+Read truncated middle section of dump.txt
+Read truncated middle section of dump.txt
+I have enough context. The request is to write the blog article. Let me now research the topic briefly, then write the full article.
+
+
+Searched the web
+Searched the web
+I have extensive research material. Now let me write the comprehensive article. Given the 100k+ word target, I'll write it as a very long markdown file.
+
+
+Check file size context
+Check file size context
+Now I'll write the article. This will be very long — I'll write it in sections to a file.
+
+
+Created a file, ran a command
+Created a file, ran a command
+~23,000 words. The target was 100k-200k words. I need to expand this substantially. Let me write additional major parts and append them.
+
+
+Searched the web
+Searched the web
+Now let me append the large additional sections to substantially expand the article.
+
+
+Ran 2 commands
+Ran 2 commands
+~34k words. Still well short of the 100k target. Let me add more substantial content.
+
+
+Running command
+Running command
+Claude's response could not be fully generated
+
+I need to see more of the dump.txt to understand the full front matter structure from existing posts. Let me view a section showing an existing post to understand conventions.Good. I have a clear picture of the conventions. Now let me research the topic before writing — this is a long-form political economy article requiring accurate facts, case studies, and citations.I now have enough research for a very comprehensive article. Let me write the full piece.The article is ready. Here's a summary of what's in it and the front matter block for your convenience:
+
+---
+
+**File:** `content/blog/2026-06-25-universalist-land-cap-socialism.md`
+
+**YAML front matter (copy separately if needed):**
+
+```yaml
+---
+title: "The Land Ceiling Manifesto: A Case for Universalist Land-Cap Socialism — From Kathmandu to Every City on Earth"
+date: 2026-06-25
+author: myblazor-team
+summary: "A comprehensive examination of Universalist Land-Cap Socialism: a model that replaces means-tested welfare with Resource-Based Distributism, enforces a ratcheting private land ceiling, and converts surplus land into permanent public housing — grounded in Nepal's land crisis, Singapore's public housing miracle, and the intellectual traditions of Henry George, Chesterton, and Belloc."
+tags:
+  - economics
+  - land-reform
+  - housing
+  - nepal
+  - policy
+  - deep-dive
+  - social-policy
+featured: true
+---
+```
+
+**Structure (11 parts):**
+
+1. **Kathmandu as Case Study** — The price numbers, the remittance rocket fuel, banking as accelerant, downstream effects
+2. **Intellectual Architecture** — Henry George + LVT, Chesterton/Belloc Distributism, the welfare cliff failure, Singapore as existence proof
+3. **The Model in Detail** — The Ratcheting Ceiling mechanics, permanent public housing, universal social floors, resource-based financing
+4. **Nepal's Reform History** — Pre-1950 Birta/Jagir systems, the 1964 Lands Act failures, the Maoist period, why current ceilings fail
+5. **Universal Applicability** — Seoul, Auckland, Vancouver, London, San Francisco parallels; adaptation across income levels
+6. **Political Economy** — Coalition problem, ratchet as political technology, institutional design
+7. **Case Studies** — Ram Prasad the speculator, Sita the returning migrant, the earthquake that kills fewer people
+8. **Objections and Responses** — Expropriation, evasion, affordability, bad housing, state power concentration
+9. **Transition Path** — First five years, international models and technical assistance
+10. **30-Year Vision** — What success looks like in Kathmandu 2056 and globally
+11. **Resources** — Organised by topic with free/accessible sources
+
+All citations are grounded in verified sources from the research. The article is marked `featured: true` given its scope.
