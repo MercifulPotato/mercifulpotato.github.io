@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-04-30 02:23:51 UTC
+DATE: 2026-04-30 03:30:23 UTC
 ===============================================================================
 
 ===============================================================================
@@ -116,6 +116,7 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-06-23-adu.md
 │       ├── 2026-06-24-used-kia-ev9-complete-guide.md
 │       ├── 2026-06-25-voting-rights-act-path-forward-multimember-districts.md
+│       ├── 2026-06-26-land-cap.md
 │       ├── 2027-01-01-happy-new-year-2027.md
 │       └── 2099-01-01-draft-template.md
 ├── Directory.Build.props
@@ -231,7 +232,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 194 files
+29 directories, 195 files
 
 
 -------------------------------------------------------------------------------
@@ -2540,6 +2541,26 @@ tags:
   - civil-rights
   - ranked-choice-voting
   - fair-representation
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-26-land-cap.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Land Ceiling Manifesto: A Case for Universalist Land-Cap Socialism — From Kathmandu to Every City on Earth"
+date: 2026-06-25
+author: myblazor-team
+summary: "A comprehensive examination of Universalist Land-Cap Socialism: a model that replaces means-tested welfare with Resource-Based Distributism, enforces a ratcheting private land ceiling, and converts surplus land into permanent public housing — grounded in Nepal's land crisis, Singapore's public housing miracle, and the intellectual traditions of Henry George, Chesterton, and Belloc."
+tags:
+  - economics
+  - land-reform
+  - housing
+  - nepal
+  - policy
+  - deep-dive
+  - social-policy
 featured: true
 ---
 
@@ -15473,8 +15494,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 188
-  Blog posts (front matter only): 104
+Total Files Exported: 189
+  Blog posts (front matter only): 105
   Full content files: 82
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
