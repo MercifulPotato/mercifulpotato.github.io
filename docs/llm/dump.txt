@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-04-30 01:04:08 UTC
+DATE: 2026-04-30 01:30:21 UTC
 ===============================================================================
 
 ===============================================================================
@@ -115,6 +115,7 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-06-22-sunroom-adu.md
 │       ├── 2026-06-23-adu.md
 │       ├── 2026-06-24-used-kia-ev9-complete-guide.md
+│       ├── 2026-06-25-voting-rights-act-path-forward-multimember-districts.md
 │       ├── 2027-01-01-happy-new-year-2027.md
 │       └── 2099-01-01-draft-template.md
 ├── Directory.Build.props
@@ -230,7 +231,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 193 files
+29 directories, 194 files
 
 
 -------------------------------------------------------------------------------
@@ -2515,6 +2516,30 @@ tags:
   - tax
   - buying-guide
   - deep-dive
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-25-voting-rights-act-path-forward-multimember-districts.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Voting Rights Act and the Path Forward: Why Congress Must Mandate a Single Statewide Multi-Member District for Every State in America"
+date: 2026-06-25
+author: myblazor-team
+summary: "On April 29, 2026, the Supreme Court's 6-3 ruling in Louisiana v. Callais gutted what remained of the Voting Rights Act's Section 2 redistricting protections, rendering minority political representation in America almost entirely dependent on the goodwill of state legislatures that have consistently demonstrated they have none. This exhaustive, deeply researched article traces the full arc of American voting rights history from the Three-Fifths Compromise through Reconstruction, Jim Crow, the passage of the VRA, the Roberts Court's decades-long demolition campaign, and the case — both moral and mathematical — for why a mandatory statewide multi-member district with ranked choice voting is now the only viable path to multiracial democracy."
+tags:
+  - voting-rights
+  - democracy
+  - politics
+  - history
+  - redistricting
+  - gerrymandering
+  - supreme-court
+  - congress
+  - civil-rights
+  - ranked-choice-voting
+  - fair-representation
 featured: true
 ---
 
@@ -15448,8 +15473,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 187
-  Blog posts (front matter only): 103
+Total Files Exported: 188
+  Blog posts (front matter only): 104
   Full content files: 82
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
