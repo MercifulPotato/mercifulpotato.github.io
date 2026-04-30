@@ -50605,7 +50605,11 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 
 **Topic**: 
 
+The Position: Universalist Land-Cap Socialism
 
+This model replaces bureaucratic means-testing with Resource-Based Distributism. To eliminate "welfare cliffs" and administrative waste, all citizens receive universal social floors.
+
+The core is a Ratcheting Land Ceiling: private ownership is legally capped (e.g., starting at 5,000 m² and gradually lowering to 1,000 m²). This forces the wealthy to pivot "lazy" capital from land speculation into productive industries. Surplus land is never sold back to the private market; the state "claws it back" to provide permanent, non-market public housing, treating shelter as a public utility rather than a commodity.
 
 full case studies and stories
 make it comprehensive, captivating but also grounded in facts 
