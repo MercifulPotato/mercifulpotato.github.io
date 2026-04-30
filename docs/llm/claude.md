@@ -50198,6 +50198,106 @@ On the "defect in the code" you mentioned: You said there's a defect but didn't 
 
 
 
+00
+71
+
+something is wrong here 
+Processing: 2026-06-24-used-kia-ev9-complete-guide.md
+Unhandled exception. (Line: 4, Col: 385, Idx: 601) - (Line: 4, Col: 385, Idx: 601): YamlDotNet.Core.SemanticErrorException: While scanning a plain scalar value, found invalid mapping.
+ at YamlDotNet.Core.Parser.ParseNode(Boolean isBlock, Boolean isIndentlessSequence, Boolean isKey)
+ at YamlDotNet.Core.Parser.ParseBlockMappingValue()
+ at YamlDotNet.Core.Parser.StateMachine()
+ at YamlDotNet.Core.Parser.MoveNext()
+ at YamlDotNet.Core.ParserExtensions.Consume[T](IParser parser)
+ at YamlDotNet.Serialization.NodeDeserializers.ObjectNodeDeserializer.Deserialize(IParser parser, Type expectedType, Func`3 nestedObjectDeserializer, Object& value, ObjectDeserializer rootDeserializer)
+ at YamlDotNet.Serialization.ValueDeserializers.NodeValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+ at YamlDotNet.Serialization.ValueDeserializers.AliasValueDeserializer.DeserializeValue(IParser parser, Type expectedType, SerializerState state, IValueDeserializer nestedObjectDeserializer)
+ at YamlDotNet.Serialization.Deserializer.Deserialize(IParser parser, Type type)
+ at YamlDotNet.Serialization.Deserializer.Deserialize[T](IParser parser)
+ at YamlDotNet.Serialization.Deserializer.Deserialize[T](TextReader input)
+ at YamlDotNet.Serialization.Deserializer.Deserialize[T](String input)
+ at ObserverMagazine.ContentProcessor.FrontMatterParser.Parse(String rawContent) in /home/runner/work/myblazor.github.io/myblazor.github.io/tools/ObserverMagazine.ContentProcessor/FrontMatterParser.cs:line 33
+ at Program.<Main>$(String[] args) in /home/runner/work/myblazor.github.io/myblazor.github.io/tools/ObserverMagazine.ContentProcessor/Program.cs:line 92
+Error: Process completed with exit code 134.
+
+Let me read dump.txt in full and the uploaded file.The file was truncated. Let me get the critical part — the `FrontMatterParser.cs`:Now let me read the actual uploaded markdown file to see its front matter:The front matter looks clean. The error is on **line 4, col 385** — that's within a single line. The `summary` field (line 5) is a long unquoted string. Let me check: it's not quoted and contains a colon (`:`) — that's the YAML parse error. The summary value has colons in it (e.g., `mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs...`). Wait, actually it does — `2025–2026 tax picture` contains a dash not colon, but the issue is the unquoted string may have a colon+space somewhere.
+
+Looking at line 5: `summary: A comprehensive, ground-level guide...` — the value contains `Level 1 and Level 2 home charging, what a 220V garage outlet costs and how to get it done, the ICCU situation explained in plain English...` — no colon there. But wait: `the One Big Beautiful Bill Act` — no colon. Let me look more carefully... `mid-2026 — covering` — em-dash. `honest case for and against Level 1 and Level 2` — fine. `220V garage outlet costs and how to get it done` — fine.
+
+Actually the problem is the `FrontMatterParser` does `rawContent.IndexOf("---", 3)` — this finds the **first** `---` occurrence after position 3. If the markdown body contains `---` (horizontal rules), this will incorrectly truncate the YAML block. But looking at line 5, the summary is very long and on one line — let me check if position 385 column-wise corresponds to something special.
+
+Actually, re-reading the error: `(Line: 4, Col: 385, Idx: 601)` — Line 4 in the YAML block. The YAML block lines are: line 1=title, line 2=date, line 3=author, line 4=summary. Col 385 in the summary line. The summary is unquoted and contains: `2025–2026 tax picture after the One Big Beautiful Bill Act` — no issue there. But wait — it also contains `Level 1 and Level 2` — fine. Actually: `what a 220V garage outlet costs and how to get it done` — no colon. 
+
+Wait — the summary has `the honest case for and against Level 1 and Level 2 home charging` — fine. But: `the full 2025–2026 tax picture after the One Big Beautiful Bill Act, and a frank bottom-line verdict on whether the deal is as good as it looks.` — no colon.
+
+The real issue is likely a **colon without quotes** somewhere I'm missing, OR the `IndexOf("---", 3)` bug where it picks up `---` inside the body.
+
+Let me check: the parser uses `rawContent.IndexOf("---", 3)` which will find `---` anywhere in the body too! But actually looking at this file, if the closing `---` on line 18 is found correctly, that's fine. Let me count characters to col 385 of the summary line to pinpoint the colon:Found it. The summary contains `(spoiler: much less than a gas car)` — the colon after `spoiler` is the problem. YAML treats an unquoted `key: value` pattern as a mapping, so `spoiler: much less than a gas car` inside the unquoted summary string trips the parser.
+
+The fix is simple: **quote the summary** in the front matter. Here is the corrected front matter for the file:
+
+```yaml
+---
+title: "The Used Kia EV9: An Exhaustive, Leave-No-Stone-Unturned Guide for the First-Time EV Buyer — Features, Charging, Battery, Maintenance, Taxes, and Whether It Is Worth It"
+date: 2026-06-24
+author: myblazor-team
+summary: "A comprehensive, ground-level guide to buying a used Kia EV9 in mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs and how to get it done, the ICCU situation explained in plain English, what to inspect before signing, how to maintain an EV (spoiler: much less than a gas car), the full 2025–2026 tax picture after the One Big Beautiful Bill Act, and a frank bottom-line verdict on whether the deal is as good as it looks."
+tags:
+  - ev
+  - kia
+  - ev9
+  - electric-vehicles
+  - automotive
+  - home-charging
+  - maintenance
+  - tax
+  - buying-guide
+  - deep-dive
+featured: true
+---
+```
+
+The only change is wrapping the `summary` value in double-quotes. The colon inside `(spoiler: much less than a gas car)` is valid YAML once the whole string is quoted.
+
+---
+
+**Root cause:** YAML plain scalars (unquoted strings) cannot contain `: ` (colon-space) because the parser treats that as a mapping key separator. The summary had `spoiler: much less` which triggered `YamlDotNet.Core.SemanticErrorException: While scanning a plain scalar value, found invalid mapping.`
+
+**The rule going forward:** Any `summary:` (or other string field) that contains a colon followed by a space must be wrapped in double quotes. The `title` field already does this correctly — the same discipline applies to `summary`.
+
+You could also harden `FrontMatterParser.cs` to catch and report this more gracefully (wrapping the `Deserializer.Deserialize` call in a try/catch that prints the filename and re-throws), so future errors are easier to diagnose. Want me to generate that fix too?
+
+03
+71
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
 
 **Topic**: 
@@ -50298,6 +50398,8 @@ Do this instead
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 It makes copy paste easier. 
+
+Any `summary:` (or other string field) that contains a colon followed by a space must be wrapped in double quotes. The `title` field already does this correctly — the same discipline applies to `summary`.
 
 ### What to verify via web search before writing
 - Current stable version numbers of all technologies mentioned

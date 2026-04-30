@@ -2,7 +2,7 @@
 title: "The Used Kia EV9: An Exhaustive, Leave-No-Stone-Unturned Guide for the First-Time EV Buyer — Features, Charging, Battery, Maintenance, Taxes, and Whether It Is Worth It"
 date: 2026-06-24
 author: myblazor-team
-summary: A comprehensive, ground-level guide to buying a used Kia EV9 in mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs and how to get it done, the ICCU situation explained in plain English, what to inspect before signing, how to maintain an EV (spoiler: much less than a gas car), the full 2025–2026 tax picture after the One Big Beautiful Bill Act, and a frank bottom-line verdict on whether the deal is as good as it looks.
+summary: "A comprehensive, ground-level guide to buying a used Kia EV9 in mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs and how to get it done, the ICCU situation explained in plain English, what to inspect before signing, how to maintain an EV (spoiler: much less than a gas car), the full 2025–2026 tax picture after the One Big Beautiful Bill Act, and a frank bottom-line verdict on whether the deal is as good as it looks."
 tags:
   - ev
   - kia
