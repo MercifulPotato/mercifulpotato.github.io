@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-04-30 03:30:23 UTC
+DATE: 2026-04-30 03:31:22 UTC
 ===============================================================================
 
 ===============================================================================
@@ -2550,7 +2550,7 @@ FILE: content/blog/2026-06-26-land-cap.md  [FRONT MATTER ONLY — body omitted t
 -------------------------------------------------------------------------------
 ---
 title: "The Land Ceiling Manifesto: A Case for Universalist Land-Cap Socialism — From Kathmandu to Every City on Earth"
-date: 2026-06-25
+date: 2026-06-26
 author: myblazor-team
 summary: "A comprehensive examination of Universalist Land-Cap Socialism: a model that replaces means-tested welfare with Resource-Based Distributism, enforces a ratcheting private land ceiling, and converts surplus land into permanent public housing — grounded in Nepal's land crisis, Singapore's public housing miracle, and the intellectual traditions of Henry George, Chesterton, and Belloc."
 tags:
