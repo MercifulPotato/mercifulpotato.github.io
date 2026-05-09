@@ -12,7 +12,7 @@ DIRECTORY TREE (all git-tracked files)
 │   ├── authors
 │   │   ├── abraham-lincoln.yml
 │   │   ├── kushal.yml
-│   │   └── myblazor-team.yml
+│   │   └── mercifulpotato-team.yml
 │   └── blog
 │       ├── 2026-01-15-welcome-to-observer-magazine.md
 │       ├── 2026-02-20-getting-started-with-blazor-wasm.md
@@ -196,8 +196,8 @@ DIRECTORY TREE (all git-tracked files)
 │           ├── images
 │           │   └── authors
 │           │       ├── kushal.png
-│           │       ├── myblazor-team.png
-│           │       └── myblazor-team.txt
+│           │       ├── mercifulpotato-team.png
+│           │       └── mercifulpotato-team.txt
 │           ├── index.html
 │           ├── plaintext
 │           │   ├── 2026-04-19-podcast-shorts.txt
@@ -332,14 +332,14 @@ socials:
 
 
 -------------------------------------------------------------------------------
-FILE: content/authors/myblazor-team.yml
+FILE: content/authors/mercifulpotato-team.yml
 -------------------------------------------------------------------------------
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 
 
 -------------------------------------------------------------------------------
@@ -348,7 +348,7 @@ FILE: content/blog/2026-01-15-welcome-to-observer-magazine.md  [FRONT MATTER ONL
 ---
 title: Welcome to My Blazor Magazine
 date: 2026-01-15
-author: myblazor-team
+author: mercifulpotato-team
 summary: Our first post — introducing My Blazor Magazine and what we're building.
 tags:
   - announcement
@@ -362,7 +362,7 @@ FILE: content/blog/2026-02-20-getting-started-with-blazor-wasm.md  [FRONT MATTER
 ---
 title: Getting Started with Blazor WebAssembly
 date: 2026-02-20
-author: myblazor-team
+author: mercifulpotato-team
 summary: A quick tour of how Blazor WASM works and why it's a great choice for static sites.
 tags:
   - blazor
@@ -377,7 +377,7 @@ FILE: content/blog/2026-03-10-responsive-design-patterns.md  [FRONT MATTER ONLY 
 ---
 title: Responsive Design Patterns in Blazor
 date: 2026-03-10
-author: myblazor-team
+author: mercifulpotato-team
 summary: How we built mobile-friendly data tables and master-detail layouts in pure Blazor.
 tags:
   - blazor
@@ -393,7 +393,7 @@ FILE: content/blog/2026-03-20-hello-world.md  [FRONT MATTER ONLY — body omitte
 ---
 title: Hello, world!
 date: 2026-03-20
-author: myblazor-team
+author: mercifulpotato-team
 summary: In which I say Hello to you
 tags:
   - introductions
@@ -406,7 +406,7 @@ FILE: content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md  [FRONT MATTER ONLY 
 ---
 title: "The ASP.NET Request Lifecycle: Why Cold Starts Are Slow and How .NET 10 Changes Everything"
 date: 2026-03-21
-author: myblazor-team
+author: mercifulpotato-team
 summary: A deep dive into the ASP.NET request lifecycle across both .NET Framework and modern .NET 10, explaining why cold starts have historically been slow, what you can do about it, and how Native AOT and other advances have fundamentally changed the equation.
 tags:
   - dotnet
@@ -437,7 +437,7 @@ FILE: content/blog/2026-03-22-modernizing-to-dotnet-10.md  [FRONT MATTER ONLY �
 ---
 title: "From .NET Framework 4.7 to .NET 10: A Practical Guide for Enterprise Developers"
 date: 2026-03-22
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive guide for enterprise .NET developers who have been working with .NET Framework 4.7 and want to understand what has changed, why it matters, and how to modernize — written for people who code at work and do not tinker with software at home.
 featured: true
 tags:
@@ -456,7 +456,7 @@ FILE: content/blog/2026-03-22-the-year-2025-in-review.md  [FRONT MATTER ONLY —
 ---
 title: "The Year 2025 in Review: A Comprehensive Retrospective"
 date: 2026-03-22
-author: myblazor-team
+author: mercifulpotato-team
 summary: A thorough look back at the major political, economic, technological, scientific, and cultural events that defined the year 2025.
 tags:
   - retrospective
@@ -475,7 +475,7 @@ FILE: content/blog/2026-03-23-honk-drive.md  [FRONT MATTER ONLY — body omitted
 ---
 title: The Green Light Doesn't Mean Go — It Means You May Go
 date: 2026-03-23
-author: myblazor-team
+author: mercifulpotato-team
 summary: A lesson learned at a red light that applies to every decision you will ever make in life, work, and everything in between.
 tags:
   - life-lessons
@@ -491,7 +491,7 @@ FILE: content/blog/2026-03-24-avalonia-ui-comprehensive-guide.md  [FRONT MATTER 
 ---
 title: "Avalonia UI: The Complete Guide — From Hello World to Cross-Platform Mastery"
 date: 2026-03-24
-author: myblazor-team
+author: mercifulpotato-team
 summary: Everything you need to know about Avalonia UI — what it is today, how to build desktop and mobile apps with AXAML and C#, why desktop and mobile need different layouts, what is coming in Avalonia 12, and the rendering revolution beyond. Packed with code examples.
 tags:
   - avalonia
@@ -512,7 +512,7 @@ FILE: content/blog/2026-03-25-git-and-trunk-based-development.md  [FRONT MATTER 
 ---
 title: "Git From First Principles, and Why Trunk-Based Development Will Save Your Team"
 date: 2026-03-25
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive deep dive into Git as a version control system — every command, every workflow, every configuration. Then, a persuasive case for trunk-based development aimed at teams reluctant to leave long-lived branches behind. Backed by a decade of DORA research.
 tags:
   - git
@@ -532,7 +532,7 @@ FILE: content/blog/2026-03-26-typescript-comprehensive-guide.md  [FRONT MATTER O
 ---
 title: "TypeScript: The Comprehensive Guide — From JavaScript's Quirks to the Go Rewrite"
 date: 2026-03-26
-author: myblazor-team
+author: mercifulpotato-team
 summary: Everything a programmer should know about TypeScript — its history, what JavaScript gets wrong, what TypeScript fixes (and does not fix), every major feature from version 1.0 through 6.0, the complete tsconfig.json reference, the tooling ecosystem, and the historic Go rewrite coming in TypeScript 7.
 tags:
   - typescript
@@ -550,7 +550,7 @@ FILE: content/blog/2026-03-27-sql-server-complete-guide.md  [FRONT MATTER ONLY �
 ---
 title: "SQL Server: The Complete Guide for .NET Developers — From SSMS to T-SQL to Production Best Practices"
 date: 2026-03-27
-author: myblazor-team
+author: mercifulpotato-team
 summary: Everything a .NET/C#/ASP.NET developer needs to know about SQL Server — covering versions 2016 through 2025, SSMS 21 and 22, SQL Profiler, sqlcmd, T-SQL, transactions, locking, networking, sessions, debugging, and production best practices.
 tags:
   - sql-server
@@ -569,7 +569,7 @@ FILE: content/blog/2026-03-28-postgresql-npgsql-comprehensive-guide.md  [FRONT M
 ---
 title: "PostgreSQL, Npgsql, and Open-Source IDEs: The Definitive Guide for .NET Developers on Linux"
 date: 2026-03-28
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive, leave-no-stone-unturned guide to PostgreSQL 17 and 18, Npgsql with Dapper and EF Core, terminal workflows, configuration, transactions, networking, sessions, debugging, Docker/Podman setup, and every free open-source IDE available — all from the perspective of a .NET C# ASP.NET web developer working on Linux.
 tags:
   - postgresql
@@ -589,7 +589,7 @@ FILE: content/blog/2026-03-29-why-qa-matters-more-than-ever.md  [FRONT MATTER ON
 ---
 title: "Why QA Matters More Than Ever: The Case for Slowing Down in a World of AI-Generated Code"
 date: 2026-03-29
-author: myblazor-team
+author: mercifulpotato-team
 summary: As AI tools accelerate code output by 76 percent and change failure rates climb by 30 percent, the argument for dedicated QA has never been stronger. This deep dive explores why quality assurance is not a luxury — it is the last line of defense between your users and an avalanche of untested code.
 tags:
   - qa
@@ -609,7 +609,7 @@ FILE: content/blog/2026-03-30-the-cloud-toilet-problem.md  [FRONT MATTER ONLY �
 ---
 title: "The Cloud Toilet Problem: Why Your AI Tools Need an On-Premises Fallback"
 date: 2026-03-30
-author: myblazor-team
+author: mercifulpotato-team
 summary: What happens when every toilet in your availability zone goes down? A practical guide for ASP.NET developers on building resilient applications that survive cloud AI outages.
 tags:
   - cloud
@@ -627,7 +627,7 @@ FILE: content/blog/2026-03-31-solid-principles.md  [FRONT MATTER ONLY — body o
 ---
 title: "SOLID Principles: A Complete Guide to Writing Clean, Maintainable Object-Oriented Code"
 date: 2026-03-31
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive deep dive into all five SOLID principles — Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion — with C# examples, historical context, real-world scenarios, common violations, and practical guidance for .NET developers.
 tags:
   - csharp
@@ -648,7 +648,7 @@ FILE: content/blog/2026-04-01-single-responsibility-principle-complete-guide.md 
 ---
 title: "The Single Responsibility Principle: A Complete Guide for .NET Developers"
 date: 2026-04-01
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive deep dive into the Single Responsibility Principle — from its intellectual origins in structured analysis through Robert C. Martin's evolving definitions, with extensive C# examples showing how to recognize, refactor, and sustain SRP in real-world .NET applications.
 tags:
   - solid
@@ -667,7 +667,7 @@ FILE: content/blog/2026-04-02-open-closed-principle.md  [FRONT MATTER ONLY — b
 ---
 title: "The Open/Closed Principle: A Comprehensive Guide for .NET Developers"
 date: 2026-04-02
-author: myblazor-team
+author: mercifulpotato-team
 summary: A deep dive into the Open/Closed Principle — its origins with Bertrand Meyer in 1988, Robert C. Martin's reformulation in 1996, how to apply it in modern C# and ASP.NET Core with real code examples, which design patterns embody it, when to ignore it, and how it shapes testable, maintainable software architecture.
 tags:
   - csharp
@@ -686,7 +686,7 @@ FILE: content/blog/2026-04-03-liskov-substitution.md  [FRONT MATTER ONLY — bod
 ---
 title: "The Liskov Substitution Principle: A Complete Guide for .NET Developers"
 date: 2026-04-03
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A deep dive into the Liskov Substitution Principle — from Barbara Liskov's 1987 keynote to practical C# code, real-world violations, design-by-contract rules, and strategies for writing substitutable types in modern .NET."
 tags:
   - solid
@@ -704,7 +704,7 @@ FILE: content/blog/2026-04-04-interface-segregation.md  [FRONT MATTER ONLY — b
 ---
 title: "The Interface Segregation Principle: A Complete Guide for .NET Developers"
 date: 2026-04-04
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A deep dive into the Interface Segregation Principle (ISP), the 'I' in SOLID. Covers the origin story at Xerox, what ISP really means (and what it does not mean), how it manifests in the .NET Base Class Library, practical C# refactoring walkthroughs, its relationship to the other SOLID principles, and how to apply it in modern .NET 10 applications."
 tags:
   - solid
@@ -723,7 +723,7 @@ FILE: content/blog/2026-04-05-dependency-injection.md  [FRONT MATTER ONLY — bo
 ---
 title: "The Dependency Inversion Principle: A Comprehensive Guide for .NET Developers"
 date: 2026-04-05
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A deep dive into the Dependency Inversion Principle — the 'D' in SOLID — covering its history, formal definition, practical C# implementations, ASP.NET Core's built-in DI container, keyed services, testing strategies, common pitfalls, and real-world architecture patterns."
 tags:
   - dotnet
@@ -744,7 +744,7 @@ FILE: content/blog/2026-04-06-most-important-solid-principle.md  [FRONT MATTER O
 ---
 title: "The Most Important SOLID Principle: Why Dependency Inversion Changes Everything"
 date: 2026-04-06
-author: myblazor-team
+author: mercifulpotato-team
 summary: A deep, opinionated exploration of which SOLID principle matters most — making the case for Dependency Inversion as the keystone that unlocks testability, flexibility, and clean architecture in .NET applications, while giving each of the other four principles its fair hearing.
 tags:
   - csharp
@@ -765,7 +765,7 @@ FILE: content/blog/2026-04-07-2007-toyota-camry-complete-guide.md  [FRONT MATTER
 ---
 title: "Your 2007 Toyota Camry: The Complete Owner's Guide to Driving, Maintaining, and Eventually Replacing Your Kentucky-Built Sedan"
 date: 2026-04-07
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, plain-language guide for 2007 Toyota Camry base model owners covering daily driving habits, the infamous oil consumption problem, the full maintenance schedule, what breaks as the car ages, and what the new and used car market looks like in 2026 and beyond."
 tags:
   - automotive
@@ -782,7 +782,7 @@ FILE: content/blog/2026-04-08-aspire-containers-self-hosting-guide.md  [FRONT MA
 ---
 title: "Aspire, Containers, and Self-Hosting: A Complete Guide to Deploying .NET Applications on Your Own Hardware"
 date: 2026-04-08
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive guide to Aspire, OCI containers, and self-hosted deployment. Covers what Aspire is, how it generates container artifacts, how to write Containerfiles, how to deploy to bare metal or a VPS using podman-compose, and when (if ever) you actually need Kubernetes. Uses a real Blazor + SQLite application as the running example throughout.
 tags:
   - aspire
@@ -803,7 +803,7 @@ FILE: content/blog/2026-04-09-dotnet-data-structures-complete-guide.md  [FRONT M
 ---
 title: "Data Structures in .NET: A Comprehensive Guide from Primitives to Advanced Collections"
 date: 2026-04-09
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive guide to every data structure available in .NET 10 and C# 14 — from primitive types and value semantics through arrays, lists, dictionaries, trees, graphs, queues, stacks, spans, and frozen collections — with working code examples, internal implementation details, Big-O analysis, and practical advice for ASP.NET developers."
 tags:
   - dotnet
@@ -823,7 +823,7 @@ FILE: content/blog/2026-04-10-relational-databases-normalization-guide.md  [FRON
 ---
 title: "Relational Databases and Normalization: A Complete Guide from Messy Spreadsheets to Sixth Normal Form"
 date: 2026-04-10
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive walkthrough of relational database normalization from UNF through 6NF, using a real Blazor Server contact management application as the running example. Includes C# code with Dapper and EF Core at every level, a critique of the starting schema, practical cost-benefit analysis for each normal form, and a deep dive into Entity-Attribute-Value.
 tags:
   - databases
@@ -844,7 +844,7 @@ FILE: content/blog/2026-04-11-dotnet10-csharp14-complete-guide.md  [FRONT MATTER
 ---
 title: "The Complete .NET 10 and C# 14 Guide: Everything You Need to Know from Framework to Modern .NET"
 date: 2026-04-11
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, from-the-ground-up guide to .NET 10 and C# 14 for developers coming from any .NET background — covering the full history of .NET Framework through modern .NET, every major C# language feature from version 1.0 to 14, the .NET 10 runtime and SDK improvements, ASP.NET Core 10, Blazor, EF Core 10, NativeAOT, the SLNX solution format, file-based apps, and practical migration strategies."
 tags:
   - dotnet
@@ -865,7 +865,7 @@ FILE: content/blog/2026-04-12-dfw-home-buying-complete-guide.md  [FRONT MATTER O
 ---
 title: "The Complete Guide to Buying a Home in Dallas–Fort Worth: Single-Family, Multigenerational, Duplex, Barndominium, and Everything In Between"
 date: 2026-04-12
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive, checklist-driven guide to purchasing a home in the Dallas–Fort Worth metroplex. Covers soil conditions, foundation types, safety, utilities, ADU zoning, barndominiums, manufactured homes, duplexes, fourplexes, new construction versus existing homes, and post-purchase maintenance from water softeners to EV charger wiring.
 tags:
   - guide
@@ -880,7 +880,7 @@ FILE: content/blog/2026-04-13-bikram-sambat-nepal-sambat-comprehensive-guide.md 
 ---
 title: "Bikram Sambat and Nepal Sambat: A Comprehensive Guide to Nepal's Calendars, Their Mathematics, and What They Mean for Programmers"
 date: 2026-04-13
-author: myblazor-team
+author: mercifulpotato-team
 featured: true
 summary: A deep-dive into the Bikram Sambat and Nepal Sambat calendar systems — their origins, mathematics, month structures, astronomical foundations, regional variations, new year celebrations, and practical date-time conversion guidance for software developers. Published on the eve of Nepali New Year 2083 BS.
 tags:
@@ -912,7 +912,7 @@ FILE: content/blog/2026-04-14-web-browser-technology-complete-guide.md  [FRONT M
 ---
 title: "Web Browser Technology: The Complete Guide to Engines, Standards, and the Future of the Web Platform"
 date: 2026-04-14
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive deep-dive into web browser technology covering rendering engines (Blink, Gecko, WebKit, LibWeb), JavaScript engines (V8, SpiderMonkey, JavaScriptCore, LibJS), CSS engines, browser architecture, market share, the Ladybird project, upcoming web standards, WebAssembly 3.0, ECMAScript 2026, the Google antitrust case, and practical guidance for web developers building on the modern web platform."
 tags:
   - deep-dive
@@ -929,7 +929,7 @@ FILE: content/blog/2026-04-15-blazor-not-found-page-postmortem.md  [FRONT MATTER
 ---
 title: "Post-Mortem: How We Broke My Blazor Magazine With a Missing @page Directive and What We Learned About Blazor's NotFoundPage in .NET 10"
 date: 2026-04-15
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A detailed post-mortem of a production-breaking bug in My Blazor Magazine caused by migrating from the deprecated Router <NotFound> render fragment to the new .NET 10 NotFoundPage parameter — without adding the required @page directive to the target component. Covers the full history of Blazor's 404 handling, the exact error, the root cause, the fix, and every lesson learned."
 tags:
   - blazor
@@ -948,7 +948,7 @@ FILE: content/blog/2026-04-16-global-money-machine-currency-payments-remittance-
 ---
 title: "The Global Money Machine: Currency, Digital Payments, Remittance, and Nepal's Place in a Changing World"
 date: 2026-04-16
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive exploration of how money moves around the world — from SWIFT messages and card networks to Brazil's Pix, India's UPI, China's digital yuan, Europe's Wero, and CBDCs — with a deep focus on remittance, foreign exchange, and what all of it means for Nepal.
 tags:
   - finance
@@ -968,7 +968,7 @@ FILE: content/blog/2026-04-17-grand-unified-novel-timeline.md  [FRONT MATTER ONL
 ---
 title: "The Grand Human Story: A Unified Chronicle Drawn from the Nine Greatest Novels Ever Written"
 date: 2026-04-17
-author: myblazor-team
+author: mercifulpotato-team
 summary: What happens when A Tale of Two Cities, Frankenstein, War and Peace, Pride and Prejudice, Les Misérables, Middlemarch, Great Expectations, Moby-Dick, and Anna Karenina are woven into a single, unbroken tapestry of human experience? This is that story — one grand timeline, one relentless current of ambition, love, suffering, revolution, and the unquenchable need to be seen.
 tags:
   - literature
@@ -987,7 +987,7 @@ FILE: content/blog/2026-04-18-global-gnss-and-atomic-synchronization.md  [FRONT 
 ---
 title: "The Global Positioning Engine: Atomic Clocks, Trilateration, and the Invisible Infrastructure of Time"
 date: 2026-04-18
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive technical exploration of the world's GNSS constellations, the relativistic physics of atomic clocks, and the C# logic required to turn satellite signals into coordinates — covering GPS, GLONASS, Galileo, BeiDou, QZSS, and NavIC, plus financial market timing, trilateration math, NMEA parsing, and the mounting crisis of spoofing.
 tags:
   - gnss
@@ -1006,7 +1006,7 @@ FILE: content/blog/2026-04-19-sql-server-connection-pooling-complete-guide.md  [
 ---
 title: "The Complete Guide to SQL Server Connection Pooling in ASP.NET: From Framework 4.8 to .NET 10"
 date: 2026-04-19
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive, deeply practical guide to SQL Server connection pooling in ASP.NET applications — covering ADO.NET, Dapper, Entity Framework Core, every configuration knob, monitoring strategies, common failure modes, and when to raise or lower the default pool size of 100.
 tags:
   - aspnet
@@ -1025,7 +1025,7 @@ FILE: content/blog/2026-04-20-httpclientfactory-typed-clients-deep-dive.md  [FRO
 ---
 title: "HttpClientFactory and Typed Clients: The Complete Guide to HTTP Connection Management in .NET"
 date: 2026-04-20
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Socket exhaustion is to HttpClient what connection pool exhaustion is to SQL Server — a silent killer that only reveals itself under load. This exhaustive guide covers the full lifecycle of HttpMessageHandler, DNS staleness, the IHttpClientFactory handler pool, and every pattern from Basic to Typed Clients, from .NET Framework 4.8 to .NET 10."
 tags:
   - aspnet
@@ -1044,7 +1044,7 @@ FILE: content/blog/2026-04-21-threadpool-starvation-and-connection-pooling.md  [
 ---
 title: "Thread Pool Starvation, Injection, and the Other Pool: A Complete Guide to Concurrency in ASP.NET and .NET 10"
 date: 2026-04-21
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Everything you need to know about the .NET Thread Pool's Hill Climbing algorithm, SQL Server connection pooling, and why async/await saves threads but not connections — illustrated with case studies across ASP.NET Framework 4.8, ADO.NET, Dapper, and Entity Framework Core on .NET 10."
 tags:
   - dotnet
@@ -1063,7 +1063,7 @@ FILE: content/blog/2026-04-22-git-comprehensive-guide.md  [FRONT MATTER ONLY —
 ---
 title: "Git: The Complete Guide — Internals, Misconceptions, Branches, Commits, Tags, and Everything In Between"
 date: 2026-04-22
-author: myblazor-team
+author: mercifulpotato-team
 summary: A deep, exhaustive guide to Git covering its history, object model, and every major concept — with special focus on the most common and damaging misconceptions about branches, commits, tags, merging, and rebasing. Includes a full worked scenario demonstrating exactly how diverged branches conflict, how 3-way merge works under the hood, and how to reason about Git's DAG.
 tags:
   - git
@@ -1081,7 +1081,7 @@ FILE: content/blog/2026-04-23-git-sha1-vs-sha256.md  [FRONT MATTER ONLY — body
 ---
 title: "Git's Hash Revolution: SHA-1, SHA-256, and the Long Road to a More Secure Version Control System"
 date: 2026-04-23
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive, deeply technical exploration of how Git's choice of SHA-1 in 2005 shaped its entire architecture, why the SHAttered attack of 2017 changed everything, and what the slow, careful transition to SHA-256 looks like from the inside — including full command walkthroughs, C# tooling examples, migration strategies, and the state of the ecosystem in 2026.
 tags:
   - git
@@ -1102,7 +1102,7 @@ FILE: content/blog/2026-04-24-clojure-beginners-guide.md  [FRONT MATTER ONLY —
 ---
 title: "Clojure: A Beginner's Guide for the C# ASP.NET Developer Who Has Been Doing Everything Wrong"
 date: 2026-04-24
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, from-the-ground-up introduction to Clojure for C# and ASP.NET web developers — covering what the JVM is, why Lisp matters, how to think in data instead of objects, immutability, concurrency, the REPL, functional programming, persistent data structures, macros, and how to unlearn the bad habits that years of enterprise OOP have cemented into your brain."
 tags:
   - clojure
@@ -1122,7 +1122,7 @@ FILE: content/blog/2026-04-25-javascript.md  [FRONT MATTER ONLY — body omitted
 ---
 title: "The Definitive JavaScript Reference for .NET Developers: Language, Ecosystem, and Tooling in 2026"
 date: 2026-04-25
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive guide to JavaScript for C# and ASP.NET developers, covering the language from its 1995 origins through ES2026, engine internals, type coercion quirks, async/await, the Temporal API, Node.js 24, Deno 2.7, Bun 1.3, Rust-based build tooling, TypeScript 7's Go rewrite, supply chain security, and .NET interop patterns.
 tags:
   - javascript
@@ -1141,7 +1141,7 @@ FILE: content/blog/2026-04-26-typescript.md  [FRONT MATTER ONLY — body omitted
 ---
 title: "The Definitive TypeScript Reference for .NET Developers: Language, Ecosystem, and Tooling in 2026"
 date: 2026-04-26
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive guide to TypeScript for C# and ASP.NET developers
 tags:
   - typescript
@@ -1161,7 +1161,7 @@ FILE: content/blog/2026-04-27-golang.md  [FRONT MATTER ONLY — body omitted to 
 ---
 title: "Go in 2026: The Definitive Technical Guide from Hello World to Production Mastery"
 date: 2026-04-27
-author: myblazor-team
+author: mercifulpotato-team
 summary: Everything a backend developer needs to know about Go — version history from 1.22 to 1.26, language internals, the GMP scheduler, Green Tea GC, Swiss Tables maps, generics evolution, concurrency patterns, tooling, standard library, and honest comparisons with C#, Rust, Java, and Python.
 tags:
   - golang
@@ -1181,7 +1181,7 @@ FILE: content/blog/2026-04-28-rust.md  [FRONT MATTER ONLY — body omitted to sa
 ---
 title: "The C# Developer's Crucible: A Comprehensive Guide to Unlearning Bad Habits and Mastering Rust"
 date: 2026-04-28
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive, no-excuses guide to transitioning from ASP.NET Core to Rust. We deconstruct terrible C# habits, explain the borrow checker from first principles, and build high-performance APIs."
 tags:
   - rustlang
@@ -1199,7 +1199,7 @@ FILE: content/blog/2026-04-29-angular-form.md  [FRONT MATTER ONLY — body omitt
 ---
 title: Angular in 2026 - signals, forms, and the modern developer toolkit
 date: 2026-04-29
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive guide to signals and forms in Angular in 2026
 tags:
   - typescript
@@ -1219,7 +1219,7 @@ FILE: content/blog/2026-04-30-angular-signals-reactive-forms-guide.md  [FRONT MA
 ---
 title: "Composable, Reactive Forms in Angular Using Signals: A Complete Guide from First Principles to Production Patterns"
 date: 2026-04-30
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, from-the-ground-up guide to building composable, reactive forms in Angular using signals — covering JavaScript and TypeScript fundamentals, the Angular framework from scratch, template-driven and reactive forms, the new experimental Signal Forms API in Angular 21, validation, custom controls, migration strategies, and production best practices. Written for ASP.NET developers with no prior Angular experience."
 tags:
   - angular
@@ -1241,7 +1241,7 @@ FILE: content/blog/2026-05-01-javascript-modern-web-first-principles.md  [FRONT 
 ---
 title: "JavaScript for the Modern Web in 2026: Complete Web Applications from First Principles Without npm, Without Build Steps, Without Nonsense"
 date: 2026-05-01
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, from-first-principles guide to building complete web applications using only what ships in evergreen browsers — vanilla JavaScript (ES2026), pure CSS, Web Components, and the Fetch API. No npm. No Node.js. No build step. No Sass. No vendor prefixes. Covers the Temporal API, Explicit Resource Management, container queries, cascade layers, native CSS nesting, shadow DOM, client-side routing, state management, and full application architecture — with extensive code examples, case studies, and honest comparisons to framework-heavy alternatives."
 tags:
   - javascript
@@ -1262,7 +1262,7 @@ FILE: content/blog/2026-05-02-javascript-css-from-ground-up.md  [FRONT MATTER ON
 ---
 title: "JavaScript and CSS from the Ground Up: Complete Web Applications from First Principles in 2026"
 date: 2026-05-02
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive guide to building complete web applications using only what evergreen browsers provide in 2026 — no npm, no build step, no frameworks, no libraries. Covers modern CSS (nesting, container queries, anchor positioning, popover, @scope, @layer, custom properties, oklch, view transitions), modern JavaScript (ES2026, Temporal, Web Components, Shadow DOM, Fetch, AbortController, structuredClone, modules), and practical architecture for real applications from first principles.
 tags:
   - javascript
@@ -1282,7 +1282,7 @@ FILE: content/blog/2026-05-03-html-javascript-css-from-first-principles.md  [FRO
 ---
 title: "HTML, JavaScript, and CSS from the Ground Up: Building Complete Web Applications Without Any External Packages, From First Principles, for the Modern Web in 2026"
 date: 2026-05-03
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive, from-first-principles guide to building complete web applications using nothing but what evergreen browsers provide — no npm, no build step, no TypeScript, no external dependencies of any kind. Covers semantic HTML, modern CSS (container queries, nesting, :has(), layers, anchor positioning, view transitions), vanilla JavaScript (ES modules, fetch, Web Components, Shadow DOM, Custom Elements), Content Security Policy, accessibility, performance, and the full architecture of a production application — all with working code examples you can copy into a text file and open in a browser."
 tags:
   - html
@@ -1306,7 +1306,7 @@ FILE: content/blog/2026-05-04-rust-programming-language-complete-guide.md  [FRON
 ---
 title: "The Rust Programming Language: High-Performance Computing from First Principles — Data Structures, Algorithms, and Everything You Were Afraid to Ask"
 date: 2026-05-04
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, from-the-ground-up guide to the Rust programming language for developers who want to understand systems programming, memory management, ownership, data structures, algorithms, and high-performance computing — all without importing a single external crate. Every concept explained from first principles with bad code, good code, and the reasoning behind both."
 featured: true
 tags:
@@ -1328,7 +1328,7 @@ FILE: content/blog/2026-05-05-kotlin-android-comprehensive-guide.md  [FRONT MATT
 ---
 title: "Kotlin, Compose, and Android Development: A Comprehensive Guide from First Principles for the ASP.NET Developer Who Wants to Build Real Things"
 date: 2026-05-05
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive, from-the-ground-up guide to Kotlin, Jetpack Compose, Kotlin Multiplatform, and Android development — covering the JVM, the language itself, data structures, algorithms, Compose UI, app signing, Containerfiles for CI, and a complete GitHub Actions pipeline for building signed release APKs on every push. Written for C# and ASP.NET developers who want to understand everything, not just copy-paste boilerplate."
 tags:
   - kotlin
@@ -1354,7 +1354,7 @@ FILE: content/blog/2026-05-06-swift-ios-apple-comprehensive-guide.md  [FRONT MAT
 ---
 title: "Swift, SwiftUI, and the Apple Ecosystem: A Comprehensive Guide from First Principles for the ASP.NET Developer Who Wants to Ship on iPhone"
 date: 2026-05-06
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive, from-the-ground-up guide to Swift, SwiftUI, Xcode, and the entire Apple development ecosystem — covering the language from variables to concurrency, SwiftUI from hello world to production architecture, app signing, provisioning profiles, TestFlight, App Store submission, data structures and algorithms in Swift, and a complete GitHub Actions pipeline for automated builds. Written for C# and ASP.NET developers who need to understand everything, not just follow a tutorial."
 tags:
   - swift
@@ -1380,7 +1380,7 @@ FILE: content/blog/2026-05-07-dart-flutter-comprehensive-guide.md  [FRONT MATTER
 ---
 title: "Dart and Flutter: A Comprehensive Guide from First Principles for the ASP.NET Developer Who Wants to Build Everywhere from a Single Codebase"
 date: 2026-05-07
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive, from-the-ground-up guide to Dart and Flutter — covering the Dart language from variables through isolates, Flutter's widget system from hello world to production architecture, state management, the rendering pipeline and Impeller engine, data structures and algorithms implemented from scratch, platform channels, building for Android, iOS, web, Windows, macOS, and Linux, app signing for every platform, a complete GitHub Actions CI/CD pipeline, and the practical engineering knowledge you need to ship real applications. Written for C# and ASP.NET developers who need to understand the entire stack, not just follow a wizard."
 tags:
   - dart
@@ -1408,7 +1408,7 @@ FILE: content/blog/2026-05-08-feed.md  [FRONT MATTER ONLY — body omitted to sa
 ---
 title: "The Feed: A Novel of the Age of Algorithmic Nourishment"
 date: 2026-05-08
-author: myblazor-team
+author: mercifulpotato-team
 summary: "In 2047, nobody chooses what to eat anymore. The plate arrives, and you consume. A dystopian novel about a world where the algorithm decides every meal — and the people who forgot they ever had a choice."
 tags:
   - fiction
@@ -1426,7 +1426,7 @@ FILE: content/blog/2026-05-09-sql.md  [FRONT MATTER ONLY — body omitted to sav
 ---
 title: "Relational Databases, SQL, and Parameterized Queries: The Complete Guide for ASP.NET Developers Who Are Barely Keeping It Together"
 date: 2026-05-09
-author: myblazor-team
+author: mercifulpotato-team
 summary: A brutally honest, exhaustive deep-dive into relational databases, SQL fundamentals, normalization, and parameterized queries for .NET developers — starting from absolute first principles and ending at production-grade patterns.
 tags:
   - sql
@@ -1488,7 +1488,7 @@ FILE: content/blog/2026-05-12-sql.md  [FRONT MATTER ONLY — body omitted to sav
 ---
 title: "The Complete Guide to Relational Databases, SQL, and Normalization: From First Principles to Third Normal Form and Beyond"
 date: 2026-05-12
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive, ground-up exploration of relational databases, SQL, and database normalization — covering the history of the relational model, the rules of 1NF through BCNF, practical design patterns, real-world C# and ASP.NET integration, and the hard-won lessons that separate good database design from the kind that haunts a codebase for years.
 tags:
   - sql
@@ -1508,7 +1508,7 @@ FILE: content/blog/2026-05-13-git.md  [FRONT MATTER ONLY — body omitted to sav
 ---
 title: "Git for TFS Developers: The Complete, Exhaustive, No-Stone-Unturned Guide to Migrating Your Brain from Team Foundation Version Control to Git"
 date: 2026-05-13
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, deeply patient guide for ASP.NET Web Forms developers who have used Team Foundation Version Control (TFVC) in Visual Studio for years and now need to learn Git. Covers every concept from first principles, maps every TFS operation to its Git equivalent, walks through dozens of real-world scenarios including merge conflicts, branching strategies, rebasing, cherry-picking, and the exact clicks in Visual Studio 2026. Includes a full case study of diverged branches, three-way merge, and why you cannot always merge one feature branch into another."
 featured: true
 tags:
@@ -1533,7 +1533,7 @@ FILE: content/blog/2026-05-14-git.md  [FRONT MATTER ONLY — body omitted to sav
 ---
 title: "Git for TFS Developers, Part 2: The Three-Way Merge Algorithm, Every Conflict Type, tf.exe Command Mapping, CI/CD Integration, and Fifty More Scenarios You Will Encounter in Real Life"
 date: 2026-05-14
-author: myblazor-team
+author: mercifulpotato-team
 summary: "The companion to our Git for TFS Developers guide. This second part dives into everything that could not fit in the first article: the three-way merge algorithm explained line by line, every type of merge conflict with resolution walkthroughs, a complete tf.exe-to-git command mapping, Azure DevOps branch policies, GitHub branch protection, CI/CD pipeline integration, the fork-and-pull model, multiple remotes, git rerere, patch files, shallow and partial clones, monorepo strategies, worktrees, merge tool configuration, authentication, large repository performance, history cleanup, disaster recovery, and fifty more real-world scenarios with exact steps."
 tags:
   - git
@@ -1559,7 +1559,7 @@ FILE: content/blog/2026-05-15-load-bearing-bugs-legacy-aspnet-guide.md  [FRONT M
 ---
 title: "Load-Bearing Bugs: A Comprehensive Guide to Finding, Understanding, and Surviving the Subtle Defects That Keep Legacy ASP.NET Applications Alive"
 date: 2026-05-15
-author: myblazor-team
+author: mercifulpotato-team
 summary: "What happens when you find a bug in a legacy ASP.NET application and realize the bug might be the only thing keeping the application secure? A comprehensive, from-first-principles guide to load-bearing bugs, defensive error handling, session state traps, dynamic SQL failures, infrastructure upgrades, and what a junior developer should actually do when they stumble into code that is simultaneously broken and indispensable."
 featured: true
 tags:
@@ -1584,7 +1584,7 @@ FILE: content/blog/2026-05-16-load-bearing-bugs-part-2-survival-guide.md  [FRONT
 ---
 title: "Load-Bearing Bugs, Part 2: The Complete Survival Guide to SQL Injection, web.config, IIS, Error Handling, Refactoring, Security, and Everything Else We Could Not Fit Into One Article"
 date: 2026-05-16
-author: myblazor-team
+author: mercifulpotato-team
 summary: "The sequel to our load-bearing bugs guide. This time we go deeper: a full SQL injection attack walkthrough, an exhaustive web.config reference, IIS application pool internals, Global.asax error handling, a step-by-step test-first refactoring of the broken code, source control archaeology with git blame and git bisect, the OWASP Top 10 2025 explained for ASP.NET developers, session hijacking and CSRF, how to write a good bug ticket, code review culture, deployment strategies, the strangler fig migration pattern, and blameless retrospectives."
 featured: true
 tags:
@@ -1613,7 +1613,7 @@ FILE: content/blog/2026-05-17-react.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "The Elephant in the Room: A Seven-Part Guide to React vs. Blazor WebAssembly for ASP.NET Developers — Overview"
 date: 2026-05-17
-author: myblazor-team
+author: mercifulpotato-team
 summary: "You have just joined a team considering whether to modernize a legacy ASP.NET application with React or Blazor WebAssembly. This overview article frames the seven-part series, explains who it is for, and lays the architectural and historical groundwork you need before diving into the technical comparisons."
 featured: true
 tags:
@@ -1635,7 +1635,7 @@ FILE: content/blog/2026-05-18-react.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "The Elephant in the Room, Part 2: The Virtual DOM vs. the Render Tree — A Systems-Level Deconstruction"
 date: 2026-05-18
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A deep architectural dive into how React paints pixels using the Virtual DOM and Fiber architecture, compared to how Blazor WebAssembly uses a RenderTree. We build a tiny React clone in plain JavaScript, examine garbage collection costs, and explain why React needs explicit memoization while .NET's AOT compiler often handles optimizations automatically."
 tags:
   - react
@@ -1658,7 +1658,7 @@ FILE: content/blog/2026-05-19-react.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "The Elephant in the Room, Part 3: Escaping the useEffect Trap — Component Lifecycles Across Paradigms"
 date: 2026-05-19
-author: myblazor-team
+author: mercifulpotato-team
 summary: "React's functional components and hooks fundamentally changed front-end development, but they introduced a notoriously complex mental model for side effects. We do a forensic breakdown of a real production bug caused by a missing dependency array, explain the stale closure problem for object-oriented developers, and map every React lifecycle to its direct .NET equivalent."
 tags:
   - react
@@ -1682,7 +1682,7 @@ FILE: content/blog/2026-05-20-react.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "The Elephant in the Room, Part 4: The Polyglot Front-End — Safely Sandboxing React Components via JSInterop"
 date: 2026-05-20
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Sometimes a project requires a specific React library — a complex data grid, a WebGL canvas — that has no native C# equivalent. This is the definitive survival guide for hybrid Blazor-plus-React architectures, covering JSInterop patterns, memory management across the WASM boundary, the Strangler Fig migration pattern, and JSON serialization pitfalls."
 tags:
   - react
@@ -1705,7 +1705,7 @@ FILE: content/blog/2026-05-21-react.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "The Elephant in the Room, Part 5: State of the Union — Context, Redux, and the Absence of Dependency Injection"
 date: 2026-05-21
-author: myblazor-team
+author: mercifulpotato-team
 summary: "JavaScript frameworks handle global state in ways that feel chaotic to developers used to IServiceCollection and scoped lifecycles. We trace the full history of React state management from prop drilling through Redux, Zustand, Jotai, and Signals, and compare it directly to Blazor's first-class dependency injection. Includes memory reference diagrams explaining why mutating an object in React silently fails."
 tags:
   - react
@@ -1729,7 +1729,7 @@ FILE: content/blog/2026-05-22-react.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "The Elephant in the Room, Part 6: Build Pipelines and Bundlers — Vite, esbuild, and the .NET Publish Pipeline"
 date: 2026-05-22
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A high-performance static web architecture requires obsessing over bundle sizes and network requests. This deep dive covers Vite 8, esbuild, tree-shaking, Rolldown, dead-code elimination, and how both React and Blazor WebAssembly applications can be optimized for GitHub Pages-style serverless deployments with no Node.js backend."
 tags:
   - vite
@@ -1754,7 +1754,7 @@ FILE: content/blog/2026-05-23-react.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "The Elephant in the Room, Part 7: The Conclusion — How to Actually Make the Decision"
 date: 2026-05-23
-author: myblazor-team
+author: mercifulpotato-team
 summary: "After six deep-dive articles covering rendering models, lifecycle hooks, JSInterop, state management, and build pipelines, it is time to stop analyzing and start deciding. This conclusion gives you a concrete decision framework, a practical recommendation for the most common ASP.NET team scenarios, and a final honest reckoning with the trade-offs you will live with either way."
 featured: true
 tags:
@@ -1778,7 +1778,7 @@ FILE: content/blog/2026-05-24-no-build-web-overview.md  [FRONT MATTER ONLY — b
 ---
 title: "Without a Net, Part 1: Overview — Why a Plain Browser Is Enough in 2026"
 date: 2026-05-24
-author: myblazor-team
+author: mercifulpotato-team
 summary: "We just spent seven articles dissecting React. Now the honest next question — do you actually need any of that? This is the opening post of a fifteen-part series on building real, responsive, accessible, offline-capable web applications in 2026 using only what evergreen browsers ship: plain HTML, plain CSS, plain JavaScript. No npm. No Node. No bundler. No framework. We frame the series, define what 'evergreen' means in 2026, tour the capabilities browsers now expose natively, and set expectations for the fourteen posts that follow."
 featured: true
 tags:
@@ -1800,7 +1800,7 @@ FILE: content/blog/2026-05-25-semantics.md  [FRONT MATTER ONLY — body omitted 
 ---
 title: "Without a Net, Part 2: Semantic HTML and the Document Outline Nobody Taught You"
 date: 2026-05-25
-author: myblazor-team
+author: mercifulpotato-team
 summary: "HTML is not markup for making things look right — it is a typed language for expressing document structure. Day 2 of our fifteen-part no-build web series covers the document outline, landmark elements, every input type, the dialog and details elements that replace JavaScript modal and accordion libraries, the popover attribute, the inert attribute, and exactly when (and when not) to reach for ARIA. If you have ever written a 'div with a role of button' instead of a button, this article is for you."
 tags:
   - html
@@ -1824,7 +1824,7 @@ FILE: content/blog/2026-05-26-cascade.md  [FRONT MATTER ONLY — body omitted to
 ---
 title: "Without a Net, Part 3: The Cascade, Specificity, and @layer — Organising CSS Without a Framework"
 date: 2026-05-26
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 3 of our fifteen-part no-build web series tackles CSS as a language. We build a complete mental model of the cascade from first principles, demystify specificity without memorising '0,0,1,0' tables, and introduce custom properties, @layer, and @scope — the three features that made CSS-in-JS largely unnecessary. By the end, you will know how to organise a maintainable stylesheet for a real application without Tailwind, without Sass, without CSS Modules, and without BEM."
 tags:
   - css
@@ -1847,7 +1847,7 @@ FILE: content/blog/2026-05-27-css.md  [FRONT MATTER ONLY — body omitted to sav
 ---
 title: "Without a Net, Part 4: Modern CSS Layout — Flexbox, Grid, Subgrid, and Container Queries"
 date: 2026-05-27
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 4 of our fifteen-part no-build web series covers the CSS layout model of 2026 from first principles. We build a mental model of Flexbox and Grid, reimplement the entire Bootstrap twelve-column grid in nine lines of CSS, cover Subgrid in depth, introduce container queries as the replacement for most media queries, and finally discuss why 'masonry' is still waiting on the spec committee. Every layout pattern you reach for a framework to solve is a one-liner or a six-liner in modern CSS."
 tags:
   - css
@@ -1871,7 +1871,7 @@ FILE: content/blog/2026-05-28-responsive.md  [FRONT MATTER ONLY — body omitted
 ---
 title: "Without a Net, Part 5: Responsive Design in 2026 — Container Queries, clamp(), Fluid Type, and :has()"
 date: 2026-05-28
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 5 of our fifteen-part no-build web series takes a hard look at responsive design as a discipline. We build a mental model for intrinsic design, replace most media queries with container queries and fluid values, reach into clamp() and the typography scale, rebuild a responsive navbar without a single breakpoint, use :has() to react to DOM state without JavaScript, and discuss the accessibility settings — reduced motion, reduced transparency, data saver — that turn a responsive site into a genuinely adaptable one. If you still think 'responsive' means 'mobile breakpoint at 768px,' this article is for you."
 tags:
   - css
@@ -1896,7 +1896,7 @@ FILE: content/blog/2026-05-29-typography.md  [FRONT MATTER ONLY — body omitted
 ---
 title: "Without a Net, Part 6: Colour, Typography, and Motion — oklch, light-dark(), Variable Fonts, and View Transitions"
 date: 2026-05-29
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 6 of our fifteen-part no-build web series covers the design half of modern CSS — perceptually uniform colour with oklch(), automatic theme switching with light-dark(), variable fonts that ship one file to cover every weight, typographic refinements you did not know existed, and the View Transitions API that animates page changes with a single function call. You will leave this article with a complete design system, in plain CSS, that beats every 'utility framework' on file size and flexibility."
 tags:
   - css
@@ -1923,7 +1923,7 @@ FILE: content/blog/2026-05-30-modules.md  [FRONT MATTER ONLY — body omitted to
 ---
 title: "Without a Net, Part 7: Native ES Modules — Import Maps, Dynamic Import, and the Death of the Bundler"
 date: 2026-05-30
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 7 of our fifteen-part no-build web series makes the biggest architectural claim in the whole run: in 2026 you do not need a bundler. ES modules run natively in every evergreen browser, import maps give you dependency resolution without npm, dynamic import gives you code splitting without Webpack, and JSDoc comments give you most of TypeScript's ergonomics without a compile step. We build the mental model, walk through every feature, cover the small but real trade-offs, and end with a complete, runnable, module-based application whose entire build process is a single copy-to-output."
 tags:
   - javascript
@@ -1944,7 +1944,7 @@ FILE: content/blog/2026-05-31-dom-events.md  [FRONT MATTER ONLY — body omitted
 ---
 title: "Without a Net, Part 8: The DOM, Events, and Platform Primitives Everyone Reimplemented"
 date: 2026-05-31
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 8 of our fifteen-part no-build web series tours the DOM, events, and the quiet-but-vast set of browser primitives that replaced about half of jQuery's reason for existing. We cover querySelector in depth, event delegation and AbortController, the full fetch API with streaming and timeouts, the three Observer APIs (Intersection, Mutation, Resize), structuredClone, requestIdleCallback, and the handful of utilities that make 'vanilla JavaScript' feel like a mature framework. Zero dependencies, zero frameworks, just the platform."
 tags:
   - javascript
@@ -1969,7 +1969,7 @@ FILE: content/blog/2026-06-01-state.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Without a Net, Part 9: State Management Without a Library — Proxies, Signals from Scratch, and the Observer Pattern"
 date: 2026-06-01
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 9 of our fifteen-part no-build web series tackles state management from first principles. We build, from scratch, the full mental model: observable stores, the Observer pattern in 40 lines, reactive signals with automatic dependency tracking, a complete global store with history and undo, Proxy-based reactivity, and a practical comparison to Redux, Zustand, Jotai, and MobX. By the end you will have a working state library — in 200 lines of plain JavaScript — that covers the vast majority of what an application actually needs, and you will understand every line of it."
 tags:
   - javascript
@@ -1991,7 +1991,7 @@ FILE: content/blog/2026-06-02-web-custom-elements.md  [FRONT MATTER ONLY — bod
 ---
 title: "Without a Net, Part 10: Web Components — Custom Elements, Shadow DOM, Templates, and Slots"
 date: 2026-06-02
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 10 of our fifteen-part no-build web series covers Web Components — the platform's native answer to 'components without a framework.' Custom elements with full lifecycle hooks, Shadow DOM for style encapsulation, Declarative Shadow DOM for server rendering, slots for composition, ElementInternals for form-associated components, and custom states for CSS targeting. We build a reusable <confirm-dialog> wrapping the native <dialog> element, an accessible <tabs> component with keyboard navigation, a <live-clock> that ticks by itself, and a form-associated <rating-input>. Zero dependencies, full accessibility, and components that work identically in React, Vue, Blazor, or plain HTML."
 tags:
   - javascript
@@ -2015,7 +2015,7 @@ FILE: content/blog/2026-06-03-web-routing-navigation.md  [FRONT MATTER ONLY — 
 ---
 title: "Without a Net, Part 11: Client-Side Routing with the Navigation API and View Transitions"
 date: 2026-06-03
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 11 of our fifteen-part no-build web series builds a complete client-side router from scratch, using the brand-new Navigation API that just became Baseline Newly Available in January 2026. We cover the full mental model — what client-side routing is, why MPAs deserve a fair hearing, the Navigation API replacing fifteen years of pushState wrangling, and how to combine it with View Transitions for truly app-like navigation. Two complete worked routers — a ~120-line SPA router with shared-element transitions and a zero-JavaScript MPA approach — and an honest decision framework for choosing between them."
 tags:
   - javascript
@@ -2038,7 +2038,7 @@ FILE: content/blog/2026-06-04-web-forms-validation.md  [FRONT MATTER ONLY — bo
 ---
 title: "Without a Net, Part 12: Forms, Validation, and the Constraint Validation API"
 date: 2026-06-04
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 12 of our fifteen-part no-build web series covers forms — the most important and most under-taught part of the web platform. We cover every input type that has appeared in the last decade, the Constraint Validation API that has been there since 2010 and that almost nobody reads about, the pseudo-classes that make CSS-only error styling work properly, setCustomValidity for arbitrary rules, the new requestSubmit() method, async server-side validation done right, accessible error messages with aria-describedby and aria-invalid, autocomplete tokens that actually help users, and a complete worked sign-up form with everything wired up. If you have ever reached for Formik or React Hook Form because you needed validation, today is the day you stop."
 tags:
   - html
@@ -2061,7 +2061,7 @@ FILE: content/blog/2026-06-05-web-storage-offline.md  [FRONT MATTER ONLY — bod
 ---
 title: "Without a Net, Part 13: Storage, Service Workers, and Offline"
 date: 2026-06-05
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 13 of our fifteen-part no-build web series covers persistence and offline. We walk through every storage option the browser ships — localStorage, sessionStorage, IndexedDB, the Cache API, the Origin Private File System, and the smaller utilities like Cookies — explaining when each is right. Then we build a complete service worker with stale-while-revalidate caching, a precache for the app shell, an offline fallback page, navigation preload for fast first responses, and a Background Sync queue for offline form submissions. We finish with the manifest file that turns the site into an installable PWA. By the end, our magazine works fully offline, installs to the home screen, and survives a flaky train Wi-Fi connection — built from scratch in about 250 lines."
 tags:
   - javascript
@@ -2086,7 +2086,7 @@ FILE: content/blog/2026-06-06-web-accessibility-performance-security.md  [FRONT 
 ---
 title: "Without a Net, Part 14: Accessibility, Performance, and Security"
 date: 2026-06-06
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 14 of our fifteen-part no-build web series covers the three concerns that separate a site that technically works from one that is actually good. We walk through WCAG 2.2 AA conformance — focus management, keyboard navigation, screen-reader testing, the rules nobody enforces. Core Web Vitals — INP, LCP, CLS — explained and budgeted. Performance techniques — content-visibility, lazy-loading, modulepreload, the right image formats. CSP, the brand-new (February 2026) cross-browser Trusted Types, Subresource Integrity, the security headers you should set on every site. We finish by running our magazine through Lighthouse and a screen reader and see how it scores. The honest answer: very well, because we have been building for these concerns from day one."
 tags:
   - accessibility
@@ -2111,7 +2111,7 @@ FILE: content/blog/2026-06-07-capstone.md  [FRONT MATTER ONLY — body omitted t
 ---
 title: "Without a Net, Part 15: The Conclusion — A Complete Application End to End"
 date: 2026-06-07
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day 15 of our fifteen-part no-build web series is the capstone. We assemble everything from the previous fourteen days into a complete, working blog reader application — Markdown rendering, search, tag filtering, dark mode, View Transitions, keyboard navigation, WCAG 2.2 AA conformance, offline PWA, RSS feed, comment composer. The whole thing is about 1,500 lines of plain HTML, CSS, and JavaScript, deployable to GitHub Pages with one git push. We walk through the full file structure, the build script (yes, there is one — fifty lines of Bash), the deployment pipeline, and run the audits. We close with a reflection on what fifteen days of using the platform has actually given us, an honest list of where we cheated, and a decision framework for choosing the no-build path for your next project."
 tags:
   - capstone
@@ -2135,7 +2135,7 @@ FILE: content/blog/2026-06-08-house.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Building a House in Kathmandu, Part 1: Before the First Brick"
 date: 2026-06-08
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day one of a seven-part series on building a modest, earthquake-safe family home on six aana of land in the Bhaktapur side of the Kathmandu Valley, on a hard budget ceiling of NPR 2 crore. This opening part covers everything that must be settled before a single brick is laid: what your land can actually hold under current municipal setback rules, the naksa pass process in plain English, the 2025 seismic code for residential buildings, how to budget across three finish levels, and the one-page written brief that will save you from the single biggest source of cost overruns. No programming, no code — just a patient, first-principles walk through the decisions that quietly decide whether your house ends up comfortable, legal, and within budget, or whether it becomes the house that ate your savings."
 tags:
   - housing
@@ -2158,7 +2158,7 @@ FILE: content/blog/2026-06-09-house.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Building a House in Kathmandu, Part 2: Designing the House"
 date: 2026-06-09
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day two of the seven-part series on building a modest family home in the Bhaktapur side of the Kathmandu Valley. Today we put pencil to paper and actually design the house. We walk the six-aana site at three different hours of the day, trace the sun path from June to December, figure out where the prevailing wind comes from, and translate all of that into a floor-by-floor plan for a tea shop on the ground floor, a kitchen and living room on the first, and two bedrooms with two-and-a-half bathrooms on the second. We cover cross-ventilation in plain English, why the long axis of your house should probably run east-west, how to design a staircase that does not eat half the plot, and the five questions to ask the three architects you interview before you hire one. No programming, no code — just the quiet craft of making six aana feel like eight."
 tags:
   - housing
@@ -2182,7 +2182,7 @@ FILE: content/blog/2026-06-10-house.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Building a House in Kathmandu, Part 3: Foundation and Structure"
 date: 2026-06-10
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day three of the seven-part series on building a modest family home in the Bhaktapur side of the Kathmandu Valley. Today we go underground. We cover what a soil test actually does and why the Kathmandu Valley's silty-clay subsurface demands one for every serious residential build, the honest difference between an isolated footing and a raft foundation, how to integrate the underground water tank into the foundation instead of bolting it on later, and a patient walk through the reinforced concrete frame — columns, beams, slabs, stirrups, lap lengths, and the ductile detailing rules from NBC 201 and NBC 105:2025 that decide whether the house stands up in the next big earthquake. We explain Fe500 versus Fe500D rebar, the real difference between M20 and M25 concrete, and the ten things to look for on site to make sure the drawings are actually being followed. No programming, no code — just the quiet engineering that keeps a house standing for fifty years."
 tags:
   - housing
@@ -2209,7 +2209,7 @@ FILE: content/blog/2026-06-11-house.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Building a House in Kathmandu, Part 4: The Building Envelope"
 date: 2026-06-11
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day four of the seven-part series on building a modest family home in the Bhaktapur side of the Kathmandu Valley. Today we come out of the ground and talk about the part of the house that decides, more than any other single thing, how comfortable you will be and how much you will spend on cooling and heating for the next fifty years — the building envelope. We explain what R-value and U-value actually mean, compare AAC blocks against traditional solid brick in honest numbers, cover roof insulation as the single highest-return decision in the whole project, walk through UPVC versus aluminium versus wooden window frames, explain why double glazing matters more than the glass shop will tell you, and talk through weather stripping, door sweeps, and the dozen small air-leakage details that decide whether the house feels stuffy and expensive or pleasant and cheap to run. Everything here is cheap if designed in and ruinously expensive to retrofit. No programming, no code — just the quiet physics of keeping a house comfortable."
 tags:
   - housing
@@ -2237,7 +2237,7 @@ FILE: content/blog/2026-06-12-house.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Building a House in Kathmandu, Part 5: Water, Power, and Plumbing"
 date: 2026-06-12
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day five of the seven-part series on building a modest family home in the Bhaktapur side of the Kathmandu Valley. Today we turn on the taps, flip the switches, and flush the toilets. We walk through the classic Kathmandu two-tank water system — underground cistern, submersible pump, overhead tank, gravity feed — with honest sizing numbers for a family of five plus a small tea shop. We calculate the household electrical load from scratch, explain why the ground-floor tea shop needs its own NEA meter on day one, cover wiring, earthing, surge protection, backup power, and the practical state of rooftop solar and net metering in Nepal in 2026. We look at solar water heaters (NPR 32,000–75,000 for family-sized systems), rainwater harvesting for the monsoon months, and the septic-tank-versus-sewer decision that depends entirely on your ward. No programming, no code — just the quiet plumbing and wiring that decides whether the house actually works every day for the next fifty years."
 tags:
   - housing
@@ -2264,7 +2264,7 @@ FILE: content/blog/2026-06-13-house.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Building a House in Kathmandu, Part 6: Finishing the Interior"
 date: 2026-06-13
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day six of the seven-part series on building a modest family home in the Bhaktapur side of the Kathmandu Valley. Today we walk through everything you can actually see in a finished house — the flooring, the wall paint, the false ceilings, the internal doors, the kitchen cabinets and countertops, the bathroom tiles and fittings, the wardrobes, the lighting, and the rolling shutter for the tea shop. We work through the three honest finish tiers (basic, mid-range, premium) with real 2026 Nepali prices, walk through a room-by-room specification that hits NPR 1.6 crore of total build cost, explain which finishes age gracefully and which announce their vintage five years in, and give the tea shop the commercial fit-out it needs without gold-plating it. This is the part of the budget where first-time builders most commonly overspend, where the contractors most commonly try to cut corners, and where the difference between nice and luxurious is mostly invisible to anyone but the owner. No programming, no code — just the patient craft of turning a shell into a home."
 tags:
   - housing
@@ -2291,7 +2291,7 @@ FILE: content/blog/2026-06-14-house.md  [FRONT MATTER ONLY — body omitted to s
 ---
 title: "Building a House in Kathmandu, Part 7: Moving In and Living With It"
 date: 2026-06-14
-author: myblazor-team
+author: mercifulpotato-team
 summary: "Day seven — the final day of the seven-part series on building a modest family home in the Bhaktapur side of the Kathmandu Valley. Today we close the series. We walk through the handover-day commissioning checklist that catches the last defects before you take possession of the house, right-size the air conditioning and heating based on the envelope we built rather than on rules of thumb that assume a leaky house, set up the twenty-year maintenance schedule that keeps the house healthy, think honestly about the tea shop as an income hedge and what its first year of operation actually looks like, cover the property tax, rental tax, and insurance decisions that most first-time builders only learn about by accident, and reconcile the final budget against the NPR 2 crore hard ceiling that has governed the entire project. We end with a twenty-year altitude view of the whole build, a frank admission of what the series could not cover, and the quiet thought that the house is no longer a project but a home. No programming, no code — just the patient arithmetic of living in what you have built."
 tags:
   - housing
@@ -2319,7 +2319,7 @@ FILE: content/blog/2026-06-15-chestertons-fence-and-the-monkey-cage.md  [FRONT M
 ---
 title: "Chesterton's Fence and the Monkey Cage: A Developer's Guide to Knowing Which Rules to Keep and Which to Tear Down"
 date: 2026-06-15
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A long, patient essay on the two opposite failure modes every software engineer stumbles into — throwing away rules you do not understand, and blindly obeying rules nobody understands any more. We work through Chesterton's Fence, Hyrum's Law, cargo-culting, vicarious learning, institutional inertia, and the safe-to-fail probe, grounded in first-hand stories from house renovation, a TFS-to-Git migration, and a modern Angular 21 signal-forms rewrite. Bad code, good code, honest acknowledgement of which famous parables are myths, and a decision framework you can actually use on Monday morning."
 tags:
   - software-engineering
@@ -2344,7 +2344,7 @@ FILE: content/blog/2026-06-16-foundation.md  [FRONT MATTER ONLY — body omitted
 ---
 title: "Foundations: An Exhaustive Field Guide to What Holds Every Building Up, From a Garden Shed in Newport News to a Six-Storey Block in Bhaktapur"
 date: 2026-06-16
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A long, patient, deeply detailed walk through every kind of foundation a builder, homeowner, or curious reader is likely to encounter — strip footings, isolated pad footings, slab-on-grade, crawl spaces, full basements, pier-and-beam, frost-protected shallow foundations, raft/mat foundations, driven and bored piles, drilled shafts, helical piers, micropiles, and stone columns. We cover the soil mechanics that decide which foundation makes sense, the climate loads (frost, expansive clay, seismic shaking, hurricane storm surge, liquefaction) that govern the design, the codes that govern construction (IRC, IBC, ACI 318-25, ASCE 7, ASCE 32, NBC 105:2020, NBC 201, NBC 206), and a long parade of regional case studies — from the expansive Blackland Prairie clays under Dallas–Fort Worth, to the 60-inch frost line in northern Minnesota, to the V-zone pile foundations of coastal Florida, to the soft Kalimati black-clay deposits beneath central Kathmandu, to the silty raft slabs of Lalitpur and the gravel-rich north of Bhaktapur. We also cover sheds, decks, fences, manufactured homes, duplexes and townhouses, retaining walls, drainage, dampproofing, waterproofing, common defects, repair techniques, and a fifty-year maintenance schedule. No code, no programming — just the patient civil engineering and pragmatic site experience that decides whether a building stands quietly for a century or becomes a slow-motion disaster."
 tags:
   - housing
@@ -2388,7 +2388,7 @@ FILE: content/blog/2026-06-17-chinese-ev.md  [FRONT MATTER ONLY — body omitted
 ---
 title: "Forbidden Fruit: The Full Map of China's EV Market and the Cars Americans Cannot Have"
 date: 2026-06-17
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive deep-dive into China's electric vehicle market, with special focus on the ultra-affordable segment — cars priced from $6,200 to $16,500 that are reshaping urban mobility worldwide while remaining locked out of the United States by a 100% tariff wall.
 tags:
   - ev
@@ -2408,7 +2408,7 @@ FILE: content/blog/2026-06-18-california-wealth-tax.md  [FRONT MATTER ONLY — b
 ---
 title: "The California Billionaire Tax: A Complete Guide to the 2026 Wealth Tax Initiative — What It Is, Why It Exists, Who Pays, and What Happens Next"
 date: 2026-06-16
-author: myblazor-team
+author: mercifulpotato-team
 summary: California's proposed one-time 5% wealth tax on billionaires has qualified for the November 2026 ballot after gathering over 1.5 million signatures. This exhaustive guide covers the full legal text, the Medi-Cal funding crisis that motivated it, the economic arguments for and against, who is affected, comparable international and domestic wealth taxes, the constitutional questions, and what a yes or no vote means for ordinary Californians.
 tags:
   - california
@@ -2429,7 +2429,7 @@ FILE: content/blog/2026-06-20-sunroom-complete-guide.md  [FRONT MATTER ONLY — 
 ---
 title: "Glass Houses, Sun-Drenched Rooms, and the Law: The Complete American Homeowner's Guide to Sunrooms, Three-Season Rooms, Mudrooms, Conservatories, ADUs, and Everything In Between"
 date: 2026-06-19
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive, leave-no-stone-unturned guide to adding a sunroom, three-season room, mudroom, or conservatory behind your single-family US home — covering every structure type from a $500 polycarbonate screen porch to a $150,000 bespoke glass conservatory, Virginia-specific permits and property tax implications, the full ADU landscape in the Commonwealth, real case studies from homeowners across the country, and every planning, design, contractor, financing, and legal consideration you will face along the way.
 featured: true
 tags:
@@ -2450,7 +2450,7 @@ FILE: content/blog/2026-06-22-sunroom-adu.md  [FRONT MATTER ONLY — body omitte
 ---
 title: "Glass Houses, Sun-Drenched Rooms, and the Law: The Complete American Homeowner's Guide to Sunrooms, Three-Season Rooms, Mudrooms, Conservatories, ADUs, and Everything In Between"
 date: 2026-06-19
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive, leave-no-stone-unturned guide to adding a sunroom, three-season room, mudroom, or conservatory behind your single-family US home — covering every structure type from a $500 polycarbonate screen porch to a $150,000 bespoke glass conservatory, Virginia-specific permits and property tax implications, the full ADU landscape in the Commonwealth, real case studies from homeowners across the country, and every planning, design, contractor, financing, and legal consideration you will face along the way.
 featured: true
 tags:
@@ -2471,7 +2471,7 @@ FILE: content/blog/2026-06-23-adu.md  [FRONT MATTER ONLY — body omitted to sav
 ---
 title: "Building an ADU in Newport News, Virginia: An Exhaustive, Pavement-to-Move-In Field Guide to a Sunroom-Plus-Bedroom-Plus-Bath-Plus-Kitchen Backyard Cottage on the Virginia Peninsula"
 date: 2026-06-23
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A leave-no-stone-unturned guide to designing, permitting, financing, and physically constructing a roughly 800-square-foot accessory dwelling unit — sunroom, bedroom, full bathroom, and kitchen — behind a single-family home in Newport News, Virginia. We walk the entire path from the first conversation with the city planner, through SB 531 and the new Newport News by-right ordinance, through Climate Zone 4A coastal-Virginia building physics, through soil, foundations, framing, the building envelope, MEP, finishes, landscaping, inspections, certificate of occupancy, property tax aftermath, and the first full year of living with the building. Three full case studies, every line item priced to mid-2026 Hampton Roads costs, every code section cited."
 featured: true
 tags:
@@ -2505,7 +2505,7 @@ FILE: content/blog/2026-06-24-used-kia-ev9-complete-guide.md  [FRONT MATTER ONLY
 ---
 title: "The Used Kia EV9: An Exhaustive, Leave-No-Stone-Unturned Guide for the First-Time EV Buyer — Features, Charging, Battery, Maintenance, Taxes, and Whether It Is Worth It"
 date: 2026-06-24
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, ground-level guide to buying a used Kia EV9 in mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs and how to get it done, the ICCU situation explained in plain English, what to inspect before signing, how to maintain an EV (spoiler: much less than a gas car), the full 2025–2026 tax picture after the One Big Beautiful Bill Act, and a frank bottom-line verdict on whether the deal is as good as it looks."
 tags:
   - ev
@@ -2528,7 +2528,7 @@ FILE: content/blog/2026-06-25-voting-rights-act-path-forward-multimember-distric
 ---
 title: "The Voting Rights Act and the Path Forward: Why Congress Must Mandate a Single Statewide Multi-Member District for Every State in America"
 date: 2026-06-25
-author: myblazor-team
+author: mercifulpotato-team
 summary: "On April 29, 2026, the Supreme Court's 6-3 ruling in Louisiana v. Callais gutted what remained of the Voting Rights Act's Section 2 redistricting protections, rendering minority political representation in America almost entirely dependent on the goodwill of state legislatures that have consistently demonstrated they have none. This exhaustive, deeply researched article traces the full arc of American voting rights history from the Three-Fifths Compromise through Reconstruction, Jim Crow, the passage of the VRA, the Roberts Court's decades-long demolition campaign, and the case — both moral and mathematical — for why a mandatory statewide multi-member district with ranked choice voting is now the only viable path to multiracial democracy."
 tags:
   - voting-rights
@@ -2552,7 +2552,7 @@ FILE: content/blog/2026-06-26-land-cap.md  [FRONT MATTER ONLY — body omitted t
 ---
 title: "The Land Ceiling Manifesto: A Case for Universalist Land-Cap Socialism — From Kathmandu to Every City on Earth"
 date: 2026-06-26
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive examination of Universalist Land-Cap Socialism: a model that replaces means-tested welfare with Resource-Based Distributism, enforces a ratcheting private land ceiling, and converts surplus land into permanent public housing — grounded in Nepal's land crisis, Singapore's public housing miracle, and the intellectual traditions of Henry George, Chesterton, and Belloc."
 tags:
   - economics
@@ -2572,7 +2572,7 @@ FILE: content/blog/2027-01-01-happy-new-year-2027.md  [FRONT MATTER ONLY — bod
 ---
 title: "Happy New Year 2027: A Look Back and a Look Ahead"
 date: 2027-01-01
-author: myblazor-team
+author: mercifulpotato-team
 summary: Ringing in 2027 with a comprehensive retrospective on what happened in technology, open source, and web development during 2026, plus our predictions and hopes for the year ahead.
 featured: true
 tags:
@@ -2592,7 +2592,7 @@ FILE: content/blog/2099-01-01-draft-template.md  [FRONT MATTER ONLY — body omi
 title: "Your Post Title Here"
 date: 2099-01-01
 draft: true
-author: myblazor-team
+author: mercifulpotato-team
 summary: A short one- or two-sentence summary that appears on the blog index page.
 featured: false
 tags:
@@ -8439,12 +8439,12 @@ a.tag:hover {
 
 
 -------------------------------------------------------------------------------
-FILE: src/ObserverMagazine.Web/wwwroot/images/authors/myblazor-team.txt
+FILE: src/ObserverMagazine.Web/wwwroot/images/authors/mercifulpotato-team.txt
 -------------------------------------------------------------------------------
 Hello, world!
 
 Gemini prompt for image: 
-can you please generate a 200px by 200px png image for src/ObserverMagazine.Web/wwwroot/images/authors/myblazor-team.jpg it should be generic and not offensive to any one especially not to any protected group 
+can you please generate a 200px by 200px png image for src/ObserverMagazine.Web/wwwroot/images/authors/mercifulpotato-team.jpg it should be generic and not offensive to any one especially not to any protected group 
 
 
 -------------------------------------------------------------------------------
@@ -12999,7 +12999,7 @@ public class ContentProcessorTests
             ---
             title: Test Post
             date: 2026-03-01
-            author: myblazor-team
+            author: mercifulpotato-team
             summary: A test summary
             tags:
               - test
@@ -13017,7 +13017,7 @@ public class ContentProcessorTests
 
         Assert.Equal("Test Post", frontMatter.Title);
         Assert.Equal(new DateTime(2026, 3, 1), frontMatter.Date);
-        Assert.Equal("myblazor-team", frontMatter.Author);
+        Assert.Equal("mercifulpotato-team", frontMatter.Author);
         Assert.Equal("A test summary", frontMatter.Summary);
         Assert.Equal(["test", "integration"], frontMatter.Tags!);
         Assert.True(frontMatter.Featured);
@@ -14421,7 +14421,7 @@ public class BlogServiceTests
             Slug = "first-post",
             Title = "First Post",
             Date = new DateTime(2026, 1, 15),
-            Author = "myblazor-team",
+            Author = "mercifulpotato-team",
             AuthorName = "Observer Team",
             Summary = "The first post",
             Tags = ["test", "intro"],
@@ -14433,7 +14433,7 @@ public class BlogServiceTests
             Slug = "second-post",
             Title = "Second Post",
             Date = new DateTime(2026, 2, 20),
-            Author = "myblazor-team",
+            Author = "mercifulpotato-team",
             AuthorName = "Observer Team",
             Summary = "The second post",
             Tags = ["test"],
@@ -14445,7 +14445,7 @@ public class BlogServiceTests
     [
         new()
         {
-            Id = "myblazor-team",
+            Id = "mercifulpotato-team",
             Name = "Observer Team",
             Email = "hello@observermagazine.example",
             Bio = "The team behind My Blazor Magazine.",
@@ -14490,7 +14490,7 @@ public class BlogServiceTests
         Assert.NotNull(featured);
         Assert.Equal("First Post", featured.Title);
         Assert.Equal(2, featured.ReadingTimeMinutes);
-        Assert.Equal("myblazor-team", featured.Author);
+        Assert.Equal("mercifulpotato-team", featured.Author);
         Assert.Equal("Observer Team", featured.AuthorName);
     }
 
@@ -14559,7 +14559,7 @@ public class BlogServiceTests
         var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
         var service = CreateService(httpClient);
 
-        var author = await service.GetAuthorAsync("myblazor-team");
+        var author = await service.GetAuthorAsync("mercifulpotato-team");
 
         Assert.NotNull(author);
         Assert.Equal("hello@observermagazine.example", author.Email);

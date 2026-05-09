@@ -251,7 +251,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -263,7 +263,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -273,7 +273,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -338,7 +338,7 @@ Here is the comprehensive guide you requested. I have structured it to meticulou
 ---
 title: "The C# Developer's Crucible: A Comprehensive Guide to Unlearning Bad Habits and Mastering Rust"
 date: 2026-04-28
-author: myblazor-team
+author: mercifulpotato-team
 summary: "An exhaustive, no-excuses guide to transitioning from ASP.NET Core to Rust. We deconstruct terrible C# habits, explain the borrow checker from first principles, and build high-performance APIs."
 tags:
   - rustlang

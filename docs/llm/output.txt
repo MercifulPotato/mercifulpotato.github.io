@@ -1,4 +1,4 @@
-kushal@fedora:~/Videos/dl$ cd /home/kushal/src/dotnet/myblazor/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+kushal@fedora:~/Videos/dl$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 171M	.
 
 real	0m0.018s
@@ -22,7 +22,7 @@ Publish before:    2026-05-06 00:12:05 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
-  Loaded author: myblazor-team (My Blazor Team)
+  Loaded author: mercifulpotato-team (My Blazor Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
 Found 105 markdown files
 Processing: 2026-01-15-welcome-to-observer-magazine.md
@@ -327,4 +327,4 @@ Export complete: docs/llm/dump.txt
 real	0m0.143s
 user	0m0.067s
 sys	0m0.060s
-kushal@fedora:~/src/dotnet/myblazor$ 
+kushal@fedora:~/src/dotnet/mercifulpotato$ 

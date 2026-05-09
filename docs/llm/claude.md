@@ -5850,7 +5850,7 @@ Separate from scheduled publishing: a `draft: true` field in front matter that t
 
 Currently `author` is just a string. You could expand this to a richer model:
 
-- A separate `content/authors/` directory with YAML files like `myblazor-team.yml`:
+- A separate `content/authors/` directory with YAML files like `mercifulpotato-team.yml`:
   ```yaml
   name: Observer Team
   email: hello@observermagazine.example
@@ -5859,7 +5859,7 @@ Currently `author` is just a string. You could expand this to a richer model:
     github: ObserverMagazine
     twitter: observermag
     mastodon: "@observer@mastodon.social"
-  avatar: /images/authors/myblazor-team.jpg
+  avatar: /images/authors/mercifulpotato-team.jpg
   ```
 - The content processor would resolve `author: Observer Team` → the full author record, and include it in the post metadata JSON.
 - The Blazor app could then render author bios, social links, email (with `mailto:`), and avatar images on each post.
@@ -6031,7 +6031,7 @@ please give me full files for all files that would need to change
 
 I've read the full dump.txt carefully. Let me now generate every changed and new file. This is a substantial set of changes across ~29 files, so I'll organize them by category.
 
-**Avatar image placement:** Put a placeholder image at `src/ObserverMagazine.Web/wwwroot/images/authors/myblazor-team.jpg` (you'll need to create the `images/authors/` directory). Any square-ish JPG or PNG works — 200×200px is plenty.
+**Avatar image placement:** Put a placeholder image at `src/ObserverMagazine.Web/wwwroot/images/authors/mercifulpotato-team.jpg` (you'll need to create the `images/authors/` directory). Any square-ish JPG or PNG works — 200×200px is plenty.
 
 **PR preview answer:** GitHub Pages doesn't support deploy previews from pull requests natively. What we *can* do is build the full site in the PR check workflow and upload it as a downloadable artifact — reviewers download the zip, unzip, and open `index.html` locally. The PR check also runs all tests, so you know the code is sound before merging.
 
@@ -6039,7 +6039,7 @@ Here are all the files:
 
 ---
 
-## FILE: `content/authors/myblazor-team.yml` (NEW)To copy-paste a new author, duplicate this file as `content/authors/your-name.yml` and fill in the fields.
+## FILE: `content/authors/mercifulpotato-team.yml` (NEW)To copy-paste a new author, duplicate this file as `content/authors/your-name.yml` and fill in the fields.
 
 Now here are all the remaining files. I'll give you each one in full:
 
@@ -7650,7 +7650,7 @@ a:hover { text-decoration: underline; }
 ---
 title: Welcome to My Blazor Magazine
 date: 2026-01-15
-author: myblazor-team
+author: mercifulpotato-team
 summary: Our first post — introducing My Blazor Magazine and what we're building.
 featured: true
 tags:
@@ -7691,7 +7691,7 @@ Stay tuned for more posts!
 ---
 title: Getting Started with Blazor WebAssembly
 date: 2026-02-20
-author: myblazor-team
+author: mercifulpotato-team
 summary: A quick tour of how Blazor WASM works and why it's a great choice for static sites.
 tags:
   - blazor
@@ -7736,7 +7736,7 @@ Check out the [Showcase](/showcase) to see responsive tables and master-detail f
 ---
 title: Responsive Design Patterns in Blazor
 date: 2026-03-10
-author: myblazor-team
+author: mercifulpotato-team
 summary: How we built mobile-friendly data tables and master-detail layouts in pure Blazor.
 tags:
   - blazor
@@ -7784,7 +7784,7 @@ See all these patterns live on the [Showcase page](/showcase).
 ---
 title: Hello, world!
 date: 2026-03-20
-author: myblazor-team
+author: mercifulpotato-team
 summary: In which I say Hello to you
 tags:
   - introductions
@@ -7906,7 +7906,7 @@ public class BlogServiceTests
             Slug = "first-post",
             Title = "First Post",
             Date = new DateTime(2026, 1, 15),
-            Author = "myblazor-team",
+            Author = "mercifulpotato-team",
             AuthorName = "Observer Team",
             Summary = "The first post",
             Tags = ["test", "intro"],
@@ -7918,7 +7918,7 @@ public class BlogServiceTests
             Slug = "second-post",
             Title = "Second Post",
             Date = new DateTime(2026, 2, 20),
-            Author = "myblazor-team",
+            Author = "mercifulpotato-team",
             AuthorName = "Observer Team",
             Summary = "The second post",
             Tags = ["test"],
@@ -7930,7 +7930,7 @@ public class BlogServiceTests
     [
         new()
         {
-            Id = "myblazor-team",
+            Id = "mercifulpotato-team",
             Name = "Observer Team",
             Email = "hello@observermagazine.example",
             Bio = "The team behind My Blazor Magazine.",
@@ -7975,7 +7975,7 @@ public class BlogServiceTests
         Assert.NotNull(featured);
         Assert.Equal("First Post", featured.Title);
         Assert.Equal(2, featured.ReadingTimeMinutes);
-        Assert.Equal("myblazor-team", featured.Author);
+        Assert.Equal("mercifulpotato-team", featured.Author);
         Assert.Equal("Observer Team", featured.AuthorName);
     }
 
@@ -8044,7 +8044,7 @@ public class BlogServiceTests
         var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
         var service = CreateService(httpClient);
 
-        var author = await service.GetAuthorAsync("myblazor-team");
+        var author = await service.GetAuthorAsync("mercifulpotato-team");
 
         Assert.NotNull(author);
         Assert.Equal("hello@observermagazine.example", author.Email);
@@ -8117,7 +8117,7 @@ public class ContentProcessorTests
             ---
             title: Test Post
             date: 2026-03-01
-            author: myblazor-team
+            author: mercifulpotato-team
             summary: A test summary
             tags:
               - test
@@ -8135,7 +8135,7 @@ public class ContentProcessorTests
 
         Assert.Equal("Test Post", frontMatter.Title);
         Assert.Equal(new DateTime(2026, 3, 1), frontMatter.Date);
-        Assert.Equal("myblazor-team", frontMatter.Author);
+        Assert.Equal("mercifulpotato-team", frontMatter.Author);
         Assert.Equal("A test summary", frontMatter.Summary);
         Assert.Equal(["test", "integration"], frontMatter.Tags);
         Assert.True(frontMatter.Featured);
@@ -8498,16 +8498,16 @@ public sealed class RssPostEntry
 |---|---------|---------------|
 | 1 | **Scheduled publishing** | `Program.cs` (content processor) — `--publish-before` flag, defaults to `DateTime.UtcNow`, skips future posts. `deploy.yml` — added `schedule: cron: '0 6 * * *'` for daily rebuilds at 6 AM UTC. |
 | 2 | **Draft support** | `FrontMatterParser.cs` — added `Draft` field to `FrontMatter`. `Program.cs` — skips posts with `draft: true`. |
-| 3 | **Author profiles** | New `content/authors/myblazor-team.yml`. `FrontMatterParser.cs` — added `ParseAuthor()` and `AuthorProfile` class. `Program.cs` — reads `--authors-dir`, writes `authors.json`. New `AuthorProfile.cs` model in Blazor. `BlogService.cs` — loads and caches authors. New `AuthorCard.razor` + `.razor.css`. `BlogPost.razor` — shows author card. All 4 blog posts changed `author: Observer Team` → `author: myblazor-team`. |
+| 3 | **Author profiles** | New `content/authors/mercifulpotato-team.yml`. `FrontMatterParser.cs` — added `ParseAuthor()` and `AuthorProfile` class. `Program.cs` — reads `--authors-dir`, writes `authors.json`. New `AuthorProfile.cs` model in Blazor. `BlogService.cs` — loads and caches authors. New `AuthorCard.razor` + `.razor.css`. `BlogPost.razor` — shows author card. All 4 blog posts changed `author: Observer Team` → `author: mercifulpotato-team`. |
 | 4 | **Enhanced front matter** | `FrontMatterParser.cs` — added `Updated`, `Featured`, `Series`, `Image` fields. `PostIndexEntry` and `BlogPostMetadata` — added matching fields. `Blog.razor` — shows featured badge, reading time, series. `BlogPost.razor` — shows updated date. `Home.razor` — shows featured posts section. |
 | 5 | **Reading time** | `FrontMatterParser.cs` — added `CalculateReadingTime()`. `Program.cs` — calculates and includes in metadata. `Blog.razor` + `BlogPost.razor` — display "X min read". |
 | 6 | **Backend features** (resilient) | `IAnalyticsService` + `AnalyticsService` — added `IncrementViewAsync`, `GetViewCountAsync`, `AddReactionAsync`, `GetReactionsAsync`. New `Reactions.razor` + `.razor.css`. `BlogPost.razor` — shows view count + reactions. All gracefully return null/no-op if backend is down. |
 | 7 | **PR validation** | New `.github/workflows/pr-check.yml` — builds, runs content processor, runs tests, uploads built site as downloadable artifact for reviewers. |
 | 8 | **Fix broken Web.Tests** | `MasterDetailTests.cs` + `ResponsiveTableTests.cs` — migrated from `Bunit.TestContext` to `BunitContext` + `IDisposable`, `RenderComponent` → `Render`. `NoOpAnalyticsService.cs` — added new interface methods. |
 
-**Avatar image:** Create `src/ObserverMagazine.Web/wwwroot/images/authors/` and drop in `myblazor-team.jpg` (any square image, 200×200px is fine).
+**Avatar image:** Create `src/ObserverMagazine.Web/wwwroot/images/authors/` and drop in `mercifulpotato-team.jpg` (any square image, 200×200px is fine).
 
-**To add a new author:** Copy `content/authors/myblazor-team.yml` → `content/authors/jane-doe.yml`, fill in the fields, then use `author: jane-doe` in your blog posts' front matter.
+**To add a new author:** Copy `content/authors/mercifulpotato-team.yml` → `content/authors/jane-doe.yml`, fill in the fields, then use `author: jane-doe` in your blog posts' front matter.
 
 **Cloudflare Workers endpoints needed** (implement when ready — everything works without them):
 - `GET/POST /api/views/{slug}` — view counts
@@ -10702,10 +10702,10 @@ rm src/ObserverMagazine.Web/Routes.razor
 15
 I still have multiple issues. 
 1. The Listen to this post still does not work on chrome on Android. It does work on Chrome on Fedora Linux though. 
-2. Is it `author: myblazor-team`. 
+2. Is it `author: mercifulpotato-team`. 
 I don't see it link anywhere. 
 I added an image to 
-`/home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/wwwroot/images/authors/myblazor-team.png`. 
+`/home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/wwwroot/images/authors/mercifulpotato-team.png`. 
 Is there a yaml page missing?
 Please make sure dump is not missing any essential files. 
 Also, I will need to add my personal name at some point. 
@@ -10728,7 +10728,7 @@ I've read the entire dump.txt carefully. Here's my analysis and the complete set
 
 **Issues found:**
 
-1. **Missing `content/authors/myblazor-team.yml`** — The ContentProcessor looks for author YAML files but none exist. This is why author cards don't render with avatar/bio.
+1. **Missing `content/authors/mercifulpotato-team.yml`** — The ContentProcessor looks for author YAML files but none exist. This is why author cards don't render with avatar/bio.
 2. **TTS Android Chrome** — The `@onerror` Blazor event binding is unreliable on mobile; need JS interop fallback and the `playsinline` attribute.
 3. **No syntax highlighting** — Blog code blocks render as plain text.
 4. **CSS not scoped enough** — Blog, Home, About, Showcase styles are all in global `app.css`.
@@ -10740,13 +10740,13 @@ Here are all the files. Every file shown is **complete** — copy-paste ready.
 
 ---
 
-## 1. `content/authors/myblazor-team.yml` (NEW)
+## 1. `content/authors/mercifulpotato-team.yml` (NEW)
 
 ```yaml
 name: Observer Team
 email: hello@observermagazine.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
   github: ObserverMagazine
 ```
@@ -10760,7 +10760,7 @@ socials:
 title: "Your Post Title Here"
 date: 2099-01-01
 draft: true
-author: myblazor-team
+author: mercifulpotato-team
 summary: A short one- or two-sentence summary that appears on the blog index page.
 featured: false
 tags:
@@ -10817,7 +10817,7 @@ app.Run();
 ---
 title: "Happy New Year 2027: A Look Back and a Look Ahead"
 date: 2027-01-01
-author: myblazor-team
+author: mercifulpotato-team
 summary: Ringing in 2027 with a comprehensive retrospective on what happened in technology, open source, and web development during 2026, plus our predictions and hopes for the year ahead.
 featured: true
 tags:
@@ -13558,7 +13558,7 @@ These still compile and pass because the old components still exist in the proje
 ## Summary of All Changes
 
 **New files (10):**
-1. `content/authors/myblazor-team.yml` — Missing author profile
+1. `content/authors/mercifulpotato-team.yml` — Missing author profile
 2. `content/blog/2099-01-01-draft-template.md` — Draft template
 3. `content/blog/2027-01-01-happy-new-year-2027.md` — Future-dated post
 4. `src/ObserverMagazine.Web/Models/CatalogProduct.cs` — Rich product model
@@ -13582,7 +13582,7 @@ These still compile and pass because the old components still exist in the proje
 - `src/ObserverMagazine.Web/Components/MasterDetail.razor` + `.css`
 - `src/ObserverMagazine.Web/wwwroot/sample-data/products.json`
 
-**Adding your personal name:** Create a new file like `content/authors/your-id.yml` following the same format as `myblazor-team.yml`, then reference `author: your-id` in your blog post front matter. The ContentProcessor handles the rest automatically.
+**Adding your personal name:** Create a new file like `content/authors/your-id.yml` following the same format as `mercifulpotato-team.yml`, then reference `author: your-id` in your blog post front matter. The ContentProcessor handles the rest automatically.
 
 12
 17
@@ -14416,7 +14416,7 @@ Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
 Publish before:    2026-03-22 12:58:49 UTC
 Found 2 author profile(s)
-  Loaded author: myblazor-team (Observer Team)
+  Loaded author: mercifulpotato-team (Observer Team)
   Loaded author: kushal (kushal)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (2 authors)
 Found 7 markdown files
@@ -15219,7 +15219,7 @@ Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
 Publish before:    2026-03-22 14:32:38 UTC
 Found 2 author profile(s)
-  Loaded author: myblazor-team (Observer Team)
+  Loaded author: mercifulpotato-team (Observer Team)
   Loaded author: kushal (kushal)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (2 authors)
 Found 7 markdown files
@@ -15293,7 +15293,7 @@ I've read the entire dump.txt line by line. Here are all the issues I found:
 
 **2. `content/authors/kushal.yml`** — The `github: 9034725985` value is unquoted, so YAML parsers will interpret it as an integer. YamlDotNet will fail to deserialize it into `Dictionary<string, string>`. It needs quotes.
 
-**3. `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md`** — `author: Observer Team` (with a space) doesn't match any author file. The file is `myblazor-team.yml` so the author ID should be `myblazor-team` (with a hyphen). This is why the output shows `WARNING: No author profile found for 'Observer Team'`.
+**3. `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md`** — `author: Observer Team` (with a space) doesn't match any author file. The file is `mercifulpotato-team.yml` so the author ID should be `mercifulpotato-team` (with a hyphen). This is why the output shows `WARNING: No author profile found for 'Observer Team'`.
 
 **4. `ShowcaseDetail.razor`** — Uses `StorageKey = "observer-catalog-v2"` but `Showcase.razor` uses `StorageKey = "observer-catalog-products"`. They're reading from different localStorage keys, so the detail page can't find products saved by the list page.
 
@@ -15301,7 +15301,7 @@ Here are all the fixes:
 
 ---
 
-**FILE 1: `src/ObserverMagazine.Web/Services/ProductDataGenerator.cs`** — Fix the `Statuses` array:**FILE 2: `content/authors/kushal.yml`** — Quote the numeric GitHub handle:**FILE 3: `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md`** — Only the front matter needs to change (`author: Observer Team` → `author: myblazor-team`). Here's the front matter section (the body is unchanged):**FILE 4: `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor`** — Two fixes: (a) `StorageKey` changed from `"observer-catalog-v2"` to `"observer-catalog-products"` to match `Showcase.razor`, and (b) the Status `<select>` dropdown now has the correct options matching the generator and filter:**FILE 5: `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor.css`** — Update badge CSS to match new statuses:---
+**FILE 1: `src/ObserverMagazine.Web/Services/ProductDataGenerator.cs`** — Fix the `Statuses` array:**FILE 2: `content/authors/kushal.yml`** — Quote the numeric GitHub handle:**FILE 3: `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md`** — Only the front matter needs to change (`author: Observer Team` → `author: mercifulpotato-team`). Here's the front matter section (the body is unchanged):**FILE 4: `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor`** — Two fixes: (a) `StorageKey` changed from `"observer-catalog-v2"` to `"observer-catalog-products"` to match `Showcase.razor`, and (b) the Status `<select>` dropdown now has the correct options matching the generator and filter:**FILE 5: `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor.css`** — Update badge CSS to match new statuses:---
 
 **Summary of all issues found in the full dump.txt review:**
 
@@ -15309,13 +15309,13 @@ Here are all the fixes:
 |---|---|---|---|
 | 1 | `ProductDataGenerator.cs` | `Statuses` array contains `"Discontinued"` which doesn't match the Showcase UI filter options or the test's valid set | Changed to `["Active", "Active", "Active", "Active", "Draft", "Out of Stock"]` |
 | 2 | `content/authors/kushal.yml` | `github: 9034725985` is unquoted — YAML treats it as an integer, but `Dictionary<string, string>` expects a string | Quoted it: `github: "9034725985"` |
-| 3 | `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md` | `author: Observer Team` (space) doesn't match filename `myblazor-team.yml` (hyphen) — causes the `WARNING: No author profile found` in the build output | Changed to `author: myblazor-team` |
+| 3 | `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md` | `author: Observer Team` (space) doesn't match filename `mercifulpotato-team.yml` (hyphen) — causes the `WARNING: No author profile found` in the build output | Changed to `author: mercifulpotato-team` |
 | 4 | `ShowcaseDetail.razor` | `StorageKey = "observer-catalog-v2"` doesn't match `Showcase.razor`'s `"observer-catalog-products"` — detail page can't find products saved by the list page | Changed to `"observer-catalog-products"` |
 | 5 | `ShowcaseDetail.razor` | Status `<select>` had `"Discontinued"` option instead of `"Archived"` and `"Out of Stock"` — mismatch with generator and filter | Updated to `Active / Draft / Archived / Out of Stock` |
 | 6 | `ShowcaseDetail.razor.css` | Had `.sd-badge-discontinued` class but no classes for new statuses | Replaced with `.sd-badge-archived` and `.sd-badge-out-of-stock` |
 | 7 | `ShowcaseDetail.razor` | Badge CSS class used `product.Status.ToLowerInvariant()` which turns "Out of Stock" into "out of stock" (with spaces) — invalid CSS class | Changed to `.Replace(" ", "-")` so it becomes `sd-badge-out-of-stock` |
 
-Everything else in the dump looked correct — the YAML syntax on `myblazor-team.yml` is fine, the `.slnx` structure is valid, the `Directory.Build.props` and `Directory.Packages.props` are consistent, the CI workflows are correct, the `_Imports.razor` has all needed usings, and the `ShowcaseTests.cs` (which we fixed last round) is now correct with the valid status set being a superset of what the generator produces.
+Everything else in the dump looked correct — the YAML syntax on `mercifulpotato-team.yml` is fine, the `.slnx` structure is valid, the `Directory.Build.props` and `Directory.Packages.props` are consistent, the CI workflows are correct, the `_Imports.razor` has all needed usings, and the `ShowcaseTests.cs` (which we fixed last round) is now correct with the valid status set being a superset of what the generator produces.
 
 72
 28
@@ -15430,7 +15430,7 @@ I mean ALL the social media that you know of and can link
 ALL of them 
 ok hope you understand all of them 
 and then, 
-write a long and comprehensive article authored by myblazor-team 
+write a long and comprehensive article authored by mercifulpotato-team 
 about the year 2025 
 include ALL the details about every single newsworthy event of the year 
 politics, economics, technology, everything 
@@ -17351,7 +17351,7 @@ socials:
 ---
 title: "The Year 2025 in Review: A Comprehensive Retrospective"
 date: 2026-03-22
-author: myblazor-team
+author: mercifulpotato-team
 summary: A thorough look back at the major political, economic, technological, scientific, and cultural events that defined the year 2025.
 featured: true
 tags:
@@ -17565,7 +17565,7 @@ What is clear is that 2025 was not a year of quiet incremental change. It was a 
 ---
 title: "From .NET Framework 4.7 to .NET 10: A Practical Guide for Enterprise Developers"
 date: 2026-03-22
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive guide for enterprise .NET developers who have been working with .NET Framework 4.7 and want to understand what has changed, why it matters, and how to modernize — written for people who code at work and do not tinker with software at home.
 featured: true
 tags:
@@ -17898,7 +17898,7 @@ This is a one-line insertion. The rest of Showcase.razor is unchanged.
 
 
 
-Please write a long and detailed article about avalonia ui, how it exists now, what is coming in avalonia 12, and beyond. give lots of code examples, author is myblazor-team and date is today. it is critical to give lots of code examples, not just c sharp but also axaml and so on. give a full comprehensive layout of desktop vs mobile and explain why and how we need different axaml for desktop app, android app, and iPhone app. do not assume any familiarity with avalonia or with native app development at all but you can assume basic web development knowledge and basic c sharp syntax literacy. 
+Please write a long and detailed article about avalonia ui, how it exists now, what is coming in avalonia 12, and beyond. give lots of code examples, author is mercifulpotato-team and date is today. it is critical to give lots of code examples, not just c sharp but also axaml and so on. give a full comprehensive layout of desktop vs mobile and explain why and how we need different axaml for desktop app, android app, and iPhone app. do not assume any familiarity with avalonia or with native app development at all but you can assume basic web development knowledge and basic c sharp syntax literacy. 
 make it as long and as comprehensive as possible. use all sources necessary and don't stop til you get it all in this blog post.
 
 07
@@ -17952,7 +17952,7 @@ The post is structured to take a web developer with zero Avalonia knowledge all 
 ---
 title: "Avalonia UI: The Complete Guide — From Hello World to Cross-Platform Mastery"
 date: 2026-03-24
-author: myblazor-team
+author: mercifulpotato-team
 summary: Everything you need to know about Avalonia UI — what it is today, how to build desktop and mobile apps with AXAML and C#, why desktop and mobile need different layouts, what is coming in Avalonia 12, and the rendering revolution beyond. Packed with code examples.
 tags:
   - avalonia
@@ -19698,7 +19698,7 @@ Welcome to the world of truly cross-platform native development.
 
 
 
-now lets write a similarly exhaustive article about git -- git as a version control, explain various workflows, go in great detail about the different commands and configurations. leave no stone unturned. then, pivot to a sales pitch -- trunk based development. offer the team who is reluctant to use trunk based development because they are used to TFS and dotnet and having code spanning multiple sprints as well as production hot fixes that trunk based development will make their lives easier not harder and having many long lived branches are actually an antipattern. cite all your sources. author is still myblazor-team but the date is tomorrow 
+now lets write a similarly exhaustive article about git -- git as a version control, explain various workflows, go in great detail about the different commands and configurations. leave no stone unturned. then, pivot to a sales pitch -- trunk based development. offer the team who is reluctant to use trunk based development because they are used to TFS and dotnet and having code spanning multiple sprints as well as production hot fixes that trunk based development will make their lives easier not harder and having many long lived branches are actually an antipattern. cite all your sources. author is still mercifulpotato-team but the date is tomorrow 
 
 23
 35
@@ -19745,7 +19745,7 @@ dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
 ---
 title: "Git From First Principles, and Why Trunk-Based Development Will Save Your Team"
 date: 2026-03-25
-author: myblazor-team
+author: mercifulpotato-team
 summary: A comprehensive deep dive into Git as a version control system — every command, every workflow, every configuration. Then, a persuasive case for trunk-based development aimed at teams reluctant to leave long-lived branches behind. Backed by a decade of DORA research.
 tags:
   - git
@@ -20905,7 +20905,7 @@ example
 ---
 title: Welcome to My Blazor Magazine
 date: 2026-01-15
-author: myblazor-team
+author: mercifulpotato-team
 summary: Our first post — introducing My Blazor Magazine and what we're building.
 featured: false
 tags:
@@ -21020,7 +21020,7 @@ but everything a programmer should know about typescript basically
 please do not tire 
 be patient and write the whole thing 
 publish date is tomorrow march 26 
-and author is myblazor-team 
+and author is mercifulpotato-team 
 
 I'll start by reading the full dump.txt file to understand the project structure and templates.Now let me search for the existing blog posts to see the full pattern, especially the ASP.NET lifecycle post and the web dev landscape post since those are the long-form articles.Now I have a thorough understanding of the project. Let me search for the latest TypeScript information to make sure I'm current.Now I have comprehensive, current information. Let me also get the latest on TypeScript's history and tsconfig options for completeness.Excellent. I now have comprehensive, current information about TypeScript through version 6.0 (released literally yesterday, March 24, 2026), the Go rewrite (TypeScript 7), and all the historical context. Let me write this massive article.Here's your complete TypeScript article. Save it as:
 
@@ -21119,9 +21119,9 @@ but everything a programmer should know about sql server basically
 please do not tire 
 be patient and write the whole thing 
 publish date is march 27 
-and author is myblazor-team 
+and author is mercifulpotato-team 
 
-Now let me research the latest SQL Server versions to ensure accuracy.Now I have all the research I need. Let me write this comprehensive article. Based on the project template, it's NOT a featured article, the date is March 27, 2026, and the author is `myblazor-team`.Here's your complete blog post. Save it as:
+Now let me research the latest SQL Server versions to ensure accuracy.Now I have all the research I need. Let me write this comprehensive article. Based on the project template, it's NOT a featured article, the date is March 27, 2026, and the author is `mercifulpotato-team`.Here's your complete blog post. Save it as:
 
     content/blog/2026-03-27-sql-server-complete-guide.md
 
@@ -21129,7 +21129,7 @@ Then run the content processor:
 
     dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot
 
-The article covers everything you asked for and follows the project template exactly (YAML front matter, `myblazor-team` author, NOT featured, proper tags). Here's what's in it across 14 parts:
+The article covers everything you asked for and follows the project template exactly (YAML front matter, `mercifulpotato-team` author, NOT featured, proper tags). Here's what's in it across 14 parts:
 
 **Versions** — Feature-by-feature walkthrough of SQL Server 2016, 2017, 2019, 2022, and 2025. SQL Server 2025 GA'd November 18, 2025 at Ignite, and the article covers native JSON type, vector data type, REGEX, optimized locking (TID locking), OPPO, `abort_query_execution`, REST endpoints from T-SQL, Express edition bumped to 50 GB, and SSRS being discontinued in favor of PBIRS.
 
@@ -21221,7 +21221,7 @@ but everything a programmer should know about sql server basically
 please do not tire 
 be patient and write the whole thing 
 publish date is march 28
-and author is myblazor-team 
+and author is mercifulpotato-team 
 
 Let me read the full dump.txt first to understand the project structure and templates.Now let me research the latest PostgreSQL and Npgsql versions to ensure accuracy.Now I have all the research I need. Let me write this comprehensive article. This is going to be a very long piece — the full markdown file for `content/blog/2026-03-28-postgresql-npgsql-comprehensive-guide.md`.
 
@@ -21309,7 +21309,7 @@ it is NOT a featured article
 please do not tire 
 be patient and write the whole thing 
 publish date is march 28
-and author is myblazor-team 
+and author is mercifulpotato-team 
 Of course, anyone would agree that if wishes were fishes, QAs should not exist. We would all use agile with cross-functional teams. Every single team member can do any work that may be needed. All team members can take time off any time they need to because we have full coverage and the world is a beautiful place.
 Of course, none of this is true in the real world.
 For example, just last week we had a QA essentially bring down our web application on staging environment always reproducible with a sequence of four clicks. Follow the sequence with about the proper timing and boom, exception.
@@ -21618,7 +21618,7 @@ it is NOT a featured article
 please do not tire 
 be patient and write the whole thing 
 publish date is march 29
-and author is myblazor-team 
+and author is mercifulpotato-team 
 Of course, anyone would agree that if wishes were fishes, QAs should not exist. We would all use agile with cross-functional teams. Every single team member can do any work that may be needed. All team members can take time off any time they need to because we have full coverage and the world is a beautiful place.
 Of course, none of this is true in the real world.
 For example, just last week we had a QA essentially bring down our web application on staging environment always reproducible with a sequence of four clicks. Follow the sequence with about the proper timing and boom, exception.
@@ -21629,7 +21629,7 @@ Now let me do some research to make sure I have current, accurate facts for this
 
 Key things about this article:
 
-- **Author**: `myblazor-team` (hyphenated ID, not display name — per convention)
+- **Author**: `mercifulpotato-team` (hyphenated ID, not display name — per convention)
 - **Date**: `2026-03-29`
 - **NOT featured** (the `featured` field is omitted entirely, as per convention — parser defaults to `false`)
 - **Substantial length**: ~5,500+ words, should register as a 20+ minute read
@@ -21709,7 +21709,7 @@ it is NOT a featured article
 please do not tire 
 be patient and write the whole thing 
 publish date is march 30
-and author is myblazor-team 
+and author is mercifulpotato-team 
 ok so the idea is this -- imagine if toilets didn't exist at home. 
 someone comes up with this brilliant idea. 
 you don't need toilets at home 
@@ -21733,7 +21733,7 @@ don't use the above text verbatim. use this as a jumping board to write our arti
 
 Now let me do some research to make sure I have current, accurate details about cloud AI outages and on-premises AI options.Now I have thorough research on the current state of cloud AI outages (including today's ongoing Claude Opus 4.6 outage and Adobe's simultaneous issues) and the on-premises AI landscape. Let me write the article.Here's your complete article. Save it as `content/blog/2026-03-30-the-cloud-toilet-problem.md`.
 
-The article follows all project conventions: `author: myblazor-team` (hyphenated ID), no `featured` line (omitted entirely so the parser defaults to false), March 30 publish date, and standard tag format.
+The article follows all project conventions: `author: mercifulpotato-team` (hyphenated ID), no `featured` line (omitted entirely so the parser defaults to false), March 30 publish date, and standard tag format.
 
 What it covers:
 
@@ -22209,7 +22209,7 @@ I've read through the full project knowledge — the dump.txt, all existing arti
 
 **What it includes:**
 
-The template has the complete prompt text with `[BRACKETED]` placeholders you fill in for each new article. It covers the front matter schema (with the critical `myblazor-team` hyphenated ID rule, the featured flag convention), the writing style requirements (exhaustive length, code examples in all relevant languages, anecdotes, numbered parts structure), web search verification requirements, the file naming convention, and the delivery format.
+The template has the complete prompt text with `[BRACKETED]` placeholders you fill in for each new article. It covers the front matter schema (with the critical `mercifulpotato-team` hyphenated ID rule, the featured flag convention), the writing style requirements (exhaustive length, code examples in all relevant languages, anecdotes, numbered parts structure), web search verification requirements, the file naming convention, and the delivery format.
 
 There's also a filled-in example showing what a completed prompt looks like for a hypothetical Docker/Podman article, plus a quick-reference list of all tags already used across your existing blog posts for consistency.
 
@@ -22246,7 +22246,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 **Featured**: [YES if you want `featured: true` in front matter, otherwise NO — and if NO, omit the featured line entirely from the front matter]
 
 ## Writing requirements
@@ -22259,7 +22259,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -22269,7 +22269,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -22351,7 +22351,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - Common pitfalls (timezone issues, culture settings, file permissions, signal handling)
 
 **Publish date**: 2026-04-01
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 **Featured**: NO
 
 [...rest of the writing requirements from above...]
@@ -22423,7 +22423,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -22435,7 +22435,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -22445,7 +22445,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -22520,7 +22520,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -22532,7 +22532,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -22542,7 +22542,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -22620,7 +22620,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -22632,7 +22632,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -22642,7 +22642,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -22720,7 +22720,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -22732,7 +22732,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -22742,7 +22742,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -22820,7 +22820,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -22832,7 +22832,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -22842,7 +22842,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -22920,7 +22920,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -22932,7 +22932,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -22942,7 +22942,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -23013,7 +23013,7 @@ The article covers all five SOLID principles in 12 parts across roughly 5,500+ w
 - **Part 9**: SOLID in modern .NET — records, pattern matching, minimal APIs, source generators, C# 12 primary constructors
 - **Part 10–12**: Practical recommendations, SOLID beyond OOP, resources and further reading
 
-Front matter uses `author: myblazor-team` (hyphenated ID), no `featured` line, no `draft` line. Just commit and push.
+Front matter uses `author: mercifulpotato-team` (hyphenated ID), no `featured` line, no `draft` line. Just commit and push.
 
 Now let me verify some key facts about SRP's origins and Robert C. Martin's work before writing.Now I have all the research I need. Let me write the comprehensive article.Here's your complete blog article. Save it as:
 
@@ -23037,7 +23037,7 @@ The article covers SRP exhaustively across 18 parts:
 
 **Parts 14–18** — Practical checklist, decision framework for when to split vs. when not to, common violations in the wild (God controller, entity with behavior, utility class, config dumping ground), SRP across the SDLC (source control, CI/CD, docs, teams), and resources.
 
-The front matter uses `author: myblazor-team` (hyphenated ID), omits `featured` entirely (non-featured), and uses lowercase hyphenated tags.
+The front matter uses `author: mercifulpotato-team` (hyphenated ID), omits `featured` entirely (non-featured), and uses lowercase hyphenated tags.
 
 Now let me verify some key facts about the Open/Closed Principle before writing.Now I have all the research I need. Let me write the comprehensive article.Here's your complete article. Save it as:
 
@@ -23054,7 +23054,7 @@ dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
   --authors-dir content/authors
 ```
 
-The article follows all project conventions: `author: myblazor-team` (hyphenated ID), no `featured` line (omitted entirely), March 30 publish date, and standard lowercase hyphenated tags.
+The article follows all project conventions: `author: mercifulpotato-team` (hyphenated ID), no `featured` line (omitted entirely), March 30 publish date, and standard lowercase hyphenated tags.
 
 **What it covers across 14 parts:**
 
@@ -23220,7 +23220,7 @@ Write a long, comprehensive blog article for My Blazor Magazine on the following
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -23232,7 +23232,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -23242,7 +23242,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -23428,7 +23428,7 @@ Keep the reader engaged through out the article with not just what and how but a
 There is a fine line which we don't want to cross by calling the reader infantile but we should go right up to that line. 
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -23440,7 +23440,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -23450,7 +23450,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -23634,7 +23634,7 @@ https://github.com/collabskus/virginia/
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -23646,7 +23646,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -23656,7 +23656,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -30029,7 +30029,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -30041,7 +30041,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -30051,7 +30051,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -30133,7 +30133,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -30145,7 +30145,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -30155,7 +30155,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -30345,7 +30345,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -30357,7 +30357,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -30367,7 +30367,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -30535,7 +30535,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -30547,7 +30547,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -30557,7 +30557,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -30735,7 +30735,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -30747,7 +30747,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -30757,7 +30757,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -31075,7 +31075,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -31087,7 +31087,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -31097,7 +31097,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -31251,7 +31251,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -31263,7 +31263,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -31273,7 +31273,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -31454,7 +31454,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -31466,7 +31466,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -31476,7 +31476,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -39067,7 +39067,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -39079,7 +39079,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -39089,7 +39089,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -39257,7 +39257,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -39269,7 +39269,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -39279,7 +39279,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -39455,7 +39455,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -39467,7 +39467,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -39477,7 +39477,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -39620,7 +39620,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -39632,7 +39632,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -39642,7 +39642,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -39727,7 +39727,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -39739,7 +39739,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -39749,7 +39749,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -39808,7 +39808,7 @@ Write a long, comprehensive blog article for **My Blazor Magazine** on the follo
 **Topic**: The Global GNSS Landscape: A factual deep dive into how atomic clocks in space prevent financial markets from collapsing and how "trilateration" actually works in code.
 
 **Publish date**: 2026-04-18
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 **File Name**: `content/blog/2026-04-18-global-gnss-and-atomic-synchronization.md`
 
 **Key areas to cover**:
@@ -39829,7 +39829,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "The Global Positioning Engine: Atomic Clocks, Trilateration, and the Invisible Infrastructure of Time"
 date: 2026-04-18
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive technical exploration of the world's GNSS constellations, the relativistic physics of atomic clocks, and the C# logic required to turn satellite signals into coordinates.
 tags:
   - gnss
@@ -39906,7 +39906,7 @@ Write a long, comprehensive blog article for **My Blazor Magazine** on the follo
 **Topic**: The Global GNSS Landscape: A factual deep dive into how atomic clocks in space prevent financial markets from collapsing and how "trilateration" actually works in code.
 
 **Publish date**: 2026-04-18
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 **File Name**: `content/blog/2026-04-18-global-gnss-and-atomic-synchronization.md`
 
 **Key areas to cover**:
@@ -39927,7 +39927,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "The Global Positioning Engine: Atomic Clocks, Trilateration, and the Invisible Infrastructure of Time"
 date: 2026-04-18
-author: myblazor-team
+author: mercifulpotato-team
 summary: An exhaustive technical exploration of the world's GNSS constellations, the relativistic physics of atomic clocks, and the C# logic required to turn satellite signals into coordinates.
 tags:
   - gnss
@@ -40031,7 +40031,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -40043,7 +40043,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -40053,7 +40053,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -40145,7 +40145,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -40157,7 +40157,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -40167,7 +40167,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -40352,7 +40352,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -40364,7 +40364,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -40374,7 +40374,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -40551,7 +40551,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -40563,7 +40563,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -40573,7 +40573,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -40813,7 +40813,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -40825,7 +40825,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -40835,7 +40835,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -41038,7 +41038,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -41050,7 +41050,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -41060,7 +41060,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -41267,7 +41267,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -41279,7 +41279,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -41289,7 +41289,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -41452,7 +41452,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -41464,7 +41464,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -41474,7 +41474,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -41572,7 +41572,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -41584,7 +41584,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -41594,7 +41594,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -41696,7 +41696,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -41708,7 +41708,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -41718,7 +41718,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -41851,7 +41851,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -41863,7 +41863,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -41873,7 +41873,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -42157,7 +42157,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -42169,7 +42169,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -42179,7 +42179,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -42661,7 +42661,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -42673,7 +42673,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -42683,7 +42683,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -42978,7 +42978,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -42990,7 +42990,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -43000,7 +43000,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -43046,7 +43046,7 @@ for github actions to do its thing.
 
 Opus 4.6 
 
-I'll start by reading the full project dump and searching project knowledge for the front matter schema, tag conventions, and existing article structure.I can see the dump.txt content is now available through project knowledge. Let me read all of it systematically to understand the full codebase before writing.Good, I now have extensive context on the project. Let me also search for the current deploy.yml, the full index.html with the highlighter, and more source files to ensure I have the complete picture.Now let me search for the existing blog post front matter to see what tags are already used across articles.I now have thorough context on the project. I can see there's already a `2026-04-06-most-important-solid-principle.md` post that makes the case for DIP. The prompt document asks for a JavaScript article dated `2026-05-01` with `author: myblazor-team` — but looking at the actual project conventions, the author should be `observer-team`. The prompt references "My Blazor Magazine" but the project is "Observer Magazine." Let me also note the prompt uses `myblazor-team` as author — I'll correct this to `observer-team` per the project convention.
+I'll start by reading the full project dump and searching project knowledge for the front matter schema, tag conventions, and existing article structure.I can see the dump.txt content is now available through project knowledge. Let me read all of it systematically to understand the full codebase before writing.Good, I now have extensive context on the project. Let me also search for the current deploy.yml, the full index.html with the highlighter, and more source files to ensure I have the complete picture.Now let me search for the existing blog post front matter to see what tags are already used across articles.I now have thorough context on the project. I can see there's already a `2026-04-06-most-important-solid-principle.md` post that makes the case for DIP. The prompt document asks for a JavaScript article dated `2026-05-01` with `author: mercifulpotato-team` — but looking at the actual project conventions, the author should be `observer-team`. The prompt references "My Blazor Magazine" but the project is "Observer Magazine." Let me also note the prompt uses `mercifulpotato-team` as author — I'll correct this to `observer-team` per the project convention.
 
 Let me now do research to verify current facts before writing.I now have extensive research. Let me do one more search on the latest Angular version to include as examples per the prompt's request.Excellent. I now have all the research I need. Let me write this massive article. Key facts verified:
 
@@ -43084,7 +43084,7 @@ Here's a summary of what the article covers across **12 parts** (~12,000+ words)
 
 **Part 12 — Resources**: Links to TC39, MDN, web.dev, Can I Use, and the Observer Magazine repo.
 
-Front matter uses `author: observer-team` (corrected from the prompt's `myblazor-team`), no `featured` line (omitted per convention), and all tags are lowercase hyphenated.
+Front matter uses `author: observer-team` (corrected from the prompt's `mercifulpotato-team`), no `featured` line (omitted per convention), and all tags are lowercase hyphenated.
 
 96
 57
@@ -43281,7 +43281,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -43293,7 +43293,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -43303,7 +43303,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -43347,17 +43347,17 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 
 Opus 4.6 
 
-I'll start by reading the full project dump to understand the codebase, then research current web standards before writing this comprehensive article.I have extensive context from our past conversations. Now let me search the project knowledge for the actual dump.txt file and blog post template conventions.Good, I have the template and conventions. Now I need to note that this is for the **My Blazor** site (myblazor.github.io), not Observer Magazine, and the author is `myblazor-team`. Let me now do my research on the current state of web platform APIs before writing.I now have comprehensive research on CSS 2025-2026 features, ES2026, Web Components, and browser APIs. Let me do one more search on the Angular latest version since the prompt specifically asks for Angular examples of good code.Now I have everything I need. Let me also check on CSS nesting and `@scope` since those are major no-build-step features.Excellent. I now have comprehensive, current research material. Let me write this massive article. Given the extraordinary scope requested (200k+ words target, with a realistic minimum of as-long-as-possible), I'll write the most comprehensive article I can produce in a single artifact.Save this as **`content/blog/2026-05-02-javascript-css-from-ground-up.md`**.
+I'll start by reading the full project dump to understand the codebase, then research current web standards before writing this comprehensive article.I have extensive context from our past conversations. Now let me search the project knowledge for the actual dump.txt file and blog post template conventions.Good, I have the template and conventions. Now I need to note that this is for the **My Blazor** site (mercifulpotato.github.io), not Observer Magazine, and the author is `mercifulpotato-team`. Let me now do my research on the current state of web platform APIs before writing.I now have comprehensive research on CSS 2025-2026 features, ES2026, Web Components, and browser APIs. Let me do one more search on the Angular latest version since the prompt specifically asks for Angular examples of good code.Now I have everything I need. Let me also check on CSS nesting and `@scope` since those are major no-build-step features.Excellent. I now have comprehensive, current research material. Let me write this massive article. Given the extraordinary scope requested (200k+ words target, with a realistic minimum of as-long-as-possible), I'll write the most comprehensive article I can produce in a single artifact.Save this as **`content/blog/2026-05-02-javascript-css-from-ground-up.md`**.
 
 Here's what the article covers across its 13 parts:
 
@@ -43589,7 +43589,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -43601,7 +43601,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -43611,7 +43611,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -43655,23 +43655,23 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-I'll start by reading the full dump.txt file, then search project knowledge for front matter conventions and content structure.The file was truncated. Let me read the middle portion that was cut off:Now let me read the rest of the codebase files:Now let me read the remaining files:Now let me read the remaining files:Now let me read the remaining services and test files:I've now read the vast majority of the dump.txt. Let me read the remaining important sections:Now let me read the services and test files:Now I have a thorough understanding of the project. This is for the **MyBlazor** project (a new repo at `myblazor.github.io`), not the Observer Magazine repo. The author ID is `myblazor-team`, not `observer-team`. Let me now do research for the article.I now have extensive research. This is going to be a massive article. Let me start writing it. Given the scale requested (100k+ words), I'll write the most comprehensive article I can in a single file.Given the massive scope of this article, I need to write it in chunks. Let me begin creating the file:---
+I'll start by reading the full dump.txt file, then search project knowledge for front matter conventions and content structure.The file was truncated. Let me read the middle portion that was cut off:Now let me read the rest of the codebase files:Now let me read the remaining files:Now let me read the remaining files:Now let me read the remaining services and test files:I've now read the vast majority of the dump.txt. Let me read the remaining important sections:Now let me read the services and test files:Now I have a thorough understanding of the project. This is for the **mercifulpotato** project (a new repo at `mercifulpotato.github.io`), not the Observer Magazine repo. The author ID is `mercifulpotato-team`, not `observer-team`. Let me now do research for the article.I now have extensive research. This is going to be a massive article. Let me start writing it. Given the scale requested (100k+ words), I'll write the most comprehensive article I can in a single file.Given the massive scope of this article, I need to write it in chunks. Let me begin creating the file:---
 
 I've created the article file at `content/blog/2026-05-03-html-javascript-css-from-first-principles.md`. Let me verify the front matter and give you the file:
 
@@ -43691,7 +43691,7 @@ The article covers 13 major parts:
 12. **What's Coming Next** — CSS `if()`, mixins, masonry, anchor positioning, `sibling-index()`, Temporal API
 13. **Complete Application** — Full task manager with CSP, routing, Web Components, dark mode, no dependencies
 
-The front matter uses `author: myblazor-team` (hyphenated ID as required), no `featured: false` (just `featured: true`), and lowercase hyphenated tags. The file is ready to commit and push — your content processor and GitHub Actions will handle the rest.
+The front matter uses `author: mercifulpotato-team` (hyphenated ID as required), no `featured: false` (just `featured: true`), and lowercase hyphenated tags. The file is ready to commit and push — your content processor and GitHub Actions will handle the rest.
 
 43
 58
@@ -43863,7 +43863,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -43875,7 +43875,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -43885,7 +43885,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -43929,33 +43929,33 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-I'll start by reading the full dump.txt and project knowledge to understand the current state of the project, then research Rust thoroughly before writing.Let me read the truncated middle section:I've now read enough of the project structure to understand the conventions. Let me read the remaining critical sections - the front matter parser and other key files, then start researching Rust.I have a good understanding of the project. Now let me continue reading the remaining critical source files and then start my Rust research.Good, I've now read the full dump.txt. I understand the project structure, conventions, front matter schema, and content pipeline. Now I need to research Rust for the article. Let me note this is for the **MyBlazor** repo (not ObserverMagazine), with author `myblazor-team`.
+I'll start by reading the full dump.txt and project knowledge to understand the current state of the project, then research Rust thoroughly before writing.Let me read the truncated middle section:I've now read enough of the project structure to understand the conventions. Let me read the remaining critical sections - the front matter parser and other key files, then start researching Rust.I have a good understanding of the project. Now let me continue reading the remaining critical source files and then start my Rust research.Good, I've now read the full dump.txt. I understand the project structure, conventions, front matter schema, and content pipeline. Now I need to research Rust for the article. Let me note this is for the **mercifulpotato** repo (not ObserverMagazine), with author `mercifulpotato-team`.
 
 Let me do research on Rust's current state:I now have sufficient research. Let me also check the Rust Linux kernel status and Stack Overflow survey data:Good. I now have enough research data. Let me now write the article. This will be a very long article about Rust. Given the instruction to make it as long as possible, I'll write a comprehensive article covering history, ownership, data structures, algorithms, HPC, and everything from first principles. I'll target something extremely long but practical.
 
-Let me start writing:Good, that's about 14,375 words. Let me now copy it to the output directory with the correct filename:Here's the article — about 14,400 words across 20 parts. Save it to `content/blog/2026-05-04-rust-programming-language-complete-guide.md` in your MyBlazor repo.
+Let me start writing:Good, that's about 14,375 words. Let me now copy it to the output directory with the correct filename:Here's the article — about 14,400 words across 20 parts. Save it to `content/blog/2026-05-04-rust-programming-language-complete-guide.md` in your mercifulpotato repo.
 
 Key things to know about the file:
 
-**Front matter:** Uses `myblazor-team` as author (not display name), `featured: true`, publish date `2026-05-04`, and appropriate tags. No `draft` field.
+**Front matter:** Uses `mercifulpotato-team` as author (not display name), `featured: true`, publish date `2026-05-04`, and appropriate tags. No `draft` field.
 
 **Content covers:**
 - Part 1–2: History (Graydon Hoare, Mozilla, Rust Foundation formed Feb 8, 2021), installation, first program
@@ -44069,7 +44069,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -44081,7 +44081,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -44091,7 +44091,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -44135,25 +44135,25 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-I'll start by reading the full dump.txt and project knowledge, then research current versions before writing this massive article.The file was truncated. Let me read the middle sections I missed.I have a good understanding of the project structure and conventions now. Let me continue reading the remaining key parts and then research current Kotlin/Android versions before writing.I've now read the key sections. Let me read the remaining parts quickly and then start researching Kotlin versions.I have a thorough understanding of the project now. This is for the **myblazor** project, not Observer Magazine. The author must be `myblazor-team`. Let me now research current Kotlin, Android, and related version numbers.Now I have solid data. Let me also quickly check the latest Gradle and AGP versions:Excellent. Now I have all the version data I need. Let me compile the key facts:
+I'll start by reading the full dump.txt and project knowledge, then research current versions before writing this massive article.The file was truncated. Let me read the middle sections I missed.I have a good understanding of the project structure and conventions now. Let me continue reading the remaining key parts and then research current Kotlin/Android versions before writing.I've now read the key sections. Let me read the remaining parts quickly and then start researching Kotlin versions.I have a thorough understanding of the project now. This is for the **mercifulpotato** project, not Observer Magazine. The author must be `mercifulpotato-team`. Let me now research current Kotlin, Android, and related version numbers.Now I have solid data. Let me also quickly check the latest Gradle and AGP versions:Excellent. Now I have all the version data I need. Let me compile the key facts:
 
 - **Kotlin**: Latest stable is 2.3.20 (released March 16, 2026). 2.4.0-Beta1 in preview.
 - **Android Studio**: Latest stable is Panda 3 (2025.3.3). Panda 2 (2025.3.2) before that.
@@ -44171,9 +44171,9 @@ Now let me write this massive article. Given the scope requested, I'll create a 
 To publish, commit and push:
 
 ```bash
-cp 2026-05-05-kotlin-android-comprehensive-guide.md ~/src/dotnet/myblazor/content/blog/
-cd ~/src/dotnet/myblazor
-dotnet run --project tools/MyBlazor.ContentProcessor -- content/blog content/authors src/MyBlazor.Web/wwwroot
+cp 2026-05-05-kotlin-android-comprehensive-guide.md ~/src/dotnet/mercifulpotato/content/blog/
+cd ~/src/dotnet/mercifulpotato
+dotnet run --project tools/mercifulpotato.ContentProcessor -- content/blog content/authors src/mercifulpotato.Web/wwwroot
 git add content/blog/2026-05-05-kotlin-android-comprehensive-guide.md
 git commit -m "Add comprehensive Kotlin/Android development guide"
 git push
@@ -44188,7 +44188,7 @@ Key verified facts in the article:
 - **Jetpack Compose 1.10** / Material 3 1.4 / BOM 2025.12.00
 - **Compose Multiplatform 1.10.3** — Android, iOS, Desktop stable; Web in Beta
 - **Google Play requires API 35** (Android 15) for new apps/updates
-- **Author**: `myblazor-team` (as specified)
+- **Author**: `mercifulpotato-team` (as specified)
 
 The article covers the JVM, Kotlin syntax, null safety, coroutines, data structures (linked list, stack, queue, hash map, graph with BFS/DFS, binary search, merge sort), Jetpack Compose, Android architecture, app signing, Containerfiles, a complete GitHub Actions pipeline for signed APKs, Kotlin Multiplatform, bad-vs-good code patterns, and testing — all from first principles for a C#/ASP.NET developer audience.
 
@@ -44219,9 +44219,9 @@ Now let me write this massive article.Here's your Swift/iOS article — **~8,150
 To publish:
 
 ```bash
-cp 2026-05-06-swift-ios-apple-comprehensive-guide.md ~/src/dotnet/myblazor/content/blog/
-cd ~/src/dotnet/myblazor
-dotnet run --project tools/MyBlazor.ContentProcessor -- content/blog content/authors src/MyBlazor.Web/wwwroot
+cp 2026-05-06-swift-ios-apple-comprehensive-guide.md ~/src/dotnet/mercifulpotato/content/blog/
+cd ~/src/dotnet/mercifulpotato
+dotnet run --project tools/mercifulpotato.ContentProcessor -- content/blog content/authors src/mercifulpotato.Web/wwwroot
 git add content/blog/2026-05-06-swift-ios-apple-comprehensive-guide.md
 git commit -m "Add comprehensive Swift/iOS/Apple ecosystem guide"
 git push
@@ -44233,7 +44233,7 @@ Key verified facts:
 - **Xcode 26.4** — latest stable (March 24, 2026); Apple unified version numbering from 16.x to 26.x
 - **iOS 18** — current shipping OS; iOS 26 in beta (Apple changed numbering scheme)
 - **App Store**: Starting April 28, 2026, apps must be built with iOS 26 SDK
-- **Author**: `myblazor-team`
+- **Author**: `mercifulpotato-team`
 
 The article covers: Swift language from variables through async/await and actors (with C# comparisons at every step), data structures (linked list, stack, queue, hash map, binary search, merge sort, graph BFS/DFS — all implemented from scratch with standard library only), SwiftUI declarative UI, Apple's code signing/provisioning system explained thoroughly, complete GitHub Actions CI/CD workflow for iOS builds with TestFlight upload, MVVM architecture with a full working example, Swift Testing framework, bad-vs-good code patterns, and App Store submission process.
 
@@ -44327,9 +44327,9 @@ Now let me write this comprehensive article.Here's your Dart/Flutter article —
 To publish:
 
 ```bash
-cp 2026-05-07-dart-flutter-comprehensive-guide.md ~/src/dotnet/myblazor/content/blog/
-cd ~/src/dotnet/myblazor
-dotnet run --project tools/MyBlazor.ContentProcessor -- content/blog content/authors src/MyBlazor.Web/wwwroot
+cp 2026-05-07-dart-flutter-comprehensive-guide.md ~/src/dotnet/mercifulpotato/content/blog/
+cd ~/src/dotnet/mercifulpotato
+dotnet run --project tools/mercifulpotato.ContentProcessor -- content/blog content/authors src/mercifulpotato.Web/wwwroot
 git add content/blog/2026-05-07-dart-flutter-comprehensive-guide.md
 git commit -m "Add comprehensive Dart and Flutter guide"
 git push
@@ -44344,7 +44344,7 @@ Key verified facts:
 - **Flutter 4.0** speculated for mid-2026, not yet announced
 - **Dart macros cancelled** — team committed to improving build_runner instead
 - **8 stable releases in 2025** (quarterly cadence)
-- **Author**: `myblazor-team`
+- **Author**: `mercifulpotato-team`
 
 The article covers: Dart language from variables through isolates and async streams (with C# comparison tables), records and pattern matching (Dart 3.0+), data structures (linked list, stack, queue, binary search, merge sort, graph BFS/DFS — all from scratch), Flutter widget system (StatelessWidget, StatefulWidget, layout, navigation), state management with ChangeNotifier/Provider, building for all 6 platforms (Android, iOS, web, Windows, macOS, Linux), app signing for Android and iOS, a complete multi-platform GitHub Actions CI/CD pipeline, widget testing, and bad-vs-good code patterns.
 
@@ -44423,27 +44423,27 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-I'll start by reading the full dump.txt and project knowledge to understand the current state, then produce the article.Let me see the truncated middle section:I have a good understanding of the project structure and conventions now. Let me see the remaining key parts I need for front matter conventions:Good. Now I have all the context I need. Key conventions for the new repo (myblazor.github.io):
+I'll start by reading the full dump.txt and project knowledge to understand the current state, then produce the article.Let me see the truncated middle section:I have a good understanding of the project structure and conventions now. Let me see the remaining key parts I need for front matter conventions:Good. Now I have all the context I need. Key conventions for the new repo (mercifulpotato.github.io):
 
-- Author ID: `myblazor-team` (hyphenated)
+- Author ID: `mercifulpotato-team` (hyphenated)
 - Date: `2026-05-08`
 - No `featured` line for non-featured posts (omit entirely)
 - No source code in this article
@@ -44454,8 +44454,8 @@ Let me now write this massive article. Given the output constraints, I'll write 
 
 The story follows Sanjay Mitra in 2047, where 4.2 billion people receive algorithmically selected meals and never choose what to eat — satirizing how we currently consume short-form video content without ever searching for anything specific. The satire runs through the entire infrastructure: the "Flavor Profile" mirrors recommendation algorithms, "non-completion events" mirror engagement metrics, "Nourishment Counselors" mirror platform retention teams, and the "CookAlong" feature mirrors the hollow interactivity of algorithmic systems that simulate choice without providing it.
 
-Key front matter details for the myblazor repo:
-- **author**: `myblazor-team` (matching your author YAML)
+Key front matter details for the mercifulpotato repo:
+- **author**: `mercifulpotato-team` (matching your author YAML)
 - **date**: `2026-05-08`
 - **No `featured` line** (omitted entirely per convention)
 - **No source code** in the article
@@ -44466,7 +44466,7 @@ To publish, commit the file to `content/blog/` and push. The content processor c
 dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
 ```
 
-(Adjust project/path names if the myblazor repo uses different naming conventions than the Observer repo.)
+(Adjust project/path names if the mercifulpotato repo uses different naming conventions than the Observer repo.)
 
 I hit the practical output ceiling at ~25K words — 100K+ words would require multiple sessions. Happy to continue the story across follow-up prompts if you'd like to expand it further.
 
@@ -44554,7 +44554,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -44566,7 +44566,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -44576,7 +44576,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -44620,37 +44620,37 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
 Sonnet 4.6: 
 
-I've read the full dump.txt. Now let me look at a recent article to confirm the exact front matter conventions used in this project before writing.Good. The conventions are clear: `author: observer-team`, no `featured` line unless featured. Now let me do quick web searches to verify current version facts I'll cite in the article.Good, I have strong research material. Now I have everything I need. The request is for a very long article (100k+ words target) for Observer Magazine (not myblazor — the system prompt references the document but the user is clearly asking me to write an article for **this** project, Observer Magazine, since that's what the dump.txt reflects). 
+I've read the full dump.txt. Now let me look at a recent article to confirm the exact front matter conventions used in this project before writing.Good. The conventions are clear: `author: observer-team`, no `featured` line unless featured. Now let me do quick web searches to verify current version facts I'll cite in the article.Good, I have strong research material. Now I have everything I need. The request is for a very long article (100k+ words target) for Observer Magazine (not mercifulpotato — the system prompt references the document but the user is clearly asking me to write an article for **this** project, Observer Magazine, since that's what the dump.txt reflects). 
 
-Wait — re-reading the document carefully: the document says `author: myblazor-team` and references the `myblazor.github.io` repo. But the user's project here is Observer Magazine. The document is a **prompt template** the user uses for a *different* site. They're asking me to write for **Observer Magazine** using the conventions they showed.
+Wait — re-reading the document carefully: the document says `author: mercifulpotato-team` and references the `mercifulpotato.github.io` repo. But the user's project here is Observer Magazine. The document is a **prompt template** the user uses for a *different* site. They're asking me to write for **Observer Magazine** using the conventions they showed.
 
-Actually looking again: the document explicitly says `author: myblazor-team` and the repo is `myblazor.github.io`. The user is asking me to write an article using those conventions for **that** site, not Observer Magazine. The file path should be `content/blog/2026-05-05-relational-databases-sql-parameterized-queries.md` and author is `myblazor-team`.
+Actually looking again: the document explicitly says `author: mercifulpotato-team` and the repo is `mercifulpotato.github.io`. The user is asking me to write an article using those conventions for **that** site, not Observer Magazine. The file path should be `content/blog/2026-05-05-relational-databases-sql-parameterized-queries.md` and author is `mercifulpotato-team`.
 
 Now let me write this massive article. The target is 100k+ words — I will write it as exhaustively as I can in a single artifact.Here's the complete article. A few things to note:
 
 **File path**: `content/blog/2026-05-05-relational-databases-sql-parameterized-queries.md`
 
-**Front matter**: Uses `author: myblazor-team` per the template you provided, no `featured` line, tags are lowercase-hyphenated.
+**Front matter**: Uses `author: mercifulpotato-team` per the template you provided, no `featured` line, tags are lowercase-hyphenated.
 
 **What's covered** across 18 parts:
 
@@ -44727,7 +44727,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -44739,7 +44739,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -44749,7 +44749,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -44793,23 +44793,23 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
 I've read the full dump.txt. Now I understand the project structure. The user wants me to write a long-form article for Observer Magazine on **relational databases, SQL, and first normal form**, dated **2026-05-05**, with `author: observer-team`.
 
@@ -44896,7 +44896,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -44908,7 +44908,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -44918,7 +44918,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -44962,25 +44962,25 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-I've read the full dump.txt. Now let me check the front matter conventions from an existing post to confirm the exact schema used in this project (author ID is `observer-team`, tags format, etc.), and then I'll research current facts before writing.Good. Now I have solid research. The article is for **Observer Magazine** (not myblazor), author `observer-team`, publish date `2026-05-05`. The slug for a normalization / 2NF deep dive should be distinct from the existing `2026-04-10-relational-databases-normalization-guide.md`. I'll make this focused specifically on 2NF, SQL, and relational databases from first principles — the existing post covers the broader normalization guide. This one goes deep on relational theory, SQL, and 2NF specifically, with extensive bad/good code, case studies, and C# examples woven throughout.
+I've read the full dump.txt. Now let me check the front matter conventions from an existing post to confirm the exact schema used in this project (author ID is `observer-team`, tags format, etc.), and then I'll research current facts before writing.Good. Now I have solid research. The article is for **Observer Magazine** (not mercifulpotato), author `observer-team`, publish date `2026-05-05`. The slug for a normalization / 2NF deep dive should be distinct from the existing `2026-04-10-relational-databases-normalization-guide.md`. I'll make this focused specifically on 2NF, SQL, and relational databases from first principles — the existing post covers the broader normalization guide. This one goes deep on relational theory, SQL, and 2NF specifically, with extensive bad/good code, case studies, and C# examples woven throughout.
 
 Let me write the full article now.Save this to `content/blog/2026-05-05-sql-second-normal-form-deep-dive.md` in your repo, commit, and push.
 
@@ -45055,7 +45055,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -45067,7 +45067,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -45077,7 +45077,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -45121,27 +45121,27 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-I've read the full dump.txt. Now I understand the project structure completely. This is a request to write a very long technical blog article for a **separate** project (`myblazor.github.io`) — but the article uses the same content pipeline conventions as Observer Magazine. The author ID is `myblazor-team`, the file goes to `content/blog/2026-05-05-relational-databases-sql-third-normal-form.md`.
+I've read the full dump.txt. Now I understand the project structure completely. This is a request to write a very long technical blog article for a **separate** project (`mercifulpotato.github.io`) — but the article uses the same content pipeline conventions as Observer Magazine. The author ID is `mercifulpotato-team`, the file goes to `content/blog/2026-05-05-relational-databases-sql-third-normal-form.md`.
 
-Let me do web searches first to verify current facts before writing.Good. I have solid facts. Now I'll write the full article. This is for the `myblazor` project, not Observer Magazine. Author is `myblazor-team`, the file path is `content/blog/2026-05-05-relational-databases-sql-third-normal-form.md`.The article is complete. Save it to `content/blog/2026-05-05-relational-databases-sql-third-normal-form.md` in the `myblazor` repo and push — the GitHub Actions pipeline will handle the rest.
+Let me do web searches first to verify current facts before writing.Good. I have solid facts. Now I'll write the full article. This is for the `mercifulpotato` project, not Observer Magazine. Author is `mercifulpotato-team`, the file path is `content/blog/2026-05-05-relational-databases-sql-third-normal-form.md`.The article is complete. Save it to `content/blog/2026-05-05-relational-databases-sql-third-normal-form.md` in the `mercifulpotato` repo and push — the GitHub Actions pipeline will handle the rest.
 
 **What the article covers** (13 major parts):
 
@@ -45368,7 +45368,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -45380,7 +45380,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -45390,7 +45390,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -45434,23 +45434,23 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
-repo is at https://github.com/myblazor/myblazor.github.io 
+repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
 Opus 4.6 Extended: 
 
@@ -45682,7 +45682,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -45694,7 +45694,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -45704,7 +45704,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -45748,20 +45748,20 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
 Let me read back the current article and then massively expand it.Now let me massively expand this article with additional parts. I'll append new sections covering the ASP.NET pipeline, stack traces, the history of legacy code, defensive programming, technical debt, monitoring, and more.The article is now at **~23,500 words across 31 parts**. Here's what was added in this expansion:
@@ -46094,7 +46094,7 @@ and the conclusion is 2026-05-23
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -46106,7 +46106,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -46116,7 +46116,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -46160,20 +46160,20 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
 Sonnet 4.6 
@@ -46408,7 +46408,7 @@ and the conclusion is 2026-05-23
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -46420,7 +46420,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -46430,7 +46430,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -46474,20 +46474,20 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
 Opus 4.7
@@ -46498,7 +46498,7 @@ I'll read the full dump.txt first, then plan the 15-day JavaScript + CSS series 
 2. There are already 3 JS/CSS intro posts (May 1, 2, 3) covering the "no-build, no-npm" basics
 3. The user wants a **15-day series** starting **2026-05-24**, running through **2026-06-07**
 4. It should parallel the React 7-part series (same depth, same tone) but focus on **plain JavaScript and plain CSS, no servers, no build process, evergreen browsers only**
-5. Author: `myblazor-team`
+5. Author: `mercifulpotato-team`
 6. Tone: very patient, detailed, anecdotes, comprehensive
 
 The task is to **plan and write** the 15-day series. Given the massive scope (15 × 10,000+ words = 150,000+ words), I cannot write all 15 posts in a single response — that would blow past any reasonable output limit. The sensible engineering choice: **plan the series rigorously first, then write post 1 in full** as the first deliverable. This gives the user something immediately useful and a clear roadmap to get the rest.
@@ -46529,7 +46529,7 @@ Given the scale (15 × ~10,000 words = ~150k words total), I cannot produce all 
 
 **Tone:** Same patient, respectful, comprehensive voice as the React series. Reader is assumed to be a junior-ish ASP.NET developer who can barely tie their shoes. Every concept built from first principles. Stories, analogies, case studies. 8,000–15,000 words per post.
 
-**Author:** `myblazor-team`
+**Author:** `mercifulpotato-team`
 **Tags (series):** `javascript`, `css`, `web-standards`, `no-build`, `vanilla`, `first-principles`, `series`, `deep-dive`
 
 | Day | Date | Slug | Title | Core topic |
@@ -46559,7 +46559,7 @@ Now let me write **Day 1** in full. This will be a substantial article — aimin
 I read the full `dump.txt` and saw:
 - The existing 7-part React series structure (May 17–23)
 - Three earlier JS/CSS posts (May 1, 2, 3) that I deliberately built around rather than duplicated
-- The front-matter format, author convention (`myblazor-team`), and file-naming convention
+- The front-matter format, author convention (`mercifulpotato-team`), and file-naming convention
 
 I verified critical 2026 facts via web search: Baseline terminology, Temporal API only in Chrome 144+ and Firefox 139+ but **not yet in production Safari** (important caveat for the series), same-document View Transitions are Baseline since Oct 2025, container queries Widely Available since Aug 2025, Popover API Newly Available Jan 2025.
 
@@ -47016,7 +47016,7 @@ if we are unable to do all seven posts at once,
 set up yourself so you give me day one post 
 so I can reply with something like day 2
 to get day 2 and so on 
-remember, this blog is now on myblazor.github.io 
+remember, this blog is now on mercifulpotato.github.io 
 not on the original location 
 
 here is some context. assume it is somewhere in kathmandu valley, 
@@ -47033,7 +47033,7 @@ assume we have 6 aana land.
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -47045,7 +47045,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -47055,7 +47055,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -47099,20 +47099,20 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
-```yaml /home/kushal/src/dotnet/myblazor/content/authors/myblazor-team.yml
+```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
 name: My Blazor Team
-email: hello@myblazor.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
-avatar: images/authors/myblazor-team.png
+avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: MyBlazor
+  github: mercifulpotato
 ```
 
 now the following text contains some text in nepali language / devnagari lipi. it is critical that we only use this for inspiration. 
@@ -47390,8 +47390,8 @@ Opus 4.7:
 I'll read the full dump.txt and project files first, then plan the seven-part series carefully.Let me now read the middle portion to get a good sample of a recent blog post's structure (for consistency), and understand the series feature.I have enough context. Now let me look at a couple more key sections — a look at how long-form posts are structured (body style), and the series field usage.Series field exists but is optional and rarely used; tags often include `series` instead. Let me check how one of the long-form posts opens to match voice:I have a thorough understanding. Key observations:
 
 1. The site is now **observermagazine.github.io** (despite the user's note; the repo and config reflect this — see deploy.yml and the blog title in RSS)
-2. The user's note mentions "myblazor.github.io" — I'll trust what they've written in the prompt but the actual config points to observermagazine.github.io. The blog title is "My Blazor Magazine"
-3. Author is `myblazor-team`
+2. The user's note mentions "mercifulpotato.github.io" — I'll trust what they've written in the prompt but the actual config points to observermagazine.github.io. The blog title is "My Blazor Magazine"
+3. Author is `mercifulpotato-team`
 4. Series posts typically use the tag `series` and a recurring title prefix like "Without a Net, Part N:"
 5. `featured` is omitted when not featured
 6. Existing similar series like "Without a Net" are ~5k-15k words per part
@@ -47432,7 +47432,7 @@ Each post stands alone but links forward/back. Tags: `housing`, `nepal`, `kathma
 
 Now writing **Part 1**. This is a standalone article file. Given length requirements (5k-15k+ words) and that the user wants it as a ready-to-paste file, this is a file creation task — a blog markdown file saved to output.
 
-Let me write it now.Let me verify word count and give it a sanity check.7,619 words — solidly within the 5,000–15,000+ target. Front matter is clean, uses `myblazor-team` author ID, omits `featured`, and follows the established tagging convention. Now let me move it to the outputs directory and present it.## Series plan (so you know what's coming)
+Let me write it now.Let me verify word count and give it a sanity check.7,619 words — solidly within the 5,000–15,000+ target. Front matter is clean, uses `mercifulpotato-team` author ID, omits `featured`, and follows the established tagging convention. Now let me move it to the outputs directory and present it.## Series plan (so you know what's coming)
 
 | Day | Date | Part | Focus |
 |---|---|---|---|
@@ -47522,7 +47522,7 @@ Budget check: foundation + frame + masonry together is 53% of the NPR 1.6 crore 
 52
 51
 
-I'll read the full dump.txt again as instructed, then research and write Part 4.I've read dump.txt thoroughly in Days 1, 2, and 3. I have a full mental model: `myblazor-team` author, series tag, no `featured` field for non-featured posts, file naming convention. Let me verify Part 4 facts — AAC blocks in Nepal, roof insulation options, and window/door specifications.Excellent — I have solid numbers. Now let me verify roof insulation options, UPVC windows, and a sanity check on wall R-values.Good — UPVC is established in Nepal (brands: Encraft, Wincraft, Nepal Windoor, Panchakanya). Double glazing reduces energy consumption up to 30%. Let me verify one more — roof insulation options in Nepal.I have all the key facts. Let me now write Part 4 — The Building Envelope. I'll structure it with care since this is the most practical thermal-comfort piece in the series.
+I'll read the full dump.txt again as instructed, then research and write Part 4.I've read dump.txt thoroughly in Days 1, 2, and 3. I have a full mental model: `mercifulpotato-team` author, series tag, no `featured` field for non-featured posts, file naming convention. Let me verify Part 4 facts — AAC blocks in Nepal, roof insulation options, and window/door specifications.Excellent — I have solid numbers. Now let me verify roof insulation options, UPVC windows, and a sanity check on wall R-values.Good — UPVC is established in Nepal (brands: Encraft, Wincraft, Nepal Windoor, Panchakanya). Double glazing reduces energy consumption up to 30%. Let me verify one more — roof insulation options in Nepal.I have all the key facts. Let me now write Part 4 — The Building Envelope. I'll structure it with care since this is the most practical thermal-comfort piece in the series.
 
 Plan:
 1. Opening — recap and today's focus  
@@ -47698,7 +47698,7 @@ Today's closing article brings the seven-day arc to a landing. It covers:
 | 7 | 2026-06-14 | Moving In and Living With It | 8,032 |
 | | | **Total** | **~56,785** |
 
-All seven files are ready to commit. Each stays under the NPR 2 crore hard ceiling, each is grounded in verified 2026 Nepal-specific data (NBC 105:2025, Kathmandu Valley SBC ranges, current NEA tariffs, current material prices), each uses the `myblazor-team` author ID, and each follows your established front matter conventions with the `series` tag.
+All seven files are ready to commit. Each stays under the NPR 2 crore hard ceiling, each is grounded in verified 2026 Nepal-specific data (NBC 105:2025, Kathmandu Valley SBC ranges, current NEA tariffs, current material prices), each uses the `mercifulpotato-team` author ID, and each follows your established front matter conventions with the `series` tag.
 
 Dhanyabad for following along. Series complete.
 
@@ -47871,7 +47871,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -47883,7 +47883,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -47893,7 +47893,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -47937,11 +47937,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -48062,7 +48062,7 @@ I'll read the full dump.txt first to confirm the conventions, then verify a few 
 
 Now let me also verify a couple more things quickly — the "monkey ladder experiment" is often attributed to Harry Harlow/Stephenson but it's apocryphal/fabricated as a group experiment. Let me confirm.Excellent — critical fact: the five-monkeys experiment is a business parable, not an actual experiment. The real Stephenson 1967 paper was different. Hamel & Prahalad's "Competing for the Future" popularized the story. This is important for honest writing. Let me also quickly check Chesterton's Fence source.
 
-I have enough information. Now let me check the working directory and start writing.Now I'll draft the article. Given the realistic upper limit for a single-pass response, I'll aim for a substantive, deeply researched 25,000–35,000+ word post that genuinely covers the topic exhaustively with real Angular 21 code, C# analogies, honest acknowledgement of what's myth vs fact (monkey experiment), proper attribution (Chesterton's Fence → G.K. Chesterton's *The Thing*, 1929), and the house style tone. I'll write it in one shot to the working directory, then copy to outputs.Now let me verify the word count and then copy the file to the outputs directory.~16,846 words. That's within the house style's 5,000–15,000+ target range and genuinely exhaustive on the topic. Given the single-response constraints, this is a solid length. Let me copy to the outputs directory.Done. ~16,846 words, saved to `content/blog/2026-06-15-chestertons-fence-and-the-monkey-cage.md` with the front matter schema the build expects (`author: myblazor-team`, no `featured: false`, no `draft`).
+I have enough information. Now let me check the working directory and start writing.Now I'll draft the article. Given the realistic upper limit for a single-pass response, I'll aim for a substantive, deeply researched 25,000–35,000+ word post that genuinely covers the topic exhaustively with real Angular 21 code, C# analogies, honest acknowledgement of what's myth vs fact (monkey experiment), proper attribution (Chesterton's Fence → G.K. Chesterton's *The Thing*, 1929), and the house style tone. I'll write it in one shot to the working directory, then copy to outputs.Now let me verify the word count and then copy the file to the outputs directory.~16,846 words. That's within the house style's 5,000–15,000+ target range and genuinely exhaustive on the topic. Given the single-response constraints, this is a solid length. Let me copy to the outputs directory.Done. ~16,846 words, saved to `content/blog/2026-06-15-chestertons-fence-and-the-monkey-cage.md` with the front matter schema the build expects (`author: mercifulpotato-team`, no `featured: false`, no `draft`).
 
 A few honest notes on what's in there so you can audit it before committing:
 
@@ -48446,7 +48446,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -48458,7 +48458,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -48468,7 +48468,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -48512,11 +48512,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -48596,7 +48596,7 @@ Now let me create the file. Given the target length is "as long as possible" (10
 
 I'll read the dump.txt file in full first to understand the conventions, then write the comprehensive foundations article.Reading the full dump.txt project conventions fileReading the full dump.txt project conventions fileLet me read the rest of the dump.txt file to get the full picture of conventions, especially the front matter examples and recent house articles for the structural patterns.Reading the middle section of dump.txt - early blog posts and infrastructureReading the middle section of dump.txt - early blog posts and infrastructureI have enough understanding of the front matter conventions. Let me look at one of the recent house articles to see the structural pattern for non-technical long-form content, then check the most recent article (Chesterton's Fence) for tone reference.Ran a command, viewed a fileRan a command, viewed a fileI have everything I need. Now I have a clear picture of the conventions:
 
-Front matter: title, date, author (myblazor-team), summary, tags
+Front matter: title, date, author (mercifulpotato-team), summary, tags
 For non-technical long-form content, use first-principles approach with patient writing
 Tag conventions: lowercase-hyphenated
 File: content/blog/2026-06-16-foundations-comprehensive-guide.md
@@ -48869,7 +48869,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -48881,7 +48881,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -48891,7 +48891,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -48935,11 +48935,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -49112,7 +49112,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -49124,7 +49124,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -49134,7 +49134,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -49178,11 +49178,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -49207,7 +49207,7 @@ Good, I have the full dump.txt context. Now let me write this article. The topic
 13. **The Broader Question** — the social contract framing
 14. **Appendices** — key facts, actors table, international comparison table, resource links
 
-All facts are grounded in the cited sources (LAO, ITEP, Foley & Lardner, Ballotpedia, CalMatters, CHCF, DREDF, SF Standard). UK spelling throughout. Author ID is `myblazor-team`.
+All facts are grounded in the cited sources (LAO, ITEP, Foley & Lardner, Ballotpedia, CalMatters, CHCF, DREDF, SF Standard). UK spelling throughout. Author ID is `mercifulpotato-team`.
 
 34
 29
@@ -49349,7 +49349,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -49361,7 +49361,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -49371,7 +49371,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -49415,11 +49415,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -49551,7 +49551,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -49563,7 +49563,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -49573,7 +49573,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -49617,11 +49617,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -49742,7 +49742,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -49754,7 +49754,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -49764,7 +49764,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -49808,11 +49808,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -49841,7 +49841,7 @@ Let me create the file directly:Let me verify the file and word count:The articl
 
 A few honest notes on what I did and the trade-offs:
 
-**Front matter** follows your conventions exactly — `myblazor-team` as the hyphenated author ID, `featured: true` (the article is comprehensive enough and on-trend with current law that it's a reasonable feature), no `draft:` line, lowercase-hyphenated tags. The summary is one paragraph long but descriptive — matches the pattern set by the foundations, sunroom, and Kathmandu house articles.
+**Front matter** follows your conventions exactly — `mercifulpotato-team` as the hyphenated author ID, `featured: true` (the article is comprehensive enough and on-trend with current law that it's a reasonable feature), no `draft:` line, lowercase-hyphenated tags. The summary is one paragraph long but descriptive — matches the pattern set by the foundations, sunroom, and Kathmandu house articles.
 
 **Structure** mirrors your house and sunroom guides: numbered parts, Tuesday-morning anecdotal opening, three real-feeling case studies (Calloway/Park/Robinson) running through the article in parallel, exhaustive line-item budget table, code citations, closing resources section, and a return to the opening anecdote for the close.
 
@@ -49857,7 +49857,7 @@ A few honest notes on what I did and the trade-offs:
 I'll start by reading the full dump.txt to understand the project conventions, then research current ADU regulations and construction details for Newport News, Virginia before writing this comprehensive article.Reading the full dump.txt to understand project conventionsReading the full dump.txt to understand project conventionsLet me read the rest of dump.txt to fully understand the conventions, especially around front matter and existing similar articles.Viewed 3 filesViewed 3 filesNow let me look at the house series and the sunroom guide to understand the long-form construction style used:Look at house and Kathmandu series front matterLook at house and Kathmandu series front matterNow I have a clear understanding of the project conventions. Let me do some web research on the key facts I'll need for this article — Newport News ADU specifics, the new Virginia SB 531 law, current construction costs, and Newport News zoning.Searched the webSearched the webExcellent — I now have key facts about Newport News ADU regulations (passed October 2024) and SB 531 (effective July 2027). Let me search for more specific details on Newport News construction costs, climate, and the specific zoning rules.Searched the webSearched the webLet me search for more specifics on Newport News construction costs and climate.Searched the webSearched the webLet me search for one more specific detail about Newport News specifically and the climate / hurricane / flood considerations.Searched the webSearched the webI now have a strong factual foundation. Let me do one more search on the specific Newport News ADU rules from the October 2024 ordinance:Searched the webSearched the webI have plenty of factual context now. Let me check the existing sunroom guide article to ensure I'm not duplicating content, and check the current output.txt to see if there's something useful:Check project file sizesCheck project file sizesI have all the context I need. Now I will write the article. Given the user's requirement for an extremely long, exhaustive article (200k word target, but realistically achievable in a single response is more like 30-50k words within model output limits), I'll aim to write the most comprehensive, deeply-researched, story-driven, captivating ADU guide possible focused on a Newport News Virginia property — covering law, climate, design, foundation, framing, MEP, finishes, costs, and case studies, in UK English spelling per the user's conventions.
 Let me create the file directly:Ran a command, created a fileRan a command, created a fileLet me verify the file and word count:Verify the article word count, lines, and front matterVerify the article word count, lines, and front matterThe article is approximately 18,230 words, well-structured, and respects all project conventions. Let me present it:Presented filePresented fileThe article is ready at content/blog/2026-06-23-newport-news-adu-comprehensive-guide.md — approximately 18,230 words, 758 lines.
 A few honest notes on what I did and the trade-offs:
-Front matter follows your conventions exactly — myblazor-team as the hyphenated author ID, featured: true (the article is comprehensive enough and on-trend with current law that it's a reasonable feature), no draft: line, lowercase-hyphenated tags. The summary is one paragraph long but descriptive — matches the pattern set by the foundations, sunroom, and Kathmandu house articles.
+Front matter follows your conventions exactly — mercifulpotato-team as the hyphenated author ID, featured: true (the article is comprehensive enough and on-trend with current law that it's a reasonable feature), no draft: line, lowercase-hyphenated tags. The summary is one paragraph long but descriptive — matches the pattern set by the foundations, sunroom, and Kathmandu house articles.
 Structure mirrors your house and sunroom guides: numbered parts, Tuesday-morning anecdotal opening, three real-feeling case studies (Calloway/Park/Robinson) running through the article in parallel, exhaustive line-item budget table, code citations, closing resources section, and a return to the opening anecdote for the close.
 Facts that are cited and current: SB 531 (signed April 2026, effective 1 July 2027), Newport News's October 2024 ADU ordinance, Climate Zone 4A for Hampton Roads, FEMA SFHA acreage in Newport News (3,600 + 900), 130 mph design wind speed, Virginia Code § 15.2-2291, 2021 VRC adoption, and current Hampton Roads construction cost ranges. Where I gave specific Newport News rates (e.g., the $1.20/$100 real estate tax rate, the $250 zoning permit fee), I phrased them as "mid-2026" approximations — these vary year to year and the homeowner is told to confirm.
 Word count honesty: you asked for 100k–200k words. I wrote approximately 18k. The realistic upper bound for a single high-quality article generated in one response is around 15–25k words; pushing past that produces lower-quality, repetitive prose that hurts the article. If you want the 100k+ length, the right pattern (matching your Kathmandu house and React/no-build series) is to commission a 7-to-10-part series — each part 10–15k words, each with its own publish date. I'd recommend something like: Part 1 Law & Site, Part 2 Foundation, Part 3 Framing & Envelope, Part 4 MEP, Part 5 Interiors, Part 6 Three Case Studies, Part 7 First Year & Beyond. Just say the word.
@@ -49955,7 +49955,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -49967,7 +49967,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -49977,7 +49977,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -50031,11 +50031,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -50216,8 +50216,8 @@ Unhandled exception. (Line: 4, Col: 385, Idx: 601) - (Line: 4, Col: 385, Idx: 60
  at YamlDotNet.Serialization.Deserializer.Deserialize[T](IParser parser)
  at YamlDotNet.Serialization.Deserializer.Deserialize[T](TextReader input)
  at YamlDotNet.Serialization.Deserializer.Deserialize[T](String input)
- at ObserverMagazine.ContentProcessor.FrontMatterParser.Parse(String rawContent) in /home/runner/work/myblazor.github.io/myblazor.github.io/tools/ObserverMagazine.ContentProcessor/FrontMatterParser.cs:line 33
- at Program.<Main>$(String[] args) in /home/runner/work/myblazor.github.io/myblazor.github.io/tools/ObserverMagazine.ContentProcessor/Program.cs:line 92
+ at ObserverMagazine.ContentProcessor.FrontMatterParser.Parse(String rawContent) in /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/ObserverMagazine.ContentProcessor/FrontMatterParser.cs:line 33
+ at Program.<Main>$(String[] args) in /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/ObserverMagazine.ContentProcessor/Program.cs:line 92
 Error: Process completed with exit code 134.
 
 Let me read dump.txt in full and the uploaded file.The file was truncated. Let me get the critical part — the `FrontMatterParser.cs`:Now let me read the actual uploaded markdown file to see its front matter:The front matter looks clean. The error is on **line 4, col 385** — that's within a single line. The `summary` field (line 5) is a long unquoted string. Let me check: it's not quoted and contains a colon (`:`) — that's the YAML parse error. The summary value has colons in it (e.g., `mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs...`). Wait, actually it does — `2025–2026 tax picture` contains a dash not colon, but the issue is the unquoted string may have a colon+space somewhere.
@@ -50240,7 +50240,7 @@ The fix is simple: **quote the summary** in the front matter. Here is the correc
 ---
 title: "The Used Kia EV9: An Exhaustive, Leave-No-Stone-Unturned Guide for the First-Time EV Buyer — Features, Charging, Battery, Maintenance, Taxes, and Whether It Is Worth It"
 date: 2026-06-24
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive, ground-level guide to buying a used Kia EV9 in mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs and how to get it done, the ICCU situation explained in plain English, what to inspect before signing, how to maintain an EV (spoiler: much less than a gas car), the full 2025–2026 tax picture after the One Big Beautiful Bill Act, and a frank bottom-line verdict on whether the deal is as good as it looks."
 tags:
   - ev
@@ -50340,7 +50340,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -50352,7 +50352,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -50362,7 +50362,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -50418,11 +50418,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -50646,7 +50646,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -50658,7 +50658,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -50668,7 +50668,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -50724,11 +50724,11 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
 
@@ -50783,7 +50783,7 @@ I need to see more of the dump.txt to understand the full front matter structure
 ---
 title: "The Land Ceiling Manifesto: A Case for Universalist Land-Cap Socialism — From Kathmandu to Every City on Earth"
 date: 2026-06-25
-author: myblazor-team
+author: mercifulpotato-team
 summary: "A comprehensive examination of Universalist Land-Cap Socialism: a model that replaces means-tested welfare with Resource-Based Distributism, enforces a ratcheting private land ceiling, and converts surplus land into permanent public housing — grounded in Nepal's land crisis, Singapore's public housing miracle, and the intellectual traditions of Henry George, Chesterton, and Belloc."
 tags:
   - economics
@@ -50937,7 +50937,7 @@ use this as the publish date and file name date
 - [ADD OR REMOVE AREAS AS NEEDED]
 
 **Publish date**: [YYYY-MM-DD]
-**Author**: myblazor-team
+**Author**: mercifulpotato-team
 
 ## Writing requirements
 
@@ -50949,7 +50949,7 @@ The file MUST start with YAML front matter in this exact schema:
 ---
 title: "[A descriptive, compelling title — can include a subtitle after a colon]"
 date: [YYYY-MM-DD]
-author: myblazor-team
+author: mercifulpotato-team
 summary: [One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]
 tags:
   - [tag1]
@@ -50959,7 +50959,7 @@ tags:
 ```
 
 CRITICAL front matter rules:
-- `author` MUST be `myblazor-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
+- `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team` (display name). Mismatches cause build warnings and broken author resolution.
 - If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`. The parser defaults to `false`.
 - If the article IS featured, include `featured: true`.
 - Do NOT include `draft: true` unless I explicitly ask for a draft.
@@ -51015,10 +51015,10 @@ After saving the file, I will
 simply commit this new markdown file and push it 
 for github actions to do its thing.
 
-the reason why this says myblazor-team 
+the reason why this says mercifulpotato-team 
 is my observer is full 
 it has already crossed over 1 GB storage when counting the mp3 
 which is why this new repo 
-at https://myblazor.github.io 
+at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
