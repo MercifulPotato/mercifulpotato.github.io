@@ -23,9 +23,9 @@ We should have extensive logging, metrics, etc using open telemetry.
 Application should be built from the ground up to be testable.
 All tests including Unit tests, integration tests should be automated and be performant so we can run them after every change. 
 The whole thing should fit in a single git repository. 
-the repo will be at https://github.com/ObserverMagazine/ObserverMagazine.github.io 
+the repo will be at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-and we need to deploy to https://ObserverMagazine.github.io
+and we need to deploy to https://mercifulpotato.github.io
 use dotnet 10 
 use asp dotnet 10 
 generate the full project 

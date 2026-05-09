@@ -23,9 +23,9 @@ We should have extensive logging, metrics, etc using open telemetry.
 Application should be built from the ground up to be testable.
 All tests including Unit tests, integration tests should be automated and be performant so we can run them after every change. 
 The whole thing should fit in a single git repository. 
-the repo will be at https://github.com/ObserverMagazine/observermagazine.github.io 
+the repo will be at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-and we need to deploy to https://observermagazine.github.io
+and we need to deploy to https://mercifulpotato.github.io
 use dotnet 10 
 use asp dotnet 10 
 generate the full project 
@@ -59,7 +59,7 @@ All packages are free for any use, no payment required.Here's your complete proj
 
 **How it works end-to-end:**
 
-The project has three main parts that work together. The **Blazor WASM app** (`src/ObserverMagazine.Web`) is the user-facing site — it fetches pre-built JSON and HTML at runtime, so no server needed. The **Content Processor** (`tools/ObserverMagazine.ContentProcessor`) is a console app that runs at build time (locally or in CI) to convert your Markdown blog posts into static `blog-data/*.html` files, a `posts-index.json`, and an RSS `feed.xml`. The **test suite** covers both component behavior (bUnit) and content processing logic (xUnit v3).
+The project has three main parts that work together. The **Blazor WASM app** (`src/mercifulpotato.Web`) is the user-facing site — it fetches pre-built JSON and HTML at runtime, so no server needed. The **Content Processor** (`tools/mercifulpotato.ContentProcessor`) is a console app that runs at build time (locally or in CI) to convert your Markdown blog posts into static `blog-data/*.html` files, a `posts-index.json`, and an RSS `feed.xml`. The **test suite** covers both component behavior (bUnit) and content processing logic (xUnit v3).
 
 **Key architectural decisions:**
 
@@ -69,7 +69,7 @@ For GitHub Pages SPA routing, the `404.html` contains a redirect script that sto
 
 The CI pipeline (`.github/workflows/deploy.yml`) runs the content processor, then the tests, then publishes the WASM app and deploys to GitHub Pages using the official `deploy-pages` action.
 
-**To get started:** Copy each file into the directory structure shown at the top of the artifact. Create the `.nojekyll` file (empty) at the root. Then run the three commands: `dotnet restore`, `dotnet run --project tools/ObserverMagazine.ContentProcessor`, and `dotnet run --project src/ObserverMagazine.Web`.
+**To get started:** Copy each file into the directory structure shown at the top of the artifact. Create the `.nojekyll` file (empty) at the root. Then run the three commands: `dotnet restore`, `dotnet run --project tools/mercifulpotato.ContentProcessor`, and `dotnet run --project src/mercifulpotato.Web`.
 
 35
 40
@@ -77,29 +77,29 @@ The CI pipeline (`.github/workflows/deploy.yml`) runs the content processor, the
 # My Blazor Magazine — Full Project Source
 
 > Blazor WebAssembly on .NET 10, deployed to GitHub Pages  
-> Repository: https://github.com/ObserverMagazine/observermagazine.github.io  
-> Live site: https://observermagazine.github.io
+> Repository: https://github.com/mercifulpotato/mercifulpotato.github.io  
+> Live site: https://mercifulpotato.github.io
 
 ---
 
 ## Directory Structure
 
 ```
-observermagazine.github.io/
+mercifulpotato.github.io/
 ├── .github/workflows/deploy.yml
 ├── .gitignore
 ├── .nojekyll
 ├── global.json
 ├── Directory.Build.props
 ├── Directory.Packages.props
-├── ObserverMagazine.slnx
+├── mercifulpotato.slnx
 ├── README.md
 ├── content/blog/
 │   ├── 2026-01-15-welcome-to-observer-magazine.md
 │   ├── 2026-02-20-getting-started-with-blazor-wasm.md
 │   └── 2026-03-10-responsive-design-patterns.md
-├── src/ObserverMagazine.Web/
-│   ├── ObserverMagazine.Web.csproj
+├── src/mercifulpotato.Web/
+│   ├── mercifulpotato.Web.csproj
 │   ├── Program.cs
 │   ├── _Imports.razor
 │   ├── App.razor
@@ -128,19 +128,19 @@ observermagazine.github.io/
 │       ├── 404.html
 │       ├── css/app.css
 │       └── sample-data/products.json
-├── tools/ObserverMagazine.ContentProcessor/
-│   ├── ObserverMagazine.ContentProcessor.csproj
+├── tools/mercifulpotato.ContentProcessor/
+│   ├── mercifulpotato.ContentProcessor.csproj
 │   ├── Program.cs
 │   ├── FrontMatterParser.cs
 │   ├── MarkdownProcessor.cs
 │   └── RssGenerator.cs
-├── tests/ObserverMagazine.Web.Tests/
-│   ├── ObserverMagazine.Web.Tests.csproj
+├── tests/mercifulpotato.Web.Tests/
+│   ├── mercifulpotato.Web.Tests.csproj
 │   ├── Services/BlogServiceTests.cs
 │   ├── Components/ResponsiveTableTests.cs
 │   └── Components/MasterDetailTests.cs
-└── tests/ObserverMagazine.Integration.Tests/
-    ├── ObserverMagazine.Integration.Tests.csproj
+└── tests/mercifulpotato.Integration.Tests/
+    ├── mercifulpotato.Integration.Tests.csproj
     ├── ContentProcessorTests.cs
     └── RssGeneratorTests.cs
 ```
@@ -205,7 +205,7 @@ observermagazine.github.io/
 
 ---
 
-## FILE: `ObserverMagazine.slnx`
+## FILE: `mercifulpotato.slnx`
 
 ```xml
 <Solution>
@@ -216,14 +216,14 @@ observermagazine.github.io/
     <File Path="README.md" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/ObserverMagazine.Web/ObserverMagazine.Web.csproj" />
+    <Project Path="src/mercifulpotato.Web/mercifulpotato.Web.csproj" />
   </Folder>
   <Folder Name="/tools/">
-    <Project Path="tools/ObserverMagazine.ContentProcessor/ObserverMagazine.ContentProcessor.csproj" />
+    <Project Path="tools/mercifulpotato.ContentProcessor/mercifulpotato.ContentProcessor.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj" />
-    <Project Path="tests/ObserverMagazine.Integration.Tests/ObserverMagazine.Integration.Tests.csproj" />
+    <Project Path="tests/mercifulpotato.Web.Tests/mercifulpotato.Web.Tests.csproj" />
+    <Project Path="tests/mercifulpotato.Integration.Tests/mercifulpotato.Integration.Tests.csproj" />
   </Folder>
 </Solution>
 ```
@@ -283,8 +283,8 @@ TestResults/
 *.trx
 
 ## Generated blog data (created by ContentProcessor at build time)
-src/ObserverMagazine.Web/wwwroot/blog-data/
-src/ObserverMagazine.Web/wwwroot/feed.xml
+src/mercifulpotato.Web/wwwroot/blog-data/
+src/mercifulpotato.Web/wwwroot/feed.xml
 ```
 
 ---
@@ -319,10 +319,10 @@ Built with **.NET 10** (LTS) and **C# 14**.
 
 ```bash
 # Restore & process blog content
-dotnet run --project tools/ObserverMagazine.ContentProcessor
+dotnet run --project tools/mercifulpotato.ContentProcessor
 
 # Run the app locally
-dotnet run --project src/ObserverMagazine.Web
+dotnet run --project src/mercifulpotato.Web
 
 # Run all tests
 dotnet test
@@ -384,13 +384,13 @@ jobs:
         run: dotnet restore
 
       - name: Run content processor
-        run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot
+        run: dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot
 
       - name: Run tests
         run: dotnet test --no-restore --verbosity normal
 
       - name: Publish Blazor WASM
-        run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
+        run: dotnet publish src/mercifulpotato.Web/mercifulpotato.Web.csproj -c Release -o publish
 
       - name: Prepare GitHub Pages artifacts
         run: |
@@ -412,14 +412,14 @@ jobs:
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/ObserverMagazine.Web.csproj`
+## FILE: `src/mercifulpotato.Web/mercifulpotato.Web.csproj`
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <RootNamespace>ObserverMagazine.Web</RootNamespace>
-    <AssemblyName>ObserverMagazine.Web</AssemblyName>
+    <RootNamespace>mercifulpotato.Web</RootNamespace>
+    <AssemblyName>mercifulpotato.Web</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -433,13 +433,13 @@ jobs:
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Program.cs`
+## FILE: `src/mercifulpotato.Web/Program.cs`
 
 ```csharp
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using ObserverMagazine.Web;
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web;
+using mercifulpotato.Web.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -470,7 +470,7 @@ await host.RunAsync();
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/_Imports.razor`
+## FILE: `src/mercifulpotato.Web/_Imports.razor`
 
 ```razor
 @using System.Net.Http
@@ -482,17 +482,17 @@ await host.RunAsync();
 @using Microsoft.AspNetCore.Components.WebAssembly.Http
 @using Microsoft.Extensions.Logging
 @using Microsoft.JSInterop
-@using ObserverMagazine.Web
-@using ObserverMagazine.Web.Layout
-@using ObserverMagazine.Web.Pages
-@using ObserverMagazine.Web.Components
-@using ObserverMagazine.Web.Models
-@using ObserverMagazine.Web.Services
+@using mercifulpotato.Web
+@using mercifulpotato.Web.Layout
+@using mercifulpotato.Web.Pages
+@using mercifulpotato.Web.Components
+@using mercifulpotato.Web.Models
+@using mercifulpotato.Web.Services
 ```
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/App.razor`
+## FILE: `src/mercifulpotato.Web/App.razor`
 
 ```razor
 <Router AppAssembly="typeof(App).Assembly">
@@ -515,7 +515,7 @@ await host.RunAsync();
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Routes.razor`
+## FILE: `src/mercifulpotato.Web/Routes.razor`
 
 ```razor
 <Router AppAssembly="typeof(App).Assembly">
@@ -529,7 +529,7 @@ await host.RunAsync();
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Layout/MainLayout.razor`
+## FILE: `src/mercifulpotato.Web/Layout/MainLayout.razor`
 
 ```razor
 @inherits LayoutComponentBase
@@ -563,7 +563,7 @@ await host.RunAsync();
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Layout/NavMenu.razor`
+## FILE: `src/mercifulpotato.Web/Layout/NavMenu.razor`
 
 ```razor
 <nav class="nav-menu" role="navigation">
@@ -586,7 +586,7 @@ await host.RunAsync();
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Home.razor`
+## FILE: `src/mercifulpotato.Web/Pages/Home.razor`
 
 ```razor
 @page "/"
@@ -636,7 +636,7 @@ await host.RunAsync();
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Blog.razor`
+## FILE: `src/mercifulpotato.Web/Pages/Blog.razor`
 
 ```razor
 @page "/blog"
@@ -707,7 +707,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/BlogPost.razor`
+## FILE: `src/mercifulpotato.Web/Pages/BlogPost.razor`
 
 ```razor
 @page "/blog/{Slug}"
@@ -794,7 +794,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Showcase.razor`
+## FILE: `src/mercifulpotato.Web/Pages/Showcase.razor`
 
 ```razor
 @page "/showcase"
@@ -821,7 +821,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/About.razor`
+## FILE: `src/mercifulpotato.Web/Pages/About.razor`
 
 ```razor
 @page "/about"
@@ -865,16 +865,16 @@ else
 
 <h2>Source Code</h2>
 <p>
-    <a href="https://github.com/ObserverMagazine/observermagazine.github.io"
+    <a href="https://github.com/mercifulpotato/mercifulpotato.github.io"
        target="_blank" rel="noopener noreferrer">
-        github.com/ObserverMagazine/observermagazine.github.io
+        github.com/mercifulpotato/mercifulpotato.github.io
     </a>
 </p>
 ```
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/ResponsiveTable.razor`
+## FILE: `src/mercifulpotato.Web/Components/ResponsiveTable.razor`
 
 ```razor
 @inject HttpClient Http
@@ -1004,7 +1004,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/MasterDetail.razor`
+## FILE: `src/mercifulpotato.Web/Components/MasterDetail.razor`
 
 ```razor
 @inject HttpClient Http
@@ -1098,10 +1098,10 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Models/BlogPostMetadata.cs`
+## FILE: `src/mercifulpotato.Web/Models/BlogPostMetadata.cs`
 
 ```csharp
-namespace ObserverMagazine.Web.Models;
+namespace mercifulpotato.Web.Models;
 
 public sealed record BlogPostMetadata
 {
@@ -1116,10 +1116,10 @@ public sealed record BlogPostMetadata
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Models/Product.cs`
+## FILE: `src/mercifulpotato.Web/Models/Product.cs`
 
 ```csharp
-namespace ObserverMagazine.Web.Models;
+namespace mercifulpotato.Web.Models;
 
 public sealed record Product
 {
@@ -1134,12 +1134,12 @@ public sealed record Product
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/IBlogService.cs`
+## FILE: `src/mercifulpotato.Web/Services/IBlogService.cs`
 
 ```csharp
-using ObserverMagazine.Web.Models;
+using mercifulpotato.Web.Models;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 public interface IBlogService
 {
@@ -1151,14 +1151,14 @@ public interface IBlogService
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/BlogService.cs`
+## FILE: `src/mercifulpotato.Web/Services/BlogService.cs`
 
 ```csharp
 using System.Net.Http.Json;
 using Microsoft.Extensions.Logging;
-using ObserverMagazine.Web.Models;
+using mercifulpotato.Web.Models;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 public sealed class BlogService(HttpClient http, ILogger<BlogService> logger) : IBlogService
 {
@@ -1211,12 +1211,12 @@ public sealed class BlogService(HttpClient http, ILogger<BlogService> logger) : 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/TelemetryService.cs`
+## FILE: `src/mercifulpotato.Web/Services/TelemetryService.cs`
 
 ```csharp
 using Microsoft.Extensions.Logging;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 /// <summary>
 /// Lightweight telemetry service for tracking events and metrics in the browser.
@@ -1264,7 +1264,7 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/wwwroot/index.html`
+## FILE: `src/mercifulpotato.Web/wwwroot/index.html`
 
 ```html
 <!DOCTYPE html>
@@ -1276,7 +1276,7 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
     <base href="/" />
     <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
+    <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 </head>
 <body>
     <div id="app">
@@ -1308,7 +1308,7 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/wwwroot/404.html`
+## FILE: `src/mercifulpotato.Web/wwwroot/404.html`
 
 ```html
 <!DOCTYPE html>
@@ -1329,7 +1329,7 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/wwwroot/css/app.css`
+## FILE: `src/mercifulpotato.Web/wwwroot/css/app.css`
 
 ```css
 /* ========== RESET & BASE ========== */
@@ -1658,7 +1658,7 @@ code {
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/wwwroot/sample-data/products.json`
+## FILE: `src/mercifulpotato.Web/wwwroot/sample-data/products.json`
 
 ```json
 [
@@ -1747,15 +1747,15 @@ code {
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/ObserverMagazine.ContentProcessor.csproj`
+## FILE: `tools/mercifulpotato.ContentProcessor/mercifulpotato.ContentProcessor.csproj`
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ObserverMagazine.ContentProcessor</RootNamespace>
-    <AssemblyName>ObserverMagazine.ContentProcessor</AssemblyName>
+    <RootNamespace>mercifulpotato.ContentProcessor</RootNamespace>
+    <AssemblyName>mercifulpotato.ContentProcessor</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -1768,15 +1768,15 @@ code {
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/Program.cs`
+## FILE: `tools/mercifulpotato.ContentProcessor/Program.cs`
 
 ```csharp
 using System.Text.Json;
-using ObserverMagazine.ContentProcessor;
+using mercifulpotato.ContentProcessor;
 
 // Parse command-line arguments
 string contentDir = "content/blog";
-string outputDir = "src/ObserverMagazine.Web/wwwroot";
+string outputDir = "src/mercifulpotato.Web/wwwroot";
 
 for (int i = 0; i < args.Length; i++)
 {
@@ -1858,7 +1858,7 @@ var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
     title: "My Blazor Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
-    siteUrl: "https://observermagazine.github.io",
+    siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata
 );
 File.WriteAllText(feedPath, rssXml);
@@ -1880,13 +1880,13 @@ public sealed class PostIndexEntry
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/FrontMatterParser.cs`
+## FILE: `tools/mercifulpotato.ContentProcessor/FrontMatterParser.cs`
 
 ```csharp
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-namespace ObserverMagazine.ContentProcessor;
+namespace mercifulpotato.ContentProcessor;
 
 public static class FrontMatterParser
 {
@@ -1950,12 +1950,12 @@ public sealed class FrontMatter
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/MarkdownProcessor.cs`
+## FILE: `tools/mercifulpotato.ContentProcessor/MarkdownProcessor.cs`
 
 ```csharp
 using Markdig;
 
-namespace ObserverMagazine.ContentProcessor;
+namespace mercifulpotato.ContentProcessor;
 
 public static class MarkdownProcessor
 {
@@ -1972,12 +1972,12 @@ public static class MarkdownProcessor
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/RssGenerator.cs`
+## FILE: `tools/mercifulpotato.ContentProcessor/RssGenerator.cs`
 
 ```csharp
 using System.Xml.Linq;
 
-namespace ObserverMagazine.ContentProcessor;
+namespace mercifulpotato.ContentProcessor;
 
 public static class RssGenerator
 {
@@ -2093,7 +2093,7 @@ For My Blazor Magazine, Blazor WASM is ideal because:
 Our project follows a clean layout:
 
 ```
-src/ObserverMagazine.Web/     — The Blazor WASM app
+src/mercifulpotato.Web/     — The Blazor WASM app
 tools/ContentProcessor/        — Build-time markdown processor
 tests/                         — xUnit + bUnit tests
 content/blog/                  — Markdown blog posts
@@ -2103,7 +2103,7 @@ The `ContentProcessor` runs at build time (in CI) to convert Markdown files into
 
 ## Next Steps
 
-Check out the [Showcase](/showcase) to see responsive tables and master-detail flows in action, or browse the [source code](https://github.com/ObserverMagazine/observermagazine.github.io) to see how everything fits together.
+Check out the [Showcase](/showcase) to see responsive tables and master-detail flows in action, or browse the [source code](https://github.com/mercifulpotato/mercifulpotato.github.io) to see how everything fits together.
 ```
 
 ---
@@ -2156,13 +2156,13 @@ See all these patterns live on the [Showcase page](/showcase).
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj`
+## FILE: `tests/mercifulpotato.Web.Tests/mercifulpotato.Web.Tests.csproj`
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>ObserverMagazine.Web.Tests</RootNamespace>
+    <RootNamespace>mercifulpotato.Web.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
@@ -2175,7 +2175,7 @@ See all these patterns live on the [Showcase page](/showcase).
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ObserverMagazine.Web\ObserverMagazine.Web.csproj" />
+    <ProjectReference Include="..\..\src\mercifulpotato.Web\mercifulpotato.Web.csproj" />
   </ItemGroup>
 
 </Project>
@@ -2183,7 +2183,7 @@ See all these patterns live on the [Showcase page](/showcase).
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Services/BlogServiceTests.cs`
+## FILE: `tests/mercifulpotato.Web.Tests/Services/BlogServiceTests.cs`
 
 ```csharp
 using System.Net;
@@ -2193,11 +2193,11 @@ using Bunit;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
-using ObserverMagazine.Web.Models;
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web.Models;
+using mercifulpotato.Web.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Services;
+namespace mercifulpotato.Web.Tests.Services;
 
 public class BlogServiceTests
 {
@@ -2320,15 +2320,15 @@ internal sealed class FakeHttpHandler : HttpMessageHandler
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs`
+## FILE: `tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs`
 
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
-using ObserverMagazine.Web.Components;
+using mercifulpotato.Web.Components;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class ResponsiveTableTests : TestContext
 {
@@ -2414,15 +2414,15 @@ internal sealed class FakeHttpHandler : HttpMessageHandler
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs`
+## FILE: `tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs`
 
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
-using ObserverMagazine.Web.Components;
+using mercifulpotato.Web.Components;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class MasterDetailTests : TestContext
 {
@@ -2503,13 +2503,13 @@ internal sealed class MasterDetailFakeHandler : HttpMessageHandler
 
 ---
 
-## FILE: `tests/ObserverMagazine.Integration.Tests/ObserverMagazine.Integration.Tests.csproj`
+## FILE: `tests/mercifulpotato.Integration.Tests/mercifulpotato.Integration.Tests.csproj`
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>ObserverMagazine.Integration.Tests</RootNamespace>
+    <RootNamespace>mercifulpotato.Integration.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
@@ -2527,7 +2527,7 @@ internal sealed class MasterDetailFakeHandler : HttpMessageHandler
 
 ---
 
-## FILE: `tests/ObserverMagazine.Integration.Tests/ContentProcessorTests.cs`
+## FILE: `tests/mercifulpotato.Integration.Tests/ContentProcessorTests.cs`
 
 ```csharp
 using Markdig;
@@ -2535,7 +2535,7 @@ using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 using Xunit;
 
-namespace ObserverMagazine.Integration.Tests;
+namespace mercifulpotato.Integration.Tests;
 
 public class ContentProcessorTests
 {
@@ -2655,13 +2655,13 @@ public sealed class TestFrontMatter
 
 ---
 
-## FILE: `tests/ObserverMagazine.Integration.Tests/RssGeneratorTests.cs`
+## FILE: `tests/mercifulpotato.Integration.Tests/RssGeneratorTests.cs`
 
 ```csharp
 using System.Xml.Linq;
 using Xunit;
 
-namespace ObserverMagazine.Integration.Tests;
+namespace mercifulpotato.Integration.Tests;
 
 public class RssGeneratorTests
 {
@@ -2778,25 +2778,25 @@ public sealed class RssPostEntry
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/ObserverMagazine/observermagazine.github.io.git
-cd observermagazine.github.io
+git clone https://github.com/mercifulpotato/mercifulpotato.github.io.git
+cd mercifulpotato.github.io
 
 # 2. Restore packages
 dotnet restore
 
 # 3. Process blog content (generates blog-data/ and feed.xml)
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot
+  --output-dir src/mercifulpotato.Web/wwwroot
 
 # 4. Run tests
 dotnet test
 
 # 5. Run locally (hot reload)
-dotnet watch --project src/ObserverMagazine.Web
+dotnet watch --project src/mercifulpotato.Web
 
 # 6. Publish for production
-dotnet publish src/ObserverMagazine.Web -c Release -o publish
+dotnet publish src/mercifulpotato.Web -c Release -o publish
 # Static files are in publish/wwwroot/
 ```
 
@@ -2821,7 +2821,7 @@ dotnet publish src/ObserverMagazine.Web -c Release -o publish
 4. Run the content processor (or just push — CI does it automatically)
 5. The post appears on the blog page and in the RSS feed
 
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot
+dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot
 
 
 
@@ -2928,7 +2928,7 @@ please return the full csproj file for easy copy pasting
 ```
 
 context 
-Project 'ObserverMagazine.Web' has the following package references
+Project 'mercifulpotato.Web' has the following package references
    [net10.0]: 
    Top-level Package                                        Requested      Resolved
    > Microsoft.AspNetCore.App.Internal.Assets         (A)   [10.0.4, )     10.0.4  
@@ -2939,7 +2939,7 @@ Project 'ObserverMagazine.Web' has the following package references
    > Microsoft.NET.ILLink.Tasks                       (A)   [10.0.4, )     10.0.4  
    > Microsoft.NET.Sdk.WebAssembly.Pack               (A)   [10.0.1, )     10.0.1  
 
-Project 'ObserverMagazine.Integration.Tests' has the following package references
+Project 'mercifulpotato.Integration.Tests' has the following package references
    [net10.0]: 
    Top-level Package                Requested   Resolved
    > Markdig                        1.1.1       1.1.1   
@@ -2948,7 +2948,7 @@ Project 'ObserverMagazine.Integration.Tests' has the following package reference
    > xunit.v3                       3.2.2       3.2.2   
    > YamlDotNet                     16.3.0      16.3.0  
 
-Project 'ObserverMagazine.Web.Tests' has the following package references
+Project 'mercifulpotato.Web.Tests' has the following package references
    [net10.0]: 
    Top-level Package                Requested   Resolved
    > bunit                          2.6.2       2.6.2   
@@ -2956,7 +2956,7 @@ Project 'ObserverMagazine.Web.Tests' has the following package references
    > xunit.runner.visualstudio      3.0.2       3.0.2   
    > xunit.v3                       3.2.2       3.2.2   
 
-Project 'ObserverMagazine.ContentProcessor' has the following package references
+Project 'mercifulpotato.ContentProcessor' has the following package references
    [net10.0]: 
    Top-level Package      Requested   Resolved
    > Markdig              1.1.1       1.1.1   
@@ -2974,26 +2974,26 @@ Build succeeded in 0.6s
 The following sources were used:
    https://api.nuget.org/v3/index.json
 
-Project `ObserverMagazine.Web` has the following updates to its packages
+Project `mercifulpotato.Web` has the following updates to its packages
    [net10.0]: 
    Top-level Package                                  Requested   Resolved   Latest
    > Microsoft.AspNetCore.Components.WebAssembly      10.0.0      10.0.0     10.0.5
    > Microsoft.Extensions.Http                        10.0.0      10.0.0     10.0.5
    > Microsoft.Extensions.Logging.Configuration       10.0.0      10.0.0     10.0.5
 
-Project `ObserverMagazine.Integration.Tests` has the following updates to its packages
+Project `mercifulpotato.Integration.Tests` has the following updates to its packages
    [net10.0]: 
    Top-level Package                Requested   Resolved   Latest
    > Microsoft.NET.Test.Sdk         17.13.0     17.13.0    18.3.0
    > xunit.runner.visualstudio      3.0.2       3.0.2      3.1.5 
 
-Project `ObserverMagazine.Web.Tests` has the following updates to its packages
+Project `mercifulpotato.Web.Tests` has the following updates to its packages
    [net10.0]: 
    Top-level Package                Requested   Resolved   Latest
    > Microsoft.NET.Test.Sdk         17.13.0     17.13.0    18.3.0
    > xunit.runner.visualstudio      3.0.2       3.0.2      3.1.5 
 
-The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
+The given project `mercifulpotato.ContentProcessor` has no updates given the current sources.
 
 real	0m1.723s
 user	0m1.730s
@@ -3102,7 +3102,7 @@ this is excellent work.
 the website is deployed and rss feed works as well
 however, the rss feed does not have the full post 
 it is kind of a bad idea to not have the full post available 
-https://observermagazine.github.io/ObserverMagazine.Web.styles.css returns 404 error 
+https://mercifulpotato.github.io/mercifulpotato.Web.styles.css returns 404 error 
 updating the markdown file 
 ```
 ---
@@ -3140,7 +3140,7 @@ also if possible we should log all kinds of interactions we do on the backend
 I've read the full dump.txt carefully. Let me address all the issues:
 
 1. **RSS feed missing full post content** — RssGenerator needs to include HTML body
-2. **`ObserverMagazine.Web.styles.css` 404** — No components use CSS isolation, so remove the reference from index.html
+2. **`mercifulpotato.Web.styles.css` 404** — No components use CSS isolation, so remove the reference from index.html
 3. **Blog posts not updating on push** — The CI workflow needs to re-run the content processor; the issue is the `content/blog/2026-03-20-hello-world.md` file exists but wasn't in git when the workflow last ran. The workflow already handles this, so this should work on next push after we add the file.
 4. **Web.Tests broken** — `TestContext` ambiguity between bUnit and xUnit v3; need to fully qualify `Bunit.TestContext`
 5. **CSS should be co-located with components** — Move component CSS to `.razor.css` files
@@ -3153,7 +3153,7 @@ Let me generate every changed file:Here's a summary of everything I changed and 
 
 1. **RSS feed now includes full post content** — The `RssGenerator` now accepts a `getPostHtml` callback and emits `<content:encoded>` with the full HTML wrapped in CDATA. The `ContentProcessor/Program.cs` builds a `postHtmlMap` dictionary and passes it through. RSS readers that support `content:encoded` (virtually all of them) will show the full article.
 
-2. **`ObserverMagazine.Web.styles.css` 404 fixed** — Removed the `<link>` from `index.html`. Since we're now using co-located `.razor.css` files, Blazor will automatically generate and include this stylesheet during build *only when it has content*. The 404 was because no `.razor.css` files existed before.
+2. **`mercifulpotato.Web.styles.css` 404 fixed** — Removed the `<link>` from `index.html`. Since we're now using co-located `.razor.css` files, Blazor will automatically generate and include this stylesheet during build *only when it has content*. The 404 was because no `.razor.css` files existed before.
 
 3. **Blog posts update on push** — The workflow was already correct. The issue was that `2026-03-20-hello-world.md` needed to be committed and pushed. After your next push, the content processor in CI will pick it up.
 
@@ -3170,7 +3170,7 @@ Let me generate every changed file:Here's a summary of everything I changed and 
 ## Summary of changes
 
 - **RSS feed**: Now includes full HTML content via `<content:encoded>` (RSS 2.0 content module)
-- **`ObserverMagazine.Web.styles.css` 404**: Removed from `index.html` since we're moving to co-located `.razor.css` files
+- **`mercifulpotato.Web.styles.css` 404**: Removed from `index.html` since we're moving to co-located `.razor.css` files
 - **Blog not updating**: The workflow was fine — the new `.md` file just needs to be committed and pushed. No workflow change needed.
 - **Web.Tests fixed**: Uncommented and fixed `Bunit.TestContext` ambiguity
 - **CSS co-located**: Moved component-specific CSS to `.razor.css` files, trimmed `app.css`
@@ -3179,7 +3179,7 @@ Let me generate every changed file:Here's a summary of everything I changed and 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/wwwroot/index.html`
+## FILE: `src/mercifulpotato.Web/wwwroot/index.html`
 
 ```html
 <!DOCTYPE html>
@@ -3222,13 +3222,13 @@ Let me generate every changed file:Here's a summary of everything I changed and 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Program.cs`
+## FILE: `src/mercifulpotato.Web/Program.cs`
 
 ```csharp
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using ObserverMagazine.Web;
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web;
+using mercifulpotato.Web.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -3260,10 +3260,10 @@ await host.RunAsync();
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/IAnalyticsService.cs`
+## FILE: `src/mercifulpotato.Web/Services/IAnalyticsService.cs`
 
 ```csharp
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 /// <summary>
 /// Sends analytics events to the Cloudflare Workers backend.
@@ -3295,13 +3295,13 @@ public interface IAnalyticsService
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/AnalyticsService.cs`
+## FILE: `src/mercifulpotato.Web/Services/AnalyticsService.cs`
 
 ```csharp
 using System.Net.Http.Json;
 using Microsoft.Extensions.Logging;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 public sealed class AnalyticsService : IAnalyticsService
 {
@@ -3393,7 +3393,7 @@ public sealed class AnalyticsService : IAnalyticsService
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Home.razor`
+## FILE: `src/mercifulpotato.Web/Pages/Home.razor`
 
 ```razor
 @page "/"
@@ -3451,7 +3451,7 @@ public sealed class AnalyticsService : IAnalyticsService
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Blog.razor`
+## FILE: `src/mercifulpotato.Web/Pages/Blog.razor`
 
 ```razor
 @page "/blog"
@@ -3524,7 +3524,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/BlogPost.razor`
+## FILE: `src/mercifulpotato.Web/Pages/BlogPost.razor`
 
 ```razor
 @page "/blog/{Slug}"
@@ -3613,7 +3613,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Showcase.razor`
+## FILE: `src/mercifulpotato.Web/Pages/Showcase.razor`
 
 ```razor
 @page "/showcase"
@@ -3648,7 +3648,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/About.razor`
+## FILE: `src/mercifulpotato.Web/Pages/About.razor`
 
 ```razor
 @page "/about"
@@ -3694,9 +3694,9 @@ else
 
 <h2>Source Code</h2>
 <p>
-    <a href="https://github.com/ObserverMagazine/observermagazine.github.io"
+    <a href="https://github.com/mercifulpotato/mercifulpotato.github.io"
        target="_blank" rel="noopener noreferrer">
-        github.com/ObserverMagazine/observermagazine.github.io
+        github.com/mercifulpotato/mercifulpotato.github.io
     </a>
 </p>
 
@@ -3710,7 +3710,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/ResponsiveTable.razor`
+## FILE: `src/mercifulpotato.Web/Components/ResponsiveTable.razor`
 
 ```razor
 @inject HttpClient Http
@@ -3842,7 +3842,7 @@ else
 
 ---
 
-## NEW FILE: `src/ObserverMagazine.Web/Components/ResponsiveTable.razor.css`
+## NEW FILE: `src/mercifulpotato.Web/Components/ResponsiveTable.razor.css`
 
 ```css
 .rt-controls { margin-bottom: 1rem; }
@@ -3919,7 +3919,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/MasterDetail.razor`
+## FILE: `src/mercifulpotato.Web/Components/MasterDetail.razor`
 
 ```razor
 @inject HttpClient Http
@@ -4015,7 +4015,7 @@ else
 
 ---
 
-## NEW FILE: `src/ObserverMagazine.Web/Components/MasterDetail.razor.css`
+## NEW FILE: `src/mercifulpotato.Web/Components/MasterDetail.razor.css`
 
 ```css
 .md-container {
@@ -4102,7 +4102,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/wwwroot/css/app.css`
+## FILE: `src/mercifulpotato.Web/wwwroot/css/app.css`
 
 ```css
 /* ========== RESET & BASE ========== */
@@ -4338,12 +4338,12 @@ code {
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/RssGenerator.cs`
+## FILE: `tools/mercifulpotato.ContentProcessor/RssGenerator.cs`
 
 ```csharp
 using System.Xml.Linq;
 
-namespace ObserverMagazine.ContentProcessor;
+namespace mercifulpotato.ContentProcessor;
 
 public static class RssGenerator
 {
@@ -4405,15 +4405,15 @@ public static class RssGenerator
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/Program.cs`
+## FILE: `tools/mercifulpotato.ContentProcessor/Program.cs`
 
 ```csharp
 using System.Text.Json;
-using ObserverMagazine.ContentProcessor;
+using mercifulpotato.ContentProcessor;
 
 // Parse command-line arguments
 string contentDir = "content/blog";
-string outputDir = "src/ObserverMagazine.Web/wwwroot";
+string outputDir = "src/mercifulpotato.Web/wwwroot";
 
 for (int i = 0; i < args.Length; i++)
 {
@@ -4498,7 +4498,7 @@ var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
     title: "My Blazor Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
-    siteUrl: "https://observermagazine.github.io",
+    siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata,
     getPostHtml: slug => postHtmlMap.GetValueOrDefault(slug)
 );
@@ -4521,16 +4521,16 @@ public sealed class PostIndexEntry
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs`
+## FILE: `tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs`
 
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
-using ObserverMagazine.Web.Components;
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web.Components;
+using mercifulpotato.Web.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class ResponsiveTableTests : Bunit.TestContext
 {
@@ -4613,16 +4613,16 @@ internal sealed class ComponentFakeHttpHandler : HttpMessageHandler
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs`
+## FILE: `tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs`
 
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
-using ObserverMagazine.Web.Components;
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web.Components;
+using mercifulpotato.Web.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class MasterDetailTests : Bunit.TestContext
 {
@@ -4703,12 +4703,12 @@ internal sealed class MasterDetailFakeHandler : HttpMessageHandler
 
 ---
 
-## NEW FILE: `tests/ObserverMagazine.Web.Tests/Services/NoOpAnalyticsService.cs`
+## NEW FILE: `tests/mercifulpotato.Web.Tests/Services/NoOpAnalyticsService.cs`
 
 ```csharp
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web.Services;
 
-namespace ObserverMagazine.Web.Tests.Services;
+namespace mercifulpotato.Web.Tests.Services;
 
 /// <summary>
 /// A no-op implementation of IAnalyticsService for use in unit tests.
@@ -4726,13 +4726,13 @@ public sealed class NoOpAnalyticsService : IAnalyticsService
 
 ---
 
-## FILE: `tests/ObserverMagazine.Integration.Tests/RssGeneratorTests.cs`
+## FILE: `tests/mercifulpotato.Integration.Tests/RssGeneratorTests.cs`
 
 ```csharp
 using System.Xml.Linq;
 using Xunit;
 
-namespace ObserverMagazine.Integration.Tests;
+namespace mercifulpotato.Integration.Tests;
 
 public class RssGeneratorTests
 {
@@ -4896,26 +4896,26 @@ public sealed class RssPostEntry
 
 | File | Action |
 |---|---|
-| `src/ObserverMagazine.Web/wwwroot/index.html` | Removed `ObserverMagazine.Web.styles.css` link |
-| `src/ObserverMagazine.Web/Program.cs` | Added `IAnalyticsService` registration |
-| `src/ObserverMagazine.Web/Services/IAnalyticsService.cs` | **NEW** — interface |
-| `src/ObserverMagazine.Web/Services/AnalyticsService.cs` | **NEW** — Cloudflare Workers integration |
-| `src/ObserverMagazine.Web/Pages/Home.razor` | Added analytics tracking |
-| `src/ObserverMagazine.Web/Pages/Blog.razor` | Added analytics tracking |
-| `src/ObserverMagazine.Web/Pages/BlogPost.razor` | Added analytics tracking |
-| `src/ObserverMagazine.Web/Pages/Showcase.razor` | Added analytics tracking |
-| `src/ObserverMagazine.Web/Pages/About.razor` | Added analytics tracking + Cloudflare row |
-| `src/ObserverMagazine.Web/Components/ResponsiveTable.razor` | CSS class rename + analytics |
-| `src/ObserverMagazine.Web/Components/ResponsiveTable.razor.css` | **NEW** — co-located CSS |
-| `src/ObserverMagazine.Web/Components/MasterDetail.razor` | CSS class rename + analytics |
-| `src/ObserverMagazine.Web/Components/MasterDetail.razor.css` | **NEW** — co-located CSS |
-| `src/ObserverMagazine.Web/wwwroot/css/app.css` | Removed component CSS (now co-located) |
-| `tools/ObserverMagazine.ContentProcessor/RssGenerator.cs` | Full post HTML in RSS `content:encoded` |
-| `tools/ObserverMagazine.ContentProcessor/Program.cs` | Pass HTML map to RSS generator |
-| `tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs` | Fixed + uncommented |
-| `tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs` | Fixed + uncommented |
-| `tests/ObserverMagazine.Web.Tests/Services/NoOpAnalyticsService.cs` | **NEW** — test helper |
-| `tests/ObserverMagazine.Integration.Tests/RssGeneratorTests.cs` | Added `content:encoded` test |
+| `src/mercifulpotato.Web/wwwroot/index.html` | Removed `mercifulpotato.Web.styles.css` link |
+| `src/mercifulpotato.Web/Program.cs` | Added `IAnalyticsService` registration |
+| `src/mercifulpotato.Web/Services/IAnalyticsService.cs` | **NEW** — interface |
+| `src/mercifulpotato.Web/Services/AnalyticsService.cs` | **NEW** — Cloudflare Workers integration |
+| `src/mercifulpotato.Web/Pages/Home.razor` | Added analytics tracking |
+| `src/mercifulpotato.Web/Pages/Blog.razor` | Added analytics tracking |
+| `src/mercifulpotato.Web/Pages/BlogPost.razor` | Added analytics tracking |
+| `src/mercifulpotato.Web/Pages/Showcase.razor` | Added analytics tracking |
+| `src/mercifulpotato.Web/Pages/About.razor` | Added analytics tracking + Cloudflare row |
+| `src/mercifulpotato.Web/Components/ResponsiveTable.razor` | CSS class rename + analytics |
+| `src/mercifulpotato.Web/Components/ResponsiveTable.razor.css` | **NEW** — co-located CSS |
+| `src/mercifulpotato.Web/Components/MasterDetail.razor` | CSS class rename + analytics |
+| `src/mercifulpotato.Web/Components/MasterDetail.razor.css` | **NEW** — co-located CSS |
+| `src/mercifulpotato.Web/wwwroot/css/app.css` | Removed component CSS (now co-located) |
+| `tools/mercifulpotato.ContentProcessor/RssGenerator.cs` | Full post HTML in RSS `content:encoded` |
+| `tools/mercifulpotato.ContentProcessor/Program.cs` | Pass HTML map to RSS generator |
+| `tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs` | Fixed + uncommented |
+| `tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs` | Fixed + uncommented |
+| `tests/mercifulpotato.Web.Tests/Services/NoOpAnalyticsService.cs` | **NEW** — test helper |
+| `tests/mercifulpotato.Integration.Tests/RssGeneratorTests.cs` | Added `content:encoded` test |
 
 ### Files NOT changed (no modifications needed)
 All other files remain identical to what's in the dump.
@@ -4999,7 +4999,7 @@ All other files remain identical to what's in the dump.
 
 
 I got the following errors 
-kushal@fedora:~/src/dotnet/observermagazine.github.io$ cd /home/kushal/src/dotnet/observermagazine.github.io/; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+kushal@fedora:~/src/dotnet/mercifulpotato.github.io$ cd /home/kushal/src/dotnet/mercifulpotato.github.io/; time dotnet format; time dotnet restore; dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 
 real	0m6.042s
 user	0m8.328s
@@ -5012,39 +5012,39 @@ real	0m0.720s
 user	0m0.764s
 sys	0m0.147s
 Content directory: content/blog
-Output directory:  src/ObserverMagazine.Web/wwwroot
+Output directory:  src/mercifulpotato.Web/wwwroot
 Found 4 markdown files
 Processing: 2026-01-15-welcome-to-observer-magazine.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/welcome-to-observer-magazine.html
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/welcome-to-observer-magazine.html
 Processing: 2026-02-20-getting-started-with-blazor-wasm.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/getting-started-with-blazor-wasm.html
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/getting-started-with-blazor-wasm.html
 Processing: 2026-03-10-responsive-design-patterns.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/responsive-design-patterns.html
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/responsive-design-patterns.html
 Processing: 2026-03-20-hello-world.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/hello-world.html
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (4 posts)
-Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/hello-world.html
+Wrote posts index: src/mercifulpotato.Web/wwwroot/blog-data/posts-index.json (4 posts)
+Wrote RSS feed: src/mercifulpotato.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.2s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+  mercifulpotato.Integration.Tests net10.0 succeeded (0.2s) → tests/mercifulpotato.Integration.Tests/bin/Debug/net10.0/mercifulpotato.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.4)
-[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.28]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.42]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.61]   Finished:    ObserverMagazine.Integration.Tests (ID = 'a11f17fc47145796b425f2f6072a7236e3de3115aec6d32144ce1d1b834d5009')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.1s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (2.9s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 failed with 10 error(s) (0.1s)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs(9,34): error CS0618: 'TestContext' is obsolete: 'Use BunitContext instead. TestContext will be removed in a future release.' (https://bunit.dev/docs/migrations)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs(9,37): error CS0618: 'TestContext' is obsolete: 'Use BunitContext instead. TestContext will be removed in a future release.' (https://bunit.dev/docs/migrations)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs(23,50): error CS0246: The type or namespace name 'NoOpAnalyticsService' could not be found (are you missing a using directive or an assembly reference?)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs(23,50): error CS0246: The type or namespace name 'NoOpAnalyticsService' could not be found (are you missing a using directive or an assembly reference?)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs(31,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs(31,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs(42,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs(56,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs(43,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs(58,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
+[xUnit.net 00:00:00.13]   Discovering: mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.28]   Discovered:  mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.42]   Starting:    mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.61]   Finished:    mercifulpotato.Integration.Tests (ID = 'a11f17fc47145796b425f2f6072a7236e3de3115aec6d32144ce1d1b834d5009')
+  mercifulpotato.Integration.Tests test net10.0 succeeded (1.1s)
+  mercifulpotato.Web net10.0 browser-wasm succeeded (2.9s) → src/mercifulpotato.Web/bin/Debug/net10.0/wwwroot
+  mercifulpotato.Web.Tests net10.0 failed with 10 error(s) (0.1s)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs(9,34): error CS0618: 'TestContext' is obsolete: 'Use BunitContext instead. TestContext will be removed in a future release.' (https://bunit.dev/docs/migrations)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs(9,37): error CS0618: 'TestContext' is obsolete: 'Use BunitContext instead. TestContext will be removed in a future release.' (https://bunit.dev/docs/migrations)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs(23,50): error CS0246: The type or namespace name 'NoOpAnalyticsService' could not be found (are you missing a using directive or an assembly reference?)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs(23,50): error CS0246: The type or namespace name 'NoOpAnalyticsService' could not be found (are you missing a using directive or an assembly reference?)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs(31,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs(31,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs(42,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs(56,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs(43,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs(58,19): error CS0619: 'BunitContext.RenderComponent<TComponent>()' is obsolete: 'Use Render instead.' (https://bunit.dev/docs/migrations)
 
 Test summary: total: 9, failed: 0, succeeded: 9, skipped: 0, duration: 1.1s
 Build failed with 10 error(s) in 3.7s
@@ -5059,7 +5059,7 @@ I've read the full dump.txt. The errors are clear — bUnit 2.6.2 has deprecated
 
 **2. `RenderComponent<T>()` → `Render<T>()`** — The method was renamed in bUnit 2.x.
 
-**3. Missing `using ObserverMagazine.Web.Tests.Services`** — `NoOpAnalyticsService` lives in a different namespace than the component tests. Added the `using` directive.
+**3. Missing `using mercifulpotato.Web.Tests.Services`** — `NoOpAnalyticsService` lives in a different namespace than the component tests. Added the `using` directive.
 
 **4. Removed unused `using` directives from BlogServiceTests** — Cleaned up `Bunit`, `Microsoft.Extensions.DependencyInjection`, and `System.Net.Http.Json` imports that were unnecessary (this file doesn't use bUnit at all, it tests the service directly).
 
@@ -5133,7 +5133,7 @@ Here are all the files that need to change or be created:
 
 ---
 
-**NEW FILE: `src/ObserverMagazine.Web/wwwroot/js/tts.js`**
+**NEW FILE: `src/mercifulpotato.Web/wwwroot/js/tts.js`**
 
 22
 04
@@ -5436,7 +5436,7 @@ Here are all the files:
 
 ---
 
-**NEW FILE: `tools/requirements-audio.txt`****NEW FILE: `tools/generate_audio.py`****NEW FILE: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor`****NEW FILE: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css`****CHANGED FILE: `src/ObserverMagazine.Web/Pages/BlogPost.razor`** (full file)**CHANGED FILE: `.github/workflows/deploy.yml`** (full file)**CHANGED FILE: `src/ObserverMagazine.Web/wwwroot/index.html`** (full file)**CHANGED FILE: `.gitignore`** (full file — added Python and audio entries)Let me fix the requirements file to be more robust — not pin onnxruntime version since KittenTTS needs to resolve its own compatibility:---
+**NEW FILE: `tools/requirements-audio.txt`****NEW FILE: `tools/generate_audio.py`****NEW FILE: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor`****NEW FILE: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css`****CHANGED FILE: `src/mercifulpotato.Web/Pages/BlogPost.razor`** (full file)**CHANGED FILE: `.github/workflows/deploy.yml`** (full file)**CHANGED FILE: `src/mercifulpotato.Web/wwwroot/index.html`** (full file)**CHANGED FILE: `.gitignore`** (full file — added Python and audio entries)Let me fix the requirements file to be more robust — not pin onnxruntime version since KittenTTS needs to resolve its own compatibility:---
 
 ## Summary of all changes
 
@@ -5446,16 +5446,16 @@ Here are all the files:
 |---|---|
 | `tools/requirements-audio.txt` | Python dependencies: KittenTTS 0.8.1 wheel, soundfile, num2words |
 | `tools/generate_audio.py` | Python script that reads markdown → strips to plain text → KittenTTS generates WAV → ffmpeg converts to 64kbps mono MP3 |
-| `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor` | Blazor component: checks if MP3 exists via HEAD request, renders native HTML5 `<audio>` player with play/pause/end analytics tracking |
-| `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css` | Co-located responsive styles for the audio player bar |
+| `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor` | Blazor component: checks if MP3 exists via HEAD request, renders native HTML5 `<audio>` player with play/pause/end analytics tracking |
+| `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css` | Co-located responsive styles for the audio player bar |
 
 ### Changed files (3):
 
 | File | What changed |
 |---|---|
 | `.github/workflows/deploy.yml` | Updated to `checkout@v6`, `setup-python@v6`. Added: espeak-ng install, HuggingFace model cache, pip install, `generate_audio.py` step between content processor and tests |
-| `src/ObserverMagazine.Web/Pages/BlogPost.razor` | Added `<BlogTtsPlayer Slug="@Slug" />` between the header and blog content |
-| `src/ObserverMagazine.Web/wwwroot/index.html` | Re-added `<link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />` — needed now that `.razor.css` files exist |
+| `src/mercifulpotato.Web/Pages/BlogPost.razor` | Added `<BlogTtsPlayer Slug="@Slug" />` between the header and blog content |
+| `src/mercifulpotato.Web/wwwroot/index.html` | Re-added `<link rel="stylesheet" href="mercifulpotato.Web.styles.css" />` — needed now that `.razor.css` files exist |
 | `.gitignore` | Added Python cache entries (`__pycache__/`, `*.pyc`, `.venv/`) |
 
 ### Files NOT changed:
@@ -5603,18 +5603,18 @@ Only **one file** changes:
 Ran into another error 
 also on github actions 
 after the change 
-Run python tools/generate_audio.py --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot/blog-data --voice Bella --model KittenML/kitten-tts-nano-0.8
+Run python tools/generate_audio.py --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot/blog-data --voice Bella --model KittenML/kitten-tts-nano-0.8
   
 2026-03-21 02:38:10.192815703 [W:onnxruntime:Default, device_discovery.cc:132 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename ""5620e0c7-8062-4dce-aeb7-520c7ef76171"" dit not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
 Traceback (most recent call last):
 Found 4 markdown file(s) in content/blog
-  File "/home/runner/work/observermagazine.github.io/observermagazine.github.io/tools/generate_audio.py", line 309, in <module>
+  File "/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/generate_audio.py", line 309, in <module>
     main()
-  File "/home/runner/work/observermagazine.github.io/observermagazine.github.io/tools/generate_audio.py", line 294, in main
+  File "/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/generate_audio.py", line 294, in main
     if generate_audio(text, mp3_path, voice=args.voice, model_name=args.model):
        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/observermagazine.github.io/observermagazine.github.io/tools/generate_audio.py", line 206, in generate_audio
+  File "/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/generate_audio.py", line 206, in generate_audio
     result = subprocess.run(
              ^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/subprocess.py", line 548, in run
@@ -5756,7 +5756,7 @@ The post covers everything you asked for in depth:
 
 After saving the file, just run:
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot
+dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot
 ```
 
 08
@@ -5853,10 +5853,10 @@ Currently `author` is just a string. You could expand this to a richer model:
 - A separate `content/authors/` directory with YAML files like `mercifulpotato-team.yml`:
   ```yaml
   name: Observer Team
-  email: hello@observermagazine.example
+  email: hello@mercifulpotato.example
   bio: The team behind My Blazor Magazine.
   socials:
-    github: ObserverMagazine
+    github: mercifulpotato
     twitter: observermag
     mastodon: "@observer@mastodon.social"
   avatar: /images/authors/mercifulpotato-team.jpg
@@ -6031,7 +6031,7 @@ please give me full files for all files that would need to change
 
 I've read the full dump.txt carefully. Let me now generate every changed and new file. This is a substantial set of changes across ~29 files, so I'll organize them by category.
 
-**Avatar image placement:** Put a placeholder image at `src/ObserverMagazine.Web/wwwroot/images/authors/mercifulpotato-team.jpg` (you'll need to create the `images/authors/` directory). Any square-ish JPG or PNG works — 200×200px is plenty.
+**Avatar image placement:** Put a placeholder image at `src/mercifulpotato.Web/wwwroot/images/authors/mercifulpotato-team.jpg` (you'll need to create the `images/authors/` directory). Any square-ish JPG or PNG works — 200×200px is plenty.
 
 **PR preview answer:** GitHub Pages doesn't support deploy previews from pull requests natively. What we *can* do is build the full site in the PR check workflow and upload it as a downloadable artifact — reviewers download the zip, unzip, and open `index.html` locally. The PR check also runs all tests, so you know the code is sound before merging.
 
@@ -6086,13 +6086,13 @@ jobs:
         run: dotnet restore
 
       - name: Run content processor (markdown → JSON + HTML)
-        run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
+        run: dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot --authors-dir content/authors
 
       - name: Run tests
         run: dotnet test --no-restore --verbosity normal
 
       - name: Publish Blazor WASM
-        run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
+        run: dotnet publish src/mercifulpotato.Web/mercifulpotato.Web.csproj -c Release -o publish
 
       - name: Prepare GitHub Pages artifacts
         run: |
@@ -6139,13 +6139,13 @@ jobs:
         run: dotnet restore
 
       - name: Run content processor
-        run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
+        run: dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot --authors-dir content/authors
 
       - name: Run tests
         run: dotnet test --no-restore --verbosity normal
 
       - name: Publish Blazor WASM
-        run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
+        run: dotnet publish src/mercifulpotato.Web/mercifulpotato.Web.csproj -c Release -o publish
 
       - name: Prepare preview
         run: |
@@ -6162,13 +6162,13 @@ jobs:
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/FrontMatterParser.cs` (CHANGED)
+## FILE: `tools/mercifulpotato.ContentProcessor/FrontMatterParser.cs` (CHANGED)
 
 ```csharp
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-namespace ObserverMagazine.ContentProcessor;
+namespace mercifulpotato.ContentProcessor;
 
 public static class FrontMatterParser
 {
@@ -6277,15 +6277,15 @@ public sealed class AuthorProfile
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/Program.cs` (CHANGED)
+## FILE: `tools/mercifulpotato.ContentProcessor/Program.cs` (CHANGED)
 
 ```csharp
 using System.Text.Json;
-using ObserverMagazine.ContentProcessor;
+using mercifulpotato.ContentProcessor;
 
 // Parse command-line arguments
 string contentDir = "content/blog";
-string outputDir = "src/ObserverMagazine.Web/wwwroot";
+string outputDir = "src/mercifulpotato.Web/wwwroot";
 string authorsDir = "content/authors";
 DateTime publishBefore = DateTime.UtcNow;
 
@@ -6455,7 +6455,7 @@ var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
     title: "My Blazor Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
-    siteUrl: "https://observermagazine.github.io",
+    siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata,
     getPostHtml: slug => postHtmlMap.GetValueOrDefault(slug)
 );
@@ -6485,12 +6485,12 @@ public sealed class PostIndexEntry
 
 ---
 
-## FILE: `tools/ObserverMagazine.ContentProcessor/RssGenerator.cs` (CHANGED)
+## FILE: `tools/mercifulpotato.ContentProcessor/RssGenerator.cs` (CHANGED)
 
 ```csharp
 using System.Xml.Linq;
 
-namespace ObserverMagazine.ContentProcessor;
+namespace mercifulpotato.ContentProcessor;
 
 public static class RssGenerator
 {
@@ -6561,10 +6561,10 @@ public static class RssGenerator
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Models/BlogPostMetadata.cs` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Models/BlogPostMetadata.cs` (CHANGED)
 
 ```csharp
-namespace ObserverMagazine.Web.Models;
+namespace mercifulpotato.Web.Models;
 
 public sealed record BlogPostMetadata
 {
@@ -6585,10 +6585,10 @@ public sealed record BlogPostMetadata
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Models/AuthorProfile.cs` (NEW)
+## FILE: `src/mercifulpotato.Web/Models/AuthorProfile.cs` (NEW)
 
 ```csharp
-namespace ObserverMagazine.Web.Models;
+namespace mercifulpotato.Web.Models;
 
 public sealed record AuthorProfile
 {
@@ -6603,12 +6603,12 @@ public sealed record AuthorProfile
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/IBlogService.cs` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Services/IBlogService.cs` (CHANGED)
 
 ```csharp
-using ObserverMagazine.Web.Models;
+using mercifulpotato.Web.Models;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 public interface IBlogService
 {
@@ -6622,14 +6622,14 @@ public interface IBlogService
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/BlogService.cs` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Services/BlogService.cs` (CHANGED)
 
 ```csharp
 using System.Net.Http.Json;
 using Microsoft.Extensions.Logging;
-using ObserverMagazine.Web.Models;
+using mercifulpotato.Web.Models;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 public sealed class BlogService(HttpClient http, ILogger<BlogService> logger) : IBlogService
 {
@@ -6710,10 +6710,10 @@ public sealed class BlogService(HttpClient http, ILogger<BlogService> logger) : 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/IAnalyticsService.cs` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Services/IAnalyticsService.cs` (CHANGED)
 
 ```csharp
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 /// <summary>
 /// Sends analytics events to the Cloudflare Workers backend.
@@ -6738,13 +6738,13 @@ public interface IAnalyticsService
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Services/AnalyticsService.cs` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Services/AnalyticsService.cs` (CHANGED)
 
 ```csharp
 using System.Net.Http.Json;
 using Microsoft.Extensions.Logging;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> logger) : IAnalyticsService
 {
@@ -6897,10 +6897,10 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/AuthorCard.razor` (NEW)
+## FILE: `src/mercifulpotato.Web/Components/AuthorCard.razor` (NEW)
 
 ```razor
-@using ObserverMagazine.Web.Models
+@using mercifulpotato.Web.Models
 
 @if (Author is not null)
 {
@@ -6951,7 +6951,7 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/AuthorCard.razor.css` (NEW)
+## FILE: `src/mercifulpotato.Web/Components/AuthorCard.razor.css` (NEW)
 
 ```css
 .author-card {
@@ -7006,7 +7006,7 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/Reactions.razor` (NEW)
+## FILE: `src/mercifulpotato.Web/Components/Reactions.razor` (NEW)
 
 ```razor
 @inject IAnalyticsService Analytics
@@ -7068,7 +7068,7 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Components/Reactions.razor.css` (NEW)
+## FILE: `src/mercifulpotato.Web/Components/Reactions.razor.css` (NEW)
 
 ```css
 .reactions-bar {
@@ -7114,7 +7114,7 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Blog.razor` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Pages/Blog.razor` (CHANGED)
 
 ```razor
 @page "/blog"
@@ -7199,7 +7199,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/BlogPost.razor` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Pages/BlogPost.razor` (CHANGED)
 
 ```razor
 @page "/blog/{Slug}"
@@ -7320,7 +7320,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/Pages/Home.razor` (CHANGED)
+## FILE: `src/mercifulpotato.Web/Pages/Home.razor` (CHANGED)
 
 ```razor
 @page "/"
@@ -7417,7 +7417,7 @@ else
 
 ---
 
-## FILE: `src/ObserverMagazine.Web/wwwroot/css/app.css` (CHANGED)
+## FILE: `src/mercifulpotato.Web/wwwroot/css/app.css` (CHANGED)
 
 ```css
 /* ========== DESIGN TOKENS ========== */
@@ -7716,7 +7716,7 @@ For My Blazor Magazine, Blazor WASM is ideal because:
 
 Our project follows a clean layout:
 
-    src/ObserverMagazine.Web/     — The Blazor WASM app
+    src/mercifulpotato.Web/     — The Blazor WASM app
     tools/ContentProcessor/        — Build-time markdown processor
     tests/                         — xUnit + bUnit tests
     content/blog/                  — Markdown blog posts
@@ -7725,7 +7725,7 @@ The `ContentProcessor` runs at build time (in CI) to convert Markdown files into
 
 ## Next Steps
 
-Check out the [Showcase](/showcase) to see responsive tables and master-detail flows in action, or browse the [source code](https://github.com/ObserverMagazine/observermagazine.github.io) to see how everything fits together.
+Check out the [Showcase](/showcase) to see responsive tables and master-detail flows in action, or browse the [source code](https://github.com/mercifulpotato/mercifulpotato.github.io) to see how everything fits together.
 ```
 
 ---
@@ -7802,17 +7802,17 @@ I would love to hear your thoughts about this magazine.
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs` (CHANGED — fix BunitContext)
+## FILE: `tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs` (CHANGED — fix BunitContext)
 
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
-using ObserverMagazine.Web.Components;
-using ObserverMagazine.Web.Services;
-using ObserverMagazine.Web.Tests.Services;
+using mercifulpotato.Web.Components;
+using mercifulpotato.Web.Services;
+using mercifulpotato.Web.Tests.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class MasterDetailTests : IDisposable
 {
@@ -7832,17 +7832,17 @@ public class MasterDetailTests : IDisposable
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs` (CHANGED — fix BunitContext)
+## FILE: `tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs` (CHANGED — fix BunitContext)
 
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
-using ObserverMagazine.Web.Components;
-using ObserverMagazine.Web.Services;
-using ObserverMagazine.Web.Tests.Services;
+using mercifulpotato.Web.Components;
+using mercifulpotato.Web.Services;
+using mercifulpotato.Web.Tests.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class ResponsiveTableTests : IDisposable
 {
@@ -7862,12 +7862,12 @@ public class ResponsiveTableTests : IDisposable
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Services/NoOpAnalyticsService.cs` (CHANGED — add new interface methods)
+## FILE: `tests/mercifulpotato.Web.Tests/Services/NoOpAnalyticsService.cs` (CHANGED — add new interface methods)
 
 ```csharp
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web.Services;
 
-namespace ObserverMagazine.Web.Tests.Services;
+namespace mercifulpotato.Web.Tests.Services;
 
 public sealed class NoOpAnalyticsService : IAnalyticsService
 {
@@ -7885,17 +7885,17 @@ public sealed class NoOpAnalyticsService : IAnalyticsService
 
 ---
 
-## FILE: `tests/ObserverMagazine.Web.Tests/Services/BlogServiceTests.cs` (CHANGED — test new fields + author loading)
+## FILE: `tests/mercifulpotato.Web.Tests/Services/BlogServiceTests.cs` (CHANGED — test new fields + author loading)
 
 ```csharp
 using System.Net;
 using System.Text.Json;
 using Microsoft.Extensions.Logging.Abstractions;
-using ObserverMagazine.Web.Models;
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web.Models;
+using mercifulpotato.Web.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Services;
+namespace mercifulpotato.Web.Tests.Services;
 
 public class BlogServiceTests
 {
@@ -7932,9 +7932,9 @@ public class BlogServiceTests
         {
             Id = "mercifulpotato-team",
             Name = "Observer Team",
-            Email = "hello@observermagazine.example",
+            Email = "hello@mercifulpotato.example",
             Bio = "The team behind My Blazor Magazine.",
-            Socials = new Dictionary<string, string> { ["github"] = "ObserverMagazine" }
+            Socials = new Dictionary<string, string> { ["github"] = "mercifulpotato" }
         }
     ];
 
@@ -8047,7 +8047,7 @@ public class BlogServiceTests
         var author = await service.GetAuthorAsync("mercifulpotato-team");
 
         Assert.NotNull(author);
-        Assert.Equal("hello@observermagazine.example", author.Email);
+        Assert.Equal("hello@mercifulpotato.example", author.Email);
     }
 
     [Fact]
@@ -8095,7 +8095,7 @@ internal sealed class FakeHttpHandler : HttpMessageHandler
 
 ---
 
-## FILE: `tests/ObserverMagazine.Integration.Tests/ContentProcessorTests.cs` (CHANGED — test new features)
+## FILE: `tests/mercifulpotato.Integration.Tests/ContentProcessorTests.cs` (CHANGED — test new features)
 
 ```csharp
 using System.Xml.Linq;
@@ -8104,7 +8104,7 @@ using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 using Xunit;
 
-namespace ObserverMagazine.Integration.Tests;
+namespace mercifulpotato.Integration.Tests;
 
 public class ContentProcessorTests
 {
@@ -8351,7 +8351,7 @@ public class ContentProcessorTests
                 Summary = "Has author",
                 Tags = [],
                 AuthorName = "Observer Team",
-                AuthorEmail = "hello@observermagazine.example"
+                AuthorEmail = "hello@mercifulpotato.example"
             }
         };
 
@@ -8360,7 +8360,7 @@ public class ContentProcessorTests
         var author = doc.Root!.Element("channel")!.Element("item")!.Element("author");
 
         Assert.NotNull(author);
-        Assert.Contains("hello@observermagazine.example", author.Value);
+        Assert.Contains("hello@mercifulpotato.example", author.Value);
         Assert.Contains("Observer Team", author.Value);
     }
 
@@ -8505,7 +8505,7 @@ public sealed class RssPostEntry
 | 7 | **PR validation** | New `.github/workflows/pr-check.yml` — builds, runs content processor, runs tests, uploads built site as downloadable artifact for reviewers. |
 | 8 | **Fix broken Web.Tests** | `MasterDetailTests.cs` + `ResponsiveTableTests.cs` — migrated from `Bunit.TestContext` to `BunitContext` + `IDisposable`, `RenderComponent` → `Render`. `NoOpAnalyticsService.cs` — added new interface methods. |
 
-**Avatar image:** Create `src/ObserverMagazine.Web/wwwroot/images/authors/` and drop in `mercifulpotato-team.jpg` (any square image, 200×200px is fine).
+**Avatar image:** Create `src/mercifulpotato.Web/wwwroot/images/authors/` and drop in `mercifulpotato-team.jpg` (any square image, 200×200px is fine).
 
 **To add a new author:** Copy `content/authors/mercifulpotato-team.yml` → `content/authors/jane-doe.yml`, fill in the fields, then use `author: jane-doe` in your blog posts' front matter.
 
@@ -8523,12 +8523,12 @@ claude gave:
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
-using ObserverMagazine.Web.Components;
-using ObserverMagazine.Web.Services;
-using ObserverMagazine.Web.Tests.Services;
+using mercifulpotato.Web.Components;
+using mercifulpotato.Web.Services;
+using mercifulpotato.Web.Tests.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class ResponsiveTableTests : IDisposable
 {
@@ -8702,7 +8702,7 @@ The `tools/generate_audio.py`, `tools/requirements-audio.txt`, and `BlogTtsPlaye
 13
 There are so many defects here now that I am testing the website 
 for example, this page 
-`https://observermagazine.github.io/blog/welcome-to-observer-magazine`
+`https://mercifulpotato.github.io/blog/welcome-to-observer-magazine`
 on multiple devices 
 firstly, take a look at this 
 <a href="">Home</a>
@@ -8718,7 +8718,7 @@ Do not return me files with no changes as that confuses me.
 Please think thoroughly, fix all problems correctly, and please do not hallucinate. 
 also there should be a way to toggle themes on the website itself 
 also we should have a link to the repo in the website 
-as a reminder, the repo is at https://github.com/ObserverMagazine/observermagazine.github.io 
+as a reminder, the repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 once again, please fix all errors, not just the ones I mentioned 
 but please do not cause regressions 
 explain all the changes thorougly for the future. 
@@ -8760,9 +8760,9 @@ I've read through the entire dump.txt carefully. There are quite a few issues to
 
 Here are all 16 changed files. Files with **no changes** are omitted.
 
-### 1. `src/ObserverMagazine.Web/wwwroot/css/app.css`
+### 1. `src/mercifulpotato.Web/wwwroot/css/app.css`
 
-Fixes: header class names, replaces `prefers-color-scheme` with `[data-theme]` selectors, adds 6 themes, adds tag link styles, adds CRUD form styles.### 2. `src/ObserverMagazine.Web/wwwroot/index.html`
+Fixes: header class names, replaces `prefers-color-scheme` with `[data-theme]` selectors, adds 6 themes, adds tag link styles, adds CRUD form styles.### 2. `src/mercifulpotato.Web/wwwroot/index.html`
 
 Added theme initialization script (runs before Blazor to prevent flash of wrong theme) and the `observerTheme` JS API for Blazor interop.
 
@@ -8776,7 +8776,7 @@ Added theme initialization script (runs before Blazor to prevent flash of wrong 
     <base href="/" />
     <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
+    <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
     <!-- Apply saved theme BEFORE first paint to prevent flash -->
     <script>
@@ -8835,7 +8835,7 @@ Added theme initialization script (runs before Blazor to prevent flash of wrong 
 </html>
 ```
 
-### 3. `src/ObserverMagazine.Web/Layout/MainLayout.razor`
+### 3. `src/mercifulpotato.Web/Layout/MainLayout.razor`
 
 Added repo link and RSS link in footer.
 
@@ -8867,7 +8867,7 @@ Added repo link and RSS link in footer.
             <p>
                 <a href="/feed.xml">RSS Feed</a>
                 &middot;
-                <a href="https://github.com/ObserverMagazine/observermagazine.github.io"
+                <a href="https://github.com/mercifulpotato/mercifulpotato.github.io"
                    target="_blank" rel="noopener noreferrer">Source on GitHub</a>
             </p>
         </div>
@@ -8875,7 +8875,7 @@ Added repo link and RSS link in footer.
 </div>
 ```
 
-### 4. `src/ObserverMagazine.Web/Layout/NavMenu.razor`
+### 4. `src/mercifulpotato.Web/Layout/NavMenu.razor`
 
 Added theme selector dropdown and GitHub icon link. Theme persists via `observerTheme` JS API. On init, reads the saved theme so the dropdown reflects the current selection.
 
@@ -8893,7 +8893,7 @@ Added theme selector dropdown and GitHub icon link. Theme persists via `observer
         <li><NavLink href="about">About</NavLink></li>
         <li>
             <a class="nav-github"
-               href="https://github.com/ObserverMagazine/observermagazine.github.io"
+               href="https://github.com/mercifulpotato/mercifulpotato.github.io"
                target="_blank"
                rel="noopener noreferrer"
                title="View source on GitHub">
@@ -8950,7 +8950,7 @@ Added theme selector dropdown and GitHub icon link. Theme persists via `observer
 }
 ```
 
-### 5. `src/ObserverMagazine.Web/Pages/Blog.razor`
+### 5. `src/mercifulpotato.Web/Pages/Blog.razor`
 
 Added `/blog/tag/{Tag}` route for tag filtering. Tags are now clickable `<a>` links. Shows a filter bar when a tag is active with a "Clear filter" button.
 
@@ -9075,7 +9075,7 @@ else
 }
 ```
 
-### 6. `src/ObserverMagazine.Web/Pages/BlogPost.razor`
+### 6. `src/mercifulpotato.Web/Pages/BlogPost.razor`
 
 Tags are now clickable `<a>` links that navigate to the tag filter page.
 
@@ -9194,7 +9194,7 @@ else
 }
 ```
 
-### 7. `src/ObserverMagazine.Web/Pages/Home.razor`
+### 7. `src/mercifulpotato.Web/Pages/Home.razor`
 
 Tags on featured post cards are now clickable links.
 
@@ -9300,7 +9300,7 @@ Tags on featured post cards are now clickable links.
 }
 ```
 
-### 8. `src/ObserverMagazine.Web/Pages/Showcase.razor`
+### 8. `src/mercifulpotato.Web/Pages/Showcase.razor`
 
 Updated descriptions to reflect CRUD capability.
 
@@ -9339,14 +9339,14 @@ Updated descriptions to reflect CRUD capability.
 }
 ```
 
-### 9. `src/ObserverMagazine.Web/Models/Product.cs`
+### 9. `src/mercifulpotato.Web/Models/Product.cs`
 
 Added `Id` for CRUD identity. Changed `init` to `set` so products are mutable for editing.
 
 ```csharp
 using System.Text.Json.Serialization;
 
-namespace ObserverMagazine.Web.Models;
+namespace mercifulpotato.Web.Models;
 
 public sealed record Product
 {
@@ -9365,7 +9365,7 @@ public sealed record Product
 }
 ```
 
-### 10. `src/ObserverMagazine.Web/Components/MasterDetail.razor`
+### 10. `src/mercifulpotato.Web/Components/MasterDetail.razor`
 
 Full rewrite with CRUD, localStorage persistence, confirmation dialogs, form validation, and reset-to-defaults.
 
@@ -9750,7 +9750,7 @@ Full rewrite with CRUD, localStorage persistence, confirmation dialogs, form val
 }
 ```
 
-### 11. `src/ObserverMagazine.Web/Components/MasterDetail.razor.css`
+### 11. `src/mercifulpotato.Web/Components/MasterDetail.razor.css`
 
 Updated with styles for the CRUD controls, list header/footer, and form within the detail pane.
 
@@ -9861,7 +9861,7 @@ Updated with styles for the CRUD controls, list header/footer, and form within t
 }
 ```
 
-### 12. `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor`
+### 12. `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor`
 
 Replaced the HEAD-request approach with `preload="metadata"`. The player renders immediately; if the MP3 doesn't exist, the browser fires an error event and we hide the player. Works reliably across all browsers including mobile Chrome.
 
@@ -9928,7 +9928,7 @@ Replaced the HEAD-request approach with `preload="metadata"`. The player renders
 }
 ```
 
-### 13. `src/ObserverMagazine.Web/Components/ResponsiveTable.razor`
+### 13. `src/mercifulpotato.Web/Components/ResponsiveTable.razor`
 
 Fixed `async void Sort()` to `async Task Sort()` — the original `async void` swallowed exceptions and didn't trigger Blazor re-render after the await.
 
@@ -10070,7 +10070,7 @@ Added `preprocess_programming_terms()` function that replaces "C#" → "C sharp"
 Generate MP3 audio files from blog post markdown using KittenTTS.
 
 Usage:
-    python tools/generate_audio.py --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot/blog-data
+    python tools/generate_audio.py --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot/blog-data
 
 Requires:
     - KittenTTS 0.8.1 (pip install from GitHub releases)
@@ -10395,7 +10395,7 @@ def generate_audio(text: str, output_mp3: str, voice: str = "Bella", model_name:
 def main():
     parser = argparse.ArgumentParser(description="Generate TTS audio for blog posts")
     parser.add_argument("--content-dir", default="content/blog", help="Markdown source directory")
-    parser.add_argument("--output-dir", default="src/ObserverMagazine.Web/wwwroot/blog-data", help="Output directory for MP3 files")
+    parser.add_argument("--output-dir", default="src/mercifulpotato.Web/wwwroot/blog-data", help="Output directory for MP3 files")
     parser.add_argument("--voice", default="Bella", help="KittenTTS voice (Bella, Jasper, Luna, Bruno, Rosie, Hugo, Kiki, Leo)")
     parser.add_argument("--model", default="KittenML/kitten-tts-nano-0.8",
                         help="HuggingFace model ID (nano=25MB/fast, mini=80MB/better quality)")
@@ -10463,7 +10463,7 @@ if __name__ == "__main__":
     main()
 ```
 
-### 15. `tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs`
+### 15. `tests/mercifulpotato.Web.Tests/Components/MasterDetailTests.cs`
 
 Updated to mock `IJSRuntime` (bUnit provides this automatically) and register `IAnalyticsService`. Added tests for the CRUD lifecycle.
 
@@ -10471,12 +10471,12 @@ Updated to mock `IJSRuntime` (bUnit provides this automatically) and register `I
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.JSInterop;
-using ObserverMagazine.Web.Components;
-using ObserverMagazine.Web.Services;
-using ObserverMagazine.Web.Tests.Services;
+using mercifulpotato.Web.Components;
+using mercifulpotato.Web.Services;
+using mercifulpotato.Web.Tests.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class MasterDetailTests : IDisposable
 {
@@ -10597,10 +10597,10 @@ internal sealed class MasterDetailFakeHttpHandler : HttpMessageHandler
 
 ## File to delete
 
-**`src/ObserverMagazine.Web/Routes.razor`** — This file contains a second `<Router>` but is never referenced. `App.razor` is the actual root component (registered in `Program.cs`). Delete `Routes.razor` to eliminate dead code:
+**`src/mercifulpotato.Web/Routes.razor`** — This file contains a second `<Router>` but is never referenced. `App.razor` is the actual root component (registered in `Program.cs`). Delete `Routes.razor` to eliminate dead code:
 
 ```bash
-rm src/ObserverMagazine.Web/Routes.razor
+rm src/mercifulpotato.Web/Routes.razor
 ```
 
 ---
@@ -10705,7 +10705,7 @@ I still have multiple issues.
 2. Is it `author: mercifulpotato-team`. 
 I don't see it link anywhere. 
 I added an image to 
-`/home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/wwwroot/images/authors/mercifulpotato-team.png`. 
+`/home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/wwwroot/images/authors/mercifulpotato-team.png`. 
 Is there a yaml page missing?
 Please make sure dump is not missing any essential files. 
 Also, I will need to add my personal name at some point. 
@@ -10744,11 +10744,11 @@ Here are all the files. Every file shown is **complete** — copy-paste ready.
 
 ```yaml
 name: Observer Team
-email: hello@observermagazine.example
+email: hello@mercifulpotato.example
 bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
-  github: ObserverMagazine
+  github: mercifulpotato
 ```
 
 ---
@@ -10976,10 +10976,10 @@ Here is to another year of building great things together.
 
 ---
 
-## 4. `src/ObserverMagazine.Web/Models/CatalogProduct.cs` (NEW)
+## 4. `src/mercifulpotato.Web/Models/CatalogProduct.cs` (NEW)
 
 ```csharp
-namespace ObserverMagazine.Web.Models;
+namespace mercifulpotato.Web.Models;
 
 /// <summary>
 /// Rich product model for the showcase catalog demo.
@@ -11009,12 +11009,12 @@ public sealed class CatalogProduct
 
 ---
 
-## 5. `src/ObserverMagazine.Web/Services/ProductDataGenerator.cs` (NEW)
+## 5. `src/mercifulpotato.Web/Services/ProductDataGenerator.cs` (NEW)
 
 ```csharp
-using ObserverMagazine.Web.Models;
+using mercifulpotato.Web.Models;
 
-namespace ObserverMagazine.Web.Services;
+namespace mercifulpotato.Web.Services;
 
 /// <summary>
 /// Generates deterministic sample product data for the showcase catalog.
@@ -11158,7 +11158,7 @@ public static class ProductDataGenerator
 
 ---
 
-## 6. `src/ObserverMagazine.Web/Pages/Showcase.razor` (REPLACE)
+## 6. `src/mercifulpotato.Web/Pages/Showcase.razor` (REPLACE)
 
 ```razor
 @page "/showcase"
@@ -11641,7 +11641,7 @@ public static class ProductDataGenerator
 
 ---
 
-## 7. `src/ObserverMagazine.Web/Pages/Showcase.razor.css` (NEW)
+## 7. `src/mercifulpotato.Web/Pages/Showcase.razor.css` (NEW)
 
 ```css
 .sc-toolbar {
@@ -11929,7 +11929,7 @@ public static class ProductDataGenerator
 
 ---
 
-## 8. `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor` (NEW)
+## 8. `src/mercifulpotato.Web/Pages/ShowcaseDetail.razor` (NEW)
 
 ```razor
 @page "/showcase/new"
@@ -12301,7 +12301,7 @@ else
 
 ---
 
-## 9. `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor.css` (NEW)
+## 9. `src/mercifulpotato.Web/Pages/ShowcaseDetail.razor.css` (NEW)
 
 ```css
 .sd-header {
@@ -12401,7 +12401,7 @@ else
 
 ---
 
-## 10. `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor` (MODIFIED — Android fix)
+## 10. `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor` (MODIFIED — Android fix)
 
 ```razor
 @inject IAnalyticsService Analytics
@@ -12483,7 +12483,7 @@ else
 
 ---
 
-## 11. `src/ObserverMagazine.Web/wwwroot/index.html` (MODIFIED — highlight.js + audio helper + mobile fix)
+## 11. `src/mercifulpotato.Web/wwwroot/index.html` (MODIFIED — highlight.js + audio helper + mobile fix)
 
 ```html
 <!DOCTYPE html>
@@ -12495,7 +12495,7 @@ else
     <base href="/" />
     <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
+    <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
     <!-- highlight.js core (no theme — we use our own CSS-variable theme) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"
@@ -12592,7 +12592,7 @@ else
 
 ---
 
-## 12. `src/ObserverMagazine.Web/Pages/BlogPost.razor` (MODIFIED — add highlight.js call)
+## 12. `src/mercifulpotato.Web/Pages/BlogPost.razor` (MODIFIED — add highlight.js call)
 
 ```razor
 @page "/blog/{Slug}"
@@ -12728,7 +12728,7 @@ else
 
 ---
 
-## 13. `src/ObserverMagazine.Web/Pages/Home.razor.css` (NEW — scoped)
+## 13. `src/mercifulpotato.Web/Pages/Home.razor.css` (NEW — scoped)
 
 ```css
 .hero {
@@ -12777,7 +12777,7 @@ else
 
 ---
 
-## 14. `src/ObserverMagazine.Web/Pages/Blog.razor.css` (NEW — scoped)
+## 14. `src/mercifulpotato.Web/Pages/Blog.razor.css` (NEW — scoped)
 
 ```css
 .blog-list {
@@ -12829,7 +12829,7 @@ else
 
 ---
 
-## 15. `src/ObserverMagazine.Web/Pages/BlogPost.razor.css` (NEW — scoped)
+## 15. `src/mercifulpotato.Web/Pages/BlogPost.razor.css` (NEW — scoped)
 
 ```css
 .blog-post header {
@@ -12894,7 +12894,7 @@ else
 
 ---
 
-## 16. `src/ObserverMagazine.Web/Pages/About.razor.css` (NEW — scoped)
+## 16. `src/mercifulpotato.Web/Pages/About.razor.css` (NEW — scoped)
 
 ```css
 .simple-table {
@@ -12917,7 +12917,7 @@ else
 
 ---
 
-## 17. `src/ObserverMagazine.Web/wwwroot/css/app.css` (MODIFIED — slimmed, syntax highlight tokens, mobile fix)
+## 17. `src/mercifulpotato.Web/wwwroot/css/app.css` (MODIFIED — slimmed, syntax highlight tokens, mobile fix)
 
 ```css
 /* ========== DESIGN TOKENS (Light — default) ========== */
@@ -13399,14 +13399,14 @@ Due to the file's length, here's just the **two changed sections**. Apply these 
 
 ## 19. Updated Tests
 
-### `tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs` (NEW — replaces old tests)
+### `tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs` (NEW — replaces old tests)
 
 ```csharp
-using ObserverMagazine.Web.Models;
-using ObserverMagazine.Web.Services;
+using mercifulpotato.Web.Models;
+using mercifulpotato.Web.Services;
 using Xunit;
 
-namespace ObserverMagazine.Web.Tests.Components;
+namespace mercifulpotato.Web.Tests.Components;
 
 public class ProductDataGeneratorTests
 {
@@ -13517,17 +13517,17 @@ public class ProductDataGeneratorTests
 }
 ```
 
-### `tests/ObserverMagazine.Web.Tests/Services/BlogServiceTests.cs` (UNCHANGED — still passes)
+### `tests/mercifulpotato.Web.Tests/Services/BlogServiceTests.cs` (UNCHANGED — still passes)
 
 The existing `BlogServiceTests.cs` and `NoOpAnalyticsService.cs` remain unchanged and should continue to pass since the `IBlogService` and `IAnalyticsService` interfaces haven't changed.
 
-### `tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs` and `MasterDetailTests.cs`
+### `tests/mercifulpotato.Web.Tests/Components/ResponsiveTableTests.cs` and `MasterDetailTests.cs`
 
 These still compile and pass because the old components still exist in the project. You can delete them later when you remove the old components, but they won't break the build.
 
 ---
 
-## 20. `src/ObserverMagazine.Web/wwwroot/404.html` (MODIFIED — fix redirect for sub-paths)
+## 20. `src/mercifulpotato.Web/wwwroot/404.html` (MODIFIED — fix redirect for sub-paths)
 
 ```html
 <!DOCTYPE html>
@@ -13561,26 +13561,26 @@ These still compile and pass because the old components still exist in the proje
 1. `content/authors/mercifulpotato-team.yml` — Missing author profile
 2. `content/blog/2099-01-01-draft-template.md` — Draft template
 3. `content/blog/2027-01-01-happy-new-year-2027.md` — Future-dated post
-4. `src/ObserverMagazine.Web/Models/CatalogProduct.cs` — Rich product model
-5. `src/ObserverMagazine.Web/Services/ProductDataGenerator.cs` — 2000-item generator
-6. `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor` + `.css` — Detail/edit page
-7. `src/ObserverMagazine.Web/Pages/Showcase.razor.css` — Scoped showcase styles
-8. `src/ObserverMagazine.Web/Pages/Home.razor.css`, `Blog.razor.css`, `BlogPost.razor.css`, `About.razor.css` — Scoped CSS
-9. `tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs` — New data generator tests
+4. `src/mercifulpotato.Web/Models/CatalogProduct.cs` — Rich product model
+5. `src/mercifulpotato.Web/Services/ProductDataGenerator.cs` — 2000-item generator
+6. `src/mercifulpotato.Web/Pages/ShowcaseDetail.razor` + `.css` — Detail/edit page
+7. `src/mercifulpotato.Web/Pages/Showcase.razor.css` — Scoped showcase styles
+8. `src/mercifulpotato.Web/Pages/Home.razor.css`, `Blog.razor.css`, `BlogPost.razor.css`, `About.razor.css` — Scoped CSS
+9. `tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs` — New data generator tests
 
 **Modified files (7):**
-1. `src/ObserverMagazine.Web/Pages/Showcase.razor` — Full rewrite: paginated catalog
-2. `src/ObserverMagazine.Web/Pages/BlogPost.razor` — Added highlight.js interop
-3. `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor` — JS-based audio check for Android
-4. `src/ObserverMagazine.Web/wwwroot/index.html` — highlight.js, audio helper, viewport fix
-5. `src/ObserverMagazine.Web/wwwroot/css/app.css` — Slimmed, syntax tokens, mobile overflow fix
-6. `src/ObserverMagazine.Web/wwwroot/404.html` — Fixed SPA redirect
+1. `src/mercifulpotato.Web/Pages/Showcase.razor` — Full rewrite: paginated catalog
+2. `src/mercifulpotato.Web/Pages/BlogPost.razor` — Added highlight.js interop
+3. `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor` — JS-based audio check for Android
+4. `src/mercifulpotato.Web/wwwroot/index.html` — highlight.js, audio helper, viewport fix
+5. `src/mercifulpotato.Web/wwwroot/css/app.css` — Slimmed, syntax tokens, mobile overflow fix
+6. `src/mercifulpotato.Web/wwwroot/404.html` — Fixed SPA redirect
 7. `tools/generate_audio.py` — Speed 1.15, improved ASP.NET pronunciation
 
 **Files you can optionally delete later** (no longer used by Showcase but still compile):
-- `src/ObserverMagazine.Web/Components/ResponsiveTable.razor` + `.css`
-- `src/ObserverMagazine.Web/Components/MasterDetail.razor` + `.css`
-- `src/ObserverMagazine.Web/wwwroot/sample-data/products.json`
+- `src/mercifulpotato.Web/Components/ResponsiveTable.razor` + `.css`
+- `src/mercifulpotato.Web/Components/MasterDetail.razor` + `.css`
+- `src/mercifulpotato.Web/wwwroot/sample-data/products.json`
 
 **Adding your personal name:** Create a new file like `content/authors/your-id.yml` following the same format as `mercifulpotato-team.yml`, then reference `author: your-id` in your blog post front matter. The ContentProcessor handles the rest automatically.
 
@@ -13598,15 +13598,15 @@ These still compile and pass because the old components still exist in the proje
 
 
 I see the following build errors 
-  ObserverMagazine.Web net10.0 browser-wasm failed with 8 error(s) (2.4s)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Pages/Showcase.razor(60,86): error CS1525: Invalid expression term ')'
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(439,15): error CS1026: ) expected
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Pages/Showcase.razor(67,89): error CS1525: Invalid expression term ')'
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(476,15): error CS1026: ) expected
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Pages/Showcase.razor(70,89): error CS1525: Invalid expression term ')'
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(501,15): error CS1026: ) expected
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Pages/Showcase.razor(75,112): error CS1525: Invalid expression term ')'
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(534,15): error CS1026: ) expected
+  mercifulpotato.Web net10.0 browser-wasm failed with 8 error(s) (2.4s)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Pages/Showcase.razor(60,86): error CS1525: Invalid expression term ')'
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(439,15): error CS1026: ) expected
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Pages/Showcase.razor(67,89): error CS1525: Invalid expression term ')'
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(476,15): error CS1026: ) expected
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Pages/Showcase.razor(70,89): error CS1525: Invalid expression term ')'
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(501,15): error CS1026: ) expected
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Pages/Showcase.razor(75,112): error CS1525: Invalid expression term ')'
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/obj/Debug/net10.0/Microsoft.CodeAnalysis.Razor.Compiler/Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator/Pages_Showcase_razor.g.cs(534,15): error CS1026: ) expected
 
 Test summary: total: 17, failed: 0, succeeded: 17, skipped: 0, duration: 1.2s
 Build failed with 8 error(s) in 3.2s
@@ -14328,7 +14328,7 @@ Let me provide all the fixes.
 
 ---
 
-## 1. `src/ObserverMagazine.Web/Pages/Showcase.razor` — Fix build errors
+## 1. `src/mercifulpotato.Web/Pages/Showcase.razor` — Fix build errors
 
 The only change is in the filter row section. Replace the entire `@* ---- Filter row ---- *@` section. Here's the **full file** with the fix:
 
@@ -14344,7 +14344,7 @@ e.Value?.ToString() ?? string.Empty
 
 Here's the complete fixed file:Now the themed audio player CSS:
 
-## 2. `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css` — Themed audio player## 3. Cloudflare Worker `index.ts` — Full file with view counts + reactions## 4. D1 Migration SQL for new tables
+## 2. `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css` — Themed audio player## 3. Cloudflare Worker `index.ts` — Full file with view counts + reactions## 4. D1 Migration SQL for new tables
 
 You need to run this SQL against your D1 database to create the view count and reaction tables:---
 
@@ -14399,7 +14399,7 @@ You need to run this SQL against your D1 database to create the view count and r
 
 
 I see test failures 
-kushal@fedora:~/src/ts/cloudflare/my-api$ cd /home/kushal/src/dotnet/observermagazine.github.io/; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+kushal@fedora:~/src/ts/cloudflare/my-api$ cd /home/kushal/src/dotnet/mercifulpotato.github.io/; time dotnet format; time dotnet restore; dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 
 real	0m7.691s
 user	0m11.434s
@@ -14412,265 +14412,265 @@ real	0m0.776s
 user	0m0.833s
 sys	0m0.143s
 Content directory: content/blog
-Output directory:  src/ObserverMagazine.Web/wwwroot
+Output directory:  src/mercifulpotato.Web/wwwroot
 Authors directory: content/authors
 Publish before:    2026-03-22 12:58:49 UTC
 Found 2 author profile(s)
   Loaded author: mercifulpotato-team (Observer Team)
   Loaded author: kushal (kushal)
-Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (2 authors)
+Wrote authors index: src/mercifulpotato.Web/wwwroot/blog-data/authors.json (2 authors)
 Found 7 markdown files
 Processing: 2026-01-15-welcome-to-observer-magazine.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/welcome-to-observer-magazine.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/welcome-to-observer-magazine.html (~1 min read)
 Processing: 2026-02-20-getting-started-with-blazor-wasm.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/getting-started-with-blazor-wasm.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/getting-started-with-blazor-wasm.html (~1 min read)
 Processing: 2026-03-10-responsive-design-patterns.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/responsive-design-patterns.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/responsive-design-patterns.html (~1 min read)
 Processing: 2026-03-20-hello-world.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/hello-world.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/hello-world.html (~1 min read)
 Processing: 2026-03-21-aspnet-lifecycle-deep-dive.md
   WARNING: No author profile found for 'Observer Team'
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/aspnet-lifecycle-deep-dive.html (~16 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/aspnet-lifecycle-deep-dive.html (~16 min read)
 Processing: 2099-01-01-draft-template.md
   SKIPPED: Draft post 'Your Post Title Here'
 Processing: 2027-01-01-happy-new-year-2027.md
   SKIPPED: Future post 'Happy New Year 2027: A Look Back and a Look Ahead' (date: 2027-01-01, publish-before: 2026-03-22)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (5 posts, 1 drafts skipped, 1 future posts skipped)
-Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
+Wrote posts index: src/mercifulpotato.Web/wwwroot/blog-data/posts-index.json (5 posts, 1 drafts skipped, 1 future posts skipped)
+Wrote RSS feed: src/mercifulpotato.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+  mercifulpotato.Integration.Tests net10.0 succeeded (0.4s) → tests/mercifulpotato.Integration.Tests/bin/Debug/net10.0/mercifulpotato.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.4)
-[xUnit.net 00:00:00.14]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.29]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.45]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.67]   Finished:    ObserverMagazine.Integration.Tests (ID = 'a11f17fc47145796b425f2f6072a7236e3de3115aec6d32144ce1d1b834d5009')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.2s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.4s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+[xUnit.net 00:00:00.14]   Discovering: mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.29]   Discovered:  mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.45]   Starting:    mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.67]   Finished:    mercifulpotato.Integration.Tests (ID = 'a11f17fc47145796b425f2f6072a7236e3de3115aec6d32144ce1d1b834d5009')
+  mercifulpotato.Integration.Tests test net10.0 succeeded (1.2s)
+  mercifulpotato.Web net10.0 browser-wasm succeeded (3.4s) → src/mercifulpotato.Web/bin/Debug/net10.0/wwwroot
+  mercifulpotato.Web.Tests net10.0 succeeded (0.3s) → tests/mercifulpotato.Web.Tests/bin/Debug/net10.0/mercifulpotato.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.4)
-[xUnit.net 00:00:00.14]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.29]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.44]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.54]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData [FAIL]
+[xUnit.net 00:00:00.14]   Discovering: mercifulpotato.Web.Tests
+[xUnit.net 00:00:00.29]   Discovered:  mercifulpotato.Web.Tests
+[xUnit.net 00:00:00.44]   Starting:    mercifulpotato.Web.Tests
+[xUnit.net 00:00:00.54]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData [FAIL]
 [xUnit.net 00:00:00.54]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.54]       Stack Trace:
 [xUnit.net 00:00:00.54]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.54]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.54]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.54]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(106,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData()
+[xUnit.net 00:00:00.54]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.54]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.54]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(106,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData()
 [xUnit.net 00:00:00.54]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.54]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.55]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic [FAIL]
+[xUnit.net 00:00:00.55]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic [FAIL]
 [xUnit.net 00:00:00.55]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.55]       Stack Trace:
 [xUnit.net 00:00:00.55]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(26,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic()
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(26,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic()
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.55]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice [FAIL]
+[xUnit.net 00:00:00.55]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice [FAIL]
 [xUnit.net 00:00:00.55]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.55]       Stack Trace:
 [xUnit.net 00:00:00.55]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(86,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice()
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(86,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice()
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.55]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice [FAIL]
+[xUnit.net 00:00:00.55]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice [FAIL]
 [xUnit.net 00:00:00.55]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.55]       Stack Trace:
 [xUnit.net 00:00:00.55]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(95,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice()
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(95,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice()
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.55]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories [FAIL]
+[xUnit.net 00:00:00.55]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories [FAIL]
 [xUnit.net 00:00:00.55]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.55]       Stack Trace:
 [xUnit.net 00:00:00.55]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(70,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories()
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(70,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories()
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.55]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000 [FAIL]
+[xUnit.net 00:00:00.55]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000 [FAIL]
 [xUnit.net 00:00:00.55]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.55]       Stack Trace:
 [xUnit.net 00:00:00.55]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(19,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000()
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.55]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(19,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000()
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.55]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.58]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique [FAIL]
+[xUnit.net 00:00:00.58]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique [FAIL]
 [xUnit.net 00:00:00.58]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.58]       Stack Trace:
 [xUnit.net 00:00:00.58]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(62,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique()
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(62,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique()
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.58]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields [FAIL]
+[xUnit.net 00:00:00.58]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields [FAIL]
 [xUnit.net 00:00:00.58]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.58]       Stack Trace:
 [xUnit.net 00:00:00.58]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(40,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields()
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(40,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields()
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.58]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount [FAIL]
+[xUnit.net 00:00:00.58]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount [FAIL]
 [xUnit.net 00:00:00.58]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.58]       Stack Trace:
 [xUnit.net 00:00:00.58]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(12,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount()
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(12,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount()
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.58]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands [FAIL]
+[xUnit.net 00:00:00.58]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands [FAIL]
 [xUnit.net 00:00:00.58]       System.ArgumentException : Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 [xUnit.net 00:00:00.58]       Stack Trace:
 [xUnit.net 00:00:00.58]            at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139,0): at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(105,0): at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
-[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(78,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands()
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139,0): at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(105,0): at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed)
+[xUnit.net 00:00:00.58]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(78,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands()
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.87]   Finished:    ObserverMagazine.Web.Tests (ID = '3bfa85c2f37e8d5c8068cb834c3ae337cb6e3533a98dd06391782e4f8f42ef98')
-  ObserverMagazine.Web.Tests test net10.0 failed with 10 error(s) (1.4s)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData (21ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the
+[xUnit.net 00:00:00.87]   Finished:    mercifulpotato.Web.Tests (ID = '3bfa85c2f37e8d5c8068cb834c3ae337cb6e3533a98dd06391782e4f8f42ef98')
+  mercifulpotato.Web.Tests test net10.0 failed with 10 error(s) (1.4s)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData (21ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the
        destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Com
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DifferentSeedsProduceDifferentData() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Com
       ponents/ShowcaseTests.cs:line 106
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination index
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination index
       , length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTes
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_IsDeterministic() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTes
       ts.cs:line 26
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the de
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the de
       stination index, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Compone
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SomeProductsHaveCompareAtPrice() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Compone
       nts/ShowcaseTests.cs:line 86
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the des
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the des
       tination index, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Componen
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_CompareAtPriceHigherThanPrice() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Componen
       ts/ShowcaseTests.cs:line 95
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destinatio
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destinatio
       n index, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/Show
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfCategories() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/Show
       caseTests.cs:line 70
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000 (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination in
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000 (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination in
       dex, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/Showcase
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_DefaultCountIs2000() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/Showcase
       Tests.cs:line 19
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination index, 
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination index, 
       length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_SkusAreUnique() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests
       .cs:line 62
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the des
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the des
       tination index, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Componen
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_AllProductsHaveRequiredFields() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Componen
       ts/ShowcaseTests.cs:line 40
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination
        index, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/Showc
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_ReturnsRequestedCount() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/Showc
       aseTests.cs:line 12
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-    /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination in
+    /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs(139): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands (< 1ms): Error Message: System.ArgumentException : Destination array was not long enough. Check the destination in
       dex, length, and the array's lower bounds. (Parameter 'destinationArray')
       Stack Trace:
          at System.Array.CopyImpl(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
-         at ObserverMagazine.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataG
+         at mercifulpotato.Web.Services.ProductDataGenerator.CreateDeterministicGuid(Int32 seed, Int32 index) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataG
       enerator.cs:line 139
-         at ObserverMagazine.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/Services/ProductDataGenerator.cs:lin
+         at mercifulpotato.Web.Services.ProductDataGenerator.Generate(Int32 count, Int32 seed) in /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/Services/ProductDataGenerator.cs:lin
       e 105
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/Showcase
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_HasVarietyOfBrands() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/Showcase
       Tests.cs:line 78
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
@@ -14683,7 +14683,7 @@ Build failed with 10 error(s) in 5.9s
 
 The bug is in `CreateDeterministicGuid` — the multiplications `index * 2654435761` and `seed * 2246822519` overflow `int` and become `long`, so `BitConverter.GetBytes` returns 8 bytes instead of 4, which overflows the 16-byte array.
 
-Replace the `CreateDeterministicGuid` method in `src/ObserverMagazine.Web/Services/ProductDataGenerator.cs`. Here's the fixed method — just cast to `int`:
+Replace the `CreateDeterministicGuid` method in `src/mercifulpotato.Web/Services/ProductDataGenerator.cs`. Here's the fixed method — just cast to `int`:
 
 ```csharp
     private static Guid CreateDeterministicGuid(int seed, int index)
@@ -14806,7 +14806,7 @@ this works on firefox and chrome on desktop and firefox on android but I don't s
         <audio controls="" preload="metadata" src="blog-data/aspnet-lifecycle-deep-dive.mp3" b-3elfg5y7vf=""><!--!-->
             Your browser does not support audio playback.
         </audio></div>
-https://observermagazine.github.io/blog/aspnet-lifecycle-deep-dive
+https://mercifulpotato.github.io/blog/aspnet-lifecycle-deep-dive
 why? how do I fix it? 
 please review the full source code. I have all the source code you need here 
 do NOT guess. 
@@ -14823,7 +14823,7 @@ The fix is to remove the fixed `height` and delete the `::-webkit-media-controls
 
 Here is the complete, corrected file.
 
-### FILE: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css`
+### FILE: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css`
 
 ```css
 .tts-player {
@@ -14928,22 +14928,22 @@ Let me generate each file in full.
 
 ---
 
-## FILE 1: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css`
+## FILE 1: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css`
 
-The Gemini fix is correct. Remove all webkit pseudo-elements, use `accent-color`, remove fixed height.## FILE 2: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor`
+The Gemini fix is correct. Remove all webkit pseudo-elements, use `accent-color`, remove fixed height.## FILE 2: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor`
 
 This adds a JS-based check for whether native audio controls rendered, and shows a custom play/pause + seek bar if they didn't.## FILE 3: JS helpers addition to `index.html`
 
-We need to add `checkControlsRendered`, `getDuration`, `getCurrentTime`, `hasEnded`, `play`, `pause`, `setCurrentTime` to the `observerAudio` object. Here's the **complete `observerAudio` block** that should replace the existing one in your `index.html`:## FILE 4: `src/ObserverMagazine.Web/Pages/Showcase.razor`
+We need to add `checkControlsRendered`, `getDuration`, `getCurrentTime`, `hasEnded`, `play`, `pause`, `setCurrentTime` to the `observerAudio` object. Here's the **complete `observerAudio` block** that should replace the existing one in your `index.html`:## FILE 4: `src/mercifulpotato.Web/Pages/Showcase.razor`
 
 This is the big one. Key changes:
 - **Persistence:** Column visibility, filters, sort column/direction, page size are saved to localStorage as a `ShowcasePrefs` JSON object and restored on load.
 - **Mobile filters:** Instead of `display: none`, filters are in a collapsible panel (`showFilters` toggle) that works on both desktop and mobile. Each filter is a labeled row.
 - **Range filter labels:** Every min/max shows "Price: Min / Max" clearly.
 - **Column dropdown:** Repositioned to work on mobile.
-- **Clear Filters + Restore Defaults:** Separate buttons.## FILE 5: `src/ObserverMagazine.Web/Pages/Showcase.razor.css`
+- **Clear Filters + Restore Defaults:** Separate buttons.## FILE 5: `src/mercifulpotato.Web/Pages/Showcase.razor.css`
 
-Key fixes: column dropdown works on mobile, filter panel is a full-width labeled grid instead of hidden on mobile, responsive.## FILE 6: `tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs`
+Key fixes: column dropdown works on mobile, filter panel is a full-width labeled grid instead of hidden on mobile, responsive.## FILE 6: `tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs`
 
 Comprehensive unit tests covering filtering, sorting, pagination, column definitions, preferences serialization, and the ProductDataGenerator.---
 
@@ -14993,22 +14993,22 @@ Let me generate each file in full.
 
 ---
 
-## FILE 1: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css`
+## FILE 1: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css`
 
-The Gemini fix is correct. Remove all webkit pseudo-elements, use `accent-color`, remove fixed height.## FILE 2: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor`
+The Gemini fix is correct. Remove all webkit pseudo-elements, use `accent-color`, remove fixed height.## FILE 2: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor`
 
 This adds a JS-based check for whether native audio controls rendered, and shows a custom play/pause + seek bar if they didn't.## FILE 3: JS helpers addition to `index.html`
 
-We need to add `checkControlsRendered`, `getDuration`, `getCurrentTime`, `hasEnded`, `play`, `pause`, `setCurrentTime` to the `observerAudio` object. Here's the **complete `observerAudio` block** that should replace the existing one in your `index.html`:## FILE 4: `src/ObserverMagazine.Web/Pages/Showcase.razor`
+We need to add `checkControlsRendered`, `getDuration`, `getCurrentTime`, `hasEnded`, `play`, `pause`, `setCurrentTime` to the `observerAudio` object. Here's the **complete `observerAudio` block** that should replace the existing one in your `index.html`:## FILE 4: `src/mercifulpotato.Web/Pages/Showcase.razor`
 
 This is the big one. Key changes:
 - **Persistence:** Column visibility, filters, sort column/direction, page size are saved to localStorage as a `ShowcasePrefs` JSON object and restored on load.
 - **Mobile filters:** Instead of `display: none`, filters are in a collapsible panel (`showFilters` toggle) that works on both desktop and mobile. Each filter is a labeled row.
 - **Range filter labels:** Every min/max shows "Price: Min / Max" clearly.
 - **Column dropdown:** Repositioned to work on mobile.
-- **Clear Filters + Restore Defaults:** Separate buttons.## FILE 5: `src/ObserverMagazine.Web/Pages/Showcase.razor.css`
+- **Clear Filters + Restore Defaults:** Separate buttons.## FILE 5: `src/mercifulpotato.Web/Pages/Showcase.razor.css`
 
-Key fixes: column dropdown works on mobile, filter panel is a full-width labeled grid instead of hidden on mobile, responsive.## FILE 6: `tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs`
+Key fixes: column dropdown works on mobile, filter panel is a full-width labeled grid instead of hidden on mobile, responsive.## FILE 6: `tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs`
 
 Comprehensive unit tests covering filtering, sorting, pagination, column definitions, preferences serialization, and the ProductDataGenerator.---
 
@@ -15106,12 +15106,12 @@ Yeah, no there are entirely way too many errors in here and I am sure it is easy
 I've read the full dump.txt and output.txt. The problem is simple — `ShowcaseTests.cs` is missing two `using` directives:
 
 1. `using Xunit;` — needed for `[Fact]`
-2. `using ObserverMagazine.Web.Models;` — needed for `CatalogProduct`
+2. `using mercifulpotato.Web.Models;` — needed for `CatalogProduct`
 
 Here's the complete fixed file:That's the only file that needs to change. The fix is just two missing `using` directives at the top:
 
 ```csharp
-using ObserverMagazine.Web.Models;   // ← was missing (needed for CatalogProduct)
+using mercifulpotato.Web.Models;   // ← was missing (needed for CatalogProduct)
 using Xunit;                          // ← was missing (needed for [Fact])
 ```
 
@@ -15202,7 +15202,7 @@ These don't match — `"Discontinued"` is generated but not in the expected set,
 25
 
 These tests are still failing 
-kushal@fedora:~/src/dotnet/observermagazine.github.io$ cd /home/kushal/src/dotnet/observermagazine.github.io/; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+kushal@fedora:~/src/dotnet/mercifulpotato.github.io$ cd /home/kushal/src/dotnet/mercifulpotato.github.io/; time dotnet format; time dotnet restore; dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 
 real	0m7.064s
 user	0m12.220s
@@ -15215,62 +15215,62 @@ real	0m0.726s
 user	0m0.764s
 sys	0m0.147s
 Content directory: content/blog
-Output directory:  src/ObserverMagazine.Web/wwwroot
+Output directory:  src/mercifulpotato.Web/wwwroot
 Authors directory: content/authors
 Publish before:    2026-03-22 14:32:38 UTC
 Found 2 author profile(s)
   Loaded author: mercifulpotato-team (Observer Team)
   Loaded author: kushal (kushal)
-Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (2 authors)
+Wrote authors index: src/mercifulpotato.Web/wwwroot/blog-data/authors.json (2 authors)
 Found 7 markdown files
 Processing: 2026-01-15-welcome-to-observer-magazine.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/welcome-to-observer-magazine.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/welcome-to-observer-magazine.html (~1 min read)
 Processing: 2026-02-20-getting-started-with-blazor-wasm.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/getting-started-with-blazor-wasm.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/getting-started-with-blazor-wasm.html (~1 min read)
 Processing: 2026-03-10-responsive-design-patterns.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/responsive-design-patterns.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/responsive-design-patterns.html (~1 min read)
 Processing: 2026-03-20-hello-world.md
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/hello-world.html (~1 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/hello-world.html (~1 min read)
 Processing: 2026-03-21-aspnet-lifecycle-deep-dive.md
   WARNING: No author profile found for 'Observer Team'
-  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/aspnet-lifecycle-deep-dive.html (~16 min read)
+  Wrote: src/mercifulpotato.Web/wwwroot/blog-data/aspnet-lifecycle-deep-dive.html (~16 min read)
 Processing: 2099-01-01-draft-template.md
   SKIPPED: Draft post 'Your Post Title Here'
 Processing: 2027-01-01-happy-new-year-2027.md
   SKIPPED: Future post 'Happy New Year 2027: A Look Back and a Look Ahead' (date: 2027-01-01, publish-before: 2026-03-22)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (5 posts, 1 drafts skipped, 1 future posts skipped)
-Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
+Wrote posts index: src/mercifulpotato.Web/wwwroot/blog-data/posts-index.json (5 posts, 1 drafts skipped, 1 future posts skipped)
+Wrote RSS feed: src/mercifulpotato.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.2s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+  mercifulpotato.Integration.Tests net10.0 succeeded (0.2s) → tests/mercifulpotato.Integration.Tests/bin/Debug/net10.0/mercifulpotato.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.4)
-[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.30]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.45]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.67]   Finished:    ObserverMagazine.Integration.Tests (ID = 'a11f17fc47145796b425f2f6072a7236e3de3115aec6d32144ce1d1b834d5009')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.2s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (1.5s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.2s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+[xUnit.net 00:00:00.15]   Discovering: mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.30]   Discovered:  mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.45]   Starting:    mercifulpotato.Integration.Tests
+[xUnit.net 00:00:00.67]   Finished:    mercifulpotato.Integration.Tests (ID = 'a11f17fc47145796b425f2f6072a7236e3de3115aec6d32144ce1d1b834d5009')
+  mercifulpotato.Integration.Tests test net10.0 succeeded (1.2s)
+  mercifulpotato.Web net10.0 browser-wasm succeeded (1.5s) → src/mercifulpotato.Web/bin/Debug/net10.0/wwwroot
+  mercifulpotato.Web.Tests net10.0 succeeded (0.2s) → tests/mercifulpotato.Web.Tests/bin/Debug/net10.0/mercifulpotato.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.4)
-[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.47]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.62]     ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid [FAIL]
+[xUnit.net 00:00:00.15]   Discovering: mercifulpotato.Web.Tests
+[xUnit.net 00:00:00.32]   Discovered:  mercifulpotato.Web.Tests
+[xUnit.net 00:00:00.47]   Starting:    mercifulpotato.Web.Tests
+[xUnit.net 00:00:00.62]     mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid [FAIL]
 [xUnit.net 00:00:00.62]       Assert.Contains() Failure: Item not found in set
 [xUnit.net 00:00:00.62]       Set:       ["Active", "Draft", "Archived", "Out of Stock"]
 [xUnit.net 00:00:00.62]       Not found: "Discontinued"
 [xUnit.net 00:00:00.62]       Stack Trace:
-[xUnit.net 00:00:00.62]         /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(117,0): at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid()
+[xUnit.net 00:00:00.62]         /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(117,0): at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid()
 [xUnit.net 00:00:00.62]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
 [xUnit.net 00:00:00.62]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
-[xUnit.net 00:00:00.92]   Finished:    ObserverMagazine.Web.Tests (ID = '3bfa85c2f37e8d5c8068cb834c3ae337cb6e3533a98dd06391782e4f8f42ef98')
-  ObserverMagazine.Web.Tests test net10.0 failed with 1 error(s) (1.5s)
-    /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTests.cs(117): error TESTERROR: 
-      ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid (3ms): Error Message: Assert.Contains() Failure: Item not found in set
+[xUnit.net 00:00:00.92]   Finished:    mercifulpotato.Web.Tests (ID = '3bfa85c2f37e8d5c8068cb834c3ae337cb6e3533a98dd06391782e4f8f42ef98')
+  mercifulpotato.Web.Tests test net10.0 failed with 1 error(s) (1.5s)
+    /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTests.cs(117): error TESTERROR: 
+      mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid (3ms): Error Message: Assert.Contains() Failure: Item not found in set
       Set:       ["Active", "Draft", "Archived", "Out of Stock"]
       Not found: "Discontinued"
       Stack Trace:
-         at ObserverMagazine.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid() in /home/kushal/src/dotnet/observermagazine.github.io/tests/ObserverMagazine.Web.Tests/Components/ShowcaseTe
+         at mercifulpotato.Web.Tests.Components.ProductDataGeneratorTests.Generate_StatusesAreValid() in /home/kushal/src/dotnet/mercifulpotato.github.io/tests/mercifulpotato.Web.Tests/Components/ShowcaseTe
       sts.cs:line 117
          at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
          at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
@@ -15301,7 +15301,7 @@ Here are all the fixes:
 
 ---
 
-**FILE 1: `src/ObserverMagazine.Web/Services/ProductDataGenerator.cs`** — Fix the `Statuses` array:**FILE 2: `content/authors/kushal.yml`** — Quote the numeric GitHub handle:**FILE 3: `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md`** — Only the front matter needs to change (`author: Observer Team` → `author: mercifulpotato-team`). Here's the front matter section (the body is unchanged):**FILE 4: `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor`** — Two fixes: (a) `StorageKey` changed from `"observer-catalog-v2"` to `"observer-catalog-products"` to match `Showcase.razor`, and (b) the Status `<select>` dropdown now has the correct options matching the generator and filter:**FILE 5: `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor.css`** — Update badge CSS to match new statuses:---
+**FILE 1: `src/mercifulpotato.Web/Services/ProductDataGenerator.cs`** — Fix the `Statuses` array:**FILE 2: `content/authors/kushal.yml`** — Quote the numeric GitHub handle:**FILE 3: `content/blog/2026-03-21-aspnet-lifecycle-deep-dive.md`** — Only the front matter needs to change (`author: Observer Team` → `author: mercifulpotato-team`). Here's the front matter section (the body is unchanged):**FILE 4: `src/mercifulpotato.Web/Pages/ShowcaseDetail.razor`** — Two fixes: (a) `StorageKey` changed from `"observer-catalog-v2"` to `"observer-catalog-products"` to match `Showcase.razor`, and (b) the Status `<select>` dropdown now has the correct options matching the generator and filter:**FILE 5: `src/mercifulpotato.Web/Pages/ShowcaseDetail.razor.css`** — Update badge CSS to match new statuses:---
 
 **Summary of all issues found in the full dump.txt review:**
 
@@ -15404,7 +15404,7 @@ Everything else in the dump looked correct — the YAML syntax on `mercifulpotat
 There are still a lot of "small" UX problems. 
 Google Chrome on mobile does not surface the media. 
 I sent this link directly to the phone through the messaging app Signal
-`https://observermagazine.github.io/blog-data/good-morning.mp3`
+`https://mercifulpotato.github.io/blog-data/good-morning.mp3`
 and played it directly on Google Chrome. 
 Then, now I can see the media controls. 
 I think this is some kind of abuse prevention method by the Google Chrome team. 
@@ -15456,7 +15456,7 @@ and we can grab the resources during build time
 also I got a source map error 
  Source map error: Error: request failed with status 404
 Stack in the worker:networkRequest@resource://devtools/client/shared/source-map-loader/utils/network-request.js:43:9
-Resource URL: https://observermagazine.github.io/_framework/dotnet.runtime.peu2mfb29t.js
+Resource URL: https://mercifulpotato.github.io/_framework/dotnet.runtime.peu2mfb29t.js
 Source Map URL: dotnet.runtime.js.map
 https://firefox-source-docs.mozilla.org/devtools-user/debugger/source_map_errors/
 can you fix this as well please? 
@@ -15494,7 +15494,7 @@ I've read the entire dump.txt carefully. Let me address all the issues systemati
 
 7. **CDN dependency risk** — Replaced the direct CDN `<script>` and `<link>` for highlight.js with **LibMan** (`Microsoft.Web.LibraryManager.Build`), which downloads the files into `wwwroot/lib/` at build time. Zero runtime dependency on external CDNs.
 
-8. **`.gitignore` updated** — Added `src/ObserverMagazine.Web/wwwroot/lib/` since those files are build-time artifacts.
+8. **`.gitignore` updated** — Added `src/mercifulpotato.Web/wwwroot/lib/` since those files are build-time artifacts.
 
 **New content:**
 
@@ -15602,7 +15602,7 @@ I've read the entire dump.txt carefully. Let me address all the issues systemati
 
 ---
 
-## 1. `src/ObserverMagazine.Web/Layout/NavMenu.razor`
+## 1. `src/mercifulpotato.Web/Layout/NavMenu.razor`
 
 Closes the hamburger menu on navigation and when clicking outside.
 
@@ -15628,7 +15628,7 @@ Closes the hamburger menu on navigation and when clicking outside.
         <li><NavLink href="about">About</NavLink></li>
         <li>
             <a class="nav-github"
-               href="https://github.com/ObserverMagazine/observermagazine.github.io"
+               href="https://github.com/mercifulpotato/mercifulpotato.github.io"
                target="_blank"
                rel="noopener noreferrer"
                title="View source on GitHub">
@@ -15708,7 +15708,7 @@ Closes the hamburger menu on navigation and when clicking outside.
 
 ---
 
-## 2. `src/ObserverMagazine.Web/Layout/NavMenu.razor.css` (NEW)
+## 2. `src/mercifulpotato.Web/Layout/NavMenu.razor.css` (NEW)
 
 Add scoped CSS for the nav overlay used to close the mobile menu on outside click.
 
@@ -15730,7 +15730,7 @@ Add scoped CSS for the nav overlay used to close the mobile menu on outside clic
 
 ---
 
-## 3. `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor`
+## 3. `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor`
 
 Adds `@implements IDisposable`, adds a naked direct-play link for Chrome mobile compatibility.
 
@@ -15964,7 +15964,7 @@ Adds `@implements IDisposable`, adds a naked direct-play link for Chrome mobile 
 
 ---
 
-## 4. `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css`
+## 4. `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css`
 
 Adds style for the new direct link.
 
@@ -16081,12 +16081,12 @@ Adds style for the new direct link.
 
 ---
 
-## 5. `src/ObserverMagazine.Web/Components/AuthorCard.razor`
+## 5. `src/mercifulpotato.Web/Components/AuthorCard.razor`
 
 Comprehensive social media URL support covering every major platform.
 
 ```razor
-@using ObserverMagazine.Web.Models
+@using mercifulpotato.Web.Models
 
 @if (Author is not null)
 {
@@ -16263,7 +16263,7 @@ Comprehensive social media URL support covering every major platform.
 
 ---
 
-## 6. `src/ObserverMagazine.Web/Components/MasterDetail.razor.css`
+## 6. `src/mercifulpotato.Web/Components/MasterDetail.razor.css`
 
 Adds the missing `.confirm-overlay` and `.confirm-dialog` styles (bug fix).
 
@@ -16406,7 +16406,7 @@ Adds the missing `.confirm-overlay` and `.confirm-dialog` styles (bug fix).
 
 ---
 
-## 7. `src/ObserverMagazine.Web/Pages/Showcase.razor` (partial — column picker fix only)
+## 7. `src/mercifulpotato.Web/Pages/Showcase.razor` (partial — column picker fix only)
 
 In the column picker section, add a click-outside overlay. Find the column picker block and replace it with:
 
@@ -16794,7 +16794,7 @@ The Showcase.razor code block itself: add the `<div class="sc-col-backdrop"...>`
 
 ---
 
-## 8. `src/ObserverMagazine.Web/libman.json` (NEW)
+## 8. `src/mercifulpotato.Web/libman.json` (NEW)
 
 ```json
 {
@@ -16815,7 +16815,7 @@ The Showcase.razor code block itself: add the `<div class="sc-col-backdrop"...>`
 
 ---
 
-## 9. `src/ObserverMagazine.Web/wwwroot/index.html`
+## 9. `src/mercifulpotato.Web/wwwroot/index.html`
 
 Switches from CDN to local LibMan-restored files. Strips the disabled hljs theme link (we use our own CSS-variable theme).
 
@@ -16829,7 +16829,7 @@ Switches from CDN to local LibMan-restored files. Strips the disabled hljs theme
     <base href="/" />
     <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
+    <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
     <!-- highlight.js core — restored locally via LibMan at build time -->
     <script src="lib/highlight.js/highlight.min.js"></script>
@@ -16957,7 +16957,7 @@ Switches from CDN to local LibMan-restored files. Strips the disabled hljs theme
 
 ---
 
-## 10. `src/ObserverMagazine.Web/ObserverMagazine.Web.csproj`
+## 10. `src/mercifulpotato.Web/mercifulpotato.Web.csproj`
 
 Adds `Microsoft.Web.LibraryManager.Build` for LibMan support.
 
@@ -16965,8 +16965,8 @@ Adds `Microsoft.Web.LibraryManager.Build` for LibMan support.
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <RootNamespace>ObserverMagazine.Web</RootNamespace>
-    <AssemblyName>ObserverMagazine.Web</AssemblyName>
+    <RootNamespace>mercifulpotato.Web</RootNamespace>
+    <AssemblyName>mercifulpotato.Web</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17081,13 +17081,13 @@ TestResults/
 *.trx
 
 ## Generated blog data (created by ContentProcessor at build time)
-src/ObserverMagazine.Web/wwwroot/blog-data/
+src/mercifulpotato.Web/wwwroot/blog-data/
 
 ## Generated RSS feed
-src/ObserverMagazine.Web/wwwroot/feed.xml
+src/mercifulpotato.Web/wwwroot/feed.xml
 
 ## Client-side libraries (restored by LibMan at build time)
-src/ObserverMagazine.Web/wwwroot/lib/
+src/mercifulpotato.Web/wwwroot/lib/
 
 ## Python
 __pycache__/
@@ -17165,16 +17165,16 @@ jobs:
         run: dotnet restore
 
       - name: Run content processor (markdown → JSON + HTML)
-        run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
+        run: dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot --authors-dir content/authors
 
       - name: Generate TTS audio (markdown → MP3)
-        run: python tools/generate_audio.py --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot/blog-data --voice Bella --model KittenML/kitten-tts-nano-0.8
+        run: python tools/generate_audio.py --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot/blog-data --voice Bella --model KittenML/kitten-tts-nano-0.8
 
       - name: Run tests
         run: dotnet test --no-restore --verbosity normal
 
       - name: Publish Blazor WASM
-        run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
+        run: dotnet publish src/mercifulpotato.Web/mercifulpotato.Web.csproj -c Release -o publish
 
       - name: Strip source map references from framework JS
         run: |
@@ -17231,13 +17231,13 @@ jobs:
         run: dotnet restore
 
       - name: Run content processor
-        run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
+        run: dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot --authors-dir content/authors
 
       - name: Run tests
         run: dotnet test --no-restore --verbosity normal
 
       - name: Publish Blazor WASM
-        run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
+        run: dotnet publish src/mercifulpotato.Web/mercifulpotato.Web.csproj -c Release -o publish
 
       - name: Strip source map references from framework JS
         run: |
@@ -17754,7 +17754,7 @@ Welcome to the future of .NET. It has been waiting for you.
 
 ## 18. Showcase.razor — the backdrop div insertion
 
-In `src/ObserverMagazine.Web/Pages/Showcase.razor`, locate this section:
+In `src/mercifulpotato.Web/Pages/Showcase.razor`, locate this section:
 
 ```razor
         <div class="sc-col-toggle">
@@ -17913,9 +17913,9 @@ content/blog/2026-03-24-avalonia-ui-comprehensive-guide.md
 Then run the content processor to build it:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot \
+  --output-dir src/mercifulpotato.Web/wwwroot \
   --authors-dir content/authors
 ```
 
@@ -19712,9 +19712,9 @@ content/blog/2026-03-25-git-and-trunk-based-development.md
 Then run the content processor:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot \
+  --output-dir src/mercifulpotato.Web/wwwroot \
   --authors-dir content/authors
 ```
 
@@ -21048,9 +21048,9 @@ The article covers everything you asked for and more, organized into nine major 
 
 After saving, run the content processor:
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot
+  --output-dir src/mercifulpotato.Web/wwwroot
 ```
 
 43
@@ -21127,7 +21127,7 @@ Now let me research the latest SQL Server versions to ensure accuracy.Now I have
 
 Then run the content processor:
 
-    dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot
+    dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot
 
 The article covers everything you asked for and follows the project template exactly (YAML front matter, `mercifulpotato-team` author, NOT featured, proper tags). Here's what's in it across 14 parts:
 
@@ -21239,9 +21239,9 @@ Let me read the full dump.txt first to understand the project structure and wher
 Then run the content processor:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot \
+  --output-dir src/mercifulpotato.Web/wwwroot \
   --authors-dir content/authors
 ```
 
@@ -21639,9 +21639,9 @@ The article is structured in eight parts, building from a concrete anecdote (the
 After saving the file, run the standard pipeline:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot
+  --output-dir src/mercifulpotato.Web/wwwroot
 dotnet test
 ```
 
@@ -21746,7 +21746,7 @@ It also covers practical Ollama setup (install, pull, verify), a section on open
 After saving the file, run your usual pipeline:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot
+dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot
 ```
 
 The post will be picked up as a future-dated post (March 30) and will publish automatically when the daily cron build runs on or after that date.
@@ -22311,9 +22311,9 @@ Return the complete article as a single markdown artifact. The artifact should c
 
 After saving the file, I will run:
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot \
+  --output-dir src/mercifulpotato.Web/wwwroot \
   --authors-dir content/authors
 dotnet test
 ```
@@ -23048,9 +23048,9 @@ content/blog/2026-03-30-open-closed-principle.md
 Then run the content processor:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot \
+  --output-dir src/mercifulpotato.Web/wwwroot \
   --authors-dir content/authors
 ```
 
@@ -23105,9 +23105,9 @@ content/blog/2026-03-27-dependency-inversion-principle.md
 Then run the content processor:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot \
+  --output-dir src/mercifulpotato.Web/wwwroot \
   --authors-dir content/authors
 ```
 
@@ -31643,7 +31643,7 @@ Here are the full files:
 
 ---
 
-**File 1: `src/ObserverMagazine.Web/wwwroot/index.html`****File 2: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor`****File 3: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css`**Here's a summary of exactly what changed and why:
+**File 1: `src/mercifulpotato.Web/wwwroot/index.html`****File 2: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor`****File 3: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css`**Here's a summary of exactly what changed and why:
 
 **`index.html`** — Added three new functions to `window.observerAudio`:
 - `setPlaybackRate(elementId, rate)` — sets `audio.playbackRate` on the element
@@ -31791,7 +31791,7 @@ Each file in the artifact is clearly labeled with its full path and a change sum
 53
 
 /* ===========================================================================
-   FILE 1: src/ObserverMagazine.Web/wwwroot/css/app.css
+   FILE 1: src/mercifulpotato.Web/wwwroot/css/app.css
    
    Changes from current version:
    - Added overflow-wrap: break-word to body
@@ -32343,7 +32343,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 2: src/ObserverMagazine.Web/Pages/BlogPost.razor.css
+   FILE 2: src/mercifulpotato.Web/Pages/BlogPost.razor.css
    
    Changes:
    - Added overflow-wrap: break-word to .blog-content (baseline)
@@ -32533,7 +32533,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 3: src/ObserverMagazine.Web/Pages/Showcase.razor.css
+   FILE 3: src/mercifulpotato.Web/Pages/Showcase.razor.css
    
    Changes:
    - Removed white-space: nowrap from .sc-table td (the root cause of overflow)
@@ -32907,7 +32907,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 4: src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor.css
+   FILE 4: src/mercifulpotato.Web/Pages/ShowcaseDetail.razor.css
    
    Changes:
    - Added overflow-wrap: break-word to .sd-card
@@ -33038,7 +33038,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 5: src/ObserverMagazine.Web/Components/MasterDetail.razor.css
+   FILE 5: src/mercifulpotato.Web/Components/MasterDetail.razor.css
    
    Changes:
    - Added min-width: 0 to .md-detail and .md-list (grid children)
@@ -33207,7 +33207,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 6: src/ObserverMagazine.Web/Pages/Home.razor.css
+   FILE 6: src/mercifulpotato.Web/Pages/Home.razor.css
    
    Changes:
    - Added overflow-wrap: break-word to .feature-card p
@@ -33268,7 +33268,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 7: src/ObserverMagazine.Web/Pages/Blog.razor.css
+   FILE 7: src/mercifulpotato.Web/Pages/Blog.razor.css
    
    Changes:
    - Added overflow-wrap: break-word to .blog-card
@@ -33331,7 +33331,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 8: src/ObserverMagazine.Web/Components/ResponsiveTable.razor.css
+   FILE 8: src/mercifulpotato.Web/Components/ResponsiveTable.razor.css
    
    Changes:
    - Added overflow-wrap: break-word to td cells
@@ -33416,7 +33416,7 @@ a.tag:hover {
 
 
 /* ===========================================================================
-   FILE 9: src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css
+   FILE 9: src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css
    
    Changes:
    - Added min-width: 0 to flex children
@@ -34562,11 +34562,11 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 1: `src/ObserverMagazine.Web/wwwroot/css/app.css`**Now the remaining 17 files. All full, all copy-paste ready.
+**File 1: `src/mercifulpotato.Web/wwwroot/css/app.css`**Now the remaining 17 files. All full, all copy-paste ready.
 
 ---
 
-**File 2: `src/ObserverMagazine.Web/Layout/MainLayout.razor.css`** (NEW file)
+**File 2: `src/mercifulpotato.Web/Layout/MainLayout.razor.css`** (NEW file)
 
 ```css
 /* MainLayout.razor.css — Header, footer, and main content area */
@@ -34621,7 +34621,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 3: `src/ObserverMagazine.Web/Layout/NavMenu.razor.css`**
+**File 3: `src/mercifulpotato.Web/Layout/NavMenu.razor.css`**
 
 ```css
 /* NavMenu.razor.css — Navigation menu, theme selector, mobile overlay */
@@ -34720,7 +34720,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 4: `src/ObserverMagazine.Web/Components/AuthorCard.razor.css`**
+**File 4: `src/mercifulpotato.Web/Components/AuthorCard.razor.css`**
 
 ```css
 .author-card {
@@ -34775,7 +34775,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 5: `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css`**
+**File 5: `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css`**
 
 ```css
 .tts-player {
@@ -34870,7 +34870,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 6: `src/ObserverMagazine.Web/Components/MasterDetail.razor.css`**
+**File 6: `src/mercifulpotato.Web/Components/MasterDetail.razor.css`**
 
 ```css
 .md-container {
@@ -35020,7 +35020,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 7: `src/ObserverMagazine.Web/Components/Reactions.razor.css`**
+**File 7: `src/mercifulpotato.Web/Components/Reactions.razor.css`**
 
 ```css
 .reactions-bar {
@@ -35060,7 +35060,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 8: `src/ObserverMagazine.Web/Components/ResponsiveTable.razor.css`**
+**File 8: `src/mercifulpotato.Web/Components/ResponsiveTable.razor.css`**
 
 ```css
 .rt-controls { margin-bottom: 1rem; }
@@ -35132,7 +35132,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 9: `src/ObserverMagazine.Web/Pages/About.razor.css`**
+**File 9: `src/mercifulpotato.Web/Pages/About.razor.css`**
 
 ```css
 .simple-table {
@@ -35153,7 +35153,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 10: `src/ObserverMagazine.Web/Pages/Blog.razor.css`**
+**File 10: `src/mercifulpotato.Web/Pages/Blog.razor.css`**
 
 ```css
 .blog-list {
@@ -35210,7 +35210,7 @@ Here's every file that needs to change. I've read the entire dump.txt and I'm ad
 
 ---
 
-**File 11: `src/ObserverMagazine.Web/Pages/BlogPost.razor.css`**
+**File 11: `src/mercifulpotato.Web/Pages/BlogPost.razor.css`**
 
 This is the biggest component CSS — it owns all blog-content styles (via `::deep`), syntax highlighting token classes, and the new terminal box.
 
@@ -35443,7 +35443,7 @@ This is the biggest component CSS — it owns all blog-content styles (via `::de
 
 ---
 
-**File 12: `src/ObserverMagazine.Web/Pages/Home.razor.css`**
+**File 12: `src/mercifulpotato.Web/Pages/Home.razor.css`**
 
 ```css
 .hero {
@@ -35498,7 +35498,7 @@ This is the biggest component CSS — it owns all blog-content styles (via `::de
 
 ---
 
-**File 13: `src/ObserverMagazine.Web/Pages/Showcase.razor.css`**
+**File 13: `src/mercifulpotato.Web/Pages/Showcase.razor.css`**
 
 ```css
 /* Showcase.razor.css — Product catalog table, filters, pagination */
@@ -35800,7 +35800,7 @@ This is the biggest component CSS — it owns all blog-content styles (via `::de
 
 ---
 
-**File 14: `src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor.css`**
+**File 14: `src/mercifulpotato.Web/Pages/ShowcaseDetail.razor.css`**
 
 ```css
 .sd-header { margin-bottom: 1rem; }
@@ -35893,7 +35893,7 @@ This is the biggest component CSS — it owns all blog-content styles (via `::de
 
 ---
 
-**File 15: `src/ObserverMagazine.Web/wwwroot/index.html`**
+**File 15: `src/mercifulpotato.Web/wwwroot/index.html`**
 
 Custom syntax highlighter replaces highlight.js. No external dependencies.
 
@@ -35907,7 +35907,7 @@ Custom syntax highlighter replaces highlight.js. No external dependencies.
     <base href="/" />
     <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
+    <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
     <!-- Apply saved theme BEFORE first paint to prevent flash -->
     <script>
@@ -36364,7 +36364,7 @@ Custom syntax highlighter replaces highlight.js. No external dependencies.
 
 ---
 
-**File 16: `src/ObserverMagazine.Web/libman.json`**
+**File 16: `src/mercifulpotato.Web/libman.json`**
 
 ```json
 {
@@ -36376,14 +36376,14 @@ Custom syntax highlighter replaces highlight.js. No external dependencies.
 
 ---
 
-**File 17: `src/ObserverMagazine.Web/ObserverMagazine.Web.csproj`**
+**File 17: `src/mercifulpotato.Web/mercifulpotato.Web.csproj`**
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <RootNamespace>ObserverMagazine.Web</RootNamespace>
-    <AssemblyName>ObserverMagazine.Web</AssemblyName>
+    <RootNamespace>mercifulpotato.Web</RootNamespace>
+    <AssemblyName>mercifulpotato.Web</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36531,9 +36531,9 @@ I've read the full dump.txt. The root cause of the mobile breakage is that `<pre
 
 ---
 
-## 1. `src/ObserverMagazine.Web/Pages/BlogPost.razor.css` — Major overhaul
+## 1. `src/mercifulpotato.Web/Pages/BlogPost.razor.css` — Major overhaul
 
-This is the biggest change: code block scroll wrappers, fade gradients, table wrappers, and mobile fixes.## 2. `src/ObserverMagazine.Web/Pages/BlogPost.razor` — Full file
+This is the biggest change: code block scroll wrappers, fade gradients, table wrappers, and mobile fixes.## 2. `src/mercifulpotato.Web/Pages/BlogPost.razor` — Full file
 
 The key changes: `PostProcessHtml` wraps every `<pre>` and `<table>` in scroll containers (pure C#, no JS), and `OnAfterRenderAsync` calls the new scroll-detection JS.
 
@@ -36703,7 +36703,7 @@ else
 
 ---
 
-## 3. `src/ObserverMagazine.Web/wwwroot/css/app.css` — Two targeted changes
+## 3. `src/mercifulpotato.Web/wwwroot/css/app.css` — Two targeted changes
 
 In the reset section, add an `html` rule and fix `body`. Here is the **full file** (only the reset section changed — everything else is identical):
 
@@ -37150,7 +37150,7 @@ a.tag:hover {
 
 ---
 
-## 4. `src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor.css` — Full file
+## 4. `src/mercifulpotato.Web/Components/BlogTtsPlayer.razor.css` — Full file
 
 Fixed the fallback play/pause button (was a tiny circle that clipped the text "⏸ Pause"):
 
@@ -37266,7 +37266,7 @@ Fixed the fallback play/pause button (was a tiny circle that clipped the text "�
 
 ---
 
-## 5. `src/ObserverMagazine.Web/wwwroot/index.html` — Add scroll-detection JS
+## 5. `src/mercifulpotato.Web/wwwroot/index.html` — Add scroll-detection JS
 
 Add this script block **immediately after** the existing `window.observerHighlight = { ... }` script block (and before the `<!-- Audio helper -->` comment):
 
@@ -37724,11 +37724,11 @@ The fix is two lines — `min-width: 0` + `overflow-x: hidden` on `.main-content
 
 ---
 
-## File 1: `src/ObserverMagazine.Web/Layout/MainLayout.razor.css`
+## File 1: `src/mercifulpotato.Web/Layout/MainLayout.razor.css`
 
 This is THE fix. `min-width: 0` tells the flex item "you may shrink below your content's intrinsic width."---
 
-## File 2: `src/ObserverMagazine.Web/Pages/BlogPost.razor.css`
+## File 2: `src/mercifulpotato.Web/Pages/BlogPost.razor.css`
 
 Added `overflow-x: hidden` to `.blog-content` as secondary containment.
 
@@ -38043,7 +38043,7 @@ Added `overflow-x: hidden` to `.blog-content` as secondary containment.
 
 ---
 
-## File 3: `src/ObserverMagazine.Web/wwwroot/css/app.css`
+## File 3: `src/mercifulpotato.Web/wwwroot/css/app.css`
 
 Removed `overflow-x: clip` from `html` (it was hiding the symptom, not fixing the cause). Kept `overflow-x: hidden` as a safety net.
 
@@ -38693,7 +38693,7 @@ Auto-property accessor is never used (non-private accessibility)
 Auto-property accessor 'Summary.set' is never used
 Potential Code Quality Issues
 Auto-property accessor is never used (non-private accessibility)
-tools/ObserverMagazine.ContentProcessor/Program.cs
+tools/mercifulpotato.ContentProcessor/Program.cs
 
 Auto-property accessor 'Updated.get' is never used
 Potential Code Quality Issues
@@ -38824,14 +38824,14 @@ BlogPost.razor
 Property 'Nav' is never used
 Redundancies in Symbol Declarations
 Type member is never used (private accessibility)
-src/ObserverMagazine.Web/Program.cs
+src/mercifulpotato.Web/Program.cs
 
 Parameter 'sp' is never used
 Redundancies in Symbol Declarations
 Unused parameter (private accessibility)
 
 CS0618: Property 'Microsoft.AspNetCore.Components.Routing.Router.NotFound()' is obsolete: 'NotFound is deprecated. Use NotFoundPage instead.'
-```html /home/kushal/src/dotnet/observermagazine.github.io/src/ObserverMagazine.Web/App.razor
+```html /home/kushal/src/dotnet/mercifulpotato.github.io/src/mercifulpotato.Web/App.razor
 <Router AppAssembly="typeof(App).Assembly">
     <Found Context="routeData">
         <RouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)" />
@@ -38882,7 +38882,7 @@ Looking at the reports, I'll fix all the issues across the codebase. Let me work
 **Redundant qualifier / switch arm fixes:**
 
 13. **`NavMenu.razor`** — Changed `Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs` → `LocationChangedEventArgs` (namespace already imported via `_Imports.razor`).
-14. **`AuthorCard.razor`** — Removed redundant `@using ObserverMagazine.Web.Models` (already in `_Imports.razor`). Removed the `"website" or "web" or "homepage"` switch arm from `GetSocialUrl` since it was identical to the default arm.
+14. **`AuthorCard.razor`** — Removed redundant `@using mercifulpotato.Web.Models` (already in `_Imports.razor`). Removed the `"website" or "web" or "homepage"` switch arm from `GetSocialUrl` since it was identical to the default arm.
 
 **Redundant default argument fixes:**
 
@@ -39008,11 +39008,11 @@ Failed to load resource: the server responded with a status of 404 ()
 blazor.webassembly.js:1 Debugging hotkey: Shift+Alt+D (when application has focus)
 invoke-js.ts:246 info: App[0]
       My Blazor Magazine started at 04/02/2026 01:04:28
-invoke-js.ts:246 info: ObserverMagazine.Web.Services.TelemetryService[0]
+invoke-js.ts:246 info: mercifulpotato.Web.Services.TelemetryService[0]
       [Telemetry] Event: AppStarted 
 blazor.webassembly.js:1 crit: Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]
-      Unhandled exception rendering component: The type ObserverMagazine.Web.Pages.NotFoundView does not have a Microsoft.AspNetCore.Components.RouteAttribute applied to it.
-System.InvalidOperationException: The type ObserverMagazine.Web.Pages.NotFoundView does not have a Microsoft.AspNetCore.Components.RouteAttribute applied to it.
+      Unhandled exception rendering component: The type mercifulpotato.Web.Pages.NotFoundView does not have a Microsoft.AspNetCore.Components.RouteAttribute applied to it.
+System.InvalidOperationException: The type mercifulpotato.Web.Pages.NotFoundView does not have a Microsoft.AspNetCore.Components.RouteAttribute applied to it.
    at Microsoft.AspNetCore.Components.Routing.Router.SetParametersAsync(ParameterView parameters)
 wt	@	blazor.webassembly.js:1
 
@@ -39137,7 +39137,7 @@ Now I have the full picture. The fix is straightforward: `Router.NotFoundPage` i
 
 Here are the two fixed files, followed by the blog post.
 
-**File 1: `src/ObserverMagazine.Web/Pages/NotFoundView.razor`** — add `@page "/not-found"`:`App.razor` does **not** need to change — it's already correct with `NotFoundPage="typeof(NotFoundView)"`. The only fix is the missing `@page` directive on `NotFoundView.razor`.
+**File 1: `src/mercifulpotato.Web/Pages/NotFoundView.razor`** — add `@page "/not-found"`:`App.razor` does **not** need to change — it's already correct with `NotFoundPage="typeof(NotFoundView)"`. The only fix is the missing `@page` directive on `NotFoundView.razor`.
 
 Now the blog post:Here's a summary of the fix and the deliverables:
 
@@ -39151,7 +39151,7 @@ Now the blog post:Here's a summary of the fix and the deliverables:
 **`App.razor` is unchanged** — it was already correct with `NotFoundPage="typeof(NotFoundView)"`.
 
 **Deliverables:**
-1. **Fixed `NotFoundView.razor`** — first artifact above, copy to `src/ObserverMagazine.Web/Pages/NotFoundView.razor`
+1. **Fixed `NotFoundView.razor`** — first artifact above, copy to `src/mercifulpotato.Web/Pages/NotFoundView.razor`
 2. **Blog post** — second artifact, copy to `content/blog/2026-04-15-blazor-not-found-page-postmortem.md`
 
 Commit both files and push. The GitHub Actions workflow will handle the rest.
@@ -39327,7 +39327,7 @@ Now I have the full picture. The fix is straightforward: `Router.NotFoundPage` i
 
 Here are the two fixed files, followed by the blog post.
 
-**File 1: `src/ObserverMagazine.Web/Pages/NotFoundView.razor`** — add `@page "/not-found"`:`App.razor` does **not** need to change — it's already correct with `NotFoundPage="typeof(NotFoundView)"`. The only fix is the missing `@page` directive on `NotFoundView.razor`.
+**File 1: `src/mercifulpotato.Web/Pages/NotFoundView.razor`** — add `@page "/not-found"`:`App.razor` does **not** need to change — it's already correct with `NotFoundPage="typeof(NotFoundView)"`. The only fix is the missing `@page` directive on `NotFoundView.razor`.
 
 Now the blog post:Here's a summary of the fix and the deliverables:
 
@@ -39341,7 +39341,7 @@ Now the blog post:Here's a summary of the fix and the deliverables:
 **`App.razor` is unchanged** — it was already correct with `NotFoundPage="typeof(NotFoundView)"`.
 
 **Deliverables:**
-1. **Fixed `NotFoundView.razor`** — first artifact above, copy to `src/ObserverMagazine.Web/Pages/NotFoundView.razor`
+1. **Fixed `NotFoundView.razor`** — first artifact above, copy to `src/mercifulpotato.Web/Pages/NotFoundView.razor`
 2. **Blog post** — second artifact, copy to `content/blog/2026-04-15-blazor-not-found-page-postmortem.md`
 
 Commit both files and push. The GitHub Actions workflow will handle the rest.
@@ -41342,9 +41342,9 @@ Now let me research Clojure to ensure all version numbers, dates, and facts are 
 Then run:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- \
+dotnet run --project tools/mercifulpotato.ContentProcessor -- \
   --content-dir content/blog \
-  --output-dir src/ObserverMagazine.Web/wwwroot \
+  --output-dir src/mercifulpotato.Web/wwwroot \
   --authors-dir content/authors
 ```
 
@@ -43947,7 +43947,7 @@ socials:
 
 repo is at https://github.com/mercifulpotato/mercifulpotato.github.io 
 
-I'll start by reading the full dump.txt and project knowledge to understand the current state of the project, then research Rust thoroughly before writing.Let me read the truncated middle section:I've now read enough of the project structure to understand the conventions. Let me read the remaining critical sections - the front matter parser and other key files, then start researching Rust.I have a good understanding of the project. Now let me continue reading the remaining critical source files and then start my Rust research.Good, I've now read the full dump.txt. I understand the project structure, conventions, front matter schema, and content pipeline. Now I need to research Rust for the article. Let me note this is for the **mercifulpotato** repo (not ObserverMagazine), with author `mercifulpotato-team`.
+I'll start by reading the full dump.txt and project knowledge to understand the current state of the project, then research Rust thoroughly before writing.Let me read the truncated middle section:I've now read enough of the project structure to understand the conventions. Let me read the remaining critical sections - the front matter parser and other key files, then start researching Rust.I have a good understanding of the project. Now let me continue reading the remaining critical source files and then start my Rust research.Good, I've now read the full dump.txt. I understand the project structure, conventions, front matter schema, and content pipeline. Now I need to research Rust for the article. Let me note this is for the **mercifulpotato** repo (not mercifulpotato), with author `mercifulpotato-team`.
 
 Let me do research on Rust's current state:I now have sufficient research. Let me also check the Rust Linux kernel status and Stack Overflow survey data:Good. I now have enough research data. Let me now write the article. This will be a very long article about Rust. Given the instruction to make it as long as possible, I'll write a comprehensive article covering history, ownership, data structures, algorithms, HPC, and everything from first principles. I'll target something extremely long but practical.
 
@@ -44463,7 +44463,7 @@ Key front matter details for the mercifulpotato repo:
 To publish, commit the file to `content/blog/` and push. The content processor command:
 
 ```bash
-dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
+dotnet run --project tools/mercifulpotato.ContentProcessor -- --content-dir content/blog --output-dir src/mercifulpotato.Web/wwwroot --authors-dir content/authors
 ```
 
 (Adjust project/path names if the mercifulpotato repo uses different naming conventions than the Observer repo.)
@@ -47389,8 +47389,8 @@ Opus 4.7:
 
 I'll read the full dump.txt and project files first, then plan the seven-part series carefully.Let me now read the middle portion to get a good sample of a recent blog post's structure (for consistency), and understand the series feature.I have enough context. Now let me look at a couple more key sections — a look at how long-form posts are structured (body style), and the series field usage.Series field exists but is optional and rarely used; tags often include `series` instead. Let me check how one of the long-form posts opens to match voice:I have a thorough understanding. Key observations:
 
-1. The site is now **observermagazine.github.io** (despite the user's note; the repo and config reflect this — see deploy.yml and the blog title in RSS)
-2. The user's note mentions "mercifulpotato.github.io" — I'll trust what they've written in the prompt but the actual config points to observermagazine.github.io. The blog title is "My Blazor Magazine"
+1. The site is now **mercifulpotato.github.io** (despite the user's note; the repo and config reflect this — see deploy.yml and the blog title in RSS)
+2. The user's note mentions "mercifulpotato.github.io" — I'll trust what they've written in the prompt but the actual config points to mercifulpotato.github.io. The blog title is "My Blazor Magazine"
 3. Author is `mercifulpotato-team`
 4. Series posts typically use the tag `series` and a recurring title prefix like "Without a Net, Part N:"
 5. `featured` is omitted when not featured
@@ -48328,7 +48328,7 @@ with `Project` in tag colour, `Sdk` in attr colour, and `"Microsoft.NET.Sdk"` in
 
 Let me present the fixed file:## What was wrong
 
-The defect is in the custom syntax highlighter in `src/ObserverMagazine.Web/wwwroot/index.html`. The old `highlightHTML` function ran three sequential `String.prototype.replace()` calls against the same `inner` string:
+The defect is in the custom syntax highlighter in `src/mercifulpotato.Web/wwwroot/index.html`. The old `highlightHTML` function ran three sequential `String.prototype.replace()` calls against the same `inner` string:
 
 1. First pass matched quoted attributes and wrapped them in `<span class="hl-attr">...</span>` / `<span class="hl-string">...</span>`.
 2. Second pass (for unquoted attributes) used regex `(\w[\w-]*)(\s*=\s*)(\S+)` — which happily matched the **literal substring** `class="hl-attr"` *inside* the spans the first pass had just written, and re-tokenised the markup itself.
@@ -48353,7 +48353,7 @@ I validated with jsdom that all other inline scripts in the file still parse, an
 
 You asked me to fix "this and any other defect you may find." I kept the changes minimal: only the `highlightHTML` function body was rewritten. Every other script in `index.html` (theme, audio, scroll detection, SPA redirect, Blazor bootstrap) is byte-identical to what was in `dump.txt`. I didn't touch `MarkdownProcessor.cs`, `BlogPost.razor`, the CSS, or any tests — nothing else in the pipeline is implicated in this bug, and speculative changes elsewhere would risk regressions in content that's already shipping.
 
-Drop the file into `src/ObserverMagazine.Web/wwwroot/index.html`, rebuild, and the threadpool-starvation post (and every other post with XML/HTML code blocks) will render cleanly.
+Drop the file into `src/mercifulpotato.Web/wwwroot/index.html`, rebuild, and the threadpool-starvation post (and every other post with XML/HTML code blocks) will render cleanly.
 
 23
 04
@@ -50216,8 +50216,8 @@ Unhandled exception. (Line: 4, Col: 385, Idx: 601) - (Line: 4, Col: 385, Idx: 60
  at YamlDotNet.Serialization.Deserializer.Deserialize[T](IParser parser)
  at YamlDotNet.Serialization.Deserializer.Deserialize[T](TextReader input)
  at YamlDotNet.Serialization.Deserializer.Deserialize[T](String input)
- at ObserverMagazine.ContentProcessor.FrontMatterParser.Parse(String rawContent) in /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/ObserverMagazine.ContentProcessor/FrontMatterParser.cs:line 33
- at Program.<Main>$(String[] args) in /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/ObserverMagazine.ContentProcessor/Program.cs:line 92
+ at mercifulpotato.ContentProcessor.FrontMatterParser.Parse(String rawContent) in /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/mercifulpotato.ContentProcessor/FrontMatterParser.cs:line 33
+ at Program.<Main>$(String[] args) in /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/tools/mercifulpotato.ContentProcessor/Program.cs:line 92
 Error: Process completed with exit code 134.
 
 Let me read dump.txt in full and the uploaded file.The file was truncated. Let me get the critical part — the `FrontMatterParser.cs`:Now let me read the actual uploaded markdown file to see its front matter:The front matter looks clean. The error is on **line 4, col 385** — that's within a single line. The `summary` field (line 5) is a long unquoted string. Let me check: it's not quoted and contains a colon (`:`) — that's the YAML parse error. The summary value has colons in it (e.g., `mid-2026 — covering every feature, every trim, the 800V charging architecture, the honest case for and against Level 1 and Level 2 home charging, what a 220V garage outlet costs...`). Wait, actually it does — `2025–2026 tax picture` contains a dash not colon, but the issue is the unquoted string may have a colon+space somewhere.

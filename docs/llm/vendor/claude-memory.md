@@ -16,7 +16,7 @@ Potential further Showcase and component enhancements
 
 Key learnings & principles
 
-Author ID convention is critical: author: mercifulpotato-team (hyphenated ID), never the display name "Observer Team" — mismatches cause build warnings and broken author resolution.
+Author ID convention is critical: author: mercifulpotato-team (hyphenated ID), never the display name "mercifulpotato Team" — mismatches cause build warnings and broken author resolution.
 featured field: Omit entirely from non-featured posts; never write featured: false. Only include featured: true when explicitly promoting.
 draft: true: Omit unless explicitly requested.
 Tags: Lowercase and hyphenated (e.g., design-principles, deep-dive).
