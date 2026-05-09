@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-05-09 19:32:12 UTC
+DATE: 2026-05-09 21:09:00 UTC
 ===============================================================================
 
 ===============================================================================
@@ -15,7 +15,10 @@ DIRECTORY TREE (all git-tracked files)
 │   │   └── mercifulpotato-team.yml
 │   └── blog
 │       ├── 2026-03-22-good-morning.md
-│       └── 2026-04-14-happy-new-year.md
+│       ├── 2026-04-14-happy-new-year.md
+│       ├── 2026-05-09-star-trek-prime-1-foundations.md
+│       ├── 2026-05-10-star-trek-prime-2-discovery-and-strange-new-worlds.md
+│       └── 2026-05-11-star-trek-prime-3-tos-five-year-mission.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -124,7 +127,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 87 files
+29 directories, 90 files
 
 
 -------------------------------------------------------------------------------
@@ -258,6 +261,65 @@ tags:
   - celebration
   - happynewyear
   - happynewyear2083
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-09-star-trek-prime-1-foundations.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Foundations of Everything: Earth Before the Stars, First Contact, and the Birth of the Federation (Pre-History to 2161)"
+date: 2026-05-09
+author: mercifulpotato-team
+summary: "The complete in-universe history of humanity's darkest century, the warp flight that changed everything, and the long road from a burning Earth to the founding of the United Federation of Planets in 2161."
+tags:
+  - star-trek
+  - in-universe-history
+  - enterprise
+  - first-contact
+  - federation
+  - deep-dive
+series: "Star Trek Prime Timeline Chronology"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-10-star-trek-prime-2-discovery-and-strange-new-worlds.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Century of Silence and the War That Wasn't Supposed to Happen: Discovery, Strange New Worlds, and the Road to Kirk (2161–2265)"
+date: 2026-05-10
+author: mercifulpotato-team
+summary: "From the founding of the Federation to the Battle of the Binary Stars, the court-martial of Michael Burnham, the miracle of the spore drive, a visit to the Terran Empire, and the years of Captain Pike's Enterprise — the complete in-universe account of the century that shaped everything that came after."
+tags:
+  - star-trek
+  - in-universe-history
+  - discovery
+  - strange-new-worlds
+  - michael-burnham
+  - deep-dive
+series: "Star Trek Prime Timeline Chronology"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-11-star-trek-prime-3-tos-five-year-mission.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Five-Year Mission: Kirk, Spock, McCoy, and the Voyage That Defined a Civilization (2265–2270)"
+date: 2026-05-11
+author: mercifulpotato-team
+summary: "The complete in-universe account of the USS Enterprise's historic five-year mission under Captain James T. Kirk — from the edge of the galaxy to the Guardian of Forever, from Khan's awakening to the Organian intervention, from pon farr on Vulcan to the Mirror Universe, episode by episode, in full chronological order."
+tags:
+  - star-trek
+  - in-universe-history
+  - original-series
+  - james-kirk
+  - spock
+  - mccoy
+  - deep-dive
+series: "Star Trek Prime Timeline Chronology"
 ---
 
 
@@ -9442,8 +9504,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 81
-  Blog posts (front matter only): 2
+Total Files Exported: 84
+  Blog posts (front matter only): 5
   Full content files: 77
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
