@@ -225,9 +225,9 @@ socials:
 -------------------------------------------------------------------------------
 FILE: content/authors/mercifulpotato-team.yml
 -------------------------------------------------------------------------------
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -836,7 +836,7 @@ FILE: ObserverMagazine.slnx
 -------------------------------------------------------------------------------
 FILE: README.md
 -------------------------------------------------------------------------------
-# My Blazor Magazine
+# Merciful Potato Magazine
 
 A free, open-source Blazor WebAssembly application deployed to GitHub Pages.
 
@@ -2383,7 +2383,7 @@ FILE: src/ObserverMagazine.Web/Layout/MainLayout.razor
     <header class="top-bar">
         <div class="container top-bar-inner">
             <a class="brand" href="/">
-                <strong>My Blazor</strong> Magazine
+                <strong>Merciful Potato</strong> Magazine
             </a>
             <NavMenu />
         </div>
@@ -2396,7 +2396,7 @@ FILE: src/ObserverMagazine.Web/Layout/MainLayout.razor
     <footer class="site-footer">
         <div class="container">
             <p>
-                &copy; @DateTime.UtcNow.Year My Blazor Magazine &mdash; Built with
+                &copy; @DateTime.UtcNow.Year Merciful Potato Magazine &mdash; Built with
                 <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" target="_blank"
                    rel="noopener noreferrer">Blazor WebAssembly</a>
                 on .NET 10.
@@ -2797,12 +2797,12 @@ FILE: src/ObserverMagazine.Web/Pages/About.razor
 @page "/about"
 @inject IAnalyticsService Analytics
 
-<PageTitle>About — My Blazor Magazine</PageTitle>
+<PageTitle>About — Merciful Potato Magazine</PageTitle>
 
-<h1>About My Blazor Magazine</h1>
+<h1>About Merciful Potato Magazine</h1>
 
 <p>
-    My Blazor Magazine is a free, open-source sample project demonstrating how to build
+    Merciful Potato Magazine is a free, open-source sample project demonstrating how to build
     a modern static web application using <strong>Blazor WebAssembly</strong> on
     <strong>.NET 10</strong>.
 </p>
@@ -2879,7 +2879,7 @@ FILE: src/ObserverMagazine.Web/Pages/BlogPost.razor
 @inject IAnalyticsService Analytics
 @inject IJSRuntime Js
 
-<PageTitle>@(_metadata?.Title ?? "Post") — My Blazor Magazine</PageTitle>
+<PageTitle>@(_metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
 
 @if (_loading)
 {
@@ -3358,7 +3358,7 @@ FILE: src/ObserverMagazine.Web/Pages/Blog.razor
 @inject IAnalyticsService Analytics
 @inject NavigationManager Nav
 
-<PageTitle>@(string.IsNullOrEmpty(Tag) ? "Blog" : $"Posts tagged \"{Tag}\"") — My Blazor Magazine</PageTitle>
+<PageTitle>@(string.IsNullOrEmpty(Tag) ? "Blog" : $"Posts tagged \"{Tag}\"") — Merciful Potato Magazine</PageTitle>
 
 <h1>Blog</h1>
 
@@ -3533,10 +3533,10 @@ FILE: src/ObserverMagazine.Web/Pages/Home.razor
 @inject IAnalyticsService Analytics
 @inject IBlogService BlogService
 
-<PageTitle>My Blazor Magazine</PageTitle>
+<PageTitle>Merciful Potato Magazine</PageTitle>
 
 <section class="hero">
-    <h1>My Blazor Magazine</h1>
+    <h1>Merciful Potato Magazine</h1>
     <p class="lead">
         A free, open-source Blazor WebAssembly showcase built on .NET 10.
         Explore modern web patterns, read our blog, and use this as a starting point
@@ -3689,7 +3689,7 @@ FILE: src/ObserverMagazine.Web/Pages/NotFoundView.razor
 @page "/not-found"
 @layout MainLayout
 
-<PageTitle>Not Found — My Blazor Magazine</PageTitle>
+<PageTitle>Not Found — Merciful Potato Magazine</PageTitle>
 
 <div class="container text-center" style="padding: 4rem 1rem;">
     <h1>404 — Page Not Found</h1>
@@ -4169,7 +4169,7 @@ FILE: src/ObserverMagazine.Web/Pages/Showcase.razor
 @inject NavigationManager Nav
 @implements IDisposable
 
-<PageTitle>Showcase — My Blazor Magazine</PageTitle>
+<PageTitle>Showcase — Merciful Potato Magazine</PageTitle>
 
 <h1>Product Catalog Showcase</h1>
 <p>
@@ -5143,7 +5143,7 @@ var host = builder.Build();
 
 // Log application startup
 var logger = host.Services.GetRequiredService<ILoggerFactory>().CreateLogger("App");
-logger.LogInformation("My Blazor Magazine started at {Time}", DateTime.UtcNow);
+logger.LogInformation("Merciful Potato Magazine started at {Time}", DateTime.UtcNow);
 
 var telemetry = host.Services.GetRequiredService<TelemetryService>();
 telemetry.TrackEvent("AppStarted");
@@ -5638,7 +5638,7 @@ FILE: src/ObserverMagazine.Web/wwwroot/404.html
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <script>
         // Single-page app redirect for GitHub Pages.
         // Converts the path to a query string so the SPA router can pick it up.
@@ -6115,9 +6115,9 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
 
@@ -6136,7 +6136,7 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
 <body>
     <div id="app">
         <div style="display:flex;align-items:center;justify-content:center;height:100vh;height:100dvh;">
-            <p>Loading My Blazor Magazine...</p>
+            <p>Loading Merciful Potato Magazine...</p>
         </div>
     </div>
 
@@ -8360,7 +8360,7 @@ public class BlogServiceTests
             Id = "mercifulpotato-team",
             Name = "Observer Team",
             Email = "hello@observermagazine.example",
-            Bio = "The team behind My Blazor Magazine.",
+            Bio = "The team behind Merciful Potato Magazine.",
             Socials = new Dictionary<string, string> { ["github"] = "ObserverMagazine" }
         }
     ];
@@ -9322,7 +9322,7 @@ Console.WriteLine($"Wrote posts index: {indexPath} ({allPostMetadata.Count} post
 // Generate RSS feed with full post content
 var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
-    title: "My Blazor Magazine",
+    title: "Merciful Potato Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
     siteUrl: "https://observermagazine.github.io",
     posts: allPostMetadata,

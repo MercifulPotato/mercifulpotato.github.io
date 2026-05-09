@@ -1,5 +1,5 @@
 Purpose & context
-Kushal is building My Blazor Magazine, a free open-source static blog and UI showcase site deployed to GitHub Pages. The stack is Blazor WebAssembly (.NET 10), a custom markdown content processing pipeline, and a companion Cloudflare Workers API (Hono + TypeScript) for analytics, reactions, view counts, and a passkey-secured board. The project targets .NET, C#, and ASP.NET web developers as its primary audience, with a secondary goal of accessibility for non-technical readers. Kushal publishes under the author identity mercifulpotato-team and collaborates with Claude as a core part of the content and development workflow.
+Kushal is building Merciful Potato Magazine, a free open-source static blog and UI showcase site deployed to GitHub Pages. The stack is Blazor WebAssembly (.NET 10), a custom markdown content processing pipeline, and a companion Cloudflare Workers API (Hono + TypeScript) for analytics, reactions, view counts, and a passkey-secured board. The project targets .NET, C#, and ASP.NET web developers as its primary audience, with a secondary goal of accessibility for non-technical readers. Kushal publishes under the author identity mercifulpotato-team and collaborates with Claude as a core part of the content and development workflow.
 Current state
 The project is mature and actively maintained. Recent work spans:
 

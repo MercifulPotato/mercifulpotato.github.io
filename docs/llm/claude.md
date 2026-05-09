@@ -74,7 +74,7 @@ The CI pipeline (`.github/workflows/deploy.yml`) runs the content processor, the
 35
 40
 
-# My Blazor Magazine — Full Project Source
+# Merciful Potato Magazine — Full Project Source
 
 > Blazor WebAssembly on .NET 10, deployed to GitHub Pages  
 > Repository: https://github.com/mercifulpotato/mercifulpotato.github.io  
@@ -300,7 +300,7 @@ src/mercifulpotato.Web/wwwroot/feed.xml
 ## FILE: `README.md`
 
 ```markdown
-# My Blazor Magazine
+# Merciful Potato Magazine
 
 A free, open-source Blazor WebAssembly application deployed to GitHub Pages.
 
@@ -460,7 +460,7 @@ var host = builder.Build();
 
 // Log application startup
 var logger = host.Services.GetRequiredService<ILoggerFactory>().CreateLogger("App");
-logger.LogInformation("My Blazor Magazine started at {Time}", DateTime.UtcNow);
+logger.LogInformation("Merciful Potato Magazine started at {Time}", DateTime.UtcNow);
 
 var telemetry = host.Services.GetRequiredService<TelemetryService>();
 telemetry.TrackEvent("AppStarted");
@@ -501,7 +501,7 @@ await host.RunAsync();
         <FocusOnNavigate RouteData="routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <PageTitle>Not Found — My Blazor Magazine</PageTitle>
+        <PageTitle>Not Found — Merciful Potato Magazine</PageTitle>
         <LayoutView Layout="typeof(MainLayout)">
             <div class="container text-center" style="padding: 4rem 1rem;">
                 <h1>404 — Page Not Found</h1>
@@ -550,7 +550,7 @@ await host.RunAsync();
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; @DateTime.UtcNow.Year My Blazor Magazine &mdash; Built with
+            <p>&copy; @DateTime.UtcNow.Year Merciful Potato Magazine &mdash; Built with
                 <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" target="_blank"
                    rel="noopener noreferrer">Blazor WebAssembly</a>
                 on .NET 10.
@@ -591,10 +591,10 @@ await host.RunAsync();
 ```razor
 @page "/"
 
-<PageTitle>My Blazor Magazine</PageTitle>
+<PageTitle>Merciful Potato Magazine</PageTitle>
 
 <section class="hero">
-    <h1>My Blazor Magazine</h1>
+    <h1>Merciful Potato Magazine</h1>
     <p class="lead">
         A free, open-source Blazor WebAssembly showcase built on .NET 10.
         Explore modern web patterns, read our blog, and use this as a starting point
@@ -643,7 +643,7 @@ await host.RunAsync();
 @inject IBlogService BlogService
 @inject ILogger<Blog> Logger
 
-<PageTitle>Blog — My Blazor Magazine</PageTitle>
+<PageTitle>Blog — Merciful Potato Magazine</PageTitle>
 
 <h1>Blog</h1>
 
@@ -715,7 +715,7 @@ else
 @inject ILogger<BlogPost> Logger
 @inject NavigationManager Nav
 
-<PageTitle>@(metadata?.Title ?? "Post") — My Blazor Magazine</PageTitle>
+<PageTitle>@(metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
 
 @if (loading)
 {
@@ -799,7 +799,7 @@ else
 ```razor
 @page "/showcase"
 
-<PageTitle>Showcase — My Blazor Magazine</PageTitle>
+<PageTitle>Showcase — Merciful Potato Magazine</PageTitle>
 
 <h1>Web Technology Showcase</h1>
 <p>Demonstrating common web UI patterns built with Blazor WebAssembly.</p>
@@ -826,12 +826,12 @@ else
 ```razor
 @page "/about"
 
-<PageTitle>About — My Blazor Magazine</PageTitle>
+<PageTitle>About — Merciful Potato Magazine</PageTitle>
 
-<h1>About My Blazor Magazine</h1>
+<h1>About Merciful Potato Magazine</h1>
 
 <p>
-    My Blazor Magazine is a free, open-source sample project demonstrating how to build
+    Merciful Potato Magazine is a free, open-source sample project demonstrating how to build
     a modern static web application using <strong>Blazor WebAssembly</strong> on
     <strong>.NET 10</strong>.
 </p>
@@ -1272,16 +1272,16 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 </head>
 <body>
     <div id="app">
         <div style="display:flex;align-items:center;justify-content:center;height:100vh;">
-            <p>Loading My Blazor Magazine...</p>
+            <p>Loading Merciful Potato Magazine...</p>
         </div>
     </div>
 
@@ -1315,7 +1315,7 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <script>
         // Single-page app redirect for GitHub Pages.
         // Stores the path and redirects to index.html which picks it up.
@@ -1856,7 +1856,7 @@ Console.WriteLine($"Wrote posts index: {indexPath} ({allPostMetadata.Count} post
 // Generate RSS feed
 var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
-    title: "My Blazor Magazine",
+    title: "Merciful Potato Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
     siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata
@@ -2025,10 +2025,10 @@ public static class RssGenerator
 
 ```markdown
 ---
-title: Welcome to My Blazor Magazine
+title: Welcome to Merciful Potato Magazine
 date: 2026-01-15
 author: Observer Team
-summary: Our first post — introducing My Blazor Magazine and what we're building.
+summary: Our first post — introducing Merciful Potato Magazine and what we're building.
 tags:
   - announcement
   - introduction
@@ -2036,7 +2036,7 @@ tags:
 
 ## Hello, World!
 
-Welcome to **My Blazor Magazine**, a free and open-source web application built with Blazor WebAssembly on .NET 10.
+Welcome to **Merciful Potato Magazine**, a free and open-source web application built with Blazor WebAssembly on .NET 10.
 
 This project serves two purposes:
 
@@ -2081,7 +2081,7 @@ Blazor WebAssembly (WASM) lets you build interactive web UIs using C# instead of
 
 ## Why We Chose It
 
-For My Blazor Magazine, Blazor WASM is ideal because:
+For Merciful Potato Magazine, Blazor WASM is ideal because:
 
 - **Static hosting** — The compiled output is plain HTML, CSS, JS, and WASM files. Perfect for GitHub Pages.
 - **Full .NET ecosystem** — We use the same language, tooling, and libraries as backend .NET developers.
@@ -3116,7 +3116,7 @@ tags:
 
 ## Hello, and welcome 
 
-Welcome to My Blazor Magazine. 
+Welcome to Merciful Potato Magazine. 
 It is great to have you with me here. 
 I hope you enjoy this website. 
 
@@ -3187,15 +3187,15 @@ Let me generate every changed file:Here's a summary of everything I changed and 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
     <div id="app">
         <div style="display:flex;align-items:center;justify-content:center;height:100vh;">
-            <p>Loading My Blazor Magazine...</p>
+            <p>Loading Merciful Potato Magazine...</p>
         </div>
     </div>
 
@@ -3250,7 +3250,7 @@ var host = builder.Build();
 
 // Log application startup
 var logger = host.Services.GetRequiredService<ILoggerFactory>().CreateLogger("App");
-logger.LogInformation("My Blazor Magazine started at {Time}", DateTime.UtcNow);
+logger.LogInformation("Merciful Potato Magazine started at {Time}", DateTime.UtcNow);
 
 var telemetry = host.Services.GetRequiredService<TelemetryService>();
 telemetry.TrackEvent("AppStarted");
@@ -3399,10 +3399,10 @@ public sealed class AnalyticsService : IAnalyticsService
 @page "/"
 @inject IAnalyticsService Analytics
 
-<PageTitle>My Blazor Magazine</PageTitle>
+<PageTitle>Merciful Potato Magazine</PageTitle>
 
 <section class="hero">
-    <h1>My Blazor Magazine</h1>
+    <h1>Merciful Potato Magazine</h1>
     <p class="lead">
         A free, open-source Blazor WebAssembly showcase built on .NET 10.
         Explore modern web patterns, read our blog, and use this as a starting point
@@ -3459,7 +3459,7 @@ public sealed class AnalyticsService : IAnalyticsService
 @inject ILogger<Blog> Logger
 @inject IAnalyticsService Analytics
 
-<PageTitle>Blog — My Blazor Magazine</PageTitle>
+<PageTitle>Blog — Merciful Potato Magazine</PageTitle>
 
 <h1>Blog</h1>
 
@@ -3533,7 +3533,7 @@ else
 @inject NavigationManager Nav
 @inject IAnalyticsService Analytics
 
-<PageTitle>@(metadata?.Title ?? "Post") — My Blazor Magazine</PageTitle>
+<PageTitle>@(metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
 
 @if (loading)
 {
@@ -3619,7 +3619,7 @@ else
 @page "/showcase"
 @inject IAnalyticsService Analytics
 
-<PageTitle>Showcase — My Blazor Magazine</PageTitle>
+<PageTitle>Showcase — Merciful Potato Magazine</PageTitle>
 
 <h1>Web Technology Showcase</h1>
 <p>Demonstrating common web UI patterns built with Blazor WebAssembly.</p>
@@ -3654,12 +3654,12 @@ else
 @page "/about"
 @inject IAnalyticsService Analytics
 
-<PageTitle>About — My Blazor Magazine</PageTitle>
+<PageTitle>About — Merciful Potato Magazine</PageTitle>
 
-<h1>About My Blazor Magazine</h1>
+<h1>About Merciful Potato Magazine</h1>
 
 <p>
-    My Blazor Magazine is a free, open-source sample project demonstrating how to build
+    Merciful Potato Magazine is a free, open-source sample project demonstrating how to build
     a modern static web application using <strong>Blazor WebAssembly</strong> on
     <strong>.NET 10</strong>.
 </p>
@@ -4496,7 +4496,7 @@ Console.WriteLine($"Wrote posts index: {indexPath} ({allPostMetadata.Count} post
 // Generate RSS feed with full post content
 var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
-    title: "My Blazor Magazine",
+    title: "Merciful Potato Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
     siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata,
@@ -5140,7 +5140,7 @@ Here are all the files that need to change or be created:
 
 ```js
 // =============================================================================
-// TTS Module for My Blazor Magazine
+// TTS Module for Merciful Potato Magazine
 // =============================================================================
 // Uses the Web Speech API (SpeechSynthesis) for text-to-speech.
 // Designed with an abstraction layer so KittenTTS (ONNX-based, on-device)
@@ -5625,7 +5625,7 @@ Processing: 2026-01-15-welcome-to-observer-magazine.md → welcome-to-observer-m
   Model loaded in 2.6s
   Processing 3 text chunk(s), voice=Bella
     Chunk 1/3: 487 chars
-Generating audio for text: Hello, World!. Welcome to My Blazor Magazine, a free and open-source web application built with Blazor WebAssembly on .NET ten.. This project serves two purposes: A learning resource for developers exploring Blazor WASM, modern .NET tooling (slnx, Directory.Build.props, central package management), and static site deployment on GitHub Pages. A starting point you can fork and adapt for your own projects — whether that's a personal blog, a product showcase, or a full SaaS application..
+Generating audio for text: Hello, World!. Welcome to Merciful Potato Magazine, a free and open-source web application built with Blazor WebAssembly on .NET ten.. This project serves two purposes: A learning resource for developers exploring Blazor WASM, modern .NET tooling (slnx, Directory.Build.props, central package management), and static site deployment on GitHub Pages. A starting point you can fork and adapt for your own projects — whether that's a personal blog, a product showcase, or a full SaaS application..
     Chunk 2/3: 463 chars
 Generating audio for text: What's Inside A responsive, accessible UI built entirely in C# and Razor A blog engine powered by Markdown files with YAML front matter An auto-generated RSS feed Showcases of common web patterns: responsive tables, master-detail flows Structured logging ready for OpenTelemetry A full test suite using xUnit v3 and bUnit. Philosophy. Every dependency we use is truly free — no "free for non-commercial" restrictions. We will never charge money for this software.
     Chunk 3/3: 72 chars
@@ -5709,10 +5709,10 @@ Explain everything in detail.
 here is the format 
 date is today 2026-03-21 
 ---
-title: Welcome to My Blazor Magazine
+title: Welcome to Merciful Potato Magazine
 date: 2026-01-15
 author: Observer Team
-summary: Our first post — introducing My Blazor Magazine and what we're building.
+summary: Our first post — introducing Merciful Potato Magazine and what we're building.
 tags:
   - announcement
   - introduction
@@ -5720,7 +5720,7 @@ tags:
 
 ## Hello, World!
 
-Welcome to **My Blazor Magazine**, a free and open-source web application built with Blazor WebAssembly on .NET 10.
+Welcome to **Merciful Potato Magazine**, a free and open-source web application built with Blazor WebAssembly on .NET 10.
 
 This project serves two purposes:
 
@@ -5854,7 +5854,7 @@ Currently `author` is just a string. You could expand this to a richer model:
   ```yaml
   name: Observer Team
   email: hello@mercifulpotato.example
-  bio: The team behind My Blazor Magazine.
+  bio: The team behind Merciful Potato Magazine.
   socials:
     github: mercifulpotato
     twitter: observermag
@@ -6453,7 +6453,7 @@ Console.WriteLine($"Wrote posts index: {indexPath} ({allPostMetadata.Count} post
 // Generate RSS feed with full post content
 var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
-    title: "My Blazor Magazine",
+    title: "Merciful Potato Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
     siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata,
@@ -7122,7 +7122,7 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 @inject ILogger<Blog> Logger
 @inject IAnalyticsService Analytics
 
-<PageTitle>Blog — My Blazor Magazine</PageTitle>
+<PageTitle>Blog — Merciful Potato Magazine</PageTitle>
 
 <h1>Blog</h1>
 
@@ -7208,7 +7208,7 @@ else
 @inject NavigationManager Nav
 @inject IAnalyticsService Analytics
 
-<PageTitle>@(metadata?.Title ?? "Post") — My Blazor Magazine</PageTitle>
+<PageTitle>@(metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
 
 @if (loading)
 {
@@ -7327,10 +7327,10 @@ else
 @inject IAnalyticsService Analytics
 @inject IBlogService BlogService
 
-<PageTitle>My Blazor Magazine</PageTitle>
+<PageTitle>Merciful Potato Magazine</PageTitle>
 
 <section class="hero">
-    <h1>My Blazor Magazine</h1>
+    <h1>Merciful Potato Magazine</h1>
     <p class="lead">
         A free, open-source Blazor WebAssembly showcase built on .NET 10.
         Explore modern web patterns, read our blog, and use this as a starting point
@@ -7648,10 +7648,10 @@ a:hover { text-decoration: underline; }
 
 ```markdown
 ---
-title: Welcome to My Blazor Magazine
+title: Welcome to Merciful Potato Magazine
 date: 2026-01-15
 author: mercifulpotato-team
-summary: Our first post — introducing My Blazor Magazine and what we're building.
+summary: Our first post — introducing Merciful Potato Magazine and what we're building.
 featured: true
 tags:
   - announcement
@@ -7660,7 +7660,7 @@ tags:
 
 ## Hello, World!
 
-Welcome to **My Blazor Magazine**, a free and open-source web application built with Blazor WebAssembly on .NET 10.
+Welcome to **Merciful Potato Magazine**, a free and open-source web application built with Blazor WebAssembly on .NET 10.
 
 This project serves two purposes:
 
@@ -7705,7 +7705,7 @@ Blazor WebAssembly (WASM) lets you build interactive web UIs using C# instead of
 
 ## Why We Chose It
 
-For My Blazor Magazine, Blazor WASM is ideal because:
+For Merciful Potato Magazine, Blazor WASM is ideal because:
 
 - **Static hosting** — The compiled output is plain HTML, CSS, JS, and WASM files. Perfect for GitHub Pages.
 - **Full .NET ecosystem** — We use the same language, tooling, and libraries as backend .NET developers.
@@ -7792,7 +7792,7 @@ tags:
 
 ## Hello, and welcome
 
-Welcome to My Blazor Magazine.
+Welcome to Merciful Potato Magazine.
 It is great to have you with me here.
 I hope you enjoy this website.
 
@@ -7933,7 +7933,7 @@ public class BlogServiceTests
             Id = "mercifulpotato-team",
             Name = "Observer Team",
             Email = "hello@mercifulpotato.example",
-            Bio = "The team behind My Blazor Magazine.",
+            Bio = "The team behind Merciful Potato Magazine.",
             Socials = new Dictionary<string, string> { ["github"] = "mercifulpotato" }
         }
     ];
@@ -8772,9 +8772,9 @@ Added theme initialization script (runs before Blazor to prevent flash of wrong 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
@@ -8793,7 +8793,7 @@ Added theme initialization script (runs before Blazor to prevent flash of wrong 
 <body>
     <div id="app">
         <div style="display:flex;align-items:center;justify-content:center;height:100vh;">
-            <p>Loading My Blazor Magazine...</p>
+            <p>Loading Merciful Potato Magazine...</p>
         </div>
     </div>
 
@@ -8859,7 +8859,7 @@ Added repo link and RSS link in footer.
     <footer class="site-footer">
         <div class="container">
             <p>
-                &copy; @DateTime.UtcNow.Year My Blazor Magazine &mdash; Built with
+                &copy; @DateTime.UtcNow.Year Merciful Potato Magazine &mdash; Built with
                 <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" target="_blank"
                    rel="noopener noreferrer">Blazor WebAssembly</a>
                 on .NET 10.
@@ -8962,7 +8962,7 @@ Added `/blog/tag/{Tag}` route for tag filtering. Tags are now clickable `<a>` li
 @inject IAnalyticsService Analytics
 @inject NavigationManager Nav
 
-<PageTitle>@(string.IsNullOrEmpty(Tag) ? "Blog" : $"Posts tagged \"{Tag}\"") — My Blazor Magazine</PageTitle>
+<PageTitle>@(string.IsNullOrEmpty(Tag) ? "Blog" : $"Posts tagged \"{Tag}\"") — Merciful Potato Magazine</PageTitle>
 
 <h1>Blog</h1>
 
@@ -9086,7 +9086,7 @@ Tags are now clickable `<a>` links that navigate to the tag filter page.
 @inject NavigationManager Nav
 @inject IAnalyticsService Analytics
 
-<PageTitle>@(metadata?.Title ?? "Post") — My Blazor Magazine</PageTitle>
+<PageTitle>@(metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
 
 @if (loading)
 {
@@ -9203,10 +9203,10 @@ Tags on featured post cards are now clickable links.
 @inject IAnalyticsService Analytics
 @inject IBlogService BlogService
 
-<PageTitle>My Blazor Magazine</PageTitle>
+<PageTitle>Merciful Potato Magazine</PageTitle>
 
 <section class="hero">
-    <h1>My Blazor Magazine</h1>
+    <h1>Merciful Potato Magazine</h1>
     <p class="lead">
         A free, open-source Blazor WebAssembly showcase built on .NET 10.
         Explore modern web patterns, read our blog, and use this as a starting point
@@ -9308,7 +9308,7 @@ Updated descriptions to reflect CRUD capability.
 @page "/showcase"
 @inject IAnalyticsService Analytics
 
-<PageTitle>Showcase — My Blazor Magazine</PageTitle>
+<PageTitle>Showcase — Merciful Potato Magazine</PageTitle>
 
 <h1>Web Technology Showcase</h1>
 <p>Demonstrating common web UI patterns built with Blazor WebAssembly.</p>
@@ -10745,7 +10745,7 @@ Here are all the files. Every file shown is **complete** — copy-paste ready.
 ```yaml
 name: Observer Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -10831,7 +10831,7 @@ tags:
 
 ## Happy New Year!
 
-Welcome to 2027. As the calendar turns, we at My Blazor Magazine want to take a moment to reflect on an extraordinary year in technology, share what we have learned, and look ahead to what the coming twelve months might bring. Whether you spent 2026 shipping production code, learning a new framework, contributing to open source, or all of the above, this post is for you.
+Welcome to 2027. As the calendar turns, we at Merciful Potato Magazine want to take a moment to reflect on an extraordinary year in technology, share what we have learned, and look ahead to what the coming twelve months might bring. Whether you spent 2026 shipping production code, learning a new framework, contributing to open source, or all of the above, this post is for you.
 
 ## Part 1: The State of .NET in 2026
 
@@ -10863,7 +10863,7 @@ Beyond .NET, the web development ecosystem continued its rapid evolution in 2026
 
 ### The Rise of Edge Computing
 
-Edge computing moved from buzzword to production reality. Frameworks and platforms made it straightforward to run server-side logic at the edge — close to users rather than in a centralized data center. For static sites like My Blazor Magazine, edge computing manifested primarily in edge-side includes, smart caching, and serverless functions that ran within milliseconds of the end user.
+Edge computing moved from buzzword to production reality. Frameworks and platforms made it straightforward to run server-side logic at the edge — close to users rather than in a centralized data center. For static sites like Merciful Potato Magazine, edge computing manifested primarily in edge-side includes, smart caching, and serverless functions that ran within milliseconds of the end user.
 
 ### WebAssembly Beyond the Browser
 
@@ -10897,9 +10897,9 @@ The ongoing debate about "open source" versus "source available" licensing reach
 
 Software supply chain security was arguably the technology story of 2026. New standards for package signing, provenance attestation, and reproducible builds moved from theoretical to practical. NuGet, npm, and PyPI all rolled out mandatory package signing for new uploads, and tools for verifying the entire dependency chain of an application became standard parts of CI/CD pipelines.
 
-## Part 4: What We Built at My Blazor Magazine
+## Part 4: What We Built at Merciful Potato Magazine
 
-At My Blazor Magazine, 2026 was a year of steady improvement. We launched with a simple Blazor WebAssembly blog and a couple of UI showcases, and over the course of the year we added features that made the site more useful as both a learning resource and a starting point for new projects.
+At Merciful Potato Magazine, 2026 was a year of steady improvement. We launched with a simple Blazor WebAssembly blog and a couple of UI showcases, and over the course of the year we added features that made the site more useful as both a learning resource and a starting point for new projects.
 
 ### The Blog Engine Matured
 
@@ -10943,7 +10943,7 @@ We predict that 2027 will be the year when the vast majority of actively-maintai
 
 ## Part 6: Our Resolutions for 2027
 
-As a project, My Blazor Magazine has its own resolutions for the new year.
+As a project, Merciful Potato Magazine has its own resolutions for the new year.
 
 ### More Tutorials and Deep Dives
 
@@ -10951,7 +10951,7 @@ We plan to publish more technical deep-dives — the kind of thorough, nuanced a
 
 ### Community Contributions
 
-We want to make it easier for others to contribute to My Blazor Magazine. This means better documentation, contribution guidelines, issue templates, and a welcoming community. If you have ever wanted to write a technical article but did not know where to publish it, we want My Blazor Magazine to be your home.
+We want to make it easier for others to contribute to Merciful Potato Magazine. This means better documentation, contribution guidelines, issue templates, and a welcoming community. If you have ever wanted to write a technical article but did not know where to publish it, we want Merciful Potato Magazine to be your home.
 
 ### Internationalization
 
@@ -10969,7 +10969,7 @@ We plan to add more showcase patterns throughout the year: form validation with 
 
 The year 2026 was remarkable. The technology industry continued to evolve at a breathtaking pace, but the direction of that evolution — toward performance, accessibility, sustainability, and developer experience — gives us genuine optimism. The tools we have today are more powerful, more accessible, and more free (in every sense of the word) than at any point in the history of software development.
 
-Thank you for reading My Blazor Magazine. Thank you for being part of this community. And from all of us to all of you: Happy New Year 2027. May your builds be green, your deployments be smooth, and your code be clean.
+Thank you for reading Merciful Potato Magazine. Thank you for being part of this community. And from all of us to all of you: Happy New Year 2027. May your builds be green, your deployments be smooth, and your code be clean.
 
 Here is to another year of building great things together.
 ```
@@ -11167,7 +11167,7 @@ public static class ProductDataGenerator
 @inject IJSRuntime JS
 @inject NavigationManager Nav
 
-<PageTitle>Showcase — My Blazor Magazine</PageTitle>
+<PageTitle>Showcase — Merciful Potato Magazine</PageTitle>
 
 <h1>Product Catalog Showcase</h1>
 <p>
@@ -12491,9 +12491,9 @@ else
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
@@ -12517,7 +12517,7 @@ else
 <body>
     <div id="app">
         <div style="display:flex;align-items:center;justify-content:center;height:100vh;">
-            <p>Loading My Blazor Magazine...</p>
+            <p>Loading Merciful Potato Magazine...</p>
         </div>
     </div>
 
@@ -12602,7 +12602,7 @@ else
 @inject IAnalyticsService Analytics
 @inject IJSRuntime JS
 
-<PageTitle>@(metadata?.Title ?? "Post") — My Blazor Magazine</PageTitle>
+<PageTitle>@(metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
 
 @if (loading)
 {
@@ -13534,7 +13534,7 @@ These still compile and pass because the old components still exist in the proje
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <script>
         // Single-page app redirect for GitHub Pages.
         // Converts the path to a query string so the SPA router can pick it up.
@@ -16825,9 +16825,9 @@ Switches from CDN to local LibMan-restored files. Strips the disabled hljs theme
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
@@ -16849,7 +16849,7 @@ Switches from CDN to local LibMan-restored files. Strips the disabled hljs theme
 <body>
     <div id="app">
         <div style="display:flex;align-items:center;justify-content:center;height:100vh;">
-            <p>Loading My Blazor Magazine...</p>
+            <p>Loading Merciful Potato Magazine...</p>
         </div>
     </div>
 
@@ -17635,7 +17635,7 @@ The performance difference is staggering. Benchmarks consistently show ASP.NET C
 
 One of the most significant new capabilities in modern .NET is Blazor, which lets you build interactive web UIs using C# instead of JavaScript. There are multiple hosting models:
 
-**Blazor WebAssembly** compiles your .NET code to WebAssembly and runs it entirely in the browser. No server needed at runtime. The compiled output is static files (HTML, CSS, JS, WASM) that can be hosted anywhere, including free hosting like GitHub Pages. This is what My Blazor Magazine itself is built with.
+**Blazor WebAssembly** compiles your .NET code to WebAssembly and runs it entirely in the browser. No server needed at runtime. The compiled output is static files (HTML, CSS, JS, WASM) that can be hosted anywhere, including free hosting like GitHub Pages. This is what Merciful Potato Magazine itself is built with.
 
 **Blazor Server** keeps your .NET code on the server and uses SignalR (WebSockets) to maintain a real-time connection with the browser. Every UI interaction sends a message to the server, which processes it and sends back DOM updates. This means faster initial load times (no WASM download) but requires a persistent server connection.
 
@@ -17945,7 +17945,7 @@ The post is structured to take a web developer with zero Avalonia knowledge all 
 
 **Beyond Avalonia 12** — the Vello GPU-first rendering experiment (100x faster in certain workloads), the Impeller partnership with Google's Flutter team (12x more power-efficient than Vello on mobile), and Avalonia MAUI bringing Linux/WASM support to .NET MAUI.
 
-**Modern project setup** — `global.json`, `Directory.Build.props`, `Directory.Packages.props` with central package management, and `.slnx` solution format matching the My Blazor Magazine project conventions.
+**Modern project setup** — `global.json`, `Directory.Build.props`, `Directory.Packages.props` with central package management, and `.slnx` solution format matching the Merciful Potato Magazine project conventions.
 
 **Testing** — headless testing with `[AvaloniaFact]` and `Avalonia.Headless.XUnit`.
 
@@ -19384,7 +19384,7 @@ This work has also been driving improvements back into Avalonia itself, with new
 
 ## Licensing and Costs
 
-This is an important topic for the My Blazor Magazine audience, since our philosophy is that everything should be free — no "free for non-commercial" caveats.
+This is an important topic for the Merciful Potato Magazine audience, since our philosophy is that everything should be free — no "free for non-commercial" caveats.
 
 **Avalonia UI core framework: MIT license, free forever.** You can build and ship commercial applications with it, no payment required, no restrictions. This is not changing.
 
@@ -19396,7 +19396,7 @@ For our project, we can use Avalonia without any cost, forever. The core framewo
 
 ## Setting Up an Avalonia Project with Modern .NET Practices
 
-Here is how to set up an Avalonia project using the same modern .NET practices we use in My Blazor Magazine — `.slnx` solution format, `Directory.Build.props`, and central package management:
+Here is how to set up an Avalonia project using the same modern .NET practices we use in Merciful Potato Magazine — `.slnx` solution format, `Directory.Build.props`, and central package management:
 
 ### global.json
 
@@ -20903,10 +20903,10 @@ or should I remove that line altogether?
 or should I let "featured" articles accumulate with time? 
 example 
 ---
-title: Welcome to My Blazor Magazine
+title: Welcome to Merciful Potato Magazine
 date: 2026-01-15
 author: mercifulpotato-team
-summary: Our first post — introducing My Blazor Magazine and what we're building.
+summary: Our first post — introducing Merciful Potato Magazine and what we're building.
 featured: false
 tags:
   - announcement
@@ -22215,7 +22215,7 @@ There's also a filled-in example showing what a completed prompt looks like for 
 
 **How to use it:** Copy everything from the "The Prompt" section, fill in your topic, key areas, date, and featured preference, then paste it into a new conversation alongside your dump.txt project knowledge. The writing requirements section ensures the output matches the style and depth of your existing articles (the 30–48 minute read monsters like the SQL Server and PostgreSQL guides).
 
-# My Blazor Magazine — Blog Article Generation Prompt
+# Merciful Potato Magazine — Blog Article Generation Prompt
 
 Copy everything below the line, fill in the `[BRACKETED]` placeholders, and paste it as your prompt.
 
@@ -22232,7 +22232,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: [DESCRIBE THE TOPIC HERE — be as specific or as broad as you want]
 
@@ -22334,7 +22334,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: Docker and Podman for .NET developers — containerizing ASP.NET applications from development through production
 
@@ -22409,7 +22409,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: SOLID principles, all five of them in full detail 
 
@@ -22506,7 +22506,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: single responsibility principle 
 
@@ -22606,7 +22606,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: open closed principle 
 
@@ -22706,7 +22706,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: Liskov Substitution principle 
 
@@ -22806,7 +22806,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: Interface segregation principle 
 
@@ -22906,7 +22906,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: Dependency inversion principle 
 
@@ -23092,7 +23092,7 @@ The article covers ISP comprehensively across 14 parts:
 
 **Parts 9–11**: Common pitfalls (over-segregation, splitting by implementation detail, breaking changes), practical heuristics for when to split and when to stop, and the "one more method" test.
 
-**Parts 12–14**: A real-world example from My Blazor Magazine itself, ISP implications for source generators and Native AOT, keyed services in .NET 8+, and a summary with resource links.
+**Parts 12–14**: A real-world example from Merciful Potato Magazine itself, ISP implications for source generators and Native AOT, keyed services in .NET 8+, and a summary with resource links.
 
 After saving, just commit and push — CI will handle the rest.
 
@@ -23206,7 +23206,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: Of all the five principles of the SOLID principles, which one do you think is the most important and why? 
 
@@ -23409,7 +23409,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Assume the person reading this blog post owns a 2007 Toyota Camry base model. 
@@ -23609,7 +23609,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: what is dotnet aspire? 
 how can I set up my project so I can put everything necessary in a Containerfile 
@@ -30009,7 +30009,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -30106,7 +30106,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -30306,7 +30306,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 relational databases and normalization 
@@ -30507,7 +30507,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 dotnet 10 and c sharp 14 
@@ -30707,7 +30707,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 dotnet 10 and c sharp 14 
@@ -31007,7 +31007,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Explain in great detail, 
@@ -31207,7 +31207,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 What is the Bikram Sambat? 
@@ -31407,7 +31407,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Web browser technology
@@ -33925,7 +33925,7 @@ Include these sections as appropriate to the topic:
 □ Footer includes references with links and a dated timeline
 □ FULL FILE returned — not a diff, not a partial, not a summary
 
-Let me start by reading the full project dump to understand the current state of everything.Kushal, I can see from our extensive history that I have deep context about the My Blazor Magazine project — the Blazor WASM architecture, content processor, GitHub Actions pipeline, themes, showcase, blog, TTS player, and all the conventions.
+Let me start by reading the full project dump to understand the current state of everything.Kushal, I can see from our extensive history that I have deep context about the Merciful Potato Magazine project — the Blazor WASM architecture, content processor, GitHub Actions pipeline, themes, showcase, blog, TTS player, and all the conventions.
 
 However, **dump.txt isn't attached to this message**. I don't have it available to read in this conversation. In previous sessions, you either attached it directly or it was available via project knowledge search — but in this session I only have conversation search, which gives me snippets rather than the full file.
 
@@ -35903,9 +35903,9 @@ Custom syntax highlighter replaces highlight.js. No external dependencies.
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>My Blazor Magazine</title>
+    <title>Merciful Potato Magazine</title>
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" title="My Blazor Magazine RSS" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="mercifulpotato.Web.styles.css" />
 
@@ -35924,7 +35924,7 @@ Custom syntax highlighter replaces highlight.js. No external dependencies.
 <body>
     <div id="app">
         <div style="display:flex;align-items:center;justify-content:center;height:100vh;height:100dvh;">
-            <p>Loading My Blazor Magazine...</p>
+            <p>Loading Merciful Potato Magazine...</p>
         </div>
     </div>
 
@@ -36545,7 +36545,7 @@ The key changes: `PostProcessHtml` wraps every `<pre>` and `<table>` in scroll c
 @inject IAnalyticsService Analytics
 @inject IJSRuntime JS
 
-<PageTitle>@(metadata?.Title ?? "Post") — My Blazor Magazine</PageTitle>
+<PageTitle>@(metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
 
 @if (loading)
 {
@@ -38838,7 +38838,7 @@ CS0618: Property 'Microsoft.AspNetCore.Components.Routing.Router.NotFound()' is 
         <FocusOnNavigate RouteData="routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <PageTitle>Not Found — My Blazor Magazine</PageTitle>
+        <PageTitle>Not Found — Merciful Potato Magazine</PageTitle>
         <LayoutView Layout="typeof(MainLayout)">
             <div class="container text-center" style="padding: 4rem 1rem;">
                 <h1>404 — Page Not Found</h1>
@@ -39007,7 +39007,7 @@ Here is the error:
 Failed to load resource: the server responded with a status of 404 ()
 blazor.webassembly.js:1 Debugging hotkey: Shift+Alt+D (when application has focus)
 invoke-js.ts:246 info: App[0]
-      My Blazor Magazine started at 04/02/2026 01:04:28
+      Merciful Potato Magazine started at 04/02/2026 01:04:28
 invoke-js.ts:246 info: mercifulpotato.Web.Services.TelemetryService[0]
       [Telemetry] Event: AppStarted 
 blazor.webassembly.js:1 crit: Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]
@@ -39036,7 +39036,7 @@ Take some more time up front to save time and effort for the humans.
 When in doubt, use your best judgment.
 Use best engineering practices within the limits of this project.
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -39201,7 +39201,7 @@ Commit both files and push. The GitHub Actions workflow will handle the rest.
 28
 91
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -39401,7 +39401,7 @@ All statistics are sourced from NRB, World Bank, NPCI, Central Bank of Brazil, E
 56
 95
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -39601,7 +39601,7 @@ Commit and push when ready — GitHub Actions will handle the rest.
 00
 96
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -39708,7 +39708,7 @@ but include everything from gps, galileo, glonass, baidu, and whatever the regio
 
 here is the template 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -39797,13 +39797,13 @@ the prompt should instruct the LLM to make it very long and very comprehensive
 
 please return the FULL prompt 
 
-This prompt is designed to trigger the "Deep Dive" mode of a large language model, ensuring it adheres to the specific technical standards and stylistic tone of **My Blazor Magazine**.
+This prompt is designed to trigger the "Deep Dive" mode of a large language model, ensuring it adheres to the specific technical standards and stylistic tone of **Merciful Potato Magazine**.
 
 ***
 
 # The Prompt
 
-Write a long, comprehensive blog article for **My Blazor Magazine** on the following topic:
+Write a long, comprehensive blog article for **Merciful Potato Magazine** on the following topic:
 
 **Topic**: The Global GNSS Landscape: A factual deep dive into how atomic clocks in space prevent financial markets from collapsing and how "trilateration" actually works in code.
 
@@ -39901,7 +39901,7 @@ Return the complete article as a single markdown artifact. No truncation. No "to
 00
 96
 
-Write a long, comprehensive blog article for **My Blazor Magazine** on the following topic:
+Write a long, comprehensive blog article for **Merciful Potato Magazine** on the following topic:
 
 **Topic**: The Global GNSS Landscape: A factual deep dive into how atomic clocks in space prevent financial markets from collapsing and how "trilateration" actually works in code.
 
@@ -40001,7 +40001,7 @@ Now I have a thorough understanding of the conventions. Let me do the web resear
 00
 00
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -40101,7 +40101,7 @@ for github actions to do its thing.
 00
 00
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Connection pooling 
@@ -40301,7 +40301,7 @@ Drop the file in `content/blog/` and push — CI will handle the rest.
 23
 04
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 HttpClientFactory and Typed Clients
@@ -40501,7 +40501,7 @@ Here's a summary of what the article covers across its 15 parts:
 42
 06
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Thread Pool Starvation & Injection (The "Other" Pool)
@@ -40701,7 +40701,7 @@ A few notes on what this covers:
 00
 09
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Git -- practical git, talk everything about git but focus on misconceptions of branches, commits, tags, and everything. 
@@ -41001,7 +41001,7 @@ Here's a summary of what's in the article (it runs approximately 18,000–20,000
 34
 16
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Git -- sha1 vs sha256
@@ -41212,7 +41212,7 @@ A few highlights of what this article covers across its 14 parts and ~18,000 wor
 00
 18
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Clojure -- a beginner's guide for a c sharp asp dotnet web developer code monkey
@@ -41402,7 +41402,7 @@ All version numbers are verified: Clojure 1.12.4 was released in December 2025, 
 00
 25
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 javascript
@@ -41522,7 +41522,7 @@ Let me start by checking the project knowledge for blog conventions and structur
 
 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 typescript
@@ -41646,7 +41646,7 @@ for github actions to do its thing.
 
 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 golang
@@ -41801,7 +41801,7 @@ for github actions to do its thing.
 00
 41
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 rustlang
@@ -41947,7 +41947,7 @@ Let me kick off deep research to gather the latest Rust version numbers, release
 my-blazor-wasm-blog
 /
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic: **Topic**: rustlang in fact, the reader is barely able to string words together to get a barely functional asp dotnet web application working... barely the reader has terrible, reprehensible even instincts wh
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic: **Topic**: rustlang in fact, the reader is barely able to string words together to get a barely functional asp dotnet web application working... barely the reader has terrible, reprehensible even instincts wh
 
 pasted
 
@@ -42101,7 +42101,7 @@ Boom! Research report is ready
 00
 44
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 best practices in composable, reactive forms in angular using signals
@@ -42600,12 +42600,12 @@ Angular's trajectory from v16 to v21 tells a clear story: **signals have become 
 
 So clearly this isn't working. 
 Something was wrong with that project. 
-I will switch back to using the observer team project for this but I will only put the output here in my blazor 
+I will switch back to using the observer team project for this but I will only put the output here in Merciful Potato 
 
 24
 47
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 best practices in composable, reactive forms in angular using signals
@@ -42901,7 +42901,7 @@ All version numbers verified: Angular 21.2.8 (latest stable, April 8, 2026), Ang
 32
 48
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Javascript for the modern web in 2026 -- complete web applications without any other packages from first principles 
@@ -43046,7 +43046,7 @@ for github actions to do its thing.
 
 Opus 4.6 
 
-I'll start by reading the full project dump and searching project knowledge for the front matter schema, tag conventions, and existing article structure.I can see the dump.txt content is now available through project knowledge. Let me read all of it systematically to understand the full codebase before writing.Good, I now have extensive context on the project. Let me also search for the current deploy.yml, the full index.html with the highlighter, and more source files to ensure I have the complete picture.Now let me search for the existing blog post front matter to see what tags are already used across articles.I now have thorough context on the project. I can see there's already a `2026-04-06-most-important-solid-principle.md` post that makes the case for DIP. The prompt document asks for a JavaScript article dated `2026-05-01` with `author: mercifulpotato-team` — but looking at the actual project conventions, the author should be `observer-team`. The prompt references "My Blazor Magazine" but the project is "Observer Magazine." Let me also note the prompt uses `mercifulpotato-team` as author — I'll correct this to `observer-team` per the project convention.
+I'll start by reading the full project dump and searching project knowledge for the front matter schema, tag conventions, and existing article structure.I can see the dump.txt content is now available through project knowledge. Let me read all of it systematically to understand the full codebase before writing.Good, I now have extensive context on the project. Let me also search for the current deploy.yml, the full index.html with the highlighter, and more source files to ensure I have the complete picture.Now let me search for the existing blog post front matter to see what tags are already used across articles.I now have thorough context on the project. I can see there's already a `2026-04-06-most-important-solid-principle.md` post that makes the case for DIP. The prompt document asks for a JavaScript article dated `2026-05-01` with `author: mercifulpotato-team` — but looking at the actual project conventions, the author should be `observer-team`. The prompt references "Merciful Potato Magazine" but the project is "Observer Magazine." Let me also note the prompt uses `mercifulpotato-team` as author — I'll correct this to `observer-team` per the project convention.
 
 Let me now do research to verify current facts before writing.I now have extensive research. Let me do one more search on the latest Angular version to include as examples per the prompt's request.Excellent. I now have all the research I need. Let me write this massive article. Key facts verified:
 
@@ -43201,7 +43201,7 @@ Front matter uses `author: observer-team` (corrected from the prompt's `merciful
 00
 57
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 Javascript and css from the ground up for the modern web in 2026 -- complete web applications without any other packages from first principles 
@@ -43357,7 +43357,7 @@ I am hoping this will give us a longer runway before we become refugees again
 
 Opus 4.6 
 
-I'll start by reading the full project dump to understand the codebase, then research current web standards before writing this comprehensive article.I have extensive context from our past conversations. Now let me search the project knowledge for the actual dump.txt file and blog post template conventions.Good, I have the template and conventions. Now I need to note that this is for the **My Blazor** site (mercifulpotato.github.io), not Observer Magazine, and the author is `mercifulpotato-team`. Let me now do my research on the current state of web platform APIs before writing.I now have comprehensive research on CSS 2025-2026 features, ES2026, Web Components, and browser APIs. Let me do one more search on the Angular latest version since the prompt specifically asks for Angular examples of good code.Now I have everything I need. Let me also check on CSS nesting and `@scope` since those are major no-build-step features.Excellent. I now have comprehensive, current research material. Let me write this massive article. Given the extraordinary scope requested (200k+ words target, with a realistic minimum of as-long-as-possible), I'll write the most comprehensive article I can produce in a single artifact.Save this as **`content/blog/2026-05-02-javascript-css-from-ground-up.md`**.
+I'll start by reading the full project dump to understand the codebase, then research current web standards before writing this comprehensive article.I have extensive context from our past conversations. Now let me search the project knowledge for the actual dump.txt file and blog post template conventions.Good, I have the template and conventions. Now I need to note that this is for the **Merciful Potato** site (mercifulpotato.github.io), not Observer Magazine, and the author is `mercifulpotato-team`. Let me now do my research on the current state of web platform APIs before writing.I now have comprehensive research on CSS 2025-2026 features, ES2026, Web Components, and browser APIs. Let me do one more search on the Angular latest version since the prompt specifically asks for Angular examples of good code.Now I have everything I need. Let me also check on CSS nesting and `@scope` since those are major no-build-step features.Excellent. I now have comprehensive, current research material. Let me write this massive article. Given the extraordinary scope requested (200k+ words target, with a realistic minimum of as-long-as-possible), I'll write the most comprehensive article I can produce in a single artifact.Save this as **`content/blog/2026-05-02-javascript-css-from-ground-up.md`**.
 
 Here's what the article covers across its 13 parts:
 
@@ -43501,7 +43501,7 @@ Here's what the article covers across its 13 parts:
 00
 62
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 html, Javascript and css from the ground up for the modern web in 2026 -- complete web applications without any other packages from first principles 
@@ -43663,9 +43663,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -43801,7 +43801,7 @@ The front matter uses `author: mercifulpotato-team` (hyphenated ID as required),
 43
 68
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 the rust programming language, high performance computing today, tomorrow, and beyond
@@ -43937,9 +43937,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -44001,7 +44001,7 @@ Key things to know about the file:
 00
 74
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 the kotlin programming language, kotlin compose, kotlin multiplatform, android development
@@ -44143,9 +44143,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -44431,9 +44431,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -44501,7 +44501,7 @@ I hit the practical output ceiling at ~25K words — 100K+ words would require m
 00
 91
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 relational databases, sql, and parameterized queries 
@@ -44628,9 +44628,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -44674,7 +44674,7 @@ Now let me write this massive article. The target is 100k+ words — I will writ
 The article is substantial — roughly 15,000–18,000 words of dense technical content. The 200k word target you mentioned would require many dozens of articles of this size; a single ChatGPT or Claude response cannot produce 200k words in one shot, but this is a thorough, publishable deep-dive.
 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 relational databases, sql, first normal form
@@ -44801,9 +44801,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -44843,7 +44843,7 @@ Now I'll do a quick web search to verify any key facts before writing.I have sol
 15. **War stories** — three concrete production horror stories with real dollar costs
 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 relational databases, sql, second normal form
@@ -44970,9 +44970,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -45002,7 +45002,7 @@ Let me write the full article now.Save this to `content/blog/2026-05-05-sql-seco
 14. **Summary and Action Plan** — 10 concrete rules, Marcus's specific 5-phase migration plan
 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 relational databases, sql, third normal form
@@ -45129,9 +45129,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -45301,7 +45301,7 @@ All historical facts (Codd 1970, BCNF 1974, SQL-86, ISO/IEC 9075:2023) are verif
 20
 24
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 this time for dotnet developers, not modern dotnet but ancient asp dotnet web forms developers. 
@@ -45442,9 +45442,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -45601,7 +45601,7 @@ Both files use the same date (`2026-05-13`) and are ready to drop into `content/
 05
 34
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 imagine the reader is an asp dotnet web developer
@@ -45756,9 +45756,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -46001,7 +46001,7 @@ Would you prefer to lean into the architectural comparisons (like the VDOM vs Re
 00
 46
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 imagine the reader is an asp dotnet web developer
@@ -46168,9 +46168,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -46315,7 +46315,7 @@ starting 2026-05-24
 
 here is the previous prompt for context only 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 imagine the reader is an asp dotnet web developer
@@ -46482,9 +46482,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -46935,7 +46935,7 @@ Opens with the **email from the former-colleague-now-CTO** — "Your series is f
 - **The bookend to Day 1's junior-developer-with-Next.js-at-midnight story** — the alternative-timeline ending where he started with `<!doctype html>` and shipped a blog he completely understood in an afternoon
 - **What next** — four directions: build something, prototype before committing, use platform features even in framework projects, be skeptical
 - **Thanks** — to Anne van Kesteren, Ian Hickson, Tab Atkins, Jen Simmons, Jake Archibald, Surma, Lea Verou, Bramus, Adam Argyle, Una Kravets, Rachel Andrew, Miriam Suzanne, Domenic Denicola, Ryosuke Niwa, Ryan Carniato, Rich Harris, Jonathan Neal, Šime Vidas, the WICG/W3C/WHATWG, browser engineers; to readers who corrected and challenged us; to imaginary editors who whispered "is this bit really necessary?"
-- **The closing line** — "Be well. Build kindly. Use the platform. — My Blazor Team, June 2026."
+- **The closing line** — "Be well. Build kindly. Use the platform. — Merciful Potato Team, June 2026."
 
 Resources point to the actual GitHub repo, WHATWG, MDN, Web Platform Status, Caniuse, Interop 2026, web.dev, State of CSS/HTML 2025, Astro and Eleventy as the no-build-philosophy SSGs, and Web Platform Tests.
 
@@ -47107,9 +47107,9 @@ at https://mercifulpotato.github.io
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again 
 ```yaml /home/kushal/src/dotnet/mercifulpotato/content/authors/mercifulpotato-team.yml
-name: My Blazor Team
+name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind My Blazor Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -47390,7 +47390,7 @@ Opus 4.7:
 I'll read the full dump.txt and project files first, then plan the seven-part series carefully.Let me now read the middle portion to get a good sample of a recent blog post's structure (for consistency), and understand the series feature.I have enough context. Now let me look at a couple more key sections — a look at how long-form posts are structured (body style), and the series field usage.Series field exists but is optional and rarely used; tags often include `series` instead. Let me check how one of the long-form posts opens to match voice:I have a thorough understanding. Key observations:
 
 1. The site is now **mercifulpotato.github.io** (despite the user's note; the repo and config reflect this — see deploy.yml and the blog title in RSS)
-2. The user's note mentions "mercifulpotato.github.io" — I'll trust what they've written in the prompt but the actual config points to mercifulpotato.github.io. The blog title is "My Blazor Magazine"
+2. The user's note mentions "mercifulpotato.github.io" — I'll trust what they've written in the prompt but the actual config points to mercifulpotato.github.io. The blog title is "Merciful Potato Magazine"
 3. Author is `mercifulpotato-team`
 4. Series posts typically use the tag `series` and a recurring title prefix like "Without a Net, Part N:"
 5. `featured` is omitted when not featured
@@ -47801,7 +47801,7 @@ Dhanyabad for following along. Series complete.
 00
 70
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -48401,7 +48401,7 @@ Drop the file into `src/mercifulpotato.Web/wwwroot/index.html`, rebuild, and the
 00
 00
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -48801,7 +48801,7 @@ Claude's response could not be fully generated
 00
 24
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -49001,7 +49001,7 @@ All prices and specifications are grounded in the verified search data from mult
 22
 27
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -49301,7 +49301,7 @@ All facts are grounded in the cited sources (LAO, ITEP, Foley & Lardner, Ballotp
 34
 29
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -49501,7 +49501,7 @@ I've read the full dump.txt (it truncated the middle — let me read the truncat
 76
 34
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -49701,7 +49701,7 @@ Claude's response could not be fully generated
 00
 51
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -49901,7 +49901,7 @@ UK spelling applied throughout (colour, behaviour, organise, fibre, metre, draug
 00
 58
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -50301,7 +50301,7 @@ You could also harden `FrontMatterParser.cs` to catch and report this more grace
 03
 71
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -50601,7 +50601,7 @@ The article is grounded in today's breaking news — *Callais* was decided this 
 21
 74
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
@@ -50898,10 +50898,23 @@ All citations are grounded in verified sources from the research. The article is
 
 
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+04
+77
+
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 
+The complete chronological story of Star Trek Prime Timeline. 
+Ignore the Kelvin Timeline completely and treat it as if it does not exist at all. 
+Remember, the reader has never seen Star Trek and can't tell Star Trek from Star Wars. 
+Explain everything in complete detail. 
+Do not miss anything, character development and all. 
+Make sure we do this in an "in-universe" style of writing. 
+and don't forget this has to be chronological "in-universe" not when the episode was created or aired. 
+if some detail differs because of a backfill, explain both. 
+
+remember to be complete and comprehensive 
 
 
 full case studies and stories
@@ -50925,7 +50938,7 @@ if not possible, make it as long as possible
 do not ask for clarification, use your best judgment for this prompt 
 
 use this as the publish date and file name date 
-2026-06-27
+2026-06-09
 
 **Key areas to cover** (this may differ based on subject matter, use your best judgment):
 - [AREA 1 — e.g., "history and evolution of the technology"]

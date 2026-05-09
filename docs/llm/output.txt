@@ -22,7 +22,7 @@ Publish before:    2026-05-09 19:17:17 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
-  Loaded author: mercifulpotato-team (My Blazor Team)
+  Loaded author: mercifulpotato-team (Merciful Potato Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
 Found 2 markdown files
 Processing: 2026-03-22-good-morning.md

@@ -1,4 +1,4 @@
-# My Blazor Magazine
+# Merciful Potato Magazine
 
 A free, open-source Blazor WebAssembly application deployed to GitHub Pages.
 

@@ -43,7 +43,7 @@ public class BlogServiceTests
             Id = "mercifulpotato-team",
             Name = "Observer Team",
             Email = "hello@observermagazine.example",
-            Bio = "The team behind My Blazor Magazine.",
+            Bio = "The team behind Merciful Potato Magazine.",
             Socials = new Dictionary<string, string> { ["github"] = "ObserverMagazine" }
         }
     ];

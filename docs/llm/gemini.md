@@ -201,7 +201,7 @@ This structural chain of `width: 100%` and `min-width: 0` removes the layout's a
 00
 41
 
-Write a long, comprehensive blog article for My Blazor Magazine on the following topic:
+Write a long, comprehensive blog article for Merciful Potato Magazine on the following topic:
 
 **Topic**: 
 rustlang
