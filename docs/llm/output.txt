@@ -1,24 +1,24 @@
-kushal@fedora:~/src/dotnet/MyAdventure$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-162M	.
+kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+159M	.
 
-real	0m0.016s
-user	0m0.000s
-sys	0m0.006s
+real	0m0.018s
+user	0m0.002s
+sys	0m0.005s
 
-real	0m7.697s
-user	0m11.856s
-sys	0m0.949s
+real	0m7.210s
+user	0m11.268s
+sys	0m0.920s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.710s
-user	0m0.767s
+real	0m0.727s
+user	0m0.769s
 sys	0m0.156s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-05-09 19:17:17 UTC
+Publish before:    2026-05-09 19:32:02 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
@@ -33,28 +33,28 @@ Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.5s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.6)
-[xUnit.net 00:00:00.16]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.47]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.71]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.29]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.44]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.66]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
   ObserverMagazine.Integration.Tests test net10.0 succeeded (1.2s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.5s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.4s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.6)
-[xUnit.net 00:00:00.16]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.47]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.93]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.29]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.44]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.90]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
   ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.0s
-Build succeeded in 6.1s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 4.8s
+Build succeeded in 5.9s
 
-real	0m6.238s
-user	0m3.315s
-sys	0m0.418s
+real	0m6.010s
+user	0m3.121s
+sys	0m0.408s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -94,9 +94,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.504s
-user	0m1.483s
-sys	0m0.338s
+real	0m1.512s
+user	0m1.486s
+sys	0m0.339s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -109,47 +109,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m2.492s
-user	0m1.908s
-sys	0m0.415s
+real	0m2.168s
+user	0m1.882s
+sys	0m0.364s
 Export complete: docs/llm/dump.txt
   Total files: 81
   Blog posts (front matter only): 2
   Full content files: 77
   Binary files skipped: 2
 
-real	0m0.096s
-user	0m0.030s
-sys	0m0.049s
-kushal@fedora:~/src/dotnet/mercifulpotato$ time git remote show origin; time git remote remove origin; time git remote add origin git@github.com:MercifulPotato/mercifulpotato.github.io.git; time git remote show origin;
-* remote origin
-  Fetch URL: git@github.com:myblazor/myblazor.github.io.git
-  Push  URL: git@github.com:myblazor/myblazor.github.io.git
-  HEAD branch: main
-  Remote branch:
-    main tracked
-  Local branch configured for 'git pull':
-    main merges with remote main
-  Local ref configured for 'git push':
-    main pushes to main (fast-forwardable)
-
-real	0m0.628s
-user	0m0.007s
-sys	0m0.010s
-
-real	0m0.002s
-user	0m0.000s
-sys	0m0.002s
-
-real	0m0.002s
-user	0m0.000s
-sys	0m0.002s
-* remote origin
-  Fetch URL: git@github.com:MercifulPotato/mercifulpotato.github.io.git
-  Push  URL: git@github.com:MercifulPotato/mercifulpotato.github.io.git
-  HEAD branch: (unknown)
-
-real	0m0.540s
-user	0m0.006s
-sys	0m0.008s
+real	0m0.094s
+user	0m0.036s
+sys	0m0.041s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
