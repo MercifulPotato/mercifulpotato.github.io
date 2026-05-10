@@ -54642,3 +54642,5 @@ Here's what this final installment covers:
 
 **Conclusion:** What the whole 2,400-year story is actually about — the choice, made over and over, to extend the circle of who counts. And the Spock quote from the *Lower Decks/Strange New Worlds* crossover that serves as the last word the whole series deserved.
 
+100
+16
