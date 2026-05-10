@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-05-10 09:03:55 UTC
+DATE: 2026-05-10 09:05:41 UTC
 ===============================================================================
 
 ===============================================================================
@@ -352,6 +352,22 @@ series: "Star Trek Prime Timeline Chronology"
 -------------------------------------------------------------------------------
 FILE: content/blog/2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md  [FRONT MATTER ONLY — body omitted to save context space]
 -------------------------------------------------------------------------------
+---
+title: "The Weight of Stars: Late TNG, Generations, and the Rise of Deep Space Nine (2367–2375)"
+date: 2026-05-13
+author: mercifulpotato-team
+summary: "The complete in-universe account of TNG's final four seasons — Picard's recovery, Worf's discommendation, Spock on Romulus, the torture of a captain, and a finale that bent time — followed by Kirk's last stand, the launch of Deep Space Nine, and the Dominion War that reshaped the Alpha Quadrant."
+tags:
+  - star-trek
+  - in-universe-history
+  - next-generation
+  - deep-space-nine
+  - picard
+  - worf
+  - dominion-war
+  - deep-dive
+series: "Star Trek Prime Timeline Chronology"
+---
 
 
 -------------------------------------------------------------------------------
