@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: observermagazine.github.io
-DATE: 2026-05-09 21:09:00 UTC
+DATE: 2026-05-10 09:03:55 UTC
 ===============================================================================
 
 ===============================================================================
@@ -18,7 +18,11 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-04-14-happy-new-year.md
 │       ├── 2026-05-09-star-trek-prime-1-foundations.md
 │       ├── 2026-05-10-star-trek-prime-2-discovery-and-strange-new-worlds.md
-│       └── 2026-05-11-star-trek-prime-3-tos-five-year-mission.md
+│       ├── 2026-05-11-star-trek-prime-3-tos-five-year-mission.md
+│       ├── 2026-05-12-star-trek-prime-4-films-and-early-tng.md
+│       ├── 2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md
+│       ├── 2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md
+│       └── 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -29,7 +33,8 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── output.txt
 │       └── vendor
 │           ├── claude-instructions.md
-│           └── claude-memory.md
+│           ├── claude-memory.md
+│           └── claude-sessions.md
 ├── export.sh
 ├── .github
 │   └── workflows
@@ -127,7 +132,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 90 files
+29 directories, 95 files
 
 
 -------------------------------------------------------------------------------
@@ -319,6 +324,76 @@ tags:
   - spock
   - mccoy
   - deep-dive
+series: "Star Trek Prime Timeline Chronology"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-12-star-trek-prime-4-films-and-early-tng.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "From the End of a Mission to the Beginning of an Era: The Films, the Gap, and the Birth of The Next Generation (2270–2367)"
+date: 2026-05-12
+author: mercifulpotato-team
+summary: "The complete in-universe account of the six TOS-era films — V'Ger, Khan, Genesis, the whales, Sha Ka Ree, and Praxis — followed by the launch of the Galaxy-class Enterprise-D, the introduction of Picard's crew, and the catastrophic first engagement with the Borg at Wolf 359."
+tags:
+  - star-trek
+  - in-universe-history
+  - tos-films
+  - next-generation
+  - picard
+  - borg
+  - khan
+  - deep-dive
+series: "Star Trek Prime Timeline Chronology"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Fire and Surrender: The Dominion War, Deep Space Nine's End, and the Final TNG Films (2373–2387)"
+date: 2026-05-14
+author: mercifulpotato-team
+summary: "The complete in-universe account of the Dominion War — from 'In the Pale Moonlight' to the fall of Cardassia — followed by Sisko's ascension to the Prophets, the character fates of DS9's crew, and the final three TNG-era films: First Contact, Insurrection, and Nemesis. Ends with the destruction of Romulus in 2387 that permanently reshaped the quadrant."
+tags:
+  - star-trek
+  - in-universe-history
+  - dominion-war
+  - deep-space-nine
+  - sisko
+  - tng-films
+  - data
+  - borg
+  - deep-dive
+series: "Star Trek Prime Timeline Chronology"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Modern Canon and the Long View: Lower Decks, Prodigy, Picard, Discovery, and What It All Means (2380–3189)"
+date: 2026-05-15
+author: mercifulpotato-team
+summary: "The final installment of the Prime Timeline chronology: the 2380s through the Picard era, Discovery's 32nd-century leap, and a conclusion on what seven days of Star Trek history adds up to. Covers Lower Decks, Prodigy, Star Trek Picard Seasons 1-3, and Discovery's far-future arc including the Burn, the Federation's collapse, and Michael Burnham's ascent."
+tags:
+  - star-trek
+  - in-universe-history
+  - picard
+  - discovery
+  - lower-decks
+  - prodigy
+  - modern-canon
+  - deep-dive
+  - conclusion
 series: "Star Trek Prime Timeline Chronology"
 ---
 
@@ -9504,8 +9579,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 84
-  Blog posts (front matter only): 5
+Total Files Exported: 88
+  Blog posts (front matter only): 9
   Full content files: 77
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
