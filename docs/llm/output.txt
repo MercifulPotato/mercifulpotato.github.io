@@ -1,30 +1,30 @@
 kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-169M	.
+170M	.
 
-real	0m0.012s
-user	0m0.003s
-sys	0m0.008s
+real	0m0.029s
+user	0m0.002s
+sys	0m0.010s
 
-real	0m8.027s
-user	0m12.609s
-sys	0m1.013s
+real	0m8.510s
+user	0m12.830s
+sys	0m1.130s
 Restore complete (0.5s)
 
-Build succeeded in 0.7s
+Build succeeded in 0.6s
 
-real	0m0.834s
-user	0m0.891s
-sys	0m0.154s
+real	0m0.809s
+user	0m0.826s
+sys	0m0.197s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-05-14 13:30:34 UTC
+Publish before:    2026-05-14 13:38:05 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
   Loaded author: mercifulpotato-team (Merciful Potato Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
-Found 9 markdown files
+Found 10 markdown files
 Processing: 2026-03-22-good-morning.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/good-morning.html (~1 min read)
 Processing: 2026-04-14-happy-new-year.md
@@ -43,32 +43,34 @@ Processing: 2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-6-dominion-war-and-tng-films.html (~45 min read)
 Processing: 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
   SKIPPED: Future post 'The Modern Canon and the Long View: Lower Decks, Prodigy, Picard, Discovery, and What It All Means (2380–3189)' (date: 2026-05-15, publish-before: 2026-05-14)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (8 posts, 0 drafts skipped, 1 future posts skipped)
+Processing: 2026-05-16-lotr-1-creation-and-ainulindale.md
+  SKIPPED: Future post 'Before the World Was Made: The Music of the Ainur, the Creation of Arda, and the First War of the Powers' (date: 2026-05-16, publish-before: 2026-05-14)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (8 posts, 0 drafts skipped, 2 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
-Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+Restore complete (0.6s)
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
-[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.34]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.50]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.75]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.7s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+[xUnit.net 00:00:00.19]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.36]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.52]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.79]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.4s)
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (1.7s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
   ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
-[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Web.Tests
 [xUnit.net 00:00:00.34]   Discovered:  ObserverMagazine.Web.Tests
 [xUnit.net 00:00:00.50]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.98]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
-  ObserverMagazine.Web.Tests test net10.0 succeeded (1.5s)
+[xUnit.net 00:00:01.02]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.6s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.3s
-Build succeeded in 6.4s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 3.4s
+Build succeeded in 4.4s
 
-real	0m6.562s
-user	0m3.498s
-sys	0m0.503s
+real	0m4.613s
+user	0m3.438s
+sys	0m0.460s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -108,9 +110,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.700s
-user	0m1.714s
-sys	0m0.340s
+real	0m1.693s
+user	0m1.676s
+sys	0m0.354s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -123,16 +125,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m2.955s
-user	0m2.211s
-sys	0m0.428s
+real	0m1.820s
+user	0m1.826s
+sys	0m0.371s
 Export complete: docs/llm/dump.txt
-  Total files: 89
-  Blog posts (front matter only): 9
+  Total files: 90
+  Blog posts (front matter only): 10
   Full content files: 78
   Binary files skipped: 2
 
-real	0m0.097s
-user	0m0.038s
-sys	0m0.051s
+real	0m0.111s
+user	0m0.035s
+sys	0m0.055s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 

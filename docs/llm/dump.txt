@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-14 13:30:45 UTC
+DATE: 2026-05-14 13:38:13 UTC
 ===============================================================================
 
 ===============================================================================
@@ -22,7 +22,8 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-05-12-star-trek-prime-4-films-and-early-tng.md
 │       ├── 2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md
 │       ├── 2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md
-│       └── 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
+│       ├── 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
+│       └── 2026-05-16-lotr-1-creation-and-ainulindale.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -133,7 +134,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 96 files
+29 directories, 97 files
 
 
 -------------------------------------------------------------------------------
@@ -412,6 +413,28 @@ tags:
   - deep-dive
   - conclusion
 series: "Star Trek Prime Timeline Chronology"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-16-lotr-1-creation-and-ainulindale.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Before the World Was Made: The Music of the Ainur, the Creation of Arda, and the First War of the Powers"
+date: 2026-05-16
+author: mercifulpotato-team
+summary: "The complete in-universe account of the beginning of everything — Ilúvatar's Great Music, the rebellion of Melkor, the descent of the Ainur into the world, the shaping of Arda, and the first catastrophic conflicts that would set the stage for every war to follow."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - silmarillion
+  - ainulindale
+  - valaquenta
+  - quenta-silmarillion
+  - in-universe-history
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+featured: true
 ---
 
 
@@ -19584,8 +19607,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 89
-  Blog posts (front matter only): 9
+Total Files Exported: 90
+  Blog posts (front matter only): 10
   Full content files: 78
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
