@@ -55020,3 +55020,181 @@ Save as `content/blog/2026-05-18-lotr-3-children-of-hurin.md` and push.
 
 63
 30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Save as `content/blog/2026-05-19-lotr-4-gondolin-earendil-war-of-wrath.md` and push.
+
+**What's in this post — 16 major sections covering:**
+
+- Gondolin's construction — the twelve houses, the seven gates, Ulmo's guidance, how it survived when everything else fell
+- Aredhel's flight from Gondolin; the Dark Elf Eöl and the making of Anglachel and Galvorn; Maeglin's poisoned origin
+- Eöl's death, Maeglin in Gondolin, his obsession with Idril, his eventual capture by Morgoth and the betrayal
+- Tuor's story — enslaved in Dor-lómin, guided by Ulmo, his journey with Voronwë to Gondolin
+- Turgon's rejection of Ulmo's warning; the marriage of Tuor and Idril; Eärendil's birth
+- The assault on Gondolin — the full battle, Maeglin's seizure of Idril, Tuor throwing Maeglin from the walls
+- Ecthelion killing Gothmog in the fountain; Glorfindel's death fighting a Balrog on the mountain path (and his return in the Third Age)
+- Idril's secret tunnel; the refugee escape over Cirith Thoronath
+- The community at the Mouths of Sirion; Eärendil building Vingilot; his failed voyages seeking Valinor
+- The Third Kinslaying — Maedhros and Maglor attacking the Havens; Elwing leaping into the sea with the Silmaril
+- Eärendil's decision to sail to Valinor; the Silmaril lighting the Straight Road
+- The judgment of the Half-elven; Eärendil set to sail the sky as the Evening Star
+- The War of Wrath — forty-two years, the winged dragons, Ancalagon the Black
+- Eärendil killing Ancalagon; Thangorodrim broken; Morgoth thrust through the Door of Night into the Void
+- Beleriand sunk beneath the sea; who survived and what they carried into the Second Age
+- Sauron refusing Eönwë's summons; the theological meaning of Eärendil; the shape of the world's new geography
+
+70
+30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
