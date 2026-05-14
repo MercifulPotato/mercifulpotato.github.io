@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-14 13:38:13 UTC
+DATE: 2026-05-14 15:00:23 UTC
 ===============================================================================
 
 ===============================================================================
@@ -23,7 +23,16 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md
 │       ├── 2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md
 │       ├── 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
-│       └── 2026-05-16-lotr-1-creation-and-ainulindale.md
+│       ├── 2026-05-16-lotr-1-creation-and-ainulindale.md
+│       ├── 2026-05-17-lotr-2-wars-of-beleriand-beren-and-luthien.md
+│       ├── 2026-05-18-lotr-3-children-of-hurin.md
+│       ├── 2026-05-19-lotr-4-gondolin-earendil-war-of-wrath.md
+│       ├── 2026-05-20-lotr-5-second-age-numenor-rings-of-power.md
+│       ├── 2026-05-21-lotr-6-third-age-hobbit-fellowship.md
+│       ├── 2026-05-22-lotr-7-war-of-the-ring-crack-of-doom-grey-havens.md
+│       ├── 2026-05-23-lotr-8-unfinished-tapestry-retcons-open-questions.md
+│       ├── 2026-05-24-lotr-9-languages-of-middle-earth.md
+│       └── 2026-05-25-lotr-10-real-world-sources-tolkien-life.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -134,7 +143,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 97 files
+29 directories, 106 files
 
 
 -------------------------------------------------------------------------------
@@ -435,6 +444,207 @@ tags:
   - deep-dive
 series: "The Complete Chronological History of Middle-earth"
 featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-17-lotr-2-wars-of-beleriand-beren-and-luthien.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Blood, Stars, and a Stolen Silmaril: The Wars of Beleriand, the Coming of Men, and the Tale of Beren and Lúthien"
+date: 2026-05-17
+author: mercifulpotato-team
+summary: "The complete in-universe account of the long wars between the Noldor and Morgoth in Beleriand — the Siege of Angband, the Dagor Bragollach, the coming of the Edain, and the greatest love story ever told: Beren One-hand and Lúthien Tinúviel, who stole a Silmaril from the Iron Crown of Morgoth himself."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - silmarillion
+  - beleriand
+  - beren-and-luthien
+  - noldor
+  - first-age
+  - in-universe-history
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-18-lotr-3-children-of-hurin.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Curse That Would Not Break: Túrin Turambar, Glaurung the Dragon, and the Children of Húrin"
+date: 2026-05-18
+author: mercifulpotato-team
+summary: "The complete in-universe account of the darkest story in Middle-earth — the cursed life of Túrin Turambar, son of Húrin, driven from every home by Morgoth's malice, destroyer of all he loved, who killed the great dragon Glaurung and was destroyed by the killing. Every character, every catastrophe, every terrible choice, told in full."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - silmarillion
+  - children-of-hurin
+  - turin-turambar
+  - glaurung
+  - first-age
+  - in-universe-history
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-19-lotr-4-gondolin-earendil-war-of-wrath.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Last Light of the Elder Days: The Fall of Gondolin, the Voyage of Eärendil, and the War of Wrath"
+date: 2026-05-19
+author: mercifulpotato-team
+summary: "The complete in-universe account of how the First Age ended — the secret city of Gondolin betrayed and burned, the Third Kinslaying at the Havens of Sirion, Eärendil's impossible voyage to Valinor with a Silmaril on his brow, and the War of Wrath that broke both Morgoth and the land of Beleriand itself beneath the sea."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - silmarillion
+  - gondolin
+  - earendil
+  - war-of-wrath
+  - first-age
+  - in-universe-history
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-20-lotr-5-second-age-numenor-rings-of-power.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Long Seduction: Númenor, the Rings of Power, and the Downfall of the Second Age"
+date: 2026-05-20
+author: mercifulpotato-team
+summary: "The complete in-universe account of the Second Age — the gift of Númenor to Men and its slow corruption, Sauron's forging of the One Ring and the seduction of the Elvish smiths, the drowning of Númenor in the Great Armament's hubris, and how Sauron survived to menace the world again wearing a new face."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - silmarillion
+  - second-age
+  - numenor
+  - rings-of-power
+  - sauron
+  - akallabeth
+  - in-universe-history
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-21-lotr-6-third-age-hobbit-fellowship.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Long Watch and the Unexpected Journey: The Third Age from Isildur's Fall to the Breaking of the Fellowship"
+date: 2026-05-21
+author: mercifulpotato-team
+summary: "The complete in-universe account of the Third Age's three thousand years — the slow decline of Gondor and Arnor, the rise of the Necromancer, the finding of the One Ring by Sméagol, Bilbo's adventure with Thorin's company, the White Council's assault on Dol Guldur, and every step of the Fellowship from Bag End to the breaking at Amon Hen."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - third-age
+  - the-hobbit
+  - fellowship-of-the-ring
+  - sauron
+  - gandalf
+  - frodo
+  - in-universe-history
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-22-lotr-7-war-of-the-ring-crack-of-doom-grey-havens.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The War of the Ring: From the Breaking of the Fellowship to the Grey Havens — The Complete Account of Middle-earth's Last Great Conflict"
+date: 2026-05-22
+author: mercifulpotato-team
+summary: "The complete in-universe account of the War of the Ring's final movements — Merry and Pippin among the Ents, the Rohirrim ride to war, Frodo and Sam through Emyn Muil and the Marshes of the Dead, Shelob's lair, Gondor besieged, the Battle of the Pelennor Fields, the Crack of Doom, the Scouring of the Shire, and the last ship from the Grey Havens."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - two-towers
+  - return-of-the-king
+  - frodo
+  - sam
+  - aragorn
+  - war-of-the-ring
+  - in-universe-history
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-23-lotr-8-unfinished-tapestry-retcons-open-questions.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Unfinished Tapestry: Tolkien's Revisions, Contradictions, Open Questions, and the Mythology That Never Stopped Growing"
+date: 2026-05-23
+author: mercifulpotato-team
+summary: "The complete examination of Tolkien's unresolved threads, major retcons, internal contradictions, and the fascinating questions the mythology deliberately leaves open — from the origin of Orcs to the fate of Tom Bombadil, from the nature of the Blue Wizards to whether Glorfindel is really the same elf who died at Gondolin."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - silmarillion
+  - tolkien-scholarship
+  - retcons
+  - unfinished-tales
+  - history-of-middle-earth
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-24-lotr-9-languages-of-middle-earth.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Languages of Middle-earth: A Complete Guide to Quenya, Sindarin, Khuzdul, and the Tongues of Arda"
+date: 2026-05-24
+author: mercifulpotato-team
+summary: "The complete in-universe and out-of-universe account of every language in Tolkien's world — their histories, their grammars, their relationships to each other, their real-world sources in Finnish and Welsh and Old English, and how sixty years of linguistic invention produced the most fully realised constructed language system in literary history."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - quenya
+  - sindarin
+  - khuzdul
+  - black-speech
+  - tolkien-languages
+  - linguistics
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-25-lotr-10-real-world-sources-tolkien-life.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Roots of the Tree: Tolkien's Real-World Sources, Influences, and the Life That Made the Mythology"
+date: 2026-05-25
+author: mercifulpotato-team
+summary: "The complete examination of what Tolkien was drawing on — Norse mythology, Finnish epic, Anglo-Saxon poetry, medieval Christian theology, the First World War, his friendship with C.S. Lewis and the Inklings, the Oxford scholarly tradition, and the specific personal griefs and joys that flowed directly into the characters and stories of Middle-earth."
+tags:
+  - lord-of-the-rings
+  - tolkien
+  - sources
+  - norse-mythology
+  - beowulf
+  - christianity
+  - world-war-one
+  - inklings
+  - tolkien-scholarship
+  - deep-dive
+series: "The Complete Chronological History of Middle-earth"
 ---
 
 
@@ -19607,8 +19817,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 90
-  Blog posts (front matter only): 10
+Total Files Exported: 99
+  Blog posts (front matter only): 19
   Full content files: 78
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
