@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-14 13:16:55 UTC
+DATE: 2026-05-14 13:30:45 UTC
 ===============================================================================
 
 ===============================================================================
@@ -2558,7 +2558,7 @@ FILE: src/ObserverMagazine.Web/Layout/MainLayout.razor
             <p>
                 <a href="/feed.xml">RSS Feed</a>
                 &middot;
-                <a href="https://github.com/ObserverMagazine/mercifulpotato.github.io"
+                <a href="https://github.com/mercufulpotato/mercifulpotato.github.io"
                    target="_blank" rel="noopener noreferrer">Source on GitHub</a>
             </p>
         </div>
@@ -2648,7 +2648,7 @@ FILE: src/ObserverMagazine.Web/Layout/NavMenu.razor
         <li><NavLink href="about">About</NavLink></li>
         <li>
             <a class="nav-github"
-               href="https://github.com/ObserverMagazine/mercifulpotato.github.io"
+               href="https://github.com/mercifulpotato/mercifulpotato.github.io"
                target="_blank"
                rel="noopener noreferrer"
                title="View source on GitHub">
@@ -2991,9 +2991,9 @@ FILE: src/ObserverMagazine.Web/Pages/About.razor
 
 <h2>Source Code</h2>
 <p>
-    <a href="https://github.com/ObserverMagazine/mercifulpotato.github.io"
+    <a href="https://github.com/mercifulpotato/mercifulpotato.github.io"
        target="_blank" rel="noopener noreferrer">
-        github.com/ObserverMagazine/mercifulpotato.github.io
+        github.com/mercifulpotato/mercifulpotato.github.io
     </a>
 </p>
 
