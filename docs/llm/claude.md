@@ -55498,3 +55498,32 @@ The complete seven-part series is done. All files are ready to push.
 
 
 
+Save as `content/blog/2026-05-23-lotr-8-unfinished-tapestry-retcons-open-questions.md` and push.
+
+**What's in this coda — 20 major sections covering every major unresolved thread:**
+
+- How the mythology grew over sixty years and why inconsistency is a feature of living traditions
+- The Origin of Orcs — all four theories (corrupted Elves, corrupted Men, corrupted Maiar, animated beasts), the theological problem with each, why Tolkien never resolved it
+- Glorfindel — one elf or two? The textual case for the same being dying at Gondolin and rescuing Frodo
+- Tom Bombadil — every theory, Tolkien's own explanations, why the deliberate inexplicability is the point
+- The Blue Wizards — the two contradictory accounts (done harm vs. great good), why their absence from the War of the Ring matters
+- The palantíri — complete accounting of all seven, where each ended up, how Sauron used selective truth to corrupt Denethor
+- The Children of Húrin's variants — which version is "canon," key differences between the texts
+- The flat earth to round earth revision — the late cosmological rethinking that was never completed
+- Galadriel's history — the most-revised character, her contradictory First Age biographies, her ban from Valinor
+- The Two Trees and the Sun — the cosmological problem of what gave light to Middle-earth before the Sun
+- The fate of Dwarves — Aulë's holding, the seven Fathers' reincarnation, Durin the Deathless
+- Sauron's repentance — was it genuinely partial at the War of Wrath's end? What this implies about his subsequent evil
+- The Númenórean kings' lifespans — the pattern that shows obsession with avoiding death shortens life
+- Shelob's nature — spirit, ancient physical creature, or child of Ungoliant in a literal sense?
+- The Dagor Dagorath — the Last Battle prophecy, Túrin killing Morgoth, why Tolkien questioned whether it fit
+- Languages as archaeology — how Quenya and Sindarin evolved and shaped the narrative
+- The Men of Middle-earth's east and south — the acknowledged gap, Sam's thought at the Pelennor, what late notes suggest
+- What happens to Men after death — the deliberate mystery, why Tolkien refused to answer it
+- The Music and free will — the hardest theological question in the mythology, and Tolkien's careful answer
+- A complete primer on where to go next — all key texts in recommended reading order, from The Hobbit through the History of Middle-earth
+
+The complete eight-part series is now done. All files are ready to push.
+
+08
+33
