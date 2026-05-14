@@ -55626,3 +55626,175 @@ Save as `content/blog/2026-05-24-lotr-9-languages-of-middle-earth.md` and push.
 17
 34
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Save as `content/blog/2026-05-25-lotr-10-real-world-sources-tolkien-life.md` and push.
+
+**What's in this final post — 20 major sections covering everything outside the mythology:**
+
+- Tolkien's early life — Bloemfontein, Sarehole (which became the Shire), his mother's death and the Catholic faith it cost her, Father Francis Morgan
+- Edith as Lúthien — the three-year prohibition, the hemlock-flower dance in Yorkshire, the gravestones bearing Beren and Lúthien, why the love story carries the weight it does
+- The First World War — the Somme, the T.C.B.S. friends killed, trench fever, the Dead Marshes as the trenches, the fellowship of the Fellowship as the fellowship of the trenches
+- Beowulf and the Northern heroic tradition — the 1936 lecture, heroism without reward, Fingolfin and Théoden and Boromir as expressions of the Northern spirit, Ragnarök transformed
+- The Finnish Kalevala — the Kullervo source for Túrin, the Sampo for the Silmarils, Finnish phonology as the model for Quenya, the parallel project of giving Finland a mythology
+- Medieval literature — Sir Gawain's kept covenant, Pearl's elegy, Beowulf's narrative style, the Welsh Mabinogion's fairy-world
+- Catholic theology — the Fall as Arda Marred, Thomistic evil as privation, providence and free will, the Istari and Incarnation, the Eucharist and lembas, Mandos as Purgatory
+- The Inklings — C.S. Lewis's role in keeping Tolkien writing, Charles Williams, the September 1931 night-walk and Lewis's conversion, how the mythology sharpened through criticism
+- On Fairy-Stories — Secondary World, eucatastrophe, the Escape of the Prisoner not the Deserter
+- Leaf by Niggle — the autobiographical parable, Niggle as Tolkien, the Tree made real, the mythology as discovery
+- England and the English — the post-Norman mythological gap, the specific rural England of Sarehole preserved in the Shire, the Anglo-Saxon texture of Rohan
+- The industrial critique — Isengard as factory, the Scouring as restoration of craft over mechanism, Mordor as industrial wasteland
+- Comparisons to other mythologies — what was taken from Greek, Norse, Celtic, Hindu traditions and what was transformed
+- How professional scholarship shaped the mythology — Beowulf's narrative strategies, the Ancrene Wisse's spiritual vocabulary, Gothic phonology for Khuzdul
+- What the First World War's poets did with heroism, and why Tolkien refused their disillusionment — Sam carrying Frodo as the answer to Owen's "Dulce et Decorum Est"
+- Oxford's physical landscape in the mythology — the Cherwell, Addison's Walk, the Berkshire Downs
+- The race question — the honest examination of what is genuinely problematic in the mythology and why, and how to read it responsibly
+- Women in the mythology — Lúthien as the most powerful agent in her own story, Galadriel refusing the Ring, Éowyn's refusal of the cage
+- The complete Tolkien bibliography chronological guide — everything published in his lifetime and posthumously, through 2023
+- Why the mythology persists — what myths do, what this one does, the Tree still growing
+
+The complete ten-part series is done. All files are ready to push.
+
+24
+35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
