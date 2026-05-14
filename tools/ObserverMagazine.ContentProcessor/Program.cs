@@ -173,7 +173,7 @@ var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
     title: "Merciful Potato Magazine",
     description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
-    siteUrl: "https://observermagazine.github.io",
+    siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata,
     getPostHtml: slug => postHtmlMap.GetValueOrDefault(slug)
 );
