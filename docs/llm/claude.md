@@ -54932,3 +54932,91 @@ Let me generate the plan and the first article.Here's your first post. Save it a
 41
 28
 
+I have enough context. The project structure is fully understood from yesterday. Let me write Day 2 — the Wars of Beleriand, Beren and Lúthien.Save as `content/blog/2026-05-17-lotr-2-wars-of-beleriand-beren-and-luthien.md` and push.
+
+**What's in this post — 20 major sections covering:**
+
+- Beleriand's geography and its peoples before the Noldor arrived (Sindar, Dwarves, Laiquendi)
+- The First Battle of Beleriand — the Orc assault before even the Moon rose
+- Fëanor's landing, the Battle of the Lammoth, his death fighting Balrogs
+- Maedhros hung from Thangorodrim; Fingon's rescue with the Eagles
+- The Dagor Aglareb and the 400-year Siege of Angband
+- The coming of Men — Bëor, Haleth, Hador, and the Edain's significance
+- The Dagor Bragollach — Ard-galen turns to Anfauglith
+- Fingolfin's solo duel with Morgoth at the Gates of Angband (wounding him seven times)
+- Beren's origins — the outlaw years in Taur-nu-Fuin
+- Meeting Lúthien in Neldoreth; Thingol's impossible bride-price
+- The oath of Finrod Felagund; Celegorm and Curufin's betrayal at Nargothrond
+- Sauron's Isle — Finrod's singing-contest, his death killing the wolf
+- Lúthien's escape with Huan; the defeat of Sauron
+- The journey to Angband in wolf-skins; Lúthien's enchantment of Morgoth
+- Cutting the Silmaril; Carcharoth biting off Beren's hand
+- The Hunt of Carcharoth; Beren's death
+- Lúthien before Mandos — the song that moved the unmoveable
+- Her choice of mortality; their life together; Dior and the Second Kinslaying
+- The Nirnaeth Arnoediad — Unnumbered Tears; Húrin's capture and curse
+- Character portraits of Maedhros, Maglor, Beleg, Círdan; the long thread to Aragorn and Arwen
+
+51
+29
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Save as `content/blog/2026-05-18-lotr-3-children-of-hurin.md` and push.
+
+**What's in this post — 15 major sections covering:**
+
+- Morwen Eledhwen left behind in Dor-lómin — the making of the woman who endured
+- Túrin's fostering in Doriath — his character formed by pride and loyalty
+- The killing of Saeros, Túrin's flight, and the pattern-choice that haunts his life
+- The outlaw band and Mîm the Petty-dwarf — the first betrayal
+- Beleg's rescue mission; the death of Beleg in the dark at Túrin's own hand
+- Gwindor, Nargothrond, and Finduilas's love
+- Glaurung the dragon — his nature, his dragon-spell, his deliberate cruelty
+- The Fall of Nargothrond — how the Bridge Túrin built became the door that killed them all
+- Finduilas speared at the Crossings of Teiglin; Túrin in Brethil
+- Glaurung's erasure of Nienor's entire identity at Amon Ethir
+- Niniel found, named, and married — the happiness that couldn't last
+- The killing of Glaurung in the gorge of the Teiglin
+- Glaurung's dying revelation; Nienor's leap; Túrin's death on Gurthang
+- Húrin released and what he found; the significance of Gurthang
+- The theological weight of the story; the prophecy that Túrin will slay Morgoth at the world's end
+
+63
+30
