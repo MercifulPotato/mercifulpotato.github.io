@@ -1,24 +1,24 @@
-kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+kushal@fedora:~/src/bash$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 167M	.
 
-real	0m0.010s
+real	0m0.011s
 user	0m0.001s
-sys	0m0.009s
+sys	0m0.008s
 
-real	0m7.435s
-user	0m12.045s
-sys	0m1.005s
+real	0m8.642s
+user	0m12.994s
+sys	0m1.208s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.739s
-user	0m0.773s
-sys	0m0.166s
+real	0m0.779s
+user	0m0.836s
+sys	0m0.149s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-05-10 09:05:34 UTC
+Publish before:    2026-05-14 12:55:24 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
@@ -34,53 +34,53 @@ Processing: 2026-05-09-star-trek-prime-1-foundations.md
 Processing: 2026-05-10-star-trek-prime-2-discovery-and-strange-new-worlds.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-2-discovery-and-strange-new-worlds.html (~46 min read)
 Processing: 2026-05-11-star-trek-prime-3-tos-five-year-mission.md
-  SKIPPED: Future post 'The Five-Year Mission: Kirk, Spock, McCoy, and the Voyage That Defined a Civilization (2265–2270)' (date: 2026-05-11, publish-before: 2026-05-10)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-3-tos-five-year-mission.html (~49 min read)
 Processing: 2026-05-12-star-trek-prime-4-films-and-early-tng.md
-  SKIPPED: Future post 'From the End of a Mission to the Beginning of an Era: The Films, the Gap, and the Birth of The Next Generation (2270–2367)' (date: 2026-05-12, publish-before: 2026-05-10)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-4-films-and-early-tng.html (~47 min read)
 Processing: 2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md
-  SKIPPED: Future post 'The Weight of Stars: Late TNG, Generations, and the Rise of Deep Space Nine (2367–2375)' (date: 2026-05-13, publish-before: 2026-05-10)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-5-late-tng-and-deep-space-nine.html (~52 min read)
 Processing: 2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md
-  SKIPPED: Future post 'Fire and Surrender: The Dominion War, Deep Space Nine's End, and the Final TNG Films (2373–2387)' (date: 2026-05-14, publish-before: 2026-05-10)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-6-dominion-war-and-tng-films.html (~45 min read)
 Processing: 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
-  SKIPPED: Future post 'The Modern Canon and the Long View: Lower Decks, Prodigy, Picard, Discovery, and What It All Means (2380–3189)' (date: 2026-05-15, publish-before: 2026-05-10)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (4 posts, 0 drafts skipped, 5 future posts skipped)
+  SKIPPED: Future post 'The Modern Canon and the Long View: Lower Decks, Prodigy, Picard, Discovery, and What It All Means (2380–3189)' (date: 2026-05-15, publish-before: 2026-05-14)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (8 posts, 0 drafts skipped, 1 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.6)
-[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.29]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.44]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.66]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.6s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
+[xUnit.net 00:00:00.14]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.31]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.47]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.70]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
   ObserverMagazine.Integration.Tests test net10.0 succeeded (1.2s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (1.6s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.6)
-[xUnit.net 00:00:00.14]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.30]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.45]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.91]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
-  ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.7s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded (0.7s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
+[xUnit.net 00:00:00.20]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.43]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.63]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:01.22]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.9s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 3.1s
-Build succeeded in 4.0s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.8s
+Build succeeded in 7.0s
 
-real	0m4.175s
-user	0m3.036s
-sys	0m0.394s
-Restore complete (0.5s)
+real	0m7.203s
+user	0m3.771s
+sys	0m0.485s
+Restore complete (0.6s)
 
-Build succeeded in 0.6s
+Build succeeded in 0.7s
 Project 'ObserverMagazine.Web' has the following package references
    [net10.0]: 
    Top-level Package                                        Requested      Resolved
-   > Microsoft.AspNetCore.App.Internal.Assets         (A)   [10.0.6, )     10.0.6  
+   > Microsoft.AspNetCore.App.Internal.Assets         (A)   [10.0.7, )     10.0.7  
    > Microsoft.AspNetCore.Components.WebAssembly            10.0.7         10.0.7  
-   > Microsoft.DotNet.HotReload.WebAssembly.Browser   (A)   [10.0.106, )   10.0.106
+   > Microsoft.DotNet.HotReload.WebAssembly.Browser   (A)   [10.0.107, )   10.0.107
    > Microsoft.Extensions.Http                              10.0.7         10.0.7  
    > Microsoft.Extensions.Logging.Configuration             10.0.7         10.0.7  
-   > Microsoft.NET.ILLink.Tasks                       (A)   [10.0.6, )     10.0.6  
+   > Microsoft.NET.ILLink.Tasks                       (A)   [10.0.7, )     10.0.7  
    > Microsoft.NET.Sdk.WebAssembly.Pack               (A)   [10.0.1, )     10.0.1  
 
 Project 'ObserverMagazine.Integration.Tests' has the following package references
@@ -108,31 +108,45 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.487s
-user	0m1.499s
-sys	0m0.324s
-Restore complete (0.5s)
+real	0m1.928s
+user	0m1.839s
+sys	0m0.393s
+Restore complete (0.6s)
 
-Build succeeded in 0.6s
+Build succeeded in 0.7s
 
 The following sources were used:
    https://api.nuget.org/v3/index.json
 
-The given project `ObserverMagazine.Web` has no updates given the current sources.
-The given project `ObserverMagazine.Integration.Tests` has no updates given the current sources.
-The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
-The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
+Project `ObserverMagazine.Web` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package                                  Requested   Resolved   Latest
+   > Microsoft.AspNetCore.Components.WebAssembly      10.0.7      10.0.7     10.0.8
+   > Microsoft.Extensions.Http                        10.0.7      10.0.7     10.0.8
+   > Microsoft.Extensions.Logging.Configuration       10.0.7      10.0.7     10.0.8
 
-real	0m1.668s
-user	0m1.659s
-sys	0m0.341s
+Project `ObserverMagazine.Integration.Tests` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package      Requested   Resolved   Latest
+   > Markdig              1.1.3       1.1.3      1.2.0 
+
+The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
+Project `ObserverMagazine.ContentProcessor` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package      Requested   Resolved   Latest
+   > Markdig              1.1.3       1.1.3      1.2.0 
+
+
+real	0m2.949s
+user	0m2.545s
+sys	0m0.472s
 Export complete: docs/llm/dump.txt
-  Total files: 88
+  Total files: 89
   Blog posts (front matter only): 9
-  Full content files: 77
+  Full content files: 78
   Binary files skipped: 2
 
-real	0m0.094s
-user	0m0.033s
-sys	0m0.050s
+real	0m0.116s
+user	0m0.034s
+sys	0m0.057s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
