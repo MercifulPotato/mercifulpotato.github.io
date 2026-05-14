@@ -55225,3 +55225,176 @@ Save as `content/blog/2026-05-20-lotr-5-second-age-numenor-rings-of-power.md` an
 
 79
 31
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Save as `content/blog/2026-05-21-lotr-6-third-age-hobbit-fellowship.md` and push.
+
+**What's in this post — 21 major sections covering:**
+
+- The Third Age's opening — a world without a High King, the slow diminishment of the Dúnedain
+- The division of Arnor and the eight-hundred-year war with Angmar; the Barrow-wights and their Morgul-blade heirlooms; Arvedui's death and the line of northern kings ending
+- Gondor's crises — the Kin-strife, the Corsairs of Umbar, the Great Plague, the empty throne after Eärnur's disappearance into Minas Morgul
+- The Istari — who they were, their Maiar origins, Círdan giving Narya to Gandalf, Saruman's corruption by ring-lore, Radagast's distraction
+- The White Council, Dol Guldur, and Saruman suppressing the search for the Ring
+- The full backstory of the Quest of Erebor — Smaug's attack, the War of the Dwarves and Orcs, Gandalf's strategic reasoning for engineering the expedition
+- Hobbits introduced — their origin in the Third Age records, the founding of the Shire, the argument for why ordinary people matter
+- Bilbo's character; the meeting with Gandalf and thirteen Dwarves; the road from the Shire
+- Trolls, Rivendell, the Goblin-tunnels; Bilbo finding the Ring; the Riddle-game with Gollum
+- The Ring's history — Sméagol and Déagol, five hundred years under the Misty Mountains
+- Eagles, Beorn, Mirkwood, the Wood-elves; Bilbo's conversations with Smaug; the weak spot
+- Smaug's death; the Arkenstone; the Battle of Five Armies; Thorin's death and reconciliation
+- Bilbo's sixty years with the Ring; Gandalf's long research; Gollum captured and interrogated
+- Bilbo's party; the passing of the Ring to Frodo; Gandalf's return and the full revelation
+- Frodo, Sam, Merry, and Pippin leaving the Shire; the Black Riders; the Barrow-wights and Tom Bombadil
+- Meeting Aragorn at Bree; Weathertop and the Morgul-blade wound
+- The race to Rivendell; Arwen at the Ford; the flood of the Bruinen
+- The Council of Elrond — every major thread drawn together; Frodo's volunteering
+- The road from Rivendell; the failure at Caradhras; Moria; the Doors of Durin
+- Gandalf's stand on the Bridge of Khazad-dûm and his fall
+- Lothlórien; Galadriel's refusal of the Ring; the breaking of the Fellowship at Amon Hen; Boromir's death and redemption; Frodo and Sam crossing east alone
+
+88
+32
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
