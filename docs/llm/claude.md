@@ -55527,3 +55527,102 @@ The complete eight-part series is now done. All files are ready to push.
 
 08
 33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Save as `content/blog/2026-05-24-lotr-9-languages-of-middle-earth.md` and push.
+
+**What's in this post — 20 major sections covering the complete linguistic world of Middle-earth:**
+
+- Tolkien the professional philologist — his scholarly career, his language knowledge, why the mythology grew from the languages rather than the reverse
+- Primitive Quendian — the common Elvish ancestor, its root-based morphology, the full language family tree from Common Eldarin through all the dialects
+- Quenya — the full phonology, the Finnish aesthetic model, how declension works, every major Quenya phrase in the published works parsed and explained (*Namárië* in full, *Elen síla*, the Eärendil cry)
+- Sindarin — the Welsh model, consonant mutation explained with the full soft-mutation table, every major Sindarin place-name etymologised (Gondolin, Mordor, Minas Tirith, Lothlórien, Imladris, Barad-dûr, Ithilien, and many more)
+- The Tengwar — how the featural writing system works, the systematic phonological encoding in letter shapes, the Classical and Beleriand modes compared, tehtar explained
+- Khuzdul — the secret Dwarvish tongue, its Semitic triconsonantal root structure, every published word parsed, the Cirth/Angerthas system
+- The Black Speech — its deliberate construction as anti-Quenya, the Ring inscription fully parsed word by word, what the language's sounds carry within them
+- Westron — the translation conceit explained, Hobbit names as translations of Westron names, how Tolkien maintained internal consistency
+- Adûnaic — Númenor's native tongue, its Semitic structure, the political significance of its promotion over Quenya in the decline period
+- Old English and Rohan — Tolkien's direct use of his scholarly speciality, the Rohirric names and their Anglo-Saxon etymologies, the Old English cadence of the Ride of the Rohirrim
+- Old Norse and the Dwarves — the Dvergatal source for all thirteen companions' names plus Gandalf, the Norse mythological resonances
+- Entish — the language that cannot be hurried, complete historical encoding, Tolkien's meditation on language and time
+- Orkish — why the Orc tongues are deliberately debased, the Black Speech as Sauron's failed unifying attempt
+- The Tengwar modes — Mode of Beleriand vs. Classical Mode vs. English Mode, how to read each
+- The Elvish calendars — all seven weekday names in Quenya parsed, all twelve month names with etymologies
+- The name-giving tradition — ataressë (father-names) and amilessë (mother-names), every major character name etymologised (Elrond, Celebrimbor, Legolas, Celeborn, Galadriel, Gil-galad, and more)
+- Sound symbolism — Tolkien's phonaesthetic theory, why Elvish words sound right for what they name, the psycholinguistic basis
+- Neo-Elvish and Tolkienian linguistics — *Vinyar Tengwar*, *Parma Eldalamberon*, the David Salo film languages, the scholarly standards of the field
+- The Ainulindalë's linguistic dimension — why the world was made in music, Elvish naming as completion of the creative act, Entish as the logical extreme
+- A practical glossary of the most common Quenya, Sindarin, Black Speech, and Khuzdul elements for recognising language in the texts
+
+17
+34
+
