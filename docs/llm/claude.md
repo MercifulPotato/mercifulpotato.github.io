@@ -55198,3 +55198,30 @@ Save as `content/blog/2026-05-19-lotr-4-gondolin-earendil-war-of-wrath.md` and p
 
 
 
+Save as `content/blog/2026-05-20-lotr-5-second-age-numenor-rings-of-power.md` and push.
+
+**What's in this post — 20 major sections covering:**
+
+- The reshaped world after the First Age — new geography, the Gulf of Lune, Círdan's Grey Havens
+- Númenor's star-shaped geography; Meneltarma; the Ban of the Valar as the central tension
+- Elros Tar-Minyatur, the gift of long life, the early centuries of generosity
+- Sauron's patient rebuilding in Mordor — Barad-dûr, the fires of Orodruin, his long strategy
+- Celebrimbor and Eregion — the Gwaith-i-Mírdain, the Dwarves of Moria, the Doors of Durin
+- Annatar's arrival and why Celebrimbor welcomed him despite Gil-galad's warning
+- The full theory of the Rings of Power — the Three, the Seven, the Nine, and the One
+- The One Ring's forging in SA 1600 — what went into it and why that was Sauron's gamble
+- The War of the Elves and Sauron — Eregion destroyed, Celebrimbor's death, Moria sealed
+- The Nine Nazgûl — how they fell and what they became
+- The Seven and the Dwarves — why the rings couldn't subjugate them but warped them anyway
+- Númenor's long political decline — the Faithful vs the King's Men; mortality as obsession
+- Ar-Pharazôn's seizure of the throne; Sauron's voluntary capture as the cleverest gambit ever
+- The Temple of Morgoth; the felling of Nimloth; Isildur's rescue of its fruit (the direct ancestor of the White Tree of Gondor in LotR)
+- The Great Armament; Tar-Míriel trying to reach Meneltarma; the Downfall
+- The bending of the world — Aman removed; the Straight Road; what this means for the Grey Havens
+- Elendil, the nine ships of the Faithful, the founding of Arnor and Gondor
+- Sauron's changed nature after the Downfall — the permanent loss of fair form
+- The Last Alliance, the seven-year siege, Isildur cutting the Ring from Sauron's hand
+- Isildur's choice not to destroy the Ring; the Ring's betrayal at the Gladden Fields; the complete accounting of what the Second Age left behind
+
+79
+31
