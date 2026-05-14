@@ -55398,3 +55398,103 @@ Save as `content/blog/2026-05-21-lotr-6-third-age-hobbit-fellowship.md` and push
 
 
 
+Save as `content/blog/2026-05-22-lotr-7-war-of-the-ring-crack-of-doom-grey-havens.md` and push.
+
+**What's in this final post — 20 major sections covering:**
+
+- Gandalf's fall and return — what actually happened in the abyss, the fight on Zirakzigil, death and renewal, why his transformation from Grey to White is theologically deliberate
+- Merry and Pippin in Fangorn — Treebeard and the Ents, the Entmoot, the march on Isengard, Saruman trapped in Orthanc, the palantír thrown from the window and Pippin's dangerous look
+- Théoden's restoration; the full Battle of Helm's Deep; the Huorns; the death of Saruman's army
+- Frodo, Sam and Gollum — the Emyn Muil, the moral weight of Frodo not killing Gollum, the Dead Marshes, the Black Gate, and why Cirith Ungol was the only way
+- Faramir — his character as the fullest portrait of Men at their best; his deliberate choice not to take the Ring; the contrast with Boromir
+- Shelob — her lineage from Ungoliant, her nature, the tunnel; Sam's lone attack on a creature older than recorded history; Sam's brief carrying of the Ring
+- Denethor — his psychology, the palantír's corruption of his vision, his madness, his death; Faramir healed; Éowyn and Faramir finding each other
+- Aragorn and the Paths of the Dead — the Dead Men of Dunharrow's oath, three thousand years of haunting, their release at Pelargir; the captured Corsair fleet
+- The Rohirrim arrive; Théoden's death; Éowyn's "I am no man"; Merry's Westernesse blade; the Witch-king's destruction — why both were required by the prophecy
+- The Black Gate strategy — the Last Debate, marching to certain defeat to buy Frodo time
+- The Crack of Doom — Frodo claiming the Ring, Gollum biting off his finger, the fall, why the failure was saved by a failure, Gandalf's prophecy about Gollum vindicated
+- The Eagles rescue; Field of Cormallen; the minstrel's song
+- Aragorn's coronation; Arwen's arrival; the White Tree blooms; Elrond's farewell to his daughter
+- The fading of Lothlórien and Rivendell when the Three Rings lost their power
+- The Scouring of the Shire — why Tolkien included it, what it means, Saruman's petty tyranny, Gríma's end, Saruman's dispersal; Frodo's unhealable wound
+- The Grey Havens — the last ship, Frodo's departure, Sam's return home
+- The Fourth Age — Aragorn and Arwen's reign; Sam's thirteen children and seven terms as Mayor; Merry and Pippin buried in Minas Tirith; Legolas and Gimli sailing together; Sam's eventual sailing
+- The complete mythology's meaning — what the whole arc from Ainulindalë to Grey Havens adds up to; diminishment as the shape of history; the ordinary becoming decisive; Sam carrying Frodo as the central image
+- A note on Tolkien himself — sixty years of work, the names on the gravestones, sub-creation as discovery
+- Complete series index table linking all seven parts
+
+The complete seven-part series is done. All files are ready to push.
+
+00
+33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
