@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-16 20:25:06 UTC
+DATE: 2026-05-16 21:26:40 UTC
 ===============================================================================
 
 ===============================================================================
@@ -42,7 +42,15 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-06-01-foundations-7-multifamily-apartments-commercial.md
 │       ├── 2026-06-02-foundations-8-eps-sandwich-panels-kathmandu.md
 │       ├── 2026-06-03-foundations-9-buying-or-building-dfw.md
-│       └── 2026-06-04-foundations-10-repair-renovation-restoration.md
+│       ├── 2026-06-04-foundations-10-repair-renovation-restoration.md
+│       ├── 2026-06-05-homeowner-1-welcome-to-home-ownership.md
+│       ├── 2026-06-06-homeowner-2-the-homeowner-calendar.md
+│       ├── 2026-06-07-homeowner-3-hvac-water-heater-energy.md
+│       ├── 2026-06-08-homeowner-4-cleaning-appliances-hidden.md
+│       ├── 2026-06-09-homeowner-5-lawn-landscaping-water.md
+│       ├── 2026-06-10-homeowner-6-plumbing-electrical-safety.md
+│       ├── 2026-06-11-homeowner-7-roof-exterior-windows.md
+│       └── 2026-06-12-homeowner-8-finances-mortgage-taxes.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -153,7 +161,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 116 files
+29 directories, 124 files
 
 
 -------------------------------------------------------------------------------
@@ -870,6 +878,175 @@ tags:
   - home-construction
   - deep-dive
 series: "The Foundation Beneath Everything"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-05-homeowner-1-welcome-to-home-ownership.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Welcome to Your New Full-Time Job: The Complete First-Time Homeowner Orientation"
+date: 2026-06-05
+author: mercifulpotato-team
+summary: "You bought a house — congratulations. Now the real education begins. This exhaustive first installment of our homeowner survival guide covers what nobody told you at closing: the systems inside your home, the maintenance mindset every owner must develop, the most expensive mistakes beginners make, and how to build the habits, tools, and knowledge base that will save you tens of thousands of dollars over the life of your home."
+tags:
+  - home-ownership
+  - first-time-buyer
+  - home-maintenance
+  - home-repair
+  - real-estate
+  - personal-finance
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-06-homeowner-2-the-homeowner-calendar.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Homeowner's 12-Month Maintenance Calendar: What to Do Every Month of the Year"
+date: 2026-06-06
+author: mercifulpotato-team
+summary: "A complete, month-by-month maintenance calendar for homeowners — every inspection, cleaning, service, and seasonal task organized by when it needs to happen. Built around real maintenance intervals, real costs, and real consequences of skipping each item. Use this as your operating manual for the year."
+tags:
+  - home-ownership
+  - home-maintenance
+  - maintenance-calendar
+  - seasonal-maintenance
+  - first-time-buyer
+  - home-repair
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-07-homeowner-3-hvac-water-heater-energy.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Heating, Cooling, and Hot Water: HVAC, Heat Pumps, Water Heaters, Solar, and Batteries"
+date: 2026-06-07
+author: mercifulpotato-team
+summary: "A complete guide to the mechanical heart of your home — how your heating and cooling systems work, how to maintain them, when to repair versus replace, the case for heat pumps, how to choose a water heater, and an honest assessment of rooftop solar and battery storage for homeowners."
+tags:
+  - home-ownership
+  - hvac
+  - heat-pump
+  - water-heater
+  - solar
+  - home-energy
+  - home-maintenance
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-08-homeowner-4-cleaning-appliances-hidden.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Behind the Appliances: Cleaning the Washer, Dryer, Refrigerator, and Everything You Forget"
+date: 2026-06-08
+author: mercifulpotato-team
+summary: "The maintenance tasks nobody shows you — cleaning behind, underneath, and inside the appliances that cause house fires, floods, and catastrophic failures when neglected. A complete guide to the washer, dryer, refrigerator, dishwasher, range and hood, garbage disposal, and more."
+tags:
+  - home-ownership
+  - appliance-maintenance
+  - home-maintenance
+  - fire-prevention
+  - home-repair
+  - washer-dryer
+  - kitchen-appliances
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-09-homeowner-5-lawn-landscaping-water.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Yard Is Yours Now: Lawns, Grass Seed, Irrigation, Trees, and Landscaping from Scratch"
+date: 2026-06-09
+author: mercifulpotato-team
+summary: "A complete guide to the outdoor half of home ownership — understanding cool-season and warm-season grass, choosing and using a lawn mower, fertilizing and seeding, watering efficiently, managing trees safely, and building an outdoor landscape that does not consume your weekends or bankrupt you."
+tags:
+  - home-ownership
+  - lawn-care
+  - landscaping
+  - irrigation
+  - trees
+  - gardening
+  - home-maintenance
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-10-homeowner-6-plumbing-electrical-safety.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Plumbing, Electrical, and Safety: What Every Homeowner Must Know Before Something Breaks"
+date: 2026-06-10
+author: mercifulpotato-team
+summary: "A complete homeowner's guide to the two systems most people fear and least understand — plumbing and electrical. Learn how each system works, what you can safely do yourself, what you absolutely cannot, how to handle emergencies, and what safety hazards require immediate action."
+tags:
+  - home-ownership
+  - plumbing
+  - electrical
+  - home-safety
+  - home-maintenance
+  - home-repair
+  - diy
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-11-homeowner-7-roof-exterior-windows.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Envelope: Roofs, Gutters, Siding, Windows, Doors, and the Fight Against Water"
+date: 2026-06-11
+author: mercifulpotato-team
+summary: "A complete guide to the building envelope — the systems that separate your home from the outside world. Learn how roofs work and fail, what gutters actually do, how to evaluate siding, windows, and doors, and why water management is the central discipline of every exterior maintenance decision."
+tags:
+  - home-ownership
+  - roofing
+  - gutters
+  - siding
+  - windows
+  - home-exterior
+  - water-management
+  - home-maintenance
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-12-homeowner-8-finances-mortgage-taxes.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Financial Side of Home Ownership: Mortgage, Taxes, Insurance, Emergency Funds, and Building Equity"
+date: 2026-06-12
+author: mercifulpotato-team
+summary: "A complete guide to the financial reality of owning a home — how your mortgage works and how to pay it down faster, the tax deductions available to homeowners, how property taxes are calculated and appealed, what homeowner's insurance actually covers (and what it does not), how to build equity intelligently, and a personal finance framework for homeowners."
+tags:
+  - home-ownership
+  - mortgage
+  - taxes
+  - homeowners-insurance
+  - personal-finance
+  - home-equity
+  - real-estate
+  - financial-planning
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
 ---
 
 
@@ -20042,8 +20219,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 109
-  Blog posts (front matter only): 29
+Total Files Exported: 117
+  Blog posts (front matter only): 37
   Full content files: 78
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
