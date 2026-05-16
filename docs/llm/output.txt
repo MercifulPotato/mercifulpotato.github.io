@@ -1,30 +1,30 @@
-kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-162M	.
+kushal@fedora:~/src/dotnet/MyImapDownloader$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+164M	.
 
-real	0m0.006s
+real	0m0.020s
 user	0m0.000s
-sys	0m0.005s
+sys	0m0.008s
 
-real	0m7.990s
-user	0m12.241s
-sys	0m1.020s
+real	0m7.624s
+user	0m11.701s
+sys	0m1.065s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.767s
-user	0m0.790s
-sys	0m0.174s
+real	0m0.752s
+user	0m0.793s
+sys	0m0.154s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-05-14 15:00:12 UTC
+Publish before:    2026-05-16 16:03:22 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
   Loaded author: mercifulpotato-team (Merciful Potato Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
-Found 19 markdown files
+Found 21 markdown files
 Processing: 2026-03-22-good-morning.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/good-morning.html (~1 min read)
 Processing: 2026-04-14-happy-new-year.md
@@ -42,53 +42,57 @@ Processing: 2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md
 Processing: 2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-6-dominion-war-and-tng-films.html (~45 min read)
 Processing: 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
-  SKIPPED: Future post 'The Modern Canon and the Long View: Lower Decks, Prodigy, Picard, Discovery, and What It All Means (2380–3189)' (date: 2026-05-15, publish-before: 2026-05-14)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-7-modern-canon-and-conclusion.html (~34 min read)
 Processing: 2026-05-16-lotr-1-creation-and-ainulindale.md
-  SKIPPED: Future post 'Before the World Was Made: The Music of the Ainur, the Creation of Arda, and the First War of the Powers' (date: 2026-05-16, publish-before: 2026-05-14)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-1-creation-and-ainulindale.html (~63 min read)
 Processing: 2026-05-17-lotr-2-wars-of-beleriand-beren-and-luthien.md
-  SKIPPED: Future post 'Blood, Stars, and a Stolen Silmaril: The Wars of Beleriand, the Coming of Men, and the Tale of Beren and Lúthien' (date: 2026-05-17, publish-before: 2026-05-14)
+  SKIPPED: Future post 'Blood, Stars, and a Stolen Silmaril: The Wars of Beleriand, the Coming of Men, and the Tale of Beren and Lúthien' (date: 2026-05-17, publish-before: 2026-05-16)
 Processing: 2026-05-18-lotr-3-children-of-hurin.md
-  SKIPPED: Future post 'The Curse That Would Not Break: Túrin Turambar, Glaurung the Dragon, and the Children of Húrin' (date: 2026-05-18, publish-before: 2026-05-14)
+  SKIPPED: Future post 'The Curse That Would Not Break: Túrin Turambar, Glaurung the Dragon, and the Children of Húrin' (date: 2026-05-18, publish-before: 2026-05-16)
 Processing: 2026-05-19-lotr-4-gondolin-earendil-war-of-wrath.md
-  SKIPPED: Future post 'The Last Light of the Elder Days: The Fall of Gondolin, the Voyage of Eärendil, and the War of Wrath' (date: 2026-05-19, publish-before: 2026-05-14)
+  SKIPPED: Future post 'The Last Light of the Elder Days: The Fall of Gondolin, the Voyage of Eärendil, and the War of Wrath' (date: 2026-05-19, publish-before: 2026-05-16)
 Processing: 2026-05-20-lotr-5-second-age-numenor-rings-of-power.md
-  SKIPPED: Future post 'The Long Seduction: Númenor, the Rings of Power, and the Downfall of the Second Age' (date: 2026-05-20, publish-before: 2026-05-14)
+  SKIPPED: Future post 'The Long Seduction: Númenor, the Rings of Power, and the Downfall of the Second Age' (date: 2026-05-20, publish-before: 2026-05-16)
 Processing: 2026-05-21-lotr-6-third-age-hobbit-fellowship.md
-  SKIPPED: Future post 'The Long Watch and the Unexpected Journey: The Third Age from Isildur's Fall to the Breaking of the Fellowship' (date: 2026-05-21, publish-before: 2026-05-14)
+  SKIPPED: Future post 'The Long Watch and the Unexpected Journey: The Third Age from Isildur's Fall to the Breaking of the Fellowship' (date: 2026-05-21, publish-before: 2026-05-16)
 Processing: 2026-05-22-lotr-7-war-of-the-ring-crack-of-doom-grey-havens.md
-  SKIPPED: Future post 'The War of the Ring: From the Breaking of the Fellowship to the Grey Havens — The Complete Account of Middle-earth's Last Great Conflict' (date: 2026-05-22, publish-before: 2026-05-14)
+  SKIPPED: Future post 'The War of the Ring: From the Breaking of the Fellowship to the Grey Havens — The Complete Account of Middle-earth's Last Great Conflict' (date: 2026-05-22, publish-before: 2026-05-16)
 Processing: 2026-05-23-lotr-8-unfinished-tapestry-retcons-open-questions.md
-  SKIPPED: Future post 'The Unfinished Tapestry: Tolkien's Revisions, Contradictions, Open Questions, and the Mythology That Never Stopped Growing' (date: 2026-05-23, publish-before: 2026-05-14)
+  SKIPPED: Future post 'The Unfinished Tapestry: Tolkien's Revisions, Contradictions, Open Questions, and the Mythology That Never Stopped Growing' (date: 2026-05-23, publish-before: 2026-05-16)
 Processing: 2026-05-24-lotr-9-languages-of-middle-earth.md
-  SKIPPED: Future post 'The Languages of Middle-earth: A Complete Guide to Quenya, Sindarin, Khuzdul, and the Tongues of Arda' (date: 2026-05-24, publish-before: 2026-05-14)
+  SKIPPED: Future post 'The Languages of Middle-earth: A Complete Guide to Quenya, Sindarin, Khuzdul, and the Tongues of Arda' (date: 2026-05-24, publish-before: 2026-05-16)
 Processing: 2026-05-25-lotr-10-real-world-sources-tolkien-life.md
-  SKIPPED: Future post 'The Roots of the Tree: Tolkien's Real-World Sources, Influences, and the Life That Made the Mythology' (date: 2026-05-25, publish-before: 2026-05-14)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (8 posts, 0 drafts skipped, 11 future posts skipped)
+  SKIPPED: Future post 'The Roots of the Tree: Tolkien's Real-World Sources, Influences, and the Life That Made the Mythology' (date: 2026-05-25, publish-before: 2026-05-16)
+Processing: 2026-05-26-foundations-1-what-is-a-foundation.md
+  SKIPPED: Future post 'The Foundation Beneath Everything: What a Foundation Actually Is, Why It Exists, and How Buildings Have Built Them for 12,000 Years' (date: 2026-05-26, publish-before: 2026-05-16)
+Processing: 2026-05-27-foundations-2-soil-and-site.md
+  SKIPPED: Future post 'What Lies Beneath: Soil Science, Site Evaluation, and Geotechnical Investigation for Every Builder and Buyer' (date: 2026-05-27, publish-before: 2026-05-16)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (10 posts, 0 drafts skipped, 11 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
   ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
 [xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.34]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.51]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.77]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.47]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.71]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
   ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.6s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.5s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
   ObserverMagazine.Web.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
-[xUnit.net 00:00:00.16]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.33]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.48]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.97]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
-  ObserverMagazine.Web.Tests test net10.0 succeeded (1.5s)
+[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.31]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.46]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.94]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.1s
-Build succeeded in 6.2s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.0s
+Build succeeded in 6.0s
 
-real	0m6.370s
-user	0m3.389s
-sys	0m0.430s
+real	0m6.182s
+user	0m3.284s
+sys	0m0.443s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -128,9 +132,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.605s
-user	0m1.605s
-sys	0m0.309s
+real	0m1.569s
+user	0m1.547s
+sys	0m0.334s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -143,16 +147,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m2.771s
-user	0m2.177s
-sys	0m0.431s
+real	0m2.742s
+user	0m2.199s
+sys	0m0.433s
 Export complete: docs/llm/dump.txt
-  Total files: 99
-  Blog posts (front matter only): 19
+  Total files: 101
+  Blog posts (front matter only): 21
   Full content files: 78
   Binary files skipped: 2
 
-real	0m0.111s
-user	0m0.034s
-sys	0m0.060s
+real	0m0.117s
+user	0m0.050s
+sys	0m0.046s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 

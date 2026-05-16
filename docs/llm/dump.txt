@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-14 15:00:23 UTC
+DATE: 2026-05-16 16:03:32 UTC
 ===============================================================================
 
 ===============================================================================
@@ -32,7 +32,9 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-05-22-lotr-7-war-of-the-ring-crack-of-doom-grey-havens.md
 │       ├── 2026-05-23-lotr-8-unfinished-tapestry-retcons-open-questions.md
 │       ├── 2026-05-24-lotr-9-languages-of-middle-earth.md
-│       └── 2026-05-25-lotr-10-real-world-sources-tolkien-life.md
+│       ├── 2026-05-25-lotr-10-real-world-sources-tolkien-life.md
+│       ├── 2026-05-26-foundations-1-what-is-a-foundation.md
+│       └── 2026-05-27-foundations-2-soil-and-site.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -143,7 +145,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 106 files
+29 directories, 108 files
 
 
 -------------------------------------------------------------------------------
@@ -645,6 +647,47 @@ tags:
   - tolkien-scholarship
   - deep-dive
 series: "The Complete Chronological History of Middle-earth"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-26-foundations-1-what-is-a-foundation.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Foundation Beneath Everything: What a Foundation Actually Is, Why It Exists, and How Buildings Have Built Them for 12,000 Years"
+date: 2026-05-26
+author: mercifulpotato-team
+summary: "The first installment of our complete guide to home foundations: what a foundation actually does, the forces it resists, the physics of soil bearing, the history of foundation engineering from ancient Mesopotamia to reinforced concrete, and the vocabulary every homeowner, buyer, and builder needs before the first shovel goes in the ground."
+tags:
+  - foundations
+  - home-construction
+  - structural-engineering
+  - civil-engineering
+  - deep-dive
+  - real-estate
+  - renovation
+series: "The Foundation Beneath Everything"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-05-27-foundations-2-soil-and-site.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "What Lies Beneath: Soil Science, Site Evaluation, and Geotechnical Investigation for Every Builder and Buyer"
+date: 2026-05-27
+author: mercifulpotato-team
+summary: "The second installment of our complete foundations guide: the science of soil — granular versus cohesive, bearing capacity versus settlement, SPT testing versus CPT testing — and a step-by-step guide to what a proper geotechnical investigation looks like, what the report means, and how to use it to make foundation decisions."
+tags:
+  - foundations
+  - soil-mechanics
+  - geotechnical-engineering
+  - site-evaluation
+  - home-construction
+  - deep-dive
+  - real-estate
+series: "The Foundation Beneath Everything"
 ---
 
 
@@ -19817,8 +19860,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 99
-  Blog posts (front matter only): 19
+Total Files Exported: 101
+  Blog posts (front matter only): 21
   Full content files: 78
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
