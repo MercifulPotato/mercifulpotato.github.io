@@ -56098,3 +56098,103 @@ Now I'll produce the full markdown files. Starting with Post 1:
 
 
 
+
+3:47 PM
+
+Created 6 files
+Created 6 files
+Posts 3–8 are all freshly written and waiting for you — let me pick up right where I left off with posts 9 and 10.
+
+
+Created 2 files, read a file
+Created 2 files, read a file
+
+Foundation series Post 9 - Dallas-Fort Worth expansive clay
+2026-06-03-foundations-9-buying-or-building-dfw.md
+
+Foundation series Post 10 - repair, renovation, and restoration
+2026-06-04-foundations-10-repair-renovation-restoration.md
+
+Presented 8 files
+Done
+All eight posts are done. Here's a summary of what's been delivered:
+
+Posts 3–10, ready to drop into content/blog/:
+
+#	Date	File	Topic
+3	2026-05-28	foundations-3-slab-crawl-basement	Slab types, crawl space (vented vs. encapsulated), full basement construction, waterproofing, choosing between them
+4	2026-05-29	foundations-4-piers-piles-grade-beams	Load transfer physics, drilled piers, driven piles, helical piles, micropiles, grade beams — with worked capacity calculations
+5	2026-05-30	foundations-5-frost-drainage-waterproofing	Frost heave physics, frost depth by region, FPSF, drainage hierarchy, dampproofing vs. waterproofing (all 4 system types), vapor control
+6	2026-05-31	foundations-6-sheds-adus-sunrooms-small	Newport News case study: local geology, frost depth, permits (nnva.gov, 256 sq ft threshold), sheds, sunrooms, ADUs, garage slabs, termites, flood zones
+7	2026-06-01	foundations-7-multifamily-apartments-commercial	Scale effects, IBC vs. IRC, mat foundations, pile groups, shoring systems, top-down construction, podium structures, three full case studies
+8	2026-06-02	foundations-8-eps-sandwich-panels-kathmandu	Kathmandu geology, Kalimati Clay, NBC 105:2020 seismic code, EPS/PUF panel mass advantages, three foundation scenarios A/B/C, Bhaktapur case example
+9	2026-06-03	foundations-9-buying-or-building-dfw	Smectite clay, active zone, PTI DC80.3 post-tensioned slabs, DFW drilled piers, buyer's checklist, elevation survey interpretation, foundation maintenance
+10	2026-06-04	foundations-10-repair-renovation-restoration	Diagnosis, underpinning methods, mudjacking, polyurethane foam, basement wall repair, when to demolish vs. repair, contractor evaluation, post-repair monitoring
+
+2026 05 28 foundations 3 slab crawl basement
+Document · MD 
+
+2026 05 29 foundations 4 piers piles grade beams
+Document · MD 
+
+2026 05 30 foundations 5 frost drainage waterproofing
+Document · MD 
+
+2026 05 31 foundations 6 sheds adus sunrooms small
+Document · MD 
+
+2026 06 01 foundations 7 multifamily apartments commercial
+Document · MD 
+
+2026 06 02 foundations 8 eps sandwich panels kathmandu
+Document · MD 
+
+2026 06 03 foundations 9 buying or building dfw
+Document · MD 
+
+2026 06 04 foundations 10 repair renovation restoration
+Document · MD 
+
+58
+23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
