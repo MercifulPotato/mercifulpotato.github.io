@@ -56451,3 +56451,35 @@ Ready to write Post 2 (the 12-month calendar) whenever you say go — just reply
 
 70
 24
+
+I'll generate all remaining 9 posts. Let me do them efficiently.
+
+
+Created 7 files
+Created 7 files
+
+Post 2 - 12-month homeowner maintenance calendar
+2026-06-06-homeowner-2-the-homeowner-calendar.md
+
+Post 3 - HVAC, heat pumps, water heaters, solar, batteries
+2026-06-07-homeowner-3-hvac-water-heater-energy.md
+
+Post 4 - cleaning appliances nobody cleans
+2026-06-08-homeowner-4-cleaning-appliances-hidden.md
+
+Post 5 - lawn landscaping water
+2026-06-09-homeowner-5-lawn-landscaping-water.md
+
+Post 6 - plumbing electrical safety
+2026-06-10-homeowner-6-plumbing-electrical-safety.md
+
+Post 7 - roof exterior windows water
+2026-06-11-homeowner-7-roof-exterior-windows.md
+
+Post 8 - finances mortgage taxes insurance equity
+2026-06-12-homeowner-8-finances-mortgage-taxes.md
+Claude couldn't finish this response. Try again in a moment.
+
+100
+26
+
