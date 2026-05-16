@@ -55944,3 +55944,107 @@ which is why this new repo
 at https://mercifulpotato.github.io 
 only uses 24k mp3 
 I am hoping this will give us a longer runway before we become refugees again
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The file was truncated. Let me read the key middle sections.Now I have a thorough understanding of the project. The user is asking me to **plan** a blog series on home construction / foundations. They've given me a detailed prompt document (in the conversation's attached document) asking me to plan a series and then produce the markdown files. The request is to plan the series first (concise plan for Claude Sonnet to execute efficiently), then produce the actual markdown files.
+
+Let me note:
+- Today is **2026-05-16** (but the prompt says start date 2026-05-26)
+- The last LotR post is 2026-05-25, so 2026-05-26 is the next available slot
+- The series should be about foundations/home construction, comprehensive, 100k+ word target
+- File naming: `content/blog/YYYY-MM-DD-slug.md`
+- Author: `mercifulpotato-team`
+- The user wants me to: (1) write the plan, then (2) produce the FULL markdown files
+
+Given the 100k+ word target and "seven days but plan more if needed," I'll plan 10 posts (one per day, 2026-05-26 through 2026-06-04), each targeting ~10,000-15,000 words, for a total of ~100k-150k words. Then I'll produce each file.
+
+Let me plan first, then produce the files. Given how massive this is, I'll produce them one at a time as full markdown files.
+
+---
+
+## Series Plan: *The Foundation Beneath Everything* — Merciful Potato Magazine
+
+**Series title:** "The Foundation Beneath Everything: A Complete Guide to Home Foundations for Every Structure, Climate, and Budget"
+
+**10 posts, 2026-05-26 through 2026-06-04**
+
+| Day | Date | File | Title Summary |
+|-----|------|------|---------------|
+| 1 | 2026-05-26 | `2026-05-26-foundations-1-what-is-a-foundation.md` | What a foundation actually does — loads, forces, soil, frost, history |
+| 2 | 2026-05-27 | `2026-05-27-foundations-2-soil-and-site.md` | Soil science, site evaluation, geotechnical testing, bearing capacity |
+| 3 | 2026-05-28 | `2026-05-28-foundations-3-types-slab-crawl-basement.md` | Slab-on-grade, crawl space, full basement — when, why, how |
+| 4 | 2026-05-29 | `2026-05-29-foundations-4-piers-piles-grade-beams.md` | Piers, piles, helical, grade beams — light structures to skyscrapers |
+| 5 | 2026-05-30 | `2026-05-30-foundations-5-frost-drainage-waterproofing.md` | Frost depth, drainage, waterproofing, vapor barriers, insulation |
+| 6 | 2026-05-31 | `2026-05-31-foundations-6-sheds-adus-sunrooms-small.md` | Small structures: sheds, ADUs, sunrooms, Newport News case study |
+| 7 | 2026-06-01 | `2026-06-01-foundations-7-multifamily-apartments-commercial.md` | Multi-family, apartments, mixed-use, mat/raft, deep foundations |
+| 8 | 2026-06-02 | `2026-06-02-foundations-8-eps-sandwich-panels-kathmandu.md` | EPS/PUF panels, seismic zones, Kathmandu Nepal case study |
+| 9 | 2026-06-03 | `2026-06-03-foundations-9-buying-or-building-dfw.md` | DFW expansive clay, buying/building questions, inspections, repairs |
+| 10 | 2026-06-04 | `2026-06-04-foundations-10-repair-renovation-restoration.md` | Foundation repair: underpinning, piering, mudjacking, waterproofing |
+
+Now I'll produce the full markdown files. Starting with Post 1:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
