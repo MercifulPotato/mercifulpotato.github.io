@@ -1,30 +1,30 @@
-kushal@fedora:~/src/dotnet/MyImapDownloader$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-164M	.
+kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+167M	.
 
-real	0m0.020s
-user	0m0.000s
-sys	0m0.008s
+real	0m0.018s
+user	0m0.001s
+sys	0m0.007s
 
-real	0m7.624s
-user	0m11.701s
-sys	0m1.065s
+real	0m8.226s
+user	0m12.577s
+sys	0m1.064s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.752s
-user	0m0.793s
-sys	0m0.154s
+real	0m0.782s
+user	0m0.799s
+sys	0m0.182s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-05-16 16:03:22 UTC
+Publish before:    2026-05-16 20:24:55 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
   Loaded author: mercifulpotato-team (Merciful Potato Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
-Found 21 markdown files
+Found 29 markdown files
 Processing: 2026-03-22-good-morning.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/good-morning.html (~1 min read)
 Processing: 2026-04-14-happy-new-year.md
@@ -67,32 +67,48 @@ Processing: 2026-05-26-foundations-1-what-is-a-foundation.md
   SKIPPED: Future post 'The Foundation Beneath Everything: What a Foundation Actually Is, Why It Exists, and How Buildings Have Built Them for 12,000 Years' (date: 2026-05-26, publish-before: 2026-05-16)
 Processing: 2026-05-27-foundations-2-soil-and-site.md
   SKIPPED: Future post 'What Lies Beneath: Soil Science, Site Evaluation, and Geotechnical Investigation for Every Builder and Buyer' (date: 2026-05-27, publish-before: 2026-05-16)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (10 posts, 0 drafts skipped, 11 future posts skipped)
+Processing: 2026-05-28-foundations-3-slab-crawl-basement.md
+  SKIPPED: Future post 'Slab, Crawl Space, or Basement: The Three Great Choices of Residential Foundation Design' (date: 2026-05-28, publish-before: 2026-05-16)
+Processing: 2026-05-29-foundations-4-piers-piles-grade-beams.md
+  SKIPPED: Future post 'Going Deep: Piers, Piles, Helical Anchors, and Grade Beams — When Shallow Foundations Are Not Enough' (date: 2026-05-29, publish-before: 2026-05-16)
+Processing: 2026-05-30-foundations-5-frost-drainage-waterproofing.md
+  SKIPPED: Future post 'Ice, Water, and Time: Frost Protection, Drainage Systems, and Waterproofing for Every Foundation Type' (date: 2026-05-30, publish-before: 2026-05-16)
+Processing: 2026-05-31-foundations-6-sheds-adus-sunrooms-small.md
+  SKIPPED: Future post 'Small Structures, Real Foundations: Sheds, ADUs, Sunrooms, and Garages in Newport News and the Hampton Roads Region' (date: 2026-05-31, publish-before: 2026-05-16)
+Processing: 2026-06-01-foundations-7-multifamily-apartments-commercial.md
+  SKIPPED: Future post 'Foundations at Scale: Multi-Family, Apartment, and Mixed-Use Building Foundation Engineering' (date: 2026-06-01, publish-before: 2026-05-16)
+Processing: 2026-06-02-foundations-8-eps-sandwich-panels-kathmandu.md
+  SKIPPED: Future post 'Building on Shaking Ground: EPS and PUF Sandwich Panel Construction, Seismic Foundations, and the Kathmandu Case Study' (date: 2026-06-02, publish-before: 2026-05-16)
+Processing: 2026-06-03-foundations-9-buying-or-building-dfw.md
+  SKIPPED: Future post 'Buying or Building in DFW: Everything You Need to Know About Expansive Clay and Foundations in Dallas-Fort Worth' (date: 2026-06-03, publish-before: 2026-05-16)
+Processing: 2026-06-04-foundations-10-repair-renovation-restoration.md
+  SKIPPED: Future post 'When Foundations Fail: Repair, Renovation, and Restoration of Distressed Foundation Systems' (date: 2026-06-04, publish-before: 2026-05-16)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (10 posts, 0 drafts skipped, 19 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
-Restore complete (0.5s)
+Restore complete (0.6s)
   ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
-[xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.47]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.71]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.33]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.50]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.75]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
   ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.5s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.7s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
   ObserverMagazine.Web.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
 [xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.31]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.46]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.94]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
-  ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
+[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.48]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:01.00]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.6s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.0s
-Build succeeded in 6.0s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.3s
+Build succeeded in 6.5s
 
-real	0m6.182s
-user	0m3.284s
-sys	0m0.443s
+real	0m6.667s
+user	0m3.602s
+sys	0m0.430s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -132,9 +148,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.569s
-user	0m1.547s
-sys	0m0.334s
+real	0m1.674s
+user	0m1.647s
+sys	0m0.354s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -147,16 +163,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m2.742s
-user	0m2.199s
-sys	0m0.433s
+real	0m2.821s
+user	0m2.155s
+sys	0m0.462s
 Export complete: docs/llm/dump.txt
-  Total files: 101
-  Blog posts (front matter only): 21
+  Total files: 109
+  Blog posts (front matter only): 29
   Full content files: 78
   Binary files skipped: 2
 
-real	0m0.117s
-user	0m0.050s
-sys	0m0.046s
+real	0m0.114s
+user	0m0.048s
+sys	0m0.052s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
