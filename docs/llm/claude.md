@@ -56483,3 +56483,118 @@ Claude couldn't finish this response. Try again in a moment.
 100
 26
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00
+00
+
+please continue and generate posts 9 and 10
+
+Both files are attached. Here's the complete picture of everything generated across this session:
+
+---
+
+## All 10 Posts — Complete
+
+| # | File | Key Content |
+|---|------|-------------|
+| 1 | `2026-06-05-homeowner-1-welcome-to-home-ownership.md` | *(generated in prior session)* |
+| 2 | `2026-06-06-homeowner-2-the-homeowner-calendar.md` | *(generated this session)* |
+| 3 | `2026-06-07-homeowner-3-hvac-water-heater-energy.md` | *(generated this session)* |
+| 4 | `2026-06-08-homeowner-4-cleaning-appliances-hidden.md` | *(generated this session)* |
+| 5 | `2026-06-09-homeowner-5-lawn-landscaping-water.md` | *(generated this session)* |
+| 6 | `2026-06-10-homeowner-6-plumbing-electrical-safety.md` | *(generated this session)* |
+| 7 | `2026-06-11-homeowner-7-roof-exterior-windows.md` | *(generated this session)* |
+| 8 | `2026-06-12-homeowner-8-finances-mortgage-taxes.md` | *(generated this session)* |
+| 9 | `2026-06-13-homeowner-9-renovations-upgrades-roi.md` | Contractor vetting, ROI tables, permits, DIY vs. hire, project guidance |
+| 10 | `2026-06-14-homeowner-10-case-studies-stories.md` | 10 detailed case studies + master checklist + series wrap-up |
+
+**Post 9** covers: which projects return money vs. drain it (Remodeling Cost vs. Value data), the pre-renovation checklist, the full contractor vetting process (license verification, insurance, references, payment schedules, contracts, mechanic's liens), why permits are not optional and what happens when you skip them, and specific guidance on kitchens, bathrooms, and basement finishing.
+
+**Post 10** covers: ten case studies including a seized furnace in January, gutters that flooded a basement, a contractor who vanished with $9,250, a toilet nobody fixed for two years, an unpermitted addition that derailed a sale, a dead tree limb through a roof, a solar install that actually worked, and "Jennifer" — a five-year arc of a first-time owner who did everything right and sold with essentially no negotiation points. Closes with the master quick-reference checklist and final thoughts.
+
+All 10 posts go in `content/blog/` and follow the existing front matter schema exactly. Post 10 has `featured: true` as the series capstone, matching the pattern of the first post in each prior series.
+
+19
+02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
