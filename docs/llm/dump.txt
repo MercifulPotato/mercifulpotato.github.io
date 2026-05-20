@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-16 21:26:40 UTC
+DATE: 2026-05-20 20:49:17 UTC
 ===============================================================================
 
 ===============================================================================
@@ -50,7 +50,19 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-06-09-homeowner-5-lawn-landscaping-water.md
 │       ├── 2026-06-10-homeowner-6-plumbing-electrical-safety.md
 │       ├── 2026-06-11-homeowner-7-roof-exterior-windows.md
-│       └── 2026-06-12-homeowner-8-finances-mortgage-taxes.md
+│       ├── 2026-06-12-homeowner-8-finances-mortgage-taxes.md
+│       ├── 2026-06-13-homeowner-9-renovations-upgrades-roi.md
+│       ├── 2026-06-14-homeowner-10-case-studies-stories.md
+│       ├── 2026-06-15-statistics-1-foundations-of-uncertainty.md
+│       ├── 2026-06-16-statistics-2-shapes-of-data.md
+│       ├── 2026-06-17-statistics-3-machinery-of-proof.md
+│       ├── 2026-06-18-statistics-4-bayesian-vs-frequentist.md
+│       ├── 2026-06-19-statistics-5-statistical-self-defense.md
+│       ├── 2026-06-20-statistics-6-applied-statistics.md
+│       ├── 2026-06-21-statistics-7-reading-scientific-studies.md
+│       ├── 2026-06-22-statistics-8-law-and-policy.md
+│       ├── 2026-06-23-statistics-9-standard-deviation.md
+│       └── 2026-06-24-statistics-10-capstone.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -161,7 +173,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 124 files
+29 directories, 136 files
 
 
 -------------------------------------------------------------------------------
@@ -1047,6 +1059,250 @@ tags:
   - financial-planning
   - deep-dive
 series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-13-homeowner-9-renovations-upgrades-roi.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Upgrades That Pay and Upgrades That Don't: Renovations, ROI, Contractors, and Permits"
+date: 2026-06-13
+author: mercifulpotato-team
+summary: "A complete guide to home renovation decision-making — which projects return money at resale, which ones are money pits, how to find and manage contractors without getting burned, how permits work and why skipping them is a serious mistake, and how to plan a major renovation without losing your mind or your marriage."
+tags:
+  - home-ownership
+  - home-renovation
+  - home-improvement
+  - contractors
+  - permits
+  - return-on-investment
+  - kitchen-remodel
+  - bathroom-remodel
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-14-homeowner-10-case-studies-stories.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Real Stories, Real Lessons: Case Studies from the First Five Years of Home Ownership"
+date: 2026-06-14
+author: mercifulpotato-team
+summary: "The final installment of our homeowner survival guide — ten detailed case studies of real first-time homeowner situations, the mistakes made, the lessons learned, and what each story teaches about systems, money, contractors, maintenance, and the emotional reality of owning a home. Plus a complete series wrap-up and master reference checklist."
+tags:
+  - home-ownership
+  - case-studies
+  - first-time-buyer
+  - home-maintenance
+  - home-repair
+  - personal-finance
+  - lessons-learned
+  - deep-dive
+series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-15-statistics-1-foundations-of-uncertainty.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Numbers Are Not Magic: A Complete Beginner's Guide to Probability and Uncertainty"
+date: 2026-06-15
+author: mercifulpotato-team
+summary: "The first installment of our ten-part series on probability and statistics in plain English: what probability actually means, why uncertainty is not the enemy, and how to build an intuition for chance from scratch — no formulas, no Greek letters, no prior education required."
+tags:
+  - statistics
+  - probability
+  - plain-english
+  - data-literacy
+  - beginners
+  - decision-making
+series: "Probability and Statistics in Plain English"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-16-statistics-2-shapes-of-data.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Shape of a Crowd: Distributions, Bell Curves, and Why Your Average Is Lying to You"
+date: 2026-06-16
+author: mercifulpotato-team
+summary: "The second installment of our plain-English statistics series: what distributions are and why they matter, the normal distribution explained through height and test scores, skewed distributions and the gap between averages and medians, and the bimodal distribution as evidence of hidden groups within a population."
+tags:
+  - statistics
+  - distributions
+  - normal-distribution
+  - plain-english
+  - data-literacy
+  - decision-making
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-17-statistics-3-machinery-of-proof.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Machinery of Proof: Null Hypotheses, P-Values, and the Science of Not Being Wrong"
+date: 2026-06-17
+author: mercifulpotato-team
+summary: "The third installment of our plain-English statistics series: the null hypothesis explained without jargon, what p-values actually mean and why they are so widely misunderstood, statistical significance versus practical significance, and how the replication crisis revealed that even peer-reviewed science can be systematically broken."
+tags:
+  - statistics
+  - hypothesis-testing
+  - p-values
+  - statistical-significance
+  - plain-english
+  - data-literacy
+  - scientific-method
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-18-statistics-4-bayesian-vs-frequentist.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Great Divide: Bayesian vs. Frequentist Thinking and Why It Changes Everything"
+date: 2026-06-18
+author: mercifulpotato-team
+summary: "The fourth installment of our plain-English statistics series: the philosophical war between Bayesian and frequentist statistics explained through everyday decisions, how prior beliefs legitimately shape conclusions, why the two approaches give different answers to the same question, and when each framework is the right tool for the job."
+tags:
+  - statistics
+  - bayesian
+  - frequentist
+  - probability
+  - plain-english
+  - data-literacy
+  - decision-making
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-19-statistics-5-statistical-self-defense.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Statistical Self-Defense: How to Identify, Dissect, and Destroy Bad-Faith Arguments Hiding Behind Numbers"
+date: 2026-06-19
+author: mercifulpotato-team
+summary: "The fifth installment of our plain-English statistics series: a comprehensive catalog of the specific techniques used to mislead with statistics — cherry-picking, misleading graphs, correlation confusion, survivorship bias, Goodhart's Law, and more — with the exact questions you can ask to expose every one of them."
+tags:
+  - statistics
+  - statistical-manipulation
+  - critical-thinking
+  - plain-english
+  - data-literacy
+  - misinformation
+  - self-defense
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-20-statistics-6-applied-statistics.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Applied Statistics for Decision Makers: A Practical Guide for Voters, Developers, Accountants, and Leaders"
+date: 2026-06-20
+author: mercifulpotato-team
+summary: "The sixth installment of our plain-English statistics series: concrete, role-specific applications of statistical thinking for informed voters evaluating policy evidence, software developers designing systems and running tests, accountants and auditors detecting anomalies, and executive leaders making high-stakes decisions under uncertainty."
+tags:
+  - statistics
+  - applied-statistics
+  - decision-making
+  - plain-english
+  - data-literacy
+  - software-engineering
+  - auditing
+  - leadership
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-21-statistics-7-reading-scientific-studies.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "How to Read a Scientific Study Without Being Fooled: A Complete Anatomy of Research Evidence"
+date: 2026-06-21
+author: mercifulpotato-team
+summary: "The seventh installment of our plain-English statistics series: a complete guide to reading and evaluating scientific papers — study design types and their respective strengths and limitations, how to interpret methods sections, what makes a control group valid, confounding and how to detect it, and a section-by-section walk-through of a real medical study."
+tags:
+  - statistics
+  - research-methods
+  - study-design
+  - plain-english
+  - data-literacy
+  - critical-thinking
+  - scientific-method
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-22-statistics-8-law-and-policy.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Numbers in the Courtroom and the Capitol: How Statistics Are Used and Abused in Law and Policy"
+date: 2026-06-22
+author: mercifulpotato-team
+summary: "The eighth installment of our plain-English statistics series: probabilistic evidence in criminal and civil trials, how policy evaluation works and what evidence is sufficient to change policy, the statistical basis for disparate-impact analysis in discrimination law, and the ways statistical arguments are weaponized to obstruct change."
+tags:
+  - statistics
+  - law
+  - policy
+  - evidence
+  - plain-english
+  - data-literacy
+  - discrimination
+  - decision-making
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-23-statistics-9-standard-deviation.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Spread of Things: Standard Deviation, Variance, and Why Knowing the Average Is Never Enough"
+date: 2026-06-23
+author: mercifulpotato-team
+summary: "The ninth installment of our plain-English statistics series: standard deviation and variance explained from first principles without any formulas — what spread means, why it matters more than the average in dozens of practical situations, and how to use the idea of standard deviation to reason about probability in everyday decisions."
+tags:
+  - statistics
+  - standard-deviation
+  - variance
+  - plain-english
+  - data-literacy
+  - probability
+  - distributions
+series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-24-statistics-10-capstone.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Everything You Now Know: A Complete Field Guide to Statistical Reasoning"
+date: 2026-06-24
+author: mercifulpotato-team
+featured: true
+summary: "The capstone of our ten-part series brings together every concept, every warning, and every tool into one definitive reference — a complete field guide to thinking statistically, defending against manipulation, and demanding better evidence in every corner of your life."
+tags:
+  - statistics
+  - plain-english
+  - data-literacy
+  - critical-thinking
+  - capstone
+series: "Probability and Statistics in Plain English"
 ---
 
 
@@ -20219,8 +20475,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 117
-  Blog posts (front matter only): 37
+Total Files Exported: 129
+  Blog posts (front matter only): 49
   Full content files: 78
   Binary files skipped: 2
 Output File: docs/llm/dump.txt
