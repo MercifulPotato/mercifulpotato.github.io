@@ -56598,3 +56598,89 @@ All 10 posts go in `content/blog/` and follow the existing front matter schema e
 
 
 
+Plan a series of ten posts long, comprehensive blog article to be published over ten days for Merciful Potato Magazine on the following topic:
+
+**Topic**:
+Probability and statistics in plain english
+
+**Key areas to cover**:
+
+* **AREA 1 — Foundations of Uncertainty:** Getting started from scratch, assuming absolutely zero prior statistical or mathematical knowledge. Defining probability without formulas.
+* **AREA 2 — The Shapes of Data:** Visualizing distributions (Normal, Bimodal, Skewed) using plain-English analogies instead of Greek letters or mathematical equations.
+* **AREA 3 — The Mechanisms of Proof:** Demystifying the Null Hypothesis, Statistical Significance, $p$-values, and Significance Levels through real-world case studies.
+* **AREA 4 — The Great Divide:** Bayesian vs. Frequentist thinking explained via practical, day-to-day decision-making scenarios rather than academic theory.
+* **AREA 5 — Statistical Self-Defense:** How to identify, dissect, and shred bad-faith arguments, malicious data framing, and political/corporate manipulation hiding behind statistics.
+* **AREA 6 — Applied Statistics for Decision Makers:** Tailored application guide for informed voters, software developers, accountants, auditors, drivers, and executive leaders.
+
+something accessible without any greek letters, any mathematical formulas, just plain english. the idea is to have claude write a series of ten blog posts about this broad topic so the readers who we assume have no prior education or training or have forgotten everything is equipped to handle conversations like normal distribution, statistical significance, null hypothesis, significance level, bimodal distribution, normal distribution, etc 
+simple enough to be approachable, concise enough to be readable, comprehensive enough to cover all the topics 
+at the end of the ten part series, the reader should be able to ask questions and shred apart bad faith proposals that try to hide behind statistics. we want to cover everything and anything that an informed voter, software developer, accountant, auditor, driver, or decision maker needs to know 
+
+**Publish date**: 2026-06-15
+**Author**: mercifulpotato-team
+
+## Writing requirements
+
+Follow these rules exactly. They are non-negotiable:
+
+### Front matter format
+
+The file MUST start with YAML front matter in this exact schema:
+
+```yaml
+---
+title: "[A descriptive, compelling title — can include a subtitle after a colon]"
+date: 2026-06-15
+author: mercifulpotato-team
+summary: "[One to two sentences for the blog index and RSS feed. Be specific about what the article covers.]"
+tags:
+  - [tag1]
+  - [tag2]
+  - [tag3-etc]
+---
+
+```
+
+CRITICAL front matter rules:
+
+* `author` MUST be `mercifulpotato-team` (hyphenated ID), NEVER `Observer Team`.
+* If the article is NOT featured, OMIT the `featured` line entirely. Do NOT write `featured: false`.
+* If the article IS featured, include `featured: true`.
+* Do NOT include `draft: true`.
+* Tags should be lowercase, hyphenated (e.g., `statistics`, `plain-english`, `data-literacy`).
+* Any string field (like `summary:`) containing a colon followed by a space must be wrapped in double quotes.
+
+### File naming
+
+The output file should be saved as: `content/blog/[YYYY-MM-DD]-[slug].md`
+where `[slug]` is a short, hyphenated, lowercase description of the article.
+
+### Writing style and structure
+
+1. **Be exhaustively detailed.** This is an ultra-long-form technical explainer. Do not summarize, truncate, or compress information. Do not use shortcuts like "and so on" or "etc." Cover every nuance. If you think a concept is explained thoroughly enough, expand it further. Your target is absolute comprehensiveness, pushing for maximum word count depth (targeting massive long-form output across the series execution).
+2. **No Greek letters or math formulas.** Every single concept (including standard deviation, null hypothesis, and variance) must be explained using plain, accessible English prose, intuitive logic, concrete analogies, and conceptual breakdowns.
+3. **Be patient.** Do not tire. Do not rush the ending. Every section across the planned series must be treated with equal depth, meticulous care, and robust prose.
+4. **Target audience.** General professionals and civic decision-makers: informed voters, software developers, accountants, auditors, drivers, and everyday leaders. Assume they have zero prior statistical education or have completely forgotten what they learned. Build everything up meticulously from first principles.
+5. **Code and practical examples are mandatory.** Even without formulas, data structural examples must be present where relevant. Include clean markdown tables, conceptual data arrays, mock code logic blocks (Python, C#, or pseudo-logic scripts mapping out a statistical rule), or JSON representations of data streams where helpful for software developers/auditors.
+6. **Use concrete stories and case studies.** Ground every concept in reality. Use comprehensive, fact-based anecdotes ("imagine assessing a flawed A/B test deployment on a Thursday afternoon" or "analyzing voter sampling bias in a local election"). Avoid vague, abstract descriptions or fairy tales.
+7. **Structure with numbered parts.** Organize the article execution into clearly titled parts (Part 1, Part 2, etc.) using `##` headers, with `###` for detailed subsections.
+8. **Cite your sources.** Verify and clearly reference historical origins, famous paradoxes, real-world corporate data failures, or published studies cited throughout.
+9. **Arm the reader for bad-faith defense.** Explicitly include "How to spot the lie" breakdowns for every statistical tool introduced, showing exactly how bad actors manipulate boundaries to deceive the public.
+10. Do not make links clickable within code blocks to ensure seamless copy-pasting.
+
+### Delivery format
+
+Return the complete plan and execution outline as a single markdown artifact. The artifact should display the precise schedule from the start date (2026-06-05) forward, organizing the ten full posts structurally over consecutive days to maximize logical flow and complete coverage. Ensure the framework is fully prepared for automated execution via GitHub actions.
+
+I've now read the full dump.txt. I have a complete picture of the project's conventions, front matter schema, series patterns, and the fact that the next publication window opens at 2026-06-15. Now I'll generate the 10-part series plan and all 10 articles. The series opener (post 1) and capstone (post 10) get `featured: true`. Posts run 2026-06-15 through 2026-06-24. Let me write all 10 files.
+
+I've now read the full dump.txt. I have a complete picture of the project's conventions, front matter schema, series patterns, and the fact that the next publication window opens at 2026-06-15. Now I'll generate the 10-part series plan and all 10 articles. The series opener (post 1) and capstone (post 10) get featured: true. Posts run 2026-06-15 through 2026-06-24. Let me write all 10 files.Created 10 files, read a fileCreated 10 files, read a fileAll ten posts are complete. The capstone (Post 10) delivers:
+
+A master glossary — every concept from the series in alphabetical order, each with plain-English definition, key insight, and manipulation risk
+The complete manipulation catalog — all six categories of statistical deception (hiding what's missing, misrepresenting what's measured, visual tricks, misusing tests, misrepresenting uncertainty, exploiting cognitive biases), each with counter-questions
+Role-specific field guides — synthesized checklists for voters, developers, accountants/auditors, and executives
+The Ten Commandments of Statistical Literacy — the distilled principles that ran through the whole series
+A closing essay on symmetric skepticism and the civic stakes of statistical literacy
+Full sources and further reading across all domains covered
+
+The complete series runs June 15–24, 2026, with featured: true on Posts 1 and 10 as required.
