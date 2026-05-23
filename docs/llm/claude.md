@@ -56828,6 +56828,7 @@ or even things like what is Nepal?
 what is Nepal's parliament? 
 do not assume anything and be as long, details, complete, and comprehensive as possible 
 please do not hallucinate 
+the text of the bill is attached (It is in devnagari / Nepali language)
 
 
 **Publish date**: 2026-06-25
