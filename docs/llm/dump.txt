@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-23 09:06:20 UTC
+DATE: 2026-05-23 10:32:43 UTC
 ===============================================================================
 
 ===============================================================================
@@ -62,7 +62,20 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-06-21-statistics-7-reading-scientific-studies.md
 │       ├── 2026-06-22-statistics-8-law-and-policy.md
 │       ├── 2026-06-23-statistics-9-standard-deviation.md
-│       └── 2026-06-24-statistics-10-capstone.md
+│       ├── 2026-06-24-statistics-10-capstone.md
+│       ├── 2026-06-25-adf-act-1-nepal-and-the-problem-of-money.md
+│       ├── 2026-06-26-adf-act-2-nepal-parliament-and-lawmaking.md
+│       ├── 2026-06-27-adf-act-3-what-development-finance-institutions-are.md
+│       ├── 2026-06-28-adf-act-4-financial-instruments-explained.md
+│       ├── 2026-06-29-adf-act-5-fund-legal-structure-and-capital.md
+│       ├── 2026-06-30-adf-act-6-what-the-fund-can-invest-in.md
+│       ├── 2026-07-01-adf-act-7-board-governance.md
+│       ├── 2026-07-02-adf-act-8-ceo-selection-and-accountability.md
+│       ├── 2026-07-03-adf-act-9-investment-process.md
+│       ├── 2026-07-04-adf-act-10-financial-architecture.md
+│       ├── 2026-07-05-adf-act-11-transparency-and-audit.md
+│       ├── 2026-07-06-adf-act-12-crimes-and-penalties.md
+│       └── 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -175,7 +188,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-30 directories, 137 files
+30 directories, 150 files
 
 
 -------------------------------------------------------------------------------
@@ -1305,6 +1318,287 @@ tags:
   - critical-thinking
   - capstone
 series: "Probability and Statistics in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-25-adf-act-1-nepal-and-the-problem-of-money.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Nepal Has a Money Problem: What This Country Is, What It Needs, and Why a Law About Finance Could Change Everything"
+date: 2026-06-25
+author: mercifulpotato-team
+summary: "The first installment of our twenty-part plain-English series on Nepal's Alternative Development Finance Mobilization Act 2081 — starting from zero: what Nepal is, where it sits in the world, how its economy works, what development finance means, and why the gap between what the country needs and what it has is the central problem this law tries to solve."
+tags:
+  - nepal
+  - development-finance
+  - adf-act
+  - plain-english
+  - economics
+  - infrastructure
+  - south-asia
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-26-adf-act-2-nepal-parliament-and-lawmaking.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "How Nepal Makes Laws: The Federal Parliament, the Budget Process, and Why a Finance Bill Is a Big Deal"
+date: 2026-06-26
+author: mercifulpotato-team
+summary: "The second installment in our series on Nepal's Alternative Development Finance Mobilization Act: a complete plain-English guide to Nepal's political system, its bicameral federal parliament, how a government bill becomes law, what the Budget and Finance Ministry do, and why the institutional origin of this specific law matters for understanding its ambitions and its limits."
+tags:
+  - nepal
+  - nepali-parliament
+  - government
+  - legislation
+  - political-system
+  - adf-act
+  - plain-english
+  - federalism
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-27-adf-act-3-what-development-finance-institutions-are.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Idea Behind the Institution: Development Finance Institutions, Their History, and Why They Sometimes Work"
+date: 2026-06-27
+author: mercifulpotato-team
+summary: "The third installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English guide to what development finance institutions are, where the idea came from, how they have worked in Europe after World War II, in East Asia during the growth miracle, and in developing countries from Brazil to Ethiopia — with an honest account of their successes, their failures, and the conditions that determine which they produce."
+tags:
+  - nepal
+  - development-finance
+  - development-finance-institutions
+  - economic-history
+  - adf-act
+  - plain-english
+  - world-bank
+  - blended-finance
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-28-adf-act-4-financial-instruments-explained.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Bonds, Equity, Guarantees, and Green Finance: Every Financial Instrument in the Act Explained from Scratch"
+date: 2026-06-28
+author: mercifulpotato-team
+summary: "The fourth installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English guide to every financial instrument the law authorizes — infrastructure bonds, equity funds, guarantee mechanisms, blended instruments, remittance investment funds, asset monetization, fund-of-funds — explaining what each one is, how it works, who takes on what risk, and why each instrument exists."
+tags:
+  - nepal
+  - development-finance
+  - financial-instruments
+  - bonds
+  - equity
+  - guarantees
+  - green-bonds
+  - adf-act
+  - plain-english
+  - economics
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-29-adf-act-5-fund-legal-structure-and-capital.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Fund Itself: Legal Status, Capital Structure, and Who Owns What"
+date: 2026-06-29
+author: mercifulpotato-team
+summary: "The fifth installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English examination of the Alternative Development Finance Fund — what kind of legal entity it is, how much capital it has, who owns the shares, how ownership percentages are maintained, and what the financial architecture means for accountability, risk, and the balance between public control and private participation."
+tags:
+  - nepal
+  - development-finance
+  - adf-fund
+  - capital-structure
+  - corporate-governance
+  - adf-act
+  - plain-english
+  - public-institutions
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-30-adf-act-6-what-the-fund-can-invest-in.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Yes, No, and Why: The Projects the Fund Can Invest In, the Projects It Cannot, and the Reasoning Behind Every Rule"
+date: 2026-06-30
+author: mercifulpotato-team
+summary: "The sixth installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English examination of the Act's investment scope — which sectors are eligible, which specific project categories can receive funding, which projects are explicitly excluded, and a critical analysis of whether these rules are likely to produce good investments or enable political manipulation."
+tags:
+  - nepal
+  - development-finance
+  - infrastructure
+  - investment-rules
+  - energy
+  - roads
+  - adf-act
+  - plain-english
+  - hydropower
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-01-adf-act-7-board-governance.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Who's in Charge: The Board of Directors, How They Are Chosen, and Why Governance Is the Whole Game"
+date: 2026-07-01
+author: mercifulpotato-team
+summary: "The seventh installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English examination of the fund's Board of Directors — its composition, the qualifications required for independent directors, the disqualifications that prevent corrupt or conflicted individuals from serving, the duties and liabilities of board members, the sub-committees that support the board's work, and why the quality of governance will ultimately determine whether this institution succeeds or becomes another captured institution."
+tags:
+  - nepal
+  - development-finance
+  - corporate-governance
+  - board-of-directors
+  - conflict-of-interest
+  - adf-act
+  - plain-english
+  - accountability
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-02-adf-act-8-ceo-selection-and-accountability.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Person in Charge: The CEO Selection Process, Qualifications, Powers, Performance Contract, and How They Can Be Removed"
+date: 2026-07-02
+author: mercifulpotato-team
+summary: "The eighth installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English examination of the fund's Chief Executive Officer — the astonishingly rigorous selection process involving the Civil Service Commission chair, the Governor of Nepal Rastra Bank, and the Investment Board CEO, the qualifications and disqualifications, the four-year term with one renewal, the annual performance contract, the post-service cooling period, and what all of this means for the institution's independence and effectiveness."
+tags:
+  - nepal
+  - development-finance
+  - chief-executive-officer
+  - accountability
+  - performance-management
+  - adf-act
+  - plain-english
+  - institutional-design
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-03-adf-act-9-investment-process.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "How a Project Gets Money: The Investment Process from Identification to Approval to Monitoring"
+date: 2026-07-03
+author: mercifulpotato-team
+summary: "The ninth installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English guide to the investment process — how projects are identified, what analysis must be done before investment, what conditions must be met before money flows, how collateral works and why the fund has first priority on it, when the fund can demand money back, and how ongoing monitoring works."
+tags:
+  - nepal
+  - development-finance
+  - investment-process
+  - project-finance
+  - due-diligence
+  - collateral
+  - monitoring
+  - adf-act
+  - plain-english
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-04-adf-act-10-financial-architecture.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Where the Money Lives: Financial Architecture, Reserve Funds, Accounts, and Dividend Policy"
+date: 2026-07-04
+author: mercifulpotato-team
+summary: "The tenth installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English examination of the fund's financial architecture — what money goes into the main fund, how subsidiary funds for specific financial instruments work, the general reserve and free reserve funds, dividend distribution rules, and what all of this means for the institution's long-term financial sustainability."
+tags:
+  - nepal
+  - development-finance
+  - financial-management
+  - reserve-funds
+  - dividends
+  - financial-sustainability
+  - adf-act
+  - plain-english
+  - accounting
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-05-adf-act-11-transparency-and-audit.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Sunlight and Scrutiny: Financial Transparency, Reporting, the Auditor General, and Parliamentary Accountability"
+date: 2026-07-05
+author: mercifulpotato-team
+summary: "The eleventh installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English examination of the fund's transparency and accountability obligations — quarterly financial disclosures, annual reports, the role of the Auditor General of Nepal, internal audit and control systems, the triennial independent performance evaluation, and how parliamentary committees are supposed to receive and use this information."
+tags:
+  - nepal
+  - development-finance
+  - financial-transparency
+  - audit
+  - accountability
+  - parliamentary-oversight
+  - adf-act
+  - plain-english
+  - good-governance
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-06-adf-act-12-crimes-and-penalties.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Fraud, Lies, and Consequences: The Criminal Provisions, Penalties, and Enforcement Mechanisms"
+date: 2026-07-06
+author: mercifulpotato-team
+summary: "The twelfth installment in our series on Nepal's Alternative Development Finance Act: a complete plain-English examination of the Act's criminal law provisions — what constitutes an offense under the law, the specific penalties (fines and imprisonment), the investigation and prosecution procedures, the 60-day investigation deadline, why the Nepal government is the plaintiff in all criminal cases, and an honest assessment of whether enforcement is likely to be effective in Nepal's current institutional environment."
+tags:
+  - nepal
+  - development-finance
+  - criminal-law
+  - fraud
+  - enforcement
+  - anti-corruption
+  - adf-act
+  - plain-english
+  - rule-of-law
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Gap in Numbers: Nepal's Infrastructure Deficit, Sector by Sector, and What It Would Take to Close It"
+date: 2026-07-07
+author: mercifulpotato-team
+summary: "The thirteenth installment in our series on Nepal's Alternative Development Finance Act: a data-driven, plain-English examination of Nepal's actual infrastructure deficit — the numbers behind the electricity gap, the road gap, the airport gap, the water and sanitation gap, and the urban infrastructure gap — showing concretely why the country needs trillions of rupees in investment, where that money must come from, and what role the Alternative Development Finance Fund can realistically play."
+tags:
+  - nepal
+  - infrastructure
+  - hydropower
+  - roads
+  - development-gap
+  - economics
+  - adf-act
+  - plain-english
+  - data
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
 ---
 
 
@@ -20477,8 +20771,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 130
-  Blog posts (front matter only): 49
+Total Files Exported: 143
+  Blog posts (front matter only): 62
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt

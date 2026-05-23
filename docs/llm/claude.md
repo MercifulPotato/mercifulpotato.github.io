@@ -56886,3 +56886,215 @@ where `[slug]` is a short, hyphenated, lowercase description of the article.
 ### Delivery format
 
 Return the complete plan and execution outline as a single markdown artifact. The artifact should display the precise schedule from the start date (2026-06-05) forward, organizing the ten full posts structurally over consecutive days to maximize logical flow and complete coverage. Ensure the framework is fully prepared for automated execution via GitHub actions.
+
+I'll read the full dump.txt before doing anything else.I've now read the full dump.txt. I have a complete picture of the project. The last statistics series ends at 2026-06-24, so the new Nepal Alternative Development Finance Act series starts 2026-06-25. This is a 20-part series. The request says "Plan a series of twenty posts" with publish date 2026-06-25 — I need to produce the full series plan AND all 20 complete article files.
+
+Given the massive scope (20 full long-form articles on the Nepal ADF Act 2081), I'll generate all 20 files. Let me start with the series plan and then produce them in batches.
+
+Key facts from the bill (translated from Nepali):
+- Full name: "Alternative Development Finance Mobilization Act, 2081" (2081 BS = ~2024-25 AD)
+- Creates the Alternative Development Finance Fund — an autonomous body
+- Authorized capital: 1 kharba (100 billion) NPR; paid-up capital: 25 arba (25 billion) NPR
+- Government holds 51% shares; pension/provident funds get shares; insurance companies get shares
+- Focuses on infrastructure: energy, roads, railways, airports, tunnels, SEZs, IT parks, urban infra
+- Min project size: 1 arba (1 billion) NPR
+- Issues bonds, equity, hybrid instruments, guarantee funds, remittance funds
+- Board of Directors chaired by Finance Ministry Secretary
+- CEO appointed via PSC-chaired committee with NRB Governor and Investment Board CEO
+- Financial transparency: quarterly reports, annual audits by Auditor General
+- Criminal penalties: double the loss as fine + 2 years imprisonment for fraud
+
+Created 11 files, ran a command
+Created 11 files, ran a command
+
+Create output directory for Nepal ADF series
+
+Script
+
+Post 1: Nepal ADF series opener - what is Nepal and why does this act exist
+2026-06-25-nepal-adf-1-what-is-nepal-and-why-this-act.md
+
+Post 2: Nepal's parliament, legislative process, who wrote the act
+2026-06-26-nepal-adf-2-parliament-and-political-economy.md
+
+Post 3: Nepal's infrastructure deficit sector by sector
+2026-06-27-nepal-adf-3-infrastructure-deficit-by-sector.md
+
+Post 4: Global examples of alternative development finance - what worked, what failed
+2026-06-28-nepal-adf-4-global-examples-what-worked-failed.md
+
+Post 5: The Act's preamble, purpose, definitions
+2026-06-29-nepal-adf-5-preamble-purpose-definitions.md
+
+Post 6: Section 3 - the financial mechanisms in detail
+2026-06-30-nepal-adf-6-financial-mechanisms-toolkit.md
+
+Post 7: Eligible and excluded projects, the one-arba minimum
+2026-07-01-nepal-adf-7-eligible-excluded-projects.md
+
+Post 8: The Fund as an institution - legal personality, capital structure, shareholder structure
+2026-07-02-nepal-adf-8-fund-establishment-capital-structure.md
+
+Post 9: The Board of Directors - composition, qualifications, disqualifications, conflicts of interest
+2026-07-03-nepal-adf-9-board-of-directors-governance.md
+
+Post 10: The CEO - selection, qualifications, performance contract, removal
+2026-07-04-nepal-adf-10-ceo-selection-performance-contract.md
+
+Post 11: Fund duties, subsidiary companies, investment in projects
+2026-07-05-nepal-adf-11-fund-powers-duties-subsidiaries.md
+
+58
+52
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reading the full dump.txt file
+Reading the full dump.txt file
+I've read the full dump.txt. Now let me read the truncated middle section to get the front matter conventions from existing posts.
+
+
+Viewed 2 files
+Viewed 2 files
+I now have a thorough understanding of the project. The next series starts 2026-06-25. The request is for a 20-part series on the Alternative Development Finance Mobilization Act 2081 of Nepal, in plain English. Let me now generate the series plan and all 20 articles.
+
+The dates run from 2026-06-25 through 2026-07-14. Post 1 and Post 20 get featured: true. The series name will be something like "The Alternative Development Finance Act: Nepal's Future in Plain English". Slug prefix: adf-act.
+
+Let me now generate all 20 files. I'll write them one batch at a time.
+
+
+Created 13 files, viewed a file
+Created 13 files, viewed a file
+
+Series post 1 - Introduction and context: What is Nepal, what is development finance, why does this bill exist
+2026-06-25-adf-act-1-nepal-and-the-problem-of-money.md
+
+Series post 2 - Nepal's parliament, how laws are made, and what kind of law this is
+2026-06-26-adf-act-2-nepal-parliament-and-lawmaking.md
+
+Series post 3 - What development finance institutions are, history, global examples
+2026-06-27-adf-act-3-what-development-finance-institutions-are.md
+
+Post 4 - The financial instruments defined in the Act: bonds, equity, guarantees, remittance funds explained from scratch
+2026-06-28-adf-act-4-financial-instruments-explained.md
+
+Post 5 - The Alternative Development Finance Fund: its legal structure, capital, and ownership
+2026-06-29-adf-act-5-fund-legal-structure-and-capital.md
+
+Post 6 - What projects the fund can and cannot invest in, and the reasoning
+2026-06-30-adf-act-6-what-the-fund-can-invest-in.md
+
+Post 7 - The Board of Directors: composition, qualifications, conflicts of interest, duties
+2026-07-01-adf-act-7-board-governance.md
+
+Post 8 - The CEO: selection, qualifications, powers, performance contract, accountability
+2026-07-02-adf-act-8-ceo-selection-and-accountability.md
+
+Post 9 - How the fund makes investments: project analysis, due diligence, conditions, monitoring
+2026-07-03-adf-act-9-investment-process.md
+
+Post 10 - Financial management: funds, reserves, accounts, dividends, financial reporting
+2026-07-04-adf-act-10-financial-architecture.md
+
+Post 11 - Transparency, financial reporting, audit by Auditor General, and parliamentary oversight
+2026-07-05-adf-act-11-transparency-and-audit.md
+
+Post 12 - Crimes, penalties, prosecution, and enforcement
+2026-07-06-adf-act-12-crimes-and-penalties.md
+
+Post 13 - The infrastructure gap in numbers: Nepal's actual needs versus capacity, sector by sector
+2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md
+
+Check transcript to confirm where we left off
+Done
+
+100
+56
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
