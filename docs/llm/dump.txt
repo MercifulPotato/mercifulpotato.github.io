@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-20 20:49:17 UTC
+DATE: 2026-05-23 09:03:31 UTC
 ===============================================================================
 
 ===============================================================================
@@ -144,6 +144,8 @@ DIRECTORY TREE (all git-tracked files)
 │           │       ├── mercifulpotato-team.png
 │           │       └── mercifulpotato-team.txt
 │           ├── index.html
+│           ├── pdf
+│           │   └── asrycmmbqoaz6k9x.pdf
 │           ├── plaintext
 │           │   ├── 2026-04-26-zelensky.txt
 │           │   └── 2026-05-11-podcast.txt
@@ -173,7 +175,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-29 directories, 136 files
+30 directories, 137 files
 
 
 -------------------------------------------------------------------------------
@@ -20475,9 +20477,9 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 129
+Total Files Exported: 130
   Blog posts (front matter only): 49
   Full content files: 78
-  Binary files skipped: 2
+  Binary files skipped: 3
 Output File: docs/llm/dump.txt
 ===============================================================================
