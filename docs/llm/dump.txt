@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-23 10:32:43 UTC
+DATE: 2026-05-23 14:54:23 UTC
 ===============================================================================
 
 ===============================================================================
@@ -75,7 +75,14 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-04-adf-act-10-financial-architecture.md
 │       ├── 2026-07-05-adf-act-11-transparency-and-audit.md
 │       ├── 2026-07-06-adf-act-12-crimes-and-penalties.md
-│       └── 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md
+│       ├── 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md
+│       ├── 2026-07-08-adf-act-14-hydropower-deep-dive.md
+│       ├── 2026-07-09-adf-act-15-public-private-partnerships.md
+│       ├── 2026-07-10-adf-act-16-remittances-and-diaspora.md
+│       ├── 2026-07-11-adf-act-17-nepal-capital-markets.md
+│       ├── 2026-07-12-adf-act-18-international-comparisons.md
+│       ├── 2026-07-13-adf-act-19-risks-and-honest-concerns.md
+│       └── 2026-07-14-adf-act-20-verdict-and-vigil.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -188,7 +195,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-30 directories, 150 files
+30 directories, 157 files
 
 
 -------------------------------------------------------------------------------
@@ -1599,6 +1606,153 @@ tags:
   - plain-english
   - data
 series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-08-adf-act-14-hydropower-deep-dive.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The White Gold: Nepal's Hydropower Potential, the Projects That Exist, and the Financing That Makes Them Possible"
+date: 2026-07-08
+author: mercifulpotato-team
+summary: "A complete account of Nepal's hydropower sector — the rivers, the physics, the existing projects, the pipeline of future generation, the role of Indian and Chinese investment, and how the Alternative Development Finance Fund fits into a sector that could transform the country."
+tags:
+  - nepal
+  - hydropower
+  - energy
+  - infrastructure
+  - development-finance
+  - india
+  - china
+  - project-finance
+  - adf-act
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-09-adf-act-15-public-private-partnerships.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Art of the Deal: Public-Private Partnerships, the Investment Board, and Why Nepal's Infrastructure History Is Littered with Agreements That Went Nowhere"
+date: 2026-07-09
+author: mercifulpotato-team
+summary: "A complete account of what public-private partnerships actually are, how they work in theory and practice, why they fail so often in Nepal, what the Investment Board of Nepal does and does not do, and where the Alternative Development Finance Fund fits into a system that desperately needs better tools for executing deals."
+tags:
+  - nepal
+  - public-private-partnerships
+  - investment-board
+  - infrastructure
+  - development-finance
+  - governance
+  - adf-act
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-10-adf-act-16-remittances-and-diaspora.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Money That Never Stops Coming: Nepal's Remittance Economy, the Diaspora, and the Fund's Boldest Financing Idea"
+date: 2026-07-10
+author: mercifulpotato-team
+summary: "A complete account of how remittances came to define Nepal's economy, where Nepali workers go and how much they send home, why the money flows through informal channels, and how the Alternative Development Finance Fund proposes to channel diaspora savings into infrastructure through a mechanism that has worked in India, Israel, and Ethiopia."
+tags:
+  - nepal
+  - remittances
+  - diaspora
+  - development-finance
+  - labor-migration
+  - infrastructure-financing
+  - adf-act
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-11-adf-act-17-nepal-capital-markets.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "NEPSE, Bonds, and the Shallow Pool: Nepal's Capital Markets and What the Fund Needs from Them"
+date: 2026-07-11
+author: mercifulpotato-team
+summary: "A complete account of Nepal's capital markets — the stock exchange, the nascent bond market, the institutional investors, and the structural reasons the market is too thin to finance the country's infrastructure needs — and what the Alternative Development Finance Fund requires from the market to succeed."
+tags:
+  - nepal
+  - capital-markets
+  - nepse
+  - bond-market
+  - institutional-investors
+  - development-finance
+  - adf-act
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-12-adf-act-18-international-comparisons.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "What Happened When Other Countries Tried This: Development Finance Institutions in Bangladesh, Sri Lanka, Ethiopia, and Mongolia"
+date: 2026-07-12
+author: mercifulpotato-team
+summary: "A detailed account of how comparable development finance institutions in four countries at similar development stages have performed — what went right, what went wrong, what was captured, what worked, and what the evidence collectively suggests Nepal should watch for as the Alternative Development Finance Fund gets started."
+tags:
+  - nepal
+  - development-finance
+  - international-comparisons
+  - bangladesh
+  - sri-lanka
+  - ethiopia
+  - mongolia
+  - lessons-learned
+  - adf-act
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-13-adf-act-19-risks-and-honest-concerns.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "What Could Go Wrong: An Honest Account of the Risks, the Critics, and the Questions This Law Does Not Answer"
+date: 2026-07-13
+author: mercifulpotato-team
+summary: "An unsparing assessment of the genuine risks in the Alternative Development Finance Fund Act — political capture, debt sustainability, environmental harm, governance gaps, and the structural weaknesses in the Nepali state that the legislation cannot fix by itself — along with the questions that citizens, journalists, and parliamentarians should be asking."
+tags:
+  - nepal
+  - development-finance
+  - governance
+  - political-capture
+  - risk-analysis
+  - criticism
+  - transparency
+  - adf-act
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-14-adf-act-20-verdict-and-vigil.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Verdict and the Vigil: A Complete Series Summary, a Citizen's Guide to Tracking the Fund, and the Five Questions That Will Define Nepal's Next Decade"
+date: 2026-07-14
+author: mercifulpotato-team
+summary: "The capstone of a twenty-part series on Nepal's Alternative Development Finance Fund Act — a complete synthesis of everything the series has covered, an honest verdict on the law's design, a practical guide for citizens who want to track the Fund's performance, and the five defining questions whose answers will determine whether this becomes a turning point in Nepal's economic history."
+tags:
+  - nepal
+  - development-finance
+  - adf-act
+  - capstone
+  - governance
+  - infrastructure
+  - citizen-guide
+  - series-conclusion
+series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+featured: true
 ---
 
 
@@ -20771,8 +20925,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 143
-  Blog posts (front matter only): 62
+Total Files Exported: 150
+  Blog posts (front matter only): 69
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt

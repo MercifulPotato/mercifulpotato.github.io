@@ -57103,3 +57103,98 @@ Done
 
 please continue with the rest
 
+Resuming from Post 14. Let me read dump.txt first, then generate posts 14–20.I have enough context now. The conventions are confirmed. Let me generate posts 14–20.The series is complete. Here's what was generated:
+
+**Posts 14–20 of "The Alternative Development Finance Act: Nepal's Future in Plain English"**
+
+| # | Date | Title |
+|---|---|---|
+| 14 | 2026-07-08 | The White Gold: Nepal's Hydropower Potential |
+| 15 | 2026-07-09 | The Art of the Deal: PPPs and the Investment Board |
+| 16 | 2026-07-10 | The Money That Never Stops Coming: Remittances and the Diaspora |
+| 17 | 2026-07-11 | NEPSE, Bonds, and the Shallow Pool: Nepal's Capital Markets |
+| 18 | 2026-07-12 | What Happened When Other Countries Tried This: Bangladesh, Sri Lanka, Ethiopia, Mongolia |
+| 19 | 2026-07-13 | What Could Go Wrong: Risks, Critics, and Honest Concerns |
+| 20 | 2026-07-14 | The Verdict and the Vigil (capstone, `featured: true`) |
+
+All files follow the series conventions — `author: mercifulpotato-team`, `series:` key set correctly, no bullets in body prose, Sources sections at the end, and `featured: true` only on Post 20. The capstone includes a full series reference table linking back to all 20 posts.
+
+18
+57
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

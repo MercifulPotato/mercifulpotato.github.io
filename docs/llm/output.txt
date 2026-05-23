@@ -1,30 +1,30 @@
 kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-176M	.
+178M	.
 
-real	0m0.012s
-user	0m0.001s
-sys	0m0.007s
+real	0m0.029s
+user	0m0.002s
+sys	0m0.008s
 
-real	0m8.237s
-user	0m12.762s
-sys	0m1.084s
+real	0m7.959s
+user	0m11.970s
+sys	0m1.051s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.863s
-user	0m0.827s
-sys	0m0.156s
+real	0m0.774s
+user	0m0.802s
+sys	0m0.160s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-05-23 10:32:31 UTC
+Publish before:    2026-05-23 14:54:12 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
   Loaded author: mercifulpotato-team (Merciful Potato Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
-Found 62 markdown files
+Found 69 markdown files
 Processing: 2026-03-22-good-morning.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/good-morning.html (~1 min read)
 Processing: 2026-04-14-happy-new-year.md
@@ -149,32 +149,46 @@ Processing: 2026-07-06-adf-act-12-crimes-and-penalties.md
   SKIPPED: Future post 'Fraud, Lies, and Consequences: The Criminal Provisions, Penalties, and Enforcement Mechanisms' (date: 2026-07-06, publish-before: 2026-05-23)
 Processing: 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md
   SKIPPED: Future post 'The Gap in Numbers: Nepal's Infrastructure Deficit, Sector by Sector, and What It Would Take to Close It' (date: 2026-07-07, publish-before: 2026-05-23)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (17 posts, 0 drafts skipped, 45 future posts skipped)
+Processing: 2026-07-08-adf-act-14-hydropower-deep-dive.md
+  SKIPPED: Future post 'The White Gold: Nepal's Hydropower Potential, the Projects That Exist, and the Financing That Makes Them Possible' (date: 2026-07-08, publish-before: 2026-05-23)
+Processing: 2026-07-09-adf-act-15-public-private-partnerships.md
+  SKIPPED: Future post 'The Art of the Deal: Public-Private Partnerships, the Investment Board, and Why Nepal's Infrastructure History Is Littered with Agreements That Went Nowhere' (date: 2026-07-09, publish-before: 2026-05-23)
+Processing: 2026-07-10-adf-act-16-remittances-and-diaspora.md
+  SKIPPED: Future post 'The Money That Never Stops Coming: Nepal's Remittance Economy, the Diaspora, and the Fund's Boldest Financing Idea' (date: 2026-07-10, publish-before: 2026-05-23)
+Processing: 2026-07-11-adf-act-17-nepal-capital-markets.md
+  SKIPPED: Future post 'NEPSE, Bonds, and the Shallow Pool: Nepal's Capital Markets and What the Fund Needs from Them' (date: 2026-07-11, publish-before: 2026-05-23)
+Processing: 2026-07-12-adf-act-18-international-comparisons.md
+  SKIPPED: Future post 'What Happened When Other Countries Tried This: Development Finance Institutions in Bangladesh, Sri Lanka, Ethiopia, and Mongolia' (date: 2026-07-12, publish-before: 2026-05-23)
+Processing: 2026-07-13-adf-act-19-risks-and-honest-concerns.md
+  SKIPPED: Future post 'What Could Go Wrong: An Honest Account of the Risks, the Critics, and the Questions This Law Does Not Answer' (date: 2026-07-13, publish-before: 2026-05-23)
+Processing: 2026-07-14-adf-act-20-verdict-and-vigil.md
+  SKIPPED: Future post 'The Verdict and the Vigil: A Complete Series Summary, a Citizen's Guide to Tracking the Fund, and the Five Questions That Will Define Nepal's Next Decade' (date: 2026-07-14, publish-before: 2026-05-23)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (17 posts, 0 drafts skipped, 52 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
-Restore complete (0.6s)
+Restore complete (0.5s)
   ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
-[xUnit.net 00:00:00.19]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.37]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.53]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.77]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.4s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.7s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+[xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.33]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.48]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.71]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.5s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
   ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.7)
-[xUnit.net 00:00:00.18]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.34]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.49]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.98]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
-  ObserverMagazine.Web.Tests test net10.0 succeeded (1.5s)
+[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.31]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.45]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.92]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.2s
-Build succeeded in 6.3s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 4.9s
+Build succeeded in 6.0s
 
-real	0m6.526s
-user	0m3.463s
-sys	0m0.432s
+real	0m6.137s
+user	0m3.240s
+sys	0m0.452s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -214,9 +228,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.572s
-user	0m1.581s
-sys	0m0.322s
+real	0m1.539s
+user	0m1.527s
+sys	0m0.320s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -229,16 +243,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m2.865s
-user	0m2.097s
-sys	0m0.416s
+real	0m2.682s
+user	0m1.906s
+sys	0m0.414s
 Export complete: docs/llm/dump.txt
-  Total files: 143
-  Blog posts (front matter only): 62
+  Total files: 150
+  Blog posts (front matter only): 69
   Full content files: 78
   Binary files skipped: 3
 
-real	0m0.120s
-user	0m0.061s
-sys	0m0.045s
+real	0m0.143s
+user	0m0.057s
+sys	0m0.057s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
