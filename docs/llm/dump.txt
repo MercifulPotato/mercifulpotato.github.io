@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-05-23 14:54:23 UTC
+DATE: 2026-06-07 00:17:18 UTC
 ===============================================================================
 
 ===============================================================================
@@ -44,6 +44,7 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-06-03-foundations-9-buying-or-building-dfw.md
 │       ├── 2026-06-04-foundations-10-repair-renovation-restoration.md
 │       ├── 2026-06-05-homeowner-1-welcome-to-home-ownership.md
+│       ├── 2026-06-06-diatomaceous-earth-v-boric-acid.md
 │       ├── 2026-06-06-homeowner-2-the-homeowner-calendar.md
 │       ├── 2026-06-07-homeowner-3-hvac-water-heater-energy.md
 │       ├── 2026-06-08-homeowner-4-cleaning-appliances-hidden.md
@@ -195,7 +196,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-30 directories, 157 files
+30 directories, 158 files
 
 
 -------------------------------------------------------------------------------
@@ -933,6 +934,22 @@ tags:
   - deep-dive
 series: "You Own a Home Now: The Complete First-Time Homeowner Survival Guide"
 featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-06-06-diatomaceous-earth-v-boric-acid.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Diatomaceous Earth vs. Boric Acid: Which Pest Control Powder Is Right for You?"
+date: 2026-06-06
+author: mercifulpotato-team
+summary: "A comprehensive guide comparing diatomaceous earth and boric acid for insect control. Learn about their safety profiles, mechanisms, and effective alternatives for a pest-free home."
+tags:
+  - diatomaceous earth
+  - boric acid
+  - pest control
+series: "Pest-Control"
 ---
 
 
@@ -20925,8 +20942,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 150
-  Blog posts (front matter only): 69
+Total Files Exported: 151
+  Blog posts (front matter only): 70
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt

@@ -1,12 +1,13 @@
 ---
-title: "Diatomaceous earth vs. boric acid"
+title: "Diatomaceous Earth vs. Boric Acid: Which Pest Control Powder Is Right for You?"
 date: 2026-06-06
 author: mercifulpotato-team
-summary: ""
+summary: "A comprehensive guide comparing diatomaceous earth and boric acid for insect control. Learn about their safety profiles, mechanisms, and effective alternatives for a pest-free home."
 tags:
   - diatomaceous earth
   - boric acid
-series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
+  - pest control
+series: "Pest-Control"
 ---
 
 The two most common powders on the market that can be used as insecticides are diatomaceous earth and boric acid. Both can kill bugs, but one is poisonous. Both have warnings, but one is generally recognized as safe by the U.S. Food and Drug Administration, while the other is not approved by the FDA.
