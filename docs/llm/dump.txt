@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-06-26 09:01:33 UTC
+DATE: 2026-06-26 11:53:53 UTC
 ===============================================================================
 
 ===============================================================================
@@ -83,7 +83,9 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-11-adf-act-17-nepal-capital-markets.md
 │       ├── 2026-07-12-adf-act-18-international-comparisons.md
 │       ├── 2026-07-13-adf-act-19-risks-and-honest-concerns.md
-│       └── 2026-07-14-adf-act-20-verdict-and-vigil.md
+│       ├── 2026-07-14-adf-act-20-verdict-and-vigil.md
+│       ├── 2026-07-15-nepal-budget-2026-1-what-is-a-budget.md
+│       └── 2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -91,11 +93,36 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── claude.md
 │       ├── dump.txt
 │       ├── gemini.md
+│       ├── image-1.png
 │       ├── output.txt
 │       └── vendor
 │           ├── claude-instructions.md
 │           ├── claude-memory.md
-│           └── claude-sessions.md
+│           ├── claude-sessions.md
+│           └── nepal-budget-2026
+│               ├── 1750310698_Tax_Fact_2025-2026.pdf
+│               ├── 1780322646_PKF_ TRU Nepal Budget Statement Highlights_2026-27.pdf
+│               ├── 1nplea2026002.pdf
+│               ├── 2026-05-30-12-07-01-trn-30may-1.pdf
+│               ├── 2083 Baisakh GDS_i116eqf.pdf
+│               ├── 289-2025-06-01-1026915.pdf
+│               ├── 6720cef296e9d935e76ada04-resources-1749799827777.pdf
+│               ├── Amendment-in-Tax-Laws-by-Budget-2082-83.pdf
+│               ├── BKAG Concise Budget Highlights FY 208283.pdf
+│               ├── budget_overview_82-83.pdf
+│               ├── budget-prastab-2083-84.pdf
+│               ├── Budget Speech 2026_27 English Translation_ysmw9xe.pdf
+│               ├── budget-update-2082-with-tax-amendment-20250616160234.pdf
+│               ├── Federal_Budget_2083_84_Highlights_V1.pdf
+│               ├── Finance-Bill-2083-Key-Tax-Changes-and-Legal-Implications-for-Businesses-in-Nepal-2026-infinitynp.com.pdf
+│               ├── Monetary_Policy_2082-083_English.pdf
+│               ├── Monetary-policy-in-English-2025_26.pdf
+│               ├── Monetary-Policy-in-English-for-2024-25.pdf
+│               ├── nepal-budget-2026-27-series-plan.md
+│               ├── Nepal-Budget-2083_84-Analysis.pdf
+│               ├── publication-document-1657798279.pdf
+│               ├── RCAW-6379.18-Budget-Highlights.pdf
+│               └── ssrn-6857318.pdf
 ├── export.sh
 ├── .github
 │   └── workflows
@@ -196,7 +223,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-30 directories, 158 files
+31 directories, 184 files
 
 
 -------------------------------------------------------------------------------
@@ -1770,6 +1797,45 @@ tags:
   - series-conclusion
 series: "The Alternative Development Finance Act: Nepal's Future in Plain English"
 featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-15-nepal-budget-2026-1-what-is-a-budget.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "What Even Is a National Budget? Nepal, Money, and the Machinery of the State"
+date: 2026-07-15
+author: mercifulpotato-team
+summary: "The opening of a twenty-part series that explains Nepal's 2026-27 federal budget from absolute first principles: what Nepal is, what money and a government actually are, what a national budget is for, and why a single document worth NPR 2.12 trillion (about USD 14.2 billion) shapes the life of every person in the country."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - public-finance
+  - plain-english
+  - series-introduction
+series: "Nepal's Budget 2026-27 in Plain English"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Fiscal Year, the Constitution, and the Calendar: Why Nepal's Budget Arrives on Jestha 15"
+date: 2026-07-16
+author: mercifulpotato-team
+summary: "Part two of our plain-English series: why Nepal's budget year runs from mid-July to mid-July, how the Bikram Sambat calendar maps onto 2026-27, why the Constitution forces the budget out on Jestha 15 (29 May), and what an Economic Survey and a 'revised estimate' actually are."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - constitution
+  - public-finance
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
 ---
 
 
@@ -20942,8 +21008,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 151
-  Blog posts (front matter only): 70
+Total Files Exported: 153
+  Blog posts (front matter only): 72
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
