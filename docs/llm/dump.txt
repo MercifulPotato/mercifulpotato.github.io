@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-06-26 16:06:55 UTC
+DATE: 2026-06-26 17:01:16 UTC
 ===============================================================================
 
 ===============================================================================
@@ -97,7 +97,9 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-25-nepal-budget-2026-11-vat-customs-excise.md
 │       ├── 2026-07-26-nepal-budget-2026-12-business-and-investment.md
 │       ├── 2026-07-27-nepal-budget-2026-13-energy-and-green-tax.md
-│       └── 2026-07-28-nepal-budget-2026-14-infrastructure.md
+│       ├── 2026-07-28-nepal-budget-2026-14-infrastructure.md
+│       ├── 2026-07-29-nepal-budget-2026-15-health-and-education.md
+│       └── 2026-07-30-nepal-budget-2026-16-social-protection.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -235,7 +237,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 196 files
+31 directories, 198 files
 
 
 -------------------------------------------------------------------------------
@@ -2074,6 +2076,44 @@ tags:
   - fiscal-year-2083-84
   - infrastructure
   - capital-expenditure
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-29-nepal-budget-2026-15-health-and-education.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Health and Education: Investing in People (or Promising To)"
+date: 2026-07-29
+author: mercifulpotato-team
+summary: "Part fifteen: the human-capital budget. About NPR 102 billion (USD 0.68 billion) for health and NPR 218 billion (USD 1.46 billion) for education, the promise of 90 percent health-insurance coverage and 336 hospitals, free childhood-cancer care, and why counting rupees is not the same as counting outcomes."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - health
+  - education
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-30-nepal-budget-2026-16-social-protection.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Safety Net: Social Protection, Pensions, and Who Gets Left Out"
+date: 2026-07-30
+author: mercifulpotato-team
+summary: "Part sixteen: the budget's promises to the vulnerable. Social-security allowances, the doubled Dalit and child nutrition allowance to NPR 1,000 a month (about USD 6.67), labour reforms and a migrant returnee program, and the hard trade-off between universal allowances and a sustainable budget."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - social-protection
+  - labour
   - plain-english
 series: "Nepal's Budget 2026-27 in Plain English"
 ---
@@ -21248,8 +21288,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 165
-  Blog posts (front matter only): 84
+Total Files Exported: 167
+  Blog posts (front matter only): 86
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
