@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-06-26 15:43:53 UTC
+DATE: 2026-06-26 16:06:55 UTC
 ===============================================================================
 
 ===============================================================================
@@ -95,7 +95,9 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-23-nepal-budget-2026-9-fiscal-federalism.md
 │       ├── 2026-07-24-nepal-budget-2026-10-income-tax.md
 │       ├── 2026-07-25-nepal-budget-2026-11-vat-customs-excise.md
-│       └── 2026-07-26-nepal-budget-2026-12-business-and-investment.md
+│       ├── 2026-07-26-nepal-budget-2026-12-business-and-investment.md
+│       ├── 2026-07-27-nepal-budget-2026-13-energy-and-green-tax.md
+│       └── 2026-07-28-nepal-budget-2026-14-infrastructure.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -233,7 +235,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 194 files
+31 directories, 196 files
 
 
 -------------------------------------------------------------------------------
@@ -2034,6 +2036,44 @@ tags:
   - fiscal-year-2083-84
   - investment
   - business-reform
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-27-nepal-budget-2026-13-energy-and-green-tax.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Power and the Planet: Energy, Hydropower, and the New Green Tax"
+date: 2026-07-27
+author: mercifulpotato-team
+summary: "Part thirteen: Nepal's biggest economic bet, electricity. The NPR 114 billion (about USD 760 million) energy allocation, hydropower expansion and exports, and the contradiction at the heart of taxing electricity above 50 units while branding a new Green Tax as climate policy."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - hydropower
+  - green-tax
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-28-nepal-budget-2026-14-infrastructure.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Building the Country: Infrastructure, Roads, and the Capital-Spending Problem"
+date: 2026-07-28
+author: mercifulpotato-team
+summary: "Part fourteen: the single largest ministry allocation, NPR 302.83 billion (about USD 2.02 billion) for physical infrastructure. The flagship highways and rail dreams, and Nepal's chronic inability to spend its capital budget on time, on cost, and on quality."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - infrastructure
+  - capital-expenditure
   - plain-english
 series: "Nepal's Budget 2026-27 in Plain English"
 ---
@@ -21208,8 +21248,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 163
-  Blog posts (front matter only): 82
+Total Files Exported: 165
+  Blog posts (front matter only): 84
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
