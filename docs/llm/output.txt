@@ -1,30 +1,30 @@
 kushal@fedora:~$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-282M	.
+284M	.
 
-real	0m0.018s
+real	0m0.022s
 user	0m0.003s
-sys	0m0.006s
+sys	0m0.005s
 
-real	0m8.831s
-user	0m13.560s
-sys	0m1.159s
-Restore complete (0.6s)
+real	0m8.522s
+user	0m13.538s
+sys	0m1.076s
+Restore complete (0.5s)
 
 Build succeeded in 0.7s
 
-real	0m0.870s
-user	0m0.882s
-sys	0m0.176s
+real	0m0.822s
+user	0m0.865s
+sys	0m0.178s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-06-26 11:53:40 UTC
+Publish before:    2026-06-26 12:03:22 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
   Loaded author: mercifulpotato-team (Merciful Potato Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
-Found 72 markdown files
+Found 74 markdown files
 Processing: 2026-03-22-good-morning.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/good-morning.html (~1 min read)
 Processing: 2026-04-14-happy-new-year.md
@@ -169,33 +169,37 @@ Processing: 2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md
   SKIPPED: Future post 'The Fiscal Year, the Constitution, and the Calendar: Why Nepal's Budget Arrives on Jestha 15' (date: 2026-07-16, publish-before: 2026-06-26)
 Processing: 2026-07-15-nepal-budget-2026-1-what-is-a-budget.md
   SKIPPED: Future post 'What Even Is a National Budget? Nepal, Money, and the Machinery of the State' (date: 2026-07-15, publish-before: 2026-06-26)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (52 posts, 0 drafts skipped, 20 future posts skipped)
+Processing: 2026-07-18-nepal-budget-2026-4-how-a-budget-becomes-law.md
+  SKIPPED: Future post 'How a Budget Becomes Law: From Speech to Finance Act' (date: 2026-07-18, publish-before: 2026-06-26)
+Processing: 2026-07-17-nepal-budget-2026-3-who-wrote-this-budget.md
+  SKIPPED: Future post 'Who Is in the Room? Parliament, Government, and the People Who Wrote This Budget' (date: 2026-07-17, publish-before: 2026-06-26)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (52 posts, 0 drafts skipped, 22 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.6s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.5s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.8)
 [xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Integration.Tests
 [xUnit.net 00:00:00.36]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.54]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.55]   Starting:    ObserverMagazine.Integration.Tests
 [xUnit.net 00:00:00.82]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
   ObserverMagazine.Integration.Tests test net10.0 succeeded (1.5s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (4.1s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (2.1s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.8)
-[xUnit.net 00:00:00.18]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.36]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.54]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:01.09]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.33]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.51]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:01.04]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
   ObserverMagazine.Web.Tests test net10.0 succeeded (1.6s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.8s
-Build succeeded in 7.0s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 3.8s
+Build succeeded in 4.9s
 
-real	0m7.217s
-user	0m3.754s
-sys	0m0.513s
-Restore complete (0.5s)
+real	0m5.125s
+user	0m3.776s
+sys	0m0.506s
+Restore complete (0.6s)
 
 Build succeeded in 0.7s
 Project 'ObserverMagazine.Web' has the following package references
@@ -234,12 +238,12 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.730s
-user	0m1.693s
-sys	0m0.375s
-Restore complete (0.5s)
+real	0m1.748s
+user	0m1.692s
+sys	0m0.405s
+Restore complete (0.6s)
 
-Build succeeded in 0.6s
+Build succeeded in 0.7s
 
 The following sources were used:
    https://api.nuget.org/v3/index.json
@@ -249,16 +253,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m2.930s
-user	0m2.322s
-sys	0m0.475s
+real	0m1.995s
+user	0m1.942s
+sys	0m0.417s
 Export complete: docs/llm/dump.txt
-  Total files: 153
-  Blog posts (front matter only): 72
+  Total files: 155
+  Blog posts (front matter only): 74
   Full content files: 78
   Binary files skipped: 3
 
-real	0m0.148s
-user	0m0.065s
-sys	0m0.052s
+real	0m0.129s
+user	0m0.055s
+sys	0m0.061s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 

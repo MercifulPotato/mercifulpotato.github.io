@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-06-26 11:53:53 UTC
+DATE: 2026-06-26 12:03:32 UTC
 ===============================================================================
 
 ===============================================================================
@@ -85,7 +85,9 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-13-adf-act-19-risks-and-honest-concerns.md
 │       ├── 2026-07-14-adf-act-20-verdict-and-vigil.md
 │       ├── 2026-07-15-nepal-budget-2026-1-what-is-a-budget.md
-│       └── 2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md
+│       ├── 2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md
+│       ├── 2026-07-17-nepal-budget-2026-3-who-wrote-this-budget.md
+│       └── 2026-07-18-nepal-budget-2026-4-how-a-budget-becomes-law.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -223,7 +225,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 184 files
+31 directories, 186 files
 
 
 -------------------------------------------------------------------------------
@@ -1833,6 +1835,44 @@ tags:
   - nepal-budget
   - fiscal-year-2083-84
   - constitution
+  - public-finance
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-17-nepal-budget-2026-3-who-wrote-this-budget.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Who Is in the Room? Parliament, Government, and the People Who Wrote This Budget"
+date: 2026-07-17
+author: mercifulpotato-team
+summary: "Part three: a plain-English tour of how Nepal is governed, then the human story behind this budget: the Gen Z protests of 2025, the fall of the old order, the March 2026 landslide that made the Rastriya Swatantra Party and Balen Shah the government, and why the people in the room shape what is in the document."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - nepal-politics
+  - governance
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-18-nepal-budget-2026-4-how-a-budget-becomes-law.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "How a Budget Becomes Law: From Speech to Finance Act"
+date: 2026-07-18
+author: mercifulpotato-team
+summary: "Part four: the process almost nobody explains. The difference between the budget speech, the Appropriation Bill, and the Finance Bill 2083; how a bill becomes the Finance Act 2083; and why 'announced' is a world away from 'law' and even further from 'implemented'."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - finance-bill-2083
   - public-finance
   - plain-english
 series: "Nepal's Budget 2026-27 in Plain English"
@@ -21008,8 +21048,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 153
-  Blog posts (front matter only): 72
+Total Files Exported: 155
+  Blog posts (front matter only): 74
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
