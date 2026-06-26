@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-06-26 17:10:47 UTC
+DATE: 2026-06-26 17:19:37 UTC
 ===============================================================================
 
 ===============================================================================
@@ -101,7 +101,9 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-29-nepal-budget-2026-15-health-and-education.md
 │       ├── 2026-07-30-nepal-budget-2026-16-social-protection.md
 │       ├── 2026-07-31-nepal-budget-2026-17-agriculture-and-tourism.md
-│       └── 2026-08-01-nepal-budget-2026-18-ai-and-startups.md
+│       ├── 2026-08-01-nepal-budget-2026-18-ai-and-startups.md
+│       ├── 2026-08-02-nepal-budget-2026-19-credibility-and-execution.md
+│       └── 2026-08-03-nepal-budget-2026-20-citizens-field-guide.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -239,7 +241,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 200 files
+31 directories, 202 files
 
 
 -------------------------------------------------------------------------------
@@ -2156,6 +2158,45 @@ tags:
   - startups
   - plain-english
 series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-02-nepal-budget-2026-19-credibility-and-execution.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Can They Actually Do It? Credibility, Execution, and How to Read a Budget Like an Auditor"
+date: 2026-08-02
+author: mercifulpotato-team
+summary: "Part nineteen: the reckoning. Nepal's chronic gap between budgeted and spent, the opaque NPR 90 billion (about USD 600 million) miscellaneous heading, a brand-new government with no track record, a 7 percent growth target against 3.85 percent reality, and the complete auditor's toolkit for reading any budget."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - accountability
+  - data-literacy
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-03-nepal-budget-2026-20-citizens-field-guide.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Citizen's Field Guide to Nepal's Budget 2026-27: Everything You Now Know"
+date: 2026-08-03
+author: mercifulpotato-team
+summary: "The capstone: a complete, standalone field guide to Nepal's 2026-27 budget. A master glossary of every term, a one-page numbers reference in NPR and USD, a citizen's checklist for tracking whether promises are kept, a twelve-month watch calendar, and a balanced final verdict on the good, the risky, and the doubtful."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - public-finance
+  - capstone
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+featured: true
 ---
 
 
@@ -21328,8 +21369,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 169
-  Blog posts (front matter only): 88
+Total Files Exported: 171
+  Blog posts (front matter only): 90
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
