@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-06-26 12:03:32 UTC
+DATE: 2026-06-26 15:43:53 UTC
 ===============================================================================
 
 ===============================================================================
@@ -87,7 +87,15 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-15-nepal-budget-2026-1-what-is-a-budget.md
 │       ├── 2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md
 │       ├── 2026-07-17-nepal-budget-2026-3-who-wrote-this-budget.md
-│       └── 2026-07-18-nepal-budget-2026-4-how-a-budget-becomes-law.md
+│       ├── 2026-07-18-nepal-budget-2026-4-how-a-budget-becomes-law.md
+│       ├── 2026-07-19-nepal-budget-2026-5-the-big-number.md
+│       ├── 2026-07-20-nepal-budget-2026-6-recurrent-vs-capital.md
+│       ├── 2026-07-21-nepal-budget-2026-7-revenue-and-remittances.md
+│       ├── 2026-07-22-nepal-budget-2026-8-deficit-and-debt.md
+│       ├── 2026-07-23-nepal-budget-2026-9-fiscal-federalism.md
+│       ├── 2026-07-24-nepal-budget-2026-10-income-tax.md
+│       ├── 2026-07-25-nepal-budget-2026-11-vat-customs-excise.md
+│       └── 2026-07-26-nepal-budget-2026-12-business-and-investment.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -225,7 +233,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 186 files
+31 directories, 194 files
 
 
 -------------------------------------------------------------------------------
@@ -1874,6 +1882,158 @@ tags:
   - fiscal-year-2083-84
   - finance-bill-2083
   - public-finance
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-19-nepal-budget-2026-5-the-big-number.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Big Number, Dissected: NPR 2.12 Trillion and What 'Largest in History' Really Means"
+date: 2026-07-19
+author: mercifulpotato-team
+summary: "Part five: taking apart the headline. What NPR 2,124.34 billion (about USD 14.2 billion) means in real terms, why 'largest in history' is almost always true and almost always misleading, the difference between nominal and real growth, and why what governments budget is not what they spend."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - public-finance
+  - data-literacy
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-20-nepal-budget-2026-6-recurrent-vs-capital.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Recurrent vs Capital: The Most Important Distinction in the Whole Budget"
+date: 2026-07-20
+author: mercifulpotato-team
+summary: "Part six: what recurrent and capital spending actually are, why Nepal spends about 60 percent running the state and only 20 percent building it, what the 'financing' third really covers, and how to spot consumption dressed up as investment."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - public-finance
+  - capital-expenditure
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-21-nepal-budget-2026-7-revenue-and-remittances.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Where the Money Comes From, Part 1: Revenue, Taxes, and the Remittance Economy"
+date: 2026-07-21
+author: mercifulpotato-team
+summary: "Part seven: how Nepal actually raises NPR 1.4 trillion (about USD 9.4 billion). Tax versus non-tax revenue, why so much of it rides on imports and therefore on remittances, and why cutting tax rates while raising the revenue target is a bet that needs scrutiny."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - taxation
+  - remittances
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-22-nepal-budget-2026-8-deficit-and-debt.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Where the Money Comes From, Part 2: Grants, Loans, and the Deficit"
+date: 2026-07-22
+author: mercifulpotato-team
+summary: "Part eight: the gap between what Nepal plans to spend and what it expects to collect, about NPR 657 billion (USD 4.4 billion), and how it is filled with foreign grants, foreign loans, and domestic borrowing. What public debt is, who Nepal owes, and when borrowing becomes dangerous."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - public-debt
+  - fiscal-deficit
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-23-nepal-budget-2026-9-fiscal-federalism.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Three Governments, One Country: Fiscal Federalism and the Money That Flows Down"
+date: 2026-07-23
+author: mercifulpotato-team
+summary: "Part nine: Nepal has not one government but three tiers, and over NPR 600 billion (about USD 4 billion) flows from the centre to provinces and 753 local governments. What fiscal federalism is, how the grants work, and why dividing money across three levels is both empowering and expensive."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - federalism
+  - local-government
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-24-nepal-budget-2026-10-income-tax.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Income Tax for Humans: The Biggest Tax Cut in a Decade"
+date: 2026-07-24
+author: mercifulpotato-team
+summary: "Part ten: income tax explained without a single formula. Why the doubled exemption to NPR 1 million (about USD 6,667) and the top-rate cut from 39 to 29 percent is the largest personal-tax reset in over a decade, who really benefits, and what it costs the treasury."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - income-tax
+  - finance-bill-2083
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-25-nepal-budget-2026-11-vat-customs-excise.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "VAT, Customs, and Excise: The Taxes You Pay Without Noticing"
+date: 2026-07-25
+author: mercifulpotato-team
+summary: "Part eleven: the invisible taxes that fund most of the state. How VAT, customs duties, and excise work; why collapsing customs from 11 tiers to 7 and abolishing excise on 360 goods matters; and the new digital-payment VAT refund, electricity VAT, ride-hailing VAT, and Green Tax."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - vat
+  - customs-and-excise
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-26-nepal-budget-2026-12-business-and-investment.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Open for Business? Investment, Company Law, and the Reform Promises"
+date: 2026-07-26
+author: mercifulpotato-team
+summary: "Part twelve: the budget's business-climate package. Corporate tax rates, the 50 percent export exemption, company-law and insolvency reforms, a new limited-liability-partnership law for venture capital, the Investment Express one-stop system, and why reform-by-announcement so often stalls in Nepal."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - investment
+  - business-reform
   - plain-english
 series: "Nepal's Budget 2026-27 in Plain English"
 ---
@@ -21048,8 +21208,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 155
-  Blog posts (front matter only): 74
+Total Files Exported: 163
+  Blog posts (front matter only): 82
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
