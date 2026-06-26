@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-06-26 17:01:16 UTC
+DATE: 2026-06-26 17:10:47 UTC
 ===============================================================================
 
 ===============================================================================
@@ -99,7 +99,9 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-27-nepal-budget-2026-13-energy-and-green-tax.md
 │       ├── 2026-07-28-nepal-budget-2026-14-infrastructure.md
 │       ├── 2026-07-29-nepal-budget-2026-15-health-and-education.md
-│       └── 2026-07-30-nepal-budget-2026-16-social-protection.md
+│       ├── 2026-07-30-nepal-budget-2026-16-social-protection.md
+│       ├── 2026-07-31-nepal-budget-2026-17-agriculture-and-tourism.md
+│       └── 2026-08-01-nepal-budget-2026-18-ai-and-startups.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -237,7 +239,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 198 files
+31 directories, 200 files
 
 
 -------------------------------------------------------------------------------
@@ -2114,6 +2116,44 @@ tags:
   - fiscal-year-2083-84
   - social-protection
   - labour
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-07-31-nepal-budget-2026-17-agriculture-and-tourism.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Agriculture, Tourism, and the Productivity Question"
+date: 2026-07-31
+author: mercifulpotato-team
+summary: "Part seventeen: the real economy most Nepalis live in. The NPR 73 billion (about USD 490 million) agriculture allocation, a grant covering up to 40 percent of capital for larger farm investments, the tourism push toward Visit Nepal Year 2085, and why subsidies so often reward the well-connected."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - agriculture
+  - tourism
+  - plain-english
+series: "Nepal's Budget 2026-27 in Plain English"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-01-nepal-budget-2026-18-ai-and-startups.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Future Pitch: AI, Startups, Technology, and the \"Digital Nepal\" Story"
+date: 2026-08-01
+author: mercifulpotato-team
+summary: "Part eighteen: the headline-grabbing future bets. A sovereign AI compute centre, NPR 4 billion (about USD 27 million) for science and innovation, a startup financing facility and IT-export incentives, plus the privatization moves, and a hard look at whether buzzwords can survive contact with Nepal's constraints."
+tags:
+  - nepal
+  - nepal-budget
+  - fiscal-year-2083-84
+  - technology
+  - startups
   - plain-english
 series: "Nepal's Budget 2026-27 in Plain English"
 ---
@@ -21288,8 +21328,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 167
-  Blog posts (front matter only): 86
+Total Files Exported: 169
+  Blog posts (front matter only): 88
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
