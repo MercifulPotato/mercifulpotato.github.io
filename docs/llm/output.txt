@@ -1,24 +1,24 @@
-kushal@fedora:~$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+kushal@fedora:~/src/golang/GoTunnels$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 291M	.
 
-real	0m0.010s
-user	0m0.002s
-sys	0m0.008s
-^[x
-real	0m7.353s
-user	0m12.465s
-sys	0m0.944s
-Restore complete (0.6s)
+real	0m0.024s
+user	0m0.003s
+sys	0m0.009s
 
-Build succeeded in 0.7s
+real	0m9.177s
+user	0m13.694s
+sys	0m1.323s
+Restore complete (0.5s)
 
-real	0m0.833s
-user	0m0.875s
-sys	0m0.157s
+Build succeeded in 0.6s
+
+real	0m0.761s
+user	0m0.808s
+sys	0m0.149s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-06-26 17:19:29 UTC
+Publish before:    2026-07-02 07:06:14 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
@@ -128,121 +128,121 @@ Processing: 2026-06-25-adf-act-1-nepal-and-the-problem-of-money.md
 Processing: 2026-06-26-adf-act-2-nepal-parliament-and-lawmaking.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-2-nepal-parliament-and-lawmaking.html (~16 min read)
 Processing: 2026-06-27-adf-act-3-what-development-finance-institutions-are.md
-  SKIPPED: Future post 'The Idea Behind the Institution: Development Finance Institutions, Their History, and Why They Sometimes Work' (date: 2026-06-27, publish-before: 2026-06-26)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-3-what-development-finance-institutions-are.html (~15 min read)
 Processing: 2026-06-28-adf-act-4-financial-instruments-explained.md
-  SKIPPED: Future post 'Bonds, Equity, Guarantees, and Green Finance: Every Financial Instrument in the Act Explained from Scratch' (date: 2026-06-28, publish-before: 2026-06-26)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-4-financial-instruments-explained.html (~19 min read)
 Processing: 2026-06-29-adf-act-5-fund-legal-structure-and-capital.md
-  SKIPPED: Future post 'The Fund Itself: Legal Status, Capital Structure, and Who Owns What' (date: 2026-06-29, publish-before: 2026-06-26)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-5-fund-legal-structure-and-capital.html (~13 min read)
 Processing: 2026-06-30-adf-act-6-what-the-fund-can-invest-in.md
-  SKIPPED: Future post 'Yes, No, and Why: The Projects the Fund Can Invest In, the Projects It Cannot, and the Reasoning Behind Every Rule' (date: 2026-06-30, publish-before: 2026-06-26)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-6-what-the-fund-can-invest-in.html (~17 min read)
 Processing: 2026-07-01-adf-act-7-board-governance.md
-  SKIPPED: Future post 'Who's in Charge: The Board of Directors, How They Are Chosen, and Why Governance Is the Whole Game' (date: 2026-07-01, publish-before: 2026-06-26)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-7-board-governance.html (~16 min read)
 Processing: 2026-07-02-adf-act-8-ceo-selection-and-accountability.md
-  SKIPPED: Future post 'The Person in Charge: The CEO Selection Process, Qualifications, Powers, Performance Contract, and How They Can Be Removed' (date: 2026-07-02, publish-before: 2026-06-26)
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-8-ceo-selection-and-accountability.html (~13 min read)
 Processing: 2026-07-03-adf-act-9-investment-process.md
-  SKIPPED: Future post 'How a Project Gets Money: The Investment Process from Identification to Approval to Monitoring' (date: 2026-07-03, publish-before: 2026-06-26)
+  SKIPPED: Future post 'How a Project Gets Money: The Investment Process from Identification to Approval to Monitoring' (date: 2026-07-03, publish-before: 2026-07-02)
 Processing: 2026-07-04-adf-act-10-financial-architecture.md
-  SKIPPED: Future post 'Where the Money Lives: Financial Architecture, Reserve Funds, Accounts, and Dividend Policy' (date: 2026-07-04, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Where the Money Lives: Financial Architecture, Reserve Funds, Accounts, and Dividend Policy' (date: 2026-07-04, publish-before: 2026-07-02)
 Processing: 2026-07-05-adf-act-11-transparency-and-audit.md
-  SKIPPED: Future post 'Sunlight and Scrutiny: Financial Transparency, Reporting, the Auditor General, and Parliamentary Accountability' (date: 2026-07-05, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Sunlight and Scrutiny: Financial Transparency, Reporting, the Auditor General, and Parliamentary Accountability' (date: 2026-07-05, publish-before: 2026-07-02)
 Processing: 2026-07-06-adf-act-12-crimes-and-penalties.md
-  SKIPPED: Future post 'Fraud, Lies, and Consequences: The Criminal Provisions, Penalties, and Enforcement Mechanisms' (date: 2026-07-06, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Fraud, Lies, and Consequences: The Criminal Provisions, Penalties, and Enforcement Mechanisms' (date: 2026-07-06, publish-before: 2026-07-02)
 Processing: 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md
-  SKIPPED: Future post 'The Gap in Numbers: Nepal's Infrastructure Deficit, Sector by Sector, and What It Would Take to Close It' (date: 2026-07-07, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Gap in Numbers: Nepal's Infrastructure Deficit, Sector by Sector, and What It Would Take to Close It' (date: 2026-07-07, publish-before: 2026-07-02)
 Processing: 2026-07-08-adf-act-14-hydropower-deep-dive.md
-  SKIPPED: Future post 'The White Gold: Nepal's Hydropower Potential, the Projects That Exist, and the Financing That Makes Them Possible' (date: 2026-07-08, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The White Gold: Nepal's Hydropower Potential, the Projects That Exist, and the Financing That Makes Them Possible' (date: 2026-07-08, publish-before: 2026-07-02)
 Processing: 2026-07-09-adf-act-15-public-private-partnerships.md
-  SKIPPED: Future post 'The Art of the Deal: Public-Private Partnerships, the Investment Board, and Why Nepal's Infrastructure History Is Littered with Agreements That Went Nowhere' (date: 2026-07-09, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Art of the Deal: Public-Private Partnerships, the Investment Board, and Why Nepal's Infrastructure History Is Littered with Agreements That Went Nowhere' (date: 2026-07-09, publish-before: 2026-07-02)
 Processing: 2026-07-10-adf-act-16-remittances-and-diaspora.md
-  SKIPPED: Future post 'The Money That Never Stops Coming: Nepal's Remittance Economy, the Diaspora, and the Fund's Boldest Financing Idea' (date: 2026-07-10, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Money That Never Stops Coming: Nepal's Remittance Economy, the Diaspora, and the Fund's Boldest Financing Idea' (date: 2026-07-10, publish-before: 2026-07-02)
 Processing: 2026-07-11-adf-act-17-nepal-capital-markets.md
-  SKIPPED: Future post 'NEPSE, Bonds, and the Shallow Pool: Nepal's Capital Markets and What the Fund Needs from Them' (date: 2026-07-11, publish-before: 2026-06-26)
+  SKIPPED: Future post 'NEPSE, Bonds, and the Shallow Pool: Nepal's Capital Markets and What the Fund Needs from Them' (date: 2026-07-11, publish-before: 2026-07-02)
 Processing: 2026-07-12-adf-act-18-international-comparisons.md
-  SKIPPED: Future post 'What Happened When Other Countries Tried This: Development Finance Institutions in Bangladesh, Sri Lanka, Ethiopia, and Mongolia' (date: 2026-07-12, publish-before: 2026-06-26)
+  SKIPPED: Future post 'What Happened When Other Countries Tried This: Development Finance Institutions in Bangladesh, Sri Lanka, Ethiopia, and Mongolia' (date: 2026-07-12, publish-before: 2026-07-02)
 Processing: 2026-07-13-adf-act-19-risks-and-honest-concerns.md
-  SKIPPED: Future post 'What Could Go Wrong: An Honest Account of the Risks, the Critics, and the Questions This Law Does Not Answer' (date: 2026-07-13, publish-before: 2026-06-26)
+  SKIPPED: Future post 'What Could Go Wrong: An Honest Account of the Risks, the Critics, and the Questions This Law Does Not Answer' (date: 2026-07-13, publish-before: 2026-07-02)
 Processing: 2026-07-14-adf-act-20-verdict-and-vigil.md
-  SKIPPED: Future post 'The Verdict and the Vigil: A Complete Series Summary, a Citizen's Guide to Tracking the Fund, and the Five Questions That Will Define Nepal's Next Decade' (date: 2026-07-14, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Verdict and the Vigil: A Complete Series Summary, a Citizen's Guide to Tracking the Fund, and the Five Questions That Will Define Nepal's Next Decade' (date: 2026-07-14, publish-before: 2026-07-02)
 Processing: 2026-06-06-diatomaceous-earth-v-boric-acid.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/diatomaceous-earth-v-boric-acid.html (~10 min read)
 Processing: 2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md
-  SKIPPED: Future post 'The Fiscal Year, the Constitution, and the Calendar: Why Nepal's Budget Arrives on Jestha 15' (date: 2026-07-16, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Fiscal Year, the Constitution, and the Calendar: Why Nepal's Budget Arrives on Jestha 15' (date: 2026-07-16, publish-before: 2026-07-02)
 Processing: 2026-07-15-nepal-budget-2026-1-what-is-a-budget.md
-  SKIPPED: Future post 'What Even Is a National Budget? Nepal, Money, and the Machinery of the State' (date: 2026-07-15, publish-before: 2026-06-26)
+  SKIPPED: Future post 'What Even Is a National Budget? Nepal, Money, and the Machinery of the State' (date: 2026-07-15, publish-before: 2026-07-02)
 Processing: 2026-07-18-nepal-budget-2026-4-how-a-budget-becomes-law.md
-  SKIPPED: Future post 'How a Budget Becomes Law: From Speech to Finance Act' (date: 2026-07-18, publish-before: 2026-06-26)
+  SKIPPED: Future post 'How a Budget Becomes Law: From Speech to Finance Act' (date: 2026-07-18, publish-before: 2026-07-02)
 Processing: 2026-07-17-nepal-budget-2026-3-who-wrote-this-budget.md
-  SKIPPED: Future post 'Who Is in the Room? Parliament, Government, and the People Who Wrote This Budget' (date: 2026-07-17, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Who Is in the Room? Parliament, Government, and the People Who Wrote This Budget' (date: 2026-07-17, publish-before: 2026-07-02)
 Processing: 2026-07-20-nepal-budget-2026-6-recurrent-vs-capital.md
-  SKIPPED: Future post 'Recurrent vs Capital: The Most Important Distinction in the Whole Budget' (date: 2026-07-20, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Recurrent vs Capital: The Most Important Distinction in the Whole Budget' (date: 2026-07-20, publish-before: 2026-07-02)
 Processing: 2026-07-19-nepal-budget-2026-5-the-big-number.md
-  SKIPPED: Future post 'The Big Number, Dissected: NPR 2.12 Trillion and What 'Largest in History' Really Means' (date: 2026-07-19, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Big Number, Dissected: NPR 2.12 Trillion and What 'Largest in History' Really Means' (date: 2026-07-19, publish-before: 2026-07-02)
 Processing: 2026-07-22-nepal-budget-2026-8-deficit-and-debt.md
-  SKIPPED: Future post 'Where the Money Comes From, Part 2: Grants, Loans, and the Deficit' (date: 2026-07-22, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Where the Money Comes From, Part 2: Grants, Loans, and the Deficit' (date: 2026-07-22, publish-before: 2026-07-02)
 Processing: 2026-07-21-nepal-budget-2026-7-revenue-and-remittances.md
-  SKIPPED: Future post 'Where the Money Comes From, Part 1: Revenue, Taxes, and the Remittance Economy' (date: 2026-07-21, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Where the Money Comes From, Part 1: Revenue, Taxes, and the Remittance Economy' (date: 2026-07-21, publish-before: 2026-07-02)
 Processing: 2026-07-24-nepal-budget-2026-10-income-tax.md
-  SKIPPED: Future post 'Income Tax for Humans: The Biggest Tax Cut in a Decade' (date: 2026-07-24, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Income Tax for Humans: The Biggest Tax Cut in a Decade' (date: 2026-07-24, publish-before: 2026-07-02)
 Processing: 2026-07-23-nepal-budget-2026-9-fiscal-federalism.md
-  SKIPPED: Future post 'Three Governments, One Country: Fiscal Federalism and the Money That Flows Down' (date: 2026-07-23, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Three Governments, One Country: Fiscal Federalism and the Money That Flows Down' (date: 2026-07-23, publish-before: 2026-07-02)
 Processing: 2026-07-26-nepal-budget-2026-12-business-and-investment.md
-  SKIPPED: Future post 'Open for Business? Investment, Company Law, and the Reform Promises' (date: 2026-07-26, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Open for Business? Investment, Company Law, and the Reform Promises' (date: 2026-07-26, publish-before: 2026-07-02)
 Processing: 2026-07-25-nepal-budget-2026-11-vat-customs-excise.md
-  SKIPPED: Future post 'VAT, Customs, and Excise: The Taxes You Pay Without Noticing' (date: 2026-07-25, publish-before: 2026-06-26)
+  SKIPPED: Future post 'VAT, Customs, and Excise: The Taxes You Pay Without Noticing' (date: 2026-07-25, publish-before: 2026-07-02)
 Processing: 2026-07-28-nepal-budget-2026-14-infrastructure.md
-  SKIPPED: Future post 'Building the Country: Infrastructure, Roads, and the Capital-Spending Problem' (date: 2026-07-28, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Building the Country: Infrastructure, Roads, and the Capital-Spending Problem' (date: 2026-07-28, publish-before: 2026-07-02)
 Processing: 2026-07-27-nepal-budget-2026-13-energy-and-green-tax.md
-  SKIPPED: Future post 'Power and the Planet: Energy, Hydropower, and the New Green Tax' (date: 2026-07-27, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Power and the Planet: Energy, Hydropower, and the New Green Tax' (date: 2026-07-27, publish-before: 2026-07-02)
 Processing: 2026-07-30-nepal-budget-2026-16-social-protection.md
-  SKIPPED: Future post 'The Safety Net: Social Protection, Pensions, and Who Gets Left Out' (date: 2026-07-30, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Safety Net: Social Protection, Pensions, and Who Gets Left Out' (date: 2026-07-30, publish-before: 2026-07-02)
 Processing: 2026-07-29-nepal-budget-2026-15-health-and-education.md
-  SKIPPED: Future post 'Health and Education: Investing in People (or Promising To)' (date: 2026-07-29, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Health and Education: Investing in People (or Promising To)' (date: 2026-07-29, publish-before: 2026-07-02)
 Processing: 2026-08-01-nepal-budget-2026-18-ai-and-startups.md
-  SKIPPED: Future post 'The Future Pitch: AI, Startups, Technology, and the "Digital Nepal" Story' (date: 2026-08-01, publish-before: 2026-06-26)
+  SKIPPED: Future post 'The Future Pitch: AI, Startups, Technology, and the "Digital Nepal" Story' (date: 2026-08-01, publish-before: 2026-07-02)
 Processing: 2026-07-31-nepal-budget-2026-17-agriculture-and-tourism.md
-  SKIPPED: Future post 'Agriculture, Tourism, and the Productivity Question' (date: 2026-07-31, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Agriculture, Tourism, and the Productivity Question' (date: 2026-07-31, publish-before: 2026-07-02)
 Processing: 2026-08-02-nepal-budget-2026-19-credibility-and-execution.md
-  SKIPPED: Future post 'Can They Actually Do It? Credibility, Execution, and How to Read a Budget Like an Auditor' (date: 2026-08-02, publish-before: 2026-06-26)
+  SKIPPED: Future post 'Can They Actually Do It? Credibility, Execution, and How to Read a Budget Like an Auditor' (date: 2026-08-02, publish-before: 2026-07-02)
 Processing: 2026-08-03-nepal-budget-2026-20-citizens-field-guide.md
-  SKIPPED: Future post 'The Citizen's Field Guide to Nepal's Budget 2026-27: Everything You Now Know' (date: 2026-08-03, publish-before: 2026-06-26)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (52 posts, 0 drafts skipped, 38 future posts skipped)
+  SKIPPED: Future post 'The Citizen's Field Guide to Nepal's Budget 2026-27: Everything You Now Know' (date: 2026-08-03, publish-before: 2026-07-02)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (58 posts, 0 drafts skipped, 32 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.8)
-[xUnit.net 00:00:00.14]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.49]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.73]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
-  ObserverMagazine.Web net10.0 browser-wasm succeeded (1.8s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.8)
-[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.48]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.99]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.5s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.9)
+[xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.35]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.52]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.79]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.4s)
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.8s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.9)
+[xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.34]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.50]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:01.02]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
   ObserverMagazine.Web.Tests test net10.0 succeeded (1.5s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 3.4s
-Build succeeded in 4.4s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.4s
+Build succeeded in 6.6s
 
-real	0m4.627s
-user	0m3.566s
-sys	0m0.430s
+real	0m6.735s
+user	0m3.628s
+sys	0m0.491s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 Project 'ObserverMagazine.Web' has the following package references
    [net10.0]: 
    Top-level Package                                        Requested      Resolved
-   > Microsoft.AspNetCore.App.Internal.Assets         (A)   [10.0.8, )     10.0.8  
+   > Microsoft.AspNetCore.App.Internal.Assets         (A)   [10.0.9, )     10.0.9  
    > Microsoft.AspNetCore.Components.WebAssembly            10.0.9         10.0.9  
-   > Microsoft.DotNet.HotReload.WebAssembly.Browser   (A)   [10.0.108, )   10.0.108
+   > Microsoft.DotNet.HotReload.WebAssembly.Browser   (A)   [10.0.109, )   10.0.109
    > Microsoft.Extensions.Http                              10.0.9         10.0.9  
    > Microsoft.Extensions.Logging.Configuration             10.0.9         10.0.9  
-   > Microsoft.NET.ILLink.Tasks                       (A)   [10.0.8, )     10.0.8  
+   > Microsoft.NET.ILLink.Tasks                       (A)   [10.0.9, )     10.0.9  
    > Microsoft.NET.Sdk.WebAssembly.Pack               (A)   [10.0.1, )     10.0.1  
 
 Project 'ObserverMagazine.Integration.Tests' has the following package references
@@ -270,9 +270,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.672s
-user	0m1.609s
-sys	0m0.341s
+real	0m1.560s
+user	0m1.537s
+sys	0m0.349s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -281,20 +281,28 @@ The following sources were used:
    https://api.nuget.org/v3/index.json
 
 The given project `ObserverMagazine.Web` has no updates given the current sources.
-The given project `ObserverMagazine.Integration.Tests` has no updates given the current sources.
-The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
-The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
+Project `ObserverMagazine.Integration.Tests` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package      Requested   Resolved   Latest
+   > YamlDotNet           18.0.0      18.0.0     18.1.0
 
-real	0m1.754s
-user	0m1.755s
-sys	0m0.350s
+The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
+Project `ObserverMagazine.ContentProcessor` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package      Requested   Resolved   Latest
+   > YamlDotNet           18.0.0      18.0.0     18.1.0
+
+
+real	0m2.556s
+user	0m2.082s
+sys	0m0.454s
 Export complete: docs/llm/dump.txt
   Total files: 171
   Blog posts (front matter only): 90
   Full content files: 78
   Binary files skipped: 3
 
-real	0m0.119s
-user	0m0.063s
-sys	0m0.057s
-kushal@fedora:~/src/dotnet/mercifulpotato$ !
+real	0m0.143s
+user	0m0.062s
+sys	0m0.060s
+kushal@fedora:~/src/dotnet/mercifulpotato$ 
