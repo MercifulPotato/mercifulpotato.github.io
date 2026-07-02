@@ -63085,3 +63085,6 @@ where `[slug]` is a short, hyphenated, lowercase description of the article.
 ### Delivery format
 
 Return the complete plan and execution outline as a single markdown artifact. The artifact should display the precise schedule from the start date (2026-06-05) forward, organizing the ten full posts structurally over consecutive days to maximize logical flow and complete coverage. Ensure the framework is fully prepared for automated execution via GitHub actions.
+
+Fable 5 Max thinking 
+
