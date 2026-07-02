@@ -63028,6 +63028,7 @@ be skeptical and fact check everything
 don't assume anything is correct, complete, concise, or comprehensive just because someone asserts it 
 even if it is someone in a position of authority 
 fact check everything
+give self contained examples
 
 **Publish date**: 2026-07-15
 **Author**: mercifulpotato-team
