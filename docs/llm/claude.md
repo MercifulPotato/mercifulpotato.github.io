@@ -63607,3 +63607,1095 @@ Claude is AI and can make mistakes. Please double-check responses.
 100
 22
 10
+
+please continue 
+
+
+/
+Claude finished the response
+
+Plan a series of twenty posts long, comprehensive blog article to be published over twenty days for Merciful Potato Magazine on the following topic: **Topic**: Opentelemetry from the ground up everything must be in English. There should be no other language used in the blog post series the goal
+
+pasted
+
+
+The user prompt is empty, so there is no primary language established. However, based on the thinking block being in English, here is the summary: Recalibrating chunk sizes to prevent truncation
+The user prompt is empty, so there is no primary language established. However, based on the thinking block being in English, here is the summary: Recalibrating chunk sizes to prevent truncation
+I'm looking at a request to plan a 20-part blog series on OpenTelemetry for Merciful Potato Magazine, and I need to read through the full document carefully without skimming, then generate complete files for anything that needs updating while avoiding any guesses.
+
+I'm noticing there's a date conflict in the brief — it says the series should start on 2026-07-15, but according to my memory, that's when the Nepal Budget series is scheduled to begin, and there's also an Alternative Development Finance Act series ending on 2026-07-14. The front matter example shows a different date (2026-08-04), and the delivery format mentions a start date of 2026-06-05, so I need to verify the actual intended timeline before proceeding. The memory notes that Kushal's briefs sometimes contain errors with post counts or dates, so I should cross-reference the schedule carefully. I need to read the entire dump.txt file first to understand the site conventions and formatting requirements. The user has been explicit about reading the whole file sequentially in chunks rather than skimming or searching for specific parts, so I'll start by checking the file size and then reading through it systematically to ensure I capture all the formatting rules before planning the series.
+
+I should also verify the Nepal series dates from the transcripts folder to confirm the timeline, and then decide whether to do web research on OpenTelemetry to fact-check the technical details for the planning document.
+
+The plan artifact needs to include the series title, the full 20-post schedule from August 4-23, 2026, with each post's date, title, slug, filename, summary, and tags, plus designations for featured posts and a sources section approach.
+
+I notice the delivery format has some errors I should flag—the start date is listed as 2026-06-05 when it should be 2026-08-04, and it mentions ten posts instead of twenty. Now I need to read through the dump.txt file to gather the source material, so I'll start by checking its size and then viewing it in chunks of around 2,000 lines. Let me verify the Nepal series dates match up between the memory and the brief example, then I'll check the file sizes to understand what I'm working with before diving into the full dump.txt read. My plan is to quickly list the project directory to see how large these files are, review the instruction and memory files if they're manageable, then systematically go through dump.txt with sequential view calls.
+
+I also need to do some web searches to verify the current state of OpenTelemetry and related topics in 2026, since the series is technical and the brief emphasizes fact-checking. Once I have the accurate information, I'll create the plan as a markdown artifact in the outputs directory. I'm mapping out the historical evolution from early logging systems through to OpenTelemetry's formation in 2019, then identifying the key players—CNCF, major vendors, and end users—and their competing interests around standardization and avoiding lock-in. I'll also need to explain why OpenTelemetry matters compared to proprietary SDKs, and introduce the foundational concepts like signals, context propagation, and W3C standards.
+
+Now I'm diving deeper into each signal type: traces with their spans and attributes, metrics with different instrument types and aggregation modes, and logs with their correlation mechanisms. I'm also covering the critical API-SDK split, the distinction between automatic and manual instrumentation, how the Collector orchestrates data flow through receivers and processors, the OTLP protocol choices, and semantic conventions for consistent naming across systems.
+
+I'm also thinking through sampling strategies and their cost implications, the major backend options from open-source tools like Jaeger and Prometheus to managed services, then focusing on practical .NET instrumentation using ActivitySource and Meter APIs since that aligns with their stack. I'll touch on deployment patterns in Kubernetes and the real operational costs—cardinality explosions, storage overhead, and added complexity—before wrapping up with how to identify common misconceptions in observability.
+
+Now I'm mapping out the actual post structure, starting with a featured piece on why observability matters, then moving into the history of logs, metrics, and traces, followed by how OpenTelemetry solved the vendor lock-in problem by merging OpenTracing and OpenCensus under the CNCF.
+
+Then I'll cover what OpenTelemetry actually encompasses—the API, SDK, Collector, conventions, and protocol—and how it compares to vendor-specific solutions like Azure Application Insights. The next posts dive into the fundamentals: traces with spans and context, context propagation using W3C standards, metrics with instruments and aggregations, and structured logging with correlation. I'll explain the API/SDK design split, instrumentation approaches from zero-code to manual, and continue from there.
+
+Post 12 walks through instrumenting a .NET application with ActivitySource, Meter, and ILogger in a practical example. Then I move into the Collector architecture with receivers, processors, and exporters, followed by OTLP as the wire protocol. Semantic conventions address the naming challenge, sampling strategies help manage data volume, and I'll survey backend options from open-source tools like Jaeger and Prometheus to commercial vendors. The final posts tackle the real costs—overhead, cardinality explosion, storage burden, and complexity—and how to recognize when OpenTelemetry might not be the right fit.
+
+I need to weave in "How to spot the lie" breakdowns throughout, adapted for observability contexts like vendor marketing claims, manipulated dashboards, and SLO gaming. The brief also emphasizes plain English explanations for percentiles and histograms without mathematical notation. The series runs from August 4 through August 23, 2026. Now I'm putting together the full plan artifact with a corrections note about the actual scope (twenty posts starting August 4th, not ten), the complete schedule table with all dates, titles, slugs, and featured status, detailed outlines for each post covering sections and examples, front matter templates for different post types, and fact-checking notes on the current state of OpenTelemetry as of 2026.
+
+I need to read through the full dump.txt file to gather the research and context, so I'll start by checking file sizes and then reading the dump in chunks of around 2,000 lines to make sure I capture everything.
+
+I should also quickly review the other markdown files like claude-instructions.md and claude-memory.md to understand any conventions, then supplement with web searches to verify OpenTelemetry's current state and capabilities. I need to verify how the site handles future-dated posts and whether dump.txt documents the scheduling conventions. The user's boilerplate mentions extensive OpenTelemetry logging, which is a neat coincidence given the series topic. Now I'm ready to start reading files efficiently and build out the plan document.
+
+I'll chunk through dump.txt in sections to find the series format conventions and any existing posts' front matter, then check the other files and do targeted searches as needed. For the series name, I'm thinking "OpenTelemetry from the Ground Up" — but I need to verify the exact format used in previous series like the Nepal budget one.
+
+Show less
+
+Checking sizes of project files before reading dump.txt in full
+bash
+
+wc -l /mnt/project/dump.txt /mnt/project/claude-instructions.md /mnt/project/claude-memory.md /mnt/project/claude-sessions.md /mnt/project/gemini.md /mnt/project/output.txt 2>/dev/null; echo "---"; ls -la /mnt/project/
+Output
+
+  21377 /mnt/project/dump.txt
+     43 /mnt/project/claude-instructions.md
+     47 /mnt/project/claude-memory.md
+   3644 /mnt/project/claude-sessions.md
+    900 /mnt/project/gemini.md
+    300 /mnt/project/output.txt
+  26311 total
+---
+total 1232
+drwxr-xr-x 2 root root   4096 Jul  2 07:48 .
+drwxr-xr-x 6 root root   4096 Jul  2 07:48 ..
+-rw-r--r-- 1 root root   2094 Jan  1  1980 claude-instructions.md
+-rw-r--r-- 1 root root   5098 Jan  1  1980 claude-memory.md
+-rw-r--r-- 1 root root 356085 Jan  1  1980 claude-sessions.md
+-rw-r--r-- 1 root root 822391 Jan  1  1980 dump.txt
+-rw-r--r-- 1 root root  36051 Jan  1  1980 gemini.md
+-rw-r--r-- 1 root root  23035 Jan  1  1980 output.txt
+I need to work through this file systematically—it's quite large at over 21,000 lines, so I'll start by reading the smaller instruction files first to understand the context, then tackle the main dump file in chunks.
+
+
+Reading project instructions file
+
+Reading project memory file for conventions
+I need to work through a large file with over 21,000 lines, so I'll process it in chunks of about 2,000 lines each to make it manageable.
+
+Done
+Now reading dump.txt in full, sequentially.
+
+
+The user prompt is empty, so I cannot provide a summary
+The user prompt is empty, so I cannot provide a summary
+
+Reading dump.txt in full — chunk 1 of 11 (lines 1-2000)
+I'm hitting character limits with large file reads, so I need to break this into smaller chunks of around 1000 lines each to avoid truncation. With over 21,000 lines total, that'll take roughly 22 requests, but I'll work through it systematically to get the full content.
+
+Done
+The chunk was too large and truncated the middle. Using smaller chunks to read every line.
+
+
+The user prompt is empty, so there is no primary language established. I cannot provide a summary without knowing the language in which to write it
+The user prompt is empty, so there is no primary language established. I cannot provide a summary without knowing the language in which to write it
+
+Reading dump.txt in full — lines 160-1000
+I'm realizing the front-matter sections are quite dense with long summary lines, so I need to adjust my chunk size down to around 430 lines to avoid hitting the truncation limit again.
+
+
+Reading dump.txt in full — filling gap lines 366-794
+I need to fill in the gap between lines 540 and 621, then jump ahead to continue from line 1001, adjusting my chunk size to around 420 lines for this front-matter-heavy section.
+
+
+Reading dump.txt in full — filling gap lines 540-621
+
+Reading dump.txt in full — lines 1001-1420
+
+Reading dump.txt in full — filling gap lines 1169-1253
+
+Reading dump.txt in full — lines 1421-1843
+
+Reading dump.txt in full — filling gap lines 1571-1693
+
+Reading dump.txt in full — lines 2001-2420
+
+Reading dump.txt in full — filling gap lines 2208-2213 and continuing 2421-2900
+
+Reading dump.txt in full — lines 2421-2900
+
+Reading dump.txt in full — lines 2901-3400
+
+Reading dump.txt in full — filling gap lines 3141-3161
+
+Reading dump.txt in full — lines 3401-3900
+
+Reading dump.txt in full — lines 3901-4400
+
+Reading dump.txt in full — lines 4401-4900
+
+Reading dump.txt in full — lines 4901-5400
+
+Reading dump.txt in full — lines 5401-5900
+
+Reading dump.txt in full — filling gap lines 5631-5670
+
+Reading dump.txt in full — lines 5901-6400
+
+Reading dump.txt in full — filling gap lines 6116-6185
+
+Reading dump.txt in full — lines 6401-6900
+
+Reading dump.txt in full — filling gap lines 6638-6663
+
+Reading dump.txt in full — lines 6901-7400
+
+Reading dump.txt in full — lines 7401-7900
+
+Reading dump.txt in full — filling gap lines 7607-7694
+
+Reading dump.txt in full — lines 7901-8400
+
+Reading dump.txt in full — filling gap lines 8118-8183
+
+Reading dump.txt in full — lines 8401-8900
+I need to backfill the missing section from lines 8580 to 8722, which covers the audio helper JavaScript and the beginning of the plaintext files, before moving forward.
+
+
+Reading dump.txt in full — filling gap lines 8580-8722
+
+Reading dump.txt in full — lines 8901-9400
+I'm skimming through podcast transcripts and bash script sections that aren't directly relevant to the blog formatting task, but I'll work through the remaining gaps efficiently to get to the end.
+
+
+Reading dump.txt in full — filling gap lines 9094-9207
+
+Reading dump.txt in full — lines 9401-9900
+I'm scanning through a long bash script for a podcast that repeats throughout the file, filling in the gaps as I go. The rest of the content includes sample product data in JSON, test files, and various C# tools for processing frontmatter, markdown, RSS generation, plus a Python audio generation script and its dependencies, finishing with an export footer.
+
+
+Reading dump.txt in full — filling gap lines 9613-9688
+
+Reading dump.txt in full — lines 9901-10450
+
+Reading dump.txt in full — filling gap lines 10118-10233
+
+Reading dump.txt in full — lines 10451-11000
+I'm noticing this plaintext file contains a podcast script that repeats multiple times alongside terminal logs, which isn't directly relevant to the blog formatting task. Since I've already read through this script several times, I'll move through the remaining sections more quickly to get to the products.json and tests/tools sections that should follow.
+
+
+Reading dump.txt in full — filling gap lines 10667-10785
+
+Reading dump.txt in full — lines 11001-11550
+
+Reading dump.txt in full — filling gap lines 11216-11335
+
+Reading dump.txt in full — lines 11551-12100
+
+Reading dump.txt in full — filling gap lines 11769-11882
+
+Reading dump.txt in full — lines 12101-12650
+
+Reading dump.txt in full — filling gap lines 12310-12441
+
+Reading dump.txt in full — lines 12651-13200
+
+Reading dump.txt in full — filling gap lines 12861-12990
+
+Reading dump.txt in full — lines 13201-13750
+Done
+Progress so far
+I've been reading dump.txt end-to-end as you asked (line-by-line via ranged reads, filling every truncated gap so nothing is skipped). Through line ~13,750 I have full coverage of everything that matters for the series, plus most of the plaintext appendix.
+
+What I've confirmed from the dump:
+
+All 106 existing posts' front matter — including the exact series: string format, quoting rules, and tag style used by every prior series
+Schedule verification (important): the Nepal Budget series occupies 2026-07-15 through 2026-08-03. Your brief says "Publish date: 2026-07-15," which collides with that series, and the delivery section says "start date (2026-06-05)" and "ten full posts" — both leftovers from an older template. The brief's own front-matter example (date: 2026-08-04) points to the correct start: the OpenTelemetry series should run 2026-08-04 → 2026-08-23, twenty posts, one per day, immediately after the budget capstone. I'll flag this correction prominently in the plan.
+Conventions re-confirmed: author: mercifulpotato-team; featured: true only on Post 1 and Post 20 (omit the key entirely on Posts 2–19); no draft: true; lowercase-hyphenated tags; quoted strings when a colon-space appears; series: on every post; files as content/blog/YYYY-MM-DD-slug.md.
+Build pipeline details relevant to the plan: deploy.yml rebuilds daily at 06:00 UTC (cron) so future-dated posts publish automatically; the ContentProcessor skips future-dated posts; the TTS pipeline means programming terms in prose get audio-normalized; Directory.Packages.props, Program.cs, and TelemetryService.cs confirm the site itself has an OpenTelemetry-ready logging story — useful for the hands-on .NET posts.
+Remaining unread portion (~13,750–21,378) is the repeated podcast bash-script plaintext, products.json, the test projects, and the ContentProcessor/RssGenerator source — I'll finish those next.
+What remains
+Finish reading dump.txt to the end (~7,600 lines, mostly the repeating plaintext script, tests, and tools).
+Run the pre-writing web research batch to fact-check OpenTelemetry's current state (OpenTracing/OpenCensus merger history, signal stability including profiles, OTel .NET status, Azure Monitor OTel distro) per your "fact check everything" rule.
+Write the complete 20-post series plan (2026-08-04 → 2026-08-23) as a single markdown file in /mnt/user-data/outputs/ and present it.
+Say "continue" and I'll pick up exactly where I left off.
+
+Yes, that's right. the start date is 2026-08-04. please continue
+
+
+Strategized efficient file parsing and subsequent research workflow
+Strategized efficient file parsing and subsequent research workflow
+Now I've got the confirmed start date of August 4th, 2026. I need to finish reading through the dump file to fill in the gap around line 13,413 and continue from 13,751 onward, then do some web research to verify the OpenTelemetry details before putting together the complete 20-post series plan as a markdown file.
+
+
+Reading dump.txt in full — filling gap lines 13413-13538
+
+Reading dump.txt in full — lines 13751-14300
+
+Reading dump.txt in full — filling gap lines 13962-14090
+
+Reading dump.txt in full — lines 14301-14850
+
+Reading dump.txt in full — filling gap lines 14512-14639
+
+Reading dump.txt in full — lines 14851-15400
+
+Reading dump.txt in full — filling gap lines 15058-15194
+
+Reading dump.txt in full — lines 15401-15950
+
+Reading dump.txt in full — filling gap lines 15602-15750
+
+Reading dump.txt in full — lines 15951-16500
+
+Reading dump.txt in full — filling gap lines 16148-16303
+
+Reading dump.txt in full — lines 16501-17050
+I need to finish reading through dump.txt by filling in the gap and continuing to the end, then move on to web research and drafting the plan. Most of what's left is the repeated podcast script, but the important content is at the end with the products.json file, tests, and the ContentProcessor tools like FrontMatterParser, MarkdownProcessor, and RssGenerator.
+
+
+Reading dump.txt in full — filling gap lines 16698-16854
+Done
+please continue
+
+
+Synthesized OpenTelemetry research into comprehensive twenty-post series plan
+Synthesized OpenTelemetry research into comprehensive twenty-post series plan
+I need to continue reading through the rest of dump.txt to see what comes after the podcast content—likely the products.json file, tests, and the ContentProcessor tools that are relevant to the plan.
+
+
+Reading dump.txt in full — lines 17051-17600
+
+Reading dump.txt in full — filling gap lines 17251-17401
+
+Reading dump.txt in full — lines 17601-18150
+
+Reading dump.txt in full — filling gap lines 17796-17955
+
+Reading dump.txt in full — lines 18151-18700
+
+Reading dump.txt in full — filling gap lines 18347-18505
+
+Reading dump.txt in full — lines 18701-19250
+Now I'm filling in the gap and continuing through the test files, looking at ContentProcessorTests.cs and RssGeneratorTests.cs along with what comes next in the tools directory.
+
+
+Reading dump.txt in full — filling gap lines 18943-19009
+
+Reading dump.txt in full — lines 19251-19800
+
+Reading dump.txt in full — filling gap lines 19494-19558
+
+Reading dump.txt in full — lines 19801-20350
+
+Reading dump.txt in full — filling gap lines 20031-20120
+
+Reading dump.txt in full — lines 20351-20900
+
+Reading dump.txt in full — filling gap lines 20576-20676
+
+Reading dump.txt in full — final section lines 20901-21378
+
+Reading dump.txt in full — final gap lines 21136-21142 to complete the entire file
+I've now reviewed the complete dump file through all 21,378 lines. The FrontMatterParser confirms the schema structure with Title, Date, Updated, Author, Summary, Tags, Draft, Featured, Series, and Image fields, while the ContentProcessor logic shows it filters out draft posts and any entries with future dates relative to the publish cutoff.
+
+The RSS feed is configured with the title "Merciful Potato Magazine" and description about the Blazor WebAssembly showcase, pointing to the GitHub Pages site and including full post content in the feed. The audio generation pipeline has preprocessing for programming terminology, though OpenTelemetry-specific terms like OTLP and gRPC aren't in the replacement list, so they'll be read as-is.
+
+Now I'm moving into the research phase—I need to batch web searches to verify the current state of OpenTelemetry, starting with the history of how OpenTracing and OpenCensus merged under CNCF, and checking the stability status of traces, metrics, and logs.
+
+Show less
+I've now reviewed the complete dump file and identified all the key components: the FrontMatterParser, ContentProcessor, RssGenerator, and audio generation script. Next I'll fact-check the technical details before writing out the implementation plan.
+
+
+OpenTelemetry history OpenTracing OpenCensus merger CNCF
+10 results
+
+
+Announcing OpenTelemetry: the merger of OpenCensus and OpenTracing
+opensource.microsoft.com
+
+Cloud Native Computing Foundation Announces OpenTelemetry’s Graduation, Solidifying Status as the De Facto Observability Standard | CNCF
+www.cncf.io
+
+Cloud Native Computing Foundation Announces OpenTelemetry's Graduation, Solidifying Status as the De Facto Observability Standard
+www.prnewswire.com
+
+Day 148 — Why OpenTelemetry Was Needed: From OpenTracing and OpenCensus to Observability for AI Workloads | by Alok Rahul | May, 2026 | Medium
+medium.com
+
+OpenTelemetry becomes a CNCF incubating project | CNCF
+www.cncf.io
+
+OpenTelemetry vs OpenTracing | Understanding OpenCensus and Related Terms
+www.honeycomb.io
+
+OpenTelemetry Project Journey Report | CNCF
+www.cncf.io
+
+A brief history of OpenTelemetry (So Far) | CNCF
+www.cncf.io
+
+CNCF Advances OpenTelemetry Initiative - DevOps.com
+devops.com
+
+What is OpenTelemetry? Complete Guide to OTel Architecture & Setup
+openobserve.ai
+I found a critical update: OpenTelemetry graduated from CNCF on May 11, 2026, which is beyond my training data and important context for this series. The timeline shows it merged OpenTracing and OpenCensus in May 2019, entered the sandbox that same year, moved to incubating status in August 2021, and then reached graduation in May 2026.
+
+The project has grown substantially with over 12,000 contributors from 2,800+ companies and maintains the second-highest velocity after Kubernetes. Key developments include profiles moving into alpha, recent Kotlin support, and a third-party security audit of the Collector completed for graduation. The ecosystem spans multiple languages including Java, Python, Go, JavaScript, .NET, Ruby, PHP, Rust, C++, Swift, and Erlang/Elixir.
+
+Now I need to verify the stability status of the core signals—traces, metrics, and logs—and look into the specific .NET implementation details.
+
+Show less
+I've confirmed OpenTelemetry graduated from CNCF in May 2026, which is a key fact for the series. Now I'll continue researching the remaining items.
+
+
+OpenTelemetry signals stability traces metrics logs profiles status 2026
+10 results
+
+
+Evolving OpenTelemetry's Stabilization and Release Practices | OpenTelemetry
+opentelemetry.io
+
+Observability Beyond Logs — OpenTelemetry and Monitoring's Future | CORE SYSTEMS
+core.cz
+
+OpenTelemetry
+opentelemetry.io
+
+Specification Status Summary | OpenTelemetry
+opentelemetry.io
+OpenTelemetry 2026: The Unified Observability Standard
+techbytes.app
+
+OpenTelemetry Signals Overview: Logs vs Metrics vs Traces · Dash0
+www.dash0.com
+
+Overview | OpenTelemetry
+opentelemetry.io
+
+Profiles | OpenTelemetry
+opentelemetry.io
+
+📊 Observability Explained: Metrics, Logs, Traces, OTel
+peerobyte.com
+What is OpenTelemetry — Metrics, Logs, and Traces for Application Health Monitoring | Greptime
+greptime.com
+I'm reviewing the stability status across the signal types. Traces are confirmed stable and long-term supported, while metrics and logs show stability across major SDKs according to multiple sources. Profiles are officially in alpha as of the May 2026 CNCF announcement, though there's some conflicting information about whether they're moving toward release candidate status in Q1 2026.
+
+I'm also noting the broader OpenTelemetry ecosystem: OpAMP for managing collector fleets, the eBPF profiler implementation, and the semantic conventions and instrumentation library situation from the February 2026 stability proposal. The instrument types are more nuanced than the simplified three-type description—there are actually six to seven instrument types in the spec, including Counter, UpDownCounter, Histogram, Gauge, and observable variants. I'll need to verify the exact set against the official spec when writing.
+
+Next I'm moving into .NET-specific OpenTelemetry support and checking the Azure Monitor OpenTelemetry Distro status.
+
+Show less
+
+OpenTelemetry .NET ActivitySource Meter dotnet 10 observability
+10 results
+
+
+.NET Observability with OpenTelemetry - .NET | Microsoft Learn
+learn.microsoft.com
+
+Complete Observability with OpenTelemetry in .NET 10: A Practical and Universal Guide | by Vitor Gomes | Medium
+vitorafgomes.medium.com
+
+Instrumentation | OpenTelemetry
+opentelemetry.io
+
+ASP.NET Core Observability: OpenTelemetry, Serilog, Metrics and Health Checks
+www.ryadel.com
+
+Guided: Instrumenting an ASP.NET Core 10 App with OpenTelemetry
+www.pluralsight.com
+
+How to Use .NET Built-In Diagnostics APIs with OpenTelemetry
+oneuptime.com
+
+Example: Use OpenTelemetry with Prometheus, Grafana, and Jaeger - .NET | Microsoft Learn
+learn.microsoft.com
+
+How to Monitor .NET Background Services with OpenTelemetry
+oneuptime.com
+
+Example: Use OpenTelemetry with OTLP and the standalone Aspire Dashboard - .NET | Microsoft Learn
+learn.microsoft.com
+
+Observability in a .NET Applications: Logging, Tracing and Metrics with OpenTelemetry. | by Fauly Coelho | Medium
+medium.com
+.NET handles observability differently than other platforms—it doesn't use separate OTel instrumentation APIs but instead leverages built-in platform APIs like ActivitySource for tracing, Meter for metrics, and ILogger for logging. The Activity API has been available since .NET Framework 4.5 and gained full OTel compatibility in .NET 5+ with support for status, events, and links.
+
+Automatic instrumentation for .NET is still in beta, and there's a critical registration step: you must explicitly call AddSource() for ActivitySource and AddMeter() for Meter, otherwise the data gets silently discarded—definitely a gotcha worth highlighting. Configuration happens through environment variables like OTEL_EXPORTER_OTLP_ENDPOINT and OTEL_SERVICE_NAME, and ASP.NET Core provides built-in meters for Hosting and Kestrel. The Aspire Dashboard works as a standalone OTLP visualization tool for development. I've also confirmed the traceparent header format follows W3C Trace Context with the structure 00-{TraceId}-{SpanId}-01, and verified the instrument types like Counter, Histogram, and ObservableGauge.
+
+I need to check one more thing: the Azure Monitor OpenTelemetry Distro status for the vendor comparison post, and then I'll have everything needed for the research phase.
+
+Show less
+
+Azure Monitor OpenTelemetry Distro Application Insights SDK deprecation
+8 results
+
+
+Monitor .NET and Node.js Applications with Application Insights (Classic API 2.x) - Azure Monitor | Microsoft Learn
+learn.microsoft.com
+
+Enable OpenTelemetry in Application Insights - Azure Monitor | Microsoft Learn
+learn.microsoft.com
+
+Migrate Application Insights Classic API Software Development Kits (SDKs) to Azure Monitor OpenTelemetry - Azure Monitor | Microsoft Learn
+learn.microsoft.com
+
+Application Insights FAQ - Frequently Asked Questions - Azure Monitor | Microsoft Learn
+learn.microsoft.com
+
+Configuring OpenTelemetry in Application Insights - Azure Monitor | Microsoft Learn
+learn.microsoft.com
+
+Application Insights OpenTelemetry observability overview - Azure Monitor | Microsoft Learn
+learn.microsoft.com
+
+How to Replace Azure Application Insights SDK with OpenTelemetry
+oneuptime.com
+
+Enable OpenTelemetry in Application Insights - Azure Monitor | Azure Docs
+docs.azure.cn
+I'm finding some critical Azure details for the vendor comparison post—the Application Insights Classic API SDK 2.x is being deprecated with a March 2027 retirement date, which is a major consideration for the analysis. Microsoft's pushing the Azure Monitor OpenTelemetry Distro as the recommended path forward, with SDK 3.x offering an OTel-based migration route that maintains backward compatibility through a TelemetryClient shim. The platform also supports native OTLP ingestion and has the Distro available across .NET, Node.js, and Python environments.
+
+Browser telemetry still relies on the Application Insights JavaScript SDK rather than OTel, which is an important distinction. For Azure Functions, I can configure OpenTelemetry mode directly in the host.json file. The sampling strategy uses trace-based sampling while metrics are never sampled, with a fixed 60-second ingestion interval for custom metrics. One key constraint: I shouldn't mix SDK 3.x and the Distro in the same application.
+
+I've gathered enough research across four substantive searches covering the history, signal stability, .NET specifics, and Azure comparison details. The plan document itself doesn't require exhaustive Collector/OTLP verification since each post will re-verify facts during writing. Now I'm ready to compile the complete plan as a single markdown file for output.
+
+Writing the plan document with the corrected schedule (August 4th start, 20 posts total), precise daily timeline, GitHub Actions automation framework with 06:00 UTC cron trigger, front-matter templates for featured posts (1 and 20), and all the fact-check findings with sources included. The first post covers why software breaks without clear visibility, then I'm moving through the history of observability tooling—from separate logs, metrics, and traces through the merger of OpenTracing and OpenCensus into OpenTelemetry. I'll explain what OpenTelemetry actually is versus vendor alternatives like Azure Application Insights, then dive into the fundamentals of tracing with spans, attributes, events, and links before getting into context propagation.
+
+From there I'm covering metrics and logs from first principles, explaining the API/SDK split, different instrumentation approaches, and then getting hands-on with .NET implementations using ActivitySource, Meter, and ILogger. The series wraps up with the Collector architecture and OTLP as the wire protocol.
+
+Continuing with semantic conventions and their naming challenges, sampling strategies for managing data volume, where telemetry backends fit in, the real costs and downsides of OpenTelemetry, how to identify observability-washing versus genuine insights, and finally governance and the project's future direction.
+
+Each post needs its own take on spotting misleading claims, drawing from the statistics series approach. I'm tagging everything with opentelemetry, observability, and plain-english, then adding specific tags per topic like distributed-tracing, metrics, logging, and so on in lowercase-hyphenated format. For the series metadata, I'm using the full title "OpenTelemetry from the Ground Up" and checking whether it needs quotes based on whether it contains colons.
+
+Now I'm putting together the full plan document as a comprehensive markdown file covering the schedule, detailed outlines for each post with sections and examples, the spot-the-lie angle for each, sources to verify, front-matter templates, writing guidelines, and fact-checking notes. This will be substantial—around 800 to 1000 lines—so I'll generate it in a single file creation.
+
+I need to remember that the writing rules apply to the blog posts themselves, not the plan document, so I can use structured lists and tables here. The plan needs to encode all the constraints: no Greek letters or math formulas, proper source citations, the "how to spot the lie" breakdown for every tool, and a target word count of 6,000 to 10,000 words per post for that exhaustive depth.
+
+Now I'm ready to create the plan document and save it to the outputs folder.
+
+Show less
+I've verified all the key facts about OpenTelemetry's CNCF graduation, merger history, signal stability, .NET APIs, and Application Insights retirement date. Now I'll write the complete plan file.
+
+
+Creating the complete 20-post OpenTelemetry series plan as a single markdown artifact in the outputs directory
+opentelemetry-from-the-ground-up-series-plan.md
+
+Presented file
+Done
+The complete series plan is ready. Here's what it contains:
+
+The essentials: 20 posts, "OpenTelemetry from the Ground Up," running 2026-08-04 through 2026-08-23 daily — picking up the day after the Nepal Budget capstone. The date corrections you confirmed are documented prominently at the top of the plan (the brief's 2026-07-15 / 2026-06-05 / "ten posts" template leftovers, all corrected).
+
+Structure: History and actors (posts 1–5, including the Azure Application Insights head-to-head), the three signals plus context propagation from first principles (6–9), architecture (10–14: API/SDK split, instrumentation, hands-on .NET, Collector, OTLP), the hard practical layers (15–18: semantic conventions, sampling, backends, costs and downsides), and two capstones — a consolidated "How to Spot the Lie" toolkit (19) and governance/road-ahead (20). Every post has a numbered spot-the-lie section, mandatory code examples, and a Sources section, with running continuity devices (the kitchen analogy, a six-span checkout trace reused across seven posts, the "specified ≠ implemented ≠ stable ≠ adopted" mantra).
+
+Fact-check results worth noting: The research turned up something significant — OpenTelemetry graduated from CNCF on May 11, 2026, just weeks ago, which post 3 and post 20 are now built around. Also verified: the Application Insights Classic SDK 2.x retirement date of March 31, 2027 (the anchor fact for post 5), profiles at alpha status per CNCF's own announcement (with a warning that secondary sources disagree, so it's flagged as the series' most volatile claim), and the .NET-native ActivitySource/Meter/ILogger approach for post 12. Facts I couldn't confirm to primary-source standard are explicitly listed as "not asserted."
+
+Automation: All twenty files can be committed in advance — the ContentProcessor's future-date skip plus the 06:00 UTC daily cron handles publication automatically, and I confirmed one writing consequence from the TTS pipeline: code blocks are stripped before narration, so key facts must always appear in prose too.
+
+One open item: confirm the series title before generation starts, since the series: string must be identical across all twenty files.
+
+
+Opentelemetry from the ground up series plan
+Document · MD 
+
+Want to be notified when Claude responds?
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check cited sources.
+
+
+
+
+
+
+47
+26
+19
+
+# Series Plan: OpenTelemetry from the Ground Up
+
+**Merciful Potato Magazine — 20-post daily series**
+**Publication window: 2026-08-04 through 2026-08-23 (one post per day)**
+**Plan prepared: 2026-07-02**
+
+---
+
+## 0. Corrections to the Planning Brief (Confirmed by Kushal)
+
+The planning brief contained template leftovers from earlier series that have been corrected after cross-referencing the publication schedule:
+
+| Brief said | Corrected to | Why |
+|---|---|---|
+| "Publish date: 2026-07-15" | First post publishes **2026-08-04** | 2026-07-15 is the start of the Nepal Budget series (20 parts, 2026-07-15 → 2026-08-03). The brief's own front-matter example showed `date: 2026-08-04`. |
+| "start date (2026-06-05)" | **2026-08-04** | 2026-06-05 falls inside already-published content; the ADF Act series ran 2026-06-25 → 2026-07-14. |
+| "ten full posts" | **Twenty posts** | The brief's headline and schedule framework specify a twenty-post, twenty-day series. |
+
+**Kushal explicitly confirmed: start date is 2026-08-04.** The series therefore runs 2026-08-04 through 2026-08-23 with no gaps, picking up the day after the Nepal Budget series capstone (2026-08-03).
+
+---
+
+## 1. Series Concept
+
+**Working title:** *OpenTelemetry from the Ground Up*
+**Series front-matter value:** `series: "OpenTelemetry from the Ground Up"` (identical string on all 20 posts)
+**Slug pattern:** `otel-<N>-<short-topic>` (consistent with `nepal-budget-2026-1-…`, `statistics-9-…`, `adf-act-20-…`)
+**Audience:** General professionals and civic decision-makers with zero prior education in software observability. Every concept defined on first use. No assumed knowledge of programming, servers, or monitoring.
+**Voice:** Long-form, exhaustive, first-principles prose. Skeptical, balanced, fact-checked. No cheerleading for OpenTelemetry; the series covers upsides, downsides, costs, and the motivations of every actor involved.
+**Length target:** 6,000–10,000+ words per post, equal depth throughout — post 20 as thorough as post 1.
+
+### Non-negotiable writing rules (from the brief, applied to every post)
+
+1. English only. Define every term of art on first use (span, metric, cardinality, exporter, and so on — each gets a plain-English definition before it is used again).
+2. **No Greek letters and no mathematical formulas.** Concepts like percentiles, histograms, aggregation temporality, and sampling probability are explained in plain English with worked numeric examples in tables.
+3. **Code and practical examples are mandatory in every post.** Acceptable forms: markdown tables, conceptual data arrays, mock code in Python, C#, or pseudo-logic, and JSON stream examples. C# and ASP.NET Core are the primary code languages (this matches the site's own stack and highlighter support: csharp, python, json, yaml, bash, sql, js, ts, html, css).
+4. **No clickable links inside code blocks.** URLs in code samples appear as plain text placeholders like `YOUR_BACKEND_ENDPOINT` or are written outside the code fence.
+5. **Concrete, fact-based stories and case studies** — real incidents, real project history, real company decisions with dates. No invented fairy tales.
+6. **A "How to spot the lie" section in every post**, adapted from the statistics series template to observability: for every tool or concept introduced, show how it is misused, gamed, or marketed dishonestly, and how a reader can detect that.
+7. Numbered Parts with `##` headers; `###` subsections within parts. Flowing paragraphs only in body prose — no bullet lists inside the article body (structural elements like the Sources section and tables are fine).
+8. **Every post ends with a Sources section** citing primary documentation (opentelemetry.io, CNCF, Microsoft Learn, W3C) and further reading.
+9. **Fact-check at writing time.** The verified facts in Section 6 of this plan were checked on 2026-07-02. Because OpenTelemetry moves fast (it graduated from CNCF only weeks ago), each post's generation session must re-verify version numbers, signal maturity, and dates via web search before writing. Do not trust this plan's snapshot blindly in August.
+10. Announced ≠ enacted ≠ implemented, adapted to software: *specified ≠ implemented ≠ stable ≠ adopted*. A signal existing in the specification does not mean every language SDK supports it; a vendor claiming "OpenTelemetry support" does not mean full OTLP ingestion. This distinction recurs throughout the series.
+11. Inputs vs. outcomes, adapted to observability: collecting telemetry (input) is not the same as understanding your system (outcome). Dashboards are not insight. This framing anchors posts 1, 18, and 19.
+
+---
+
+## 2. Complete Daily Schedule
+
+| # | Date | Title | Slug | Filename | Featured |
+|---|---|---|---|---|---|
+| 1 | 2026-08-04 | Why Software Breaks and Nobody Knows Why: The Case for Observability | otel-1-why-software-breaks | 2026-08-04-otel-1-why-software-breaks.md | **true** |
+| 2 | 2026-08-05 | Before OpenTelemetry: A History of Logs, Metrics, and Traces | otel-2-history-before-opentelemetry | 2026-08-05-otel-2-history-before-opentelemetry.md | — |
+| 3 | 2026-08-06 | The Merger: OpenTracing, OpenCensus, and the Birth of OpenTelemetry | otel-3-the-merger | 2026-08-06-otel-3-the-merger.md | — |
+| 4 | 2026-08-07 | What OpenTelemetry Is — and What It Is Not | otel-4-what-otel-is-and-is-not | 2026-08-07-otel-4-what-otel-is-and-is-not.md | — |
+| 5 | 2026-08-08 | OpenTelemetry vs. Vendor SDKs: The Azure Application Insights Story | otel-5-otel-vs-vendor-sdks | 2026-08-08-otel-5-otel-vs-vendor-sdks.md | — |
+| 6 | 2026-08-09 | Traces from First Principles: Spans, Attributes, Events, and Links | otel-6-traces-first-principles | 2026-08-09-otel-6-traces-first-principles.md | — |
+| 7 | 2026-08-10 | Context Propagation: How a Request Keeps Its Identity | otel-7-context-propagation | 2026-08-10-otel-7-context-propagation.md | — |
+| 8 | 2026-08-11 | Metrics from First Principles: Counters, Gauges, and Histograms | otel-8-metrics-first-principles | 2026-08-11-otel-8-metrics-first-principles.md | — |
+| 9 | 2026-08-12 | Logs from First Principles: From Print Statements to Structured Records | otel-9-logs-first-principles | 2026-08-12-otel-9-logs-first-principles.md | — |
+| 10 | 2026-08-13 | The API and the SDK: Why OpenTelemetry Split Itself in Two | otel-10-api-sdk-separation | 2026-08-13-otel-10-api-sdk-separation.md | — |
+| 11 | 2026-08-14 | Instrumentation: Zero-Code, Libraries, and Doing It by Hand | otel-11-instrumentation | 2026-08-14-otel-11-instrumentation.md | — |
+| 12 | 2026-08-15 | Hands-On .NET: ActivitySource, Meter, and ILogger | otel-12-hands-on-dotnet | 2026-08-15-otel-12-hands-on-dotnet.md | — |
+| 13 | 2026-08-16 | The Collector: Receivers, Processors, Exporters, and Pipelines | otel-13-the-collector | 2026-08-16-otel-13-the-collector.md | — |
+| 14 | 2026-08-17 | OTLP: The Wire Protocol That Carries Everything | otel-14-otlp-protocol | 2026-08-17-otel-14-otlp-protocol.md | — |
+| 15 | 2026-08-18 | Semantic Conventions: Why Naming Things Is the Hardest Problem | otel-15-semantic-conventions | 2026-08-18-otel-15-semantic-conventions.md | — |
+| 16 | 2026-08-19 | Sampling: Keeping Some Data and Throwing the Rest Away | otel-16-sampling | 2026-08-19-otel-16-sampling.md | — |
+| 17 | 2026-08-20 | Backends: Where Telemetry Goes to Be Useful | otel-17-backends | 2026-08-20-otel-17-backends.md | — |
+| 18 | 2026-08-21 | The Costs and Downsides: When OpenTelemetry Hurts | otel-18-costs-and-downsides | 2026-08-21-otel-18-costs-and-downsides.md | — |
+| 19 | 2026-08-22 | How to Spot the Lie: Observability-Washing and Dashboard Theater | otel-19-how-to-spot-the-lie | 2026-08-22-otel-19-how-to-spot-the-lie.md | — |
+| 20 | 2026-08-23 | Governance and the Road Ahead: Who Steers OpenTelemetry | otel-20-governance-and-road-ahead | 2026-08-23-otel-20-governance-and-road-ahead.md | **true** |
+
+Date arithmetic check: 2026-08-04 plus nineteen days is 2026-08-23. Twenty consecutive daily posts, no gaps, no overlap with the Nepal Budget series which ends 2026-08-03.
+
+---
+
+## 3. Front Matter Templates (Verified Against Site Conventions)
+
+These templates were verified against the full `dump.txt` read: the `FrontMatterParser.cs` schema (title, date, updated, author, summary, tags, draft, featured, series, image), all 106 existing post front matters, and the ContentProcessor behavior.
+
+### Post 1 (2026-08-04) — featured
+
+```yaml
+---
+title: "Why Software Breaks and Nobody Knows Why: The Case for Observability"
+date: 2026-08-04
+author: mercifulpotato-team
+summary: "Modern software fails in ways its own builders cannot see. This series opener explains, from absolute first principles, what observability means, why the industry invented it, and what it costs to have — or to lack."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-engineering
+series: "OpenTelemetry from the Ground Up"
+featured: true
+---
+```
+
+### Posts 2 through 19 — mid-series (NO featured key at all)
+
+```yaml
+---
+title: "Traces from First Principles: Spans, Attributes, Events, and Links"
+date: 2026-08-09
+author: mercifulpotato-team
+summary: "A distributed trace is the biography of a single request. This post builds the idea of a span from nothing, then assembles spans into traces, with worked JSON examples you can read line by line."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - distributed-tracing
+series: "OpenTelemetry from the Ground Up"
+---
+```
+
+### Post 20 (2026-08-23) — featured capstone
+
+```yaml
+---
+title: "Governance and the Road Ahead: Who Steers OpenTelemetry"
+date: 2026-08-23
+author: mercifulpotato-team
+summary: "OpenTelemetry graduated from the CNCF in May 2026. This capstone examines who actually governs the project, what stability guarantees mean, what profiles and the next signals promise, and what could still go wrong."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - open-source-governance
+series: "OpenTelemetry from the Ground Up"
+featured: true
+---
+```
+
+### Front-matter rules checklist (apply to every post)
+
+1. `author: mercifulpotato-team` — hyphenated ID, exactly this string, never a display name.
+2. `featured: true` on posts 1 and 20 **only**. Posts 2–19 **omit the featured line entirely** — never write `featured: false`.
+3. Never include `draft: true` (the ContentProcessor would skip the post).
+4. Tags: lowercase-hyphenated. Every post carries `opentelemetry`, `observability`, `plain-english`, plus one to three topic tags from the pool: `distributed-tracing`, `metrics`, `logging`, `dotnet`, `aspnet-core`, `devops`, `software-history`, `azure`, `sampling`, `open-source-governance`, `software-engineering`, `data-visualization`.
+5. Any title or summary containing a colon followed by a space **must** be wrapped in double quotes. Safest practice: quote every title and summary in this series (most titles contain colons).
+6. `series: "OpenTelemetry from the Ground Up"` on every post — identical string, quoted.
+7. Filename: `YYYY-MM-DD-<slug>.md`. The ContentProcessor strips the date prefix to derive the slug, so the slug column in Section 2 is what appears in URLs: `https://mercifulpotato.github.io/blog/otel-1-why-software-breaks`.
+8. Output location during generation: `/mnt/user-data/outputs/`. Kushal commits to `content/blog/`.
+
+---
+
+## 4. Per-Post Detailed Outlines
+
+Every post follows the house skeleton: a cold-open story or concrete scenario, numbered Parts with `##` headers, `###` subsections, mandatory code/data examples, a "How to Spot the Lie" part, a "What Comes Next" bridge to the following day's post, and a Sources section.
+
+---
+
+### Post 1 — Why Software Breaks and Nobody Knows Why: The Case for Observability (2026-08-04, featured)
+
+**Purpose:** Establish, from zero, why this series exists. The reader has never heard the word "telemetry."
+
+**Parts:**
+1. **A Tuesday outage nobody could explain.** Open with a documented, dated real-world incident where diagnosis took far longer than the fix (candidates to verify at writing time: the AWS US-EAST-1 outage of December 2021, the Facebook BGP outage of October 4, 2021, the Rogers Communications Canada-wide outage of July 8, 2022 — pick two, verify timelines and post-mortem details from primary sources).
+2. **What software actually is when it runs.** Processes, servers, requests, dependencies — defined in plain English with a restaurant-kitchen analogy carried through the whole series (orders = requests, stations = services, the kitchen ticket = the trace).
+3. **Monitoring vs. observability.** Monitoring answers questions you thought to ask in advance; observability lets you ask new questions about a running system without shipping new code. Define both carefully; note the term "observability" was borrowed from control theory (verify attribution to Rudolf Kálmán's 1960 work — state it as borrowed terminology, no formulas).
+4. **The three classic signals, previewed.** Logs (what happened), metrics (how much and how often), traces (where in the journey) — one table comparing them with the kitchen analogy, one small JSON example of each.
+5. **What it costs to be blind.** Downtime cost studies (verify current figures at writing time; treat vendor-published downtime-cost surveys skeptically and say so), engineer time spent debugging, the "mean time to innocence" problem where teams prove it wasn't them instead of finding the cause.
+6. **What it costs to see.** Preview of post 18: telemetry is not free — storage, network, engineering time, and the risk of drowning in data. Inputs vs. outcomes framing introduced here.
+7. **How to Spot the Lie #1: "We have full visibility."** Vendor claims of complete observability; the difference between collecting data and being able to answer questions; dashboard screenshots in sales decks vs. 3 a.m. reality.
+8. **What this series will do.** Roadmap of all 20 posts in prose.
+
+**Code/examples:** A mock incident timeline table; three tiny JSON samples (a log line, a metric point, a span) with every field explained; a plain-English pseudo-logic walkthrough of a request crossing four services.
+
+**Sources to cite:** opentelemetry.io "What is OpenTelemetry"; CNCF graduation announcement (May 21, 2026); published post-mortems of the chosen incidents; Honeycomb/Charity Majors writing on observability definitions (attributed as an opinionated industry voice, not neutral).
+
+---
+
+### Post 2 — Before OpenTelemetry: A History of Logs, Metrics, and Traces (2026-08-05)
+
+**Purpose:** The full pre-history, so the merger in post 3 makes sense.
+
+**Parts:**
+1. **Printing to paper: syslog and the log era.** Eric Allman's syslog for Sendmail (early 1980s, verify), RFC 3164 and RFC 5424, the idea of severity levels, why grep-on-text ruled for decades.
+2. **Counting things: the metrics era.** MRTG and RRDtool, Nagios (1999, verify), Ganglia, Graphite (2008, Orbitz, verify) and StatsD (2011, Etsy, verify), then Prometheus (2012 at SoundCloud, inspired by Google's Borgmon, CNCF's second project — verify all dates).
+3. **Following the journey: distributed tracing is born.** Google's Dapper paper (2010, verify authors Benjamin Sigelman et al.), Twitter's Zipkin (open-sourced 2012, verify), Uber's Jaeger (2016–2017, donated to CNCF — verify), what a trace meant before standards.
+4. **The Tower of Babel problem.** Every vendor an agent, every agent a format: proprietary SDKs from New Relic, AppDynamics, Dynatrace, Datadog, and Microsoft's Application Insights each spoke their own dialect. Re-instrumenting an application to switch vendors — the switching-cost story that motivates everything after.
+5. **APM as an industry.** Define Application Performance Monitoring; who paid for it, what it cost, why lock-in was the business model (state this as analysis, fairly: vendors also delivered real value and funded real engineering).
+6. **How to Spot the Lie #2: "Industry standard."** Before real standards existed, everything marketed itself as standard. How to check whether a "standard" has a specification, multiple independent implementations, and neutral governance — a checklist the reader will reuse in post 3.
+
+**Code/examples:** A syslog line dissected field by field; a StatsD wire-format example in a code block; a conceptual table mapping the same failed checkout through logs-only, metrics-only, and trace-enabled worlds.
+
+**Sources:** the Dapper paper (Google Research), Zipkin and Jaeger project histories, Prometheus documentation and CNCF project pages, RFC 5424. Verify every date at writing time.
+
+---
+
+### Post 3 — The Merger: OpenTracing, OpenCensus, and the Birth of OpenTelemetry (2026-08-06)
+
+**Purpose:** The actors, their motivations, and the 2019 merger — the "who benefits" post.
+
+**Parts:**
+1. **OpenTracing (2016).** A vendor-neutral tracing API under the CNCF; Ben Sigelman (Dapper co-author, LightStep founder) as a driving figure; what an API-only standard could and could not guarantee.
+2. **OpenCensus (2018).** Google's answer, grown from internal Census libraries: API plus implementation, traces plus metrics; Morgan McLean as product lead; Microsoft joining OpenCensus.
+3. **Two standards is worse than none.** The fragmentation problem the split created for library authors: instrument for which one? The pressure from end users and vendors to unify.
+4. **The merger, precisely dated.** Announced spring 2019; OpenTelemetry created as "the next major version of both"; joined CNCF May 17, 2019 as a sandbox project; first GitHub commit April 2019; OpenTracing and OpenCensus moved to read-only/archived status. (All verified 2026-07-02; re-verify at writing.)
+5. **Follow the motivations.** Why Google wanted this (cloud business needs portable telemetry), why Microsoft joined (Azure Monitor interop; more in post 5), why observability vendors like Splunk, Datadog, Dynatrace, Honeycomb, and LightStep contributed (commoditize collection, compete on analysis), why end users pushed (escape lock-in). Present each actor's incentive honestly — cooperation here was self-interested and that is fine.
+6. **Milestones to graduation.** Incubating August 26, 2021; **graduated May 11, 2026, announced May 21, 2026** at the CNCF Observability Summit in Minneapolis; by graduation: over 12,000 contributors from over 2,800 companies; second-highest project velocity in CNCF after Kubernetes; a third-party independent security audit of core components including the Collector was part of graduation. (Verified 2026-07-02 against CNCF's announcement.)
+7. **How to Spot the Lie #3: reading a foundation press release.** What "graduation" does and does not certify; how contributor counts can mislead (drive-by commits vs. maintainers); applying the post-2 standards checklist to OpenTelemetry itself — it passes, and the post shows the reader how to verify that themselves.
+
+**Code/examples:** A timeline table 2016–2026; a conceptual before/after code pair showing the same function instrumented with an imaginary vendor SDK vs. a neutral API (pseudo-C#).
+
+**Sources:** CNCF blog "A Brief History of OpenTelemetry (So Far)" (Sigelman & McLean, 2019); CNCF incubation announcement (2021); CNCF graduation announcement (May 21, 2026); Microsoft Open Source blog on the merger (2019).
+
+---
+
+### Post 4 — What OpenTelemetry Is — and What It Is Not (2026-08-07)
+
+**Purpose:** The precise anatomy. Kill the biggest misconception early: OTel is not a monitoring product.
+
+**Parts:**
+1. **One sentence, then the whole picture.** OpenTelemetry is a specification plus a set of tools for generating, collecting, and exporting telemetry — it is deliberately **not** a storage backend, not a dashboard, not an alerting system.
+2. **The pieces, one by one.** The specification; the APIs; the SDKs; the instrumentation libraries; the Collector; the OpenTelemetry Protocol (OTLP); semantic conventions; the four signals (traces, metrics, logs, profiles) with maturity status per signal stated honestly (traces stable with long-term support; metrics and logs stable in major SDKs; profiles young — alpha at graduation per CNCF; verify exact status at writing time).
+3. **Specified ≠ implemented ≠ stable ≠ adopted.** The series' recurring distinction, applied: the spec status page vs. each language SDK's own maturity; why the compliance matrix exists; the project's own 2025–2026 push to prioritize stability over new features (cite the OpenTelemetry stability-practices blog post).
+4. **What flows where.** A full journey diagram in prose plus a table: application code → API → SDK → exporter → Collector → backend. The kitchen analogy extended: OTel is the standardized order-ticket format and the pass-through window, not the restaurant.
+5. **The escape-hatch value proposition.** Instrument once, switch backends by reconfiguration. Also the honest caveat: switching *analysis* tools still means relearning query languages and rebuilding dashboards — portability of data is not portability of everything.
+6. **How to Spot the Lie #4: "Powered by OpenTelemetry."** A vendor can (a) accept OTLP natively, (b) convert OTel data into a proprietary format at the door, or (c) merely ship an OTel exporter while keeping proprietary agents primary. These are very different claims wearing the same badge; how to test which one you are buying.
+
+**Code/examples:** An annotated OTLP JSON payload fragment; a table of the four signals with definition, question answered, maturity, and typical volume; a YAML sketch of the data path (conceptual, not runnable).
+
+**Sources:** opentelemetry.io documentation (overview, specification status page, signals concepts pages), CNCF graduation announcement, OpenTelemetry blog on stabilization practices.
+
+---
+
+### Post 5 — OpenTelemetry vs. Vendor SDKs: The Azure Application Insights Story (2026-08-08)
+
+**Purpose:** The requested head-to-head, using Microsoft's own journey as the case study, argued both directions.
+
+**Parts:**
+1. **What Application Insights was.** Microsoft's APM: the classic SDK, TelemetryClient, automatic collection, deep Azure portal integration. Why teams loved it — genuinely low effort for genuinely useful output.
+2. **The lock-in ledger.** What adopting a vendor SDK costs later: proprietary API calls scattered through the codebase, data formats only one backend understands, pricing leverage.
+3. **Microsoft's pivot, precisely dated.** Microsoft joined OpenCensus, then OpenTelemetry; today Microsoft's own documentation recommends the **Azure Monitor OpenTelemetry Distro** for new applications; the **classic Application Insights SDK 2.x for .NET is deprecated and retires on 2027-03-31**; SDK 3.x exists as an OTel-based compatibility bridge that keeps TelemetryClient APIs but emits OpenTelemetry signals underneath; Azure Monitor now ingests OTLP. (All verified 2026-07-02 against Microsoft Learn; re-verify at writing.)
+4. **What a "distro" is.** Define distribution: the open SDK plus vendor-chosen defaults, extra exporters, and support guarantees. The honest trade: a distro reduces setup pain and restores a little vendor gravity at the same time.
+5. **The case FOR a vendor SDK/distro, made fairly.** Faster start, curated defaults, one throat to choke for support, features the neutral SDK lacks (Live Metrics is Azure's example), and — for browser telemetry — Microsoft still points to its JavaScript SDK because OTel's browser story remains immature (verified against Microsoft's FAQ; re-verify).
+6. **The case FOR neutral OTel, made fairly.** Portability, community instrumentation breadth, no re-instrumentation on backend change, multi-backend fan-out through the Collector.
+7. **A decision framework.** Not a verdict but questions: expected system lifetime, multi-cloud odds, team size, how much of the code touches telemetry APIs directly.
+8. **How to Spot the Lie #5: migration-guide archaeology.** Deprecation timelines as strategy documents; how to read "we recommend X" while X conveniently deepens platform attachment; checking whether "OpenTelemetry support" means native OTLP ingestion or a converter.
+
+**Code/examples:** Side-by-side C# snippets: classic `AddApplicationInsightsTelemetry()` vs. Azure Monitor Distro registration vs. plain OTel with OTLP exporter; a comparison table (portability, effort, features, support, cost exposure) filled with verifiable facts, not vibes.
+
+**Sources:** Microsoft Learn (classic API deprecation notice with the 2027-03-31 date, "Enable OpenTelemetry in Application Insights," migration guide, Application Insights FAQ), Azure Monitor OpenTelemetry Distro documentation.
+
+---
+
+### Post 6 — Traces from First Principles: Spans, Attributes, Events, and Links (2026-08-09)
+
+**Purpose:** Build the trace data model from nothing.
+
+**Parts:**
+1. **The biography of one request.** Narrative walkthrough: a reader clicks "buy," and we follow that click through five services, in prose, before any vocabulary.
+2. **The span, defined.** A named, timed unit of work: name, start, end, and identifiers. Trace ID (the whole journey) vs. span ID (one step); parent-child relationships forming a tree.
+3. **Enriching a span.** Attributes (key-value facts), events (timestamped moments within a span), status (ok/error), span kind (server, client, internal, producer, consumer), and links (connections to other traces — the fan-in case where parenthood does not fit).
+4. **Reading a real trace.** One complete worked example: a JSON array of six spans for the checkout, presented and then read line by line over several paragraphs — every field explained.
+5. **The waterfall.** How trace viewers render span trees as timelines; finding the slow step by looking at the longest bar; the gap between bars as unexplained time.
+6. **What traces cost.** Every hop produces a span; busy systems produce millions per second; foreshadow sampling (post 16).
+7. **How to Spot the Lie #6: the demo trace.** Perfect five-span demo traces vs. production traces with missing spans (uninstrumented services), broken parent links, and clock skew. How to ask a vendor "show me a trace with a gap in it."
+
+**Code/examples:** The six-span JSON checkout trace (the series' running example — reused in posts 7, 13, 14, 16); a table of span fields; a text-rendered waterfall using box characters inside a code block.
+
+**Sources:** OpenTelemetry tracing specification and concepts pages; the Dapper paper for lineage.
+
+---
+
+### Post 7 — Context Propagation: How a Request Keeps Its Identity (2026-08-10)
+
+**Purpose:** The invisible machinery that makes distributed tracing possible at all.
+
+**Parts:**
+1. **The passport problem.** Service B must know it is doing work for the same journey Service A started. Without an agreed way to pass identity, every service starts a new, orphaned trace.
+2. **Context, defined.** In-process context (how the current span follows your code through function calls and async hops) vs. cross-process propagation (how identity crosses the network).
+3. **W3C Trace Context, byte by byte.** The `traceparent` header dissected: version, trace ID, parent span ID, trace flags — a real header string in a code block with each hex segment explained in plain English (no math; hexadecimal introduced as "a compact way to write numbers," with a small conversion table). The `tracestate` header for vendor extras. Why a W3C web standard matters: browsers, proxies, and clouds all agreed.
+4. **Baggage.** User-defined key-values that ride along the journey (tenant ID, experiment flag); the sharp edges: baggage is visible in headers, adds bytes to every hop, and is not automatically added to spans.
+5. **Where propagation breaks.** Message queues, batch jobs, scheduled work, legacy services that strip headers — and the manual stitching required (a C#-flavored pseudo-example of injecting and extracting `traceparent` through a queue message, mirroring real RabbitMQ practice).
+6. **How to Spot the Lie #7: "end-to-end tracing."** If one hop drops the header, "end-to-end" quietly becomes "two separate traces the dashboard pretends are related." How to verify: pick one real request ID and walk it yourself.
+
+**Code/examples:** A dissected `traceparent` header; an HTTP request/response header table across three services; queue-propagation pseudo-C#.
+
+**Sources:** W3C Trace Context Recommendation; OpenTelemetry context and propagation specification; OpenTelemetry baggage documentation.
+
+---
+
+### Post 8 — Metrics from First Principles: Counters, Gauges, and Histograms (2026-08-11)
+
+**Purpose:** The whole metrics model in plain English — the hardest post to write without formulas, so the examples carry it.
+
+**Parts:**
+1. **Why not just trace everything?** Volume and cost; metrics as deliberate summaries. The odometer/speedometer/fuel-gauge analogy for the instrument families.
+2. **The instruments, one by one.** Counter (only goes up), UpDownCounter (can fall), Gauge and its observable/asynchronous cousins (a value read on demand), Histogram (distribution of many measurements). Each defined, each with a one-line C# creation example and a "when you'd reach for it" scenario. (Verify the current full instrument list against the spec at writing time.)
+3. **Histograms without mathematics.** Buckets explained as labeled bins; a worked table: 1,000 request durations sorted into bins, and how "p95" is just "the value below which 95 out of 100 requests fall" — demonstrated by counting rows in the table, never by formula. Why averages lie (one worked example where the average looks fine while one user in twenty suffers).
+4. **Temporality and aggregation, gently.** Delta vs. cumulative reporting explained with a water-meter story (readings vs. usage-since-last-reading); why the same counter can be exported both ways and why backends care.
+5. **Dimensions and the cardinality bomb.** Attributes on metrics multiply time series; a table showing how three attributes with modest value counts explode into thousands of series; user-ID-as-attribute as the classic self-inflicted wound. Foreshadows post 18's cost discussion.
+6. **How to Spot the Lie #8: averages, uptime nines, and vanity metrics.** The statistics-series template comes home: means hiding tail pain, "99.9% uptime" arithmetic shown as minutes-per-month in a table, requests-per-second as a vanity number when errors ride along.
+
+**Code/examples:** C# `Meter`/`CreateCounter`/`CreateHistogram` snippets; the 1,000-duration histogram table; the cardinality-explosion table; a JSON metric data-point example.
+
+**Sources:** OpenTelemetry metrics specification and concepts; Prometheus documentation for ecosystem contrast.
+
+---
+
+### Post 9 — Logs from First Principles: From Print Statements to Structured Records (2026-08-12)
+
+**Purpose:** The oldest signal, modernized.
+
+**Parts:**
+1. **The oldest habit in programming.** Print debugging honored, not mocked; why it stops scaling at two servers.
+2. **Anatomy of a modern log record.** Timestamp, severity, body, attributes, resource — and, crucially, trace ID and span ID, which turn an isolated line into a chapter of a specific journey.
+3. **Structured vs. unstructured.** The same event as prose vs. JSON; what querying each one is like at 3 a.m.; a table of severity levels and what they should mean (and the inflation problem where everything is ERROR).
+4. **OpenTelemetry's deliberate humility on logs.** Unlike traces and metrics, OTel did not ask the world to rewrite logging; it built **bridges** from existing frameworks (ILogger in .NET, Log4j/SLF4J in Java, Python logging) into the OTel log data model. Why that adoption strategy was chosen and what it trades away.
+5. **Correlation as the payoff.** The worked example: from an error log line, via its trace ID, to the exact span, to the neighboring spans — the debugging loop that justifies the whole series.
+6. **Logs and money.** Logs are usually the highest-volume, highest-bill signal; retention tiers; what teams actually do (sample debug logs, keep errors).
+7. **How to Spot the Lie #9: log-volume theater.** "We ingest N terabytes a day" as a boast that is actually a confession; noisy logs burying the one line that mattered; how to audit whether your logs can answer questions or merely fill disks.
+
+**Code/examples:** The same event three ways (plain text, structured JSON, OTel log record JSON with traceId/spanId); a C# ILogger snippet showing message templates; a severity table.
+
+**Sources:** OpenTelemetry logs specification and log-bridge documentation; RFC 5424 for lineage.
+
+---
+
+### Post 10 — The API and the SDK: Why OpenTelemetry Split Itself in Two (2026-08-13)
+
+**Purpose:** The architectural decision that made everything else possible — subtle, so it gets its own day.
+
+**Parts:**
+1. **A problem about libraries, not applications.** A database-driver author wants to emit spans but cannot force a telemetry vendor on every user. The dependency-diamond nightmare explained with a concrete package graph.
+2. **The split.** The API: lightweight interfaces a library can call, which do nothing by themselves. The SDK: the application owner's choice of implementation that makes those calls real. No-op by default as a design principle — instrumented code with no SDK installed costs almost nothing and breaks nothing.
+3. **Providers, exporters, processors.** TracerProvider/MeterProvider/LoggerProvider as the wiring points; batch vs. simple processors; exporters as the last hop. A C# `Program.cs` walkthrough where each registered line is explained.
+4. **Stability promises.** Why API stability matters more than SDK stability (libraries compile against the API for years); OTel's versioning and long-term-support commitments for stable signals.
+5. **.NET's unusual position, previewed.** In .NET the "API" role is largely played by the base class library itself (System.Diagnostics) — a teaser for post 12.
+6. **How to Spot the Lie #10: "no vendor lock-in" claims examined structurally.** The API/SDK split is *why* the no-lock-in claim can be true — and the residual lock-ins that remain (query languages, dashboards, alert definitions, distro defaults). Honest accounting of what the architecture does and does not free you from.
+
+**Code/examples:** A dependency-graph diagram in a code block; before/after `Program.cs`; a table of API vs. SDK responsibilities.
+
+**Sources:** OpenTelemetry specification (API/SDK separation, versioning and stability documents); OpenTelemetry .NET documentation.
+
+---
+
+### Post 11 — Instrumentation: Zero-Code, Libraries, and Doing It by Hand (2026-08-14)
+
+**Purpose:** The practical taxonomy of how telemetry actually gets into code.
+
+**Parts:**
+1. **Three roads to the same data.** Zero-code/automatic instrumentation (agents, startup hooks, bytecode rewriting, eBPF); instrumentation libraries (per-framework packages you install and register); manual instrumentation (spans and metrics you write yourself around business logic).
+2. **Zero-code, honestly.** What an auto-instrumentation agent can see (HTTP in/out, database calls, framework internals) and cannot see (your business meaning); per-language maturity varies — the .NET automatic instrumentation, for example, has long been marked beta (verify current status at writing time); the operational trade-offs of injecting agents.
+3. **Instrumentation libraries.** The contrib ecosystem; registering ASP.NET Core and HttpClient instrumentation in C#; the silent-discard gotcha: an unregistered `ActivitySource`/`Meter` produces nothing, with no error — shown live in the example.
+4. **Manual instrumentation as storytelling.** Infrastructure spans tell you "an HTTP call happened"; only you can add "fraud check for order 8812 took 412 milliseconds." Where manual spans earn their keep: domain operations, background jobs, anything the framework cannot name.
+5. **eBPF and the no-touch frontier.** Kernel-level instrumentation for systems you cannot modify; what it buys (coverage without code changes) and what it cannot know (in-process business context).
+6. **A layering strategy.** Start automatic, add libraries, hand-write the ten spans that describe your business — with a worked plan for a small shop.
+7. **How to Spot the Lie #11: "instant observability, no code changes."** True for plumbing, false for meaning; how to test a zero-code claim with one business question the agent cannot answer.
+
+**Code/examples:** C# registration blocks with the wildcard `AddSource("MyCompany.*")` pattern; a manual `StartActivity` example with tags, status, and exception recording; a coverage table by instrumentation road.
+
+**Sources:** OpenTelemetry instrumentation concepts docs; OpenTelemetry .NET automatic-instrumentation repository status; OpenTelemetry eBPF project pages.
+
+---
+
+### Post 12 — Hands-On .NET: ActivitySource, Meter, and ILogger (2026-08-15)
+
+**Purpose:** The full practical post on the site's own stack — and the resolution of the post-10 teaser.
+
+**Parts:**
+1. **.NET's unusual bargain.** Uniquely among major platforms, .NET built OTel-shaped telemetry into the base library: `System.Diagnostics.ActivitySource`/`Activity` for tracing, `System.Diagnostics.Metrics.Meter` for metrics, `Microsoft.Extensions.Logging.ILogger` for logs. Library authors need zero OTel packages; the OTel SDK listens to what the platform already emits. Why an Activity is a span wearing an older name (the API predates OTel and was retrofitted with status, events, and links). (Verified against Microsoft Learn 2026-07-02.)
+2. **Building a tiny observable service, end to end.** A minimal ASP.NET Core app grown step by step in full code: define an `ActivitySource` and `Meter` in a holder class; add a custom span with tags around a fake "checkout"; a counter and a duration histogram; ILogger lines that automatically carry TraceId/SpanId once OTel logging is on.
+3. **Wiring the SDK.** The complete `Program.cs`: `AddOpenTelemetry().ConfigureResource(...).WithTracing(...).WithMetrics(...)` plus `builder.Logging.AddOpenTelemetry(...)`; resource attributes (`service.name`, `service.version`) and why they matter downstream; built-in meters worth registering (ASP.NET Core hosting and Kestrel); OTLP exporter configured by the standard environment variables `OTEL_EXPORTER_OTLP_ENDPOINT` and `OTEL_SERVICE_NAME`.
+4. **Seeing it locally for free.** The standalone Aspire Dashboard container as a zero-cost OTLP viewer for development (explicitly a dev tool, not production — matching this magazine's free-of-cost principle); console exporters as the even simpler first step.
+5. **The classic gotchas, demonstrated.** Unregistered source/meter silence; forgetting `IncludeFormattedMessage`; disposing activities; naming conventions (`CompanyName.Service.Component`) and why hierarchical names plus wildcards keep registration sane.
+6. **This very website as a case.** Merciful Potato's Blazor WebAssembly site has an ILogger-based `TelemetryService` described as OpenTelemetry-ready; discuss honestly what OTel in a browser-side WASM app can and cannot do today (exporting from the browser, the immature client-side story — connect back to post 5's browser caveat) without overclaiming.
+7. **How to Spot the Lie #12: the suspiciously clean sample.** Tutorial code that skips error paths, disposal, and cardinality; how to pressure-test a sample by asking where its failure telemetry goes.
+
+**Code/examples:** This is the code-heaviest post: full `Instrumentation.cs`, endpoint with nested activities, complete `Program.cs`, environment-variable configuration, and one sample console-exporter output block read line by line. All code verified compilable-in-principle against current OTel .NET docs at writing time.
+
+**Sources:** Microsoft Learn ".NET observability with OpenTelemetry" and the OTLP/Aspire Dashboard example; opentelemetry.io .NET instrumentation docs.
+
+---
+
+### Post 13 — The Collector: Receivers, Processors, Exporters, and Pipelines (2026-08-16)
+
+**Purpose:** The infrastructure centerpiece.
+
+**Parts:**
+1. **Why not send straight to the backend?** You can — and when that is fine (small apps, dev). Then the reasons a middle tier wins: retry/buffering, credential isolation (apps never hold backend keys), enrichment, fan-out to multiple backends, and changing destinations without redeploying applications.
+2. **The three-part pipeline.** Receivers (ingest: OTLP, Prometheus scrape, and dozens more), processors (batch, memory-limiter, attribute mutation, filtering, redaction), exporters (OTLP onward, backend-specific). Core vs. contrib distributions; the component ecosystem's size as both strength and audit burden.
+3. **A real config, fully annotated.** One complete `otel-collector` YAML with receivers/processors/exporters/service.pipelines — every line explained in prose after the block. Show the same trace from post 6 entering, gaining a resource attribute, and leaving toward two backends.
+4. **Topologies.** Agent (per host/sidecar) vs. gateway (central fleet) vs. both; where each earns its complexity; a table of failure modes (Collector down: what buffers, what drops).
+5. **Operating the operator.** The Collector is itself software you must observe; its own metrics; OpAMP as the emerging remote-management protocol for Collector fleets (state maturity honestly; verify at writing time).
+6. **How to Spot the Lie #13: the pipeline diagram with no failure arrows.** Architecture slides show happy paths; ask what happens at every arrow when the next box is down; back-pressure and data loss as the questions vendors hope you skip.
+
+**Code/examples:** The annotated YAML config; a topology comparison table; the post-6 trace shown before/after an attributes processor.
+
+**Sources:** OpenTelemetry Collector documentation and configuration reference; OpAMP specification status.
+
+---
+
+### Post 14 — OTLP: The Wire Protocol That Carries Everything (2026-08-17)
+
+**Purpose:** The unglamorous layer where the standardization actually lives.
+
+**Parts:**
+1. **Why a protocol is the real standard.** APIs standardize how code speaks; OTLP standardizes what crosses the network — and that is what lets any sender talk to any receiver.
+2. **What OTLP is.** A specification defining encoding (Protocol Buffers, introduced from scratch as "a compact, schema-defined binary format," with a JSON-encoded variant humans can read), transports (gRPC — defined plainly as a way for programs to call each other efficiently — and HTTP), and behavior (request/response, retries, backoff). Conventional ports 4317 (gRPC) and 4318 (HTTP) — verify at writing time.
+3. **Reading an OTLP payload.** The post-6 checkout trace, this time as an OTLP/JSON `resourceSpans` document, walked field by field: resource, scope, spans; then the shape of `resourceMetrics` and `resourceLogs` in brief.
+4. **gRPC vs. HTTP in practice.** A plain-English trade-off table (efficiency, proxy/firewall friendliness, browser reality); why both exist.
+5. **One protocol, four signals.** How traces, metrics, logs, and (still maturing) profiles all ride OTLP; what "supports OTLP" should mean signal by signal.
+6. **How to Spot the Lie #14: "OTLP-compatible."** Partial implementations: ingest-only, one-signal-only, lossy conversion at the door. A buyer's checklist: which signals, which transport, which OTLP version, and is anything dropped.
+
+**Code/examples:** The OTLP/JSON trace document in a code block (no URLs inside); a transports table; a signal-support checklist table.
+
+**Sources:** OTLP specification on opentelemetry.io; Protocol Buffers documentation for the encoding primer.
+
+---
+
+### Post 15 — Semantic Conventions: Why Naming Things Is the Hardest Problem (2026-08-18)
+
+**Purpose:** The quiet layer that decides whether telemetry from different systems can be compared at all.
+
+**Parts:**
+1. **Same fact, five names.** `http.status`, `status_code`, `httpStatusCode`, `code`, `response.status` — why dashboards and cross-service queries die on inconsistent names; the phone-book analogy.
+2. **What semantic conventions are.** The agreed dictionary: standard attribute names for HTTP, databases, messaging, exceptions, and — the identity layer — **resource attributes** (`service.name`, `service.version`, `deployment.environment`) that say *who* emitted the data.
+3. **A stabilization case study.** The HTTP conventions' long road to stable and the painful renames along the way (verify the exact old→new attribute examples, such as the historical `http.method` → `http.request.method` change, against the semconv changelog at writing time); the opt-in migration environment variable pattern; why breaking a *name* breaks every dashboard built on it.
+4. **Why it moves slowly on purpose.** Conventions must serve every backend at once; cardinality discipline baked into the dictionary; the honest downside the project itself has acknowledged — instrumentation libraries stuck pre-1.0 waiting on experimental conventions (cite the OTel stabilization blog).
+5. **New territory.** Conventions expanding into generative-AI/LLM operations and other emerging domains (state maturity carefully; verify current status at writing).
+6. **How to Spot the Lie #15: the cross-service comparison chart.** If two services name latency differently, someone "harmonized" them in the dashboard layer — silently, with choices. How to ask what mapping was applied and what was dropped.
+
+**Code/examples:** A "same span, before/after conventions" JSON pair; a resource-attributes table; a small dictionary excerpt table for HTTP attributes.
+
+**Sources:** OpenTelemetry semantic conventions documentation and changelog; OTel blog posts on HTTP semconv stabilization.
+
+---
+
+### Post 16 — Sampling: Keeping Some Data and Throwing the Rest Away (2026-08-19)
+
+**Purpose:** The economics-meets-honesty post.
+
+**Parts:**
+1. **The firehose problem, quantified.** A worked table: modest traffic × spans per request × bytes per span = a number nobody wants to store; sampling as deliberate, principled discarding.
+2. **Head sampling.** Deciding at the trace's birth; ratio-based and parent-based samplers explained with a 1-in-10 lottery story (no probability notation — a table of 100 requests, 10 kept, shows it); the fatal blind spot: the decision is made before you know the request will fail.
+3. **Tail sampling.** Deciding after the trace completes: keep all errors, keep the slow ones, keep 1% of the boring rest; why this requires buffering whole traces (usually in the Collector) and what that costs in memory and coordination.
+4. **What sampling does to your numbers.** If you keep 1 in 10, each kept trace "stands for" 10 — adjusted counts explained with a table, never a formula; where adjusted counting silently breaks (rare events, tail latency estimates from sampled data).
+5. **Signals differ.** Traces are sampled routinely; metrics are pre-aggregated and typically never sampled; logs sit in between (severity-based keeping). One table.
+6. **Choosing a policy.** A decision walk for a small team: error-and-slow tail sampling plus a low uniform baseline, with the honest operational bill attached.
+7. **How to Spot the Lie #16: sampled data presented as census.** "Only 0.01% of requests failed" — measured on what fraction, decided when, by whose rule? Error-biased sampling making systems look worse in trace UIs than in reality, and uniform sampling hiding rare disasters; the two questions to always ask: *what was the sampling decision, and when was it made?*
+
+**Code/examples:** The volume-arithmetic table; a 100-request head-vs-tail outcome table; a Collector tail-sampling YAML excerpt annotated in prose.
+
+**Sources:** OpenTelemetry sampling documentation; Collector tail-sampling processor docs.
+
+---
+
+### Post 17 — Backends: Where Telemetry Goes to Be Useful (2026-08-20)
+
+**Purpose:** The landscape post — what receives OTLP and what each choice implies. Strictly balanced; the magazine sells nothing.
+
+**Parts:**
+1. **What a backend actually does.** Store, index, query, visualize, alert — five jobs, defined; why "backend" was deliberately outside OpenTelemetry's scope.
+2. **The open-source, self-hosted road.** Per-signal stalwarts introduced honestly with origin and governance: Jaeger (traces; CNCF), Prometheus (metrics; CNCF), and the Grafana family (Tempo/Mimir/Loki + Grafana itself, with its licensing history — AGPL move — stated factually); ClickHouse-based newcomers as a category. Total cost of *ownership* vs. cost of *license*: self-hosted is free like a puppy.
+3. **The commercial road.** The vendor category (Datadog, New Relic, Dynatrace, Honeycomb, Splunk, cloud-native offerings like Azure Monitor from post 5) described structurally — pricing models (per-host, per-GB, per-user, per-span) and what each model incentivizes you to do with your telemetry. No rankings, no recommendations; a criteria table instead.
+4. **Degrees of OTel-nativeness.** Applying post 4's and post 14's tests: native OTLP ingestion vs. conversion vs. exporter-only; how the same badge hides three architectures.
+5. **This site's honest scale.** A static Blazor site on GitHub Pages with a free-tier Cloudflare Workers analytics backend is the *appropriate* observability investment for its size — a worked example of matching spend to stakes, and of the free-of-cost constraint this publication operates under.
+6. **Mixing and migrating.** The Collector fan-out pattern for trialing a new backend beside the old one — the concrete payoff of everything since post 13.
+7. **How to Spot the Lie #17: the pricing page.** Per-GB math done in the open for a hypothetical small service; the "free tier" funnel; egress and retention as the fine print; how to compute your own number before a sales call.
+
+**Code/examples:** A criteria table (signals supported, OTLP nativeness, pricing unit, hosting model, governance); the fan-out Collector YAML excerpt; a worked monthly-cost arithmetic table.
+
+**Sources:** Project documentation for each named backend; CNCF project pages; vendor pricing pages (cited as of writing date, with the caveat that pricing changes).
+
+---
+
+### Post 18 — The Costs and Downsides: When OpenTelemetry Hurts (2026-08-21)
+
+**Purpose:** The skeptic's post the brief demanded — the strongest good-faith case *against*, so the reader can decide.
+
+**Parts:**
+1. **Nothing is free, itemized.** Runtime overhead (CPU, memory, latency of instrumented paths — reported ranges with sources, stated as workload-dependent, never as one magic percentage); network and storage bills; and the biggest line item everyone forgets: engineering time to build, learn, and *operate* the pipeline.
+2. **The cardinality bomb, detonated.** Post 8's warning as a full case study: one added attribute, a series-count table before/after, the backend bill and query slowdown that follow; guardrails (views, attribute filtering at the Collector, naming review).
+3. **Complexity as a tax.** SDK + instrumentation libraries + Collector + backend is a distributed system bolted onto your distributed system; version-matrix pain across a dozen components; the project's own admission that instability and complexity impeded production adoption (cite the OTel stabilization announcement directly — the project criticizing itself is the strongest source).
+4. **Maturity is uneven.** Signal-by-signal and language-by-language honesty: stable tracing everywhere vs. younger logs bridges vs. alpha profiles vs. the thin browser story; "specified ≠ implemented ≠ stable ≠ adopted" applied as an audit checklist.
+5. **When NOT to use OpenTelemetry.** Argued sincerely: the single-server app whose logs fit in one file; the two-person team; the short-lived prototype; the shop already content on a vendor agent with no migration pressure; the regulated environment where telemetry itself is a data-governance liability (PII in spans — redaction as a real obligation, not a footnote).
+6. **Failure stories, real ones.** Documented community post-mortems of telemetry pipelines causing incidents (telemetry outage masking a real outage; Collector memory exhaustion; runaway cardinality bills) — verify and cite specific public write-ups at writing time; if strong public cases are thin, say so explicitly rather than inventing.
+7. **How to Spot the Lie #18: ROI theater.** "Observability pays for itself" calculators dissected: the assumptions doing the heavy lifting (valued downtime minutes, counterfactual detection times); inputs vs. outcomes one final time — spend produces data, only practice produces answers.
+
+**Code/examples:** An itemized cost table (category, driver, mitigation); the cardinality before/after table; a redaction processor YAML excerpt.
+
+**Sources:** OpenTelemetry stabilization blog post; OTel performance/benchmark documentation where available; cited community post-mortems.
+
+---
+
+### Post 19 — How to Spot the Lie: Observability-Washing and Dashboard Theater (2026-08-22)
+
+**Purpose:** The series' signature move as a full standalone toolkit — every per-post "spot the lie" gathered, systematized, and extended, mirroring the statistics series' capstone treatment.
+
+**Parts:**
+1. **Why observability attracts theater.** Money, fear, and invisibility: buyers cannot easily verify claims about seeing the invisible; a taxonomy of the incentives (vendor sales, internal status games, compliance box-ticking).
+2. **The vendor lies, systematized.** The badge test ("powered by OpenTelemetry" — post 4), the OTLP test (post 14), the end-to-end test (post 7), the demo-trace test (post 6), the pricing arithmetic (post 17), the ROI calculator (post 18) — each restated as a repeatable procedure with a script of questions to ask in a sales call.
+3. **The internal lies.** Dashboard walls nobody reads; green-status theater (health checks that check nothing); SLO gaming (redefining the objective after missing it; excluding "maintenance windows" retroactively); metric Goodharting explained via the classic examples — when a measure becomes a target it stops measuring (cited to Goodhart/Strathern properly).
+4. **Misleading with true data.** Truncated y-axes on latency charts; averages over histograms (post 8 reprise); sampled counts presented as censuses (post 16 reprise); cherry-picked time windows; correlation dashboards implying causation — each with a small worked example table showing the honest and dishonest rendering of identical data.
+5. **The auditor's checklist.** One consolidated, printable set of questions a non-expert decision-maker can ask of any observability claim, internal or vendor — the artifact this post exists to deliver.
+6. **Steelmanning the accused.** Fairness pass: most dashboard theater is incentive rot, not malice; how to fix the incentives (blameless post-incident review culture, SLOs owned by the team measured, dashboards with owners and expiry dates).
+
+**Code/examples:** Two renderings of the same latency data (honest table vs. misleading summary); an SLO-gaming timeline table; the full auditor's checklist as a structured table.
+
+**Sources:** Goodhart's law literature (Strathern's phrasing, properly attributed); SRE workbook material on SLOs; the earlier posts in this series (internal links).
+
+---
+
+### Post 20 — Governance and the Road Ahead: Who Steers OpenTelemetry (2026-08-23, featured capstone)
+
+**Purpose:** Close the loop from post 3: who runs this thing now, what its promises are worth, and what is coming — plus the series retrospective.
+
+**Parts:**
+1. **Graduation, revisited with clear eyes.** What CNCF graduation certified on 2026-05-11 (governance review, security audit, adoption evidence) and what it cannot guarantee (future funding, future neutrality); the numbers restated with sources.
+2. **How the project is actually governed.** Governance Committee vs. Technical Committee vs. language and domain SIGs; how a specification change travels from proposal (OTEP) to stable; who the maintainers' employers are and why contributor diversity is a governance safeguard, not trivia — the post-3 "follow the motivations" lens applied to the present.
+3. **What "stable" is worth.** The versioning-and-stability promises as a contract with library authors; long-term support for the tracing spec; how the 2025–2026 stabilization initiative reordered priorities toward reliability — and what users should still pin, test, and read release notes for.
+4. **Profiles: the fourth signal, honestly staged.** Continuous profiling explained from scratch (what a stack sample is, what a flame graph shows — in prose and a text-rendered example); the eBPF profiler donation; alpha status at graduation per the CNCF announcement; profile-to-trace correlation as the promised payoff. **Verify the exact maturity status at writing time** — this is the fastest-moving claim in the series, and secondary sources already disagree with each other about it; prefer opentelemetry.io and CNCF primary statements over blogs.
+5. **The wider frontier, carefully hedged.** Client-side/browser and mobile telemetry (still the weakest area — consistent with posts 5 and 12); generative-AI semantic conventions; OpAMP fleet management; entities and other emerging specification work — each labeled with its actual maturity, verified at writing.
+6. **Risks worth naming.** Complexity collapse under its own scope; vendor capture scenarios; the sustainability of maintainer labor; what forking or stagnation would look like — not prophecy, just the failure modes a graduated project still faces.
+7. **How to Spot the Lie #20: roadmap slides.** "Coming soon" as marketing; how to read a project roadmap against its issue tracker and SIG meeting notes; the reader now owns the tools to check any claim in this series — including this series' own.
+8. **The series, closed.** Twenty days retraced in prose; the one-paragraph version of everything; where to go next (official docs, the demo application, community channels); and the standing invitation to distrust and verify.
+
+**Code/examples:** A governance-structure table; a signal-maturity table as of the writing date with a verification date stamp; a text flame-graph rendering; the OTEP lifecycle as a stage table.
+
+**Sources:** CNCF graduation announcement (2026-05-21); OpenTelemetry governance and community documentation; the OpenTelemetry specification versioning/stability documents; OTel blog for profiles and stabilization status.
+
+---
+
+## 5. Cross-Series Threads (Continuity Devices)
+
+1. **The kitchen analogy** (introduced post 1) recurs whenever a new component appears: the Collector is the expediting pass, semantic conventions are the standardized ticket abbreviations, sampling is the head chef tasting one plate in ten.
+2. **The six-span checkout trace** (built in post 6) is the single running dataset: propagated in post 7, exported in post 12's console output, transformed in post 13's Collector, serialized in post 14's OTLP document, sampled in post 16.
+3. **The four-way maturity mantra** — *specified ≠ implemented ≠ stable ≠ adopted* — appears in posts 4, 10, 14, 18, and 20.
+4. **Inputs vs. outcomes** — data is not insight — anchors posts 1, 18, and 19.
+5. **How to Spot the Lie** numbering runs 1–20 continuously across the series, and post 19 consolidates them.
+6. Every post ends with a one-paragraph **"Tomorrow"** bridge naming the next post's question (post 20 ends the series instead).
+
+---
+
+## 6. Fact-Check Findings (Verified 2026-07-02 — Re-verify Before Writing Each Post)
+
+Web research conducted for this plan confirmed the following. Primary sources listed; each generating session must re-check anything it uses.
+
+1. **CNCF graduation:** OpenTelemetry graduated on **2026-05-11**, announced **2026-05-21** at the CNCF Observability Summit (Minneapolis). At graduation: 12,000+ contributors from 2,800+ companies; second-highest CNCF project velocity after Kubernetes; graduation included a third-party independent security audit of core components including the Collector and a formal governance review. *Source: cncf.io announcement, 2026-05-21.*
+2. **Origin timeline:** Created as the merger of OpenTracing (launched 2016 under CNCF) and OpenCensus (Google, from internal Census libraries); announced spring 2019; first GitHub commit April 2019; joined CNCF **2019-05-17** (sandbox); incubating **2021-08-26**; OpenTracing and OpenCensus subsequently archived/read-only. Key figures: Ben Sigelman (Dapper co-author, OpenTracing co-creator, LightStep) and Morgan McLean (OpenCensus product lead at Google). *Sources: CNCF blog 2019 & 2021, Microsoft Open Source blog 2019, CNCF project journey report.*
+3. **Signals and maturity:** Four signals — traces, metrics, logs, profiles. Tracing specification fully stable under long-term support. Metrics and logs stable in the major SDKs. **Profiles: alpha at graduation per CNCF's own May 2026 announcement** (some secondary blogs claim release-candidate status — treat CNCF/opentelemetry.io as authoritative and re-verify; this is the series' most volatile fact). An eBPF-based profiling agent for Linux exists within the project. *Sources: opentelemetry.io spec status page, CNCF graduation announcement, opentelemetry.io profiles concepts page (updated 2026-03).*
+4. **Stabilization push:** The project publicly announced a reprioritization toward stability, reliability, and release organization after user research showed complexity and instability impeding production adoption; it also acknowledged instrumentation libraries stuck pre-release awaiting experimental semantic conventions. *Source: opentelemetry.io blog, stabilization practices announcement.*
+5. **.NET specifics:** .NET is unusual — instrumentation APIs live in the platform itself: `System.Diagnostics.ActivitySource`/`Activity` (tracing; Activity API dates to .NET Framework 4.5, extended in .NET 5+ with OTel-compatible status/events/links), `System.Diagnostics.Metrics.Meter` (metrics), `Microsoft.Extensions.Logging.ILogger` (logs). The OTel .NET SDK collects from these. Registration gotcha confirmed: unregistered sources/meters are silently discarded. Standard env vars: `OTEL_EXPORTER_OTLP_ENDPOINT`, `OTEL_SERVICE_NAME`. Built-in meters include `Microsoft.AspNetCore.Hosting` and `Microsoft.AspNetCore.Server.Kestrel`. The standalone Aspire Dashboard container is a free dev-time OTLP viewer (explicitly not for production). OTel .NET automatic instrumentation documented as beta. *Sources: Microsoft Learn observability docs; opentelemetry.io .NET docs (2026-01).*
+6. **Azure comparison facts:** Microsoft recommends the **Azure Monitor OpenTelemetry Distro** for new applications. **Application Insights Classic API SDK 2.x for .NET is deprecated and retires 2027-03-31.** SDK 3.x is an OTel-based bridge keeping TelemetryClient APIs while emitting OTel signals; do not mix 3.x and the Distro in one app. Azure Monitor supports native OTLP ingestion. Browser telemetry remains on the Application Insights JavaScript SDK (not OTel); Microsoft's FAQ states an OTel browser SDK viable as a replacement is likely years away. Azure Functions enable OTel via `"telemetryMode": "OpenTelemetry"` in host.json. In the Distro, sampling applies to traces (logs follow trace decisions by default, opt-out available); metrics are never sampled; custom metrics ingest on a fixed 60-second interval. *Sources: Microsoft Learn (classic-api deprecation page, opentelemetry-enable, migrate-to-opentelemetry, application-insights-faq, opentelemetry-configuration; pages current April–June 2026).*
+7. **Protocol and context facts:** W3C Trace Context (`traceparent`/`tracestate`) is the propagation standard; the `00-{traceId}-{spanId}-{flags}` header shape confirmed in current practice. OTLP defined over gRPC and HTTP with Protocol Buffers encoding (JSON variant available); conventional ports 4317/4318 widely documented — confirm against the OTLP spec at writing. OpAMP exists for Collector fleet management (maturity to verify). *Sources: W3C Recommendation, opentelemetry.io protocol docs, Collector docs.*
+8. **Language coverage:** SDKs across a dozen-plus languages including Java, Python, Go, JavaScript/Node.js, .NET, Ruby, PHP, Rust, C++, Swift, Erlang/Elixir, with Kotlin support added recently per the graduation announcement. *Sources: CNCF announcement, opentelemetry.io.*
+
+**Deliberately NOT asserted (insufficient primary confirmation as of 2026-07-02; each post must verify before claiming):** exact current Collector version numbers; exact OTel .NET SDK version; precise profiles GA timeline; per-language logs-signal stability details; any specific vendor's current pricing.
+
+---
+
+## 7. Automation & Execution Framework (GitHub Actions)
+
+Verified against `deploy.yml` and the ContentProcessor source in `dump.txt`:
+
+1. **All twenty markdown files can be committed to `content/blog/` at once, in advance.** The ContentProcessor skips any post whose front-matter `date` is in the future relative to UTC build time (`frontMatter.Date > publishBefore`, default `DateTime.UtcNow`), so pre-committed posts stay invisible until their date arrives.
+2. **The daily cron at 06:00 UTC rebuilds the site every day**, automatically publishing each post on its scheduled date with zero manual action. Pushes to `main` also trigger builds.
+3. On each build the processor regenerates `posts-index.json`, per-slug HTML under `wwwroot/blog-data/`, `authors.json`, and the full-content RSS `feed.xml` (channel title "Merciful Potato Magazine", site URL `https://mercifulpotato.github.io`), so RSS subscribers receive each post the morning it goes live.
+4. The TTS audio pipeline generates one MP3 per new/changed slug (KittenTTS, 24 kbps mono, content-hash cached). **Writing consequence:** the audio pipeline strips code blocks entirely before narration, so critical facts must also appear in prose, never only inside a code fence. The pronunciation table already handles .NET/C#/ASP.NET/WASM/API/SDK terms; OTel-specific initialisms (OTLP, OTel, gRPC, eBPF, CNCF, OpAMP) are not in the table — acceptable (they will be spelled or spoken raw), noted here in case Kushal wants to extend `preprocess_programming_terms()` before August.
+5. **Generation workflow per session:** read the current `dump.txt` conventions → run the post's verification searches (Section 6 items it touches, plus anything volatile) → write the full post(s) to `/mnt/user-data/outputs/` with exact filenames from Section 2 → present files. Posts may be generated in bulk across sessions; large batches resume from `/mnt/transcripts/` as usual.
+6. **Pre-commit checklist per file:** filename matches Section 2 exactly; front matter passes the Section 3 checklist; date matches the schedule; `featured` present only on posts 1 and 20; no `draft:` key; title/summary quoted; code fences use highlighter-supported languages (`csharp`, `python`, `json`, `yaml`, `bash`); no links inside code blocks; Sources section present; word count in the 6,000–10,000+ band; a "How to Spot the Lie" part present.
+
+---
+
+## 8. Open Items for Kushal
+
+1. **Confirm the series title** — *"OpenTelemetry from the Ground Up"* — or supply an alternative before post 1 is generated (the `series:` string must stay identical across all twenty files, so it should be final before generation starts).
+2. Optional: extend the TTS pronunciation table with OTel initialisms (Section 7, item 4) — cosmetic, not blocking.
+3. Generation can begin on request: either post-by-post ("day one", "day two") or in bulk batches, per the usual workflow.
+
+*End of plan.*
+
+
+
+
+Series title looks good. Please start with day one. 
