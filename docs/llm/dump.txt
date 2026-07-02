@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-07-02 07:36:32 UTC
+DATE: 2026-07-02 13:14:05 UTC
 ===============================================================================
 
 ===============================================================================
@@ -103,7 +103,21 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-07-31-nepal-budget-2026-17-agriculture-and-tourism.md
 │       ├── 2026-08-01-nepal-budget-2026-18-ai-and-startups.md
 │       ├── 2026-08-02-nepal-budget-2026-19-credibility-and-execution.md
-│       └── 2026-08-03-nepal-budget-2026-20-citizens-field-guide.md
+│       ├── 2026-08-03-nepal-budget-2026-20-citizens-field-guide.md
+│       ├── 2026-08-04-otel-1-why-software-breaks.md
+│       ├── 2026-08-05-otel-2-history-before-opentelemetry.md
+│       ├── 2026-08-06-otel-3-the-merger.md
+│       ├── 2026-08-07-otel-4-what-otel-is-and-is-not.md
+│       ├── 2026-08-08-otel-5-otel-vs-vendor-sdks.md
+│       ├── 2026-08-09-otel-6-traces-first-principles.md
+│       ├── 2026-08-10-otel-7-context-propagation.md
+│       ├── 2026-08-11-otel-8-metrics-first-principles.md
+│       ├── 2026-08-12-otel-9-logs-first-principles.md
+│       ├── 2026-08-13-otel-10-api-sdk-separation.md
+│       ├── 2026-08-14-otel-11-instrumentation.md
+│       ├── 2026-08-15-otel-12-hands-on-dotnet.md
+│       ├── 2026-08-16-otel-13-the-collector.md
+│       └── 2026-08-17-otel-14-otlp-protocol.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -241,7 +255,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 202 files
+31 directories, 216 files
 
 
 -------------------------------------------------------------------------------
@@ -2197,6 +2211,247 @@ tags:
   - plain-english
 series: "Nepal's Budget 2026-27 in Plain English"
 featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-04-otel-1-why-software-breaks.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Why Software Breaks and Nobody Knows Why: The Case for Observability"
+date: 2026-08-04
+author: mercifulpotato-team
+summary: "Modern software fails in ways its own builders cannot see. This series opener explains, from absolute first principles, what observability means, why the industry invented it, and what it costs to have — or to lack."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-engineering
+series: "OpenTelemetry from the Ground Up"
+featured: true
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-05-otel-2-history-before-opentelemetry.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Before OpenTelemetry: A History of Logs, Metrics, and Traces"
+date: 2026-08-05
+author: mercifulpotato-team
+summary: "OpenTelemetry did not appear from nothing. This post traces four decades of prior attempts to make software observable, and explains the exact problem — vendor fragmentation — that made a unified standard inevitable."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-history
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-06-otel-3-the-merger.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Merger: OpenTracing, OpenCensus, and the Birth of OpenTelemetry"
+date: 2026-08-06
+author: mercifulpotato-team
+summary: "In 2019, two competing open-source standards merged into one. This post names the specific people, companies, and dates behind that decision, and follows the incentives that made every major player want it to succeed."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - open-source-governance
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-07-otel-4-what-otel-is-and-is-not.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "What OpenTelemetry Is — and What It Is Not"
+date: 2026-08-07
+author: mercifulpotato-team
+summary: "OpenTelemetry is a specification and a set of tools for generating and moving telemetry — not a dashboard, not a database, not a monitoring product. This post draws the boundary precisely, piece by piece."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-engineering
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-08-otel-5-otel-vs-vendor-sdks.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "OpenTelemetry vs. Vendor SDKs: The Azure Application Insights Story"
+date: 2026-08-08
+author: mercifulpotato-team
+summary: "Microsoft's own telemetry SDK is now being retired in favor of OpenTelemetry. This post walks through exactly why, what a vendor 'distro' actually is, and makes the fair case for both sides of the choice."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - azure
+  - dotnet
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-09-otel-6-traces-first-principles.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Traces from First Principles: Spans, Attributes, Events, and Links"
+date: 2026-08-09
+author: mercifulpotato-team
+summary: "A distributed trace is the biography of a single request. This post builds the idea of a span from nothing, then assembles spans into traces, with a complete worked JSON example you can read line by line."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - distributed-tracing
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-10-otel-7-context-propagation.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Context Propagation: How a Request Keeps Its Identity"
+date: 2026-08-10
+author: mercifulpotato-team
+summary: "A trace ID has to survive the trip across a real network for distributed tracing to work at all. This post dissects the W3C traceparent header byte by byte and explains exactly where propagation breaks in practice."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - distributed-tracing
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-11-otel-8-metrics-first-principles.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Metrics from First Principles: Counters, Gauges, and Histograms"
+date: 2026-08-11
+author: mercifulpotato-team
+summary: "Metrics turn millions of individual measurements into compact, cheap numbers you can keep forever. This post builds the entire model — counters, gauges, histograms, and the cardinality trap — in plain English with countable, worked examples."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - metrics
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-12-otel-9-logs-first-principles.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Logs from First Principles: From Print Statements to Structured Records"
+date: 2026-08-12
+author: mercifulpotato-team
+summary: "Logs are the oldest signal in this series, and OpenTelemetry treats them with unusual humility: rather than replacing what already exists, it bridges to it. This post explains why, and shows the payoff — jumping from one log line to the exact trace that produced it."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - logging
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-13-otel-10-api-sdk-separation.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The API and the SDK: Why OpenTelemetry Split Itself in Two"
+date: 2026-08-13
+author: mercifulpotato-team
+summary: "OpenTelemetry deliberately split itself into two separate pieces: an API that does almost nothing by itself, and an SDK the application owner chooses. This single design decision is what makes everything in this series actually deployable."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-engineering
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-14-otel-11-instrumentation.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Instrumentation: Zero-Code, Libraries, and Doing It by Hand"
+date: 2026-08-14
+author: mercifulpotato-team
+summary: "There are three genuinely different ways telemetry gets into running code: automatic agents, pre-built instrumentation libraries, and manual code you write yourself. Each sees a different slice of reality, and knowing which is which changes what you should expect from any of them."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - dotnet
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-15-otel-12-hands-on-dotnet.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Hands-On .NET: ActivitySource, Meter, and ILogger"
+date: 2026-08-15
+author: mercifulpotato-team
+summary: "A complete, working ASP.NET Core service built up piece by piece: ActivitySource, Meter, and ILogger wired together, exported over OTLP, and viewed for free using the standalone Aspire Dashboard."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - dotnet
+  - aspnet-core
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-16-otel-13-the-collector.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Collector: Receivers, Processors, Exporters, and Pipelines"
+date: 2026-08-16
+author: mercifulpotato-team
+summary: "Between an application and its final backend usually sits a separate, independent piece of infrastructure: the OpenTelemetry Collector. This post explains why teams add it, what its three-part pipeline actually does, and how to read one real config file line by line."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - devops
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-17-otel-14-otlp-protocol.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "OTLP: The Wire Protocol That Carries Everything"
+date: 2026-08-17
+author: mercifulpotato-team
+summary: "Beneath every API call and every Collector pipeline sits one final layer: the actual bytes that cross the network. This post dissects OTLP — the protocol that makes any OpenTelemetry sender able to talk to any receiver."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-engineering
+series: "OpenTelemetry from the Ground Up"
 ---
 
 
@@ -21369,8 +21624,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 171
-  Blog posts (front matter only): 90
+Total Files Exported: 185
+  Blog posts (front matter only): 104
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt

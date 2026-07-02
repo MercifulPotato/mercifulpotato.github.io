@@ -1,30 +1,30 @@
 kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-292M	.
+301M	.
 
-real	0m0.012s
-user	0m0.003s
-sys	0m0.007s
+real	0m0.022s
+user	0m0.001s
+sys	0m0.011s
 
-real	0m8.778s
-user	0m12.879s
-sys	0m1.143s
-Restore complete (0.6s)
+real	0m8.169s
+user	0m12.472s
+sys	0m1.000s
+Restore complete (0.5s)
 
-Build succeeded in 0.7s
+Build succeeded in 0.6s
 
-real	0m0.829s
-user	0m0.799s
-sys	0m0.188s
+real	0m0.754s
+user	0m0.776s
+sys	0m0.170s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-07-02 07:36:19 UTC
+Publish before:    2026-07-02 13:13:53 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
   Loaded author: mercifulpotato-team (Merciful Potato Team)
 Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
-Found 90 markdown files
+Found 104 markdown files
 Processing: 2026-03-22-good-morning.md
   Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/good-morning.html (~1 min read)
 Processing: 2026-04-14-happy-new-year.md
@@ -205,32 +205,60 @@ Processing: 2026-08-02-nepal-budget-2026-19-credibility-and-execution.md
   SKIPPED: Future post 'Can They Actually Do It? Credibility, Execution, and How to Read a Budget Like an Auditor' (date: 2026-08-02, publish-before: 2026-07-02)
 Processing: 2026-08-03-nepal-budget-2026-20-citizens-field-guide.md
   SKIPPED: Future post 'The Citizen's Field Guide to Nepal's Budget 2026-27: Everything You Now Know' (date: 2026-08-03, publish-before: 2026-07-02)
-Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (58 posts, 0 drafts skipped, 32 future posts skipped)
+Processing: 2026-08-04-otel-1-why-software-breaks.md
+  SKIPPED: Future post 'Why Software Breaks and Nobody Knows Why: The Case for Observability' (date: 2026-08-04, publish-before: 2026-07-02)
+Processing: 2026-08-05-otel-2-history-before-opentelemetry.md
+  SKIPPED: Future post 'Before OpenTelemetry: A History of Logs, Metrics, and Traces' (date: 2026-08-05, publish-before: 2026-07-02)
+Processing: 2026-08-06-otel-3-the-merger.md
+  SKIPPED: Future post 'The Merger: OpenTracing, OpenCensus, and the Birth of OpenTelemetry' (date: 2026-08-06, publish-before: 2026-07-02)
+Processing: 2026-08-07-otel-4-what-otel-is-and-is-not.md
+  SKIPPED: Future post 'What OpenTelemetry Is — and What It Is Not' (date: 2026-08-07, publish-before: 2026-07-02)
+Processing: 2026-08-08-otel-5-otel-vs-vendor-sdks.md
+  SKIPPED: Future post 'OpenTelemetry vs. Vendor SDKs: The Azure Application Insights Story' (date: 2026-08-08, publish-before: 2026-07-02)
+Processing: 2026-08-09-otel-6-traces-first-principles.md
+  SKIPPED: Future post 'Traces from First Principles: Spans, Attributes, Events, and Links' (date: 2026-08-09, publish-before: 2026-07-02)
+Processing: 2026-08-10-otel-7-context-propagation.md
+  SKIPPED: Future post 'Context Propagation: How a Request Keeps Its Identity' (date: 2026-08-10, publish-before: 2026-07-02)
+Processing: 2026-08-11-otel-8-metrics-first-principles.md
+  SKIPPED: Future post 'Metrics from First Principles: Counters, Gauges, and Histograms' (date: 2026-08-11, publish-before: 2026-07-02)
+Processing: 2026-08-14-otel-11-instrumentation.md
+  SKIPPED: Future post 'Instrumentation: Zero-Code, Libraries, and Doing It by Hand' (date: 2026-08-14, publish-before: 2026-07-02)
+Processing: 2026-08-13-otel-10-api-sdk-separation.md
+  SKIPPED: Future post 'The API and the SDK: Why OpenTelemetry Split Itself in Two' (date: 2026-08-13, publish-before: 2026-07-02)
+Processing: 2026-08-12-otel-9-logs-first-principles.md
+  SKIPPED: Future post 'Logs from First Principles: From Print Statements to Structured Records' (date: 2026-08-12, publish-before: 2026-07-02)
+Processing: 2026-08-17-otel-14-otlp-protocol.md
+  SKIPPED: Future post 'OTLP: The Wire Protocol That Carries Everything' (date: 2026-08-17, publish-before: 2026-07-02)
+Processing: 2026-08-16-otel-13-the-collector.md
+  SKIPPED: Future post 'The Collector: Receivers, Processors, Exporters, and Pipelines' (date: 2026-08-16, publish-before: 2026-07-02)
+Processing: 2026-08-15-otel-12-hands-on-dotnet.md
+  SKIPPED: Future post 'Hands-On .NET: ActivitySource, Meter, and ILogger' (date: 2026-08-15, publish-before: 2026-07-02)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (58 posts, 0 drafts skipped, 46 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
 Restore complete (0.5s)
-  ObserverMagazine.Integration.Tests net10.0 succeeded (0.5s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.9)
-[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.32]   Discovered:  ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.49]   Starting:    ObserverMagazine.Integration.Tests
-[xUnit.net 00:00:00.73]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
-  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
+[xUnit.net 00:00:00.17]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.34]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.53]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.79]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.4s)
   ObserverMagazine.Web net10.0 browser-wasm succeeded (3.8s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
-  ObserverMagazine.Web.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.9)
-[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.30]   Discovered:  ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.46]   Starting:    ObserverMagazine.Web.Tests
-[xUnit.net 00:00:00.97]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+[xUnit.net 00:00:00.16]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.33]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.48]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:01.02]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
   ObserverMagazine.Web.Tests test net10.0 succeeded (1.5s)
 
-Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.3s
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.4s
 Build succeeded in 6.5s
 
-real	0m6.663s
-user	0m3.678s
-sys	0m0.495s
+real	0m6.675s
+user	0m3.555s
+sys	0m0.493s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -270,9 +298,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.612s
-user	0m1.591s
-sys	0m0.319s
+real	0m1.571s
+user	0m1.551s
+sys	0m0.332s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -285,16 +313,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m3.404s
-user	0m2.473s
-sys	0m0.443s
+real	0m2.752s
+user	0m1.990s
+sys	0m0.444s
 Export complete: docs/llm/dump.txt
-  Total files: 171
-  Blog posts (front matter only): 90
+  Total files: 185
+  Blog posts (front matter only): 104
   Full content files: 78
   Binary files skipped: 3
 
-real	0m0.155s
-user	0m0.056s
-sys	0m0.071s
+real	0m0.146s
+user	0m0.062s
+sys	0m0.062s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
