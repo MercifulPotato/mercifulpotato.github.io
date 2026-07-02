@@ -68302,3 +68302,344 @@ Claude is AI and can make mistakes. Please double-check cited sources.
 12
 34
 19
+
+kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+302M	.
+
+real	0m0.023s
+user	0m0.001s
+sys	0m0.010s
+
+real	0m7.541s
+user	0m11.917s
+sys	0m0.959s
+Restore complete (0.5s)
+
+Build succeeded in 0.6s
+
+real	0m0.740s
+user	0m0.760s
+sys	0m0.172s
+Content directory: content/blog
+Output directory:  src/ObserverMagazine.Web/wwwroot
+Authors directory: content/authors
+Publish before:    2026-07-02 17:11:50 UTC
+Found 3 author profile(s)
+  Loaded author: kushal (kushal)
+  Loaded author: abraham-lincoln (Abraham Lincoln)
+  Loaded author: mercifulpotato-team (Merciful Potato Team)
+Wrote authors index: src/ObserverMagazine.Web/wwwroot/blog-data/authors.json (3 authors)
+Found 110 markdown files
+Processing: 2026-03-22-good-morning.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/good-morning.html (~1 min read)
+Processing: 2026-04-14-happy-new-year.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/happy-new-year.html (~1 min read)
+Processing: 2026-05-09-star-trek-prime-1-foundations.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-1-foundations.html (~52 min read)
+Processing: 2026-05-10-star-trek-prime-2-discovery-and-strange-new-worlds.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-2-discovery-and-strange-new-worlds.html (~46 min read)
+Processing: 2026-05-11-star-trek-prime-3-tos-five-year-mission.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-3-tos-five-year-mission.html (~49 min read)
+Processing: 2026-05-12-star-trek-prime-4-films-and-early-tng.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-4-films-and-early-tng.html (~47 min read)
+Processing: 2026-05-13-star-trek-prime-5-late-tng-and-deep-space-nine.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-5-late-tng-and-deep-space-nine.html (~52 min read)
+Processing: 2026-05-14-star-trek-prime-6-dominion-war-and-tng-films.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-6-dominion-war-and-tng-films.html (~45 min read)
+Processing: 2026-05-15-star-trek-prime-7-modern-canon-and-conclusion.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/star-trek-prime-7-modern-canon-and-conclusion.html (~34 min read)
+Processing: 2026-05-16-lotr-1-creation-and-ainulindale.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-1-creation-and-ainulindale.html (~63 min read)
+Processing: 2026-05-17-lotr-2-wars-of-beleriand-beren-and-luthien.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-2-wars-of-beleriand-beren-and-luthien.html (~57 min read)
+Processing: 2026-05-18-lotr-3-children-of-hurin.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-3-children-of-hurin.html (~44 min read)
+Processing: 2026-05-19-lotr-4-gondolin-earendil-war-of-wrath.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-4-gondolin-earendil-war-of-wrath.html (~46 min read)
+Processing: 2026-05-20-lotr-5-second-age-numenor-rings-of-power.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-5-second-age-numenor-rings-of-power.html (~50 min read)
+Processing: 2026-05-21-lotr-6-third-age-hobbit-fellowship.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-6-third-age-hobbit-fellowship.html (~56 min read)
+Processing: 2026-05-22-lotr-7-war-of-the-ring-crack-of-doom-grey-havens.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-7-war-of-the-ring-crack-of-doom-grey-havens.html (~61 min read)
+Processing: 2026-05-23-lotr-8-unfinished-tapestry-retcons-open-questions.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-8-unfinished-tapestry-retcons-open-questions.html (~46 min read)
+Processing: 2026-05-24-lotr-9-languages-of-middle-earth.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-9-languages-of-middle-earth.html (~46 min read)
+Processing: 2026-05-25-lotr-10-real-world-sources-tolkien-life.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/lotr-10-real-world-sources-tolkien-life.html (~44 min read)
+Processing: 2026-05-26-foundations-1-what-is-a-foundation.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-1-what-is-a-foundation.html (~45 min read)
+Processing: 2026-05-27-foundations-2-soil-and-site.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-2-soil-and-site.html (~39 min read)
+Processing: 2026-05-28-foundations-3-slab-crawl-basement.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-3-slab-crawl-basement.html (~38 min read)
+Processing: 2026-05-29-foundations-4-piers-piles-grade-beams.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-4-piers-piles-grade-beams.html (~30 min read)
+Processing: 2026-05-30-foundations-5-frost-drainage-waterproofing.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-5-frost-drainage-waterproofing.html (~30 min read)
+Processing: 2026-05-31-foundations-6-sheds-adus-sunrooms-small.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-6-sheds-adus-sunrooms-small.html (~29 min read)
+Processing: 2026-06-01-foundations-7-multifamily-apartments-commercial.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-7-multifamily-apartments-commercial.html (~26 min read)
+Processing: 2026-06-02-foundations-8-eps-sandwich-panels-kathmandu.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-8-eps-sandwich-panels-kathmandu.html (~30 min read)
+Processing: 2026-06-03-foundations-9-buying-or-building-dfw.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-9-buying-or-building-dfw.html (~30 min read)
+Processing: 2026-06-04-foundations-10-repair-renovation-restoration.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/foundations-10-repair-renovation-restoration.html (~28 min read)
+Processing: 2026-06-06-homeowner-2-the-homeowner-calendar.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-2-the-homeowner-calendar.html (~38 min read)
+Processing: 2026-06-07-homeowner-3-hvac-water-heater-energy.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-3-hvac-water-heater-energy.html (~31 min read)
+Processing: 2026-06-08-homeowner-4-cleaning-appliances-hidden.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-4-cleaning-appliances-hidden.html (~27 min read)
+Processing: 2026-06-09-homeowner-5-lawn-landscaping-water.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-5-lawn-landscaping-water.html (~28 min read)
+Processing: 2026-06-10-homeowner-6-plumbing-electrical-safety.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-6-plumbing-electrical-safety.html (~25 min read)
+Processing: 2026-06-11-homeowner-7-roof-exterior-windows.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-7-roof-exterior-windows.html (~21 min read)
+Processing: 2026-06-12-homeowner-8-finances-mortgage-taxes.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-8-finances-mortgage-taxes.html (~22 min read)
+Processing: 2026-06-05-homeowner-1-welcome-to-home-ownership.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-1-welcome-to-home-ownership.html (~37 min read)
+Processing: 2026-06-13-homeowner-9-renovations-upgrades-roi.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-9-renovations-upgrades-roi.html (~27 min read)
+Processing: 2026-06-14-homeowner-10-case-studies-stories.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/homeowner-10-case-studies-stories.html (~31 min read)
+Processing: 2026-06-15-statistics-1-foundations-of-uncertainty.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-1-foundations-of-uncertainty.html (~25 min read)
+Processing: 2026-06-16-statistics-2-shapes-of-data.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-2-shapes-of-data.html (~24 min read)
+Processing: 2026-06-17-statistics-3-machinery-of-proof.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-3-machinery-of-proof.html (~24 min read)
+Processing: 2026-06-18-statistics-4-bayesian-vs-frequentist.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-4-bayesian-vs-frequentist.html (~20 min read)
+Processing: 2026-06-19-statistics-5-statistical-self-defense.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-5-statistical-self-defense.html (~25 min read)
+Processing: 2026-06-20-statistics-6-applied-statistics.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-6-applied-statistics.html (~22 min read)
+Processing: 2026-06-21-statistics-7-reading-scientific-studies.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-7-reading-scientific-studies.html (~16 min read)
+Processing: 2026-06-22-statistics-8-law-and-policy.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-8-law-and-policy.html (~17 min read)
+Processing: 2026-06-23-statistics-9-standard-deviation.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-9-standard-deviation.html (~17 min read)
+Processing: 2026-06-24-statistics-10-capstone.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/statistics-10-capstone.html (~58 min read)
+Processing: 2026-06-25-adf-act-1-nepal-and-the-problem-of-money.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-1-nepal-and-the-problem-of-money.html (~22 min read)
+Processing: 2026-06-26-adf-act-2-nepal-parliament-and-lawmaking.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-2-nepal-parliament-and-lawmaking.html (~16 min read)
+Processing: 2026-06-27-adf-act-3-what-development-finance-institutions-are.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-3-what-development-finance-institutions-are.html (~15 min read)
+Processing: 2026-06-28-adf-act-4-financial-instruments-explained.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-4-financial-instruments-explained.html (~19 min read)
+Processing: 2026-06-29-adf-act-5-fund-legal-structure-and-capital.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-5-fund-legal-structure-and-capital.html (~13 min read)
+Processing: 2026-06-30-adf-act-6-what-the-fund-can-invest-in.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-6-what-the-fund-can-invest-in.html (~17 min read)
+Processing: 2026-07-01-adf-act-7-board-governance.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-7-board-governance.html (~16 min read)
+Processing: 2026-07-02-adf-act-8-ceo-selection-and-accountability.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/adf-act-8-ceo-selection-and-accountability.html (~13 min read)
+Processing: 2026-07-03-adf-act-9-investment-process.md
+  SKIPPED: Future post 'How a Project Gets Money: The Investment Process from Identification to Approval to Monitoring' (date: 2026-07-03, publish-before: 2026-07-02)
+Processing: 2026-07-04-adf-act-10-financial-architecture.md
+  SKIPPED: Future post 'Where the Money Lives: Financial Architecture, Reserve Funds, Accounts, and Dividend Policy' (date: 2026-07-04, publish-before: 2026-07-02)
+Processing: 2026-07-05-adf-act-11-transparency-and-audit.md
+  SKIPPED: Future post 'Sunlight and Scrutiny: Financial Transparency, Reporting, the Auditor General, and Parliamentary Accountability' (date: 2026-07-05, publish-before: 2026-07-02)
+Processing: 2026-07-06-adf-act-12-crimes-and-penalties.md
+  SKIPPED: Future post 'Fraud, Lies, and Consequences: The Criminal Provisions, Penalties, and Enforcement Mechanisms' (date: 2026-07-06, publish-before: 2026-07-02)
+Processing: 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md
+  SKIPPED: Future post 'The Gap in Numbers: Nepal's Infrastructure Deficit, Sector by Sector, and What It Would Take to Close It' (date: 2026-07-07, publish-before: 2026-07-02)
+Processing: 2026-07-08-adf-act-14-hydropower-deep-dive.md
+  SKIPPED: Future post 'The White Gold: Nepal's Hydropower Potential, the Projects That Exist, and the Financing That Makes Them Possible' (date: 2026-07-08, publish-before: 2026-07-02)
+Processing: 2026-07-09-adf-act-15-public-private-partnerships.md
+  SKIPPED: Future post 'The Art of the Deal: Public-Private Partnerships, the Investment Board, and Why Nepal's Infrastructure History Is Littered with Agreements That Went Nowhere' (date: 2026-07-09, publish-before: 2026-07-02)
+Processing: 2026-07-10-adf-act-16-remittances-and-diaspora.md
+  SKIPPED: Future post 'The Money That Never Stops Coming: Nepal's Remittance Economy, the Diaspora, and the Fund's Boldest Financing Idea' (date: 2026-07-10, publish-before: 2026-07-02)
+Processing: 2026-07-11-adf-act-17-nepal-capital-markets.md
+  SKIPPED: Future post 'NEPSE, Bonds, and the Shallow Pool: Nepal's Capital Markets and What the Fund Needs from Them' (date: 2026-07-11, publish-before: 2026-07-02)
+Processing: 2026-07-12-adf-act-18-international-comparisons.md
+  SKIPPED: Future post 'What Happened When Other Countries Tried This: Development Finance Institutions in Bangladesh, Sri Lanka, Ethiopia, and Mongolia' (date: 2026-07-12, publish-before: 2026-07-02)
+Processing: 2026-07-13-adf-act-19-risks-and-honest-concerns.md
+  SKIPPED: Future post 'What Could Go Wrong: An Honest Account of the Risks, the Critics, and the Questions This Law Does Not Answer' (date: 2026-07-13, publish-before: 2026-07-02)
+Processing: 2026-07-14-adf-act-20-verdict-and-vigil.md
+  SKIPPED: Future post 'The Verdict and the Vigil: A Complete Series Summary, a Citizen's Guide to Tracking the Fund, and the Five Questions That Will Define Nepal's Next Decade' (date: 2026-07-14, publish-before: 2026-07-02)
+Processing: 2026-06-06-diatomaceous-earth-v-boric-acid.md
+  Wrote: src/ObserverMagazine.Web/wwwroot/blog-data/diatomaceous-earth-v-boric-acid.html (~10 min read)
+Processing: 2026-07-16-nepal-budget-2026-2-fiscal-year-and-calendar.md
+  SKIPPED: Future post 'The Fiscal Year, the Constitution, and the Calendar: Why Nepal's Budget Arrives on Jestha 15' (date: 2026-07-16, publish-before: 2026-07-02)
+Processing: 2026-07-15-nepal-budget-2026-1-what-is-a-budget.md
+  SKIPPED: Future post 'What Even Is a National Budget? Nepal, Money, and the Machinery of the State' (date: 2026-07-15, publish-before: 2026-07-02)
+Processing: 2026-07-18-nepal-budget-2026-4-how-a-budget-becomes-law.md
+  SKIPPED: Future post 'How a Budget Becomes Law: From Speech to Finance Act' (date: 2026-07-18, publish-before: 2026-07-02)
+Processing: 2026-07-17-nepal-budget-2026-3-who-wrote-this-budget.md
+  SKIPPED: Future post 'Who Is in the Room? Parliament, Government, and the People Who Wrote This Budget' (date: 2026-07-17, publish-before: 2026-07-02)
+Processing: 2026-07-20-nepal-budget-2026-6-recurrent-vs-capital.md
+  SKIPPED: Future post 'Recurrent vs Capital: The Most Important Distinction in the Whole Budget' (date: 2026-07-20, publish-before: 2026-07-02)
+Processing: 2026-07-19-nepal-budget-2026-5-the-big-number.md
+  SKIPPED: Future post 'The Big Number, Dissected: NPR 2.12 Trillion and What 'Largest in History' Really Means' (date: 2026-07-19, publish-before: 2026-07-02)
+Processing: 2026-07-22-nepal-budget-2026-8-deficit-and-debt.md
+  SKIPPED: Future post 'Where the Money Comes From, Part 2: Grants, Loans, and the Deficit' (date: 2026-07-22, publish-before: 2026-07-02)
+Processing: 2026-07-21-nepal-budget-2026-7-revenue-and-remittances.md
+  SKIPPED: Future post 'Where the Money Comes From, Part 1: Revenue, Taxes, and the Remittance Economy' (date: 2026-07-21, publish-before: 2026-07-02)
+Processing: 2026-07-24-nepal-budget-2026-10-income-tax.md
+  SKIPPED: Future post 'Income Tax for Humans: The Biggest Tax Cut in a Decade' (date: 2026-07-24, publish-before: 2026-07-02)
+Processing: 2026-07-23-nepal-budget-2026-9-fiscal-federalism.md
+  SKIPPED: Future post 'Three Governments, One Country: Fiscal Federalism and the Money That Flows Down' (date: 2026-07-23, publish-before: 2026-07-02)
+Processing: 2026-07-26-nepal-budget-2026-12-business-and-investment.md
+  SKIPPED: Future post 'Open for Business? Investment, Company Law, and the Reform Promises' (date: 2026-07-26, publish-before: 2026-07-02)
+Processing: 2026-07-25-nepal-budget-2026-11-vat-customs-excise.md
+  SKIPPED: Future post 'VAT, Customs, and Excise: The Taxes You Pay Without Noticing' (date: 2026-07-25, publish-before: 2026-07-02)
+Processing: 2026-07-28-nepal-budget-2026-14-infrastructure.md
+  SKIPPED: Future post 'Building the Country: Infrastructure, Roads, and the Capital-Spending Problem' (date: 2026-07-28, publish-before: 2026-07-02)
+Processing: 2026-07-27-nepal-budget-2026-13-energy-and-green-tax.md
+  SKIPPED: Future post 'Power and the Planet: Energy, Hydropower, and the New Green Tax' (date: 2026-07-27, publish-before: 2026-07-02)
+Processing: 2026-07-30-nepal-budget-2026-16-social-protection.md
+  SKIPPED: Future post 'The Safety Net: Social Protection, Pensions, and Who Gets Left Out' (date: 2026-07-30, publish-before: 2026-07-02)
+Processing: 2026-07-29-nepal-budget-2026-15-health-and-education.md
+  SKIPPED: Future post 'Health and Education: Investing in People (or Promising To)' (date: 2026-07-29, publish-before: 2026-07-02)
+Processing: 2026-08-01-nepal-budget-2026-18-ai-and-startups.md
+  SKIPPED: Future post 'The Future Pitch: AI, Startups, Technology, and the "Digital Nepal" Story' (date: 2026-08-01, publish-before: 2026-07-02)
+Processing: 2026-07-31-nepal-budget-2026-17-agriculture-and-tourism.md
+  SKIPPED: Future post 'Agriculture, Tourism, and the Productivity Question' (date: 2026-07-31, publish-before: 2026-07-02)
+Processing: 2026-08-02-nepal-budget-2026-19-credibility-and-execution.md
+  SKIPPED: Future post 'Can They Actually Do It? Credibility, Execution, and How to Read a Budget Like an Auditor' (date: 2026-08-02, publish-before: 2026-07-02)
+Processing: 2026-08-03-nepal-budget-2026-20-citizens-field-guide.md
+  SKIPPED: Future post 'The Citizen's Field Guide to Nepal's Budget 2026-27: Everything You Now Know' (date: 2026-08-03, publish-before: 2026-07-02)
+Processing: 2026-08-04-otel-1-why-software-breaks.md
+  SKIPPED: Future post 'Why Software Breaks and Nobody Knows Why: The Case for Observability' (date: 2026-08-04, publish-before: 2026-07-02)
+Processing: 2026-08-05-otel-2-history-before-opentelemetry.md
+  SKIPPED: Future post 'Before OpenTelemetry: A History of Logs, Metrics, and Traces' (date: 2026-08-05, publish-before: 2026-07-02)
+Processing: 2026-08-06-otel-3-the-merger.md
+  SKIPPED: Future post 'The Merger: OpenTracing, OpenCensus, and the Birth of OpenTelemetry' (date: 2026-08-06, publish-before: 2026-07-02)
+Processing: 2026-08-07-otel-4-what-otel-is-and-is-not.md
+  SKIPPED: Future post 'What OpenTelemetry Is — and What It Is Not' (date: 2026-08-07, publish-before: 2026-07-02)
+Processing: 2026-08-08-otel-5-otel-vs-vendor-sdks.md
+  SKIPPED: Future post 'OpenTelemetry vs. Vendor SDKs: The Azure Application Insights Story' (date: 2026-08-08, publish-before: 2026-07-02)
+Processing: 2026-08-09-otel-6-traces-first-principles.md
+  SKIPPED: Future post 'Traces from First Principles: Spans, Attributes, Events, and Links' (date: 2026-08-09, publish-before: 2026-07-02)
+Processing: 2026-08-10-otel-7-context-propagation.md
+  SKIPPED: Future post 'Context Propagation: How a Request Keeps Its Identity' (date: 2026-08-10, publish-before: 2026-07-02)
+Processing: 2026-08-11-otel-8-metrics-first-principles.md
+  SKIPPED: Future post 'Metrics from First Principles: Counters, Gauges, and Histograms' (date: 2026-08-11, publish-before: 2026-07-02)
+Processing: 2026-08-14-otel-11-instrumentation.md
+  SKIPPED: Future post 'Instrumentation: Zero-Code, Libraries, and Doing It by Hand' (date: 2026-08-14, publish-before: 2026-07-02)
+Processing: 2026-08-13-otel-10-api-sdk-separation.md
+  SKIPPED: Future post 'The API and the SDK: Why OpenTelemetry Split Itself in Two' (date: 2026-08-13, publish-before: 2026-07-02)
+Processing: 2026-08-12-otel-9-logs-first-principles.md
+  SKIPPED: Future post 'Logs from First Principles: From Print Statements to Structured Records' (date: 2026-08-12, publish-before: 2026-07-02)
+Processing: 2026-08-17-otel-14-otlp-protocol.md
+  SKIPPED: Future post 'OTLP: The Wire Protocol That Carries Everything' (date: 2026-08-17, publish-before: 2026-07-02)
+Processing: 2026-08-16-otel-13-the-collector.md
+  SKIPPED: Future post 'The Collector: Receivers, Processors, Exporters, and Pipelines' (date: 2026-08-16, publish-before: 2026-07-02)
+Processing: 2026-08-15-otel-12-hands-on-dotnet.md
+  SKIPPED: Future post 'Hands-On .NET: ActivitySource, Meter, and ILogger' (date: 2026-08-15, publish-before: 2026-07-02)
+Processing: 2026-08-23-otel-20-governance-and-the-road-ahead.md
+  SKIPPED: Future post 'Governance and the Road Ahead' (date: 2026-08-23, publish-before: 2026-07-02)
+Processing: 2026-08-22-otel-19-spot-the-lie-toolkit.md
+  SKIPPED: Future post 'How to Spot the Lie: The Complete Toolkit' (date: 2026-08-22, publish-before: 2026-07-02)
+Processing: 2026-08-21-otel-18-costs-and-downsides.md
+  SKIPPED: Future post 'The Costs and Downsides: When OpenTelemetry Hurts' (date: 2026-08-21, publish-before: 2026-07-02)
+Processing: 2026-08-20-otel-17-backends.md
+  SKIPPED: Future post 'Backends: Where Telemetry Goes to Be Useful' (date: 2026-08-20, publish-before: 2026-07-02)
+Processing: 2026-08-19-otel-16-sampling.md
+  SKIPPED: Future post 'Sampling: Keeping Some Data and Throwing the Rest Away' (date: 2026-08-19, publish-before: 2026-07-02)
+Processing: 2026-08-18-otel-15-semantic-conventions.md
+  SKIPPED: Future post 'Semantic Conventions: Why Naming Things Is the Hardest Problem' (date: 2026-08-18, publish-before: 2026-07-02)
+Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (58 posts, 0 drafts skipped, 52 future posts skipped)
+Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
+Content processing complete.
+Restore complete (0.5s)
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.4s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.9)
+[xUnit.net 00:00:00.18]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.34]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.49]   Starting:    ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.79]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.3s)
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (3.5s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded (0.3s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.9)
+[xUnit.net 00:00:00.15]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.31]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.46]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.95]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
+
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 5.1s
+Build succeeded in 6.1s
+
+real	0m6.268s
+user	0m3.408s
+sys	0m0.434s
+Restore complete (0.5s)
+
+Build succeeded in 0.6s
+Project 'ObserverMagazine.Web' has the following package references
+   [net10.0]: 
+   Top-level Package                                        Requested      Resolved
+   > Microsoft.AspNetCore.App.Internal.Assets         (A)   [10.0.9, )     10.0.9  
+   > Microsoft.AspNetCore.Components.WebAssembly            10.0.9         10.0.9  
+   > Microsoft.DotNet.HotReload.WebAssembly.Browser   (A)   [10.0.109, )   10.0.109
+   > Microsoft.Extensions.Http                              10.0.9         10.0.9  
+   > Microsoft.Extensions.Logging.Configuration             10.0.9         10.0.9  
+   > Microsoft.NET.ILLink.Tasks                       (A)   [10.0.9, )     10.0.9  
+   > Microsoft.NET.Sdk.WebAssembly.Pack               (A)   [10.0.1, )     10.0.1  
+
+Project 'ObserverMagazine.Integration.Tests' has the following package references
+   [net10.0]: 
+   Top-level Package                Requested   Resolved
+   > Markdig                        1.3.2       1.3.2   
+   > Microsoft.NET.Test.Sdk         18.7.0      18.7.0  
+   > xunit.runner.visualstudio      3.1.5       3.1.5   
+   > xunit.v3                       3.2.2       3.2.2   
+   > YamlDotNet                     18.1.0      18.1.0  
+
+Project 'ObserverMagazine.Web.Tests' has the following package references
+   [net10.0]: 
+   Top-level Package                Requested   Resolved
+   > bunit                          2.7.2       2.7.2   
+   > Microsoft.NET.Test.Sdk         18.7.0      18.7.0  
+   > xunit.runner.visualstudio      3.1.5       3.1.5   
+   > xunit.v3                       3.2.2       3.2.2   
+
+Project 'ObserverMagazine.ContentProcessor' has the following package references
+   [net10.0]: 
+   Top-level Package      Requested   Resolved
+   > Markdig              1.3.2       1.3.2   
+   > YamlDotNet           18.1.0      18.1.0  
+
+(A) : Auto-referenced package.
+
+real	0m1.529s
+user	0m1.509s
+sys	0m0.324s
+Restore complete (0.5s)
+
+Build succeeded in 0.6s
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+The given project `ObserverMagazine.Web` has no updates given the current sources.
+The given project `ObserverMagazine.Integration.Tests` has no updates given the current sources.
+The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
+The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
+
+real	0m2.635s
+user	0m2.049s
+sys	0m0.417s
+Export complete: docs/llm/dump.txt
+  Total files: 191
+  Blog posts (front matter only): 110
+  Full content files: 78
+  Binary files skipped: 3
+
+real	0m0.137s
+user	0m0.057s
+sys	0m0.067s
+kushal@fedora:~/src/dotnet/mercifulpotato$ 

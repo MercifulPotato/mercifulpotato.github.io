@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-07-02 13:14:05 UTC
+DATE: 2026-07-02 17:12:01 UTC
 ===============================================================================
 
 ===============================================================================
@@ -117,7 +117,13 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── 2026-08-14-otel-11-instrumentation.md
 │       ├── 2026-08-15-otel-12-hands-on-dotnet.md
 │       ├── 2026-08-16-otel-13-the-collector.md
-│       └── 2026-08-17-otel-14-otlp-protocol.md
+│       ├── 2026-08-17-otel-14-otlp-protocol.md
+│       ├── 2026-08-18-otel-15-semantic-conventions.md
+│       ├── 2026-08-19-otel-16-sampling.md
+│       ├── 2026-08-20-otel-17-backends.md
+│       ├── 2026-08-21-otel-18-costs-and-downsides.md
+│       ├── 2026-08-22-otel-19-spot-the-lie-toolkit.md
+│       └── 2026-08-23-otel-20-governance-and-the-road-ahead.md
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
@@ -255,7 +261,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 216 files
+31 directories, 222 files
 
 
 -------------------------------------------------------------------------------
@@ -2452,6 +2458,109 @@ tags:
   - plain-english
   - software-engineering
 series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-18-otel-15-semantic-conventions.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Semantic Conventions: Why Naming Things Is the Hardest Problem"
+date: 2026-08-18
+author: mercifulpotato-team
+summary: "A shared wire protocol only gets you so far if two systems disagree on what to call the same fact. This post explains the dictionary that decides that question, and walks through a real, painful renaming the project itself had to carry out."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-engineering
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-19-otel-16-sampling.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Sampling: Keeping Some Data and Throwing the Rest Away"
+date: 2026-08-19
+author: mercifulpotato-team
+summary: "Storing every single trace forever is rarely realistic. This post builds sampling from first principles using nothing but a table of one hundred requests — no formulas — and corrects a piece of terminology the industry itself frequently gets backward."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - sampling
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-20-otel-17-backends.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Backends: Where Telemetry Goes to Be Useful"
+date: 2026-08-20
+author: mercifulpotato-team
+summary: "OpenTelemetry deliberately stops short of storing or displaying anything. This post surveys where the data actually ends up — open-source, commercial, and this publication's own honest, proportionate answer — with no rankings and no recommendations."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - devops
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-21-otel-18-costs-and-downsides.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "The Costs and Downsides: When OpenTelemetry Hurts"
+date: 2026-08-21
+author: mercifulpotato-team
+summary: "This series has spent seventeen days building the case for OpenTelemetry. This post makes the strongest good-faith case against it, using the project's own governing body as its sharpest witness, and says plainly when the right answer is not to adopt it at all."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - software-engineering
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-22-otel-19-spot-the-lie-toolkit.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "How to Spot the Lie: The Complete Toolkit"
+date: 2026-08-22
+author: mercifulpotato-team
+summary: "Eighteen days, eighteen tests. This post gathers every one of them into a single standalone toolkit, adds three new tests this series hasn't yet covered, and ends with the one test that has to survive being turned on itself."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - critical-thinking
+series: "OpenTelemetry from the Ground Up"
+---
+
+
+-------------------------------------------------------------------------------
+FILE: content/blog/2026-08-23-otel-20-governance-and-the-road-ahead.md  [FRONT MATTER ONLY — body omitted to save context space]
+-------------------------------------------------------------------------------
+---
+title: "Governance and the Road Ahead"
+date: 2026-08-23
+author: mercifulpotato-team
+summary: "The series finale: how OpenTelemetry actually governs itself today, a governing member's own candid admission of what remains unfinished, and a closing, honest reckoning with everything these twenty days have built."
+tags:
+  - opentelemetry
+  - observability
+  - plain-english
+  - open-source-governance
+series: "OpenTelemetry from the Ground Up"
+featured: true
 ---
 
 
@@ -21624,8 +21733,8 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 185
-  Blog posts (front matter only): 104
+Total Files Exported: 191
+  Blog posts (front matter only): 110
   Full content files: 78
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
