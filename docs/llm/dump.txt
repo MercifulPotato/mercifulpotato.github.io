@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-07-02 17:12:01 UTC
+DATE: 2026-07-08 13:37:26 UTC
 ===============================================================================
 
 ===============================================================================
@@ -235,8 +235,10 @@ DIRECTORY TREE (all git-tracked files)
 │           ├── plaintext
 │           │   ├── 2026-04-26-zelensky.txt
 │           │   └── 2026-05-11-podcast.txt
-│           └── sample-data
-│               └── products.json
+│           ├── sample-data
+│           │   └── products.json
+│           └── sandbox
+│               └── test.html
 ├── tests
 │   ├── ObserverMagazine.Integration.Tests
 │   │   ├── ContentProcessorTests.cs
@@ -261,7 +263,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-31 directories, 222 files
+32 directories, 223 files
 
 
 -------------------------------------------------------------------------------
@@ -19181,6 +19183,18 @@ FILE: src/ObserverMagazine.Web/wwwroot/sample-data/products.json
 
 
 -------------------------------------------------------------------------------
+FILE: src/ObserverMagazine.Web/wwwroot/sandbox/test.html
+-------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Testing Clickjacking Defense</h2>
+    <iframe src="https://mounts-chicken-applicable-effectively.trycloudflare.com/passkeys" width="800" height="600"></iframe>
+  </body>
+</html>
+
+
+-------------------------------------------------------------------------------
 FILE: tests/ObserverMagazine.Integration.Tests/ContentProcessorTests.cs
 -------------------------------------------------------------------------------
 using System.Xml.Linq;
@@ -21733,9 +21747,9 @@ num2words>=0.5.14
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 191
+Total Files Exported: 192
   Blog posts (front matter only): 110
-  Full content files: 78
+  Full content files: 79
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
 ===============================================================================
