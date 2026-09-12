@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-09-12 20:39:21 UTC
+DATE: 2026-09-12 20:40:50 UTC
 ===============================================================================
 
 ===============================================================================
@@ -19644,7 +19644,7 @@ FILE: tests/ObserverMagazine.Integration.Tests/ObserverMagazine.Integration.Test
     <RootNamespace>ObserverMagazine.Integration.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-
+    <OutputType>Exe</OutputType>
     <!-- See ObserverMagazine.Web.Tests.csproj for why this is here. -->
     <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
   </PropertyGroup>
@@ -20661,7 +20661,7 @@ FILE: tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj
     <RootNamespace>ObserverMagazine.Web.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-
+    <OutputType>Exe</OutputType>
     <!--
       Microsoft.Testing.Platform. xunit.v3 4.0 already sets
       IsTestingPlatformApplication=true on its own; setting this makes the intent
