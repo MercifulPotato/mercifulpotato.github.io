@@ -93,7 +93,182 @@ Restore failed with 1 error(s) in 0.8s
 real	0m0.971s
 user	0m1.025s
 sys	0m0.190s
+kushal@fedora:~/src/dotnet/mercifulpotato$ cd ~/src/dotnet/mercifulpotato/; time dotnet --info; time dotnet format; time bash export.sh > docs/llm/vendor/output.txt; time dotnet build; time dotnet test; time dotnet list package; time dotnet list package --outdated;
+.NET SDK:
+ Version:           10.0.111
+ Commit:            e2f47b0110
+ Workload version:  10.0.101.1
+ MSBuild version:   18.0.11+e2f47b011
+
+Runtime Environment:
+ OS Name:     fedora
+ OS Version:  44
+ OS Platform: Linux
+ RID:         fedora.44-x64
+ Base Path:   /usr/lib64/dotnet/sdk/10.0.111/
+
+.NET workloads installed:
+ [android]
+   Installation Source: SDK 10.0.100
+   Manifest Version:    36.1.2/10.0.100
+   Manifest Path:       /home/kushal/.dotnet/sdk-manifests/10.0.100/microsoft.net.sdk.android/36.1.2/WorkloadManifest.json
+   Install Type:        FileBased
+
+Configured to use workload sets when installing new manifests.
+
+Host:
+  Version:      10.0.11
+  Architecture: x64
+  Commit:       e2f47b0110
+
+.NET SDKs installed:
+  10.0.111 [/usr/lib64/dotnet/sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 10.0.11 [/usr/lib64/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 10.0.11 [/usr/lib64/dotnet/shared/Microsoft.NETCore.App]
+
+Other architectures found:
+  None
+
+Environment variables:
+  Not set
+
+global.json file:
+  /home/kushal/src/dotnet/mercifulpotato/global.json
+
+Learn more:
+  https://aka.ms/dotnet/info
+
+Download .NET:
+  https://aka.ms/dotnet/download
+
+real	0m0.164s
+user	0m0.136s
+sys	0m0.027s
+Warnings were encountered while loading the workspace. Set the verbosity option to the 'diagnostic' level to log warnings.
+
+real	0m7.550s
+user	0m12.205s
+sys	0m1.083s
+
+real	0m0.140s
+user	0m0.071s
+sys	0m0.060s
+Restore succeeded with 1 warning(s) in 0.5s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : warning NU1902: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+  ObserverMagazine.Integration.Tests net10.0 succeeded (2.0s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+  ObserverMagazine.ContentProcessor net10.0 succeeded (2.1s) → tools/ObserverMagazine.ContentProcessor/bin/Debug/net10.0/ObserverMagazine.ContentProcessor.dll
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (4.2s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded with 1 warning(s) (0.4s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : warning NU1902: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+
+Build succeeded with 2 warning(s) in 5.4s
+
+real	0m5.602s
+user	0m2.730s
+sys	0m0.425s
+Restore succeeded with 1 warning(s) in 0.5s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : warning NU1902: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+  ObserverMagazine.Integration.Tests net10.0 succeeded (0.1s) → tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.11)
+[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.28]   Discovered:  ObserverMagazine.Integration.Tests
+[xUnit.net 00:00:00.43]   Starting:    ObserverMagazine.Integration.Tests
+  ObserverMagazine.Web net10.0 browser-wasm succeeded (0.9s) → src/ObserverMagazine.Web/bin/Debug/net10.0/wwwroot
+  ObserverMagazine.Web.Tests net10.0 succeeded with 1 warning(s) (0.1s) → tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : warning NU1902: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+[xUnit.net 00:00:00.66]   Finished:    ObserverMagazine.Integration.Tests (ID = 'edf02b891ac50b3a59ff815e8de494872a4b80924f3d3a5d87e9d4d1049d4e4d')
+  ObserverMagazine.Integration.Tests test net10.0 succeeded (1.2s)
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.11)
+[xUnit.net 00:00:00.13]   Discovering: ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.30]   Discovered:  ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.45]   Starting:    ObserverMagazine.Web.Tests
+[xUnit.net 00:00:00.89]   Finished:    ObserverMagazine.Web.Tests (ID = '4bc936ed118cd4bc26537a6c827b919042c4f69281b4c5435ac640f2422b2d54')
+  ObserverMagazine.Web.Tests test net10.0 succeeded (1.4s)
+
+Test summary: total: 81, failed: 0, succeeded: 81, skipped: 0, duration: 2.4s
+Build succeeded with 2 warning(s) in 3.2s
+
+real	0m3.344s
+user	0m1.934s
+sys	0m0.332s
+Restore succeeded with 1 warning(s) in 0.5s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : warning NU1902: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+
+Build succeeded with 1 warning(s) in 0.6s
+Project 'ObserverMagazine.Web' has the following package references
+   [net10.0]: 
+   Top-level Package                                        Requested      Resolved
+   > Microsoft.AspNetCore.App.Internal.Assets         (A)   [10.0.11, )    10.0.11 
+   > Microsoft.AspNetCore.Components.WebAssembly            10.0.9         10.0.9  
+   > Microsoft.DotNet.HotReload.WebAssembly.Browser   (A)   [10.0.111, )   10.0.111
+   > Microsoft.Extensions.Http                              10.0.9         10.0.9  
+   > Microsoft.Extensions.Logging.Configuration             10.0.9         10.0.9  
+   > Microsoft.NET.ILLink.Tasks                       (A)   [10.0.11, )    10.0.11 
+   > Microsoft.NET.Sdk.WebAssembly.Pack               (A)   [10.0.1, )     10.0.1  
+
+Project 'ObserverMagazine.Integration.Tests' has the following package references
+   [net10.0]: 
+   Top-level Package                Requested   Resolved
+   > Markdig                        1.3.2       1.3.2   
+   > Microsoft.NET.Test.Sdk         18.7.0      18.7.0  
+   > xunit.runner.visualstudio      3.1.5       3.1.5   
+   > xunit.v3                       3.2.2       3.2.2   
+   > YamlDotNet                     18.1.0      18.1.0  
+
+Project 'ObserverMagazine.Web.Tests' has the following package references
+   [net10.0]: 
+   Top-level Package                Requested   Resolved
+   > bunit                          2.7.2       2.7.2   
+   > Microsoft.NET.Test.Sdk         18.7.0      18.7.0  
+   > xunit.runner.visualstudio      3.1.5       3.1.5   
+   > xunit.v3                       3.2.2       3.2.2   
+
+Project 'ObserverMagazine.ContentProcessor' has the following package references
+   [net10.0]: 
+   Top-level Package      Requested   Resolved
+   > Markdig              1.3.2       1.3.2   
+   > YamlDotNet           18.1.0      18.1.0  
+
+(A) : Auto-referenced package.
+
+real	0m1.600s
+user	0m1.529s
+sys	0m0.367s
+Restore succeeded with 1 warning(s) in 0.5s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : warning NU1902: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+
+Build succeeded with 1 warning(s) in 0.6s
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+Project `ObserverMagazine.Web` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package                                  Requested   Resolved   Latest 
+   > Microsoft.AspNetCore.Components.WebAssembly      10.0.9      10.0.9     10.0.12
+   > Microsoft.Extensions.Http                        10.0.9      10.0.9     10.0.12
+   > Microsoft.Extensions.Logging.Configuration       10.0.9      10.0.9     10.0.12
+
+Project `ObserverMagazine.Integration.Tests` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package                Requested   Resolved   Latest 
+   > Microsoft.NET.Test.Sdk         18.7.0      18.7.0     18.10.0
+   > xunit.runner.visualstudio      3.1.5       3.1.5      4.0.0  
+   > xunit.v3                       3.2.2       3.2.2      4.0.1  
+
+Project `ObserverMagazine.Web.Tests` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package                Requested   Resolved   Latest 
+   > bunit                          2.7.2       2.7.2      2.10.3 
+   > Microsoft.NET.Test.Sdk         18.7.0      18.7.0     18.10.0
+   > xunit.runner.visualstudio      3.1.5       3.1.5      4.0.0  
+   > xunit.v3                       3.2.2       3.2.2      4.0.1  
+
+The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
+
+real	0m3.445s
+user	0m2.191s
+sys	0m0.406s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
-
-
-

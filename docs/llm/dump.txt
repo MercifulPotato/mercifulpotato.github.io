@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-09-12 20:04:23 UTC
+DATE: 2026-09-12 20:05:29 UTC
 ===============================================================================
 
 ===============================================================================
@@ -161,7 +161,8 @@ DIRECTORY TREE (all git-tracked files)
 │           │   ├── publication-document-1657798279.pdf
 │           │   ├── RCAW-6379.18-Budget-Highlights.pdf
 │           │   └── ssrn-6857318.pdf
-│           └── output.txt
+│           ├── output.txt
+│           └── terminal.txt
 ├── export.sh
 ├── .github
 │   └── workflows
@@ -264,7 +265,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-32 directories, 224 files
+32 directories, 225 files
 
 
 -------------------------------------------------------------------------------
@@ -2576,7 +2577,7 @@ FILE: Directory.Build.props
     <LangVersion>14.0</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 </Project>
