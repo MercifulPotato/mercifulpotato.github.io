@@ -1,0 +1,99 @@
+kushal@fedora:~/Videos/dl$ cd ~/src/dotnet/mercifulpotato/; time dotnet --info; time dotnet format; time bash export.sh > docs/llm/vendor/output.txt; time dotnet build; time dotnet test; time dotnet list package; time dotnet list package --outdated;
+.NET SDK:
+ Version:           10.0.111
+ Commit:            e2f47b0110
+ Workload version:  10.0.101.1
+ MSBuild version:   18.0.11+e2f47b011
+
+Runtime Environment:
+ OS Name:     fedora
+ OS Version:  44
+ OS Platform: Linux
+ RID:         fedora.44-x64
+ Base Path:   /usr/lib64/dotnet/sdk/10.0.111/
+
+.NET workloads installed:
+ [android]
+   Installation Source: SDK 10.0.100
+   Manifest Version:    36.1.2/10.0.100
+   Manifest Path:       /home/kushal/.dotnet/sdk-manifests/10.0.100/microsoft.net.sdk.android/36.1.2/WorkloadManifest.json
+   Install Type:        FileBased
+
+Configured to use workload sets when installing new manifests.
+
+Host:
+  Version:      10.0.11
+  Architecture: x64
+  Commit:       e2f47b0110
+
+.NET SDKs installed:
+  10.0.111 [/usr/lib64/dotnet/sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 10.0.11 [/usr/lib64/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 10.0.11 [/usr/lib64/dotnet/shared/Microsoft.NETCore.App]
+
+Other architectures found:
+  None
+
+Environment variables:
+  Not set
+
+global.json file:
+  /home/kushal/src/dotnet/mercifulpotato/global.json
+
+Learn more:
+  https://aka.ms/dotnet/info
+
+Download .NET:
+  https://aka.ms/dotnet/download
+
+real	0m0.230s
+user	0m0.118s
+sys	0m0.044s
+Unhandled exception: System.Exception: Restore operation failed.
+   at Microsoft.CodeAnalysis.Tools.CodeFormatter.OpenMSBuildWorkspaceAsync(String solutionOrProjectPath, WorkspaceType workspaceType, Boolean noRestore, Boolean requiresSemantics, String binaryLogPath, Boolean logWorkspaceWarnings, ILogger logger, CancellationToken cancellationToken)
+   at Microsoft.CodeAnalysis.Tools.CodeFormatter.FormatWorkspaceAsync(FormatOptions formatOptions, ILogger logger, CancellationToken cancellationToken, String binaryLogPath)
+   at Microsoft.CodeAnalysis.Tools.FormatCommandCommon.FormatAsync(FormatOptions formatOptions, ILogger`1 logger, CancellationToken cancellationToken)
+   at Microsoft.CodeAnalysis.Tools.Commands.RootFormatCommand.FormatCommandDefaultHandler.InvokeAsync(ParseResult parseResult, CancellationToken cancellationToken)
+   at System.CommandLine.Invocation.InvocationPipeline.InvokeAsync(ParseResult parseResult, CancellationToken cancellationToken)
+
+real	0m1.918s
+user	0m1.530s
+sys	0m0.349s
+
+real	0m0.121s
+user	0m0.064s
+sys	0m0.059s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : error NU1902: Warning As Error: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+
+Restore failed with 1 error(s) in 0.9s
+
+real	0m1.013s
+user	0m1.636s
+sys	0m0.295s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : error NU1902: Warning As Error: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+
+Restore failed with 1 error(s) in 0.9s
+
+real	0m1.028s
+user	0m1.134s
+sys	0m0.203s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : error NU1902: Warning As Error: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+
+Restore failed with 1 error(s) in 0.8s
+
+real	0m0.956s
+user	0m1.047s
+sys	0m0.164s
+    /home/kushal/src/dotnet/mercifulpotato/tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj : error NU1902: Warning As Error: Package 'AngleSharp' 1.4.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-pgww-w46g-26qg
+
+Restore failed with 1 error(s) in 0.8s
+
+real	0m0.971s
+user	0m1.025s
+sys	0m0.190s
+kushal@fedora:~/src/dotnet/mercifulpotato$ 
+
+
+

@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-07-08 13:37:26 UTC
+DATE: 2026-09-12 20:04:23 UTC
 ===============================================================================
 
 ===============================================================================
@@ -137,30 +137,31 @@ DIRECTORY TREE (all git-tracked files)
 │           ├── claude-instructions.md
 │           ├── claude-memory.md
 │           ├── claude-sessions.md
-│           └── nepal-budget-2026
-│               ├── 1750310698_Tax_Fact_2025-2026.pdf
-│               ├── 1780322646_PKF_ TRU Nepal Budget Statement Highlights_2026-27.pdf
-│               ├── 1nplea2026002.pdf
-│               ├── 2026-05-30-12-07-01-trn-30may-1.pdf
-│               ├── 2083 Baisakh GDS_i116eqf.pdf
-│               ├── 289-2025-06-01-1026915.pdf
-│               ├── 6720cef296e9d935e76ada04-resources-1749799827777.pdf
-│               ├── Amendment-in-Tax-Laws-by-Budget-2082-83.pdf
-│               ├── BKAG Concise Budget Highlights FY 208283.pdf
-│               ├── budget_overview_82-83.pdf
-│               ├── budget-prastab-2083-84.pdf
-│               ├── Budget Speech 2026_27 English Translation_ysmw9xe.pdf
-│               ├── budget-update-2082-with-tax-amendment-20250616160234.pdf
-│               ├── Federal_Budget_2083_84_Highlights_V1.pdf
-│               ├── Finance-Bill-2083-Key-Tax-Changes-and-Legal-Implications-for-Businesses-in-Nepal-2026-infinitynp.com.pdf
-│               ├── Monetary_Policy_2082-083_English.pdf
-│               ├── Monetary-policy-in-English-2025_26.pdf
-│               ├── Monetary-Policy-in-English-for-2024-25.pdf
-│               ├── nepal-budget-2026-27-series-plan.md
-│               ├── Nepal-Budget-2083_84-Analysis.pdf
-│               ├── publication-document-1657798279.pdf
-│               ├── RCAW-6379.18-Budget-Highlights.pdf
-│               └── ssrn-6857318.pdf
+│           ├── nepal-budget-2026
+│           │   ├── 1750310698_Tax_Fact_2025-2026.pdf
+│           │   ├── 1780322646_PKF_ TRU Nepal Budget Statement Highlights_2026-27.pdf
+│           │   ├── 1nplea2026002.pdf
+│           │   ├── 2026-05-30-12-07-01-trn-30may-1.pdf
+│           │   ├── 2083 Baisakh GDS_i116eqf.pdf
+│           │   ├── 289-2025-06-01-1026915.pdf
+│           │   ├── 6720cef296e9d935e76ada04-resources-1749799827777.pdf
+│           │   ├── Amendment-in-Tax-Laws-by-Budget-2082-83.pdf
+│           │   ├── BKAG Concise Budget Highlights FY 208283.pdf
+│           │   ├── budget_overview_82-83.pdf
+│           │   ├── budget-prastab-2083-84.pdf
+│           │   ├── Budget Speech 2026_27 English Translation_ysmw9xe.pdf
+│           │   ├── budget-update-2082-with-tax-amendment-20250616160234.pdf
+│           │   ├── Federal_Budget_2083_84_Highlights_V1.pdf
+│           │   ├── Finance-Bill-2083-Key-Tax-Changes-and-Legal-Implications-for-Businesses-in-Nepal-2026-infinitynp.com.pdf
+│           │   ├── Monetary_Policy_2082-083_English.pdf
+│           │   ├── Monetary-policy-in-English-2025_26.pdf
+│           │   ├── Monetary-Policy-in-English-for-2024-25.pdf
+│           │   ├── nepal-budget-2026-27-series-plan.md
+│           │   ├── Nepal-Budget-2083_84-Analysis.pdf
+│           │   ├── publication-document-1657798279.pdf
+│           │   ├── RCAW-6379.18-Budget-Highlights.pdf
+│           │   └── ssrn-6857318.pdf
+│           └── output.txt
 ├── export.sh
 ├── .github
 │   └── workflows
@@ -263,7 +264,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-32 directories, 223 files
+32 directories, 224 files
 
 
 -------------------------------------------------------------------------------
