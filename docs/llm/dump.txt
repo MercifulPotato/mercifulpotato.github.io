@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-09-12 20:13:04 UTC
+DATE: 2026-09-12 20:37:41 UTC
 ===============================================================================
 
 ===============================================================================
@@ -2594,8 +2594,6 @@ FILE: Directory.Packages.props
     <MicrosoftAspNetCoreVersion>10.0.12</MicrosoftAspNetCoreVersion>
     <MicrosoftExtensionsVersion>10.0.12</MicrosoftExtensionsVersion>
     <XunitVersion>4.0.1</XunitVersion>
-    <XunitRunnerVersion>4.0.0</XunitRunnerVersion>
-    <TestSdkVersion>18.10.0</TestSdkVersion>
     <MarkdigVersion>1.3.2</MarkdigVersion>
     <YamlDotNetVersion>18.1.0</YamlDotNetVersion>
     <BunitVersion>2.10.3</BunitVersion>
@@ -2611,11 +2609,24 @@ FILE: Directory.Packages.props
     <PackageVersion Include="Markdig" Version="$(MarkdigVersion)" />
     <PackageVersion Include="YamlDotNet" Version="$(YamlDotNetVersion)" />
 
-    <!-- Testing -->
+    <!--
+      Testing — Microsoft.Testing.Platform (MTP) only.
+
+      xunit.v3 4.0 ships MTP v2 in the box and has dropped MTP v1. MTP v2 removed the
+      VSTest bridge on the .NET 10 SDK, so the two VSTest-only packages that used to
+      live here (xunit.runner.visualstudio, Microsoft.NET.Test.Sdk) are gone:
+
+        - xunit.runner.visualstudio -> VSTest adapter. Only needed by VSTest-era
+          runners; xunit.v3 carries its own MTP runner natively.
+        - Microsoft.NET.Test.Sdk    -> VSTest host. MTP test projects are plain
+          executables and do not need it.
+
+      `dotnet test` is switched into MTP mode by the "test" section in global.json.
+      Fewer packages also means a faster restore, which matters because these tests
+      are meant to run after every change.
+    -->
     <PackageVersion Include="xunit.v3" Version="$(XunitVersion)" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="$(XunitRunnerVersion)" />
     <PackageVersion Include="bunit" Version="$(BunitVersion)" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="$(TestSdkVersion)" />
   </ItemGroup>
 </Project>
 
@@ -2853,6 +2864,8 @@ concurrency:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  # xunit.v3 pulls in Microsoft.Testing.Extensions.Telemetry. Opt out in CI.
+  TESTINGPLATFORM_TELEMETRY_OPTOUT: 1
 
 jobs:
   build-and-deploy:
@@ -2948,8 +2961,12 @@ jobs:
 
       # ── End audio generation ───────────────────────────────────────
 
+      # Microsoft.Testing.Platform mode (opted in via global.json).
+      # `dotnet test <path>` is no longer valid syntax; the target is named with
+      # --solution / --project / --test-modules. MTP fails the run if zero tests
+      # execute, so a silently empty run cannot pass CI.
       - name: Run tests
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet test --solution ObserverMagazine.slnx --no-restore
 
       - name: Publish Blazor WASM
         run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
@@ -2988,6 +3005,8 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  # xunit.v3 pulls in Microsoft.Testing.Extensions.Telemetry. Opt out in CI.
+  TESTINGPLATFORM_TELEMETRY_OPTOUT: 1
 
 jobs:
   build-and-test:
@@ -3007,8 +3026,9 @@ jobs:
       - name: Run content processor
         run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
 
+      # Microsoft.Testing.Platform mode (opted in via global.json).
       - name: Run tests
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet test --solution ObserverMagazine.slnx --no-restore
 
       - name: Publish Blazor WASM
         run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
@@ -3108,6 +3128,9 @@ FILE: global.json
   "sdk": {
     "version": "10.0.104",
     "rollForward": "latestFeature"
+  },
+  "test": {
+    "runner": "Microsoft.Testing.Platform"
   }
 }
 
@@ -3156,7 +3179,7 @@ Built with **.NET 10** (LTS) and **C# 14**.
 - **Responsive Tables** — Sortable, filterable data tables that work on mobile
 - **Master-Detail Flow** — Click a list item to view full details
 - **OpenTelemetry-ready Logging** — Structured logging via `ILogger`
-- **Full Test Suite** — bUnit component tests + xUnit integration tests
+- **Full Test Suite** — bUnit component tests + xUnit.net v3 integration tests, running on Microsoft.Testing.Platform
 
 ## Quick Start
 ```bash
@@ -3170,14 +3193,48 @@ dotnet run --project src/ObserverMagazine.Web
 dotnet test
 ```
 
+## Testing
+
+Tests run on **Microsoft.Testing.Platform (MTP)**, not VSTest. The opt-in lives in
+`global.json`:
+
+```json
+{ "test": { "runner": "Microsoft.Testing.Platform" } }
+```
+
+Test projects are ordinary executables, so each one can also be run on its own:
+
+```bash
+# Whole solution
+dotnet test --solution ObserverMagazine.slnx
+
+# One project
+dotnet test --project tests/ObserverMagazine.Web.Tests
+
+# Filter by class, or by trait
+dotnet test --filter-class ObserverMagazine.Web.Tests.Services.BlogServiceTests
+dotnet test --filter-trait Category=Integration
+
+# Run a test project directly, no dotnet test involved
+dotnet run --project tests/ObserverMagazine.Integration.Tests
+```
+
+Run `dotnet test -?` from the repo root for the full option list, which is built
+from whichever MTP extensions the test projects reference.
+
+xUnit configuration for MTP lives in `testconfig.json` next to a test project
+(not `xunit.runner.json`, which is the VSTest-era file).
+
 ## Technology
 
 | Component | Technology | License |
 |-----------|-----------|---------|
-| Framework | .NET 10 / Blazor WASM | MIT |
-| Markdown | Markdig 1.1.1 | BSD-2-Clause |
-| YAML | YamlDotNet 16.3.0 | MIT |
-| Testing | xUnit v3 3.2.2 + bUnit 2.6.2 | Apache-2.0 / MIT |
+| Framework | .NET 10 / Blazor WASM 10.0.12 | MIT |
+| Markdown | Markdig 1.3.2 | BSD-2-Clause |
+| YAML | YamlDotNet 18.1.0 | MIT |
+| Test framework | xUnit.net v3 4.0.1 | Apache-2.0 |
+| Component testing | bUnit 2.10.3 | MIT |
+| Test runner | Microsoft.Testing.Platform v2 | MIT |
 
 All dependencies are free for any use — no payment required, ever.
 
@@ -19587,12 +19644,13 @@ FILE: tests/ObserverMagazine.Integration.Tests/ObserverMagazine.Integration.Test
     <RootNamespace>ObserverMagazine.Integration.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+
+    <!-- See ObserverMagazine.Web.Tests.csproj for why this is here. -->
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit.v3" />
-    <PackageReference Include="xunit.runner.visualstudio" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="Markdig" />
     <PackageReference Include="YamlDotNet" />
   </ItemGroup>
@@ -20603,13 +20661,20 @@ FILE: tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj
     <RootNamespace>ObserverMagazine.Web.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+
+    <!--
+      Microsoft.Testing.Platform. xunit.v3 4.0 already sets
+      IsTestingPlatformApplication=true on its own; setting this makes the intent
+      explicit and gives `dotnet run` the same MTP command line that `dotnet test`
+      uses, so local and CI output match. Remove it if you prefer xUnit's native
+      console UX when running the test project directly.
+    -->
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit.v3" />
-    <PackageReference Include="xunit.runner.visualstudio" />
     <PackageReference Include="bunit" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
   </ItemGroup>
 
   <ItemGroup>
