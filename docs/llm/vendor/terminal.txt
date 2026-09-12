@@ -1,4 +1,4 @@
-kushal@fedora:~/Videos/dl$ cd ~/src/dotnet/mercifulpotato/; time dotnet --info; time dotnet format; time bash export.sh > docs/llm/vendor/output.txt; time dotnet build; time dotnet test; time dotnet list package; time dotnet list package --outdated;
+\kushal@fedora:~/Videos/dl$ cd ~/src/dotnet/mercifulpotato/; time dotnet --info; time dotnet format; time bash export.sh > docs/llm/vendor/output.txt; time dotnet build; time dotnet test; time dotnet list package; time dotnet list package --outdated;
 .NET SDK:
  Version:           10.0.111
  Commit:            e2f47b0110
