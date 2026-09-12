@@ -4,7 +4,7 @@
     <RootNamespace>ObserverMagazine.Web.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-
+    <OutputType>Exe</OutputType>
     <!--
       Microsoft.Testing.Platform. xunit.v3 4.0 already sets
       IsTestingPlatformApplication=true on its own; setting this makes the intent
