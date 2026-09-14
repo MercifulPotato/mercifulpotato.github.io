@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-09-14 23:04:41 UTC
+DATE: 2026-09-14 23:07:21 UTC
 ===============================================================================
 
 ===============================================================================
@@ -2596,7 +2596,7 @@ FILE: Directory.Packages.props
     <XunitVersion>4.0.1</XunitVersion>
     <MarkdigVersion>1.3.2</MarkdigVersion>
     <YamlDotNetVersion>18.1.0</YamlDotNetVersion>
-    <BunitVersion>2.10.3</BunitVersion>
+    <BunitVersion>2.11.3</BunitVersion>
   </PropertyGroup>
 
   <ItemGroup>

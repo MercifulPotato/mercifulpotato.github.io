@@ -1,24 +1,24 @@
-kushal@fedora:~/src/dotnet/GeminiClient$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test --solution ObserverMagazine.slnx; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test --solution ObserverMagazine.slnx; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
 304M	.
 
-real	0m0.066s
+real	0m0.010s
 user	0m0.001s
-sys	0m0.029s
+sys	0m0.009s
 
-real	0m7.634s
-user	0m12.076s
-sys	0m1.041s
+real	0m8.575s
+user	0m12.780s
+sys	0m1.166s
 Restore complete (0.5s)
 
-Build succeeded in 0.7s
+Build succeeded in 0.6s
 
-real	0m0.817s
-user	0m0.855s
-sys	0m0.184s
+real	0m0.731s
+user	0m0.757s
+sys	0m0.171s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-09-14 23:04:29 UTC
+Publish before:    2026-09-14 23:07:13 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
@@ -248,24 +248,24 @@ Processing: 2026-08-18-otel-15-semantic-conventions.md
 Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (110 posts, 0 drafts skipped, 0 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
-Running tests from tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64)
 Running tests from tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64)
-tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (698ms)
-tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (867ms)
+Running tests from tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64)
+tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (651ms)
+tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (895ms)
 
 Test run summary: Passed!
-  tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (698ms)
-  tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (867ms)
+  tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (895ms)
+  tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (651ms)
 
   total: 81
   failed: 0
   succeeded: 81
   skipped: 0
-  duration: 1s 048ms
+  duration: 1s 072ms
 
-real	0m6.899s
-user	0m5.785s
-sys	0m0.862s
+real	0m4.331s
+user	0m5.278s
+sys	0m0.769s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -290,7 +290,7 @@ Project 'ObserverMagazine.Integration.Tests' has the following package reference
 Project 'ObserverMagazine.Web.Tests' has the following package references
    [net10.0]: 
    Top-level Package      Requested   Resolved
-   > bunit                2.10.3      2.10.3  
+   > bunit                2.11.3      2.11.3  
    > xunit.v3             4.0.1       4.0.1   
 
 Project 'ObserverMagazine.ContentProcessor' has the following package references
@@ -301,9 +301,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.652s
-user	0m1.629s
-sys	0m0.352s
+real	0m1.514s
+user	0m1.522s
+sys	0m0.303s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -313,23 +313,19 @@ The following sources were used:
 
 The given project `ObserverMagazine.Web` has no updates given the current sources.
 The given project `ObserverMagazine.Integration.Tests` has no updates given the current sources.
-Project `ObserverMagazine.Web.Tests` has the following updates to its packages
-   [net10.0]: 
-   Top-level Package      Requested   Resolved   Latest
-   > bunit                2.10.3      2.10.3     2.11.3
-
+The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m3.060s
-user	0m2.413s
-sys	0m0.479s
+real	0m1.717s
+user	0m1.695s
+sys	0m0.340s
 Export complete: docs/llm/dump.txt
   Total files: 192
   Blog posts (front matter only): 110
   Full content files: 79
   Binary files skipped: 3
 
-real	0m0.163s
-user	0m0.077s
-sys	0m0.066s
+real	0m0.134s
+user	0m0.066s
+sys	0m0.059s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
