@@ -1,24 +1,24 @@
 kushal@fedora:~/src/dotnet/mercifulpotato$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-307M	.
+304M	.
 
-real	0m0.026s
-user	0m0.000s
-sys	0m0.013s
+real	0m0.022s
+user	0m0.001s
+sys	0m0.011s
 
-real	0m7.130s
-user	0m11.989s
-sys	0m0.912s
+real	0m7.410s
+user	0m11.686s
+sys	0m0.958s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.726s
-user	0m0.747s
-sys	0m0.166s
+real	0m0.735s
+user	0m0.778s
+sys	0m0.153s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-09-12 20:12:59 UTC
+Publish before:    2026-09-17 12:06:10 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
@@ -248,17 +248,24 @@ Processing: 2026-08-18-otel-15-semantic-conventions.md
 Wrote posts index: src/ObserverMagazine.Web/wwwroot/blog-data/posts-index.json (110 posts, 0 drafts skipped, 0 future posts skipped)
 Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
-Restore complete (0.5s)
-  ObserverMagazine.Web.Tests net10.0 failed with 1 error(s) (0.0s)
-    /home/kushal/.nuget/packages/microsoft.testing.platform.msbuild/2.4.0/buildMultiTargeting/Microsoft.Testing.Platform.MSBuild.targets(355,5): error Testing with VSTest target is no longer supported by Microsoft.Testing.Platform on .NET 10 SDK and later. If you use dotnet test, you should opt-in to the new dotnet test experience. For more information, see https://aka.ms/dotnet-test-mtp-error
-  ObserverMagazine.Integration.Tests net10.0 failed with 1 error(s) (0.0s)
-    /home/kushal/.nuget/packages/microsoft.testing.platform.msbuild/2.4.0/buildMultiTargeting/Microsoft.Testing.Platform.MSBuild.targets(355,5): error Testing with VSTest target is no longer supported by Microsoft.Testing.Platform on .NET 10 SDK and later. If you use dotnet test, you should opt-in to the new dotnet test experience. For more information, see https://aka.ms/dotnet-test-mtp-error
+Running tests from tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64)
+Running tests from tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64)
+tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (660ms)
+tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (868ms)
 
-Build failed with 2 error(s) in 0.7s
+Test run summary: Passed!
+  tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (660ms)
+  tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (868ms)
 
-real	0m0.858s
-user	0m0.957s
-sys	0m0.177s
+  total: 81
+  failed: 0
+  succeeded: 81
+  skipped: 0
+  duration: 1s 053ms
+
+real	0m5.905s
+user	0m5.269s
+sys	0m0.757s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -275,20 +282,16 @@ Project 'ObserverMagazine.Web' has the following package references
 
 Project 'ObserverMagazine.Integration.Tests' has the following package references
    [net10.0]: 
-   Top-level Package                Requested   Resolved
-   > Markdig                        1.3.2       1.3.2   
-   > Microsoft.NET.Test.Sdk         18.10.0     18.10.0 
-   > xunit.runner.visualstudio      4.0.0       4.0.0   
-   > xunit.v3                       4.0.1       4.0.1   
-   > YamlDotNet                     18.1.0      18.1.0  
+   Top-level Package      Requested   Resolved
+   > Markdig              1.3.2       1.3.2   
+   > xunit.v3             4.0.1       4.0.1   
+   > YamlDotNet           18.1.0      18.1.0  
 
 Project 'ObserverMagazine.Web.Tests' has the following package references
    [net10.0]: 
-   Top-level Package                Requested   Resolved
-   > bunit                          2.10.3      2.10.3  
-   > Microsoft.NET.Test.Sdk         18.10.0     18.10.0 
-   > xunit.runner.visualstudio      4.0.0       4.0.0   
-   > xunit.v3                       4.0.1       4.0.1   
+   Top-level Package      Requested   Resolved
+   > bunit                2.11.3      2.11.3  
+   > xunit.v3             4.0.1       4.0.1   
 
 Project 'ObserverMagazine.ContentProcessor' has the following package references
    [net10.0]: 
@@ -298,9 +301,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.623s
-user	0m1.626s
-sys	0m0.348s
+real	0m1.521s
+user	0m1.482s
+sys	0m0.332s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -313,16 +316,16 @@ The given project `ObserverMagazine.Integration.Tests` has no updates given the 
 The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
 The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
 
-real	0m1.712s
-user	0m1.713s
-sys	0m0.342s
+real	0m3.513s
+user	0m2.447s
+sys	0m0.390s
 Export complete: docs/llm/dump.txt
   Total files: 192
   Blog posts (front matter only): 110
   Full content files: 79
   Binary files skipped: 3
 
-real	0m0.137s
-user	0m0.071s
-sys	0m0.054s
+real	0m0.144s
+user	0m0.061s
+sys	0m0.070s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
