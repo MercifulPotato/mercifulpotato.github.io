@@ -68998,3 +68998,1303 @@ it does not fail every time but it has failed at least once before. worth taking
 
 
 
+Claude
+/
+the build on github is failing 
+I think somehow we need to chunk our work 
+so even if we fail, we don't start from scratch every time 
+Use your best judgment
+If only a few files (under five or there about) need to change, give me the full path of the files that need to change and the FULL file 
+if there are a lot of files that need to change 
+    Delivery
+    Whole project as one tar.gz, unambiguous file placement
+    do not include any file that has not changed 
+    Any files to delete on updates called out explicitly
+    No bespoke sed/patch scripts — full files only for anything that changes
+    Docs updated alongside code changes
+    Low verbosity, no code comments
+also I suspect a test is flaky or something 
+it does not fail every time but it has failed at least once before. worth taking a look. 
+2026-10-31T07:09:51.4787081Z Current runner version: '2.338.2'
+2026-10-31T07:09:51.4822246Z ##[group]Runner Image Provisioner
+2026-10-31T07:09:51.4823646Z Hosted Compute Agent
+2026-10-31T07:09:51.4825005Z Version: 20261021.618
+2026-10-31T07:09:51.4826108Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-31T07:09:51.4827428Z Build Date: 2026-10-21T00:45:21Z
+2026-10-31T07:09:51.4828684Z Worker ID: {0339e8ab-ae21-4f44-9a0b-a1847d53fc8c}
+2026-10-31T07:09:51.4830277Z Region: centralus
+2026-10-31T07:09:51.4831487Z Cloud: Azure
+2026-10-31T07:09:51.4832480Z ##[endgroup]
+2026-10-31T07:09:51.4835103Z ##[group]Operating System
+2026-10-31T07:09:51.4836201Z Ubuntu
+2026-10-31T07:09:51.4837074Z 24.04.5
+2026-10-31T07:09:51.4838027Z LTS
+/// SNIP 
+2026-10-31T13:08:29.4190589Z Processing (new): 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md → adf-act-13-infrastructure-gap-in-numbers.mp3
+2026-10-31T13:08:29.4191582Z   Text: 17532 chars
+2026-10-31T13:08:29.4192133Z   Loading model: KittenML/kitten-tts-nano-0.8
+2026-10-31T13:08:29.4192633Z   Model loaded in 0.8s
+2026-10-31T13:08:29.4193061Z   Processing 40 text chunk(s), voice=Bella
+2026-10-31T13:08:29.4193539Z     Chunk 1/40: 492 chars
+2026-10-31T13:08:29.4197704Z Generating audio for text: Part one: Making the Abstract Concrete. Throughout this series, we have referred to Nepal's "infrastructure gap" in somewhat abstract terms. This article makes it concrete. We will examine the actual numbers — where Nepal is today, where it needs to be, what it would cost to get there, and where the money can come from. This foundation is essential for evaluating whether the Alternative Development Finance Fund can make a meaningful difference.. Before we proceed, a note on data quality.
+2026-10-31T13:08:29.4231266Z     Chunk 2/40: 482 chars
+2026-10-31T13:08:29.4235164Z Generating audio for text: Infrastructure investment data in Nepal is imperfect. Numbers from different sources (government, multilateral banks, academic studies) sometimes differ significantly. Exchange rates fluctuate. Some estimates are optimistic; others are conservative. Where possible, we use ranges rather than single-point estimates, and we note the source and limitations of specific numbers. The goal is not false precision but honest orientation.. Part two: The Electricity Sector. Where Nepal Is.
+2026-10-31T13:08:29.4238863Z     Chunk 3/40: 451 chars
+2026-10-31T13:08:29.4243255Z Generating audio for text: Nepal's installed electricity generation capacity as of recent years is approximately two,five hundred to three,zero megawatts (MW). This includes: Hydropower: the dominant source, accounting for over ninety-five% of installed capacity Solar: a rapidly growing but still small contribution Thermal: minimal. The two,five hundred to three,zero MW figure represents current installed capacity — the maximum the system can produce under ideal conditions.
+2026-10-31T13:08:29.4246417Z     Chunk 4/40: 422 chars
+2026-10-31T13:08:29.4249697Z Generating audio for text: Actual generation varies significantly with the season. In the wet season (June through November, the monsoon), river flows are high and generation is at or near capacity. In the dry season (December through May), river flows drop substantially and many run-of-river hydropower plants operate at twenty% to forty% of their rated capacity. This seasonal variation is one of Nepal's central electricity planning challenges..
+2026-10-31T13:08:29.4252485Z     Chunk 5/40: 492 chars
+2026-10-31T13:08:42.1911658Z [1;31m2026-10-31 13:08:42.190580636 [E:onnxruntime:, sequential_executor.cc:677 ExecuteKernel] Non-zero status code returned while running Expand node. Name:'/bert/Expand' Status Message: invalid expand shape[m
+2026-10-31T13:09:37.4771292Z Generating audio for text: Net electricity exports to India during recent years have been significant and growing — Nepal now earns foreign exchange from electricity exports, a transformation from the load-shedding era of just a decade ago. But domestic demand is also growing rapidly, and the long-term goal is to serve much larger domestic industrial and residential demand while also exporting.. Where Nepal Needs to Be. The Sixteenth Five-Year Plan sets a target of forty,zero MW of electricity generation capacity.
+2026-10-31T13:09:37.4799770Z     Chunk 6/40: 473 chars
+2026-10-31T13:09:37.4833896Z Generating audio for text: The government has also articulated an electricity export target of ten,zero MW to India in the medium term.. The gap between current capacity (~two,seven hundred and fifty MW) and the target (forty,zero MW) is approximately thirty-seven,two hundred and fifty MW — roughly thirteen times current capacity. This is not a linear expansion; it is a transformation.. What It Would Cost. Nepal's hydropower construction costs vary enormously by project type, location, and size.
+2026-10-31T13:09:37.4900058Z     Chunk 7/40: 373 chars
+2026-10-31T13:09:37.4922653Z Generating audio for text: Small hydropower projects in accessible locations might cost $one,zero to $one,five hundred per kilowatt (kW) of installed capacity. Large storage projects in remote Himalayan valleys might cost $three,zero to $five,zero per kW or more. Run-of-river projects of medium size in accessible locations typically fall in the $one,five hundred to $two,five hundred per kW range..
+2026-10-31T13:09:37.4929719Z     Chunk 8/40: 469 chars
+2026-10-31T13:09:37.4963420Z Generating audio for text: Using a blended average of approximately $one,five hundred to $two,zero per kW for a realistic mix of project types: thirty-seven,two hundred and fifty MW additional capacity × $one,five hundred/kW = approximately $fifty-five point nine billion thirty-seven,two hundred and fifty MW additional capacity × $two,zero/kW = approximately $seventy-four point five billion. At current exchange rates, these figures represent approximately Rs. seven point five trillion to Rs.
+2026-10-31T13:09:37.4980746Z     WARNING: Failed to generate chunk 8: [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Non-zero status code returned while running Expand node. Name:'/bert/Expand' Status Message: invalid expand shape
+2026-10-31T13:09:37.5009604Z     Chunk 9/40: 497 chars
+2026-10-31T13:09:37.5043145Z Generating audio for text: ten trillion for generation capacity alone.. Add transmission infrastructure to move power from generation sites to load centers: approximately $five hundred to $eight hundred per kW of transmission capacity, suggesting another Rs. two trillion to Rs. three trillion.. Add distribution infrastructure to bring power to end users: another Rs. one trillion to Rs. two trillion.. Total electricity sector investment requirement to reach the forty,zero MW target: approximately Rs. ten trillion to Rs.
+2026-10-31T13:09:37.5046835Z     Chunk 10/40: 370 chars
+2026-10-31T13:09:37.5072814Z Generating audio for text: fifteen trillion over the next ten to twenty years. This is Rs. five hundred billion to Rs. one point five trillion per year.. Current annual investment in Nepal's electricity sector (from all sources — government budget, multilateral loans, private investment, Chinese and Indian investment) is approximately Rs. one hundred billion to Rs. two hundred billion per year.
+2026-10-31T13:09:37.5099515Z     Chunk 11/40: 443 chars
+2026-10-31T13:09:37.5133101Z Generating audio for text: The gap between current investment and the investment needed to reach the target is enormous — even if electricity investment doubles, it would take decades longer than the plan envisions.. What Role the ADFF Can Play. If the Alternative Development Finance Fund achieves its initial paid-up capital of Rs. twenty-five billion and operates with a leverage ratio of four:one (total portfolio four times equity), it can support approximately Rs.
+2026-10-31T13:09:37.5159553Z     Chunk 12/40: 491 chars
+2026-10-31T13:09:37.5193736Z Generating audio for text: one hundred billion in electricity sector investment — perhaps two to three major hydropower projects. This is meaningful but modest relative to the total need. The fund's real value is not its absolute scale but its role as a catalytic instrument: demonstrating financing structures that others can replicate, de-risking early investments to attract subsequent private capital, and building the institutional knowledge base for Nepal's infrastructure finance.. Part three: The Road Network.
+2026-10-31T13:09:37.5197488Z     Chunk 13/40: 422 chars
+2026-10-31T13:09:37.5222472Z Generating audio for text: Where Nepal Is. Nepal's total road network as of recent data is approximately thirty,zero to thirty-five,zero kilometers. Of this: Strategic roads (national and provincial highways): approximately twelve,zero to fourteen,zero km District roads: approximately ten,zero to twelve,zero km Urban roads: approximately three,zero to five,zero km Local roads (mostly rural, often unpaved): approximately five,zero to ten,zero km.
+2026-10-31T13:09:37.5249696Z     Chunk 14/40: 491 chars
+2026-10-31T13:09:37.5283292Z Generating audio for text: A critical distinction: "road" in Nepal includes many unpaved tracks, seasonal roads, and dirt paths that are not usable year-round or cannot handle significant freight. The all-weather paved road network is significantly smaller than the total figure.. Nepal has no operational rapid transit system. Kathmandu's only metro or BRT (Bus Rapid Transit) project has been studied for years but not built. The valley's transportation relies on private vehicles and informal bus/minibus services..
+2026-10-31T13:09:37.5299522Z     Chunk 15/40: 499 chars
+2026-10-31T13:09:37.5323101Z Generating audio for text: Where Nepal Needs to Be. The government's transport development objectives include: Completing the East-West Highway (Mahendra Highway) upgrades and missing links Completing the Mid-Hill Highway connecting east and west through the hills Building north-south corridors connecting the Terai to hill districts Connecting all district headquarters by all-weather road Building ring roads around major cities Building expressways and tunnels to improve Kathmandu Valley connectivity. What It Would Cost.
+2026-10-31T13:09:37.5349672Z     Chunk 16/40: 475 chars
+2026-10-31T13:09:37.5382647Z Generating audio for text: Road construction costs in Nepal vary from approximately Rs. fifteen million to Rs. twenty million per kilometer in flat Terai areas to Rs. eighty million to Rs. two hundred million per kilometer in hill areas, and even higher for major tunnel projects (which can cost Rs. five hundred million to Rs. two billion per kilometer for complex tunnels).. The Department of Roads estimates that completing priority road projects over the next decade would require approximately Rs.
+2026-10-31T13:09:37.5389478Z     Chunk 17/40: 406 chars
+2026-10-31T13:09:37.5422111Z Generating audio for text: one point five trillion to Rs. two trillion. This does not include urban roads, local roads, or maintenance of the existing network.. Current annual road investment from government sources is approximately Rs. eighty billion to Rs. one hundred and twenty billion. The gap between investment needed and investment available is substantial.. Part four: Aviation Infrastructure. The Kathmandu Airport Problem.
+2026-10-31T13:09:37.5439604Z     Chunk 18/40: 384 chars
+2026-10-31T13:09:37.5472185Z Generating audio for text: Tribhuvan International Airport (TIA) in Kathmandu is one of the most constrained major airports in the world. It has a single runway (ten/twenty-eight), surrounded by hills, with significant approach restrictions. Aircraft must navigate through the Kathmandu Valley bowl, with high terrain on all sides limiting approach angles and creating operational constraints in low visibility.
+2026-10-31T13:09:37.5479492Z     Chunk 19/40: 430 chars
+2026-10-31T13:09:37.5513076Z Generating audio for text: The airport handles approximately four to five million passengers per year but was designed for a fraction of that traffic. Runway capacity is approximately two hundred aircraft movements per day; actual movements approach or exceed this on busy days.. Extending TIA is not practical given its geographic constraints. The solution — a new large airport — has been planned for decades but not built.. Nijgadh International Airport.
+2026-10-31T13:09:37.5529665Z     Chunk 20/40: 344 chars
+2026-10-31T13:09:37.5562481Z Generating audio for text: The proposed Nijgadh International Airport in Bara district in the Terai has been in planning since the early 2000s. It would have two runways, could handle large aircraft, and would be located in flat Terai terrain with no approach restrictions. It would provide a second gateway to Nepal and potentially serve as a hub for regional aviation..
+2026-10-31T13:09:37.5569464Z     Chunk 21/40: 455 chars
+2026-10-31T13:09:37.5602657Z Generating audio for text: The project has been controversial due to: Environmental impact: the original site would require clearing approximately two point four million trees, raising serious environmental concerns and opposition from environmental groups Cost: estimates have ranged from Rs. two hundred billion to Rs. seven hundred billion, depending on the design and phasing Financing: no credible financing plan has been finalized despite years of planning. Regional Airports.
+2026-10-31T13:09:37.5619618Z     Chunk 22/40: 344 chars
+2026-10-31T13:10:03.4432564Z ##[error]The operation was canceled.
+2026-10-31T13:10:03.4857705Z Post job cleanup.
+2026-10-31T13:10:03.7860047Z [command]/usr/bin/git version
+2026-10-31T13:10:03.7971090Z git version 2.56.0
+2026-10-31T13:10:03.8167311Z Temporarily overriding HOME='/home/runner/work/_temp/c1940ef8-72c5-4fd9-aa10-27ad22869b1b' before making global git config changes
+2026-10-31T13:10:03.8230203Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-31T13:10:03.8242430Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io
+2026-10-31T13:10:03.8349655Z Removing SSH command configuration
+2026-10-31T13:10:03.8350625Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-31T13:10:03.8417269Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-31T13:10:03.9269995Z Removing HTTP extra header
+2026-10-31T13:10:03.9291879Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-31T13:10:03.9431116Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-31T13:10:04.0169689Z Removing includeIf entries pointing to credentials config files
+2026-10-31T13:10:04.0179932Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-31T13:10:04.0220159Z includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git.path
+2026-10-31T13:10:04.0245062Z includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git/worktrees/*.path
+2026-10-31T13:10:04.0269470Z includeif.gitdir:/github/workspace/.git.path
+2026-10-31T13:10:04.0293619Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-31T13:10:04.0360404Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git.path
+2026-10-31T13:10:04.0399805Z /home/runner/work/_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.0479565Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.0841859Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git/worktrees/*.path
+2026-10-31T13:10:04.0843358Z /home/runner/work/_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.0846023Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.0848388Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-31T13:10:04.1149985Z /github/runner_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.1783414Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.2130188Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-31T13:10:04.2430711Z /github/runner_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.2602678Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.2700935Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-31T13:10:04.2790363Z Removing credentials config '/home/runner/work/_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config'
+2026-10-31T13:10:04.3017459Z Evaluate and set environment url
+2026-10-31T13:10:04.3053208Z Evaluated environment url: 
+2026-10-31T13:10:04.3054171Z Cleaning up orphan processes
+2026-10-31T13:10:04.4243051Z Terminate orphan process: pid (4299) (python)
+
+Ran 46 commands, read memory, and 3 more tools
+The build is failing because the narration step never finishes. I couldn’t build the tar.gz before hitting my tool limit, so the full files are inline below.
+
+Cancel the run currently in progress (ff67926) before you push. It will hit the same 6-hour wall, and the workflow’s concurrency setting queues your next push behind it.
+
+Why the build fails
+Narration hits GitHub’s 6-hour job limit. “Generate TTS audio” ran from 07:11 to 13:10 and was cancelled. The runs on Sep 14 and Sep 17 ended the same way. The last successful deploy was July 18.
+Nothing is ever saved between runs. actions/cache only saves when the whole job succeeds. Every run therefore restarts from post #1 (the cache restore took 0s, and the repo has 0 caches). That is exactly the “start from scratch” problem.
+The ONNX “invalid expand shape” errors come from over-long input. Our number conversion turned “2,500” into “two,five hundred” and “3,000” into “three,zero”. That made sentences too long for the model’s input limit. KittenTTS 0.8.1 has its own number handler that does this correctly, so the script now uses it.
+From the log, about 62 posts took 6 hours. All 110 posts would take roughly 9 hours on one runner.
+
+What changes
+Workflow (deploy.yml):
+
+The work is split across 4 parallel runners, each with its own cache.
+Each runner stops starting new posts at 270 minutes.
+Its cache is saved even if the job fails, so the next run resumes where it stopped.
+The deploy job runs even if audio failed; posts without audio just hide the player.
+Tests run in parallel with audio generation.
+Runs with nothing new skip the Python setup entirely.
+Deploy warns if the site goes over 900 MB, because GitHub Pages sites are capped at 1 GB. My rough estimate for all audio is about 600 MB.
+Script (generate_audio.py):
+
+Progress is recorded after every finished post.
+Only the post body is fingerprinted, so editing front matter no longer regenerates audio.
+Text is fed in pieces of at most 250 characters, and a piece that fails is split in half and retried.
+Flaky test:
+
+bUnit’s default wait timeout is 1 second (I confirmed this in the v2.13.3 source).
+MasterDetailTests and ResponsiveTableTests wait on asynchronous data loading.
+Meanwhile, xUnit runs test classes in parallel with a test that generates 20,000 products. On a busy CI runner that can exceed 1 second.
+I believe that’s the flake, but I can’t confirm it without the failing log.
+The fix uses explicit 10-second waits and a fresh fake HTTP response per request.
+Separately, ClickColumnHeader_SortsData was always passing because ▲ is already shown for the default Name sort. It now checks the actual row order.
+How I checked it:
+
+deploy.yml passes actionlint.
+I ran the script end to end with a stub voice engine. That covered sharding, check mode, the time budget, cleanup of stale files, split-and-retry, and confirming front-matter edits don’t trigger regeneration.
+The real model couldn’t be downloaded in my sandbox. My final punctuation tweak and the C# tests were not compiled or run here.
+Files to delete: none.
+
+.github/workflows/deploy.yml
+yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  TESTINGPLATFORM_TELEMETRY_OPTOUT: 1
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore .NET dependencies
+        run: dotnet restore
+
+      - name: Run content processor (markdown → JSON + HTML)
+        run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
+
+      - name: Run tests
+        run: dotnet test --solution ObserverMagazine.slnx --no-restore
+
+      - name: Publish Blazor WASM
+        run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
+
+      - name: Strip source map references from framework JS
+        run: |
+          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/# sourceMappingURL=/d' {} + 2>/dev/null || true
+          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/@ sourceMappingURL=/d' {} + 2>/dev/null || true
+
+      - name: Upload site
+        uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: publish/wwwroot
+          retention-days: 1
+
+  audio:
+    name: TTS audio (shard ${{ matrix.shard }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    env:
+      TTS_SHARDS: 4
+      TTS_DIR: tts-cache/shard-${{ matrix.shard }}
+      TTS_CACHE_PREFIX: tts-v2-shard-${{ matrix.shard }}-
+      TTS_MARKER: ${{ github.workspace }}/tts-changed
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Restore audio cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ env.TTS_DIR }}
+          key: ${{ env.TTS_CACHE_PREFIX }}${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: ${{ env.TTS_CACHE_PREFIX }}
+
+      - name: Plan audio work
+        id: plan
+        run: python3 tools/generate_audio.py --check --shard ${{ matrix.shard }} --shards $TTS_SHARDS --output-dir "$TTS_DIR" --changed-marker "$TTS_MARKER"
+
+      - name: Setup Python 3.12
+        if: steps.plan.outputs.pending != '0'
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/requirements-audio.txt
+
+      - name: Install system dependencies (espeak-ng + ffmpeg)
+        if: steps.plan.outputs.pending != '0'
+        run: sudo apt-get update && sudo apt-get install -y espeak-ng ffmpeg
+
+      - name: Cache HuggingFace model
+        if: steps.plan.outputs.pending != '0'
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/huggingface
+          key: hf-kitten-tts-nano-0.8
+
+      - name: Install Python audio dependencies
+        if: steps.plan.outputs.pending != '0'
+        run: pip install -r tools/requirements-audio.txt
+
+      - name: Generate TTS audio (markdown → MP3)
+        if: steps.plan.outputs.pending != '0'
+        timeout-minutes: 290
+        run: >-
+          python tools/generate_audio.py
+          --shard ${{ matrix.shard }} --shards $TTS_SHARDS
+          --output-dir "$TTS_DIR"
+          --changed-marker "$TTS_MARKER"
+          --time-budget-minutes 270
+          --voice Bella --model KittenML/kitten-tts-nano-0.8
+
+      - name: Detect audio changes
+        id: changes
+        if: always()
+        run: |
+          if [ -f "$TTS_MARKER" ]; then echo "changed=true" >> "$GITHUB_OUTPUT"; else echo "changed=false" >> "$GITHUB_OUTPUT"; fi
+          echo "MP3 files: $(find "$TTS_DIR" -name '*.mp3' 2>/dev/null | wc -l)"
+
+      - name: Save audio cache
+        if: always() && steps.changes.outputs.changed == 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ env.TTS_DIR }}
+          key: ${{ env.TTS_CACHE_PREFIX }}${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Upload audio
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: tts-shard-${{ matrix.shard }}
+          path: ${{ env.TTS_DIR }}/*.mp3
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+
+  deploy:
+    name: Deploy
+    needs: [build, audio]
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Download site
+        uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: site
+
+      - name: Download audio
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: tts-shard-*
+          path: site/blog-data
+          merge-multiple: true
+
+      - name: Prepare GitHub Pages artifacts
+        run: |
+          touch site/.nojekyll
+          cp site/index.html site/404.html
+          echo "MP3 files deployed: $(find site/blog-data -name '*.mp3' | wc -l)"
+          size_mb=$(du -sm site | cut -f1)
+          echo "Site size: ${size_mb} MB"
+          if [ "$size_mb" -gt 900 ]; then echo "::warning::Site is ${size_mb} MB; published GitHub Pages sites may be no larger than 1 GB"; fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+tools/generate_audio.py
+python
+#!/usr/bin/env python3
+
+import argparse
+import hashlib
+import json
+import os
+import re
+import subprocess
+import sys
+import tempfile
+import time
+
+PIPELINE_VERSION = 2
+MANIFEST_FILENAME = "audio-manifest.json"
+SAMPLE_RATE = 24000
+DEFAULT_MAX_CHUNK_CHARS = 250
+MIN_SPLIT_CHARS = 20
+MAX_SPLIT_DEPTH = 5
+CHUNK_GAP_SECONDS = 0.2
+MIN_TEXT_CHARS = 10
+FRONT_MATTER = re.compile(r"\A---\s*\n.*?\n---\s*(?:\n|\Z)", re.DOTALL)
+
+
+def log(message: str) -> None:
+    print(message, flush=True)
+
+
+def warn(message: str) -> None:
+    prefix = "::warning::" if os.environ.get("GITHUB_ACTIONS") == "true" else "WARNING: "
+    print(f"{prefix}{message}", flush=True)
+
+
+def write_github_output(name: str, value: str) -> None:
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(f"{name}={value}\n")
+
+
+def write_step_summary(text: str) -> None:
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(text + "\n")
+
+
+def mark_changed(marker: str | None) -> None:
+    if marker:
+        os.makedirs(os.path.dirname(os.path.abspath(marker)), exist_ok=True)
+        with open(marker, "w", encoding="utf-8") as f:
+            f.write("changed\n")
+
+
+def load_manifest(output_dir: str) -> dict:
+    path = os.path.join(output_dir, MANIFEST_FILENAME)
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except (json.JSONDecodeError, OSError) as e:
+        warn(f"Could not read manifest {path}: {e}")
+        return {}
+
+
+def save_manifest(output_dir: str, manifest: dict) -> None:
+    path = os.path.join(output_dir, MANIFEST_FILENAME)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2, sort_keys=True)
+    os.replace(tmp, path)
+
+
+def derive_slug(filename: str) -> str:
+    name = os.path.splitext(filename)[0]
+    if len(name) > 11 and name[4] == "-" and name[7] == "-" and name[10] == "-" and name[:4].isdigit():
+        return name[11:]
+    return name
+
+
+def shard_of(slug: str, shards: int) -> int:
+    return int(hashlib.sha256(slug.encode("utf-8")).hexdigest(), 16) % shards
+
+
+def strip_front_matter(content: str) -> str:
+    content = content.replace("\r\n", "\n")
+    return FRONT_MATTER.sub("", content, count=1).strip()
+
+
+def content_hash(body: str, voice: str, model: str, speed: float) -> str:
+    h = hashlib.sha256()
+    h.update(f"v{PIPELINE_VERSION}|{model}|{voice}|{speed:.3f}\n".encode("utf-8"))
+    h.update(body.encode("utf-8"))
+    return h.hexdigest()
+
+
+def end_sentence(match: re.Match) -> str:
+    item = match.group(1)
+    return item if item[-1] in ".!?:;" else item + "."
+
+
+def strip_markdown(text: str) -> str:
+    text = re.sub(r"```[\s\S]*?```", " ", text)
+    text = re.sub(r"~~~[\s\S]*?~~~", " ", text)
+    text = re.sub(r"`[^`\n]+`", " ", text)
+    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"\[\^[^\]]+\]", "", text)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)*\|?\s*$", " ", text, flags=re.MULTILINE)
+    text = re.sub(r"^\s*\|(.*)\|\s*$", lambda m: m.group(1).replace("|", ", ") + ".", text, flags=re.MULTILINE)
+    text = re.sub(r"^#{1,6}\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"\*{1,3}([^*\n]+)\*{1,3}", r"\1", text)
+    text = re.sub(r"(?<!\w)_{1,3}([^_\n]+?)_{1,3}(?!\w)", r"\1", text)
+    text = re.sub(r"^\s*[-*_]{3,}\s*$", " ", text, flags=re.MULTILINE)
+    text = re.sub(r"^\s*>\s?", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^\s*(?:[-*+]|\d+[.)])\s+(.+?)\s*$", end_sentence, text, flags=re.MULTILINE)
+    text = re.sub(r"\n{2,}", ". ", text)
+    text = re.sub(r"\n", " ", text)
+    text = re.sub(r"\.(\s*\.)+", ".", text)
+    text = re.sub(r"([!?:;])\s*\.", r"\1", text)
+    text = re.sub(r"\s+([,.;:!?])(?=\s|$)", r"\1", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip()
+
+
+PROGRAMMING_TERMS = [
+    (r"\.NET\s+10", "dot net ten"),
+    (r"\.NET\s+9", "dot net nine"),
+    (r"\.NET\s+8", "dot net eight"),
+    (r"\.NET\s+7", "dot net seven"),
+    (r"\.NET\s+6", "dot net six"),
+    (r"\.NET\s+Core\s+3\.0", "dot net core three point oh"),
+    (r"\.NET\s+Core", "dot net core"),
+    (r"\.NET\s+Framework\s+4\.8", "dot net framework four point eight"),
+    (r"\.NET\s+Framework", "dot net framework"),
+    (r"\bASP\.NET", "asp dot net"),
+    (r"\.NET", "dot net"),
+    (r"\bC#", "C sharp"),
+    (r"\bF#", "F sharp"),
+    (r"\bC\+\+", "C plus plus"),
+    (r"\.csproj\b", " C sharp project file"),
+    (r"\.cshtml\b", " C S H T M L"),
+    (r"\.ascx\b", " A S C X"),
+    (r"\.aspx\b", " A S P X"),
+    (r"\.slnx\b", " solution X"),
+    (r"\.sln\b", " solution"),
+    (r"\.json\b", " JSON"),
+    (r"\.yml\b", " YAML"),
+    (r"\.xml\b", " X M L"),
+    (r"\.md\b", " markdown"),
+    (r"\.css\b", " C S S"),
+    (r"\.js\b", " JavaScript"),
+    (r"\.wasm\b", " web assembly"),
+    (r"\bWASM\b", "web assembly"),
+    (r"\bIL\b", "intermediate language"),
+    (r"\bCLR\b", "common language runtime"),
+    (r"\bJIT\b", "just in time"),
+    (r"\bAOT\b", "ahead of time"),
+    (r"\bNGen\b", "N gen"),
+    (r"\bR2R\b", "ready to run"),
+    (r"\bDI\b", "dependency injection"),
+    (r"\bOWIN\b", "oh win"),
+    (r"\bCORS\b", "cross origin resource sharing"),
+    (r"\bRSS\b", "R S S"),
+    (r"\bAPIs\b", "A P Is"),
+    (r"\bAPI\b", "A P I"),
+    (r"\bUIs\b", "U Is"),
+    (r"\bUI\b", "U I"),
+    (r"\bURL\b", "U R L"),
+    (r"\bHTTPS\b", "H T T P S"),
+    (r"\bHTTP\b", "H T T P"),
+    (r"\bHTML\b", "H T M L"),
+    (r"\bCSS\b", "C S S"),
+    (r"\bSQL\b", "S Q L"),
+    (r"\bSSDs\b", "S S Ds"),
+    (r"\bSSD\b", "S S D"),
+    (r"\bI/O\b", "I O"),
+    (r"\bIIS\b", "I I S"),
+    (r"\bMVC\b", "M V C"),
+    (r"\bLTS\b", "long term support"),
+    (r"\bSDK\b", "S D K"),
+    (r"\bNuGet\b", "new get"),
+    (r"\bxUnit\b", "x unit"),
+    (r"\bbUnit\b", "b unit"),
+    (r"=>", " arrow "),
+    (r"!=", " not equal "),
+    (r"==", " equals "),
+    (r">=", " greater than or equal "),
+    (r"<=", " less than or equal "),
+    (r"\bv(\d+)\b", r"version \1"),
+]
+
+SYMBOL_TERMS = [
+    (r"\$\s?(\d[\d,]*(?:\.\d+)?)\s*(thousand|million|billion|trillion)\b", r"\1 \2 dollars"),
+    (r"\bRs\.\s*", "rupees "),
+    (r"\bNPR\s+", "N P R "),
+    (r"\bUSD\s+", "U S D "),
+    (r"(?<=\d)\s*×\s*(?=\d)", " times "),
+    (r"\s×\s", " times "),
+    (r"~\s*(?=\d)", "about "),
+    (r"\s&\s", " and "),
+    (r"\s=\s", " equals "),
+    (r"(?<=\d)/(?=[A-Za-z])", " per "),
+    (r"(?<=\d)\s*–\s*(?=\d)", " to "),
+    (r"\s*[—–]\s*", ", "),
+]
+
+
+def apply_rules(text: str, rules: list) -> str:
+    for pattern, replacement in rules:
+        text = re.sub(pattern, replacement, text)
+    return text
+
+
+_preprocessor = None
+
+
+def normalize_for_speech(text: str) -> str:
+    global _preprocessor
+    text = apply_rules(text, PROGRAMMING_TERMS)
+    text = apply_rules(text, SYMBOL_TERMS)
+    if _preprocessor is None:
+        from kittentts.preprocess import TextPreprocessor
+        _preprocessor = TextPreprocessor(lowercase=False, remove_punctuation=False)
+    text = _preprocessor(text)
+    return re.sub(r"\s{2,}", " ", text).strip()
+
+
+def split_long(sentence: str, max_chars: int) -> list[str]:
+    if len(sentence) <= max_chars:
+        return [sentence]
+    parts: list[str] = []
+    for clause in re.split(r"(?<=[,;:])\s+", sentence):
+        if len(clause) <= max_chars:
+            parts.append(clause)
+            continue
+        current = ""
+        for word in clause.split():
+            if current and len(current) + len(word) + 1 > max_chars:
+                parts.append(current)
+                current = word
+            else:
+                current = f"{current} {word}" if current else word
+        if current:
+            parts.append(current)
+    return parts
+
+
+def chunk_text(text: str, max_chars: int) -> list[str]:
+    chunks: list[str] = []
+    current = ""
+    for sentence in re.split(r"(?<=[.!?])\s+", text):
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        for piece in split_long(sentence, max_chars):
+            if current and len(current) + len(piece) + 1 > max_chars:
+                chunks.append(current)
+                current = piece
+            else:
+                current = f"{current} {piece}" if current else piece
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def split_in_half(text: str) -> tuple[str, str]:
+    middle = len(text) // 2
+    left = text.rfind(" ", 0, middle)
+    right = text.find(" ", middle)
+    candidates = [i for i in (left, right) if i > 0]
+    cut = min(candidates, key=lambda i: abs(i - middle)) if candidates else middle
+    return text[:cut].strip(), text[cut:].strip()
+
+
+class Synthesizer:
+    def __init__(self, model_name: str, voice: str, speed: float, max_chars: int):
+        from kittentts import KittenTTS
+        import numpy as np
+
+        self.np = np
+        started = time.monotonic()
+        tts = KittenTTS(model_name)
+        inner = getattr(tts, "model", None)
+        self.engine = inner if inner is not None and hasattr(inner, "generate") else tts
+        self.voice = voice
+        self.speed = speed
+        self.max_chars = max_chars
+        self.gap = np.zeros(int(SAMPLE_RATE * CHUNK_GAP_SECONDS), dtype=np.float32)
+        log(f"  Model {model_name} loaded in {time.monotonic() - started:.1f}s")
+
+    def _piece(self, text: str, depth: int) -> tuple[list, int]:
+        try:
+            audio = self.engine.generate(text, voice=self.voice, speed=self.speed, clean_text=False)
+            return [self.np.asarray(audio, dtype=self.np.float32).reshape(-1)], 0
+        except Exception as e:
+            if len(text) < MIN_SPLIT_CHARS or depth >= MAX_SPLIT_DEPTH:
+                warn(f"Dropped {len(text)} chars after {depth} split(s): {type(e).__name__}: {str(e)[:160]}")
+                return [], len(text)
+            left, right = split_in_half(text)
+            if not left or not right:
+                warn(f"Dropped {len(text)} chars (unsplittable): {type(e).__name__}")
+                return [], len(text)
+            a, lost_a = self._piece(left, depth + 1)
+            b, lost_b = self._piece(right, depth + 1)
+            return a + b, lost_a + lost_b
+
+    def synthesize(self, text: str) -> tuple[object | None, int, int]:
+        chunks = chunk_text(text, self.max_chars)
+        segments = []
+        lost = 0
+        for chunk in chunks:
+            pieces, dropped = self._piece(chunk, 0)
+            lost += dropped
+            for piece in pieces:
+                segments.append(piece)
+                segments.append(self.gap)
+        if not segments:
+            return None, len(chunks), lost
+        return self.np.concatenate(segments), len(chunks), lost
+
+
+def encode_mp3(audio, output_mp3: str) -> float:
+    import soundfile as sf
+
+    os.makedirs(os.path.dirname(os.path.abspath(output_mp3)), exist_ok=True)
+    fd, tmp_wav = tempfile.mkstemp(suffix=".wav")
+    os.close(fd)
+    tmp_mp3 = output_mp3 + ".partial.mp3"
+    try:
+        sf.write(tmp_wav, audio, SAMPLE_RATE)
+        result = subprocess.run(
+            ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", tmp_wav,
+             "-codec:a", "libmp3lame", "-b:a", "24k", "-ac", "1", "-ar", str(SAMPLE_RATE), tmp_mp3],
+            capture_output=True, text=True, timeout=900,
+        )
+        if result.returncode != 0:
+            raise RuntimeError(f"ffmpeg failed: {result.stderr.strip()[:500]}")
+        os.replace(tmp_mp3, output_mp3)
+        return os.path.getsize(output_mp3) / (1024 * 1024)
+    finally:
+        for path in (tmp_wav, tmp_mp3):
+            if os.path.exists(path):
+                os.unlink(path)
+
+
+def collect_posts(content_dir: str, shard: int, shards: int, voice: str, model: str, speed: float) -> list[dict]:
+    posts = []
+    for md_file in sorted(f for f in os.listdir(content_dir) if f.endswith(".md")):
+        slug = derive_slug(md_file)
+        if shard_of(slug, shards) != shard:
+            continue
+        with open(os.path.join(content_dir, md_file), encoding="utf-8") as f:
+            body = strip_front_matter(f.read())
+        posts.append({
+            "file": md_file,
+            "slug": slug,
+            "body": body,
+            "hash": content_hash(body, voice, model, speed),
+        })
+    return posts
+
+
+def prune_orphans(output_dir: str, manifest: dict, slugs: set[str]) -> int:
+    removed = 0
+    for name in os.listdir(output_dir):
+        if name.endswith(".partial.mp3"):
+            os.unlink(os.path.join(output_dir, name))
+            removed += 1
+        elif name.endswith(".mp3") and name[:-4] not in slugs:
+            os.unlink(os.path.join(output_dir, name))
+            removed += 1
+    for slug in [s for s in manifest if s not in slugs]:
+        del manifest[slug]
+        removed += 1
+    return removed
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Generate TTS audio for blog posts")
+    parser.add_argument("--content-dir", default="content/blog")
+    parser.add_argument("--output-dir", default="src/ObserverMagazine.Web/wwwroot/blog-data")
+    parser.add_argument("--voice", default="Bella", help="Bella, Jasper, Luna, Bruno, Rosie, Hugo, Kiki, Leo")
+    parser.add_argument("--model", default="KittenML/kitten-tts-nano-0.8")
+    parser.add_argument("--speed", type=float, default=1.15)
+    parser.add_argument("--max-chunk-chars", type=int, default=DEFAULT_MAX_CHUNK_CHARS)
+    parser.add_argument("--shard", type=int, default=0)
+    parser.add_argument("--shards", type=int, default=1)
+    parser.add_argument("--time-budget-minutes", type=float, default=0, help="0 means unlimited")
+    parser.add_argument("--changed-marker", default=None, help="File created when the output directory changes")
+    parser.add_argument("--check", action="store_true", help="Only report pending work; needs no TTS dependencies")
+    parser.add_argument("--force", action="store_true")
+    args = parser.parse_args()
+
+    if args.shards < 1 or not 0 <= args.shard < args.shards:
+        log(f"Invalid shard {args.shard} of {args.shards}")
+        return 2
+    if not os.path.isdir(args.content_dir):
+        log(f"Content directory not found: {args.content_dir}")
+        return 1
+
+    started = time.monotonic()
+    budget_seconds = args.time_budget_minutes * 60
+    os.makedirs(args.output_dir, exist_ok=True)
+
+    manifest = load_manifest(args.output_dir)
+    posts = collect_posts(args.content_dir, args.shard, args.shards, args.voice, args.model, args.speed)
+    slugs = {p["slug"] for p in posts}
+
+    pruned = prune_orphans(args.output_dir, manifest, slugs)
+    if pruned:
+        save_manifest(args.output_dir, manifest)
+        mark_changed(args.changed_marker)
+        log(f"Pruned {pruned} orphaned file(s)/entries")
+
+    pending = []
+    for post in posts:
+        mp3_path = os.path.join(args.output_dir, f"{post['slug']}.mp3")
+        current = manifest.get(post["slug"], {}).get("hash")
+        if args.force or current != post["hash"] or not os.path.exists(mp3_path):
+            pending.append(post)
+
+    log(f"Shard {args.shard + 1}/{args.shards}: {len(posts)} post(s), {len(posts) - len(pending)} up to date, {len(pending)} pending")
+    write_github_output("pending", str(len(pending)))
+
+    if args.check or not pending:
+        return 0
+
+    synthesizer = Synthesizer(args.model, args.voice, args.speed, args.max_chunk_chars)
+    generated, failed, deferred = [], [], []
+
+    for index, post in enumerate(pending, 1):
+        elapsed = time.monotonic() - started
+        if budget_seconds and elapsed > budget_seconds:
+            deferred = [p["slug"] for p in pending[index - 1:]]
+            warn(f"Time budget reached after {elapsed / 60:.0f} min; {len(deferred)} post(s) deferred to the next run")
+            break
+
+        slug = post["slug"]
+        log(f"[{index}/{len(pending)}] {post['file']} -> {slug}.mp3")
+        post_started = time.monotonic()
+        try:
+            text = normalize_for_speech(strip_markdown(post["body"]))
+            if len(text) < MIN_TEXT_CHARS:
+                log("  Skipped: too little text")
+                continue
+            audio, chunk_count, lost = synthesizer.synthesize(text)
+            if audio is None:
+                raise RuntimeError("no audio produced")
+            size_mb = encode_mp3(audio, os.path.join(args.output_dir, f"{slug}.mp3"))
+        except Exception as e:
+            failed.append(slug)
+            warn(f"{slug}: {type(e).__name__}: {e}")
+            continue
+
+        manifest[slug] = {"hash": post["hash"]}
+        save_manifest(args.output_dir, manifest)
+        mark_changed(args.changed_marker)
+        generated.append(slug)
+        duration = len(audio) / SAMPLE_RATE
+        log(f"  {len(text)} chars, {chunk_count} chunks, {duration / 60:.1f} min audio, {size_mb:.2f} MB, "
+            f"{time.monotonic() - post_started:.0f}s" + (f", {lost} chars dropped" if lost else ""))
+        if lost:
+            warn(f"{slug}: {lost} chars could not be synthesized")
+
+    summary = (f"Shard {args.shard + 1}/{args.shards}: {len(generated)} generated, {len(failed)} failed, "
+               f"{len(deferred)} deferred, {len(posts) - len(pending)} up to date "
+               f"in {(time.monotonic() - started) / 60:.1f} min")
+    log(summary)
+    write_step_summary(f"- {summary}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+tools/requirements-audio.txt
+text
+https://github.com/KittenML/KittenTTS/releases/download/0.8.1/kittentts-0.8.1-py3-none-any.whl
+soundfile>=0.13.0
+tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs
+csharp
+using Bunit;
+using Microsoft.Extensions.DependencyInjection;
+using ObserverMagazine.Web.Components;
+using ObserverMagazine.Web.Services;
+using ObserverMagazine.Web.Tests.Services;
+using Xunit;
+
+namespace ObserverMagazine.Web.Tests.Components;
+
+public class MasterDetailTests : IDisposable
+{
+    private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(10);
+
+    private readonly BunitContext _ctx = new();
+
+    private const string SampleProductsJson = """
+        [
+          { "name": "Widget A", "category": "Tools", "price": 9.99, "stock": 100, "rating": 4.5, "description": "A widget" },
+          { "name": "Gadget B", "category": "Electronics", "price": 49.99, "stock": 25, "rating": 3.8, "description": "A gadget" }
+        ]
+        """;
+
+    private IRenderedComponent<MasterDetail> RenderLoaded()
+    {
+        var httpClient = new HttpClient(new MasterDetailFakeHttpHandler(SampleProductsJson))
+        {
+            BaseAddress = new Uri("https://test.local/")
+        };
+        _ctx.Services.AddSingleton(httpClient);
+        _ctx.Services.AddSingleton<IAnalyticsService>(new NoOpAnalyticsService());
+        _ctx.JSInterop.SetupVoid("localStorage.setItem", _ => true);
+        _ctx.JSInterop.SetupVoid("localStorage.removeItem", _ => true);
+        _ctx.JSInterop.Setup<string?>("localStorage.getItem", _ => true).SetResult(null);
+
+        var cut = _ctx.Render<MasterDetail>();
+        cut.WaitForState(() => cut.FindAll(".md-list li").Count == 2, WaitTimeout);
+        return cut;
+    }
+
+    [Fact]
+    public void MasterDetail_RendersProductList()
+    {
+        var cut = RenderLoaded();
+
+        Assert.Contains("Widget A", cut.Markup);
+        Assert.Contains("Gadget B", cut.Markup);
+    }
+
+    [Fact]
+    public void MasterDetail_ShowsEmptyDetailOnLoad()
+    {
+        var cut = RenderLoaded();
+
+        Assert.Contains("Select an item", cut.Find(".md-empty").TextContent);
+    }
+
+    [Fact]
+    public void MasterDetail_SelectProductShowsDetail()
+    {
+        var cut = RenderLoaded();
+
+        cut.Find(".md-list li").Click();
+
+        cut.WaitForAssertion(() =>
+        {
+            var detail = cut.Find(".md-detail").TextContent;
+            Assert.Contains("Tools", detail);
+            Assert.Contains("Edit", detail);
+            Assert.Contains("Delete", detail);
+        }, WaitTimeout);
+    }
+
+    [Fact]
+    public void MasterDetail_AddButtonShowsForm()
+    {
+        var cut = RenderLoaded();
+
+        cut.Find(".md-list-header button").Click();
+
+        cut.WaitForAssertion(() =>
+        {
+            Assert.Contains("New Product", cut.Find(".md-detail h3").TextContent);
+            Assert.Contains("Save", cut.Find(".md-detail").TextContent);
+            Assert.Contains("Cancel", cut.Find(".md-detail").TextContent);
+        }, WaitTimeout);
+    }
+
+    [Fact]
+    public void MasterDetail_HasResetButton()
+    {
+        var cut = RenderLoaded();
+
+        Assert.Contains("Reset to Defaults", cut.Find(".md-list-footer").TextContent);
+    }
+
+    public void Dispose() => _ctx.Dispose();
+}
+
+internal sealed class MasterDetailFakeHttpHandler(string json) : HttpMessageHandler
+{
+    protected override Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request, CancellationToken cancellationToken) =>
+        Task.FromResult(new HttpResponseMessage(System.Net.HttpStatusCode.OK)
+        {
+            Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
+        });
+}
+tests/ObserverMagazine.Web.Tests/Components/ResponsiveTableTests.cs
+csharp
+using Bunit;
+using Microsoft.Extensions.DependencyInjection;
+using ObserverMagazine.Web.Components;
+using ObserverMagazine.Web.Services;
+using ObserverMagazine.Web.Tests.Services;
+using Xunit;
+
+namespace ObserverMagazine.Web.Tests.Components;
+
+public class ResponsiveTableTests : IDisposable
+{
+    private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(10);
+
+    private readonly BunitContext _ctx = new();
+
+    private const string SampleProductsJson = """
+        [
+          { "name": "Widget A", "category": "Tools", "price": 9.99, "stock": 100, "rating": 4.5, "description": "A widget" },
+          { "name": "Gadget B", "category": "Electronics", "price": 49.99, "stock": 25, "rating": 3.8, "description": "A gadget" }
+        ]
+        """;
+
+    private IRenderedComponent<ResponsiveTable> RenderLoaded()
+    {
+        var httpClient = new HttpClient(new ComponentFakeHttpHandler(SampleProductsJson))
+        {
+            BaseAddress = new Uri("https://test.local/")
+        };
+        _ctx.Services.AddSingleton(httpClient);
+        _ctx.Services.AddSingleton<IAnalyticsService, NoOpAnalyticsService>();
+
+        var cut = _ctx.Render<ResponsiveTable>();
+        cut.WaitForState(() => cut.FindAll(".rt-data-table tbody tr").Count == 2, WaitTimeout);
+        return cut;
+    }
+
+    private static string FirstRowName(IRenderedComponent<ResponsiveTable> cut) =>
+        cut.Find(".rt-data-table tbody tr td").TextContent.Trim();
+
+    [Fact]
+    public void RendersTable_WithData()
+    {
+        var cut = RenderLoaded();
+
+        Assert.Contains("Widget A", cut.Markup);
+        Assert.Contains("Gadget B", cut.Markup);
+    }
+
+    [Fact]
+    public void FilterInput_FiltersRows()
+    {
+        var cut = RenderLoaded();
+
+        cut.Find(".rt-filter-input").Input("Widget");
+
+        cut.WaitForAssertion(() =>
+        {
+            var rows = cut.FindAll(".rt-data-table tbody tr");
+            Assert.Single(rows);
+            Assert.Contains("Widget A", rows[0].TextContent);
+        }, WaitTimeout);
+    }
+
+    [Fact]
+    public void ClickColumnHeader_SortsData()
+    {
+        var cut = RenderLoaded();
+        Assert.Equal("Gadget B", FirstRowName(cut));
+
+        cut.FindAll("th.rt-sortable")[2].Click();
+
+        cut.WaitForAssertion(() =>
+        {
+            Assert.Equal("Widget A", FirstRowName(cut));
+            Assert.Contains("▲", cut.FindAll("th.rt-sortable")[2].TextContent);
+        }, WaitTimeout);
+
+        cut.FindAll("th.rt-sortable")[2].Click();
+
+        cut.WaitForAssertion(() =>
+        {
+            Assert.Equal("Gadget B", FirstRowName(cut));
+            Assert.Contains("▼", cut.FindAll("th.rt-sortable")[2].TextContent);
+        }, WaitTimeout);
+    }
+
+    public void Dispose() => _ctx.Dispose();
+}
+
+internal sealed class ComponentFakeHttpHandler(string json) : HttpMessageHandler
+{
+    protected override Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request, CancellationToken cancellationToken) =>
+        Task.FromResult(new HttpResponseMessage(System.Net.HttpStatusCode.OK)
+        {
+            Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
+        });
+}
+.gitignore
+gitignore
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+
+## NuGet
+**/packages/*
+*.nupkg
+**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+
+## Visual Studio
+.vs/
+*.rsuser
+*.csproj.user
+
+## JetBrains
+.idea/
+*.sln.iml
+
+## VS Code
+.vscode/
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Publish output
+publish/
+
+## Test results
+TestResults/
+*.trx
+
+## Generated blog data (created by ContentProcessor at build time)
+src/ObserverMagazine.Web/wwwroot/blog-data/
+
+## Generated RSS feed
+src/ObserverMagazine.Web/wwwroot/feed.xml
+
+## Generated TTS audio shards (CI)
+tts-cache/
+tts-changed
+
+## Client-side libraries (restored by LibMan at build time)
+src/ObserverMagazine.Web/wwwroot/lib/
+
+## Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+src/ObserverMagazine.Web/Layout/MainLayout.razor
+This fixes the footer’s GitHub link, which was misspelled as “mercufulpotato”.
+
+razor
+@inherits LayoutComponentBase
+
+<div class="page">
+    <header class="top-bar">
+        <div class="container top-bar-inner">
+            <a class="brand" href="/">
+                <strong>Merciful Potato</strong> Magazine
+            </a>
+            <NavMenu />
+        </div>
+    </header>
+
+    <main class="container main-content">
+        @Body
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                &copy; @DateTime.UtcNow.Year Merciful Potato Magazine &mdash; Built with
+                <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" target="_blank"
+                   rel="noopener noreferrer">Blazor WebAssembly</a>
+                on .NET 10.
+            </p>
+            <p>
+                <a href="/feed.xml">RSS Feed</a>
+                &middot;
+                <a href="https://github.com/mercifulpotato/mercifulpotato.github.io"
+                   target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+            </p>
+        </div>
+    </footer>
+</div>
+README.md
+markdown
+# Merciful Potato Magazine
+
+A free, open-source Blazor WebAssembly application deployed to GitHub Pages.
+
+Built with **.NET 10** (LTS) and **C# 14**.
+
+## Features
+
+- **Blog** — Write posts in Markdown with YAML front matter; compiled to static JSON at build time
+- **RSS Feed** — Auto-generated `feed.xml`
+- **Audio narration** — Every post is narrated with KittenTTS at build time and served as MP3
+- **Responsive Tables** — Sortable, filterable data tables that work on mobile
+- **Master-Detail Flow** — Click a list item to view full details
+- **OpenTelemetry-ready Logging** — Structured logging via `ILogger`
+- **Full Test Suite** — bUnit component tests + xUnit.net v3 integration tests, running on Microsoft.Testing.Platform
+
+## Quick Start
+```bash
+dotnet run --project tools/ObserverMagazine.ContentProcessor
+dotnet run --project src/ObserverMagazine.Web
+dotnet test
+```
+
+## Testing
+
+Tests run on **Microsoft.Testing.Platform (MTP)**, not VSTest. The opt-in lives in
+`global.json`:
+
+```json
+{ "test": { "runner": "Microsoft.Testing.Platform" } }
+```
+
+Test projects are ordinary executables, so each one can also be run on its own:
+
+```bash
+dotnet test --solution ObserverMagazine.slnx
+dotnet test --project tests/ObserverMagazine.Web.Tests
+dotnet test --filter-class ObserverMagazine.Web.Tests.Services.BlogServiceTests
+dotnet test --filter-trait Category=Integration
+dotnet run --project tests/ObserverMagazine.Integration.Tests
+```
+
+Run `dotnet test -?` from the repo root for the full option list.
+
+xUnit configuration for MTP lives in `testconfig.json` next to a test project
+(not `xunit.runner.json`, which is the VSTest-era file).
+
+bUnit tests that wait for asynchronous rendering pass an explicit timeout
+(bUnit's default is one second, which is too tight on a busy CI runner).
+
+## Audio narration
+
+`tools/generate_audio.py` turns each post into `blog-data/<slug>.mp3`. Posts without
+an MP3 simply hide the audio player.
+
+The work is incremental. Each finished post is recorded in `audio-manifest.json`
+using a hash of the post body (front matter excluded), voice, model, speed and
+`PIPELINE_VERSION`. Bump `PIPELINE_VERSION` to force regeneration after changing
+text preprocessing.
+
+In CI (`deploy.yml`):
+
+- Posts are split across 4 parallel runners by a stable hash of the slug.
+- Each runner restores its own cache and generates only what is missing or changed.
+- Each runner stops starting new posts after 270 minutes.
+- The cache is saved even when the job fails, so the next run resumes where this one stopped.
+- The site deploys with whatever audio exists.
+- When nothing is pending, the Python toolchain is never installed.
+
+Locally:
+
+```bash
+pip install -r tools/requirements-audio.txt
+sudo apt-get install -y espeak-ng ffmpeg
+python tools/generate_audio.py --check
+python tools/generate_audio.py
+python tools/generate_audio.py --shard 0 --shards 4 --output-dir tts-cache/shard-0 --time-budget-minutes 60
+```
+
+Published GitHub Pages sites may be no larger than 1 GB. The deploy job prints the
+site size and warns above 900 MB.
+
+## Technology
+
+| Component | Technology | License |
+|-----------|-----------|---------|
+| Framework | .NET 10 / Blazor WASM 10.0.14 | MIT |
+| Markdown | Markdig 1.5.1 | BSD-2-Clause |
+| YAML | YamlDotNet 18.1.0 | MIT |
+| Test framework | xUnit.net v3 4.0.2 | Apache-2.0 |
+| Component testing | bUnit 2.13.3 | MIT |
+| Test runner | Microsoft.Testing.Platform v2 | MIT |
+| Text-to-speech | KittenTTS 0.8.1 | Apache-2.0 |
+
+All dependencies are free for any use — no payment required, ever.
+
+## License
+
+AGPLv3
+Other things worth knowing
+First run after you push: expect about 2–2.5 hours per runner, by my estimate. Later runs only narrate new or edited posts and take minutes.
+The pause before audio regenerates is by design: editing only a post’s front matter (title, tags, dates) no longer triggers new audio.
+wwwroot/sandbox/test.html is published on your live site. It embeds an external trycloudflare “passkeys” page, so worth deciding whether it should be.
+The About page lists outdated versions: Markdig 1.1.1 and YamlDotNet 16.3.0. I left it unchanged.
+I didn’t read the large podcast-script text file in wwwroot/plaintext line by line. It’s a static file that only gets served; everything else in dump.txt I read.
+I can package all of this as a tar.gz in my next reply if you’d rather have that.
+
+This response ended early.
+
+
+
+Claude is AI and can make mistakes. Please double-check cited sources.
+
+
+
+
+
+
+Claude finished the response
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
