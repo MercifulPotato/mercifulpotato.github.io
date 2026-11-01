@@ -9,6 +9,8 @@ namespace ObserverMagazine.Web.Tests.Components;
 
 public class ResponsiveTableTests : IDisposable
 {
+    private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(10);
+
     private readonly BunitContext _ctx = new();
 
     private const string SampleProductsJson = """
@@ -18,21 +20,27 @@ public class ResponsiveTableTests : IDisposable
         ]
         """;
 
-    private void SetupServices()
+    private IRenderedComponent<ResponsiveTable> RenderLoaded()
     {
-        var fakeHandler = new ComponentFakeHttpHandler(SampleProductsJson);
-        var httpClient = new HttpClient(fakeHandler) { BaseAddress = new Uri("https://test.local/") };
+        var httpClient = new HttpClient(new ComponentFakeHttpHandler(SampleProductsJson))
+        {
+            BaseAddress = new Uri("https://test.local/")
+        };
         _ctx.Services.AddSingleton(httpClient);
         _ctx.Services.AddSingleton<IAnalyticsService, NoOpAnalyticsService>();
+
+        var cut = _ctx.Render<ResponsiveTable>();
+        cut.WaitForState(() => cut.FindAll(".rt-data-table tbody tr").Count == 2, WaitTimeout);
+        return cut;
     }
+
+    private static string FirstRowName(IRenderedComponent<ResponsiveTable> cut) =>
+        cut.Find(".rt-data-table tbody tr td").TextContent.Trim();
 
     [Fact]
     public void RendersTable_WithData()
     {
-        SetupServices();
-
-        var cut = _ctx.Render<ResponsiveTable>();
-        cut.WaitForElement(".rt-data-table");
+        var cut = RenderLoaded();
 
         Assert.Contains("Widget A", cut.Markup);
         Assert.Contains("Gadget B", cut.Markup);
@@ -41,50 +49,50 @@ public class ResponsiveTableTests : IDisposable
     [Fact]
     public void FilterInput_FiltersRows()
     {
-        SetupServices();
+        var cut = RenderLoaded();
 
-        var cut = _ctx.Render<ResponsiveTable>();
-        cut.WaitForElement(".rt-data-table");
+        cut.Find(".rt-filter-input").Input("Widget");
 
-        var filterInput = cut.Find(".rt-filter-input");
-        filterInput.Input("Widget");
-
-        Assert.Contains("Widget A", cut.Markup);
-        Assert.DoesNotContain("Gadget B", cut.Markup);
+        cut.WaitForAssertion(() =>
+        {
+            var rows = cut.FindAll(".rt-data-table tbody tr");
+            Assert.Single(rows);
+            Assert.Contains("Widget A", rows[0].TextContent);
+        }, WaitTimeout);
     }
 
     [Fact]
     public void ClickColumnHeader_SortsData()
     {
-        SetupServices();
+        var cut = RenderLoaded();
+        Assert.Equal("Gadget B", FirstRowName(cut));
 
-        var cut = _ctx.Render<ResponsiveTable>();
-        cut.WaitForElement(".rt-data-table");
+        cut.FindAll("th.rt-sortable")[2].Click();
 
-        var priceHeader = cut.FindAll("th.rt-sortable")[2];
-        priceHeader.Click();
+        cut.WaitForAssertion(() =>
+        {
+            Assert.Equal("Widget A", FirstRowName(cut));
+            Assert.Contains("▲", cut.FindAll("th.rt-sortable")[2].TextContent);
+        }, WaitTimeout);
 
-        Assert.Contains("▲", cut.Markup);
+        cut.FindAll("th.rt-sortable")[2].Click();
+
+        cut.WaitForAssertion(() =>
+        {
+            Assert.Equal("Gadget B", FirstRowName(cut));
+            Assert.Contains("▼", cut.FindAll("th.rt-sortable")[2].TextContent);
+        }, WaitTimeout);
     }
 
     public void Dispose() => _ctx.Dispose();
 }
 
-internal sealed class ComponentFakeHttpHandler : HttpMessageHandler
+internal sealed class ComponentFakeHttpHandler(string json) : HttpMessageHandler
 {
-    private readonly HttpResponseMessage _response;
-
-    public ComponentFakeHttpHandler(string json)
-    {
-        _response = new HttpResponseMessage(System.Net.HttpStatusCode.OK)
+    protected override Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request, CancellationToken cancellationToken) =>
+        Task.FromResult(new HttpResponseMessage(System.Net.HttpStatusCode.OK)
         {
             Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
-        };
-    }
-
-    protected override Task<HttpResponseMessage> SendAsync(
-        HttpRequestMessage request, CancellationToken cancellationToken)
-    {
-        return Task.FromResult(_response);
-    }
+        });
 }

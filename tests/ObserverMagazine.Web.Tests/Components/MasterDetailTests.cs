@@ -9,6 +9,8 @@ namespace ObserverMagazine.Web.Tests.Components;
 
 public class MasterDetailTests : IDisposable
 {
+    private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(10);
+
     private readonly BunitContext _ctx = new();
 
     private const string SampleProductsJson = """
@@ -18,28 +20,27 @@ public class MasterDetailTests : IDisposable
         ]
         """;
 
-    private void SetupServices()
+    private IRenderedComponent<MasterDetail> RenderLoaded()
     {
-        var fakeHandler = new MasterDetailFakeHttpHandler(SampleProductsJson);
-        var httpClient = new HttpClient(fakeHandler) { BaseAddress = new Uri("https://test.local/") };
+        var httpClient = new HttpClient(new MasterDetailFakeHttpHandler(SampleProductsJson))
+        {
+            BaseAddress = new Uri("https://test.local/")
+        };
         _ctx.Services.AddSingleton(httpClient);
         _ctx.Services.AddSingleton<IAnalyticsService>(new NoOpAnalyticsService());
-
-        // bUnit provides JSInterop mocking automatically.
-        // Set up the localStorage calls the component makes.
         _ctx.JSInterop.SetupVoid("localStorage.setItem", _ => true);
         _ctx.JSInterop.SetupVoid("localStorage.removeItem", _ => true);
         _ctx.JSInterop.Setup<string?>("localStorage.getItem", _ => true).SetResult(null);
+
+        var cut = _ctx.Render<MasterDetail>();
+        cut.WaitForState(() => cut.FindAll(".md-list li").Count == 2, WaitTimeout);
+        return cut;
     }
 
     [Fact]
     public void MasterDetail_RendersProductList()
     {
-        SetupServices();
-        var cut = _ctx.Render<MasterDetail>();
-
-        // Wait for async load
-        cut.WaitForState(() => cut.Markup.Contains("Widget A"));
+        var cut = RenderLoaded();
 
         Assert.Contains("Widget A", cut.Markup);
         Assert.Contains("Gadget B", cut.Markup);
@@ -48,75 +49,59 @@ public class MasterDetailTests : IDisposable
     [Fact]
     public void MasterDetail_ShowsEmptyDetailOnLoad()
     {
-        SetupServices();
-        var cut = _ctx.Render<MasterDetail>();
+        var cut = RenderLoaded();
 
-        cut.WaitForState(() => cut.Markup.Contains("Widget A"));
-
-        Assert.Contains("Select an item", cut.Markup);
+        Assert.Contains("Select an item", cut.Find(".md-empty").TextContent);
     }
 
     [Fact]
     public void MasterDetail_SelectProductShowsDetail()
     {
-        SetupServices();
-        var cut = _ctx.Render<MasterDetail>();
+        var cut = RenderLoaded();
 
-        cut.WaitForState(() => cut.Markup.Contains("Widget A"));
+        cut.Find(".md-list li").Click();
 
-        var firstItem = cut.Find(".md-list li");
-        firstItem.Click();
-
-        Assert.Contains("Tools", cut.Markup); // category
-        Assert.Contains("Edit", cut.Markup);
-        Assert.Contains("Delete", cut.Markup);
+        cut.WaitForAssertion(() =>
+        {
+            var detail = cut.Find(".md-detail").TextContent;
+            Assert.Contains("Tools", detail);
+            Assert.Contains("Edit", detail);
+            Assert.Contains("Delete", detail);
+        }, WaitTimeout);
     }
 
     [Fact]
     public void MasterDetail_AddButtonShowsForm()
     {
-        SetupServices();
-        var cut = _ctx.Render<MasterDetail>();
+        var cut = RenderLoaded();
 
-        cut.WaitForState(() => cut.Markup.Contains("Widget A"));
+        cut.Find(".md-list-header button").Click();
 
-        var addBtn = cut.Find("button.btn-primary.btn-sm");
-        addBtn.Click();
-
-        Assert.Contains("New Product", cut.Markup);
-        Assert.Contains("Save", cut.Markup);
-        Assert.Contains("Cancel", cut.Markup);
+        cut.WaitForAssertion(() =>
+        {
+            Assert.Contains("New Product", cut.Find(".md-detail h3").TextContent);
+            Assert.Contains("Save", cut.Find(".md-detail").TextContent);
+            Assert.Contains("Cancel", cut.Find(".md-detail").TextContent);
+        }, WaitTimeout);
     }
 
     [Fact]
     public void MasterDetail_HasResetButton()
     {
-        SetupServices();
-        var cut = _ctx.Render<MasterDetail>();
+        var cut = RenderLoaded();
 
-        cut.WaitForState(() => cut.Markup.Contains("Widget A"));
-
-        Assert.Contains("Reset to Defaults", cut.Markup);
+        Assert.Contains("Reset to Defaults", cut.Find(".md-list-footer").TextContent);
     }
 
     public void Dispose() => _ctx.Dispose();
 }
 
-internal sealed class MasterDetailFakeHttpHandler : HttpMessageHandler
+internal sealed class MasterDetailFakeHttpHandler(string json) : HttpMessageHandler
 {
-    private readonly HttpResponseMessage _response;
-
-    public MasterDetailFakeHttpHandler(string json)
-    {
-        _response = new HttpResponseMessage(System.Net.HttpStatusCode.OK)
+    protected override Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request, CancellationToken cancellationToken) =>
+        Task.FromResult(new HttpResponseMessage(System.Net.HttpStatusCode.OK)
         {
             Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
-        };
-    }
-
-    protected override Task<HttpResponseMessage> SendAsync(
-        HttpRequestMessage request, CancellationToken cancellationToken)
-    {
-        return Task.FromResult(_response);
-    }
+        });
 }
