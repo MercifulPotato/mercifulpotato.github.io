@@ -68643,3 +68643,279 @@ real	0m0.137s
 user	0m0.057s
 sys	0m0.067s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00
+01
+
+the build on github is failing 
+I think somehow we need to chunk our work 
+so even if we fail, we don't start from scratch every time 
+Use your best judgment
+If only a few files (under five or there about) need to change, give me the full path of the files that need to change and the FULL file 
+if there are a lot of files that need to change 
+    Delivery
+    Whole project as one tar.gz, unambiguous file placement
+    do not include any file that has not changed 
+    Any files to delete on updates called out explicitly
+    No bespoke sed/patch scripts — full files only for anything that changes
+    Docs updated alongside code changes
+    Low verbosity, no code comments
+also I suspect a test is flaky or something 
+it does not fail every time but it has failed at least once before. worth taking a look. 
+2026-10-31T07:09:51.4787081Z Current runner version: '2.338.2'
+2026-10-31T07:09:51.4822246Z ##[group]Runner Image Provisioner
+2026-10-31T07:09:51.4823646Z Hosted Compute Agent
+2026-10-31T07:09:51.4825005Z Version: 20261021.618
+2026-10-31T07:09:51.4826108Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-31T07:09:51.4827428Z Build Date: 2026-10-21T00:45:21Z
+2026-10-31T07:09:51.4828684Z Worker ID: {0339e8ab-ae21-4f44-9a0b-a1847d53fc8c}
+2026-10-31T07:09:51.4830277Z Region: centralus
+2026-10-31T07:09:51.4831487Z Cloud: Azure
+2026-10-31T07:09:51.4832480Z ##[endgroup]
+2026-10-31T07:09:51.4835103Z ##[group]Operating System
+2026-10-31T07:09:51.4836201Z Ubuntu
+2026-10-31T07:09:51.4837074Z 24.04.5
+2026-10-31T07:09:51.4838027Z LTS
+/// SNIP 
+2026-10-31T13:08:29.4190589Z Processing (new): 2026-07-07-adf-act-13-infrastructure-gap-in-numbers.md → adf-act-13-infrastructure-gap-in-numbers.mp3
+2026-10-31T13:08:29.4191582Z   Text: 17532 chars
+2026-10-31T13:08:29.4192133Z   Loading model: KittenML/kitten-tts-nano-0.8
+2026-10-31T13:08:29.4192633Z   Model loaded in 0.8s
+2026-10-31T13:08:29.4193061Z   Processing 40 text chunk(s), voice=Bella
+2026-10-31T13:08:29.4193539Z     Chunk 1/40: 492 chars
+2026-10-31T13:08:29.4197704Z Generating audio for text: Part one: Making the Abstract Concrete. Throughout this series, we have referred to Nepal's "infrastructure gap" in somewhat abstract terms. This article makes it concrete. We will examine the actual numbers — where Nepal is today, where it needs to be, what it would cost to get there, and where the money can come from. This foundation is essential for evaluating whether the Alternative Development Finance Fund can make a meaningful difference.. Before we proceed, a note on data quality.
+2026-10-31T13:08:29.4231266Z     Chunk 2/40: 482 chars
+2026-10-31T13:08:29.4235164Z Generating audio for text: Infrastructure investment data in Nepal is imperfect. Numbers from different sources (government, multilateral banks, academic studies) sometimes differ significantly. Exchange rates fluctuate. Some estimates are optimistic; others are conservative. Where possible, we use ranges rather than single-point estimates, and we note the source and limitations of specific numbers. The goal is not false precision but honest orientation.. Part two: The Electricity Sector. Where Nepal Is.
+2026-10-31T13:08:29.4238863Z     Chunk 3/40: 451 chars
+2026-10-31T13:08:29.4243255Z Generating audio for text: Nepal's installed electricity generation capacity as of recent years is approximately two,five hundred to three,zero megawatts (MW). This includes: Hydropower: the dominant source, accounting for over ninety-five% of installed capacity Solar: a rapidly growing but still small contribution Thermal: minimal. The two,five hundred to three,zero MW figure represents current installed capacity — the maximum the system can produce under ideal conditions.
+2026-10-31T13:08:29.4246417Z     Chunk 4/40: 422 chars
+2026-10-31T13:08:29.4249697Z Generating audio for text: Actual generation varies significantly with the season. In the wet season (June through November, the monsoon), river flows are high and generation is at or near capacity. In the dry season (December through May), river flows drop substantially and many run-of-river hydropower plants operate at twenty% to forty% of their rated capacity. This seasonal variation is one of Nepal's central electricity planning challenges..
+2026-10-31T13:08:29.4252485Z     Chunk 5/40: 492 chars
+2026-10-31T13:08:42.1911658Z [1;31m2026-10-31 13:08:42.190580636 [E:onnxruntime:, sequential_executor.cc:677 ExecuteKernel] Non-zero status code returned while running Expand node. Name:'/bert/Expand' Status Message: invalid expand shape[m
+2026-10-31T13:09:37.4771292Z Generating audio for text: Net electricity exports to India during recent years have been significant and growing — Nepal now earns foreign exchange from electricity exports, a transformation from the load-shedding era of just a decade ago. But domestic demand is also growing rapidly, and the long-term goal is to serve much larger domestic industrial and residential demand while also exporting.. Where Nepal Needs to Be. The Sixteenth Five-Year Plan sets a target of forty,zero MW of electricity generation capacity.
+2026-10-31T13:09:37.4799770Z     Chunk 6/40: 473 chars
+2026-10-31T13:09:37.4833896Z Generating audio for text: The government has also articulated an electricity export target of ten,zero MW to India in the medium term.. The gap between current capacity (~two,seven hundred and fifty MW) and the target (forty,zero MW) is approximately thirty-seven,two hundred and fifty MW — roughly thirteen times current capacity. This is not a linear expansion; it is a transformation.. What It Would Cost. Nepal's hydropower construction costs vary enormously by project type, location, and size.
+2026-10-31T13:09:37.4900058Z     Chunk 7/40: 373 chars
+2026-10-31T13:09:37.4922653Z Generating audio for text: Small hydropower projects in accessible locations might cost $one,zero to $one,five hundred per kilowatt (kW) of installed capacity. Large storage projects in remote Himalayan valleys might cost $three,zero to $five,zero per kW or more. Run-of-river projects of medium size in accessible locations typically fall in the $one,five hundred to $two,five hundred per kW range..
+2026-10-31T13:09:37.4929719Z     Chunk 8/40: 469 chars
+2026-10-31T13:09:37.4963420Z Generating audio for text: Using a blended average of approximately $one,five hundred to $two,zero per kW for a realistic mix of project types: thirty-seven,two hundred and fifty MW additional capacity × $one,five hundred/kW = approximately $fifty-five point nine billion thirty-seven,two hundred and fifty MW additional capacity × $two,zero/kW = approximately $seventy-four point five billion. At current exchange rates, these figures represent approximately Rs. seven point five trillion to Rs.
+2026-10-31T13:09:37.4980746Z     WARNING: Failed to generate chunk 8: [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Non-zero status code returned while running Expand node. Name:'/bert/Expand' Status Message: invalid expand shape
+2026-10-31T13:09:37.5009604Z     Chunk 9/40: 497 chars
+2026-10-31T13:09:37.5043145Z Generating audio for text: ten trillion for generation capacity alone.. Add transmission infrastructure to move power from generation sites to load centers: approximately $five hundred to $eight hundred per kW of transmission capacity, suggesting another Rs. two trillion to Rs. three trillion.. Add distribution infrastructure to bring power to end users: another Rs. one trillion to Rs. two trillion.. Total electricity sector investment requirement to reach the forty,zero MW target: approximately Rs. ten trillion to Rs.
+2026-10-31T13:09:37.5046835Z     Chunk 10/40: 370 chars
+2026-10-31T13:09:37.5072814Z Generating audio for text: fifteen trillion over the next ten to twenty years. This is Rs. five hundred billion to Rs. one point five trillion per year.. Current annual investment in Nepal's electricity sector (from all sources — government budget, multilateral loans, private investment, Chinese and Indian investment) is approximately Rs. one hundred billion to Rs. two hundred billion per year.
+2026-10-31T13:09:37.5099515Z     Chunk 11/40: 443 chars
+2026-10-31T13:09:37.5133101Z Generating audio for text: The gap between current investment and the investment needed to reach the target is enormous — even if electricity investment doubles, it would take decades longer than the plan envisions.. What Role the ADFF Can Play. If the Alternative Development Finance Fund achieves its initial paid-up capital of Rs. twenty-five billion and operates with a leverage ratio of four:one (total portfolio four times equity), it can support approximately Rs.
+2026-10-31T13:09:37.5159553Z     Chunk 12/40: 491 chars
+2026-10-31T13:09:37.5193736Z Generating audio for text: one hundred billion in electricity sector investment — perhaps two to three major hydropower projects. This is meaningful but modest relative to the total need. The fund's real value is not its absolute scale but its role as a catalytic instrument: demonstrating financing structures that others can replicate, de-risking early investments to attract subsequent private capital, and building the institutional knowledge base for Nepal's infrastructure finance.. Part three: The Road Network.
+2026-10-31T13:09:37.5197488Z     Chunk 13/40: 422 chars
+2026-10-31T13:09:37.5222472Z Generating audio for text: Where Nepal Is. Nepal's total road network as of recent data is approximately thirty,zero to thirty-five,zero kilometers. Of this: Strategic roads (national and provincial highways): approximately twelve,zero to fourteen,zero km District roads: approximately ten,zero to twelve,zero km Urban roads: approximately three,zero to five,zero km Local roads (mostly rural, often unpaved): approximately five,zero to ten,zero km.
+2026-10-31T13:09:37.5249696Z     Chunk 14/40: 491 chars
+2026-10-31T13:09:37.5283292Z Generating audio for text: A critical distinction: "road" in Nepal includes many unpaved tracks, seasonal roads, and dirt paths that are not usable year-round or cannot handle significant freight. The all-weather paved road network is significantly smaller than the total figure.. Nepal has no operational rapid transit system. Kathmandu's only metro or BRT (Bus Rapid Transit) project has been studied for years but not built. The valley's transportation relies on private vehicles and informal bus/minibus services..
+2026-10-31T13:09:37.5299522Z     Chunk 15/40: 499 chars
+2026-10-31T13:09:37.5323101Z Generating audio for text: Where Nepal Needs to Be. The government's transport development objectives include: Completing the East-West Highway (Mahendra Highway) upgrades and missing links Completing the Mid-Hill Highway connecting east and west through the hills Building north-south corridors connecting the Terai to hill districts Connecting all district headquarters by all-weather road Building ring roads around major cities Building expressways and tunnels to improve Kathmandu Valley connectivity. What It Would Cost.
+2026-10-31T13:09:37.5349672Z     Chunk 16/40: 475 chars
+2026-10-31T13:09:37.5382647Z Generating audio for text: Road construction costs in Nepal vary from approximately Rs. fifteen million to Rs. twenty million per kilometer in flat Terai areas to Rs. eighty million to Rs. two hundred million per kilometer in hill areas, and even higher for major tunnel projects (which can cost Rs. five hundred million to Rs. two billion per kilometer for complex tunnels).. The Department of Roads estimates that completing priority road projects over the next decade would require approximately Rs.
+2026-10-31T13:09:37.5389478Z     Chunk 17/40: 406 chars
+2026-10-31T13:09:37.5422111Z Generating audio for text: one point five trillion to Rs. two trillion. This does not include urban roads, local roads, or maintenance of the existing network.. Current annual road investment from government sources is approximately Rs. eighty billion to Rs. one hundred and twenty billion. The gap between investment needed and investment available is substantial.. Part four: Aviation Infrastructure. The Kathmandu Airport Problem.
+2026-10-31T13:09:37.5439604Z     Chunk 18/40: 384 chars
+2026-10-31T13:09:37.5472185Z Generating audio for text: Tribhuvan International Airport (TIA) in Kathmandu is one of the most constrained major airports in the world. It has a single runway (ten/twenty-eight), surrounded by hills, with significant approach restrictions. Aircraft must navigate through the Kathmandu Valley bowl, with high terrain on all sides limiting approach angles and creating operational constraints in low visibility.
+2026-10-31T13:09:37.5479492Z     Chunk 19/40: 430 chars
+2026-10-31T13:09:37.5513076Z Generating audio for text: The airport handles approximately four to five million passengers per year but was designed for a fraction of that traffic. Runway capacity is approximately two hundred aircraft movements per day; actual movements approach or exceed this on busy days.. Extending TIA is not practical given its geographic constraints. The solution — a new large airport — has been planned for decades but not built.. Nijgadh International Airport.
+2026-10-31T13:09:37.5529665Z     Chunk 20/40: 344 chars
+2026-10-31T13:09:37.5562481Z Generating audio for text: The proposed Nijgadh International Airport in Bara district in the Terai has been in planning since the early 2000s. It would have two runways, could handle large aircraft, and would be located in flat Terai terrain with no approach restrictions. It would provide a second gateway to Nepal and potentially serve as a hub for regional aviation..
+2026-10-31T13:09:37.5569464Z     Chunk 21/40: 455 chars
+2026-10-31T13:09:37.5602657Z Generating audio for text: The project has been controversial due to: Environmental impact: the original site would require clearing approximately two point four million trees, raising serious environmental concerns and opposition from environmental groups Cost: estimates have ranged from Rs. two hundred billion to Rs. seven hundred billion, depending on the design and phasing Financing: no credible financing plan has been finalized despite years of planning. Regional Airports.
+2026-10-31T13:09:37.5619618Z     Chunk 22/40: 344 chars
+2026-10-31T13:10:03.4432564Z ##[error]The operation was canceled.
+2026-10-31T13:10:03.4857705Z Post job cleanup.
+2026-10-31T13:10:03.7860047Z [command]/usr/bin/git version
+2026-10-31T13:10:03.7971090Z git version 2.56.0
+2026-10-31T13:10:03.8167311Z Temporarily overriding HOME='/home/runner/work/_temp/c1940ef8-72c5-4fd9-aa10-27ad22869b1b' before making global git config changes
+2026-10-31T13:10:03.8230203Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-31T13:10:03.8242430Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io
+2026-10-31T13:10:03.8349655Z Removing SSH command configuration
+2026-10-31T13:10:03.8350625Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-31T13:10:03.8417269Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-31T13:10:03.9269995Z Removing HTTP extra header
+2026-10-31T13:10:03.9291879Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-31T13:10:03.9431116Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-31T13:10:04.0169689Z Removing includeIf entries pointing to credentials config files
+2026-10-31T13:10:04.0179932Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-31T13:10:04.0220159Z includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git.path
+2026-10-31T13:10:04.0245062Z includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git/worktrees/*.path
+2026-10-31T13:10:04.0269470Z includeif.gitdir:/github/workspace/.git.path
+2026-10-31T13:10:04.0293619Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-31T13:10:04.0360404Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git.path
+2026-10-31T13:10:04.0399805Z /home/runner/work/_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.0479565Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.0841859Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git/worktrees/*.path
+2026-10-31T13:10:04.0843358Z /home/runner/work/_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.0846023Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/mercifulpotato.github.io/mercifulpotato.github.io/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.0848388Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-31T13:10:04.1149985Z /github/runner_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.1783414Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.2130188Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-31T13:10:04.2430711Z /github/runner_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config
+2026-10-31T13:10:04.2602678Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-c9ad05e2\-7e44\-449e\-b7f9\-252cf11e2dbf\.config
+2026-10-31T13:10:04.2700935Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-31T13:10:04.2790363Z Removing credentials config '/home/runner/work/_temp/git-credentials-c9ad05e2-7e44-449e-b7f9-252cf11e2dbf.config'
+2026-10-31T13:10:04.3017459Z Evaluate and set environment url
+2026-10-31T13:10:04.3053208Z Evaluated environment url: 
+2026-10-31T13:10:04.3054171Z Cleaning up orphan processes
+2026-10-31T13:10:04.4243051Z Terminate orphan process: pid (4299) (python)
+
