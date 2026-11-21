@@ -1,24 +1,337 @@
-kushal@fedora:~/src/dotnet/chaos-velixir-run$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
-274M	.
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ date; free -h && swapon --show; ps aux --sort=-%mem | head -n 15; for f in /proc/[0-9]*/status; do awk '/^Name:/{n=$2} /^VmSwap:/{s=$2} END{if(s>0) printf "%8.1f MB  %s\n", s/1024, n}' "$f" 2>/dev/null; done | sort -nr | head -n 15; date;
+Fri Nov 20 10:42:21 PM EST 2026
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       9.3Gi       513Mi        63Mi       4.7Gi       5.6Gi
+Swap:          8.0Gi       9.9Mi       8.0Gi
+NAME       TYPE      SIZE USED PRIO
+/dev/zram0 partition   8G 9.9M  100
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+kushal      8534  0.2  7.5 4471784 1187324 ?     Sl   16:48   0:42 /app/lib64/thunderbird/thunderbird
+kushal     12412 22.7  5.5 13447564 868236 ?     Sl   22:39   0:33 /usr/lib64/firefox/firefox
+kushal     13078  5.0  3.9 10417356 616872 ?     Sl   22:39   0:07 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {54586487-edc8-44c6-8141-9e3f075a69c2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 18 tab
+kushal     13058 11.6  3.8 3900200 606676 ?      Sl   22:39   0:17 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {8170bbf8-aa07-48e9-af09-1f641f200970} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 17 tab
+kushal     12782  6.2  3.4 7991856 541124 ?      Sl   22:39   0:09 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {7ee0c82c-73d0-4b7c-9540-12a17fca88d2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 8 tab
+kushal     13025  4.1  3.3 8058580 517620 ?      Sl   22:39   0:06 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {733a158f-9b79-45a1-840b-a86dfedc9380} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 16 tab
+kushal     12804  3.7  3.1 3511660 497560 ?      Sl   22:39   0:05 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {3d68ab6b-c791-4568-b6cf-cef47bb8c4fa} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 9 tab
+kushal     13368  9.0  2.7 16160132 423544 ?     Sl   22:39   0:13 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43229 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {71c0faee-690d-4c20-9367-12813d68e85c} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 23 tab
+kushal      4586  0.1  2.3 1608808 361284 ?      SNsl 16:47   0:28 /usr/bin/gnome-software --gapplication-service
+kushal     12996  1.6  2.2 8971660 349400 ?      Sl   22:39   0:02 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {ff45cad4-4ef5-4969-84ee-15b8d7e1125b} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 15 tab
+kushal     12739  2.5  2.1 3695928 334240 ?      Sl   22:39   0:03 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {1a70058d-0706-4b6f-9eb2-c0f06333645a} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 5 tab
+kushal      4229  0.5  2.1 4303796 333256 ?      Ssl  16:47   2:03 /usr/bin/gnome-shell --mode=user
+kushal     12749  2.1  2.1 3679932 332608 ?      Sl   22:39   0:03 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {f3c8c772-9830-4667-9eb6-9b2ca33194b4} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 6 tab
+kushal     14585 10.9  1.9 1518979216 305512 ?   Sl   22:41   0:08 /opt/VSCode-linux-x64/code --type=renderer --enable-crash-reporter=d7543a3b-1b9b-4bdc-ac73-84177d882a41,no_channel --user-data-dir=/home/kushal/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/opt/VSCode-linux-x64/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --ozone-platform=wayland --disable-blink-features=FontMatchingCTMigration, --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1795211234002258 --launch-time-ticks=21230637392 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15764145888708652710,4088624026403455776,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,GlobalShortcutsPortalPreferredTrigger,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,3271397429970645123,18090477257809143535,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:19a3f485-af5c-4ee8-9865-b8b87e8f9e7f
+     3.8 MB  localsearch-3
+     2.0 MB  firewalld
+     0.7 MB  wpa_supplicant
+     0.3 MB  tuned-ppd
+     0.2 MB  crashhelper
+     0.1 MB  tuned
+     0.1 MB  systemd-journal
+     0.1 MB  (sd-pam)
+Fri Nov 20 10:42:22 PM EST 2026
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ date; free -h && swapon --show; ps aux --sort=-%mem | head -n 15; for f in /proc/[0-9]*/status; do awk '/^Name:/{n=$2} /^VmSwap:/{s=$2} END{if(s>0) printf "%8.1f MB  %s\n", s/1024, n}' "$f" 2>/dev/null; done | sort -nr | head -n 15; date;
+Fri Nov 20 11:06:58 PM EST 2026
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       9.1Gi       645Mi       143Mi       4.3Gi       5.8Gi
+Swap:          8.0Gi       101Mi       7.9Gi
+NAME       TYPE      SIZE   USED PRIO
+/dev/zram0 partition   8G 101.3M  100
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+kushal      8534  2.2  7.6 4555824 1202020 ?     Rl   16:48   8:26 /app/lib64/thunderbird/thunderbird
+kushal     12412  7.0  6.5 13816980 1025184 ?    Sl   22:39   1:54 /usr/lib64/firefox/firefox
+kushal     13078  1.1  4.1 10448064 642416 ?     Sl   22:39   0:18 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {54586487-edc8-44c6-8141-9e3f075a69c2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 18 tab
+kushal     12782  1.2  3.7 8069680 587796 ?      Sl   22:39   0:19 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {7ee0c82c-73d0-4b7c-9540-12a17fca88d2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 8 tab
+kushal     13058  2.2  3.5 3900312 562912 ?      Sl   22:39   0:36 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {8170bbf8-aa07-48e9-af09-1f641f200970} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 17 tab
+kushal     17071  4.8  3.2 3445992 514896 ?      Sl   23:02   0:11 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:56998 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {db33eed3-f46e-4ee3-b2be-3bd5a609c8e6} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 33 tab
+kushal     13025  0.4  3.0 8057580 470424 ?      Sl   22:39   0:07 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {733a158f-9b79-45a1-840b-a86dfedc9380} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 16 tab
+kushal     12804  0.4  3.0 3511700 470104 ?      Sl   22:39   0:06 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {3d68ab6b-c791-4568-b6cf-cef47bb8c4fa} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 9 tab
+kushal     13368  1.0  2.5 16159092 400052 ?     Sl   22:39   0:17 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43229 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {71c0faee-690d-4c20-9367-12813d68e85c} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 23 tab
+kushal     12827  1.0  2.3 3306904 374588 ?      Sl   22:39   0:17 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {71744d71-a4dc-4f45-92fb-c9c1195a2352} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 10 tab
+kushal      4586  0.1  2.1 1608808 335060 ?      SNsl 16:47   0:28 /usr/bin/gnome-software --gapplication-service
+kushal      4229  0.9  2.0 4319048 327052 ?      Ssl  16:47   3:24 /usr/bin/gnome-shell --mode=user
+kushal     12739  0.3  1.9 3692840 311144 ?      Sl   22:39   0:05 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {1a70058d-0706-4b6f-9eb2-c0f06333645a} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 5 tab
+kushal     12749  0.3  1.9 3670700 305828 ?      Sl   22:39   0:05 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {f3c8c772-9830-4667-9eb6-9b2ca33194b4} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 6 tab
+    24.0 MB  ibus-engine-tb
+    23.1 MB  gnome-software
+    22.3 MB  dnf5daemon-serv
+     5.9 MB  localsearch-3
+     5.4 MB  firewalld
+     4.3 MB  tuned
+     3.1 MB  tuned-ppd
+     2.1 MB  geoclue
+     1.8 MB  gnome-calendar
+     1.6 MB  ibus-daemon
+     1.6 MB  gnome-shell
+     1.3 MB  tailscaled
+     0.7 MB  wpa_supplicant
+     0.6 MB  ibus-dconf
+     0.4 MB  (sd-pam)
+Fri Nov 20 11:06:59 PM EST 2026
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ date; free -h && swapon --show; ps aux --sort=-%mem | head -n 15; for f in /proc/[0-9]*/status; do awk '/^Name:/{n=$2} /^VmSwap:/{s=$2} END{if(s>0) printf "%8.1f MB  %s\n", s/1024, n}' "$f" 2>/dev/null; done | sort -nr | head -n 15; date;
+Fri Nov 20 11:56:46 PM EST 2026
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       9.5Gi       657Mi       106Mi       3.9Gi       5.5Gi
+Swap:          8.0Gi       949Mi       7.1Gi
+NAME       TYPE      SIZE   USED PRIO
+/dev/zram0 partition   8G 949.4M  100
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+kushal      8534  3.1  7.2 4588508 1126920 ?     Sl   16:48  13:34 /app/lib64/thunderbird/thunderbird
+kushal     12412  7.2  6.4 13785464 1003160 ?    Sl   22:39   5:36 /usr/lib64/firefox/firefox
+kushal     20764  2.7  4.6 3614104 720264 ?      Sl   23:29   0:45 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:56997 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fab7df7d-0bb6-49cf-8e00-8d26eacae24d} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 45 tab
+kushal     13368  0.6  3.8 16301108 597768 ?     Sl   22:39   0:30 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43229 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {71c0faee-690d-4c20-9367-12813d68e85c} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 23 tab
+kushal     18487  1.3  3.7 1525785096 580792 ?   Sl   23:08   0:38 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+kushal     12782  0.5  3.6 8094240 575512 ?      Sl   22:39   0:27 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {7ee0c82c-73d0-4b7c-9540-12a17fca88d2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 8 tab
+kushal     13078  0.5  3.5 10445936 551708 ?     Sl   22:39   0:23 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {54586487-edc8-44c6-8141-9e3f075a69c2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 18 tab
+kushal     13058  0.9  3.4 3900296 542828 ?      Sl   22:39   0:41 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {8170bbf8-aa07-48e9-af09-1f641f200970} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 17 tab
+kushal     13025  0.4  3.1 8226144 493200 ?      Sl   22:39   0:21 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {733a158f-9b79-45a1-840b-a86dfedc9380} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 16 tab
+kushal     18522  0.3  2.3 1523511108 373824 ?   Sl   23:08   0:10 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+kushal     12804  0.1  2.3 3509636 371344 ?      Sl   22:39   0:09 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {3d68ab6b-c791-4568-b6cf-cef47bb8c4fa} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 9 tab
+kushal     18175  0.4  2.3 106198252 369924 ?    Sl   23:08   0:12 /app/extra/chrome --disable-features=WebAssemblyTrapHandler,DesktopPWAsRunOnOsLogin
+kushal     12739  0.1  1.9 3692824 305260 ?      Sl   22:39   0:09 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {1a70058d-0706-4b6f-9eb2-c0f06333645a} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 5 tab
+kushal     12749  0.1  1.9 3670684 298516 ?      Sl   22:39   0:08 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {f3c8c772-9830-4667-9eb6-9b2ca33194b4} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 6 tab
+   217.5 MB  gnome-software
+    86.8 MB  dnf5daemon-serv
+    85.0 MB  Isolated
+    75.9 MB  thunderbird
+    62.6 MB  ibus-engine-tb
+    53.4 MB  gnome-shell
+    34.8 MB  Isolated
+    33.3 MB  Isolated
+    32.3 MB  Isolated
+    21.9 MB  WebExtensions
+    20.9 MB  firefox
+    16.5 MB  firewalld
+    14.9 MB  Isolated
+    14.0 MB  Isolated
+    13.5 MB  geoclue
+Fri Nov 20 11:56:47 PM EST 2026
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ date; free -h && swapon --show; ps aux --sort=-%mem | head -n 15; for f in /proc/[0-9]*/status; do awk '/^Name:/{n=$2} /^VmSwap:/{s=$2} END{if(s>0) printf "%8.1f MB  %s\n", s/1024, n}' "$f" 2>/dev/null; done | sort -nr | head -n 15; date;
+Sat Nov 21 12:03:49 AM EST 2026
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       9.2Gi       801Mi       148Mi       4.0Gi       5.7Gi
+Swap:          8.0Gi       1.6Gi       6.4Gi
+NAME       TYPE      SIZE USED PRIO
+/dev/zram0 partition   8G 1.6G  100
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+kushal      8534  3.2  7.7 4657116 1214928 ?     Sl   Nov20  14:17 /app/lib64/thunderbird/thunderbird
+kushal     12412  7.9  6.1 13827116 967488 ?     Sl   Nov20   6:41 /usr/lib64/firefox/firefox
+kushal     20764  3.2  5.2 3752108 820652 ?      Sl   Nov20   1:07 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:56997 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fab7df7d-0bb6-49cf-8e00-8d26eacae24d} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 45 tab
+kushal     13368  0.6  3.7 16301108 590868 ?     Sl   Nov20   0:31 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43229 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {71c0faee-690d-4c20-9367-12813d68e85c} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 23 tab
+kushal     18487  1.1  3.5 1525785096 561652 ?   Sl   Nov20   0:38 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+kushal     12782  0.5  3.5 8094240 559808 ?      Sl   Nov20   0:27 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {7ee0c82c-73d0-4b7c-9540-12a17fca88d2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 8 tab
+kushal     13078  0.4  3.1 10446960 496676 ?     Sl   Nov20   0:23 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {54586487-edc8-44c6-8141-9e3f075a69c2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 18 tab
+kushal     13058  0.8  3.1 3900312 488984 ?      Sl   Nov20   0:43 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {8170bbf8-aa07-48e9-af09-1f641f200970} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 17 tab
+kushal     13025  0.4  2.9 8226144 468936 ?      Sl   Nov20   0:22 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {733a158f-9b79-45a1-840b-a86dfedc9380} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 16 tab
+kushal     18522  0.3  2.4 1523511108 376240 ?   Sl   Nov20   0:10 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+kushal     18175  0.3  2.3 106197608 363100 ?    Sl   Nov20   0:13 /app/extra/chrome --disable-features=WebAssemblyTrapHandler,DesktopPWAsRunOnOsLogin
+kushal     12804  0.1  2.1 3509636 335060 ?      Sl   Nov20   0:09 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {3d68ab6b-c791-4568-b6cf-cef47bb8c4fa} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 9 tab
+kushal     12827  0.5  1.9 3252932 297724 ?      Sl   Nov20   0:29 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {71744d71-a4dc-4f45-92fb-c9c1195a2352} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 10 tab
+kushal     13172  0.2  1.8 7628332 295088 ?      Sl   Nov20   0:13 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {90651d78-518d-4935-b716-8f4869c89408} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 21 tab
+   232.1 MB  gnome-software
+   120.5 MB  Isolated
+   103.8 MB  dnf5daemon-serv
+    97.0 MB  firefox
+    94.1 MB  Isolated
+    89.6 MB  Isolated
+    85.5 MB  Isolated
+    75.6 MB  thunderbird
+    62.6 MB  ibus-engine-tb
+    60.4 MB  Isolated
+    57.3 MB  Isolated
+    56.7 MB  Isolated
+    56.0 MB  gnome-shell
+    37.7 MB  Isolated
+    36.6 MB  code
+Sat Nov 21 12:03:50 AM EST 2026
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ date; free -h && swapon --show; ps aux --sort=-%mem | head -n 15; for f in /proc/[0-9]*/status; do awk '/^Name:/{n=$2} /^VmSwap:/{s=$2} END{if(s>0) printf "%8.1f MB  %s\n", s/1024, n}' "$f" 2>/dev/null; done | sort -nr | head -n 15; date;
+Sat Nov 21 12:04:56 AM EST 2026
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       9.0Gi       823Mi       171Mi       4.0Gi       5.9Gi
+Swap:          8.0Gi       1.6Gi       6.4Gi
+NAME       TYPE      SIZE USED PRIO
+/dev/zram0 partition   8G 1.6G  100
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+kushal      8534  3.3  7.9 4658140 1245540 ?     Sl   Nov20  14:25 /app/lib64/thunderbird/thunderbird
+kushal     12412  7.9  6.3 13848440 988864 ?     Sl   Nov20   6:47 /usr/lib64/firefox/firefox
+kushal     20764  3.5  4.4 3699336 696748 ?      Sl   Nov20   1:15 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:56997 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fab7df7d-0bb6-49cf-8e00-8d26eacae24d} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 45 tab
+kushal     13368  0.6  3.8 16301108 596840 ?     Sl   Nov20   0:31 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43229 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {71c0faee-690d-4c20-9367-12813d68e85c} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 23 tab
+kushal     18487  1.1  3.5 1525785096 561584 ?   Sl   Nov20   0:38 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+kushal     12782  0.5  3.5 8094256 561204 ?      Sl   Nov20   0:28 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {7ee0c82c-73d0-4b7c-9540-12a17fca88d2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 8 tab
+kushal     13078  0.4  3.1 10446960 496048 ?     Sl   Nov20   0:24 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {54586487-edc8-44c6-8141-9e3f075a69c2} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 18 tab
+kushal     13058  0.8  3.1 3900312 488160 ?      Sl   Nov20   0:43 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {8170bbf8-aa07-48e9-af09-1f641f200970} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 17 tab
+kushal     13025  0.4  2.9 8226144 468324 ?      Sl   Nov20   0:22 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {733a158f-9b79-45a1-840b-a86dfedc9380} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 16 tab
+kushal     18522  0.3  2.3 1523511108 366876 ?   Sl   Nov20   0:11 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+kushal     18175  0.3  2.3 106197608 362672 ?    Sl   Nov20   0:13 /app/extra/chrome --disable-features=WebAssemblyTrapHandler,DesktopPWAsRunOnOsLogin
+kushal     12804  0.1  2.1 3509636 334992 ?      Sl   Nov20   0:09 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {3d68ab6b-c791-4568-b6cf-cef47bb8c4fa} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 9 tab
+kushal     13172  0.2  1.9 7628332 300996 ?      Sl   Nov20   0:14 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:37412 -prefMapHandle 1:307119 -jsInitHandle 2:161360 -parentBuildID 20261110113206 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {90651d78-518d-4935-b716-8f4869c89408} -parentPid 12412 -crashHelperPid 12425 -crashHelper 6 -crashReporter 7 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 21 tab
+kushal     14585  0.2  1.8 1518979216 287024 ?   Sl   Nov20   0:11 /opt/VSCode-linux-x64/code --type=renderer --enable-crash-reporter=d7543a3b-1b9b-4bdc-ac73-84177d882a41,no_channel --user-data-dir=/home/kushal/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/opt/VSCode-linux-x64/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --ozone-platform=wayland --disable-blink-features=FontMatchingCTMigration, --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1795211234002258 --launch-time-ticks=21230637392 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15764145888708652710,4088624026403455776,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,GlobalShortcutsPortal,GlobalShortcutsPortalPreferredTrigger,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=7,i,3271397429970645123,18090477257809143535,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:19a3f485-af5c-4ee8-9865-b8b87e8f9e7f
+   233.2 MB  gnome-software
+   120.5 MB  Isolated
+   104.9 MB  dnf5daemon-serv
+    96.6 MB  firefox
+    94.1 MB  Isolated
+    89.5 MB  Isolated
+    85.5 MB  Isolated
+    75.3 MB  thunderbird
+    62.6 MB  ibus-engine-tb
+    60.4 MB  Isolated
+    57.3 MB  Isolated
+    56.7 MB  Isolated
+    56.3 MB  gnome-shell
+    37.7 MB  Isolated
+    36.6 MB  code
+Sat Nov 21 12:04:56 AM EST 2026
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ dotnet --info
+.NET SDK:
+ Version:           11.0.100-rc.3.26522.148
+ Commit:            5254d8bcf5
+ Workload version:  11.0.100-manifests.2c46f3cc
+ MSBuild version:   18.12.0-1.26522.148+5254d8bcf
 
-real	0m0.008s
+Runtime Environment:
+ OS Name:     fedora
+ OS Version:  45
+ OS Platform: Linux
+ RID:         fedora.45-x64
+ Base Path:   /usr/lib64/dotnet/sdk/11.0.100-rc.3.26522.148
+
+.NET workloads installed:
+There are no installed workloads to display.
+Configured to use workload sets when installing new manifests.
+No workload sets are installed. Run "dotnet workload restore" to install a workload set.
+
+Host:
+  Version:      11.0.0-rc.3.26522.148
+  Architecture: x64
+  Commit:       5254d8bcf5
+
+.NET SDKs installed:
+  10.0.113 [/usr/lib64/dotnet/sdk]
+  11.0.100-rc.3.26522.148 [/usr/lib64/dotnet/sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 10.0.13 [/usr/lib64/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 11.0.0-rc.3.26522.148 [/usr/lib64/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 10.0.13 [/usr/lib64/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.NETCore.App 11.0.0-rc.3.26522.148 [/usr/lib64/dotnet/shared/Microsoft.NETCore.App]
+
+Other architectures found:
+  None
+
+Environment variables:
+  Not set
+
+global.json file:
+  /home/kushal/src/dotnet/observermagazine.github.io/global.json
+
+Learn more:
+  https://aka.ms/dotnet/info
+
+Download .NET:
+  https://aka.ms/dotnet/download
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ time dnf search dotnet-sdk
+Updating and loading repositories:
+ Fedora 45 - x86_64 - Updates                                                                                                                                               100% |  52.9 KiB/s |   5.1 KiB |  00m00s
+ RPM Fusion for Fedora 45 - Nonfree - Updates                                                                                                                               100% |  56.5 KiB/s |   5.6 KiB |  00m00s
+ RPM Fusion for Fedora 45 - Free - Updates                                                                                                                                  100% |  38.7 KiB/s |   3.6 KiB |  00m00s
+ Fedora 45 - x86_64                                                                                                                                                         100% | 271.5 KiB/s |  20.4 KiB |  00m00s
+Repositories loaded.
+Matched fields: name
+ dotnet-sdk-10.0.x86_64	.NET 10.0 Software Development Kit
+ dotnet-sdk-10.0-source-built-artifacts.x86_64	Internal package for building .NET 10.0 Software Development Kit
+ dotnet-sdk-11.0.x86_64	.NET 11.0 Software Development Kit
+ dotnet-sdk-11.0-source-built-artifacts.x86_64	Internal package for building .NET 11.0 Software Development Kit
+ dotnet-sdk-aot-10.0.x86_64	Ahead-of-Time (AOT) support for the .NET 10.0 Software Development Kit
+ dotnet-sdk-aot-11.0.x86_64	Ahead-of-Time (AOT) support for the .NET 11.0 Software Development Kit
+ dotnet-sdk-dbg-10.0.x86_64	Managed debug symbols for the .NET 10.0 Software Development Kit
+ dotnet-sdk-dbg-11.0.x86_64	Managed debug symbols for the .NET 11.0 Software Development Kit
+
+real	0m0.981s
+user	0m0.602s
+sys	0m0.267s
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ time dnf search dotnet-
+Updating and loading repositories:
+Last metadata expiration check: 0:00:21 ago on 2026-11-21 05:24:38.
+Repositories loaded.
+Matched fields: name
+ dotnet-apphost-pack-10.0.x86_64	Targeting Pack for Microsoft.NETCore.App 10.0
+ dotnet-apphost-pack-11.0.x86_64	Targeting Pack for Microsoft.NETCore.App 11.0
+ dotnet-host.x86_64	.NET command line launcher
+ dotnet-hostfxr-10.0.x86_64	.NET command line host resolver
+ dotnet-hostfxr-11.0.x86_64	.NET command line host resolver
+ dotnet-runtime-10.0.x86_64	NET 10.0 runtime
+ dotnet-runtime-11.0.x86_64	.NET 11.0 runtime
+ dotnet-runtime-dbg-10.0.x86_64	Managed debug symbols NET 10.0 runtime
+ dotnet-runtime-dbg-11.0.x86_64	Managed debug symbols for the .NET 11.0 runtime
+ dotnet-sdk-10.0.x86_64	.NET 10.0 Software Development Kit
+ dotnet-sdk-10.0-source-built-artifacts.x86_64	Internal package for building .NET 10.0 Software Development Kit
+ dotnet-sdk-11.0.x86_64	.NET 11.0 Software Development Kit
+ dotnet-sdk-11.0-source-built-artifacts.x86_64	Internal package for building .NET 11.0 Software Development Kit
+ dotnet-sdk-aot-10.0.x86_64	Ahead-of-Time (AOT) support for the .NET 10.0 Software Development Kit
+ dotnet-sdk-aot-11.0.x86_64	Ahead-of-Time (AOT) support for the .NET 11.0 Software Development Kit
+ dotnet-sdk-dbg-10.0.x86_64	Managed debug symbols for the .NET 10.0 Software Development Kit
+ dotnet-sdk-dbg-11.0.x86_64	Managed debug symbols for the .NET 11.0 Software Development Kit
+ dotnet-targeting-pack-10.0.x86_64	Targeting Pack for Microsoft.NETCore.App 10.0
+ dotnet-targeting-pack-11.0.x86_64	Targeting Pack for Microsoft.NETCore.App 11.0
+ dotnet-templates-10.0.x86_64	.NET 10.0 templates
+ dotnet-templates-11.0.x86_64	.NET 11.0 templates
+
+real	0m0.512s
+user	0m0.424s
+sys	0m0.136s
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ time dnf info dotnet-sdk-11.0.x86_64
+Updating and loading repositories:
+Last metadata expiration check: 0:01:02 ago on 2026-11-21 05:24:38.
+Repositories loaded.
+Installed packages
+Name            : dotnet-sdk-11.0
+Epoch           : 0
+Version         : 11.0.100~rc.3.26522.148
+Release         : 0.13.fc45
+Architecture    : x86_64
+Installed size  : 261.1 MiB
+Source          : dotnet11.0-11.0.100~rc.3.26522.148-0.13.fc45.src.rpm
+From repository : updates
+Summary         : .NET 11.0 Software Development Kit
+URL             : https://github.com/dotnet/
+License         : 0BSD AND Apache-2.0 AND (Apache-2.0 WITH LLVM-exception) AND APSL-2.0 AND BSD-2-Clause AND BSD-3-Clause AND BSD-4-Clause AND BSL-1.0 AND bzip2-1.0.6 AND CC0-1.0 AND CC-BY-3.0 AND CC-BY-4.0 AND C
+                : C-PDDC AND CNRI-Python AND EPL-1.0 AND GPL-2.0-only AND (GPL-2.0-only WITH GCC-exception-2.0) AND GPL-2.0-or-later AND GPL-3.0-only AND ICU AND ISC AND LGPL-2.1-only AND LGPL-2.1-or-later AND Li
+                : censeRef-Fedora-Public-Domain AND LicenseRef-ISO-8879 AND MIT AND MIT-Wu AND MS-PL AND MS-RL AND NCSA AND OFL-1.1 AND OpenSSL AND Unicode-DFS-2015 AND Unicode-DFS-2016 AND W3C-19980720 AND X11 A
+                : ND Zlib
+Description     : The .NET SDK is a collection of command line applications to
+                : create, build, publish and run .NET applications.
+                : 
+                : .NET is a fast, lightweight and modular platform for creating
+                : cross platform applications that work on Linux, Mac and Windows.
+                : 
+                : It particularly focuses on creating console applications, web
+                : applications and micro-services.
+Vendor          : Fedora Project
+
+real	0m0.502s
+user	0m0.420s
+sys	0m0.130s
+kushal@fedora:~/src/dotnet/observermagazine.github.io$ cd /home/kushal/src/dotnet/mercifulpotato/; time du -sh .; time dotnet format; time dotnet restore; dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot; time dotnet test; time dotnet list package; time dotnet list package --outdated; time bash export.sh;
+277M	.
+
+real	0m0.017s
 user	0m0.001s
 sys	0m0.006s
 
-real	0m8.061s
-user	0m13.003s
-sys	0m1.025s
+real	0m8.200s
+user	0m12.420s
+sys	0m1.055s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
 
-real	0m0.762s
-user	0m0.787s
-sys	0m0.175s
+real	0m0.726s
+user	0m0.796s
+sys	0m0.137s
 Content directory: content/blog
 Output directory:  src/ObserverMagazine.Web/wwwroot
 Authors directory: content/authors
-Publish before:    2026-11-01 11:37:05 UTC
+Publish before:    2026-11-21 05:33:12 UTC
 Found 3 author profile(s)
   Loaded author: kushal (kushal)
   Loaded author: abraham-lincoln (Abraham Lincoln)
@@ -250,22 +563,22 @@ Wrote RSS feed: src/ObserverMagazine.Web/wwwroot/feed.xml
 Content processing complete.
 Running tests from tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64)
 Running tests from tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64)
-tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (684ms)
-tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (879ms)
+tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (671ms)
+tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (895ms)
 
 Test run summary: Passed!
-  tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (879ms)
-  tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (684ms)
+  tests/ObserverMagazine.Integration.Tests/bin/Debug/net10.0/ObserverMagazine.Integration.Tests.dll (net10.0|x64) passed (671ms)
+  tests/ObserverMagazine.Web.Tests/bin/Debug/net10.0/ObserverMagazine.Web.Tests.dll (net10.0|x64) passed (895ms)
 
   total: 81
   failed: 0
   succeeded: 81
   skipped: 0
-  duration: 1s 070ms
+  duration: 1s 077ms
 
-real	0m6.107s
-user	0m5.384s
-sys	0m0.846s
+real	0m5.986s
+user	0m5.213s
+sys	0m0.821s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -301,9 +614,9 @@ Project 'ObserverMagazine.ContentProcessor' has the following package references
 
 (A) : Auto-referenced package.
 
-real	0m1.618s
-user	0m1.658s
-sys	0m0.352s
+real	0m1.529s
+user	0m1.502s
+sys	0m0.318s
 Restore complete (0.5s)
 
 Build succeeded in 0.6s
@@ -311,21 +624,41 @@ Build succeeded in 0.6s
 The following sources were used:
    https://api.nuget.org/v3/index.json
 
-The given project `ObserverMagazine.Web` has no updates given the current sources.
-The given project `ObserverMagazine.Integration.Tests` has no updates given the current sources.
-The given project `ObserverMagazine.Web.Tests` has no updates given the current sources.
-The given project `ObserverMagazine.ContentProcessor` has no updates given the current sources.
+Project `ObserverMagazine.Web` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package                                  Requested   Resolved   Latest
+   > Microsoft.AspNetCore.Components.WebAssembly      10.0.14     10.0.14    11.0.0
+   > Microsoft.Extensions.Http                        10.0.14     10.0.14    11.0.0
+   > Microsoft.Extensions.Logging.Configuration       10.0.14     10.0.14    11.0.0
 
-real	0m2.838s
-user	0m2.233s
-sys	0m0.452s
+Project `ObserverMagazine.Integration.Tests` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package      Requested   Resolved   Latest
+   > Markdig              1.5.1       1.5.1      1.6.0 
+   > xunit.v3             4.0.2       4.0.2      4.0.3 
+
+Project `ObserverMagazine.Web.Tests` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package      Requested   Resolved   Latest
+   > bunit                2.13.3      2.13.3     2.15.2
+   > xunit.v3             4.0.2       4.0.2      4.0.3 
+
+Project `ObserverMagazine.ContentProcessor` has the following updates to its packages
+   [net10.0]: 
+   Top-level Package      Requested   Resolved   Latest
+   > Markdig              1.5.1       1.5.1      1.6.0 
+
+
+real	0m2.754s
+user	0m2.032s
+sys	0m0.389s
 Export complete: docs/llm/dump.txt
   Total files: 192
   Blog posts (front matter only): 110
   Full content files: 79
   Binary files skipped: 3
 
-real	0m0.162s
-user	0m0.079s
-sys	0m0.060s
+real	0m0.130s
+user	0m0.072s
+sys	0m0.053s
 kushal@fedora:~/src/dotnet/mercifulpotato$ 
