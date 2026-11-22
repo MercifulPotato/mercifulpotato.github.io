@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-11-21 05:38:48 UTC
+DATE: 2026-11-22 04:12:00 UTC
 ===============================================================================
 
 ===============================================================================
@@ -135,6 +135,8 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── output.txt
 │       └── vendor
 │           ├── claude
+│           │   ├── compressed-archives
+│           │   │   └── mercifulpotato-dotnet11.tar.gz
 │           │   └── prompts
 │           │       └── 1.md
 │           ├── claude-instructions.md
@@ -200,6 +202,7 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── Models
 │       │   ├── AuthorProfile.cs
 │       │   ├── BlogPostMetadata.cs
+│       │   ├── BlogPostView.cs
 │       │   ├── CatalogProduct.cs
 │       │   └── Product.cs
 │       ├── ObserverMagazine.Web.csproj
@@ -220,6 +223,7 @@ DIRECTORY TREE (all git-tracked files)
 │       ├── Program.cs
 │       ├── Services
 │       │   ├── AnalyticsService.cs
+│       │   ├── AppLifetimeTelemetry.cs
 │       │   ├── BlogService.cs
 │       │   ├── IAnalyticsService.cs
 │       │   ├── IBlogService.cs
@@ -256,6 +260,7 @@ DIRECTORY TREE (all git-tracked files)
 │       │   └── ShowcaseTests.cs
 │       ├── ObserverMagazine.Web.Tests.csproj
 │       └── Services
+│           ├── AppLifetimeTelemetryTests.cs
 │           ├── BlogServiceTests.cs
 │           └── NoOpAnalyticsService.cs
 └── tools
@@ -268,7 +273,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-34 directories, 226 files
+35 directories, 230 files
 
 
 -------------------------------------------------------------------------------
@@ -371,7 +376,7 @@ FILE: content/authors/mercifulpotato-team.yml
 -------------------------------------------------------------------------------
 name: Merciful Potato Team
 email: hello@mercifulpotato.example
-bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 10 and Blazor WebAssembly.
+bio: The team behind Merciful Potato Magazine — building free, open-source tools with .NET 11 and Blazor WebAssembly.
 avatar: images/authors/mercifulpotato-team.png
 socials:
   github: mercifulpotato
@@ -2576,8 +2581,7 @@ FILE: Directory.Build.props
 -------------------------------------------------------------------------------
 <Project>
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <LangVersion>14.0</LangVersion>
+    <TargetFramework>net11.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -2592,42 +2596,20 @@ FILE: Directory.Packages.props
 <Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-
-    <!-- Version variables — touch these to update all related packages -->
-    <MicrosoftAspNetCoreVersion>10.0.14</MicrosoftAspNetCoreVersion>
-    <MicrosoftExtensionsVersion>10.0.14</MicrosoftExtensionsVersion>
-    <XunitVersion>4.0.2</XunitVersion>
-    <MarkdigVersion>1.5.1</MarkdigVersion>
+    <MicrosoftAspNetCoreVersion>11.0.0</MicrosoftAspNetCoreVersion>
+    <MicrosoftExtensionsVersion>11.0.0</MicrosoftExtensionsVersion>
+    <XunitVersion>4.0.3</XunitVersion>
+    <MarkdigVersion>1.6.0</MarkdigVersion>
     <YamlDotNetVersion>18.1.0</YamlDotNetVersion>
-    <BunitVersion>2.13.3</BunitVersion>
+    <BunitVersion>2.15.2</BunitVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Web -->
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(MicrosoftAspNetCoreVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Configuration" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Http" Version="$(MicrosoftExtensionsVersion)" />
-
-    <!-- Content Processing -->
     <PackageVersion Include="Markdig" Version="$(MarkdigVersion)" />
     <PackageVersion Include="YamlDotNet" Version="$(YamlDotNetVersion)" />
-
-    <!--
-      Testing — Microsoft.Testing.Platform (MTP) only.
-
-      xunit.v3 4.0 ships MTP v2 in the box and has dropped MTP v1. MTP v2 removed the
-      VSTest bridge on the .NET 10 SDK, so the two VSTest-only packages that used to
-      live here (xunit.runner.visualstudio, Microsoft.NET.Test.Sdk) are gone:
-
-        - xunit.runner.visualstudio -> VSTest adapter. Only needed by VSTest-era
-          runners; xunit.v3 carries its own MTP runner natively.
-        - Microsoft.NET.Test.Sdk    -> VSTest host. MTP test projects are plain
-          executables and do not need it.
-
-      `dotnet test` is switched into MTP mode by the "test" section in global.json.
-      Fewer packages also means a faster restore, which matters because these tests
-      are meant to run after every change.
-    -->
     <PackageVersion Include="xunit.v3" Version="$(XunitVersion)" />
     <PackageVersion Include="bunit" Version="$(BunitVersion)" />
   </ItemGroup>
@@ -2865,7 +2847,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
   TESTINGPLATFORM_TELEMETRY_OPTOUT: 1
 
 jobs:
@@ -2880,7 +2863,11 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: '11.0.x'
+          dotnet-quality: 'ga'
+
+      - name: Show .NET info
+        run: dotnet --info
 
       - name: Restore .NET dependencies
         run: dotnet restore
@@ -2889,7 +2876,7 @@ jobs:
         run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
 
       - name: Run tests
-        run: dotnet test --solution ObserverMagazine.slnx --no-restore
+        run: dotnet test --solution ObserverMagazine.slnx --no-restore --timeout 10m
 
       - name: Publish Blazor WASM
         run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
@@ -3048,14 +3035,18 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  # xunit.v3 pulls in Microsoft.Testing.Extensions.Telemetry. Opt out in CI.
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
   TESTINGPLATFORM_TELEMETRY_OPTOUT: 1
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -3063,7 +3054,11 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: '11.0.x'
+          dotnet-quality: 'ga'
+
+      - name: Show .NET info
+        run: dotnet --info
 
       - name: Restore dependencies
         run: dotnet restore
@@ -3071,9 +3066,8 @@ jobs:
       - name: Run content processor
         run: dotnet run --project tools/ObserverMagazine.ContentProcessor -- --content-dir content/blog --output-dir src/ObserverMagazine.Web/wwwroot --authors-dir content/authors
 
-      # Microsoft.Testing.Platform mode (opted in via global.json).
       - name: Run tests
-        run: dotnet test --solution ObserverMagazine.slnx --no-restore
+        run: dotnet test --solution ObserverMagazine.slnx --no-restore --timeout 10m
 
       - name: Publish Blazor WASM
         run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
@@ -3175,7 +3169,8 @@ FILE: global.json
 -------------------------------------------------------------------------------
 {
   "sdk": {
-    "version": "10.0.104",
+    "version": "11.0.100-rc.3.26522.148",
+    "allowPrerelease": true,
     "rollForward": "latestFeature"
   },
   "test": {
@@ -3219,7 +3214,7 @@ FILE: README.md
 
 A free, open-source Blazor WebAssembly application deployed to GitHub Pages.
 
-Built with **.NET 10** (LTS) and **C# 14**.
+Built with **.NET 11** (STS) and **C# 15**.
 
 ## Features
 
@@ -3232,11 +3227,35 @@ Built with **.NET 10** (LTS) and **C# 14**.
 - **Full Test Suite** — bUnit component tests + xUnit.net v3 integration tests, running on Microsoft.Testing.Platform
 
 ## Quick Start
+
 ```bash
 dotnet run --project tools/ObserverMagazine.ContentProcessor
 dotnet run --project src/ObserverMagazine.Web
 dotnet test
 ```
+
+## SDK selection
+
+`global.json` pins the minimum SDK to `11.0.100-rc.3.26522.148` with `allowPrerelease: true` and
+`rollForward: latestFeature`:
+
+- Locally, a machine that only has the RC3 SDK (for example Fedora's `dotnet-sdk-11.0` package) uses RC3.
+- Any machine with a GA `11.0.1xx` SDK installed uses the GA SDK, because it is newer than RC3.
+- CI installs the latest GA SDK with `actions/setup-dotnet` (`dotnet-version: 11.0.x`, `dotnet-quality: ga`).
+
+Packages reference the GA `11.0.0` ASP.NET Core and Microsoft.Extensions builds in both cases. Once the
+GA SDK is available locally, change `sdk.version` to `11.0.100` and remove `allowPrerelease`.
+
+## .NET 11 features used
+
+| Feature | Where |
+|---------|-------|
+| C# 15 closed hierarchy | `Models/BlogPostView.cs`, consumed by `Pages/BlogPost.razor` |
+| C# 15 collection expression arguments (`[with(capacity: n)]`) | `ProductDataGenerator`, ContentProcessor |
+| `IHostedService` in Blazor WebAssembly | `Services/AppLifetimeTelemetry.cs` |
+| `System.Threading.Lock` | `Services/TelemetryService.cs` |
+| Fingerprinted Blazor boot script (`OverrideHtmlAssetPlaceholders`) | `wwwroot/index.html` |
+| `dotnet test --timeout` run-level limit | CI workflows |
 
 ## Testing
 
@@ -3254,10 +3273,12 @@ dotnet test --solution ObserverMagazine.slnx
 dotnet test --project tests/ObserverMagazine.Web.Tests
 dotnet test --filter-class ObserverMagazine.Web.Tests.Services.BlogServiceTests
 dotnet test --filter-trait Category=Integration
+dotnet test --timeout 10m
 dotnet run --project tests/ObserverMagazine.Integration.Tests
 ```
 
-Run `dotnet test -?` from the repo root for the full option list.
+Run `dotnet test -?` from the repo root for the full option list. `DOTNET_TEST_RUNNER=VSTest`
+overrides `global.json` for one session.
 
 xUnit configuration for MTP lives in `testconfig.json` next to a test project
 (not `xunit.runner.json`, which is the VSTest-era file).
@@ -3301,11 +3322,11 @@ site size and warns above 900 MB.
 
 | Component | Technology | License |
 |-----------|-----------|---------|
-| Framework | .NET 10 / Blazor WASM 10.0.14 | MIT |
-| Markdown | Markdig 1.5.1 | BSD-2-Clause |
+| Framework | .NET 11 / Blazor WASM 11.0.0 | MIT |
+| Markdown | Markdig 1.6.0 | BSD-2-Clause |
 | YAML | YamlDotNet 18.1.0 | MIT |
-| Test framework | xUnit.net v3 4.0.2 | Apache-2.0 |
-| Component testing | bUnit 2.13.3 | MIT |
+| Test framework | xUnit.net v3 4.0.3 | Apache-2.0 |
+| Component testing | bUnit 2.15.2 | MIT |
 | Test runner | Microsoft.Testing.Platform v2 | MIT |
 | Text-to-speech | KittenTTS 0.8.1 | Apache-2.0 |
 
@@ -4836,7 +4857,7 @@ FILE: src/ObserverMagazine.Web/Layout/MainLayout.razor
                 &copy; @DateTime.UtcNow.Year Merciful Potato Magazine &mdash; Built with
                 <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" target="_blank"
                    rel="noopener noreferrer">Blazor WebAssembly</a>
-                on .NET 10.
+                on .NET 11.
             </p>
             <p>
                 <a href="/feed.xml">RSS Feed</a>
@@ -5155,6 +5176,20 @@ public sealed record BlogPostMetadata
 
 
 -------------------------------------------------------------------------------
+FILE: src/ObserverMagazine.Web/Models/BlogPostView.cs
+-------------------------------------------------------------------------------
+namespace ObserverMagazine.Web.Models;
+
+public closed record class BlogPostView;
+
+public sealed record class BlogPostLoading : BlogPostView;
+
+public sealed record class BlogPostMissing : BlogPostView;
+
+public sealed record class BlogPostLoaded(BlogPostMetadata Metadata, string Html, AuthorProfile? Author) : BlogPostView;
+
+
+-------------------------------------------------------------------------------
 FILE: src/ObserverMagazine.Web/Models/CatalogProduct.cs
 -------------------------------------------------------------------------------
 namespace ObserverMagazine.Web.Models;
@@ -5217,6 +5252,7 @@ FILE: src/ObserverMagazine.Web/ObserverMagazine.Web.csproj
   <PropertyGroup>
     <RootNamespace>ObserverMagazine.Web</RootNamespace>
     <AssemblyName>ObserverMagazine.Web</AssemblyName>
+    <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
   </PropertyGroup>
 
   <ItemGroup>
@@ -5241,7 +5277,7 @@ FILE: src/ObserverMagazine.Web/Pages/About.razor
 <p>
     Merciful Potato Magazine is a free, open-source sample project demonstrating how to build
     a modern static web application using <strong>Blazor WebAssembly</strong> on
-    <strong>.NET 10</strong>.
+    <strong>.NET 11</strong>.
 </p>
 
 <h2>Goals</h2>
@@ -5261,11 +5297,11 @@ FILE: src/ObserverMagazine.Web/Pages/About.razor
         </tr>
     </thead>
     <tbody>
-        <tr><td>Runtime</td><td>.NET 10 (LTS)</td><td>MIT</td></tr>
+        <tr><td>Runtime</td><td>.NET 11 (STS)</td><td>MIT</td></tr>
         <tr><td>UI Framework</td><td>Blazor WebAssembly</td><td>MIT</td></tr>
-        <tr><td>Language</td><td>C# 14</td><td>MIT</td></tr>
-        <tr><td>Markdown</td><td>Markdig 1.1.1</td><td>BSD-2-Clause</td></tr>
-        <tr><td>YAML</td><td>YamlDotNet 16.3.0</td><td>MIT</td></tr>
+        <tr><td>Language</td><td>C# 15</td><td>MIT</td></tr>
+        <tr><td>Markdown</td><td>Markdig 1.6.0</td><td>BSD-2-Clause</td></tr>
+        <tr><td>YAML</td><td>YamlDotNet 18.1.0</td><td>MIT</td></tr>
         <tr><td>Testing</td><td>xUnit v3 + bUnit</td><td>Apache-2.0 / MIT</td></tr>
         <tr><td>Hosting</td><td>GitHub Pages</td><td>Free</td></tr>
         <tr><td>Backend</td><td>Cloudflare Workers (D1)</td><td>Free tier</td></tr>
@@ -5316,159 +5352,145 @@ FILE: src/ObserverMagazine.Web/Pages/BlogPost.razor
 @inject IAnalyticsService Analytics
 @inject IJSRuntime Js
 
-<PageTitle>@(_metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
+<PageTitle>@PageTitleText — Merciful Potato Magazine</PageTitle>
 
-@if (_loading)
+@switch (_view)
 {
-    <p><em>Loading...</em></p>
-}
-else if (_metadata is null)
-{
-    <h1>Post Not Found</h1>
-    <p>Sorry, we couldn't find that post. <a href="blog">Back to Blog</a></p>
-}
-else
-{
-    <article class="blog-post">
-        <header>
-            <h1>@_metadata.Title</h1>
-            <div class="blog-meta">
-                <time datetime="@_metadata.Date.ToString("yyyy-MM-dd")">
-                    @_metadata.Date.ToString("MMMM d, yyyy")
-                </time>
-                @if (_metadata.Updated.HasValue)
-                {
-                    <span> · Updated @_metadata.Updated.Value.ToString("MMMM d, yyyy")</span>
-                }
-                @if (!string.IsNullOrEmpty(_metadata.AuthorName))
-                {
-                    <span> · @_metadata.AuthorName</span>
-                }
-                @if (_metadata.ReadingTimeMinutes > 0)
-                {
-                    <span> · @_metadata.ReadingTimeMinutes min read</span>
-                }
-                @if (_viewCount.HasValue)
-                {
-                    <span> · @_viewCount views</span>
-                }
-            </div>
-            @if (_metadata.Tags is { Length: > 0 })
-            {
-                <div class="tag-list">
-                    @foreach (var tag in _metadata.Tags)
+    case BlogPostLoading:
+        <p><em>Loading...</em></p>
+        break;
+
+    case BlogPostMissing:
+        <h1>Post Not Found</h1>
+        <p>Sorry, we couldn't find that post. <a href="blog">Back to Blog</a></p>
+        break;
+
+    case BlogPostLoaded(var metadata, var html, var author):
+        <article class="blog-post">
+            <header>
+                <h1>@metadata.Title</h1>
+                <div class="blog-meta">
+                    <time datetime="@metadata.Date.ToString("yyyy-MM-dd")">
+                        @metadata.Date.ToString("MMMM d, yyyy")
+                    </time>
+                    @if (metadata.Updated.HasValue)
                     {
-                        <a class="tag" href="blog/tag/@Uri.EscapeDataString(tag)">@tag</a>
+                        <span> · Updated @metadata.Updated.Value.ToString("MMMM d, yyyy")</span>
+                    }
+                    @if (!string.IsNullOrEmpty(metadata.AuthorName))
+                    {
+                        <span> · @metadata.AuthorName</span>
+                    }
+                    @if (metadata.ReadingTimeMinutes > 0)
+                    {
+                        <span> · @metadata.ReadingTimeMinutes min read</span>
+                    }
+                    @if (_viewCount.HasValue)
+                    {
+                        <span> · @_viewCount views</span>
                     }
                 </div>
-            }
-        </header>
+                @if (metadata.Tags is { Length: > 0 })
+                {
+                    <div class="tag-list">
+                        @foreach (var tag in metadata.Tags)
+                        {
+                            <a class="tag" href="blog/tag/@Uri.EscapeDataString(tag)">@tag</a>
+                        }
+                    </div>
+                }
+            </header>
 
-        <BlogTtsPlayer Slug="@Slug" />
+            <BlogTtsPlayer Slug="@Slug" />
 
-        <div class="blog-content">
-            @((MarkupString)_htmlContent)
-        </div>
+            <div class="blog-content">
+                @((MarkupString)html)
+            </div>
 
-        <Reactions Slug="@Slug" />
+            <Reactions Slug="@Slug" />
 
-        <AuthorCard Author="_authorProfile" />
+            <AuthorCard Author="author" />
 
-        <footer class="blog-post-footer">
-            <a href="blog">&larr; Back to Blog</a>
-        </footer>
-    </article>
+            <footer class="blog-post-footer">
+                <a href="blog">&larr; Back to Blog</a>
+            </footer>
+        </article>
+        break;
 }
 
 @code {
     [Parameter] public string Slug { get; set; } = "";
 
-    private BlogPostMetadata? _metadata;
-    private string _htmlContent = "";
-    private bool _loading = true;
-    private AuthorProfile? _authorProfile;
+    private BlogPostView _view = new BlogPostLoading();
     private int? _viewCount;
+
+    private string PageTitleText => _view is BlogPostLoaded loaded ? loaded.Metadata.Title : "Post";
 
     protected override async Task OnParametersSetAsync()
     {
-        _loading = true;
+        _view = new BlogPostLoading();
+        _viewCount = null;
         Logger.LogInformation("Loading blog post: {Slug}", Slug);
 
+        _view = await LoadAsync();
+
+        if (_view is BlogPostLoaded loaded)
+        {
+            await Analytics.TrackPageViewAsync("BlogPost", $"{loaded.Metadata.Title} ({Slug})");
+            await Analytics.IncrementViewAsync(Slug);
+            _viewCount = await Analytics.GetViewCountAsync(Slug);
+        }
+    }
+
+    private async Task<BlogPostView> LoadAsync()
+    {
         try
         {
-            _metadata = await BlogService.GetPostMetadataAsync(Slug);
-            if (_metadata is not null)
+            var metadata = await BlogService.GetPostMetadataAsync(Slug);
+            if (metadata is null)
             {
-                var rawHtml = await BlogService.GetPostHtmlAsync(Slug);
-                _htmlContent = PostProcessHtml(rawHtml);
-
-                if (!string.IsNullOrEmpty(_metadata.Author))
-                {
-                    _authorProfile = await BlogService.GetAuthorAsync(_metadata.Author);
-                }
-
-                await Analytics.TrackPageViewAsync("BlogPost", $"{_metadata.Title} ({Slug})");
-                await Analytics.IncrementViewAsync(Slug);
-                _viewCount = await Analytics.GetViewCountAsync(Slug);
+                return new BlogPostMissing();
             }
+
+            var html = PostProcessHtml(await BlogService.GetPostHtmlAsync(Slug));
+            var author = string.IsNullOrEmpty(metadata.Author)
+                ? null
+                : await BlogService.GetAuthorAsync(metadata.Author);
+
+            return new BlogPostLoaded(metadata, html, author);
         }
         catch (Exception ex)
         {
             Logger.LogError(ex, "Failed to load post {Slug}", Slug);
-            _metadata = null;
-        }
-        finally
-        {
-            _loading = false;
+            return new BlogPostMissing();
         }
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        // Trigger syntax highlighting and scroll-detection after content renders
-        if (!_loading && _metadata is not null)
+        if (_view is not BlogPostLoaded)
         {
-            try
-            {
-                await Js.InvokeVoidAsync("observerHighlight.highlightAll");
-                await Js.InvokeVoidAsync("observerCodeScroll.init");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogDebug(ex, "Post-render enhancement failed for {Slug}", Slug);
-            }
+            return;
+        }
+
+        try
+        {
+            await Js.InvokeVoidAsync("observerHighlight.highlightAll");
+            await Js.InvokeVoidAsync("observerCodeScroll.init");
+        }
+        catch (Exception ex)
+        {
+            Logger.LogDebug(ex, "Post-render enhancement failed for {Slug}", Slug);
         }
     }
 
-    /// <summary>
-    /// Post-processes Markdig HTML to wrap code blocks and tables with
-    /// mobile-friendly scroll containers. Runs entirely in C# — the DOM
-    /// transformation itself needs no JavaScript.
-    /// </summary>
-    private static string PostProcessHtml(string html)
-    {
-        // Wrap every <pre> with a scroll container that provides a
-        // right-edge fade gradient and a "scroll →" hint label.
-        // Safe because Markdig escapes < inside code as &lt; and
-        // <pre> is the only HTML tag starting with those four chars.
-        html = html.Replace(
+    private static string PostProcessHtml(string html) => html
+        .Replace(
             "<pre",
-            "<div class=\"code-block-wrap\"><span class=\"code-scroll-hint\" aria-hidden=\"true\">scroll \u2192</span><pre");
-        html = html.Replace(
-            "</pre>",
-            "</pre></div>");
-
-        // Wrap every <table> so it scrolls horizontally on narrow
-        // viewports without pushing the outer page wider.
-        html = html.Replace(
-            "<table",
-            "<div class=\"table-scroll-wrap\"><table");
-        html = html.Replace(
-            "</table>",
-            "</table></div>");
-
-        return html;
-    }
+            "<div class=\"code-block-wrap\"><span class=\"code-scroll-hint\" aria-hidden=\"true\">scroll \u2192</span><pre")
+        .Replace("</pre>", "</pre></div>")
+        .Replace("<table", "<div class=\"table-scroll-wrap\"><table")
+        .Replace("</table>", "</table></div>");
 }
 
 
@@ -5975,7 +5997,7 @@ FILE: src/ObserverMagazine.Web/Pages/Home.razor
 <section class="hero">
     <h1>Merciful Potato Magazine</h1>
     <p class="lead">
-        A free, open-source Blazor WebAssembly showcase built on .NET 10.
+        A free, open-source Blazor WebAssembly showcase built on .NET 11.
         Explore modern web patterns, read our blog, and use this as a starting point
         for your own projects.
     </p>
@@ -7564,28 +7586,17 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-// Configure HttpClient for fetching static data
 builder.Services.AddScoped(_ =>
     new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-// Register application services
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddSingleton<TelemetryService>();
 builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
+builder.Services.AddHostedService<AppLifetimeTelemetry>();
 
-// Configure logging
 builder.Logging.SetMinimumLevel(LogLevel.Information);
 
-var host = builder.Build();
-
-// Log application startup
-var logger = host.Services.GetRequiredService<ILoggerFactory>().CreateLogger("App");
-logger.LogInformation("Merciful Potato Magazine started at {Time}", DateTime.UtcNow);
-
-var telemetry = host.Services.GetRequiredService<TelemetryService>();
-telemetry.TrackEvent("AppStarted");
-
-await host.RunAsync();
+await builder.Build().RunAsync();
 
 
 -------------------------------------------------------------------------------
@@ -7745,6 +7756,35 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
 
 -------------------------------------------------------------------------------
+FILE: src/ObserverMagazine.Web/Services/AppLifetimeTelemetry.cs
+-------------------------------------------------------------------------------
+using Microsoft.Extensions.Hosting;
+
+namespace ObserverMagazine.Web.Services;
+
+public sealed class AppLifetimeTelemetry(TelemetryService telemetry, ILogger<AppLifetimeTelemetry> logger) : IHostedService
+{
+    public const string StartedCounter = "app:started";
+    public const string StoppedCounter = "app:stopped";
+
+    public Task StartAsync(CancellationToken cancellationToken)
+    {
+        logger.LogInformation("Merciful Potato Magazine started at {Time}", DateTime.UtcNow);
+        telemetry.IncrementCounter(StartedCounter);
+        telemetry.TrackEvent("AppStarted");
+        return Task.CompletedTask;
+    }
+
+    public Task StopAsync(CancellationToken cancellationToken)
+    {
+        telemetry.IncrementCounter(StoppedCounter);
+        telemetry.TrackEvent("AppStopped");
+        return Task.CompletedTask;
+    }
+}
+
+
+-------------------------------------------------------------------------------
 FILE: src/ObserverMagazine.Web/Services/BlogService.cs
 -------------------------------------------------------------------------------
 using System.Net.Http.Json;
@@ -7879,10 +7919,6 @@ using ObserverMagazine.Web.Models;
 
 namespace ObserverMagazine.Web.Services;
 
-/// <summary>
-/// Generates deterministic sample product data for the showcase catalog.
-/// Uses a seeded Random so the same 20_000 products are generated every time.
-/// </summary>
 public static class ProductDataGenerator
 {
     private static readonly string[] Adjectives =
@@ -7903,7 +7939,6 @@ public static class ProductDataGenerator
         "Charcoal", "Burgundy", "Cobalt", "Amber", "Lavender"
     ];
 
-    // Must match the SelectOptions in Showcase.razor Status column and the test expectations
     private static readonly string[] Statuses = ["Active", "Active", "Active", "Active", "Draft", "Out of Stock"];
 
     private static readonly (string Category, string[] Products, string[] Brands, decimal MinPrice, decimal MaxPrice, double MinWeight, double MaxWeight, int MinWarranty, int MaxWarranty)[] Categories =
@@ -7940,9 +7975,9 @@ public static class ProductDataGenerator
     public static List<CatalogProduct> Generate(int count = 20_000, int seed = 42)
     {
         var rng = new Random(seed);
-        var products = new List<CatalogProduct>(count);
+        List<CatalogProduct> products = [with(capacity: count)];
         var baseDate = new DateTime(2024, 1, 1);
-        var usedSkus = new HashSet<string>();
+        HashSet<string> usedSkus = [with(capacity: count)];
 
         for (int i = 0; i < count; i++)
         {
@@ -7953,7 +7988,6 @@ public static class ProductDataGenerator
             var color = Colors[rng.Next(Colors.Length)];
             var name = $"{adj} {productType}";
 
-            // Generate unique SKU
             string sku;
             do
             {
@@ -7963,7 +7997,6 @@ public static class ProductDataGenerator
             var priceRange = catEntry.MaxPrice - catEntry.MinPrice;
             var price = Math.Round(catEntry.MinPrice + (decimal)(rng.NextDouble() * (double)priceRange), 2);
 
-            // ~30% chance of having a compare-at price (sale)
             decimal? compareAt = rng.NextDouble() < 0.3
                 ? Math.Round(price * (1m + (decimal)(rng.NextDouble() * 0.4 + 0.1)), 2)
                 : null;
@@ -8004,9 +8037,6 @@ public static class ProductDataGenerator
         return products;
     }
 
-    /// <summary>
-    /// Creates a deterministic GUID from a seed and index so we get the same IDs every time.
-    /// </summary>
     private static Guid CreateDeterministicGuid(int seed, int index)
     {
         var bytes = new byte[16];
@@ -8024,15 +8054,10 @@ FILE: src/ObserverMagazine.Web/Services/TelemetryService.cs
 -------------------------------------------------------------------------------
 namespace ObserverMagazine.Web.Services;
 
-/// <summary>
-/// Lightweight telemetry service for tracking events and metrics in the browser.
-/// Logs to ILogger (browser console). Can be extended with a real OpenTelemetry
-/// collector endpoint when one is available.
-/// </summary>
 public sealed class TelemetryService(ILogger<TelemetryService> logger)
 {
     private readonly Dictionary<string, long> _counters = new();
-    private readonly object _lockObj = new();
+    private readonly Lock _lock = new();
 
     public void TrackEvent(string eventName, IDictionary<string, string>? properties = null)
     {
@@ -8044,7 +8069,7 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
 
     public void IncrementCounter(string counterName, long value = 1)
     {
-        lock (_lockObj)
+        lock (_lock)
         {
             _counters.TryGetValue(counterName, out var current);
             _counters[counterName] = current + value;
@@ -8054,7 +8079,7 @@ public sealed class TelemetryService(ILogger<TelemetryService> logger)
 
     public long GetCounter(string counterName)
     {
-        lock (_lockObj)
+        lock (_lock)
         {
             return _counters.GetValueOrDefault(counterName, 0);
         }
@@ -8554,9 +8579,11 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>Merciful Potato Magazine</title>
     <base href="/" />
+    <link rel="preload" id="webassembly" />
     <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
+    <script type="importmap"></script>
 
     <!-- Apply saved theme BEFORE first paint to prevent flash -->
     <script>
@@ -9143,7 +9170,7 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
             }
         })();
     </script>
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
 </body>
 </html>
 
@@ -20751,6 +20778,47 @@ FILE: tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj
 
 
 -------------------------------------------------------------------------------
+FILE: tests/ObserverMagazine.Web.Tests/Services/AppLifetimeTelemetryTests.cs
+-------------------------------------------------------------------------------
+using Microsoft.Extensions.Logging.Abstractions;
+using ObserverMagazine.Web.Services;
+using Xunit;
+
+namespace ObserverMagazine.Web.Tests.Services;
+
+public class AppLifetimeTelemetryTests
+{
+    private static (AppLifetimeTelemetry Sut, TelemetryService Telemetry) Create()
+    {
+        var telemetry = new TelemetryService(NullLogger<TelemetryService>.Instance);
+        return (new AppLifetimeTelemetry(telemetry, NullLogger<AppLifetimeTelemetry>.Instance), telemetry);
+    }
+
+    [Fact]
+    public async Task StartAsync_IncrementsStartedCounter()
+    {
+        var (sut, telemetry) = Create();
+
+        await sut.StartAsync(TestContext.Current.CancellationToken);
+
+        Assert.Equal(1, telemetry.GetCounter(AppLifetimeTelemetry.StartedCounter));
+        Assert.Equal(0, telemetry.GetCounter(AppLifetimeTelemetry.StoppedCounter));
+    }
+
+    [Fact]
+    public async Task StopAsync_IncrementsStoppedCounter()
+    {
+        var (sut, telemetry) = Create();
+
+        await sut.StartAsync(TestContext.Current.CancellationToken);
+        await sut.StopAsync(TestContext.Current.CancellationToken);
+
+        Assert.Equal(1, telemetry.GetCounter(AppLifetimeTelemetry.StoppedCounter));
+    }
+}
+
+
+-------------------------------------------------------------------------------
 FILE: tests/ObserverMagazine.Web.Tests/Services/BlogServiceTests.cs
 -------------------------------------------------------------------------------
 using System.Net;
@@ -21618,7 +21686,6 @@ FILE: tools/ObserverMagazine.ContentProcessor/Program.cs
 using System.Text.Json;
 using ObserverMagazine.ContentProcessor;
 
-// Parse command-line arguments
 string contentDir = "content/blog";
 string outputDir = "src/ObserverMagazine.Web/wwwroot";
 string authorsDir = "content/authors";
@@ -21641,7 +21708,6 @@ Console.WriteLine($"Output directory:  {outputDir}");
 Console.WriteLine($"Authors directory: {authorsDir}");
 Console.WriteLine($"Publish before:    {publishBefore:yyyy-MM-dd HH:mm:ss} UTC");
 
-// --- Process author profiles ---
 var authorProfiles = new Dictionary<string, AuthorProfile>(StringComparer.OrdinalIgnoreCase);
 
 if (Directory.Exists(authorsDir))
@@ -21671,7 +21737,6 @@ else
     Console.WriteLine($"Authors directory '{authorsDir}' does not exist. No author profiles loaded.");
 }
 
-// Write authors.json
 string blogDataDir = Path.Combine(outputDir, "blog-data");
 Directory.CreateDirectory(blogDataDir);
 
@@ -21686,7 +21751,6 @@ var authorsJson = JsonSerializer.Serialize(authorProfiles.Values.ToArray(), json
 File.WriteAllText(authorsPath, authorsJson);
 Console.WriteLine($"Wrote authors index: {authorsPath} ({authorProfiles.Count} authors)");
 
-// --- Process blog posts ---
 if (!Directory.Exists(contentDir))
 {
     Console.WriteLine($"Content directory '{contentDir}' does not exist. Creating with no posts.");
@@ -21696,7 +21760,7 @@ if (!Directory.Exists(contentDir))
 var markdownFiles = Directory.GetFiles(contentDir, "*.md", SearchOption.TopDirectoryOnly);
 Console.WriteLine($"Found {markdownFiles.Length} markdown files");
 
-var allPostMetadata = new List<PostIndexEntry>();
+List<PostIndexEntry> allPostMetadata = [with(capacity: markdownFiles.Length)];
 var postHtmlMap = new Dictionary<string, string>();
 int skippedDrafts = 0;
 int skippedFuture = 0;
@@ -21714,7 +21778,6 @@ foreach (var mdFile in markdownFiles)
         continue;
     }
 
-    // Skip drafts
     if (frontMatter.Draft)
     {
         Console.WriteLine($"  SKIPPED: Draft post '{frontMatter.Title}'");
@@ -21722,7 +21785,6 @@ foreach (var mdFile in markdownFiles)
         continue;
     }
 
-    // Skip future-dated posts
     if (frontMatter.Date > publishBefore)
     {
         Console.WriteLine($"  SKIPPED: Future post '{frontMatter.Title}' (date: {frontMatter.Date:yyyy-MM-dd}, publish-before: {publishBefore:yyyy-MM-dd})");
@@ -21730,14 +21792,12 @@ foreach (var mdFile in markdownFiles)
         continue;
     }
 
-    // Derive slug from filename
     var fileName = Path.GetFileNameWithoutExtension(mdFile);
     var slug = FrontMatterParser.DeriveSlug(fileName);
 
     var html = MarkdownProcessor.ToHtml(markdownBody);
     var readingTime = FrontMatterParser.CalculateReadingTime(markdownBody);
 
-    // Resolve author display name
     var authorId = frontMatter.Author ?? "";
     var authorName = authorId;
     string? authorEmail = null;
@@ -21751,7 +21811,6 @@ foreach (var mdFile in markdownFiles)
         Console.WriteLine($"  WARNING: No author profile found for '{authorId}'");
     }
 
-    // Write individual post HTML
     var htmlPath = Path.Combine(blogDataDir, $"{slug}.html");
     File.WriteAllText(htmlPath, html);
     Console.WriteLine($"  Wrote: {htmlPath} (~{readingTime} min read)");
@@ -21776,20 +21835,17 @@ foreach (var mdFile in markdownFiles)
     });
 }
 
-// Sort by date descending
 allPostMetadata.Sort((a, b) => b.Date.CompareTo(a.Date));
 
-// Write posts index JSON
 var indexPath = Path.Combine(blogDataDir, "posts-index.json");
 var indexJson = JsonSerializer.Serialize(allPostMetadata, jsonOptions);
 File.WriteAllText(indexPath, indexJson);
 Console.WriteLine($"Wrote posts index: {indexPath} ({allPostMetadata.Count} posts, {skippedDrafts} drafts skipped, {skippedFuture} future posts skipped)");
 
-// Generate RSS feed with full post content
 var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
     title: "Merciful Potato Magazine",
-    description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
+    description: "A free, open-source Blazor WebAssembly showcase on .NET 11",
     siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata,
     getPostHtml: slug => postHtmlMap.GetValueOrDefault(slug)
@@ -21799,7 +21855,6 @@ Console.WriteLine($"Wrote RSS feed: {feedPath}");
 
 Console.WriteLine("Content processing complete.");
 
-// --- Types used by the index ---
 public sealed class PostIndexEntry
 {
     public string Slug { get; init; } = "";
@@ -21901,9 +21956,9 @@ soundfile>=0.13.0
 
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 192
+Total Files Exported: 195
   Blog posts (front matter only): 110
-  Full content files: 79
+  Full content files: 82
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
 ===============================================================================
