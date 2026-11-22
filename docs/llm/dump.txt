@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-11-22 13:41:22 UTC
+DATE: 2026-11-22 14:44:31 UTC
 ===============================================================================
 
 ===============================================================================
@@ -128,6 +128,7 @@ DIRECTORY TREE (all git-tracked files)
 ├── Directory.Packages.props
 ├── docs
 │   ├── images
+│   │   ├── google-chrome-lighthouse.png
 │   │   ├── iphone-eight-plus-loading-failed.png
 │   │   ├── iphone-eight-plus-loading.png
 │   │   └── nexus-6-loading-failed.png
@@ -289,7 +290,7 @@ DIRECTORY TREE (all git-tracked files)
     ├── requirements-audio.txt
     └── requirements-smoke.txt
 
-37 directories, 244 files
+37 directories, 245 files
 
 
 -------------------------------------------------------------------------------
@@ -3396,6 +3397,86 @@ run the app and it never gets past the loading screen.
   exceptions for every call. Analytics problems never break a page.
 - `BlogService` logs HTTP failures and invalid JSON as errors and does not cache a failed response, so a transient
   failure does not leave the blog empty for the rest of the session.
+
+<img src="docs/images/iphone-eight-plus-loading.png" alt="iPhone Eight Plus loading" width="200">
+<img src="docs/images/iphone-eight-plus-loading-failed.png" alt="iPhone Eight Plus loading failed" width="200">
+<img src="docs/images/nexus-6-loading-failed.png" alt="Nexus 6 loading failed" width="200">
+<img src="docs/images/google-chrome-lighthouse.png" alt="Light house performance on mobile" width="600">
+
+iPhone Eight Plus
+
+```
+Merciful Potato Magazine startup report
+Status: failed
+Cause: The application stopped making progress (timeout)
+Time: 2026-11-22T13:26:05.586Z
+Elapsed: 269.4s
+URL: https://mercifulpotato.github.io/
+User agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_7_16 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6.2 Mobile/15E148 Safari/604.1
+Load progress: 100%
+
+Browser capabilities:
+  webAssembly: true
+  webAssemblySimd: true
+  webAssemblyExceptions: true
+  promise: true
+  fetch: true
+  bigInt: true
+  importMaps: true
+  localStorage: true
+  cacheStorage: true
+  secureContext: true
+  online: true
+  cookiesEnabled: true
+  deviceMemoryGb: unknown
+  cpuCores: 4
+  language: en-US
+  viewport: 414x617
+
+Messages captured while loading:
+  [0.1s] error: MONO_WASM: Assert failed: This browser/engine doesn't support WASM exception handling. Please use a modern version. See also https://learn.microsoft.com/aspnet/core/blazor/supported-platforms Error: Assert failed: This browser/engine doesn't support WASM exception handling. Please use a modern version. See also https://learn.microsoft.com/aspnet/core/blazor/supported-platforms
+  [0.1s] rejection: Error: Assert failed: This browser/engine doesn't support WASM exception handling. Please use a modern version. See also https://learn.microsoft.com/aspnet/core/blazor/supported-platforms
+dt@https://mercifulpotato.github.io/_framework/dotnet.runtime.uyfhwbfd13.js:3:19357
+Nc@https://mercifulpotato.github.io/_framework/dotnet.runtime.uyfhwbfd13.js:3:181347
+setup@https://mercifulpotato.github.io/_framework/dotnet.native.gyn70opcq7.js:1:8676
+@https://mercifulpotato.github.io/_framework/dotnet.native.gyn70opcq7.js:1:93518
+createDotnetRuntime@https://mercifulpotato.github.io/_framework/dotnet.native.gyn70opcq7.js:1:50
+@https://mercifulpotato.github.io/_framework/dotnet.geuw83fa10.js:4:30757
+  [0.2s] rejection: CompileError: WebAssembly.Module doesn't parse at byte 1283: can't get 1th Type's return value
+```
+
+Nexus 6
+```
+Merciful Potato Magazine startup report
+Status: failed
+Cause: Your browser is too old for this site (oldWebAssembly)
+Time: 2026-11-22T13:35:23.315Z
+Elapsed: 10.0s
+URL: https://mercifulpotato.github.io/
+User agent: Mozilla/5.0 (Android 11; Mobile; rv:162.0) Gecko/162.0 Firefox/162.0
+Load progress: not reported
+
+Browser capabilities:
+  webAssembly: true
+  webAssemblySimd: false
+  webAssemblyExceptions: true
+  promise: true
+  fetch: true
+  bigInt: true
+  importMaps: true
+  localStorage: true
+  cacheStorage: true
+  secureContext: true
+  online: true
+  cookiesEnabled: true
+  deviceMemoryGb: unknown
+  cpuCores: 4
+  language: en-US
+  viewport: 480x695
+
+Messages captured while loading:
+  [0.1s] warn: Missing browser features: WebAssembly SIMD
+```  
 
 ## Audio narration
 
