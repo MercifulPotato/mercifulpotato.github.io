@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-11-22 12:06:31 UTC
+DATE: 2026-11-22 13:14:24 UTC
 ===============================================================================
 
 ===============================================================================
@@ -136,6 +136,7 @@ DIRECTORY TREE (all git-tracked files)
 │       └── vendor
 │           ├── claude
 │           │   ├── compressed-archives
+│           │   │   ├── mercifulpotato-boot-diagnostics.tar.gz
 │           │   │   └── mercifulpotato-dotnet11.tar.gz
 │           │   └── prompts
 │           │       ├── 1.md
@@ -226,6 +227,7 @@ DIRECTORY TREE (all git-tracked files)
 │       │   ├── AnalyticsService.cs
 │       │   ├── AppLifetimeTelemetry.cs
 │       │   ├── BlogService.cs
+│       │   ├── GlobalExceptionLogging.cs
 │       │   ├── IAnalyticsService.cs
 │       │   ├── IBlogService.cs
 │       │   ├── ProductDataGenerator.cs
@@ -233,13 +235,16 @@ DIRECTORY TREE (all git-tracked files)
 │       └── wwwroot
 │           ├── 404.html
 │           ├── css
-│           │   └── app.css
+│           │   ├── app.css
+│           │   └── boot.css
 │           ├── images
 │           │   └── authors
 │           │       ├── kushal.png
 │           │       ├── mercifulpotato-team.png
 │           │       └── mercifulpotato-team.txt
 │           ├── index.html
+│           ├── js
+│           │   └── boot.js
 │           ├── pdf
 │           │   └── asrycmmbqoaz6k9x.pdf
 │           ├── plaintext
@@ -256,16 +261,20 @@ DIRECTORY TREE (all git-tracked files)
 │   │   └── RssGeneratorTests.cs
 │   └── ObserverMagazine.Web.Tests
 │       ├── Components
+│       │   ├── MainLayoutTests.cs
 │       │   ├── MasterDetailTests.cs
 │       │   ├── NavMenutests.cs
 │       │   ├── ResponsiveTableTests.cs
 │       │   └── ShowcaseTests.cs
 │       ├── ObserverMagazine.Web.Tests.csproj
 │       └── Services
+│           ├── AnalyticsServiceTests.cs
 │           ├── AppLifetimeTelemetryTests.cs
 │           ├── BlogServiceTests.cs
+│           ├── ListLogger.cs
 │           └── NoOpAnalyticsService.cs
 └── tools
+    ├── boot_smoke_test.py
     ├── generate_audio.py
     ├── ObserverMagazine.ContentProcessor
     │   ├── FrontMatterParser.cs
@@ -273,9 +282,10 @@ DIRECTORY TREE (all git-tracked files)
     │   ├── ObserverMagazine.ContentProcessor.csproj
     │   ├── Program.cs
     │   └── RssGenerator.cs
-    └── requirements-audio.txt
+    ├── requirements-audio.txt
+    └── requirements-smoke.txt
 
-35 directories, 232 files
+36 directories, 241 files
 
 
 -------------------------------------------------------------------------------
@@ -2871,6 +2881,14 @@ jobs:
       - name: Show .NET info
         run: dotnet --info
 
+      - name: Verify a stable .NET SDK was selected
+        run: |
+          version="$(dotnet --version)"
+          echo "Using .NET SDK ${version}"
+          case "${version}" in
+            *-*) echo "::error::Prerelease SDK ${version} was selected; CI must build with the latest stable SDK"; exit 1 ;;
+          esac
+
       - name: Restore .NET dependencies
         run: dotnet restore
 
@@ -2883,10 +2901,20 @@ jobs:
       - name: Publish Blazor WASM
         run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
 
-      - name: Strip source map references from framework JS
+      - name: Setup Python 3.12 (boot smoke test)
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/requirements-smoke.txt
+
+      - name: Install Playwright Chromium
         run: |
-          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/# sourceMappingURL=/d' {} + 2>/dev/null || true
-          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/@ sourceMappingURL=/d' {} + 2>/dev/null || true
+          pip install -r tools/requirements-smoke.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Boot smoke test (published site in headless Chromium)
+        run: python tools/boot_smoke_test.py --site-dir publish/wwwroot
 
       - name: Upload site
         uses: actions/upload-artifact@v7
@@ -3062,6 +3090,14 @@ jobs:
       - name: Show .NET info
         run: dotnet --info
 
+      - name: Verify a stable .NET SDK was selected
+        run: |
+          version="$(dotnet --version)"
+          echo "Using .NET SDK ${version}"
+          case "${version}" in
+            *-*) echo "::error::Prerelease SDK ${version} was selected; CI must build with the latest stable SDK"; exit 1 ;;
+          esac
+
       - name: Restore dependencies
         run: dotnet restore
 
@@ -3074,10 +3110,20 @@ jobs:
       - name: Publish Blazor WASM
         run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
 
-      - name: Strip source map references from framework JS
+      - name: Setup Python 3.12 (boot smoke test)
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/requirements-smoke.txt
+
+      - name: Install Playwright Chromium
         run: |
-          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/# sourceMappingURL=/d' {} + 2>/dev/null || true
-          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/@ sourceMappingURL=/d' {} + 2>/dev/null || true
+          pip install -r tools/requirements-smoke.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Boot smoke test (published site in headless Chromium)
+        run: python tools/boot_smoke_test.py --site-dir publish/wwwroot
 
       - name: Prepare preview
         run: |
@@ -3227,6 +3273,8 @@ Built with **.NET 11** (STS) and **C# 15**.
 - **Master-Detail Flow** — Click a list item to view full details
 - **OpenTelemetry-ready Logging** — Structured logging via `ILogger`
 - **Full Test Suite** — bUnit component tests + xUnit.net v3 integration tests, running on Microsoft.Testing.Platform
+- **Boot smoke test** — CI serves the published site and verifies it actually starts in headless Chromium
+- **Startup diagnostics** — if the app cannot start, visitors see an explanation of what failed and why instead of a frozen loading screen
 
 ## Quick Start
 
@@ -3244,6 +3292,8 @@ dotnet test
 - Locally, a machine that only has the RC3 SDK (for example Fedora's `dotnet-sdk-11.0` package) uses RC3.
 - Any machine with a GA `11.0.1xx` SDK installed uses the GA SDK, because it is newer than RC3.
 - CI installs the latest GA SDK with `actions/setup-dotnet` (`dotnet-version: 11.0.x`, `dotnet-quality: ga`).
+- Both workflows fail fast with "Prerelease SDK ... was selected" if `dotnet --version` reports a prerelease SDK,
+  so CI can never silently build with an RC.
 
 Packages reference the GA `11.0.0` ASP.NET Core and Microsoft.Extensions builds in both cases. Once the
 GA SDK is available locally, change `sdk.version` to `11.0.100` and remove `allowPrerelease`.
@@ -3279,6 +3329,20 @@ dotnet test --timeout 10m
 dotnet run --project tests/ObserverMagazine.Integration.Tests
 ```
 
+The boot smoke test publishes nothing itself; point it at a published `wwwroot`:
+
+```bash
+dotnet publish src/ObserverMagazine.Web -c Release -o publish
+pip install -r tools/requirements-smoke.txt
+python -m playwright install chromium
+python tools/boot_smoke_test.py --site-dir publish/wwwroot
+python tools/boot_smoke_test.py --site-dir publish/wwwroot --route /blog --route /showcase
+```
+
+It serves the folder the way GitHub Pages does (unknown paths return `index.html` with HTTP 404), loads each route
+in headless Chromium and fails if the startup error screen or Blazor's error bar appears, or if the page has no
+`<h1>` inside `<main>` within the timeout. On failure it prints the boot report and the browser console.
+
 Run `dotnet test -?` from the repo root for the full option list. `DOTNET_TEST_RUNNER=VSTest`
 overrides `global.json` for one session.
 
@@ -3287,6 +3351,47 @@ xUnit configuration for MTP lives in `testconfig.json` next to a test project
 
 bUnit tests that wait for asynchronous rendering pass an explicit timeout
 (bUnit's default is one second, which is too tight on a busy CI runner).
+
+## Startup diagnostics
+
+`wwwroot/index.html` loads `js/boot.js` and then `blazor.webassembly.js` with `autostart="false"`. `boot.js`
+starts Blazor itself so it can observe every way startup can fail:
+
+| Detected problem | How it is detected |
+|------------------|--------------------|
+| No WebAssembly (old browser, Lockdown Mode, Edge enhanced security, policy) | `typeof WebAssembly` before anything downloads |
+| WebAssembly too old for .NET 11 | `WebAssembly.validate` probes for SIMD and exception handling |
+| Page opened from `file://` | `location.protocol` |
+| Loader script missing or blocked | `Blazor` is undefined after `blazor.webassembly.js` |
+| Integrity (SRI) failure | Captured console and error messages mention `integrity` or `digest` |
+| Download failure | Resource error events, `Failed to fetch`, offline status |
+| Crash during startup | `Blazor.start()` rejects, or Blazor shows `#blazor-error-ui` before the first render |
+| Stall | `--blazor-load-percentage` has not changed for 60 seconds |
+
+Each case shows a full-page explanation with steps to try, a **Clear cached files and reload** button (clears
+Cache Storage and service workers but keeps local settings and data), and a technical report with browser
+capabilities and every console error and warning captured during startup. The report can be copied or filed as a
+GitHub issue. `window.observerBoot.report()` returns the same text from the browser console.
+
+`boot.js` and `css/boot.css` are deliberately ES5 and plain CSS so that very old browsers can still display the
+explanation.
+
+The published `_framework` folder must never be modified after `dotnet publish`. Its files are fingerprinted and
+integrity-checked, so editing them (for example stripping `sourceMappingURL` comments) makes browsers refuse to
+run the app and it never gets past the loading screen.
+
+## Error handling and logging
+
+- `MainLayout` wraps every page in an `ErrorBoundary`. A page that throws shows an inline error with a
+  **Try again** button; the header, navigation and other pages keep working. Navigating recovers automatically.
+  The exception is logged by Blazor's `IErrorBoundaryLogger`.
+- `GlobalExceptionLogging` logs `AppDomain.UnhandledException` and `TaskScheduler.UnobservedTaskException`.
+- Failures are logged at `Warning` or `Error`, never `Debug`, so they are visible at the default `Information`
+  level. Nothing in the web app is swallowed by an empty `catch`.
+- `AnalyticsService` checks backend health once, logs the outcome, and logs both non-success HTTP status codes and
+  exceptions for every call. Analytics problems never break a page.
+- `BlogService` logs HTTP failures and invalid JSON as errors and does not cache a failed response, so a transient
+  failure does not leave the blog empty for the rest of the session.
 
 ## Audio narration
 
@@ -3331,6 +3436,7 @@ site size and warns above 900 MB.
 | Component testing | bUnit 2.15.2 | MIT |
 | Test runner | Microsoft.Testing.Platform v2 | MIT |
 | Text-to-speech | KittenTTS 0.8.1 | Apache-2.0 |
+| Boot smoke test | Playwright for Python 1.63.0 | Apache-2.0 |
 
 All dependencies are free for any use — no payment required, ever.
 
@@ -3720,7 +3826,7 @@ FILE: src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor
             }
             catch (Exception ex)
             {
-                Logger.LogDebug(ex, "Audio availability check failed for {Slug}", Slug);
+                Logger.LogWarning(ex, "Audio player setup failed for {Slug}", Slug);
             }
         }
     }
@@ -3751,7 +3857,7 @@ FILE: src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor
             }
             catch (Exception ex)
             {
-                Logger.LogDebug(ex, "Failed to set playback rate for {Slug}", Slug);
+                Logger.LogWarning(ex, "Failed to set playback rate for {Slug}", Slug);
             }
         }
     }
@@ -3794,7 +3900,7 @@ FILE: src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor
             }
             catch (Exception ex)
             {
-                Logger.LogDebug(ex, "Seek failed for {Slug}", Slug);
+                Logger.LogWarning(ex, "Seek failed for {Slug}", Slug);
             }
         }
     }
@@ -3805,31 +3911,32 @@ FILE: src/ObserverMagazine.Web/Components/BlogTtsPlayer.razor
         _pollTimer = new Timer(PollTimerCallback, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(500));
     }
 
-    /// <summary>
-    /// Timer callback — uses async void because TimerCallback returns void.
-    /// All async work is wrapped in try-catch to prevent unobserved exceptions.
-    /// </summary>
     private async void PollTimerCallback(object? state)
     {
         try
         {
             var time = await Js.InvokeAsync<double>("observerAudio.getCurrentTime", $"tts-audio-{Slug}");
             var ended = await Js.InvokeAsync<bool>("observerAudio.hasEnded", $"tts-audio-{Slug}");
-            await InvokeAsync(() =>
+            await InvokeAsync(async () =>
             {
                 _fallbackCurrentTime = (int)time;
                 if (ended)
                 {
                     _fallbackPlaying = false;
                     StopPolling();
-                    _ = OnEnded();
+                    await OnEnded();
                 }
                 StateHasChanged();
             });
         }
-        catch
+        catch (ObjectDisposedException)
         {
-            // Component may have been disposed — ignore
+            StopPolling();
+        }
+        catch (Exception ex)
+        {
+            StopPolling();
+            Logger.LogWarning(ex, "Audio position polling failed for {Slug}", Slug);
         }
     }
 
@@ -4175,7 +4282,7 @@ FILE: src/ObserverMagazine.Web/Components/MasterDetail.razor
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not read from local storage");
+            Logger.LogWarning(ex, "Could not read products from local storage; falling back to sample data");
         }
 
         if (_products is null || _products.Count == 0)
@@ -4341,7 +4448,7 @@ FILE: src/ObserverMagazine.Web/Components/MasterDetail.razor
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not clear local storage");
+            Logger.LogWarning(ex, "Could not clear products from local storage");
         }
 
         _products = null;
@@ -4850,7 +4957,28 @@ FILE: src/ObserverMagazine.Web/Layout/MainLayout.razor
     </header>
 
     <main class="container main-content">
-        @Body
+        <ErrorBoundary @ref="_errorBoundary">
+            <ChildContent>
+                @Body
+            </ChildContent>
+            <ErrorContent Context="exception">
+                <section class="page-error" role="alert">
+                    <h1>This page ran into a problem</h1>
+                    <p>
+                        Something went wrong while showing this page. The rest of the site still works,
+                        and the error has been logged to the browser console.
+                    </p>
+                    <details class="page-error-details">
+                        <summary>Technical details</summary>
+                        <pre>@exception.GetType().FullName: @exception.Message</pre>
+                    </details>
+                    <div class="form-actions">
+                        <button class="btn btn-primary btn-sm" @onclick="Recover">Try again</button>
+                        <a class="btn btn-outline btn-sm" href="">Go to the home page</a>
+                    </div>
+                </section>
+            </ErrorContent>
+        </ErrorBoundary>
     </main>
 
     <footer class="site-footer">
@@ -4870,6 +4998,14 @@ FILE: src/ObserverMagazine.Web/Layout/MainLayout.razor
         </div>
     </footer>
 </div>
+
+@code {
+    private ErrorBoundary? _errorBoundary;
+
+    protected override void OnParametersSet() => _errorBoundary?.Recover();
+
+    private void Recover() => _errorBoundary?.Recover();
+}
 
 
 -------------------------------------------------------------------------------
@@ -4928,6 +5064,42 @@ FILE: src/ObserverMagazine.Web/Layout/MainLayout.razor.css
     color: var(--color-muted);
 }
 .site-footer a { margin: 0 0.25rem; }
+
+.page-error {
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-left: 4px solid #dc2626;
+    border-radius: var(--radius);
+    background: var(--color-card-bg);
+}
+
+.page-error h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.page-error p {
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+}
+
+.page-error-details summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.page-error-details pre {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
 
 
 -------------------------------------------------------------------------------
@@ -5024,7 +5196,7 @@ FILE: src/ObserverMagazine.Web/Layout/NavMenu.razor
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not read the saved theme");
+            Logger.LogWarning(ex, "Could not read the saved theme; using the system theme");
             return;
         }
 
@@ -5502,7 +5674,7 @@ FILE: src/ObserverMagazine.Web/Pages/BlogPost.razor
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Post-render enhancement failed for {Slug}", Slug);
+            Logger.LogWarning(ex, "Syntax highlighting or code-scroll setup failed for {Slug}", Slug);
         }
     }
 
@@ -6013,6 +6185,7 @@ FILE: src/ObserverMagazine.Web/Pages/Home.razor
 @page "/"
 @inject IAnalyticsService Analytics
 @inject IBlogService BlogService
+@inject ILogger<Home> Logger
 
 <PageTitle>Merciful Potato Magazine</PageTitle>
 
@@ -6103,8 +6276,9 @@ FILE: src/ObserverMagazine.Web/Pages/Home.razor
             var allPosts = await BlogService.GetPostsAsync();
             _featuredPosts = allPosts.Where(p => p.Featured).Take(3).ToArray();
         }
-        catch
+        catch (Exception ex)
         {
+            Logger.LogError(ex, "Failed to load featured posts");
             _featuredPosts = [];
         }
     }
@@ -6186,6 +6360,7 @@ FILE: src/ObserverMagazine.Web/Pages/ShowcaseDetail.razor
 @page "/showcase/{ProductId:guid}"
 @inject IJSRuntime Js
 @inject NavigationManager Nav
+@inject ILogger<ShowcaseDetail> Logger
 
 <PageTitle>@(IsNew ? "New Product" : (_editing ? "Edit Product" : _product?.Name ?? "Product")) — Showcase</PageTitle>
 
@@ -6416,7 +6591,10 @@ else
                 }
             }
         }
-        catch { /* best effort */ }
+        catch (Exception ex)
+        {
+            Logger.LogWarning(ex, "Could not load the catalog from local storage; regenerating sample data");
+        }
 
         _allProducts = ProductDataGenerator.Generate();
         await SaveAll();
@@ -6430,7 +6608,10 @@ else
                 new System.Text.Json.JsonSerializerOptions { PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase });
             await Js.InvokeVoidAsync("localStorage.setItem", StorageKey, json);
         }
-        catch { /* best effort */ }
+        catch (Exception ex)
+        {
+            Logger.LogWarning(ex, "Could not save the catalog to local storage");
+        }
     }
 
     private void StartEdit()
@@ -6648,7 +6829,6 @@ FILE: src/ObserverMagazine.Web/Pages/Showcase.razor
 @inject IAnalyticsService Analytics
 @inject IJSRuntime Js
 @inject NavigationManager Nav
-@implements IDisposable
 
 <PageTitle>Showcase — Merciful Potato Magazine</PageTitle>
 
@@ -6990,7 +7170,7 @@ FILE: src/ObserverMagazine.Web/Pages/Showcase.razor
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not load showcase preferences");
+            Logger.LogWarning(ex, "Could not load showcase preferences; using defaults");
         }
     }
 
@@ -7021,7 +7201,7 @@ FILE: src/ObserverMagazine.Web/Pages/Showcase.razor
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not save showcase preferences");
+            Logger.LogWarning(ex, "Could not save showcase preferences");
         }
     }
 
@@ -7239,8 +7419,14 @@ FILE: src/ObserverMagazine.Web/Pages/Showcase.razor
 
     private async Task ResetData()
     {
-        try { await Js.InvokeVoidAsync("localStorage.removeItem", StorageKey); }
-        catch { /* best effort */ }
+        try
+        {
+            await Js.InvokeVoidAsync("localStorage.removeItem", StorageKey);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogWarning(ex, "Could not clear the catalog from local storage");
+        }
 
         _allProducts = ProductDataGenerator.Generate();
         _currentPage = 1;
@@ -7250,11 +7436,6 @@ FILE: src/ObserverMagazine.Web/Pages/Showcase.razor
 
     private static string ColStyle(ColumnDef col) =>
         string.IsNullOrEmpty(col.MinWidth) ? string.Empty : $"min-width:{col.MinWidth}";
-
-    public void Dispose()
-    {
-        // Nothing to dispose for now, but good practice to implement IDisposable
-    }
 
     // --- Column definition model ---
 
@@ -7618,7 +7799,10 @@ builder.Services.AddHostedService<AppLifetimeTelemetry>();
 
 builder.Logging.SetMinimumLevel(LogLevel.Information);
 
-await builder.Build().RunAsync();
+var host = builder.Build();
+GlobalExceptionLogging.Register(host.Services.GetRequiredService<ILoggerFactory>());
+
+await host.RunAsync();
 
 
 -------------------------------------------------------------------------------
@@ -7633,6 +7817,7 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
     private const string BackendBaseUrl = "https://my-api.2w7sp317.workers.dev";
     private static readonly TimeSpan HealthCacheDuration = TimeSpan.FromMinutes(5);
 
+    private Task? _initialHealthCheck;
     private bool _backendAvailable;
     private DateTime _lastHealthCheck = DateTime.MinValue;
 
@@ -7640,20 +7825,33 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
     public async Task CheckHealthAsync()
     {
-        // Cache health check result for 5 minutes
         if (DateTime.UtcNow - _lastHealthCheck < HealthCacheDuration)
+        {
             return;
+        }
 
         try
         {
-            var response = await http.GetAsync($"{BackendBaseUrl}/api/health");
+            using var response = await http.GetAsync($"{BackendBaseUrl}/api/health");
             _backendAvailable = response.IsSuccessStatusCode;
-            logger.LogInformation("Backend health check: {Status}", _backendAvailable ? "available" : "unavailable");
+
+            if (_backendAvailable)
+            {
+                logger.LogInformation("Analytics backend is available at {BackendBaseUrl}", BackendBaseUrl);
+            }
+            else
+            {
+                logger.LogWarning(
+                    "Analytics backend health check returned HTTP {StatusCode}; analytics, views and reactions are disabled",
+                    (int)response.StatusCode);
+            }
         }
         catch (Exception ex)
         {
             _backendAvailable = false;
-            logger.LogDebug(ex, "Backend health check failed — running without backend");
+            logger.LogWarning(ex,
+                "Analytics backend at {BackendBaseUrl} is unreachable; analytics, views and reactions are disabled",
+                BackendBaseUrl);
         }
         finally
         {
@@ -7661,115 +7859,91 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
         }
     }
 
-    public async Task TrackPageViewAsync(string pageName, string? detail = null)
+    public Task TrackPageViewAsync(string pageName, string? detail = null)
     {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
         var content = detail is not null
             ? $"[PageView] {pageName} — {detail}"
             : $"[PageView] {pageName}";
 
-        await SendEventAsync($"PageView: {pageName}", content);
+        return SendEventAsync($"PageView: {pageName}", content);
     }
 
-    public async Task TrackInteractionAsync(string action, string? detail = null)
+    public Task TrackInteractionAsync(string action, string? detail = null)
     {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
         var content = detail is not null
             ? $"[Interaction] {action} — {detail}"
             : $"[Interaction] {action}";
 
-        await SendEventAsync($"Interaction: {action}", content);
+        return SendEventAsync($"Interaction: {action}", content);
     }
 
-    public async Task IncrementViewAsync(string slug)
-    {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
-        try
-        {
-            await http.PostAsync($"{BackendBaseUrl}/api/views/{slug}", null);
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to increment view for {Slug}", slug);
-        }
-    }
+    public Task IncrementViewAsync(string slug) =>
+        SendAsync("increment view count", slug,
+            () => http.PostAsync($"{BackendBaseUrl}/api/views/{Uri.EscapeDataString(slug)}", null));
 
     public async Task<int?> GetViewCountAsync(string slug)
     {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return null;
+        var result = await GetAsync<ViewCountResponse>("read view count", slug,
+            $"{BackendBaseUrl}/api/views/{Uri.EscapeDataString(slug)}");
+        return result?.Count;
+    }
+
+    public Task AddReactionAsync(string slug, string reactionType) =>
+        SendAsync("add reaction", $"{slug}:{reactionType}",
+            () => http.PostAsJsonAsync($"{BackendBaseUrl}/api/reactions/{Uri.EscapeDataString(slug)}", new { type = reactionType }));
+
+    public Task<Dictionary<string, int>?> GetReactionsAsync(string slug) =>
+        GetAsync<Dictionary<string, int>>("read reactions", slug,
+            $"{BackendBaseUrl}/api/reactions/{Uri.EscapeDataString(slug)}");
+
+    private Task SendEventAsync(string title, string content) =>
+        SendAsync("send analytics event", title,
+            () => http.PostAsJsonAsync($"{BackendBaseUrl}/api/notes", new { title, content }));
+
+    private async Task<bool> EnsureBackendAvailableAsync()
+    {
+        await (_initialHealthCheck ??= CheckHealthAsync());
+        return _backendAvailable;
+    }
+
+    private async Task SendAsync(string operation, string target, Func<Task<HttpResponseMessage>> send)
+    {
+        if (!await EnsureBackendAvailableAsync())
+        {
+            return;
+        }
 
         try
         {
-            var result = await http.GetFromJsonAsync<ViewCountResponse>($"{BackendBaseUrl}/api/views/{slug}");
-            return result?.Count;
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to get view count for {Slug}", slug);
-            return null;
-        }
-    }
-
-    public async Task AddReactionAsync(string slug, string reactionType)
-    {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
-        try
-        {
-            var payload = new { type = reactionType };
-            await http.PostAsJsonAsync($"{BackendBaseUrl}/api/reactions/{slug}", payload);
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to add reaction for {Slug}", slug);
-        }
-    }
-
-    public async Task<Dictionary<string, int>?> GetReactionsAsync(string slug)
-    {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return null;
-
-        try
-        {
-            return await http.GetFromJsonAsync<Dictionary<string, int>>($"{BackendBaseUrl}/api/reactions/{slug}");
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to get reactions for {Slug}", slug);
-            return null;
-        }
-    }
-
-    private async Task EnsureHealthChecked()
-    {
-        if (_lastHealthCheck == DateTime.MinValue)
-            await CheckHealthAsync();
-    }
-
-    private async Task SendEventAsync(string title, string content)
-    {
-        try
-        {
-            var payload = new { title, content };
-            var response = await http.PostAsJsonAsync($"{BackendBaseUrl}/api/notes", payload);
-
+            using var response = await send();
             if (!response.IsSuccessStatusCode)
             {
-                logger.LogDebug("Analytics POST returned {StatusCode}", response.StatusCode);
+                logger.LogWarning(
+                    "Analytics backend rejected request to {Operation} for {Target} with HTTP {StatusCode}",
+                    operation, target, (int)response.StatusCode);
             }
         }
         catch (Exception ex)
         {
-            logger.LogDebug(ex, "Failed to send analytics event: {Title}", title);
+            logger.LogWarning(ex, "Failed to {Operation} for {Target}", operation, target);
+        }
+    }
+
+    private async Task<T?> GetAsync<T>(string operation, string target, string url)
+    {
+        if (!await EnsureBackendAvailableAsync())
+        {
+            return default;
+        }
+
+        try
+        {
+            return await http.GetFromJsonAsync<T>(url);
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning(ex, "Failed to {Operation} for {Target}", operation, target);
+            return default;
         }
     }
 
@@ -7810,35 +7984,36 @@ public sealed class AppLifetimeTelemetry(TelemetryService telemetry, ILogger<App
 FILE: src/ObserverMagazine.Web/Services/BlogService.cs
 -------------------------------------------------------------------------------
 using System.Net.Http.Json;
+using System.Text.Json;
 using ObserverMagazine.Web.Models;
 
 namespace ObserverMagazine.Web.Services;
 
 public sealed class BlogService(HttpClient http, ILogger<BlogService> logger) : IBlogService
 {
+    private const string PostsIndexPath = "blog-data/posts-index.json";
+    private const string AuthorsIndexPath = "blog-data/authors.json";
+
     private BlogPostMetadata[]? _cachedIndex;
     private AuthorProfile[]? _cachedAuthors;
 
     public async Task<BlogPostMetadata[]> GetPostsAsync()
     {
-        if (_cachedIndex is not null) return _cachedIndex;
+        if (_cachedIndex is not null)
+        {
+            return _cachedIndex;
+        }
 
         logger.LogInformation("Fetching blog posts index");
-        try
+        var posts = await GetJsonAsync<BlogPostMetadata[]>(PostsIndexPath);
+        if (posts is null)
         {
-            var posts = await http.GetFromJsonAsync<BlogPostMetadata[]>("blog-data/posts-index.json");
-            _cachedIndex = posts?
-                .OrderByDescending(p => p.Date)
-                .ToArray() ?? [];
-            logger.LogInformation("Loaded {Count} blog posts", _cachedIndex.Length);
-            return _cachedIndex;
+            return [];
         }
-        catch (HttpRequestException ex)
-        {
-            logger.LogWarning(ex, "Blog index not found — content processor may not have run");
-            _cachedIndex = [];
-            return _cachedIndex;
-        }
+
+        _cachedIndex = posts.OrderByDescending(p => p.Date).ToArray();
+        logger.LogInformation("Loaded {Count} blog posts", _cachedIndex.Length);
+        return _cachedIndex;
     }
 
     public async Task<BlogPostMetadata?> GetPostMetadataAsync(string slug)
@@ -7850,36 +8025,36 @@ public sealed class BlogService(HttpClient http, ILogger<BlogService> logger) : 
 
     public async Task<string> GetPostHtmlAsync(string slug)
     {
+        var path = $"blog-data/{slug}.html";
         logger.LogInformation("Fetching HTML for post: {Slug}", slug);
         try
         {
-            return await http.GetStringAsync($"blog-data/{slug}.html");
+            return await http.GetStringAsync(path);
         }
         catch (HttpRequestException ex)
         {
-            logger.LogError(ex, "Failed to load HTML for post: {Slug}", slug);
+            logger.LogError(ex, "Failed to download {Path} (HTTP {StatusCode})", path, (int?)ex.StatusCode);
             return "<p>Could not load post content.</p>";
         }
     }
 
     public async Task<AuthorProfile[]> GetAllAuthorsAsync()
     {
-        if (_cachedAuthors is not null) return _cachedAuthors;
+        if (_cachedAuthors is not null)
+        {
+            return _cachedAuthors;
+        }
 
         logger.LogInformation("Fetching authors index");
-        try
+        var authors = await GetJsonAsync<AuthorProfile[]>(AuthorsIndexPath);
+        if (authors is null)
         {
-            var authors = await http.GetFromJsonAsync<AuthorProfile[]>("blog-data/authors.json");
-            _cachedAuthors = authors ?? [];
-            logger.LogInformation("Loaded {Count} author profiles", _cachedAuthors.Length);
-            return _cachedAuthors;
+            return [];
         }
-        catch (HttpRequestException ex)
-        {
-            logger.LogWarning(ex, "Authors index not found");
-            _cachedAuthors = [];
-            return _cachedAuthors;
-        }
+
+        _cachedAuthors = authors;
+        logger.LogInformation("Loaded {Count} author profiles", _cachedAuthors.Length);
+        return _cachedAuthors;
     }
 
     public async Task<AuthorProfile?> GetAuthorAsync(string authorId)
@@ -7887,6 +8062,56 @@ public sealed class BlogService(HttpClient http, ILogger<BlogService> logger) : 
         var authors = await GetAllAuthorsAsync();
         return authors.FirstOrDefault(a =>
             string.Equals(a.Id, authorId, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private async Task<T?> GetJsonAsync<T>(string path) where T : class
+    {
+        try
+        {
+            return await http.GetFromJsonAsync<T>(path);
+        }
+        catch (HttpRequestException ex)
+        {
+            logger.LogError(ex,
+                "Failed to download {Path} (HTTP {StatusCode}); the content processor may not have run",
+                path, (int?)ex.StatusCode);
+        }
+        catch (JsonException ex)
+        {
+            logger.LogError(ex, "{Path} does not contain valid JSON", path);
+        }
+        catch (NotSupportedException ex)
+        {
+            logger.LogError(ex, "{Path} was not served as JSON", path);
+        }
+
+        return null;
+    }
+}
+
+
+-------------------------------------------------------------------------------
+FILE: src/ObserverMagazine.Web/Services/GlobalExceptionLogging.cs
+-------------------------------------------------------------------------------
+namespace ObserverMagazine.Web.Services;
+
+public static class GlobalExceptionLogging
+{
+    public const string CategoryName = "ObserverMagazine.Web.UnhandledExceptions";
+
+    public static void Register(ILoggerFactory loggerFactory)
+    {
+        var logger = loggerFactory.CreateLogger(CategoryName);
+
+        AppDomain.CurrentDomain.UnhandledException += (_, args) =>
+            logger.LogCritical(args.ExceptionObject as Exception,
+                "Unhandled exception (runtime terminating: {IsTerminating})", args.IsTerminating);
+
+        TaskScheduler.UnobservedTaskException += (_, args) =>
+        {
+            logger.LogError(args.Exception, "Unobserved exception in a background task");
+            args.SetObserved();
+        };
     }
 }
 
@@ -8583,6 +8808,306 @@ a.tag:hover {
 
 
 -------------------------------------------------------------------------------
+FILE: src/ObserverMagazine.Web/wwwroot/css/boot.css
+-------------------------------------------------------------------------------
+.boot-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: var(--color-bg, #ffffff);
+    color: var(--color-text, #1a1a2e);
+    font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.boot-card {
+    width: 100%;
+    max-width: 26rem;
+    text-align: center;
+}
+
+.boot-spinner {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 0.3rem solid var(--color-border, #e5e7eb);
+    border-top-color: var(--color-primary, #2563eb);
+    animation: boot-spin 0.9s linear infinite;
+}
+
+.boot-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 0.35rem;
+}
+
+.boot-subtitle {
+    color: var(--color-muted, #6b7280);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+}
+
+.boot-progress {
+    height: 0.4rem;
+    border-radius: 99rem;
+    background: var(--color-surface, #f3f4f6);
+    border: 1px solid var(--color-border, #e5e7eb);
+    overflow: hidden;
+}
+
+.boot-progress-bar {
+    height: 100%;
+    width: var(--blazor-load-percentage, 0%);
+    background: linear-gradient(90deg, var(--color-primary, #2563eb), var(--color-accent, #3b82f6));
+    transition: width 0.25s ease;
+}
+
+.boot-status {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-muted, #6b7280);
+    font-variant-numeric: tabular-nums;
+}
+
+.boot-status::after {
+    content: var(--blazor-load-percentage-text, "Loading");
+}
+
+.boot-hint {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--color-muted, #6b7280);
+}
+
+.boot-hint[hidden] {
+    display: none;
+}
+
+.boot-noscript {
+    max-width: 30rem;
+    margin: 2rem auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid #f59e0b;
+    border-radius: 0.5rem;
+    background: #fffbeb;
+    color: #78350f;
+    font-family: system-ui, sans-serif;
+}
+
+@keyframes boot-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .boot-spinner { animation-duration: 3s; }
+    .boot-progress-bar { transition: none; }
+}
+
+.boot-error {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+    background: var(--color-surface, #f3f4f6);
+    color: var(--color-text, #1a1a2e);
+    font-family: var(--font-sans, system-ui, sans-serif);
+    line-height: 1.6;
+}
+
+.boot-error-card {
+    max-width: 44rem;
+    margin: 0 auto;
+    background: var(--color-card-bg, #ffffff);
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 0.85rem;
+    overflow: hidden;
+    box-shadow: 0 1.25rem 3rem rgba(15, 23, 42, 0.14);
+}
+
+.boot-error-head {
+    padding: 2rem 2rem 1.75rem;
+    background: linear-gradient(135deg, #b91c1c 0%, #c2410c 100%);
+    color: #ffffff;
+}
+
+.boot-error-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.boot-error-brand {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.25rem;
+}
+
+.boot-error-title {
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+.boot-error-summary {
+    font-size: 1.02rem;
+    opacity: 0.95;
+}
+
+.boot-error-body {
+    padding: 1.75rem 2rem 2rem;
+}
+
+.boot-error-body h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted, #6b7280);
+    margin: 0 0 0.5rem;
+}
+
+.boot-error-body p {
+    margin-bottom: 1.5rem;
+}
+
+.boot-error-steps {
+    margin: 0 0 1.5rem 1.25rem;
+}
+
+.boot-error-steps li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.25rem;
+}
+
+.boot-error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.boot-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--color-primary, #2563eb);
+    background: transparent;
+    color: var(--color-primary, #2563eb);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boot-btn:hover {
+    text-decoration: none;
+    opacity: 0.88;
+}
+
+.boot-btn:focus-visible {
+    outline: 2px solid var(--color-primary, #2563eb);
+    outline-offset: 2px;
+}
+
+.boot-btn-primary {
+    background: var(--color-primary, #2563eb);
+    color: var(--color-primary-fg, #ffffff);
+}
+
+.boot-error-details {
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    background: var(--color-surface, #f3f4f6);
+}
+
+.boot-error-details summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.boot-error-details[open] summary {
+    margin-bottom: 0.75rem;
+}
+
+.boot-error-report {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 0.4rem;
+    background: var(--color-bg, #ffffff);
+    color: var(--color-text, #1a1a2e);
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    white-space: pre;
+    resize: vertical;
+}
+
+.boot-error-footnote {
+    font-size: 0.85rem;
+    color: var(--color-muted, #6b7280);
+    margin: 0 !important;
+}
+
+@media (max-width: 40em) {
+    .boot-error { padding: 0; }
+    .boot-error-card { border-radius: 0; border: none; min-height: 100%; }
+    .boot-error-head, .boot-error-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .boot-btn { flex: 1 1 100%; justify-content: center; }
+}
+
+#blazor-error-ui {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.75rem 3rem 0.75rem 1.25rem;
+    background: #fef3c7;
+    color: #78350f;
+    border-top: 1px solid #f59e0b;
+    box-shadow: 0 -0.25rem 1rem rgba(0, 0, 0, 0.15);
+    font-family: var(--font-sans, system-ui, sans-serif);
+    font-size: 0.92rem;
+}
+
+#blazor-error-ui .reload {
+    color: #92400e;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    text-decoration: underline;
+}
+
+#blazor-error-ui .dismiss {
+    position: absolute;
+    right: 1rem;
+    top: 0.6rem;
+    cursor: pointer;
+}
+
+
+-------------------------------------------------------------------------------
 FILE: src/ObserverMagazine.Web/wwwroot/images/authors/mercifulpotato-team.txt
 -------------------------------------------------------------------------------
 Hello, world!
@@ -8599,21 +9124,27 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Merciful Potato Magazine</title>
     <base href="/" />
     <link rel="preload" id="webassembly" />
     <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/boot.css" />
     <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
     <script type="importmap"></script>
 
-    <!-- Apply saved theme BEFORE first paint to prevent flash -->
     <script>
         (function () {
-            var stored = localStorage.getItem('observer-theme') || 'system';
+            var stored = 'system';
+            try {
+                stored = window.localStorage.getItem('observer-theme') || 'system';
+            } catch (e) {
+                stored = 'system';
+            }
             var resolved = stored;
             if (stored === 'system') {
-                resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                resolved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
             document.documentElement.setAttribute('data-theme', resolved);
         })();
@@ -8621,18 +9152,27 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
 </head>
 <body>
     <div id="app">
-        <div style="display:flex;align-items:center;justify-content:center;height:100vh;height:100dvh;">
-            <p>Loading Merciful Potato Magazine...</p>
+        <div id="boot-loading" class="boot-screen" role="status" aria-live="polite">
+            <div class="boot-card">
+                <div class="boot-spinner" aria-hidden="true"></div>
+                <p class="boot-title"><strong>Merciful Potato</strong> Magazine</p>
+                <p class="boot-subtitle">Starting the .NET runtime in your browser</p>
+                <div class="boot-progress" aria-hidden="true"><div class="boot-progress-bar"></div></div>
+                <p class="boot-status"></p>
+                <p id="boot-hint" class="boot-hint" hidden>This is taking longer than usual. The first visit downloads the .NET runtime; later visits load from cache.</p>
+            </div>
         </div>
+        <noscript>
+            <p class="boot-noscript">Merciful Potato Magazine is a Blazor WebAssembly application and needs JavaScript. Please enable JavaScript for this site and reload the page.</p>
+        </noscript>
     </div>
 
-    <div id="blazor-error-ui" style="display:none;">
-        An unhandled error has occurred.
-        <a href="/" class="reload">Reload</a>
-        <span class="dismiss">🗙</span>
+    <div id="blazor-error-ui" role="alert">
+        Something went wrong on this page. Details are in the browser console (F12).
+        <a href="" class="reload">Reload</a>
+        <span class="dismiss" aria-label="Dismiss">🗙</span>
     </div>
 
-    <!-- Theme management API for Blazor interop -->
     <script>
         window.observerTheme = {
             set: function (theme) {
@@ -8641,10 +9181,10 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
                     resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                 }
                 document.documentElement.setAttribute('data-theme', resolved);
-                localStorage.setItem('observer-theme', theme);
+                window.localStorage.setItem('observer-theme', theme);
             },
             get: function () {
-                return localStorage.getItem('observer-theme') || 'system';
+                return window.localStorage.getItem('observer-theme') || 'system';
             }
         };
     </script>
@@ -9182,19 +9722,595 @@ FILE: src/ObserverMagazine.Web/wwwroot/index.html
         };
     </script>
 
-    <!-- SPA redirect for GitHub Pages -->
-    <script>
-        (function () {
-            var redirect = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            if (redirect && redirect !== location.href) {
-                history.replaceState(null, null, redirect);
-            }
-        })();
-    </script>
-    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script src="js/boot.js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js" autostart="false"></script>
 </body>
 </html>
+
+
+-------------------------------------------------------------------------------
+FILE: src/ObserverMagazine.Web/wwwroot/js/boot.js
+-------------------------------------------------------------------------------
+(function () {
+    'use strict';
+
+    var ISSUES_URL = 'https://github.com/mercifulpotato/mercifulpotato.github.io/issues/new';
+    var STALL_TIMEOUT_MS = 60000;
+    var SLOW_HINT_MS = 12000;
+    var MAX_LOG_ENTRIES = 60;
+    var MAX_ISSUE_BODY = 6000;
+
+    var WASM_SIMD_PROBE = [0, 97, 115, 109, 1, 0, 0, 0, 1, 5, 1, 96, 0, 1, 123, 3, 2, 1, 0, 10, 10, 1, 8, 0, 65, 0, 253, 15, 253, 98, 11];
+    var WASM_EH_PROBE = [0, 97, 115, 109, 1, 0, 0, 0, 1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 10, 8, 1, 6, 0, 6, 64, 25, 11, 11];
+
+    var CAUSES = {
+        noWebAssembly: {
+            title: 'Your browser can’t run this site',
+            summary: 'This site is a .NET application compiled to WebAssembly, and WebAssembly is not available in this browser.',
+            explanation: 'Merciful Potato Magazine runs entirely inside your browser using Blazor WebAssembly on .NET 11. Your browser either does not support WebAssembly at all, or it has been switched off. Security features such as Apple’s Lockdown Mode or Microsoft Edge’s enhanced security mode, workplace browser policies, and some privacy extensions can disable it.',
+            steps: [
+                'Update your browser to its latest version, or open this page in a current version of Firefox, Chrome, Edge or Safari.',
+                'If you use Lockdown Mode or Edge’s enhanced security mode, add an exception for this site or try a different browser.',
+                'On a work or school device, ask your administrator whether WebAssembly is blocked by policy.'
+            ],
+            canTryAnyway: false
+        },
+        oldWebAssembly: {
+            title: 'Your browser is too old for this site',
+            summary: 'WebAssembly works here, but it is missing features that the .NET 11 runtime needs.',
+            explanation: 'The .NET WebAssembly runtime relies on WebAssembly SIMD and WebAssembly exception handling. Mainstream browsers added both between 2021 and 2023. This browser reported that at least one of them is unavailable, so the runtime would fail to start.',
+            steps: [
+                'Update your browser to its latest version.',
+                'If updates are not possible on this device (for example an older phone or tablet), try another browser or another device.',
+                'If you believe your browser is up to date, choose “Try anyway” below and send us the technical details if it still fails.'
+            ],
+            canTryAnyway: true
+        },
+        fileProtocol: {
+            title: 'This page was opened as a local file',
+            summary: 'Browsers do not allow WebAssembly applications to load from file:// addresses.',
+            explanation: 'The site has to be served over HTTP or HTTPS so the browser can download the .NET runtime and application files.',
+            steps: [
+                'Run the site with “dotnet run --project src/ObserverMagazine.Web”.',
+                'Or serve the published wwwroot folder with any static web server.'
+            ],
+            canTryAnyway: false
+        },
+        bootScript: {
+            title: 'The application loader did not download',
+            summary: 'The browser could not load _framework/blazor.webassembly.js, the script that starts everything else.',
+            explanation: 'This usually means the connection dropped, an ad or script blocker stopped the file, a firewall or proxy rejected it, or a new version of the site was being published at the moment you visited.',
+            steps: [
+                'Check your internet connection and reload the page.',
+                'Temporarily disable ad, script or privacy blockers for this site.',
+                'Wait a minute and try again in case a new version was being published.'
+            ],
+            canTryAnyway: false
+        },
+        integrity: {
+            title: 'Downloaded files failed a security check',
+            summary: 'One or more application files did not match the fingerprint recorded when the site was built, so the browser refused to run them.',
+            explanation: 'Every file the app downloads is checked against a hash computed at build time. A mismatch happens when a cached copy from an older version is mixed with a newer one, when a proxy, antivirus or “speed-up” service rewrites JavaScript, or when files were modified after the site was published.',
+            steps: [
+                'Choose “Clear cached files and reload” below.',
+                'Try a private or incognito window, or disable extensions that modify pages.',
+                'Site maintainers: make sure nothing edits the published _framework folder after dotnet publish.'
+            ],
+            canTryAnyway: false
+        },
+        network: {
+            title: 'Some application files could not be downloaded',
+            summary: 'The .NET runtime or one of the application assemblies failed to download.',
+            explanation: 'The app needs to download several megabytes of runtime and application files before it can start. One of those requests failed, which is usually caused by a lost connection, a blocker or firewall, or a deployment that was still in progress.',
+            steps: [
+                'Check your internet connection and reload the page.',
+                'Temporarily disable ad, script or privacy blockers for this site.',
+                'Choose “Clear cached files and reload” below.'
+            ],
+            canTryAnyway: false
+        },
+        startup: {
+            title: 'The application crashed while starting',
+            summary: 'The .NET runtime started, but the application threw an error before it could show the first page.',
+            explanation: 'This is almost always a bug in the site rather than a problem with your browser. The technical details below contain the error the application reported.',
+            steps: [
+                'Reload the page; a temporary problem may have caused it.',
+                'Choose “Clear cached files and reload” below.',
+                'If it keeps happening, report the problem and include the technical details.'
+            ],
+            canTryAnyway: false
+        },
+        timeout: {
+            title: 'The application stopped making progress',
+            summary: 'Loading has not advanced for ' + Math.round(STALL_TIMEOUT_MS / 1000) + ' seconds.',
+            explanation: 'The app may be stuck waiting for a file that will never arrive, or the device may be too slow or too low on memory to start the .NET runtime.',
+            steps: [
+                'Check your internet connection and reload the page.',
+                'Close other tabs or apps to free memory, then reload.',
+                'Choose “Clear cached files and reload” below, or try another browser.'
+            ],
+            canTryAnyway: false
+        },
+        unknown: {
+            title: 'Something went wrong while starting',
+            summary: 'The application could not start, and the reason did not match any known pattern.',
+            explanation: 'The technical details below contain everything the browser reported while loading.',
+            steps: [
+                'Reload the page.',
+                'Choose “Clear cached files and reload” below, or try another browser.',
+                'If it keeps happening, report the problem and include the technical details.'
+            ],
+            canTryAnyway: false
+        }
+    };
+
+    var state = {
+        startedAt: Date.now(),
+        ready: false,
+        failed: false,
+        cause: null,
+        log: [],
+        features: null,
+        progress: '',
+        progressChangedAt: Date.now(),
+        watchdog: null
+    };
+
+    function elapsed() {
+        return ((Date.now() - state.startedAt) / 1000).toFixed(1) + 's';
+    }
+
+    function describe(value) {
+        if (value === null || value === undefined) {
+            return String(value);
+        }
+        if (value instanceof Error) {
+            return (value.name || 'Error') + ': ' + value.message + (value.stack ? '\n' + value.stack : '');
+        }
+        if (typeof value === 'object') {
+            try {
+                return JSON.stringify(value);
+            } catch (e) {
+                return Object.prototype.toString.call(value);
+            }
+        }
+        return String(value);
+    }
+
+    function record(level, message) {
+        state.log.push('[' + elapsed() + '] ' + level + ': ' + message);
+        if (state.log.length > MAX_LOG_ENTRIES) {
+            state.log.shift();
+        }
+    }
+
+    function captureConsole(level) {
+        var original = window.console && window.console[level];
+        if (typeof original !== 'function') {
+            return;
+        }
+        window.console[level] = function () {
+            try {
+                record(level, Array.prototype.map.call(arguments, describe).join(' '));
+            } catch (e) {
+                record(level, '(unserializable console message)');
+            }
+            return original.apply(window.console, arguments);
+        };
+    }
+
+    captureConsole('error');
+    captureConsole('warn');
+
+    window.addEventListener('error', function (event) {
+        var target = event.target;
+        if (target && target !== window && (target.src || target.href)) {
+            record('resource', 'Failed to load ' + (target.src || target.href));
+            return;
+        }
+        var where = event.filename ? ' (' + event.filename + ':' + event.lineno + ':' + event.colno + ')' : '';
+        var stack = event.error && event.error.stack ? '\n' + event.error.stack : '';
+        record('error', (event.message || 'Script error') + where + stack);
+    }, true);
+
+    window.addEventListener('unhandledrejection', function (event) {
+        record('rejection', describe(event.reason));
+    });
+
+    function probe(bytes) {
+        try {
+            return WebAssembly.validate(new Uint8Array(bytes));
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function detectFeatures() {
+        var wasm = typeof WebAssembly === 'object' && typeof WebAssembly.validate === 'function';
+        var storage = false;
+        try {
+            window.localStorage.setItem('observer-boot-probe', '1');
+            window.localStorage.removeItem('observer-boot-probe');
+            storage = true;
+        } catch (e) {
+            storage = false;
+        }
+        var importMaps = 'unknown';
+        if (typeof HTMLScriptElement !== 'undefined' && typeof HTMLScriptElement.supports === 'function') {
+            importMaps = HTMLScriptElement.supports('importmap');
+        }
+        return {
+            webAssembly: wasm,
+            webAssemblySimd: wasm && probe(WASM_SIMD_PROBE),
+            webAssemblyExceptions: wasm && probe(WASM_EH_PROBE),
+            promise: typeof Promise === 'function',
+            fetch: typeof window.fetch === 'function',
+            bigInt: typeof BigInt === 'function',
+            importMaps: importMaps,
+            localStorage: storage,
+            cacheStorage: typeof window.caches === 'object',
+            secureContext: window.isSecureContext === true,
+            online: navigator.onLine !== false,
+            cookiesEnabled: navigator.cookieEnabled !== false,
+            deviceMemoryGb: navigator.deviceMemory || 'unknown',
+            cpuCores: navigator.hardwareConcurrency || 'unknown',
+            language: navigator.language || 'unknown',
+            viewport: window.innerWidth + 'x' + window.innerHeight
+        };
+    }
+
+    function missingRequirements(features) {
+        var missing = [];
+        if (!features.promise) {
+            missing.push('JavaScript promises');
+        }
+        if (!features.fetch) {
+            missing.push('the Fetch API');
+        }
+        if (!features.webAssemblySimd) {
+            missing.push('WebAssembly SIMD');
+        }
+        if (!features.webAssemblyExceptions) {
+            missing.push('WebAssembly exception handling');
+        }
+        return missing;
+    }
+
+    function classify() {
+        var text = state.log.join('\n');
+        if (/integrity|digest/i.test(text)) {
+            return 'integrity';
+        }
+        if (navigator.onLine === false) {
+            return 'network';
+        }
+        if (/Failed to fetch|NetworkError|Load failed|Failed to load|ERR_|status code 404|404 \(Not Found\)|Failed to download/i.test(text)) {
+            return 'network';
+        }
+        if (/Failed to start platform|Unhandled exception|crit:|fail:|ManagedError|System\.\w+Exception/i.test(text)) {
+            return 'startup';
+        }
+        return 'unknown';
+    }
+
+    function readProgress() {
+        try {
+            return window.getComputedStyle(document.documentElement).getPropertyValue('--blazor-load-percentage').trim();
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function report() {
+        var cause = state.cause ? CAUSES[state.cause] : null;
+        var lines = [
+            'Merciful Potato Magazine startup report',
+            'Status: ' + (state.ready ? 'ready' : state.failed ? 'failed' : 'loading'),
+            'Cause: ' + (cause ? cause.title + ' (' + state.cause + ')' : 'none'),
+            'Time: ' + new Date().toISOString(),
+            'Elapsed: ' + elapsed(),
+            'URL: ' + window.location.href,
+            'User agent: ' + navigator.userAgent,
+            'Load progress: ' + (state.progress || 'not reported'),
+            '',
+            'Browser capabilities:'
+        ];
+        var features = state.features || detectFeatures();
+        for (var key in features) {
+            if (Object.prototype.hasOwnProperty.call(features, key)) {
+                lines.push('  ' + key + ': ' + features[key]);
+            }
+        }
+        lines.push('', 'Messages captured while loading:');
+        if (state.log.length === 0) {
+            lines.push('  (none)');
+        } else {
+            for (var i = 0; i < state.log.length; i++) {
+                lines.push('  ' + state.log[i]);
+            }
+        }
+        return lines.join('\n');
+    }
+
+    function element(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) {
+            node.className = className;
+        }
+        if (text !== undefined) {
+            node.textContent = text;
+        }
+        return node;
+    }
+
+    function button(label, className, onClick) {
+        var node = element('button', className, label);
+        node.type = 'button';
+        node.addEventListener('click', onClick);
+        return node;
+    }
+
+    function clearCachesAndReload() {
+        if (typeof Promise !== 'function') {
+            window.location.reload();
+            return;
+        }
+        var tasks = [];
+        if (window.caches && typeof window.caches.keys === 'function') {
+            tasks.push(window.caches.keys().then(function (keys) {
+                return Promise.all(keys.map(function (key) { return window.caches.delete(key); }));
+            }));
+        }
+        if (navigator.serviceWorker && typeof navigator.serviceWorker.getRegistrations === 'function') {
+            tasks.push(navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                return Promise.all(registrations.map(function (registration) { return registration.unregister(); }));
+            }));
+        }
+        Promise.all(tasks).then(null, function () { return null; }).then(function () {
+            window.location.reload();
+        });
+    }
+
+    function copyReport(trigger, textArea) {
+        var text = report();
+        var done = function () {
+            trigger.textContent = 'Copied';
+            window.setTimeout(function () { trigger.textContent = 'Copy details'; }, 2000);
+        };
+        var fallback = function () {
+            textArea.value = text;
+            textArea.focus();
+            textArea.select();
+            try {
+                if (document.execCommand('copy')) {
+                    done();
+                    return;
+                }
+            } catch (e) {
+                record('warn', 'Copy failed: ' + describe(e));
+            }
+            trigger.textContent = 'Select the text below and copy it';
+        };
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
+    function issueUrl(cause) {
+        var body = report();
+        if (body.length > MAX_ISSUE_BODY) {
+            body = body.slice(0, MAX_ISSUE_BODY) + '\n… (truncated)';
+        }
+        return ISSUES_URL + '?title=' + encodeURIComponent('Site failed to start: ' + cause.title) +
+            '&body=' + encodeURIComponent('```\n' + body + '\n```');
+    }
+
+    function removeErrorScreen() {
+        var existing = document.getElementById('boot-error');
+        if (existing && existing.parentNode) {
+            existing.parentNode.removeChild(existing);
+        }
+    }
+
+    function renderErrorScreen(causeKey, extraSummary, onTryAnyway) {
+        removeErrorScreen();
+        var cause = CAUSES[causeKey] || CAUSES.unknown;
+        var root = element('div', 'boot-error');
+        root.id = 'boot-error';
+        root.setAttribute('role', 'alert');
+
+        var card = element('div', 'boot-error-card');
+        var head = element('div', 'boot-error-head');
+        head.appendChild(element('div', 'boot-error-icon', '!'));
+        head.appendChild(element('p', 'boot-error-brand', 'Merciful Potato Magazine'));
+        head.appendChild(element('h1', 'boot-error-title', cause.title));
+        head.appendChild(element('p', 'boot-error-summary', cause.summary + (extraSummary ? ' ' + extraSummary : '')));
+        card.appendChild(head);
+
+        var body = element('div', 'boot-error-body');
+        body.appendChild(element('h2', null, 'What happened'));
+        body.appendChild(element('p', null, cause.explanation));
+        body.appendChild(element('h2', null, 'What you can try'));
+        var list = element('ol', 'boot-error-steps');
+        for (var i = 0; i < cause.steps.length; i++) {
+            list.appendChild(element('li', null, cause.steps[i]));
+        }
+        body.appendChild(list);
+
+        var actions = element('div', 'boot-error-actions');
+        actions.appendChild(button('Reload', 'boot-btn boot-btn-primary', function () { window.location.reload(); }));
+        actions.appendChild(button('Clear cached files and reload', 'boot-btn', clearCachesAndReload));
+        if (cause.canTryAnyway && typeof onTryAnyway === 'function') {
+            actions.appendChild(button('Try anyway', 'boot-btn', onTryAnyway));
+        }
+        body.appendChild(actions);
+
+        var details = element('details', 'boot-error-details');
+        details.appendChild(element('summary', null, 'Technical details'));
+        var textArea = element('textarea', 'boot-error-report');
+        textArea.readOnly = true;
+        textArea.rows = 14;
+        textArea.value = report();
+        textArea.setAttribute('aria-label', 'Startup report');
+        var detailActions = element('div', 'boot-error-actions');
+        var copyButton = button('Copy details', 'boot-btn', function () { copyReport(copyButton, textArea); });
+        detailActions.appendChild(copyButton);
+        var reportLink = element('a', 'boot-btn', 'Report this problem');
+        reportLink.href = issueUrl(cause);
+        reportLink.target = '_blank';
+        reportLink.rel = 'noopener noreferrer';
+        detailActions.appendChild(reportLink);
+        details.appendChild(textArea);
+        details.appendChild(detailActions);
+        body.appendChild(details);
+
+        body.appendChild(element('p', 'boot-error-footnote', 'Your saved settings and data are kept when you reload or clear cached files.'));
+        card.appendChild(body);
+        root.appendChild(card);
+        document.body.appendChild(root);
+    }
+
+    function stopWatchdog() {
+        if (state.watchdog !== null) {
+            window.clearInterval(state.watchdog);
+            state.watchdog = null;
+        }
+    }
+
+    function fail(causeKey, error, extraSummary, onTryAnyway) {
+        if (state.ready || state.failed) {
+            return;
+        }
+        if (error !== undefined) {
+            record('fatal', describe(error));
+        }
+        state.failed = true;
+        state.cause = causeKey || classify();
+        stopWatchdog();
+        renderErrorScreen(state.cause, extraSummary, onTryAnyway);
+    }
+
+    function markReady() {
+        if (state.ready) {
+            return;
+        }
+        state.ready = true;
+        stopWatchdog();
+        removeErrorScreen();
+    }
+
+    function watchForFirstRender() {
+        var app = document.getElementById('app');
+        if (!app || typeof MutationObserver !== 'function') {
+            return;
+        }
+        var observer = new MutationObserver(function () {
+            if (!document.getElementById('boot-loading')) {
+                observer.disconnect();
+                markReady();
+            }
+        });
+        observer.observe(app, { childList: true, subtree: true });
+    }
+
+    function watchBlazorErrorUi() {
+        var errorUi = document.getElementById('blazor-error-ui');
+        if (!errorUi || typeof MutationObserver !== 'function') {
+            return;
+        }
+        var observer = new MutationObserver(function () {
+            if (state.ready) {
+                observer.disconnect();
+                return;
+            }
+            if (errorUi.style.display && errorUi.style.display !== 'none') {
+                observer.disconnect();
+                fail('startup');
+            }
+        });
+        observer.observe(errorUi, { attributes: true, attributeFilter: ['style', 'class'] });
+    }
+
+    function startWatchdog() {
+        var hint = document.getElementById('boot-hint');
+        state.watchdog = window.setInterval(function () {
+            var progress = readProgress();
+            if (progress !== state.progress) {
+                state.progress = progress;
+                state.progressChangedAt = Date.now();
+            }
+            if (hint && hint.hidden && Date.now() - state.startedAt > SLOW_HINT_MS) {
+                hint.hidden = false;
+            }
+            if (Date.now() - state.progressChangedAt > STALL_TIMEOUT_MS) {
+                fail(navigator.onLine === false ? 'network' : (classify() === 'unknown' ? 'timeout' : null));
+            }
+        }, 1000);
+    }
+
+    function startBlazor() {
+        if (typeof window.Blazor === 'undefined' || typeof window.Blazor.start !== 'function') {
+            fail('bootScript');
+            return;
+        }
+        try {
+            var started = window.Blazor.start();
+            if (started && typeof started.then === 'function') {
+                started.then(null, function (error) { fail(null, error); });
+            }
+        } catch (error) {
+            fail(null, error);
+        }
+    }
+
+    function start() {
+        watchForFirstRender();
+        watchBlazorErrorUi();
+
+        if (window.location.protocol === 'file:') {
+            fail('fileProtocol');
+            return;
+        }
+
+        state.features = detectFeatures();
+        if (!state.features.webAssembly) {
+            fail('noWebAssembly');
+            return;
+        }
+
+        var missing = missingRequirements(state.features);
+        if (missing.length > 0) {
+            record('warn', 'Missing browser features: ' + missing.join(', '));
+            fail('oldWebAssembly', undefined, 'Missing: ' + missing.join(', ') + '.', function () {
+                removeErrorScreen();
+                state.failed = false;
+                state.cause = null;
+                state.progressChangedAt = Date.now();
+                startWatchdog();
+                startBlazor();
+            });
+            return;
+        }
+
+        startWatchdog();
+        startBlazor();
+    }
+
+    window.observerBoot = {
+        report: report,
+        status: function () {
+            return state.ready ? 'ready' : state.failed ? 'failed' : 'loading';
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+    } else {
+        start();
+    }
+}());
 
 
 -------------------------------------------------------------------------------
@@ -19948,6 +21064,84 @@ public sealed class RssPostEntry
 
 
 -------------------------------------------------------------------------------
+FILE: tests/ObserverMagazine.Web.Tests/Components/MainLayoutTests.cs
+-------------------------------------------------------------------------------
+using Bunit;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.Extensions.DependencyInjection;
+using ObserverMagazine.Web.Layout;
+using Xunit;
+
+namespace ObserverMagazine.Web.Tests.Components;
+
+public class MainLayoutTests : IDisposable
+{
+    private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(10);
+
+    private readonly BunitContext _ctx = new();
+    private readonly RecordingErrorBoundaryLogger _errorLogger = new();
+
+    public MainLayoutTests()
+    {
+        _ctx.JSInterop.Mode = JSRuntimeMode.Loose;
+        _ctx.Services.AddSingleton<IErrorBoundaryLogger>(_errorLogger);
+    }
+
+    [Fact]
+    public void RendersPageBody()
+    {
+        RenderFragment body = b => b.AddMarkupContent(0, "<h1>Hello</h1>");
+
+        var cut = _ctx.Render<MainLayout>(p => p.Add(l => l.Body, body));
+
+        Assert.Equal("Hello", cut.Find("main h1").TextContent);
+        Assert.Empty(cut.FindAll(".page-error"));
+    }
+
+    [Fact]
+    public void PageException_IsContainedAndLogged()
+    {
+        RenderFragment body = b =>
+        {
+            b.OpenComponent<ThrowingPage>(0);
+            b.CloseComponent();
+        };
+
+        var cut = _ctx.Render<MainLayout>(p => p.Add(l => l.Body, body));
+
+        cut.WaitForAssertion(() =>
+        {
+            Assert.Contains("This page ran into a problem", cut.Find(".page-error").TextContent);
+            Assert.Contains("boom", cut.Find(".page-error-details").TextContent);
+        }, WaitTimeout);
+
+        Assert.NotNull(cut.Find(".top-bar"));
+        var logged = Assert.Single(_errorLogger.Errors);
+        Assert.IsType<InvalidOperationException>(logged);
+    }
+
+    public void Dispose() => _ctx.Dispose();
+}
+
+internal sealed class ThrowingPage : ComponentBase
+{
+    protected override void OnInitialized() => throw new InvalidOperationException("boom");
+}
+
+internal sealed class RecordingErrorBoundaryLogger : IErrorBoundaryLogger
+{
+    public List<Exception> Errors { get; } = [];
+
+    public ValueTask LogErrorAsync(Exception exception)
+    {
+        Errors.Add(exception);
+        return ValueTask.CompletedTask;
+    }
+}
+
+
+-------------------------------------------------------------------------------
 FILE: tests/ObserverMagazine.Web.Tests/Components/MasterDetailTests.cs
 -------------------------------------------------------------------------------
 using Bunit;
@@ -20878,6 +22072,115 @@ FILE: tests/ObserverMagazine.Web.Tests/ObserverMagazine.Web.Tests.csproj
 
 
 -------------------------------------------------------------------------------
+FILE: tests/ObserverMagazine.Web.Tests/Services/AnalyticsServiceTests.cs
+-------------------------------------------------------------------------------
+using System.Net;
+using Microsoft.Extensions.Logging;
+using ObserverMagazine.Web.Services;
+using Xunit;
+
+namespace ObserverMagazine.Web.Tests.Services;
+
+public class AnalyticsServiceTests
+{
+    private static (AnalyticsService Sut, ListLogger<AnalyticsService> Logger, RoutingHttpHandler Handler) Create(
+        Func<HttpRequestMessage, HttpResponseMessage> respond)
+    {
+        var handler = new RoutingHttpHandler(respond);
+        var logger = new ListLogger<AnalyticsService>();
+        return (new AnalyticsService(new HttpClient(handler), logger), logger, handler);
+    }
+
+    private static bool IsHealthCheck(HttpRequestMessage request) =>
+        request.RequestUri!.AbsolutePath == "/api/health";
+
+    private static HttpResponseMessage Json(string json) => new(HttpStatusCode.OK)
+    {
+        Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
+    };
+
+    [Fact]
+    public async Task TrackPageView_WhenBackendRejectsEvent_LogsWarningWithStatusCode()
+    {
+        var (sut, logger, _) = Create(r => new HttpResponseMessage(
+            IsHealthCheck(r) ? HttpStatusCode.OK : HttpStatusCode.InternalServerError));
+
+        await sut.TrackPageViewAsync("Home");
+
+        var warning = Assert.Single(logger.At(LogLevel.Warning));
+        Assert.Contains("500", warning.Message);
+    }
+
+    [Fact]
+    public async Task TrackInteraction_WhenRequestThrows_LogsWarningWithException()
+    {
+        var (sut, logger, _) = Create(r => IsHealthCheck(r)
+            ? new HttpResponseMessage(HttpStatusCode.OK)
+            : throw new HttpRequestException("connection reset"));
+
+        await sut.TrackInteractionAsync("Click", "button");
+
+        var warning = Assert.Single(logger.At(LogLevel.Warning));
+        Assert.IsType<HttpRequestException>(warning.Exception);
+    }
+
+    [Fact]
+    public async Task WhenBackendIsUnreachable_ChecksHealthOnceAndSkipsEvents()
+    {
+        var (sut, logger, handler) = Create(_ => throw new HttpRequestException("offline"));
+
+        await sut.TrackPageViewAsync("Home");
+        await sut.TrackInteractionAsync("Click");
+        await sut.IncrementViewAsync("first-post");
+
+        Assert.False(sut.IsBackendAvailable);
+        Assert.Equal(1, handler.RequestCount);
+        Assert.Single(logger.At(LogLevel.Warning));
+    }
+
+    [Fact]
+    public async Task GetViewCount_WhenResponseIsNotJson_ReturnsNullAndLogsWarning()
+    {
+        var (sut, logger, _) = Create(r => IsHealthCheck(r)
+            ? new HttpResponseMessage(HttpStatusCode.OK)
+            : Json("not json"));
+
+        var count = await sut.GetViewCountAsync("first-post");
+
+        Assert.Null(count);
+        Assert.Single(logger.At(LogLevel.Warning));
+    }
+
+    [Fact]
+    public async Task GetReactions_WhenBackendHealthy_ReturnsCountsWithoutWarnings()
+    {
+        var (sut, logger, _) = Create(r => IsHealthCheck(r)
+            ? new HttpResponseMessage(HttpStatusCode.OK)
+            : Json("""{ "like": 3, "love": 1 }"""));
+
+        var reactions = await sut.GetReactionsAsync("first-post");
+
+        Assert.NotNull(reactions);
+        Assert.Equal(3, reactions["like"]);
+        Assert.Empty(logger.At(LogLevel.Warning));
+        Assert.True(sut.IsBackendAvailable);
+    }
+}
+
+internal sealed class RoutingHttpHandler(Func<HttpRequestMessage, HttpResponseMessage> respond) : HttpMessageHandler
+{
+    public int RequestCount { get; private set; }
+
+    protected override Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        RequestCount++;
+        return Task.FromResult(respond(request));
+    }
+}
+
+
+-------------------------------------------------------------------------------
 FILE: tests/ObserverMagazine.Web.Tests/Services/AppLifetimeTelemetryTests.cs
 -------------------------------------------------------------------------------
 using Microsoft.Extensions.Logging.Abstractions;
@@ -20923,6 +22226,7 @@ FILE: tests/ObserverMagazine.Web.Tests/Services/BlogServiceTests.cs
 -------------------------------------------------------------------------------
 using System.Net;
 using System.Text.Json;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using ObserverMagazine.Web.Models;
 using ObserverMagazine.Web.Services;
@@ -21054,6 +22358,55 @@ public class BlogServiceTests
     }
 
     [Fact]
+    public async Task GetPostsAsync_LogsErrorOnHttpError()
+    {
+        var handler = new FakeHttpHandler(HttpStatusCode.NotFound);
+        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
+        var logger = new ListLogger<BlogService>();
+        var service = new BlogService(httpClient, logger);
+
+        await service.GetPostsAsync();
+
+        var error = Assert.Single(logger.At(LogLevel.Error));
+        Assert.Contains("404", error.Message);
+    }
+
+    [Fact]
+    public async Task GetPostsAsync_ReturnsEmptyAndLogsErrorOnInvalidJson()
+    {
+        var handler = new FakeHttpHandler("{ not json", "application/json");
+        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
+        var logger = new ListLogger<BlogService>();
+        var service = new BlogService(httpClient, logger);
+
+        var posts = await service.GetPostsAsync();
+
+        Assert.Empty(posts);
+        Assert.Single(logger.At(LogLevel.Error));
+    }
+
+    [Fact]
+    public async Task GetPostsAsync_DoesNotCacheFailures()
+    {
+        var json = JsonSerializer.Serialize(SamplePosts,
+            new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+        var handler = new SequenceHttpHandler(
+            () => new HttpResponseMessage(HttpStatusCode.ServiceUnavailable),
+            () => new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
+            });
+        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
+        var service = CreateService(httpClient);
+
+        var first = await service.GetPostsAsync();
+        var second = await service.GetPostsAsync();
+
+        Assert.Empty(first);
+        Assert.Equal(2, second.Length);
+    }
+
+    [Fact]
     public async Task GetAllAuthorsAsync_ReturnsAuthors()
     {
         var json = JsonSerializer.Serialize(SampleAuthors,
@@ -21125,6 +22478,44 @@ internal sealed class FakeHttpHandler : HttpMessageHandler
     }
 }
 
+internal sealed class SequenceHttpHandler(params Func<HttpResponseMessage>[] responses) : HttpMessageHandler
+{
+    private int _index;
+
+    protected override Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        var response = responses[Math.Min(_index, responses.Length - 1)]();
+        _index++;
+        return Task.FromResult(response);
+    }
+}
+
+
+-------------------------------------------------------------------------------
+FILE: tests/ObserverMagazine.Web.Tests/Services/ListLogger.cs
+-------------------------------------------------------------------------------
+using Microsoft.Extensions.Logging;
+
+namespace ObserverMagazine.Web.Tests.Services;
+
+public sealed record LogEntry(LogLevel Level, string Message, Exception? Exception);
+
+public sealed class ListLogger<T> : ILogger<T>
+{
+    public List<LogEntry> Entries { get; } = [];
+
+    public IReadOnlyList<LogEntry> At(LogLevel level) => Entries.FindAll(e => e.Level == level);
+
+    public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
+
+    public bool IsEnabled(LogLevel logLevel) => true;
+
+    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception,
+        Func<TState, Exception?, string> formatter) =>
+        Entries.Add(new LogEntry(logLevel, formatter(state, exception), exception));
+}
+
 
 -------------------------------------------------------------------------------
 FILE: tests/ObserverMagazine.Web.Tests/Services/NoOpAnalyticsService.cs
@@ -21145,6 +22536,133 @@ public sealed class NoOpAnalyticsService : IAnalyticsService
     public Task<Dictionary<string, int>?> GetReactionsAsync(string slug) =>
         Task.FromResult<Dictionary<string, int>?>(null);
 }
+
+
+-------------------------------------------------------------------------------
+FILE: tools/boot_smoke_test.py
+-------------------------------------------------------------------------------
+#!/usr/bin/env python3
+import argparse
+import functools
+import http.server
+import sys
+import threading
+from pathlib import Path
+
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+from playwright.sync_api import sync_playwright
+
+READY_OR_FAILED = """() => {
+    const failed = !!document.getElementById('boot-error');
+    const loading = !!document.getElementById('boot-loading');
+    const errorUi = document.getElementById('blazor-error-ui');
+    const crashed = !!errorUi && errorUi.style.display !== '' && errorUi.style.display !== 'none';
+    return failed || crashed || !loading;
+}"""
+
+
+class GitHubPagesLikeHandler(http.server.SimpleHTTPRequestHandler):
+    extensions_map = {
+        **http.server.SimpleHTTPRequestHandler.extensions_map,
+        ".wasm": "application/wasm",
+        ".js": "text/javascript",
+        ".mjs": "text/javascript",
+        ".json": "application/json",
+        ".dat": "application/octet-stream",
+        ".xml": "application/xml",
+        ".mp3": "audio/mpeg",
+    }
+
+    def send_head(self):
+        path = Path(self.translate_path(self.path))
+        if path.exists():
+            return super().send_head()
+        root = Path(self.directory)
+        fallback = root / "404.html"
+        if not fallback.exists():
+            fallback = root / "index.html"
+        handle = fallback.open("rb")
+        self.send_response(404)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(fallback.stat().st_size))
+        self.end_headers()
+        return handle
+
+    def log_message(self, format, *args):
+        return
+
+
+def check_route(browser, base_url, route, timeout_ms):
+    page = browser.new_page()
+    messages = []
+    page.on("console", lambda message, log=messages: log.append(f"console.{message.type}: {message.text}"))
+    page.on("pageerror", lambda error, log=messages: log.append(f"pageerror: {error}"))
+    problem = None
+    try:
+        page.goto(base_url + route, wait_until="domcontentloaded")
+        page.wait_for_function(READY_OR_FAILED, timeout=timeout_ms)
+        if page.query_selector("#boot-error"):
+            problem = "startup error screen was shown"
+        elif page.evaluate("() => { const e = document.getElementById('blazor-error-ui'); return !!e && e.style.display !== '' && e.style.display !== 'none'; }"):
+            problem = "Blazor error bar was shown"
+        else:
+            page.wait_for_selector("main h1", timeout=timeout_ms)
+            page.wait_for_timeout(1000)
+            if page.query_selector(".page-error"):
+                problem = "page rendered the error boundary: " + (page.text_content(".page-error-details pre") or "").strip()
+    except PlaywrightTimeoutError:
+        problem = f"app did not finish loading within {timeout_ms // 1000}s"
+    report = ""
+    if problem:
+        try:
+            report = page.evaluate("() => window.observerBoot ? window.observerBoot.report() : 'observerBoot not available'")
+        except Exception as error:
+            report = f"could not collect boot report: {error}"
+    page.close()
+    return problem, report, messages
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Serve a published Blazor WebAssembly site and verify it boots in headless Chromium.")
+    parser.add_argument("--site-dir", required=True, type=Path)
+    parser.add_argument("--route", action="append", dest="routes")
+    parser.add_argument("--timeout-seconds", type=int, default=120)
+    args = parser.parse_args()
+
+    site_dir = args.site_dir.resolve()
+    if not (site_dir / "index.html").exists():
+        print(f"error: {site_dir / 'index.html'} does not exist", file=sys.stderr)
+        return 2
+
+    routes = args.routes or ["/", "/blog", "/about"]
+    handler = functools.partial(GitHubPagesLikeHandler, directory=str(site_dir))
+    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    base_url = f"http://127.0.0.1:{server.server_address[1]}"
+
+    failures = 0
+    try:
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch()
+            for route in routes:
+                problem, report, messages = check_route(browser, base_url, route, args.timeout_seconds * 1000)
+                if problem is None:
+                    print(f"PASS {route}")
+                    continue
+                failures += 1
+                print(f"FAIL {route}: {problem}")
+                print(report)
+                for message in messages:
+                    print(f"  {message}")
+            browser.close()
+    finally:
+        server.shutdown()
+
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
 
 
 -------------------------------------------------------------------------------
@@ -22054,11 +23572,17 @@ https://github.com/KittenML/KittenTTS/releases/download/0.8.1/kittentts-0.8.1-py
 soundfile>=0.13.0
 
 
+-------------------------------------------------------------------------------
+FILE: tools/requirements-smoke.txt
+-------------------------------------------------------------------------------
+playwright==1.63.0
+
+
 ===============================================================================
 EXPORT COMPLETED
-Total Files Exported: 196
+Total Files Exported: 204
   Blog posts (front matter only): 110
-  Full content files: 83
+  Full content files: 91
   Binary files skipped: 3
 Output File: docs/llm/dump.txt
 ===============================================================================
