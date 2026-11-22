@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-11-22 13:14:24 UTC
+DATE: 2026-11-22 13:41:22 UTC
 ===============================================================================
 
 ===============================================================================
@@ -127,6 +127,10 @@ DIRECTORY TREE (all git-tracked files)
 ├── Directory.Build.props
 ├── Directory.Packages.props
 ├── docs
+│   ├── images
+│   │   ├── iphone-eight-plus-loading-failed.png
+│   │   ├── iphone-eight-plus-loading.png
+│   │   └── nexus-6-loading-failed.png
 │   └── llm
 │       ├── claude.md
 │       ├── dump.txt
@@ -285,7 +289,7 @@ DIRECTORY TREE (all git-tracked files)
     ├── requirements-audio.txt
     └── requirements-smoke.txt
 
-36 directories, 241 files
+37 directories, 244 files
 
 
 -------------------------------------------------------------------------------
