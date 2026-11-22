@@ -132,7 +132,7 @@
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Post-render enhancement failed for {Slug}", Slug);
+            Logger.LogWarning(ex, "Syntax highlighting or code-scroll setup failed for {Slug}", Slug);
         }
     }
 

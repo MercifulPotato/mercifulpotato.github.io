@@ -3,21 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Merciful Potato Magazine</title>
     <base href="/" />
     <link rel="preload" id="webassembly" />
     <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/boot.css" />
     <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
     <script type="importmap"></script>
 
-    <!-- Apply saved theme BEFORE first paint to prevent flash -->
     <script>
         (function () {
-            var stored = localStorage.getItem('observer-theme') || 'system';
+            var stored = 'system';
+            try {
+                stored = window.localStorage.getItem('observer-theme') || 'system';
+            } catch (e) {
+                stored = 'system';
+            }
             var resolved = stored;
             if (stored === 'system') {
-                resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                resolved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
             document.documentElement.setAttribute('data-theme', resolved);
         })();
@@ -25,18 +31,27 @@
 </head>
 <body>
     <div id="app">
-        <div style="display:flex;align-items:center;justify-content:center;height:100vh;height:100dvh;">
-            <p>Loading Merciful Potato Magazine...</p>
+        <div id="boot-loading" class="boot-screen" role="status" aria-live="polite">
+            <div class="boot-card">
+                <div class="boot-spinner" aria-hidden="true"></div>
+                <p class="boot-title"><strong>Merciful Potato</strong> Magazine</p>
+                <p class="boot-subtitle">Starting the .NET runtime in your browser</p>
+                <div class="boot-progress" aria-hidden="true"><div class="boot-progress-bar"></div></div>
+                <p class="boot-status"></p>
+                <p id="boot-hint" class="boot-hint" hidden>This is taking longer than usual. The first visit downloads the .NET runtime; later visits load from cache.</p>
+            </div>
         </div>
+        <noscript>
+            <p class="boot-noscript">Merciful Potato Magazine is a Blazor WebAssembly application and needs JavaScript. Please enable JavaScript for this site and reload the page.</p>
+        </noscript>
     </div>
 
-    <div id="blazor-error-ui" style="display:none;">
-        An unhandled error has occurred.
-        <a href="/" class="reload">Reload</a>
-        <span class="dismiss">🗙</span>
+    <div id="blazor-error-ui" role="alert">
+        Something went wrong on this page. Details are in the browser console (F12).
+        <a href="" class="reload">Reload</a>
+        <span class="dismiss" aria-label="Dismiss">🗙</span>
     </div>
 
-    <!-- Theme management API for Blazor interop -->
     <script>
         window.observerTheme = {
             set: function (theme) {
@@ -45,10 +60,10 @@
                     resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                 }
                 document.documentElement.setAttribute('data-theme', resolved);
-                localStorage.setItem('observer-theme', theme);
+                window.localStorage.setItem('observer-theme', theme);
             },
             get: function () {
-                return localStorage.getItem('observer-theme') || 'system';
+                return window.localStorage.getItem('observer-theme') || 'system';
             }
         };
     </script>
@@ -586,16 +601,7 @@
         };
     </script>
 
-    <!-- SPA redirect for GitHub Pages -->
-    <script>
-        (function () {
-            var redirect = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            if (redirect && redirect !== location.href) {
-                history.replaceState(null, null, redirect);
-            }
-        })();
-    </script>
-    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script src="js/boot.js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js" autostart="false"></script>
 </body>
 </html>

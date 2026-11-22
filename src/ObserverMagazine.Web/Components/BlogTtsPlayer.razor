@@ -136,7 +136,7 @@
             }
             catch (Exception ex)
             {
-                Logger.LogDebug(ex, "Audio availability check failed for {Slug}", Slug);
+                Logger.LogWarning(ex, "Audio player setup failed for {Slug}", Slug);
             }
         }
     }
@@ -167,7 +167,7 @@
             }
             catch (Exception ex)
             {
-                Logger.LogDebug(ex, "Failed to set playback rate for {Slug}", Slug);
+                Logger.LogWarning(ex, "Failed to set playback rate for {Slug}", Slug);
             }
         }
     }
@@ -210,7 +210,7 @@
             }
             catch (Exception ex)
             {
-                Logger.LogDebug(ex, "Seek failed for {Slug}", Slug);
+                Logger.LogWarning(ex, "Seek failed for {Slug}", Slug);
             }
         }
     }
@@ -221,31 +221,32 @@
         _pollTimer = new Timer(PollTimerCallback, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(500));
     }
 
-    /// <summary>
-    /// Timer callback — uses async void because TimerCallback returns void.
-    /// All async work is wrapped in try-catch to prevent unobserved exceptions.
-    /// </summary>
     private async void PollTimerCallback(object? state)
     {
         try
         {
             var time = await Js.InvokeAsync<double>("observerAudio.getCurrentTime", $"tts-audio-{Slug}");
             var ended = await Js.InvokeAsync<bool>("observerAudio.hasEnded", $"tts-audio-{Slug}");
-            await InvokeAsync(() =>
+            await InvokeAsync(async () =>
             {
                 _fallbackCurrentTime = (int)time;
                 if (ended)
                 {
                     _fallbackPlaying = false;
                     StopPolling();
-                    _ = OnEnded();
+                    await OnEnded();
                 }
                 StateHasChanged();
             });
         }
-        catch
+        catch (ObjectDisposedException)
         {
-            // Component may have been disposed — ignore
+            StopPolling();
+        }
+        catch (Exception ex)
+        {
+            StopPolling();
+            Logger.LogWarning(ex, "Audio position polling failed for {Slug}", Slug);
         }
     }
 

@@ -13,6 +13,8 @@ Built with **.NET 11** (STS) and **C# 15**.
 - **Master-Detail Flow** — Click a list item to view full details
 - **OpenTelemetry-ready Logging** — Structured logging via `ILogger`
 - **Full Test Suite** — bUnit component tests + xUnit.net v3 integration tests, running on Microsoft.Testing.Platform
+- **Boot smoke test** — CI serves the published site and verifies it actually starts in headless Chromium
+- **Startup diagnostics** — if the app cannot start, visitors see an explanation of what failed and why instead of a frozen loading screen
 
 ## Quick Start
 
@@ -30,6 +32,8 @@ dotnet test
 - Locally, a machine that only has the RC3 SDK (for example Fedora's `dotnet-sdk-11.0` package) uses RC3.
 - Any machine with a GA `11.0.1xx` SDK installed uses the GA SDK, because it is newer than RC3.
 - CI installs the latest GA SDK with `actions/setup-dotnet` (`dotnet-version: 11.0.x`, `dotnet-quality: ga`).
+- Both workflows fail fast with "Prerelease SDK ... was selected" if `dotnet --version` reports a prerelease SDK,
+  so CI can never silently build with an RC.
 
 Packages reference the GA `11.0.0` ASP.NET Core and Microsoft.Extensions builds in both cases. Once the
 GA SDK is available locally, change `sdk.version` to `11.0.100` and remove `allowPrerelease`.
@@ -65,6 +69,20 @@ dotnet test --timeout 10m
 dotnet run --project tests/ObserverMagazine.Integration.Tests
 ```
 
+The boot smoke test publishes nothing itself; point it at a published `wwwroot`:
+
+```bash
+dotnet publish src/ObserverMagazine.Web -c Release -o publish
+pip install -r tools/requirements-smoke.txt
+python -m playwright install chromium
+python tools/boot_smoke_test.py --site-dir publish/wwwroot
+python tools/boot_smoke_test.py --site-dir publish/wwwroot --route /blog --route /showcase
+```
+
+It serves the folder the way GitHub Pages does (unknown paths return `index.html` with HTTP 404), loads each route
+in headless Chromium and fails if the startup error screen or Blazor's error bar appears, or if the page has no
+`<h1>` inside `<main>` within the timeout. On failure it prints the boot report and the browser console.
+
 Run `dotnet test -?` from the repo root for the full option list. `DOTNET_TEST_RUNNER=VSTest`
 overrides `global.json` for one session.
 
@@ -73,6 +91,47 @@ xUnit configuration for MTP lives in `testconfig.json` next to a test project
 
 bUnit tests that wait for asynchronous rendering pass an explicit timeout
 (bUnit's default is one second, which is too tight on a busy CI runner).
+
+## Startup diagnostics
+
+`wwwroot/index.html` loads `js/boot.js` and then `blazor.webassembly.js` with `autostart="false"`. `boot.js`
+starts Blazor itself so it can observe every way startup can fail:
+
+| Detected problem | How it is detected |
+|------------------|--------------------|
+| No WebAssembly (old browser, Lockdown Mode, Edge enhanced security, policy) | `typeof WebAssembly` before anything downloads |
+| WebAssembly too old for .NET 11 | `WebAssembly.validate` probes for SIMD and exception handling |
+| Page opened from `file://` | `location.protocol` |
+| Loader script missing or blocked | `Blazor` is undefined after `blazor.webassembly.js` |
+| Integrity (SRI) failure | Captured console and error messages mention `integrity` or `digest` |
+| Download failure | Resource error events, `Failed to fetch`, offline status |
+| Crash during startup | `Blazor.start()` rejects, or Blazor shows `#blazor-error-ui` before the first render |
+| Stall | `--blazor-load-percentage` has not changed for 60 seconds |
+
+Each case shows a full-page explanation with steps to try, a **Clear cached files and reload** button (clears
+Cache Storage and service workers but keeps local settings and data), and a technical report with browser
+capabilities and every console error and warning captured during startup. The report can be copied or filed as a
+GitHub issue. `window.observerBoot.report()` returns the same text from the browser console.
+
+`boot.js` and `css/boot.css` are deliberately ES5 and plain CSS so that very old browsers can still display the
+explanation.
+
+The published `_framework` folder must never be modified after `dotnet publish`. Its files are fingerprinted and
+integrity-checked, so editing them (for example stripping `sourceMappingURL` comments) makes browsers refuse to
+run the app and it never gets past the loading screen.
+
+## Error handling and logging
+
+- `MainLayout` wraps every page in an `ErrorBoundary`. A page that throws shows an inline error with a
+  **Try again** button; the header, navigation and other pages keep working. Navigating recovers automatically.
+  The exception is logged by Blazor's `IErrorBoundaryLogger`.
+- `GlobalExceptionLogging` logs `AppDomain.UnhandledException` and `TaskScheduler.UnobservedTaskException`.
+- Failures are logged at `Warning` or `Error`, never `Debug`, so they are visible at the default `Information`
+  level. Nothing in the web app is swallowed by an empty `catch`.
+- `AnalyticsService` checks backend health once, logs the outcome, and logs both non-success HTTP status codes and
+  exceptions for every call. Analytics problems never break a page.
+- `BlogService` logs HTTP failures and invalid JSON as errors and does not cache a failed response, so a transient
+  failure does not leave the blog empty for the rest of the session.
 
 ## Audio narration
 
@@ -117,6 +176,7 @@ site size and warns above 900 MB.
 | Component testing | bUnit 2.15.2 | MIT |
 | Test runner | Microsoft.Testing.Platform v2 | MIT |
 | Text-to-speech | KittenTTS 0.8.1 | Apache-2.0 |
+| Boot smoke test | Playwright for Python 1.63.0 | Apache-2.0 |
 
 All dependencies are free for any use — no payment required, ever.
 

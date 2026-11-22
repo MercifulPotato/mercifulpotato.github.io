@@ -89,7 +89,7 @@
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not read the saved theme");
+            Logger.LogWarning(ex, "Could not read the saved theme; using the system theme");
             return;
         }
 

@@ -11,7 +11,28 @@
     </header>
 
     <main class="container main-content">
-        @Body
+        <ErrorBoundary @ref="_errorBoundary">
+            <ChildContent>
+                @Body
+            </ChildContent>
+            <ErrorContent Context="exception">
+                <section class="page-error" role="alert">
+                    <h1>This page ran into a problem</h1>
+                    <p>
+                        Something went wrong while showing this page. The rest of the site still works,
+                        and the error has been logged to the browser console.
+                    </p>
+                    <details class="page-error-details">
+                        <summary>Technical details</summary>
+                        <pre>@exception.GetType().FullName: @exception.Message</pre>
+                    </details>
+                    <div class="form-actions">
+                        <button class="btn btn-primary btn-sm" @onclick="Recover">Try again</button>
+                        <a class="btn btn-outline btn-sm" href="">Go to the home page</a>
+                    </div>
+                </section>
+            </ErrorContent>
+        </ErrorBoundary>
     </main>
 
     <footer class="site-footer">
@@ -31,3 +52,11 @@
         </div>
     </footer>
 </div>
+
+@code {
+    private ErrorBoundary? _errorBoundary;
+
+    protected override void OnParametersSet() => _errorBoundary?.Recover();
+
+    private void Recover() => _errorBoundary?.Recover();
+}

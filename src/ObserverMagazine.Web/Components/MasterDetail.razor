@@ -185,7 +185,7 @@
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not read from local storage");
+            Logger.LogWarning(ex, "Could not read products from local storage; falling back to sample data");
         }
 
         if (_products is null || _products.Count == 0)
@@ -351,7 +351,7 @@
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not clear local storage");
+            Logger.LogWarning(ex, "Could not clear products from local storage");
         }
 
         _products = null;

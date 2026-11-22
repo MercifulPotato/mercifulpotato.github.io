@@ -2,6 +2,7 @@
 @page "/showcase/{ProductId:guid}"
 @inject IJSRuntime Js
 @inject NavigationManager Nav
+@inject ILogger<ShowcaseDetail> Logger
 
 <PageTitle>@(IsNew ? "New Product" : (_editing ? "Edit Product" : _product?.Name ?? "Product")) — Showcase</PageTitle>
 
@@ -232,7 +233,10 @@ else
                 }
             }
         }
-        catch { /* best effort */ }
+        catch (Exception ex)
+        {
+            Logger.LogWarning(ex, "Could not load the catalog from local storage; regenerating sample data");
+        }
 
         _allProducts = ProductDataGenerator.Generate();
         await SaveAll();
@@ -246,7 +250,10 @@ else
                 new System.Text.Json.JsonSerializerOptions { PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase });
             await Js.InvokeVoidAsync("localStorage.setItem", StorageKey, json);
         }
-        catch { /* best effort */ }
+        catch (Exception ex)
+        {
+            Logger.LogWarning(ex, "Could not save the catalog to local storage");
+        }
     }
 
     private void StartEdit()

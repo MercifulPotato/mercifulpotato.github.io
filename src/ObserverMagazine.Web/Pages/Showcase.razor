@@ -3,7 +3,6 @@
 @inject IAnalyticsService Analytics
 @inject IJSRuntime Js
 @inject NavigationManager Nav
-@implements IDisposable
 
 <PageTitle>Showcase — Merciful Potato Magazine</PageTitle>
 
@@ -345,7 +344,7 @@
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not load showcase preferences");
+            Logger.LogWarning(ex, "Could not load showcase preferences; using defaults");
         }
     }
 
@@ -376,7 +375,7 @@
         }
         catch (Exception ex)
         {
-            Logger.LogDebug(ex, "Could not save showcase preferences");
+            Logger.LogWarning(ex, "Could not save showcase preferences");
         }
     }
 
@@ -594,8 +593,14 @@
 
     private async Task ResetData()
     {
-        try { await Js.InvokeVoidAsync("localStorage.removeItem", StorageKey); }
-        catch { /* best effort */ }
+        try
+        {
+            await Js.InvokeVoidAsync("localStorage.removeItem", StorageKey);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogWarning(ex, "Could not clear the catalog from local storage");
+        }
 
         _allProducts = ProductDataGenerator.Generate();
         _currentPage = 1;
@@ -605,11 +610,6 @@
 
     private static string ColStyle(ColumnDef col) =>
         string.IsNullOrEmpty(col.MinWidth) ? string.Empty : $"min-width:{col.MinWidth}";
-
-    public void Dispose()
-    {
-        // Nothing to dispose for now, but good practice to implement IDisposable
-    }
 
     // --- Column definition model ---
 

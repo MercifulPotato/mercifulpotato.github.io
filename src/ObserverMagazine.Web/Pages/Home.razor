@@ -1,6 +1,7 @@
 @page "/"
 @inject IAnalyticsService Analytics
 @inject IBlogService BlogService
+@inject ILogger<Home> Logger
 
 <PageTitle>Merciful Potato Magazine</PageTitle>
 
@@ -91,8 +92,9 @@
             var allPosts = await BlogService.GetPostsAsync();
             _featuredPosts = allPosts.Where(p => p.Featured).Take(3).ToArray();
         }
-        catch
+        catch (Exception ex)
         {
+            Logger.LogError(ex, "Failed to load featured posts");
             _featuredPosts = [];
         }
     }

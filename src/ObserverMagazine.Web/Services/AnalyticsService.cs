@@ -7,6 +7,7 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
     private const string BackendBaseUrl = "https://my-api.2w7sp317.workers.dev";
     private static readonly TimeSpan HealthCacheDuration = TimeSpan.FromMinutes(5);
 
+    private Task? _initialHealthCheck;
     private bool _backendAvailable;
     private DateTime _lastHealthCheck = DateTime.MinValue;
 
@@ -14,20 +15,33 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
 
     public async Task CheckHealthAsync()
     {
-        // Cache health check result for 5 minutes
         if (DateTime.UtcNow - _lastHealthCheck < HealthCacheDuration)
+        {
             return;
+        }
 
         try
         {
-            var response = await http.GetAsync($"{BackendBaseUrl}/api/health");
+            using var response = await http.GetAsync($"{BackendBaseUrl}/api/health");
             _backendAvailable = response.IsSuccessStatusCode;
-            logger.LogInformation("Backend health check: {Status}", _backendAvailable ? "available" : "unavailable");
+
+            if (_backendAvailable)
+            {
+                logger.LogInformation("Analytics backend is available at {BackendBaseUrl}", BackendBaseUrl);
+            }
+            else
+            {
+                logger.LogWarning(
+                    "Analytics backend health check returned HTTP {StatusCode}; analytics, views and reactions are disabled",
+                    (int)response.StatusCode);
+            }
         }
         catch (Exception ex)
         {
             _backendAvailable = false;
-            logger.LogDebug(ex, "Backend health check failed — running without backend");
+            logger.LogWarning(ex,
+                "Analytics backend at {BackendBaseUrl} is unreachable; analytics, views and reactions are disabled",
+                BackendBaseUrl);
         }
         finally
         {
@@ -35,115 +49,91 @@ public sealed class AnalyticsService(HttpClient http, ILogger<AnalyticsService> 
         }
     }
 
-    public async Task TrackPageViewAsync(string pageName, string? detail = null)
+    public Task TrackPageViewAsync(string pageName, string? detail = null)
     {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
         var content = detail is not null
             ? $"[PageView] {pageName} — {detail}"
             : $"[PageView] {pageName}";
 
-        await SendEventAsync($"PageView: {pageName}", content);
+        return SendEventAsync($"PageView: {pageName}", content);
     }
 
-    public async Task TrackInteractionAsync(string action, string? detail = null)
+    public Task TrackInteractionAsync(string action, string? detail = null)
     {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
         var content = detail is not null
             ? $"[Interaction] {action} — {detail}"
             : $"[Interaction] {action}";
 
-        await SendEventAsync($"Interaction: {action}", content);
+        return SendEventAsync($"Interaction: {action}", content);
     }
 
-    public async Task IncrementViewAsync(string slug)
-    {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
-        try
-        {
-            await http.PostAsync($"{BackendBaseUrl}/api/views/{slug}", null);
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to increment view for {Slug}", slug);
-        }
-    }
+    public Task IncrementViewAsync(string slug) =>
+        SendAsync("increment view count", slug,
+            () => http.PostAsync($"{BackendBaseUrl}/api/views/{Uri.EscapeDataString(slug)}", null));
 
     public async Task<int?> GetViewCountAsync(string slug)
     {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return null;
+        var result = await GetAsync<ViewCountResponse>("read view count", slug,
+            $"{BackendBaseUrl}/api/views/{Uri.EscapeDataString(slug)}");
+        return result?.Count;
+    }
+
+    public Task AddReactionAsync(string slug, string reactionType) =>
+        SendAsync("add reaction", $"{slug}:{reactionType}",
+            () => http.PostAsJsonAsync($"{BackendBaseUrl}/api/reactions/{Uri.EscapeDataString(slug)}", new { type = reactionType }));
+
+    public Task<Dictionary<string, int>?> GetReactionsAsync(string slug) =>
+        GetAsync<Dictionary<string, int>>("read reactions", slug,
+            $"{BackendBaseUrl}/api/reactions/{Uri.EscapeDataString(slug)}");
+
+    private Task SendEventAsync(string title, string content) =>
+        SendAsync("send analytics event", title,
+            () => http.PostAsJsonAsync($"{BackendBaseUrl}/api/notes", new { title, content }));
+
+    private async Task<bool> EnsureBackendAvailableAsync()
+    {
+        await (_initialHealthCheck ??= CheckHealthAsync());
+        return _backendAvailable;
+    }
+
+    private async Task SendAsync(string operation, string target, Func<Task<HttpResponseMessage>> send)
+    {
+        if (!await EnsureBackendAvailableAsync())
+        {
+            return;
+        }
 
         try
         {
-            var result = await http.GetFromJsonAsync<ViewCountResponse>($"{BackendBaseUrl}/api/views/{slug}");
-            return result?.Count;
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to get view count for {Slug}", slug);
-            return null;
-        }
-    }
-
-    public async Task AddReactionAsync(string slug, string reactionType)
-    {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return;
-
-        try
-        {
-            var payload = new { type = reactionType };
-            await http.PostAsJsonAsync($"{BackendBaseUrl}/api/reactions/{slug}", payload);
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to add reaction for {Slug}", slug);
-        }
-    }
-
-    public async Task<Dictionary<string, int>?> GetReactionsAsync(string slug)
-    {
-        await EnsureHealthChecked();
-        if (!_backendAvailable) return null;
-
-        try
-        {
-            return await http.GetFromJsonAsync<Dictionary<string, int>>($"{BackendBaseUrl}/api/reactions/{slug}");
-        }
-        catch (Exception ex)
-        {
-            logger.LogDebug(ex, "Failed to get reactions for {Slug}", slug);
-            return null;
-        }
-    }
-
-    private async Task EnsureHealthChecked()
-    {
-        if (_lastHealthCheck == DateTime.MinValue)
-            await CheckHealthAsync();
-    }
-
-    private async Task SendEventAsync(string title, string content)
-    {
-        try
-        {
-            var payload = new { title, content };
-            var response = await http.PostAsJsonAsync($"{BackendBaseUrl}/api/notes", payload);
-
+            using var response = await send();
             if (!response.IsSuccessStatusCode)
             {
-                logger.LogDebug("Analytics POST returned {StatusCode}", response.StatusCode);
+                logger.LogWarning(
+                    "Analytics backend rejected request to {Operation} for {Target} with HTTP {StatusCode}",
+                    operation, target, (int)response.StatusCode);
             }
         }
         catch (Exception ex)
         {
-            logger.LogDebug(ex, "Failed to send analytics event: {Title}", title);
+            logger.LogWarning(ex, "Failed to {Operation} for {Target}", operation, target);
+        }
+    }
+
+    private async Task<T?> GetAsync<T>(string operation, string target, string url)
+    {
+        if (!await EnsureBackendAvailableAsync())
+        {
+            return default;
+        }
+
+        try
+        {
+            return await http.GetFromJsonAsync<T>(url);
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning(ex, "Failed to {Operation} for {Target}", operation, target);
+            return default;
         }
     }
 

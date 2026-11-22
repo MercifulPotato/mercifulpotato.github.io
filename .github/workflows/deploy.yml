@@ -39,6 +39,14 @@ jobs:
       - name: Show .NET info
         run: dotnet --info
 
+      - name: Verify a stable .NET SDK was selected
+        run: |
+          version="$(dotnet --version)"
+          echo "Using .NET SDK ${version}"
+          case "${version}" in
+            *-*) echo "::error::Prerelease SDK ${version} was selected; CI must build with the latest stable SDK"; exit 1 ;;
+          esac
+
       - name: Restore .NET dependencies
         run: dotnet restore
 
@@ -51,10 +59,20 @@ jobs:
       - name: Publish Blazor WASM
         run: dotnet publish src/ObserverMagazine.Web/ObserverMagazine.Web.csproj -c Release -o publish
 
-      - name: Strip source map references from framework JS
+      - name: Setup Python 3.12 (boot smoke test)
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/requirements-smoke.txt
+
+      - name: Install Playwright Chromium
         run: |
-          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/# sourceMappingURL=/d' {} + 2>/dev/null || true
-          find publish/wwwroot/_framework -name "*.js" -exec sed -i '/^\/\/@ sourceMappingURL=/d' {} + 2>/dev/null || true
+          pip install -r tools/requirements-smoke.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Boot smoke test (published site in headless Chromium)
+        run: python tools/boot_smoke_test.py --site-dir publish/wwwroot
 
       - name: Upload site
         uses: actions/upload-artifact@v7

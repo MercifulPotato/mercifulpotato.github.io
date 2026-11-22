@@ -1,5 +1,6 @@
 using System.Net;
 using System.Text.Json;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using ObserverMagazine.Web.Models;
 using ObserverMagazine.Web.Services;
@@ -131,6 +132,55 @@ public class BlogServiceTests
     }
 
     [Fact]
+    public async Task GetPostsAsync_LogsErrorOnHttpError()
+    {
+        var handler = new FakeHttpHandler(HttpStatusCode.NotFound);
+        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
+        var logger = new ListLogger<BlogService>();
+        var service = new BlogService(httpClient, logger);
+
+        await service.GetPostsAsync();
+
+        var error = Assert.Single(logger.At(LogLevel.Error));
+        Assert.Contains("404", error.Message);
+    }
+
+    [Fact]
+    public async Task GetPostsAsync_ReturnsEmptyAndLogsErrorOnInvalidJson()
+    {
+        var handler = new FakeHttpHandler("{ not json", "application/json");
+        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
+        var logger = new ListLogger<BlogService>();
+        var service = new BlogService(httpClient, logger);
+
+        var posts = await service.GetPostsAsync();
+
+        Assert.Empty(posts);
+        Assert.Single(logger.At(LogLevel.Error));
+    }
+
+    [Fact]
+    public async Task GetPostsAsync_DoesNotCacheFailures()
+    {
+        var json = JsonSerializer.Serialize(SamplePosts,
+            new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+        var handler = new SequenceHttpHandler(
+            () => new HttpResponseMessage(HttpStatusCode.ServiceUnavailable),
+            () => new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
+            });
+        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://test.local/") };
+        var service = CreateService(httpClient);
+
+        var first = await service.GetPostsAsync();
+        var second = await service.GetPostsAsync();
+
+        Assert.Empty(first);
+        Assert.Equal(2, second.Length);
+    }
+
+    [Fact]
     public async Task GetAllAuthorsAsync_ReturnsAuthors()
     {
         var json = JsonSerializer.Serialize(SampleAuthors,
@@ -199,5 +249,18 @@ internal sealed class FakeHttpHandler : HttpMessageHandler
         HttpRequestMessage request, CancellationToken cancellationToken)
     {
         return Task.FromResult(_response);
+    }
+}
+
+internal sealed class SequenceHttpHandler(params Func<HttpResponseMessage>[] responses) : HttpMessageHandler
+{
+    private int _index;
+
+    protected override Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        var response = responses[Math.Min(_index, responses.Length - 1)]();
+        _index++;
+        return Task.FromResult(response);
     }
 }

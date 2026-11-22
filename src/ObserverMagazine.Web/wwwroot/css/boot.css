@@ -1,0 +1,295 @@
+.boot-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: var(--color-bg, #ffffff);
+    color: var(--color-text, #1a1a2e);
+    font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.boot-card {
+    width: 100%;
+    max-width: 26rem;
+    text-align: center;
+}
+
+.boot-spinner {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 0.3rem solid var(--color-border, #e5e7eb);
+    border-top-color: var(--color-primary, #2563eb);
+    animation: boot-spin 0.9s linear infinite;
+}
+
+.boot-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 0.35rem;
+}
+
+.boot-subtitle {
+    color: var(--color-muted, #6b7280);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+}
+
+.boot-progress {
+    height: 0.4rem;
+    border-radius: 99rem;
+    background: var(--color-surface, #f3f4f6);
+    border: 1px solid var(--color-border, #e5e7eb);
+    overflow: hidden;
+}
+
+.boot-progress-bar {
+    height: 100%;
+    width: var(--blazor-load-percentage, 0%);
+    background: linear-gradient(90deg, var(--color-primary, #2563eb), var(--color-accent, #3b82f6));
+    transition: width 0.25s ease;
+}
+
+.boot-status {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-muted, #6b7280);
+    font-variant-numeric: tabular-nums;
+}
+
+.boot-status::after {
+    content: var(--blazor-load-percentage-text, "Loading");
+}
+
+.boot-hint {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--color-muted, #6b7280);
+}
+
+.boot-hint[hidden] {
+    display: none;
+}
+
+.boot-noscript {
+    max-width: 30rem;
+    margin: 2rem auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid #f59e0b;
+    border-radius: 0.5rem;
+    background: #fffbeb;
+    color: #78350f;
+    font-family: system-ui, sans-serif;
+}
+
+@keyframes boot-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .boot-spinner { animation-duration: 3s; }
+    .boot-progress-bar { transition: none; }
+}
+
+.boot-error {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+    background: var(--color-surface, #f3f4f6);
+    color: var(--color-text, #1a1a2e);
+    font-family: var(--font-sans, system-ui, sans-serif);
+    line-height: 1.6;
+}
+
+.boot-error-card {
+    max-width: 44rem;
+    margin: 0 auto;
+    background: var(--color-card-bg, #ffffff);
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 0.85rem;
+    overflow: hidden;
+    box-shadow: 0 1.25rem 3rem rgba(15, 23, 42, 0.14);
+}
+
+.boot-error-head {
+    padding: 2rem 2rem 1.75rem;
+    background: linear-gradient(135deg, #b91c1c 0%, #c2410c 100%);
+    color: #ffffff;
+}
+
+.boot-error-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.boot-error-brand {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.25rem;
+}
+
+.boot-error-title {
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+.boot-error-summary {
+    font-size: 1.02rem;
+    opacity: 0.95;
+}
+
+.boot-error-body {
+    padding: 1.75rem 2rem 2rem;
+}
+
+.boot-error-body h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted, #6b7280);
+    margin: 0 0 0.5rem;
+}
+
+.boot-error-body p {
+    margin-bottom: 1.5rem;
+}
+
+.boot-error-steps {
+    margin: 0 0 1.5rem 1.25rem;
+}
+
+.boot-error-steps li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.25rem;
+}
+
+.boot-error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.boot-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--color-primary, #2563eb);
+    background: transparent;
+    color: var(--color-primary, #2563eb);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boot-btn:hover {
+    text-decoration: none;
+    opacity: 0.88;
+}
+
+.boot-btn:focus-visible {
+    outline: 2px solid var(--color-primary, #2563eb);
+    outline-offset: 2px;
+}
+
+.boot-btn-primary {
+    background: var(--color-primary, #2563eb);
+    color: var(--color-primary-fg, #ffffff);
+}
+
+.boot-error-details {
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    background: var(--color-surface, #f3f4f6);
+}
+
+.boot-error-details summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.boot-error-details[open] summary {
+    margin-bottom: 0.75rem;
+}
+
+.boot-error-report {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 0.4rem;
+    background: var(--color-bg, #ffffff);
+    color: var(--color-text, #1a1a2e);
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    white-space: pre;
+    resize: vertical;
+}
+
+.boot-error-footnote {
+    font-size: 0.85rem;
+    color: var(--color-muted, #6b7280);
+    margin: 0 !important;
+}
+
+@media (max-width: 40em) {
+    .boot-error { padding: 0; }
+    .boot-error-card { border-radius: 0; border: none; min-height: 100%; }
+    .boot-error-head, .boot-error-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .boot-btn { flex: 1 1 100%; justify-content: center; }
+}
+
+#blazor-error-ui {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.75rem 3rem 0.75rem 1.25rem;
+    background: #fef3c7;
+    color: #78350f;
+    border-top: 1px solid #f59e0b;
+    box-shadow: 0 -0.25rem 1rem rgba(0, 0, 0, 0.15);
+    font-family: var(--font-sans, system-ui, sans-serif);
+    font-size: 0.92rem;
+}
+
+#blazor-error-ui .reload {
+    color: #92400e;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    text-decoration: underline;
+}
+
+#blazor-error-ui .dismiss {
+    position: absolute;
+    right: 1rem;
+    top: 0.6rem;
+    cursor: pointer;
+}
