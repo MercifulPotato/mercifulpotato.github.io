@@ -1,6 +1,6 @@
 ===============================================================================
 PROJECT EXPORT: mercifulpotato.github.io
-DATE: 2026-11-22 04:15:46 UTC
+DATE: 2026-11-22 12:06:31 UTC
 ===============================================================================
 
 ===============================================================================
@@ -138,7 +138,8 @@ DIRECTORY TREE (all git-tracked files)
 │           │   ├── compressed-archives
 │           │   │   └── mercifulpotato-dotnet11.tar.gz
 │           │   └── prompts
-│           │       └── 1.md
+│           │       ├── 1.md
+│           │       └── 2.md
 │           ├── claude-instructions.md
 │           ├── claude-memory.md
 │           ├── claude-sessions.md
@@ -274,7 +275,7 @@ DIRECTORY TREE (all git-tracked files)
     │   └── RssGenerator.cs
     └── requirements-audio.txt
 
-35 directories, 231 files
+35 directories, 232 files
 
 
 -------------------------------------------------------------------------------
