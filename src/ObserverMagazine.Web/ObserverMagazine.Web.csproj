@@ -3,6 +3,7 @@
   <PropertyGroup>
     <RootNamespace>ObserverMagazine.Web</RootNamespace>
     <AssemblyName>ObserverMagazine.Web</AssemblyName>
+    <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
   </PropertyGroup>
 
   <ItemGroup>

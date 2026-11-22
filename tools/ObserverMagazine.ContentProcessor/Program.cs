@@ -1,7 +1,6 @@
 using System.Text.Json;
 using ObserverMagazine.ContentProcessor;
 
-// Parse command-line arguments
 string contentDir = "content/blog";
 string outputDir = "src/ObserverMagazine.Web/wwwroot";
 string authorsDir = "content/authors";
@@ -24,7 +23,6 @@ Console.WriteLine($"Output directory:  {outputDir}");
 Console.WriteLine($"Authors directory: {authorsDir}");
 Console.WriteLine($"Publish before:    {publishBefore:yyyy-MM-dd HH:mm:ss} UTC");
 
-// --- Process author profiles ---
 var authorProfiles = new Dictionary<string, AuthorProfile>(StringComparer.OrdinalIgnoreCase);
 
 if (Directory.Exists(authorsDir))
@@ -54,7 +52,6 @@ else
     Console.WriteLine($"Authors directory '{authorsDir}' does not exist. No author profiles loaded.");
 }
 
-// Write authors.json
 string blogDataDir = Path.Combine(outputDir, "blog-data");
 Directory.CreateDirectory(blogDataDir);
 
@@ -69,7 +66,6 @@ var authorsJson = JsonSerializer.Serialize(authorProfiles.Values.ToArray(), json
 File.WriteAllText(authorsPath, authorsJson);
 Console.WriteLine($"Wrote authors index: {authorsPath} ({authorProfiles.Count} authors)");
 
-// --- Process blog posts ---
 if (!Directory.Exists(contentDir))
 {
     Console.WriteLine($"Content directory '{contentDir}' does not exist. Creating with no posts.");
@@ -79,7 +75,7 @@ if (!Directory.Exists(contentDir))
 var markdownFiles = Directory.GetFiles(contentDir, "*.md", SearchOption.TopDirectoryOnly);
 Console.WriteLine($"Found {markdownFiles.Length} markdown files");
 
-var allPostMetadata = new List<PostIndexEntry>();
+List<PostIndexEntry> allPostMetadata = [with(capacity: markdownFiles.Length)];
 var postHtmlMap = new Dictionary<string, string>();
 int skippedDrafts = 0;
 int skippedFuture = 0;
@@ -97,7 +93,6 @@ foreach (var mdFile in markdownFiles)
         continue;
     }
 
-    // Skip drafts
     if (frontMatter.Draft)
     {
         Console.WriteLine($"  SKIPPED: Draft post '{frontMatter.Title}'");
@@ -105,7 +100,6 @@ foreach (var mdFile in markdownFiles)
         continue;
     }
 
-    // Skip future-dated posts
     if (frontMatter.Date > publishBefore)
     {
         Console.WriteLine($"  SKIPPED: Future post '{frontMatter.Title}' (date: {frontMatter.Date:yyyy-MM-dd}, publish-before: {publishBefore:yyyy-MM-dd})");
@@ -113,14 +107,12 @@ foreach (var mdFile in markdownFiles)
         continue;
     }
 
-    // Derive slug from filename
     var fileName = Path.GetFileNameWithoutExtension(mdFile);
     var slug = FrontMatterParser.DeriveSlug(fileName);
 
     var html = MarkdownProcessor.ToHtml(markdownBody);
     var readingTime = FrontMatterParser.CalculateReadingTime(markdownBody);
 
-    // Resolve author display name
     var authorId = frontMatter.Author ?? "";
     var authorName = authorId;
     string? authorEmail = null;
@@ -134,7 +126,6 @@ foreach (var mdFile in markdownFiles)
         Console.WriteLine($"  WARNING: No author profile found for '{authorId}'");
     }
 
-    // Write individual post HTML
     var htmlPath = Path.Combine(blogDataDir, $"{slug}.html");
     File.WriteAllText(htmlPath, html);
     Console.WriteLine($"  Wrote: {htmlPath} (~{readingTime} min read)");
@@ -159,20 +150,17 @@ foreach (var mdFile in markdownFiles)
     });
 }
 
-// Sort by date descending
 allPostMetadata.Sort((a, b) => b.Date.CompareTo(a.Date));
 
-// Write posts index JSON
 var indexPath = Path.Combine(blogDataDir, "posts-index.json");
 var indexJson = JsonSerializer.Serialize(allPostMetadata, jsonOptions);
 File.WriteAllText(indexPath, indexJson);
 Console.WriteLine($"Wrote posts index: {indexPath} ({allPostMetadata.Count} posts, {skippedDrafts} drafts skipped, {skippedFuture} future posts skipped)");
 
-// Generate RSS feed with full post content
 var feedPath = Path.Combine(outputDir, "feed.xml");
 var rssXml = RssGenerator.Generate(
     title: "Merciful Potato Magazine",
-    description: "A free, open-source Blazor WebAssembly showcase on .NET 10",
+    description: "A free, open-source Blazor WebAssembly showcase on .NET 11",
     siteUrl: "https://mercifulpotato.github.io",
     posts: allPostMetadata,
     getPostHtml: slug => postHtmlMap.GetValueOrDefault(slug)
@@ -182,7 +170,6 @@ Console.WriteLine($"Wrote RSS feed: {feedPath}");
 
 Console.WriteLine("Content processing complete.");
 
-// --- Types used by the index ---
 public sealed class PostIndexEntry
 {
     public string Slug { get; init; } = "";

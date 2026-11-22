@@ -4,157 +4,143 @@
 @inject IAnalyticsService Analytics
 @inject IJSRuntime Js
 
-<PageTitle>@(_metadata?.Title ?? "Post") — Merciful Potato Magazine</PageTitle>
+<PageTitle>@PageTitleText — Merciful Potato Magazine</PageTitle>
 
-@if (_loading)
+@switch (_view)
 {
-    <p><em>Loading...</em></p>
-}
-else if (_metadata is null)
-{
-    <h1>Post Not Found</h1>
-    <p>Sorry, we couldn't find that post. <a href="blog">Back to Blog</a></p>
-}
-else
-{
-    <article class="blog-post">
-        <header>
-            <h1>@_metadata.Title</h1>
-            <div class="blog-meta">
-                <time datetime="@_metadata.Date.ToString("yyyy-MM-dd")">
-                    @_metadata.Date.ToString("MMMM d, yyyy")
-                </time>
-                @if (_metadata.Updated.HasValue)
-                {
-                    <span> · Updated @_metadata.Updated.Value.ToString("MMMM d, yyyy")</span>
-                }
-                @if (!string.IsNullOrEmpty(_metadata.AuthorName))
-                {
-                    <span> · @_metadata.AuthorName</span>
-                }
-                @if (_metadata.ReadingTimeMinutes > 0)
-                {
-                    <span> · @_metadata.ReadingTimeMinutes min read</span>
-                }
-                @if (_viewCount.HasValue)
-                {
-                    <span> · @_viewCount views</span>
-                }
-            </div>
-            @if (_metadata.Tags is { Length: > 0 })
-            {
-                <div class="tag-list">
-                    @foreach (var tag in _metadata.Tags)
+    case BlogPostLoading:
+        <p><em>Loading...</em></p>
+        break;
+
+    case BlogPostMissing:
+        <h1>Post Not Found</h1>
+        <p>Sorry, we couldn't find that post. <a href="blog">Back to Blog</a></p>
+        break;
+
+    case BlogPostLoaded(var metadata, var html, var author):
+        <article class="blog-post">
+            <header>
+                <h1>@metadata.Title</h1>
+                <div class="blog-meta">
+                    <time datetime="@metadata.Date.ToString("yyyy-MM-dd")">
+                        @metadata.Date.ToString("MMMM d, yyyy")
+                    </time>
+                    @if (metadata.Updated.HasValue)
                     {
-                        <a class="tag" href="blog/tag/@Uri.EscapeDataString(tag)">@tag</a>
+                        <span> · Updated @metadata.Updated.Value.ToString("MMMM d, yyyy")</span>
+                    }
+                    @if (!string.IsNullOrEmpty(metadata.AuthorName))
+                    {
+                        <span> · @metadata.AuthorName</span>
+                    }
+                    @if (metadata.ReadingTimeMinutes > 0)
+                    {
+                        <span> · @metadata.ReadingTimeMinutes min read</span>
+                    }
+                    @if (_viewCount.HasValue)
+                    {
+                        <span> · @_viewCount views</span>
                     }
                 </div>
-            }
-        </header>
+                @if (metadata.Tags is { Length: > 0 })
+                {
+                    <div class="tag-list">
+                        @foreach (var tag in metadata.Tags)
+                        {
+                            <a class="tag" href="blog/tag/@Uri.EscapeDataString(tag)">@tag</a>
+                        }
+                    </div>
+                }
+            </header>
 
-        <BlogTtsPlayer Slug="@Slug" />
+            <BlogTtsPlayer Slug="@Slug" />
 
-        <div class="blog-content">
-            @((MarkupString)_htmlContent)
-        </div>
+            <div class="blog-content">
+                @((MarkupString)html)
+            </div>
 
-        <Reactions Slug="@Slug" />
+            <Reactions Slug="@Slug" />
 
-        <AuthorCard Author="_authorProfile" />
+            <AuthorCard Author="author" />
 
-        <footer class="blog-post-footer">
-            <a href="blog">&larr; Back to Blog</a>
-        </footer>
-    </article>
+            <footer class="blog-post-footer">
+                <a href="blog">&larr; Back to Blog</a>
+            </footer>
+        </article>
+        break;
 }
 
 @code {
     [Parameter] public string Slug { get; set; } = "";
 
-    private BlogPostMetadata? _metadata;
-    private string _htmlContent = "";
-    private bool _loading = true;
-    private AuthorProfile? _authorProfile;
+    private BlogPostView _view = new BlogPostLoading();
     private int? _viewCount;
+
+    private string PageTitleText => _view is BlogPostLoaded loaded ? loaded.Metadata.Title : "Post";
 
     protected override async Task OnParametersSetAsync()
     {
-        _loading = true;
+        _view = new BlogPostLoading();
+        _viewCount = null;
         Logger.LogInformation("Loading blog post: {Slug}", Slug);
 
+        _view = await LoadAsync();
+
+        if (_view is BlogPostLoaded loaded)
+        {
+            await Analytics.TrackPageViewAsync("BlogPost", $"{loaded.Metadata.Title} ({Slug})");
+            await Analytics.IncrementViewAsync(Slug);
+            _viewCount = await Analytics.GetViewCountAsync(Slug);
+        }
+    }
+
+    private async Task<BlogPostView> LoadAsync()
+    {
         try
         {
-            _metadata = await BlogService.GetPostMetadataAsync(Slug);
-            if (_metadata is not null)
+            var metadata = await BlogService.GetPostMetadataAsync(Slug);
+            if (metadata is null)
             {
-                var rawHtml = await BlogService.GetPostHtmlAsync(Slug);
-                _htmlContent = PostProcessHtml(rawHtml);
-
-                if (!string.IsNullOrEmpty(_metadata.Author))
-                {
-                    _authorProfile = await BlogService.GetAuthorAsync(_metadata.Author);
-                }
-
-                await Analytics.TrackPageViewAsync("BlogPost", $"{_metadata.Title} ({Slug})");
-                await Analytics.IncrementViewAsync(Slug);
-                _viewCount = await Analytics.GetViewCountAsync(Slug);
+                return new BlogPostMissing();
             }
+
+            var html = PostProcessHtml(await BlogService.GetPostHtmlAsync(Slug));
+            var author = string.IsNullOrEmpty(metadata.Author)
+                ? null
+                : await BlogService.GetAuthorAsync(metadata.Author);
+
+            return new BlogPostLoaded(metadata, html, author);
         }
         catch (Exception ex)
         {
             Logger.LogError(ex, "Failed to load post {Slug}", Slug);
-            _metadata = null;
-        }
-        finally
-        {
-            _loading = false;
+            return new BlogPostMissing();
         }
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        // Trigger syntax highlighting and scroll-detection after content renders
-        if (!_loading && _metadata is not null)
+        if (_view is not BlogPostLoaded)
         {
-            try
-            {
-                await Js.InvokeVoidAsync("observerHighlight.highlightAll");
-                await Js.InvokeVoidAsync("observerCodeScroll.init");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogDebug(ex, "Post-render enhancement failed for {Slug}", Slug);
-            }
+            return;
+        }
+
+        try
+        {
+            await Js.InvokeVoidAsync("observerHighlight.highlightAll");
+            await Js.InvokeVoidAsync("observerCodeScroll.init");
+        }
+        catch (Exception ex)
+        {
+            Logger.LogDebug(ex, "Post-render enhancement failed for {Slug}", Slug);
         }
     }
 
-    /// <summary>
-    /// Post-processes Markdig HTML to wrap code blocks and tables with
-    /// mobile-friendly scroll containers. Runs entirely in C# — the DOM
-    /// transformation itself needs no JavaScript.
-    /// </summary>
-    private static string PostProcessHtml(string html)
-    {
-        // Wrap every <pre> with a scroll container that provides a
-        // right-edge fade gradient and a "scroll →" hint label.
-        // Safe because Markdig escapes < inside code as &lt; and
-        // <pre> is the only HTML tag starting with those four chars.
-        html = html.Replace(
+    private static string PostProcessHtml(string html) => html
+        .Replace(
             "<pre",
-            "<div class=\"code-block-wrap\"><span class=\"code-scroll-hint\" aria-hidden=\"true\">scroll \u2192</span><pre");
-        html = html.Replace(
-            "</pre>",
-            "</pre></div>");
-
-        // Wrap every <table> so it scrolls horizontally on narrow
-        // viewports without pushing the outer page wider.
-        html = html.Replace(
-            "<table",
-            "<div class=\"table-scroll-wrap\"><table");
-        html = html.Replace(
-            "</table>",
-            "</table></div>");
-
-        return html;
-    }
+            "<div class=\"code-block-wrap\"><span class=\"code-scroll-hint\" aria-hidden=\"true\">scroll \u2192</span><pre")
+        .Replace("</pre>", "</pre></div>")
+        .Replace("<table", "<div class=\"table-scroll-wrap\"><table")
+        .Replace("</table>", "</table></div>");
 }

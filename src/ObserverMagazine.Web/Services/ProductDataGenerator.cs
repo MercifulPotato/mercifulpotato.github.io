@@ -2,10 +2,6 @@ using ObserverMagazine.Web.Models;
 
 namespace ObserverMagazine.Web.Services;
 
-/// <summary>
-/// Generates deterministic sample product data for the showcase catalog.
-/// Uses a seeded Random so the same 20_000 products are generated every time.
-/// </summary>
 public static class ProductDataGenerator
 {
     private static readonly string[] Adjectives =
@@ -26,7 +22,6 @@ public static class ProductDataGenerator
         "Charcoal", "Burgundy", "Cobalt", "Amber", "Lavender"
     ];
 
-    // Must match the SelectOptions in Showcase.razor Status column and the test expectations
     private static readonly string[] Statuses = ["Active", "Active", "Active", "Active", "Draft", "Out of Stock"];
 
     private static readonly (string Category, string[] Products, string[] Brands, decimal MinPrice, decimal MaxPrice, double MinWeight, double MaxWeight, int MinWarranty, int MaxWarranty)[] Categories =
@@ -63,9 +58,9 @@ public static class ProductDataGenerator
     public static List<CatalogProduct> Generate(int count = 20_000, int seed = 42)
     {
         var rng = new Random(seed);
-        var products = new List<CatalogProduct>(count);
+        List<CatalogProduct> products = [with(capacity: count)];
         var baseDate = new DateTime(2024, 1, 1);
-        var usedSkus = new HashSet<string>();
+        HashSet<string> usedSkus = [with(capacity: count)];
 
         for (int i = 0; i < count; i++)
         {
@@ -76,7 +71,6 @@ public static class ProductDataGenerator
             var color = Colors[rng.Next(Colors.Length)];
             var name = $"{adj} {productType}";
 
-            // Generate unique SKU
             string sku;
             do
             {
@@ -86,7 +80,6 @@ public static class ProductDataGenerator
             var priceRange = catEntry.MaxPrice - catEntry.MinPrice;
             var price = Math.Round(catEntry.MinPrice + (decimal)(rng.NextDouble() * (double)priceRange), 2);
 
-            // ~30% chance of having a compare-at price (sale)
             decimal? compareAt = rng.NextDouble() < 0.3
                 ? Math.Round(price * (1m + (decimal)(rng.NextDouble() * 0.4 + 0.1)), 2)
                 : null;
@@ -127,9 +120,6 @@ public static class ProductDataGenerator
         return products;
     }
 
-    /// <summary>
-    /// Creates a deterministic GUID from a seed and index so we get the same IDs every time.
-    /// </summary>
     private static Guid CreateDeterministicGuid(int seed, int index)
     {
         var bytes = new byte[16];

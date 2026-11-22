@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>Merciful Potato Magazine</title>
     <base href="/" />
+    <link rel="preload" id="webassembly" />
     <link rel="alternate" type="application/rss+xml" title="Merciful Potato Magazine RSS" href="/feed.xml" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="ObserverMagazine.Web.styles.css" />
+    <script type="importmap"></script>
 
     <!-- Apply saved theme BEFORE first paint to prevent flash -->
     <script>
@@ -594,6 +596,6 @@
             }
         })();
     </script>
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
 </body>
 </html>

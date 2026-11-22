@@ -2,7 +2,7 @@
 
 A free, open-source Blazor WebAssembly application deployed to GitHub Pages.
 
-Built with **.NET 10** (LTS) and **C# 14**.
+Built with **.NET 11** (STS) and **C# 15**.
 
 ## Features
 
@@ -15,11 +15,35 @@ Built with **.NET 10** (LTS) and **C# 14**.
 - **Full Test Suite** — bUnit component tests + xUnit.net v3 integration tests, running on Microsoft.Testing.Platform
 
 ## Quick Start
+
 ```bash
 dotnet run --project tools/ObserverMagazine.ContentProcessor
 dotnet run --project src/ObserverMagazine.Web
 dotnet test
 ```
+
+## SDK selection
+
+`global.json` pins the minimum SDK to `11.0.100-rc.3.26522.148` with `allowPrerelease: true` and
+`rollForward: latestFeature`:
+
+- Locally, a machine that only has the RC3 SDK (for example Fedora's `dotnet-sdk-11.0` package) uses RC3.
+- Any machine with a GA `11.0.1xx` SDK installed uses the GA SDK, because it is newer than RC3.
+- CI installs the latest GA SDK with `actions/setup-dotnet` (`dotnet-version: 11.0.x`, `dotnet-quality: ga`).
+
+Packages reference the GA `11.0.0` ASP.NET Core and Microsoft.Extensions builds in both cases. Once the
+GA SDK is available locally, change `sdk.version` to `11.0.100` and remove `allowPrerelease`.
+
+## .NET 11 features used
+
+| Feature | Where |
+|---------|-------|
+| C# 15 closed hierarchy | `Models/BlogPostView.cs`, consumed by `Pages/BlogPost.razor` |
+| C# 15 collection expression arguments (`[with(capacity: n)]`) | `ProductDataGenerator`, ContentProcessor |
+| `IHostedService` in Blazor WebAssembly | `Services/AppLifetimeTelemetry.cs` |
+| `System.Threading.Lock` | `Services/TelemetryService.cs` |
+| Fingerprinted Blazor boot script (`OverrideHtmlAssetPlaceholders`) | `wwwroot/index.html` |
+| `dotnet test --timeout` run-level limit | CI workflows |
 
 ## Testing
 
@@ -37,10 +61,12 @@ dotnet test --solution ObserverMagazine.slnx
 dotnet test --project tests/ObserverMagazine.Web.Tests
 dotnet test --filter-class ObserverMagazine.Web.Tests.Services.BlogServiceTests
 dotnet test --filter-trait Category=Integration
+dotnet test --timeout 10m
 dotnet run --project tests/ObserverMagazine.Integration.Tests
 ```
 
-Run `dotnet test -?` from the repo root for the full option list.
+Run `dotnet test -?` from the repo root for the full option list. `DOTNET_TEST_RUNNER=VSTest`
+overrides `global.json` for one session.
 
 xUnit configuration for MTP lives in `testconfig.json` next to a test project
 (not `xunit.runner.json`, which is the VSTest-era file).
@@ -84,11 +110,11 @@ site size and warns above 900 MB.
 
 | Component | Technology | License |
 |-----------|-----------|---------|
-| Framework | .NET 10 / Blazor WASM 10.0.14 | MIT |
-| Markdown | Markdig 1.5.1 | BSD-2-Clause |
+| Framework | .NET 11 / Blazor WASM 11.0.0 | MIT |
+| Markdown | Markdig 1.6.0 | BSD-2-Clause |
 | YAML | YamlDotNet 18.1.0 | MIT |
-| Test framework | xUnit.net v3 4.0.2 | Apache-2.0 |
-| Component testing | bUnit 2.13.3 | MIT |
+| Test framework | xUnit.net v3 4.0.3 | Apache-2.0 |
+| Component testing | bUnit 2.15.2 | MIT |
 | Test runner | Microsoft.Testing.Platform v2 | MIT |
 | Text-to-speech | KittenTTS 0.8.1 | Apache-2.0 |
 
